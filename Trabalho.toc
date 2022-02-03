@@ -1,0 +1,50 @@
+\babel@toc {portuguese}{}
+\contentsline {part}{I\hspace {1em}Preliminares}{1}{part.1}%
+\contentsline {chapter}{\numberline {1}Grupos de permutação}{3}{chapter.1}%
+\contentsline {chapter}{\numberline {2}Isomorfismos}{5}{chapter.2}%
+\contentsline {chapter}{\numberline {3}Classes laterais}{11}{chapter.3}%
+\contentsline {chapter}{\numberline {4}Produto direto externo de grupos}{17}{chapter.4}%
+\contentsline {chapter}{\numberline {5}Subgrupos normais, grupo quociente}{25}{chapter.5}%
+\contentsline {chapter}{\numberline {6}Homomorfismos}{31}{chapter.6}%
+\contentsline {chapter}{\numberline {7}Grupos livres}{41}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Apresentações de produtos diretos}{50}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Grupos abelianos finitamente gerados}{51}{section.7.2}%
+\contentsline {subsection}{\numberline {7.2.1}Grupos abelianos finitamente apresentados}{52}{subsection.7.2.1}%
+\contentsline {subsubsection}{Operações elementares de linha}{53}{section*.3}%
+\contentsline {paragraph}{$R_i\leftrightarrow R_j$: trocar as linhas $i$ e $j$.}{53}{section*.4}%
+\contentsline {paragraph}{$R_i \div k$: dividir a linha $i$ por $k$ ($k=\pm 1$ apenas).}{54}{section*.5}%
+\contentsline {paragraph}{$R_i - kR_j$: subtrair $k$ vezes a linha $j$ da linha $i$ ($k$ qualquer inteiro).}{54}{section*.6}%
+\contentsline {subsubsection}{Operações elementares de coluna}{54}{section*.7}%
+\contentsline {paragraph}{$C_i\leftrightarrow C_j$: trocar as colunas $i$ e $j$.}{55}{section*.8}%
+\contentsline {paragraph}{$C_i\times k$: multiplicar uma coluna por $k$ ($k=\pm 1$ apenas).}{55}{section*.9}%
+\contentsline {paragraph}{$C_i - kC_j$: subtrair $k$ vezes a coluna $j$ da coluna $i$ ($k$ qualquer inteiro).}{55}{section*.10}%
+\contentsline {paragraph}{Teorema Fundamental dos Grupos Abelianos Finitamente Gerados.}{56}{section*.11}%
+\contentsline {section}{\numberline {7.3}Alguns subgrupos importantes de um grupo abeliano}{59}{section.7.3}%
+\contentsline {subsubsection}{O perfil das ordens de um grupo abeliano finito}{61}{section*.12}%
+\contentsline {section}{\numberline {7.4}Subgrupos de Sylow}{62}{section.7.4}%
+\contentsline {section}{\numberline {7.5}Abelianização de um grupo}{63}{section.7.5}%
+\contentsline {section}{\numberline {7.6}Algumas propriedades de grupos livres}{65}{section.7.6}%
+\contentsline {paragraph}{Caso (i):}{67}{section*.13}%
+\contentsline {paragraph}{Caso (ii):}{67}{section*.14}%
+\contentsline {paragraph}{Caso (iii):}{67}{section*.15}%
+\contentsline {section}{\numberline {7.7}Grupos, isometrias e polinômios}{69}{section.7.7}%
+\contentsline {part}{II\hspace {1em}Tranças e Nós}{73}{part.2}%
+\contentsline {chapter}{\numberline {8}Introdução}{75}{chapter.8}%
+\contentsline {chapter}{\numberline {9}Propriedades de $B_n$ e o grupo de tranças puras}{87}{chapter.9}%
+\contentsline {section}{\numberline {9.1}Centro de $B_n$}{92}{section.9.1}%
+\contentsline {section}{\numberline {9.2}Tranças como espaços de configuração}{95}{section.9.2}%
+\contentsline {subsubsection}{Transformações de Tietze}{102}{section*.33}%
+\contentsline {section}{\numberline {9.3}Diagrama de van Kampen}{106}{section.9.3}%
+\contentsline {section}{\numberline {9.4}Tranças como discos perfurados}{109}{section.9.4}%
+\contentsline {subsection}{\numberline {9.4.1}Diagramas de curvas}{111}{subsection.9.4.1}%
+\contentsline {chapter}{\numberline {10}Tranças e Teoria dos Nós}{117}{chapter.10}%
+\contentsline {section}{\numberline {10.1}Algumas aplicações do Teorema de Markov}{125}{section.10.1}%
+\contentsline {section}{\numberline {10.2}Grupos de nó}{128}{section.10.2}%
+\contentsline {subsection}{\numberline {10.2.1}Cálculo do grupo de nó}{131}{subsection.10.2.1}%
+\contentsline {section}{\numberline {10.3}Representação de Burau e os polinômios de Alexander e Jones}{135}{section.10.3}%
+\contentsline {subsubsection}{Alexander vs Jones}{160}{section*.69}%
+\contentsline {section}{\numberline {10.4}O grupo de Alexander}{166}{section.10.4}%
+\contentsline {chapter}{\numberline {11}Curiosidades finais}{171}{chapter.11}%
+\contentsline {section}{\numberline {11.1}O problema da palavra em $B_n(\mathbb {R}^2)$ -- uma breve introdução}{171}{section.11.1}%
+\contentsline {section}{\numberline {11.2}O \textit {linking number}}{173}{section.11.2}%
+\contentsline {section}{\numberline {11.3}Tranças, nós e protetores solares de para-brisa}{175}{section.11.3}%
