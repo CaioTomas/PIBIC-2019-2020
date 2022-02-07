@@ -1,0 +1,1265 @@
+\chapter[Grupos livres]{Grupos livres}
+\label{cap-grupos-livres}
+\chaptermark{}
+%
+\hfill%
+\begin{minipage}{10cm}
+\begin{flushright}
+\rightskip=0.5cm
+\textit{``Frase filosófica.''}
+\\[0.1cm]
+\rightskip=0.5cm
+--- Autor cabuloso
+\end{flushright}
+\end{minipage}
+
+\hspace{21pt} Primeiramente, algumas definições e notações. Para qualquer conjunto $S = \{ a, b, c, \dots \}$ de símbolos distintos, criamos o novo conjunto $S^{-1} = \{ a^{-1}, b^{-1}, c^{-1}, \dots \}$ substituindo cada $x$ em $S$ por $x^{-1}$. Defina o conjunto $W(S)$ como a coleção de todas as sequências finitas da forma $x_1x_2\cdots x_k$, sendo $x_i\in S\cup S^{-1}$. Os elementos de $W(S)$ são chamados \textit{palavras} de $S$. A sequência com nenhum símbolo está em $W(S)$ e é chamada \textit{palavra vazia}, denotada por $e$.
+	
+	\par\vspace{0.3cm} Podemos definir uma operação binária em $W(S)$ por justaposição, isto é, se $x_1x_2\cdots x_k$ e $y_1y_2\cdots y_t$ pertencem a $W(S)$, então $x_1x_2\cdots x_ky_1y_2\cdots y_t$ também pertence. Observe que a operação é associativa e que a palavra vazia é a identidade. Além disso, note que uma palavra como $aa^{-1}$ não é a identidade, porque estamos tratando os elementos de $W(S)$ como símbolos formais sem nenhum significado implícito.
+	
+	\par\vspace{0.3cm} Agora, temos tudo para definir um grupo com $W(S)$, exceto inversos. Aqui encontramos uma dificuldade, pois $abb^{-1}a^{-1}$ não é a palavra vazia. Por isso, utilizamos classes de equivalências.
+	
+	\begin{deff}[Classes de equivalências de palavras]
+		Para quaisquer pares $u$ e $v$ de $W(S)$, dizemos que $u$ está relacionado a $v$ se $v$ pode ser obtido a partir de $u$ através de uma sequência finita de inserções ou exclusões de palavras da forma $xx^{-1}$ ou $x^{-1}x$, $x\in S$.
+	\end{deff}
+	
+	\par\vspace{0.3cm} Vamos mostrar que essa relação é uma relação de equivalência em $W(S)$.
+	
+	\begin{proof}
+		Seja $u$ uma palavra de $S$. Sabemos que $u$ está relacionado a $u$, pois podemos obter $u$ de $u$ sem fazer nenhuma inserção nem exclusão (ou seja, $u\sim u$). Agora, se $u$ está relacionado a $v$, então podemos obter $u$ a partir de $v$ inserindo ou excluindo elementos da forma $xx^{-1}$ ou $x^{-1}x$. Portanto, basta realizar o processo inverso para obter $v$ a partir de $u$ (ou seja, $u\sim v$ implica $v\sim u$). Por fim, Se $u$ pode ser obtido de $v$ e $v$ pode ser obtido de $w$, então, para obter $u$ de $w$ basta primeiro obter $v$ de $w$ e, em seguida, obter $u$ de $v$ (ou seja, $u\sim v$ e $v\sim w$ implica $u\sim w$).
+	\end{proof}
+	
+	\par\vspace{0.3cm} Por exemplo, podemos ter $S = \{a, b, c\}$. Então, $acc^{-1}b$ é equivalente  a $ab$; $aab^{-1}bbaccc^{-1}$ é equivalente a $aabac$; $a^{-1}aabb^{-1}a^{-1}$ é equivalente à palavra vazia e a palavra $ca^{-1}b$ é equivalente a $cc^{-1}caa^{-1}a^{-1}bbca^{-1}ac^{-1}b^{-1}$
+	
+	
+	\begin{theorem}[Grupo livre]
+		\label{grupo livre}
+		Seja $S$ um conjunto de símbolos distintos. Para qualquer palavra $u$ em $W(S)$, seja $\overline{u}$ o conjunto de todas as palavras de $W(S)$ que são equivalentes a $u$ (ou seja, $\overline{u}$ é a classe de equivalência contendo $u$). Então, o conjunto de todas as classes de equivalência de elementos de $W(S)$ é um grupo sob a operação $\overline{u}\cdot\overline{v} = \overline{uv}$. 
+	\end{theorem}
+	
+	\begin{proof}
+		Se $u$ e $v$ são duas palavras de $S$, então $uv$ também é. Daí, é claro que $\overline{u}\cdot\overline{v} = \overline{uv}$, logo nosso conjunto é fechado para essa operação. Podemos ver que a identidade é a classe $\overline{e}$ (ou seja, o conjunto de palavras equivalentes à palavra vazia). Agora, sejam $u,v$ e $w$ palavras distintas de $S$. Então, note que 
+		
+		\begin{align*}
+		(\overline{u}\cdot\overline{v})\cdot\overline{w} = \overline{uv}\cdot\overline{w} = \overline{uvw} = \overline{u}\cdot (\overline{vw}) = \overline{u}\cdot (\overline{v}\cdot\overline{w})
+		\end{align*}
+		
+		\par\vspace{0.3cm} logo, a operação é associativa. Por fim, o inverso de $\overline{u}$ é a classe de equivalência da palavra $v$ que, justaposta com $u$, nos dá uma palavra equivalente à palavra vazia. Em símbolos, se $uv\sim e$, então $\overline{u}\cdot\overline{v} = \overline{e}$ e $\overline{v}$ é o inverso de $\overline{u}$.
+		
+	\end{proof}
+	
+	\begin{theorem}[Propriedade do mapeamento universal]
+		\label{mapeamento universal}
+		Todo grupo é imagem homomórfica de um grupo livre.
+	\end{theorem}
+	
+	\begin{proof}
+		Sejam $G$ um grupo, $S$ o conjunto dos geradores de $G$ (tal conjunto existe pois podemos tomar $S = G$) e $F$ o grupo livre em $S$. Para maior claridade, vamos denotar a palavra $x_1x_2\cdots x_n$ em $W(S)$ por $(x_1x_2\cdots x_n)_F$ e o produto em $G$ por $(x_1x_2\cdots x_n)_G$. Além disso, assim como antes, $\overline{x_1x_2\cdots x_n}$ é a classe de equivalência em $F$ contendo $(x_1x_2\cdots x_n)_F$.
+		
+		\par\vspace{0.3cm} Agora, considere a correspondência $\phi: F\to G$ dada por: 
+		
+		\begin{align*}
+		\phi(\overline{x_1x_2\cdots x_n}) = (x_1x_2\cdots x_n)_G
+		\end{align*}
+		
+		\par\vspace{0.3cm} 
+		Podemos ver que $\phi$ está bem definida, uma vez que inserir ou deletar expressões da forma $xx^{-1}$ ou $x^{-1}x$ na palavra equivale a inserir ou deletar identidades no produto em $G$. Agora, para verificar que $\phi$ preserva a operação, basta notar que
+		
+		\begin{align*}
+		&\phi[(\overline{x_1x_2\cdots x_n})(\overline{y_1y_2\cdots y_m})] =  \phi(\overline{x_1x_2\cdots x_ny_1y_2\cdots y_m}) = \\ = &(x_1\cdots x_ny_1\cdots y_m)_G = (x_1\cdots x_n)_G(y_1\cdots y_m)_G
+		\end{align*}
+		
+	\end{proof}
+	
+	\begin{corollary}
+		\label{iso grupo quociente}
+		Todo grupo é isomorfo a um grupo quociente de um grupo livre.
+	\end{corollary}
+	
+	\begin{proof}
+		Do Teorema \eqref{primeiro teorema de isomorfismo}, sabemos que $F/\Ker\phi\cong \phi(F)$, sendo $\phi(F)$ um subgrupo de $G$. Como $S$ gera $G$, então a nossa aplicação $\phi$ é sobrejetora. Portanto, $\phi(F) = G$ e, consequentemente, $F/\Ker\phi\cong G$.
+	\end{proof}
+	
+	\begin{deff}[Geradores e relações]
+		Seja $G$ um grupo gerado por algum subconjunto $A = \{ a_1, a_2, \dots, a_n \}$ e seja $F$ o grupo livre em $A$. Seja $W = \{ w_1, w_2, \dots, w_t \}$ um subconjunto de $F$ e seja $N$ o menor subgrupo normal de $F$ contendo $W$. Dizemos que $G$ é dado pelos geradores $a_1, a_2, \dots, a_n$ e pelas relações $w_1 = w_2 = \cdots = w_t = e$ se existe um isomorfismo de $F/N$ em $G$ que leva $a_iN$ para $a_i$.
+	\end{deff}
+	
+	\par\vspace{0.3cm} A notação para essa situação é
+	
+	\begin{equation*}
+	G = \langle a_1, a_2, \dots, a_n | w_1 = w_2 = \cdots = w_t = e \rangle.
+	\end{equation*}
+	
+	\par\vspace{0.3cm} Note que restringimos o número de geradores e relações a um número finito, mas isso não é necessário. Além disso, geralmente é mais conveniente escrever as relações na forma implícita. Por exemplo, a relação $a^{-1}b^{-3}ab = e$ é usualemente escrita como $ab = b^3a$. Na prática, não escrevemos o subgrupo normal $N$ que contém as relações. Em vez disso, manipulamos os geradores e tratamos qualquer coisa em $N$ como a identidade. Ao invés de dizer que $G$ é dado por  
+	
+	\begin{equation*}
+	G = \langle a_1, a_2, \dots, a_n | w_1 = w_2 = \cdots = w_t = e \rangle.
+	\end{equation*}
+	
+	\par\vspace{0.3cm} muitos autores preferem dizer que $G$ tem a apresentação 
+	
+	\begin{equation*}
+	G = \langle a_1, a_2, \dots, a_n | w_1 = w_2 = \cdots = w_t = e \rangle.
+	\end{equation*}
+	
+	\par\vspace{0.3cm} Note que um grupo livre é "livre" de relações, isto é, a classe de equivalência contendo a palavra vazia é a única relação. Um fato interessante é que todo subgrupo de um grupo livre também é livre: esse é o chamado \textbf{Teorema de Nielsen-Schreier}. Além disso, grupos livres são fundamentais para a Teoria Combinatória dos Grupos, um dos ramos da Álgebra.
+	
+	\par\vspace{0.3cm}
+	
+	%\begin{example}
+	%	Vamos mostrar que, de fato, os elementos de \\ $\{ bN,baN,ba^2N,ba^3N,b^2N,babN,ba^2bN,ba^3bN \}$ são os mesmos elementos de \\ ${N,aN,a^2N,a^3N,bN,abN,a^2bN,a^3bN}$ (sabendo que $a^4$,$b^2$,$(ab)^2\in N$, sendo $N$ normal e \\ $a^4=b^2=(ab)^2=e$). 
+	%	\par\vspace{0.3cm} Para isso, basta notar que 
+	
+	%	\begin{equation*}
+	%	b^2N=b^2aa^{-1}N=ba^{-1}(abab)b^{-1}a^{-1}N=ba^{-1}Nb^{-1}a^{-1}=(ab)^{-2}N=N
+	%	\end{equation*}
+	
+	%	\begin{equation*}
+	%	babN=a^{-1}(abab)N=a^3N
+	%	\end{equation*}
+	
+	%	\begin{equation*}
+	%	ba^3N=b^{-1}a^{-1}N=(ab)^{-1}N=abN
+	%	\end{equation*}
+	
+	%	\begin{equation*}
+	%	ba^3bN=ba^{-1}bN=aN
+	%	\end{equation*}
+	
+	%	\begin{equation*}
+	%	ba^2bN=a^{-1}(abab)b^{-1}abN=a^3babN=a^2N
+	%	\end{equation*}
+	
+	%	\begin{equation*}
+	%	ba^2N=a^{-1}(abab)b^{-1}aN=a^{-1}b^{-1}aN=a^{-1}baN=a^{-1}a^{-1}b^{-1}N=a^2bN
+	%	\end{equation*}
+	
+	%\end{example}
+	\par\vspace{0.3cm} Por exemplo, podemos escrever 
+	
+	\begin{align}
+	D_4 = \langle a,b | a^4 = b^2 = (ab)^2 = e \rangle
+	\label{apresentacao d4}
+	\end{align}
+	
+	%\begin{example}
+	%	\label{apresentacao d4}
+	%	Podemos escrever
+	
+	%	\begin{align*}
+	%	D_4 = \langle a,b | a^4 = b^2 = (ab)^2 = e \rangle
+	%	\end{align*}
+	
+	%\end{example}
+	
+	\par\vspace{0.3cm} Outro exemplo é o grupo dos quatérnios, aqui denotado por $Q_8$, que tem apresentação
+	
+	\begin{align}
+	Q_8 = \langle a,b| a^2=b^2=(ab)^2 \rangle
+	\label{apresentacao quaternios}
+	\end{align}
+	
+	%\begin{example}
+	%	\label{apresentacao quaternios}
+	%	O grupos dos quatérnios, aqui denotado por $Q_8$, tem apresentação
+	
+	%	\begin{align*}
+	%	Q_8 = \langle a,b| a^2=b^2=(ab)^2 \rangle
+	%	\end{align*}
+	
+	%\end{example}
+	
+	\par\vspace{0.3cm} Vamos chamar de $\cal{Q}(+)$ o grupo dos racionais com a adição. Observe que os elementos da forma
+	\begin{equation*}
+	x_n = \frac{1}{n!}, \ n\in\mathbb{N}
+	\end{equation*}
+	\par\vspace{0.3cm} geram $\cal{Q}(+)$. De fato, se $\displaystyle{ \frac{a}{b}\in\cal{Q}(+) }$, sendo $a\in\mathbb{Z}$ e $b\in\mathbb{N}$, temos que
+	\begin{equation*}
+	\frac{a}{b} = \frac{a(b-1)!}{b(b-1)!} = a(b-1)!\cdot x_b
+	\end{equation*}
+	\par\vspace{0.3cm} Como $x_n$ satisfaz a seguinte igualdade
+	\begin{equation*}
+	nx_n = x_{n-1}
+	\end{equation*}
+	\par\vspace{0.3cm} então é razoável assumir que $\cal{Q}(+)$ tem apresentação, escrita na forma multiplicativa, dada por
+	\begin{equation*}
+	P = \langle x_n, n\geq 1 \ | \ x_n^n = x_{n-1}, n\geq 2 \rangle
+	\end{equation*}
+	\par\vspace{0.3cm} Como quaisquer dois pares de geradores de $P$ comutam, já que um é potência do outro, então $P$ é abeliano. Por conveniência, podemos usar a notação aditiva:
+	\begin{equation}
+	\mathcal{Q}(+) = \langle x_n, n\geq 1 \ | \ nx_n = x_{n-1}, n\geq 2 \rangle
+	\label{apresentacao racionais}
+	\end{equation}
+	\par\vspace{0.3cm} De fato, a apresentação em \eqref{apresentacao racionais} é uma apresentação de $\mathcal{Q}(+)$. Note que ela é o nosso primeiro exemplo de apresentação com infinitos geradores.
+	\par\vspace{0.3cm} Por fim, o grupo dos inteiros com a adição é um grupo livre em uma letra, isto é, $\mathbb{Z} = \langle a|- \rangle$. Esse é o único grupo abeliano não trivial livre.
+	
+	%\begin{example}
+	%	O grupo dos inteiros é um grupo livre em uma letra, ou seja, $\mathbb{Z} = \langle a | -\rangle$. Esse é o único grupo abeliano não trivial que é livre.
+	%\end{example}
+	
+	%\par\vspace{0.3cm}
+	
+	\begin{theorem}[2$^\circ$ Teorema de Isomorfismos]
+		\label{segundo teorema de isomorfismos}
+		Sejam $K$ um subgrupo de $G$ e $N$ um subgrupo normal de $G$. Então, $K/(K\cap N)\cong KN/N$.
+	\end{theorem}
+	
+	\begin{proof}
+		Seja $\phi:\underset{k\mapsto kN}{K\to KN/N}$. Vamos mostrar que $\phi$ é um homomorfismo cujo núcleo é $K\cap N$.
+		\par\vspace{0.3cm}
+		Note que $\phi$ está bem definida, pois se $k_1$ e $k_2$ são dois elementos de $K$ tais que $k_1=k_2$, então $k_1k_2^{-1} = e\in N$. Logo, $k_1N = k_2N$, ou seja, $\phi(k_1)=\phi(k_2)$.	
+		\par\vspace{0.3cm}
+		Além disso, se $kN$ é um elemento qualquer de $KN/N$, então basta tomar $x=k$ para obtermos $\phi(k)=kN$. Logo, $\phi$ é sobrejetora. 	
+		\par\vspace{0.3cm}
+		Note também que se $k_1,k_2\in K$, então $\phi(k_1k_2)=k_1k_2N=k_1Nk_2N=\phi(k_1)\phi(k_2)$, logo $\phi$ preserva a operação.	
+		\par\vspace{0.3cm}
+		Por fim, $\Ker\phi= \{ k\in K | \phi(k) = N \} = \{ k\in K | kN = N \}= \{ k\in K | k\in N \} = K\cap N$. Consequentemente, pelo Teorema \eqref{primeiro teorema de isomorfismo},  $K/(K\cap N)\cong KN/N$.  
+	\end{proof}
+	
+	\par\vspace{0.3cm}
+	
+	\begin{theorem}[3$^\circ$ Teorema de Isomorfismos]
+		\label{terceiro teorema de isomorfismos}
+		Sejam $M$ e $N$ subgrupos normais de $G$, com $N\leq M$. Então, $(G/N)/(M/N)\cong G/M$.
+	\end{theorem}
+	
+	\begin{proof}
+		Seja $\phi:\underset{gN\mapsto gM}{G/N\to G/M}$. Vamos mostrar que $\phi$ é um homomorfismo de núcleo $M/N$.
+		\par\vspace{0.3cm}
+		Primeiro, note que $\phi$ está bem definida pois se $g_1$ e $g_2$ são dois elementos quaisquer de $G$ e $g_1N=g_2N$, então $g_1g_2^{-1}\in N$. Como $N\subseteq M$, então $g_1g_2^{-1}\in M$ e, por isso, $g_1M=g_2M$, ou seja $\phi(g_1N)=\phi(g_2N)$.
+		\par\vspace{0.3cm}
+		Além disso, note que se $g_1,g_2\in G$, então $\phi(g_1Ng_2N)=\phi(g_1g_2N)=g_1g_2M=g_1Mg_2M=\phi(g_1N)\phi(g_2N)$, logo $\phi$ preserva a operação.
+		\par\vspace{0.3cm}
+		Note também que se $gM$ é um elemento qualquer de $G/M$, então basta tomarmos $x=gN$ para obter $\phi(x)=gM$, logo $\phi$ é sobrejetora.
+		\par\vspace{0.3cm}
+		Por fim,  $\Ker\phi={gN\in G/N|\phi(gN)=M}={gN\in G/N|gM=M}={gN\in G/N|g\in M}=MN/N=M/(M\cap N)=M/N$, em que na penúltima igualdade usamos o Teorema \eqref{segundo teorema de isomorfismos}. Portanto, pelo Teorema \eqref{primeiro teorema de isomorfismo}, $(G/N)/(M/N)\cong G/M$. 
+	\end{proof}
+	
+	\par\vspace{0.3cm}
+	
+	\begin{theorem}[Teorema de Dyck]
+		\label{teorema de Dyck}
+		Sejam \begin{align*}
+		G = \langle a_1, a_2, \dots, a_n | w_1 = w_2 = \cdots = w_t = e \rangle
+		\end{align*} 
+		\begin{center}
+			e
+		\end{center} 
+		\begin{align*}
+		\overline{G} = \langle a_1, a_2, \dots, a_n | w_1 = w_2 = \cdots = w_t = w_{t+1} = \cdots = w_{t+k} = e \rangle
+		\end{align*}
+		
+		\par\vspace{0.3cm} Então, $\overline{G}$ é uma imagem homomórfica de $G$.
+		
+	\end{theorem}
+	
+	\begin{proof}
+		Sejam $F$ o grupo livre em $\{a_1, a_2, \dots, a_n\}$, $N$ o menor subgrupo normal contendo $\{w_1, w_2, \dots, w_t\}$ e $M$ o menor subgrupo normal contendo $\{w_1, w_2, \dots, w_t, w_{t+1}, \dots, w_{t+k}\}$. Então, $F/N\cong G$ e $F/M\cong \overline{G}$. 
+		
+		\par\vspace{0.3cm} A correspondência $\phi:\underset{aN\mapsto aM}{F/N\to F/M}$ define um homomorfismo de $F/N$ em $F/M$. Para ver isso, note que $\phi$ está bem definida, pois se $a_1$ e $a_2$ são elementos quaisquer de $F$ e $a_1N=a_2N$, então $a_1a_2^{-1}\in N\subseteq M$. Logo, $a_1a_2^{-1}\in M$, portanto $a_1M=a_2M$, ou seja, $\phi(a_1N)=\phi(a_2N)$.
+		
+		\par\vspace{0.3cm} Além disso, se $aM$ é um elemento qualquer de $F/M$, então basta tomarmos $x=aN$ para obter $\phi(x)=aM$, logo $\phi$ é sobrejetora.
+		
+		Por fim, sejam $a_1N,a_2N\in F/N$. Então, $\phi(a_1Na_2N)=\phi(a_1a_2N)=a_1a_2M=a_1Ma_2M=\phi(a_1N)\phi(a_2N)$, logo $\phi$ preserva a operação. 
+		
+		Como $F/N\cong G$ e $F/M\cong \overline{G}$, então $\phi$ induz um homomorfismo de $G$ em $\overline{G}$.
+	\end{proof}
+	
+	\par\vspace{0.3cm}
+	
+	\begin{corollary}
+		\label{corolario de Dyck}
+		Se $K$ é um grupo que satisfaz as relações de um grupo finito $G$ e $|K|\geq |G|$, então $K$ é isomorfo a $G$.
+	\end{corollary}
+	
+	\begin{proof}
+		Do Teorema \eqref{teorema de Dyck} anterior, sabemos que $K$ é imagem homomórfica de $G$, portanto $|K|\leq |G|$. Por hipótese, $|K|\geq |G|$, logo $|K| = |G|$. 
+	\end{proof}
+	
+	\par\vspace{0.3cm}
+	
+	\begin{theorem}[Classificação dos grupos de ordem 8]
+		\label{classificacao grupos de ordem 8}
+		A menos de isomorfismo, há apenas 5 grupos de ordem 8: $\mathbb{Z}_8$, $\mathbb{Z}_4\oplus\mathbb{Z}_2$, $\mathbb{Z}_2\oplus\mathbb{Z}_2\oplus\mathbb{Z}_2$, $D_4$ e $Q_8$. %(os quatérnios).
+	\end{theorem}
+	
+	\begin{proof}
+		O caso dos grupos abelianos já foi visto anteriormente na Seção \ref{sec-prod-direto-grupos}. Então, seja $G$ um grupo não abeliano de ordem 8. Além disso, sejam $G_1 = \langle a,b | a^4 = b^2 =(ab)^2 = e \rangle$ e $G_2 = \langle a,b | a^2 = b^2 = (ab)^2 \rangle$. Sabemos, das equações \eqref{apresentacao d4} e \eqref{apresentacao quaternios}, que $G_1$ é isomorfo a $D_4$ e $G_2$ é isomorfo a $Q_8$. Portanto, basta mostrarmos que todo grupo não abeliano de ordem 8 satisfaz as relações de $G_1$ ou de $G_2$. 
+		
+		\par\vspace{0.3cm} Como todo grupo que tem apenas elementos de ordem 2 é abeliano, %(exercício 47, capítulo 2) 
+		então sabemos, pelo Teorema \eqref{lagrange}, que $G$ tem pelo menos um elemento de ordem 4. Seja $a$ tal elemento. Então, se $b$ é um elemento de $G$ que não está em $\langle a \rangle$, sabemos que 
+		
+		\begin{align*}
+		G = \langle a \rangle\cup\langle a \rangle b = \{e, a, a^2, a^3, b, ab, a^2b, a^3b\}
+		\end{align*}
+		
+		\par\vspace{0.3cm} Considere o elemento $b^2$ de $G$. Note que $b^2$ não pode ser $b, ab, a^2b$ nem $a^3b$, pois todos esses casos implicam em absurdos. Também não pode ser $a$, pois $b^2$ comuta com $b$ e $a$ não comuta com $b$. Também não pode ser $a^3$, pelo mesmo motivo. Logo, $b^2 = e$ ou $b^2 = a^2$. 
+		
+		\par\vspace{0.3cm} Como $\langle a \rangle$ é um subgrupo normal de $G$, sabemos que $bab^{-1}\in\langle a \rangle$. Disso e do fato que $|bab^{-1}| = |a|$, sabemos que $bab^{-1} = a$ ou $bab^{-1} = a^{-1}$. A primeira hipótese implica $G$ abeliano, o que não queremos, logo $bab^{-1} = a^{-1}$.
+		
+		\par\vspace{0.3cm} Agora, suponha $b^2 = e$. Então, $(ab)^2 = a(ba)b = a(a^{-1}b)b = b^2 = e$, ou seja, $G$ satisfaz as relações de $G_1$. Por outro lado, se $b^2 = a^2$, então $(ab)^2 = a(ba)b = a(a^{-1}b)b = b^2 = a^2$, ou seja, $G$ satisfaz as relações de $G_2$. 
+		
+	\end{proof}
+	
+	\par\vspace{0.3cm}
+	
+	\begin{lemma}
+		\label{lema geradores}
+		Para qualquer grupo $G$, $\langle a,b \rangle = \langle a,ab \rangle$
+	\end{lemma}
+	
+	\begin{proof}
+		Note que $a,ab\in\langle a,b \rangle$ , logo $\langle a,ab \rangle\subseteq \langle a,b \rangle$. Por outro lado, $a=a^1(ab)^0$ e $b=a^{-1}(ab)^1$, ou seja, $a,b\in\langle a,ab \rangle$, logo $\langle a,b \rangle \subseteq \langle a,ab \rangle$. Portanto, $\langle a,b \rangle = \langle a,ab \rangle$.
+	\end{proof}
+	
+	\par\vspace{0.3cm}
+	
+	\begin{lemma}
+		\label{lema diedral}
+		A apresentação  $\langle x,y | x^2=y^n=(xy)^2=e \rangle$ de $D_n$ é equivalente à apresentação \par $\langle x,y | x^2=y^n=e,xyx=y^{-1} \rangle$.
+	\end{lemma}
+	
+	\begin{proof}
+		Partindo da segunda apresentação, note que $xyx=y^{-1}$ implica $xyxy=(xy)^2=e$. Por outro lado, partindo da primeira apresentação, note que $(xy)^2=xyxy=e$ implica $xyx=y^{-1}$. Logo, ambas as apresentações são equivalentes.
+	\end{proof}
+	
+	\par\vspace{0.3cm}
+	
+	\begin{theorem}[Classificação dos grupos diedrais]
+		Qualquer grupo gerado por um par de elementos de ordem 2 é diedral. 
+	\end{theorem}
+	
+	\begin{proof}
+		Seja $G$ um grupo gerado por um par de elementos distintos de ordem 2, $a$ e $b$. Se a ordem de $ab$ é infinita, então $G$ é infinito e satisfaz as relações de $D_{\infty}$. Vamos mostrar que $G\cong D_{\infty}$. 
+		
+		\par\vspace{0.3cm} Pelo Teorema \eqref{teorema de Dyck}, sabemos que $G$ é isomorfo a um grupo quociente de $D_{\infty}$, digamos $D_{\infty}/H$. Suponha que $h$ é um elemento não identidade de $H$. Como todo elemento de $D_{\infty}$ tem uma das formas $(ab)^i$, $(ba)^i$, $(ab)^ia$ ou $(ba)^ib$, por simetria, podemos assumir que $h = (ab)^i$ ou $h = (ab)^ia$.
+		
+		\par\vspace{0.3cm} Se $h = (ab)^i$, então $(ab)^i$ está em $H$ e, portanto, temos
+		\begin{align*}
+		H = (ab)^iH = (abH)^i
+		\end{align*}
+		\par\vspace{0.3cm} de modo que $(abH)^{-1} = (abH)^{i-1}$. Mas
+		\begin{align*}
+		(ab)^{-1}H = b^{-1}a^{-1}H = baH
+		\end{align*}
+		\par\vspace{0.3cm} e segue que
+		\begin{align*}
+		aHabHaH = a^2HbHaH = baH = (abH)^{-1}
+		\end{align*}
+		\par\vspace{0.3cm} Pelo Lema \eqref{lema geradores}, $D_{\infty}/H = \langle aH, bH \rangle = \langle aH, abH \rangle$ e note que $D_{\infty}/H$ satisfaz as relações de $D_i$ (basta substituir $x$ e $y$ no lema 8.6 por $aH$ e $abH$, respectivamente). Em particular, $G$ é finito, o que é impossível.
+		\par\vspace{0.3cm} Agora, se $h = (ab)^ia$, então
+		\begin{align*}
+		H = (ab)^iaH = (ab)^iHaH
+		\end{align*}
+		\par\vspace{0.3cm} e, consequentemente, 
+		\begin{align*}
+		(abH)^i = (ab^i)H = (aH)^{-1} = a^{-1}H = aH
+		\end{align*}
+		\par\vspace{0.3cm} Segue então que
+		\begin{align*}
+		\langle aH, bH \rangle = \langle aH, abH \rangle\subseteq \langle abH \rangle
+		\end{align*}
+		\par\vspace{0.3cm} Contudo, 
+		\begin{align*}
+		(abH)^{2i} = (aH)^2 = H
+		\end{align*}
+		\par\vspace{0.3cm} então $D_{\infty}/H$ é finito novamente. Essa contradição força $H = \{e\}$ e $G$ isomorfo a $D_{\infty}$.
+		\par\vspace{0.3cm} Finalmente, suponha que $|ab| = n$. Como $G = \langle a,b \rangle = \langle a,ab \rangle$, podemos mostrar (devido ao Lema \eqref{lema diedral}) que $G$ é isomorfo a $D_n$ provando que $b(ab)b = (ab)^{-1}$, o que é equivalente a provar que $ba = (ab)^{-1}$ o que, por sua vez, é imediato, uma vez que $a$ e $b$ têm ordem 2.
+		
+	\end{proof}
+	
+	\par\vspace{0.3cm}
+	
+	\begin{deff}[Matrizes de permutação]
+		Uma \textbf{matriz de permutação} é uma matriz quadrada de ordem $n$ formada apenas por zeros e uns (ou seja, binária). Em cada linha e coluna, há apenas uma entrada não nula. Tais matrizes têm como efeito permutar as linhas ou colunas de outras matrizes (ou, dependendo do contexto, as entradas de um vetor).
+	\end{deff}
+	
+	\par\vspace{0.3cm}
+	
+	\begin{lemma}
+		\label{matrizes de permutacao}
+		O grupo formado pelas matrizes de permutação (denotado por $\mathbb{P}_{n\times n}$) é isomorfo a $S_n$.
+	\end{lemma}
+	
+	\begin{proof}
+		Seja $\phi: \underset{\alpha\mapsto P_{\alpha}}{S_n\to\mathbb{P}_{n\times n}}$, sendo $\displaystyle{P_{\alpha} = \begin{bmatrix}
+			e_{\alpha(1)} \\
+			\vdots \\
+			e_{\alpha(n)}
+			\end{bmatrix}}$ e sendo $e_i$ os vetores da base canônica de $\mathbb{R}^n$.
+		
+		\par\vspace{0.3cm}
+		
+		Note que $\psi$ está bem definida, pois permutações iguais são levadas em matrizes iguais.
+		
+		\par\vspace{0.3cm}
+		
+		Além disso, note que $\displaystyle{ P_{\alpha}P_{\beta} = \begin{bmatrix}
+			e_{\alpha(1)} \\
+			\vdots \\
+			e_{\alpha(n)}
+			\end{bmatrix}\begin{bmatrix}
+			e_{\beta(1)} \\
+			\vdots \\
+			e_{\beta(n)}
+			\end{bmatrix} = \begin{bmatrix}
+			e_{\alpha(\beta(1))} \\
+			\vdots \\
+			e_{\alpha(\beta(n))}
+			\end{bmatrix} = P_{\alpha\circ\beta} }$. Isso se justifica pois multiplicando $P_{\beta}$ por $P_{\alpha}$, estamos permutando as linhas de $P_{\beta}$ com a permutação $\alpha$. Mas as linhas de $P_{\beta}$ são as linhas da matriz identidade permutadas por $\beta$. Então, $P_{\alpha}P_{\beta}$ tem o mesmo efeito de permutar as linhas da matriz identidade por $\beta$ e depois por $\alpha$, ou seja, permutar por $\alpha\circ\beta$. 
+		
+		\par\vspace{0.3cm}
+		
+		Note também que $\psi$ preserva a operação, pois se $\alpha, \beta$ são permutações quaisquer de $S_n$, então $\psi(\alpha\circ\beta) = P_{\alpha\circ\beta} = P_{\alpha}P_{\beta} = \psi(\alpha)\psi(\beta)$.
+		
+		\par\vspace{0.3cm}
+		
+		Ademais, $\psi$ é sobrejetora, pois basta tomarmos, em $\mathbb{P}_{n\times n}$, a matriz cujas linhas estão permutadas do mesmo modo que a permutação $\alpha$ em $S_n$; em símbolos, para toda matriz $P_{\alpha}\in\mathbb{P}_{n\times n}$, devemos tomar $\alpha\in S_n$ de modo a obter $\psi(\alpha) = P_{\alpha}$. 
+		
+		\par\vspace{0.3cm}
+		
+		Por fim, temos que $\Ker\psi = \{ \alpha\in S_n | \psi(\alpha) = I_n \} = \{ \alpha\in S_n | P_{\alpha} = I_n \} = \{ \alpha\in S_n | \alpha(i) = i, i=1,2,\dots,n \} = \{e\}$, sendo $I_n$ a matriz identidade de ordem $n$.
+		
+		\par\vspace{0.3cm}
+		
+		Consequentemente, como $\psi$ é um homomorfismo sobrejetor, então pelo Teorema \eqref{primeiro teorema de isomorfismo} concluímos que $S_n\cong\mathbb{P}_{n\times n}$.
+	\end{proof}
+	
+	\par\vspace{0.3cm}
+	
+	\begin{remark}
+		Pelo Teorema \eqref{Cayley}, sabemos que todo grupo finito $G$ é isomorfo a um subgrupo de $S_n$, digamos, $H$. Como $S_n$ é isomorfo a $\mathbb{P}_{n\times n}$, e este é um subgrupo de $GL(n,K)$ (sendo $K$ um corpo), então podemos imergir $G$ em $GL(n,K)$. Em símbolos, $G\cong H\leq S_n\cong\mathbb{P}_{n\times n}\leq GL(n,K)$.
+	\end{remark}
+	
+	\par\vspace{0.3cm}
+	
+	\begin{lemma}
+		\label{grupos de ordem 2p}
+		Seja $p$ primo. Todo grupo de ordem $2p$ é cíclico ou isomorfo a $D_p$.
+	\end{lemma}
+	
+	\begin{proof}
+		Primeiro, note que ser cíclico de ordem $2p$ é equivalente a ser isomorfo a $\mathbb{Z}_{2p}$. 
+		\par\vspace{0.3cm}
+		Pelo Teorema \eqref{cauchy}, sabemos que $G$ tem um elemento de ordem $p$, digamos $a$. Agora, suponha que $G$ não possui elemento de ordem $2p$, ou seja, não é cíclico, e seja $b\in G$ não trivial tal que $b\notin\langle a \rangle$. Então, pelo Teorema \eqref{lagrange}, $|b|=2$ ou $|b|=p$. 
+		\par\vspace{0.3cm}
+		Como $|\langle a \rangle \cap \langle b \rangle|$ divide $|\langle a \rangle|=p$ e $\langle a \rangle\neq\langle b \rangle$, então $|\langle a \rangle \cap \langle b \rangle|=1$. 
+		\par\vspace{0.3cm}
+		Então, suponha $|b|=p$. Daí, 
+		pelo Teorema \eqref{ordem de HK},	
+		$|\langle a \rangle \langle b \rangle| = |\langle a\rangle||\langle b\rangle|/|\langle a\rangle\cap \langle b \rangle|=p^2>2p$, o que é absurdo. Portanto, $|b|=2$, ou seja, $b^2 = e$.
+		\par\vspace{0.3cm}
+		Usando o mesmo argumento que acima, mostramos que $|ab|=2$, ou seja, $(ab)^2 = e$. 
+		\par\vspace{0.3cm}
+		Como $D_p=\langle a,b|a^p=b^2=(ab)^2=e\rangle$ e $G$ tem ordem $2p$ e satisfaz as relações de $D_p$, então $G\cong D_p$.
+		\par\vspace{0.3cm}
+		Finalmente, se $G$ tem um elemento de ordem $2p$, então $G$ é cíclico e, portanto, isomorfo a $\mathbb{Z}_{2p}$.
+	\end{proof}
+	
+	\par\vspace{0.3cm} Sendo $Q_6 = \langle a,b|a^6=1, a^3=b^2=(ab)^2 \rangle$ o grupo dicíclico de ordem $12$ e $A_4$ o grupo alternante de ordem $12$, temos a seguinte tabela:
+	
+	%\begin{table}[h!]
+	\begin{center}	
+		\begin{tabular}{ccc}
+			Ordem & Abeliano & Não abeliano \\
+			1 & $\mathbb{Z}$ & - \\
+			2 & $\mathbb{Z}_2$ & - \\
+			3 & $\mathbb{Z}_3$ & - \\
+			4 & $\mathbb{Z}_2\oplus\mathbb{Z}_2$, $\mathbb{Z}_4$ & - \\
+			5 & $\mathbb{Z}_5$ & - \\
+			6 & $\mathbb{Z}_6\cong\mathbb{Z}_2\oplus\mathbb{Z}_3\cong\mathbb{Z}_3\oplus\mathbb{Z}_2$ & $S_3\cong D_3\cong GL(2,\mathbb{Z}_2)$ \\
+			7 & $\mathbb{Z}_7$ & - \\
+			8 & $\mathbb{Z}_2\oplus\mathbb{Z}_2\oplus\mathbb{Z}_2$, $\mathbb{Z}_4\oplus\mathbb{Z}_2$, $\mathbb{Z}_8$ & $D_4$, $Q_8$\\
+			9 & $\mathbb{Z}_3\oplus\mathbb{Z}_3$, $\mathbb{Z}_9$ & - \\
+			10 & $\mathbb{Z}_{10}\cong\mathbb{Z}_2\oplus\mathbb{Z}_5\cong\mathbb{Z}_5\oplus\mathbb{Z}_2$ & $D_5$ \\
+			11 & $\mathbb{Z}_{11}$ & - \\
+			12 & $\mathbb{Z}_2\oplus\mathbb{Z}_2\oplus\mathbb{Z}_3\cong\mathbb{Z}_2\oplus\mathbb{Z}_6\cong\mathbb{Z}_6\oplus\mathbb{Z}_2$ , $\mathbb{Z}_{12}$ & $D_6$, $A_4$, $Q_6$ \\
+			13 & $\mathbb{Z}_{13}$ & - \\
+			14 & $\mathbb{Z}_{14}\cong\mathbb{Z}_2\oplus\mathbb{Z}_7\cong\mathbb{Z}_7\oplus\mathbb{Z}_2$ & $D_7$ \\
+			15 & $\mathbb{Z}_{15}\cong\mathbb{Z}_3\oplus\mathbb{Z}_5\cong\mathbb{Z}_5\oplus\mathbb{Z}_3$ & - \\
+			\label{tabela grupos}	
+		\end{tabular}%\caption*{$Q_6 = \langle a,b|a^6=1, a^3=b^2=(ab)^2 \rangle$ é o grupo dicíclico de ordem $12$.}
+	\end{center}
+	%\label{tabela grupos}
+	%\end{table}
+	\section{Apresentações de produtos diretos}
+	\hspace{12pt} Podemos, em termos das apresentações de dois grupos, escrever uma apresentação do produto direto desses grupos, da seguinte forma.
+	\begin{prop}
+	\label{apresentacao prod direto}
+	Sejam $G$ e $H$ grupos com apresentações $\langle X|R \rangle$ e $\langle Y|S \rangle$, respectivamente. Então, o produto direto $G\oplus H$ (ou $G\times H$) tem apresentação
+	$$ \langle X,Y \ | \ R,S, [X,Y] \ \rangle $$
+	onde $[X,Y]$ denota o comutador de $X$ e $Y$, ou seja, o conjunto que contém todos os comutadores de um elemento de $x$ com um elementos de $y$.
+	\end{prop}
+	\par\vspace{0.3cm} Por exemplo, os grupos $\mathbb{Z}_2 = \langle a\ | \ a^2=1 \rangle$ e $\mathbb{Z}_3 = \langle b\ | \ b^3=1 \rangle$ têm produto direto dado pela apresentação:
+	\begin{equation*}
+	\mathbb{Z}_3\oplus\mathbb{Z}_2 = \langle a,b \ | \ b^3=a^2=1, ab = ba \rangle \cong \mathbb{Z}_6 
+	\end{equation*}
+	\par\vspace{0.3cm} e obtemos outra apresentação para o grupo cíclico de ordem $6$, $\mathbb{Z}_6$.
+	
+	
+	\section{Grupos abelianos finitamente gerados}
+	\hspace{12pt} Grande parte dos grupos que surgem na topologia como grupos fundamentais de superfícies e também em outras áreas da Matemática são grupos abelianos, ou seja, são grupos $G$ tais que
+	\begin{equation*}
+	xy = yx\ , \forall x,y\in G
+	\end{equation*}
+	\par\vspace{0.3cm} No caso de grupos abelianos, é comum adotar a notação aditiva para a operação do grupo. Nessa seção, apresentaremos o \textbf{Teorema Fundamental dos Grupos Abelianos Finitamente Gerados}, que caracteriza os grupos abelianos finitamente gerados como soma direta de grupos cíclicos (finitos e infinitos), e essa soma é unicamente determinada a menos da ordem dos fatores cíclicos. Com isso, vemos que a estrutura de um grupo abeliano finitamente gerado é naturalmente simples. 
+	\par\vspace{0.3cm} A primeira demonstração desse Teorema foi obtida por Leopold Kronecker em 1858. Mais precisamente, Kronecker demonstrou esse resultado para grupos abelianos finitos, i.e., ele provou que todo grupo abeliano finito é soma direta de grupos cíclicos de ordem igual à potência de um primo, e que a fatorização é única a menos da ordem dos fatores na decomposição.
+	\par\vspace{0.3cm} É interessante nos determos um pouco no estudo dos grupos abelianos finitamente gerados, pois também podemos enxergar suas apresentações de uma maneira interessante: através de matrizes. Antes de começar, vale a pena introduzir o conceito de comutador:
+	\begin{deff}
+		\label{def comutador}
+		Seja $G$ um grupo e $g,h\in G$. O comutador de $g$ e $h$ em $G$ é o elemento $[g,h] = g^{-1}h^{-1}gh$. Note que se $[g,h]=1$, então $g$ comuta com $h$.
+	\end{deff}
+	\begin{deff}
+		\label{def grupo finitamente gerado}
+		Dada uma apresentação $G = \langle  X|R \rangle$ de um grupo $G$, se o conjunto de geradores, $X$, é finito, dizemos que $G$ é finitamente gerado.
+	\end{deff}
+	\par\vspace{0.3cm} Agora podemos começar.
+	\subsection{Grupos abelianos finitamente apresentados}
+	\begin{deff}
+		\label{def grupo finitamente apresentado}
+		Dada uma apresentação $G = \langle X|R \rangle$ de um grupo $G$, se o conjunto de geradores, $X$, e o conjunto de relatores, $R$, são finitos, dizemos que $G$ é finitamente apresentado.
+	\end{deff}
+	\par\vspace{0.3cm} O grupo $\langle a,b,c|a^4=b^2=1, ab=ba, ac=ca,bc=cb \rangle $ é um exemplo de grupo abeliano finitamente apresentado (e, consequentemente, finitamente gerado)\footnote{Todo grupo finitamente apresentado é também finitamente gerado, mas a recíproca é falsa.} escrito na forma multiplicativa. Aditivamente, escreveríamos $\langle a,b,c|4a=2b=0, a+b=b+a, a+c=c+a, b+c=c+b \rangle$. 
+	\par\vspace{0.3cm} Contudo, como estamos trabalhando com grupos abelianos, sabemos que os geradores comutam. Por isso, é comum, quando trabalhando apenas com grupos abelianos, omitir as relações de comutação e usar $[ \text{ } ]$ ao inveś de $\langle \text{ } \rangle$. Daí, escrevemos simplesmente $[a,b,c\vert 4a=2b=0]$ ou de forma ainda mais simples $[a,b,c|4a,2b]$.
+	\par\vspace{0.3cm} Denotamos o grupo abeliano gerado por $X_1, X_2, \dots, X_n$ com relatores $R_1, R_2, \dots, R_m$ por 
+	\begin{equation*}
+	[X_1, X_2, \dots, X_n\vert R_1, R_2, \dots, R_m],
+	\end{equation*}
+	onde os relatores são escritos aditivamente pois o grupo é abeliano. Um relator qualquer $R_i$, por sua vez, pode ser escrito na forma $a_{i1}X_1+ \cdots +a_{in}X_n$ em que os $a_{ij}$ formam uma matriz $A$ $m\times n$ de inteiros. Como o nome dos geradores não é importante sua quantidade é a mesma que a quantidade de colunas de $A$, podemos recuperar a aoresentação a partir da matriz $A$.
+	\par\vspace{0.3cm} Para qualquer matriz inteira $A=(a_{ij})$ $m\times n$, $[A]$ denota o grupo abeliano em $n$ geradores $X_1, \dots, X_n$, sujeitos às $m$ relações
+	\begin{equation*}
+	\begin{array}{ccc}
+	a_{11}X_1 +  \cdots  + a_{1n}X_n & = & 0 \\
+	a_{21}X_1 +  \cdots  + a_{2n}X_n & = & 0 \\
+	& \vdots &  \\
+	a_{m1}X_1 +  \cdots  + a_{mn}X_n & = & 0 \\
+	\end{array} 	
+	\end{equation*}
+	\par\vspace{0.3cm} Por exemplo, a matriz 
+	$$ \begin{bmatrix}
+	8 & 0 & 0 \\
+	0 & 8 & 0 \\
+	0 & 0 & 8 \\
+	2 & 2 & 2
+	\end{bmatrix} $$
+	\par\vspace{0.3cm} denota o grupo abeliano $[ a,b,c \vert 8a=8b=8c=2a+2b+2c=0 ]$.
+	\par\vspace{0.3cm} Em essência, um grupo abeliano finitamente apresentado é um sistema linear homogêneo, mas com coeficientes inteiros. A maior diferença entre os sistemas aqui e os sistemas que aparecem na Álgebra Linear é que aqui a divisão não é permitida. Por exemplo, um elemento $x$ de ordem $8$ satisfaz $8x=0$, o que, em Álgebra Linear, implicaria $x=0$\footnote{Isso se deve ao fato de que na Álgebra Linear os coeficientes formam um campo.}. Aqui, isso não acontece porque só podemos dividir pelos inteiros que têm inversos multiplicativos, i.e., $\pm1$.
+	\par\vspace{0.3cm} Por exemplo, a matriz 
+	$$ \begin{bmatrix}
+	8 & 0 & 0 \\
+	0 & 8 & 0 \\
+	0 & 0 & 8 
+	\end{bmatrix} $$
+	\par\vspace{0.3cm} denota o grupo abeliano $[x,y,z\vert 8x=8y=8z=0]$ que é claramente a soma direta de $3$ grupos cíclicos de ordem $8$, ou seja, isomorfo a $\mathbb{Z}_8\oplus\mathbb{Z}_8\oplus\mathbb{Z}_8$. Se a matriz $[A]$ é diagonal, como foi o caso do exemplo acima, podemos escrever o grupo abeliano como soma direta a partir das entradas da diagonal principal. Por exemplo, a matriz
+	$$ \begin{bmatrix}
+	8 & 0 & 0 \\
+	0 & 8 & 0 \\
+	0 & 0 & 0 
+	\end{bmatrix} $$
+	\par\vspace{0.3cm} denota o grupo abeliano $[x,y,z \vert 8x=8y=0]$. Estritamente falando, deveríamos ter escrito a relação $0z=0$, mas ela é claramente redundante. O último gerador, $z$, tem ordem infinita, então o grupo é isomorfo a $\mathbb{Z}_8\oplus\mathbb{Z}_8\oplus\mathbb{Z}$, ou seja, as entradas nulas da diagonal principal correspondem (se a matriz é diagonal) a $\mathbb{Z}$. No exemplo acima, a terceira linha é supérflua, e podemos escrever
+	$$ \begin{bmatrix}
+	8 & 0 & 0 \\
+	0 & 8 & 0 \\
+	0 & 0 & 8 
+	\end{bmatrix}\cong \begin{bmatrix}
+	8 & 0 & 0 \\
+	0 & 8 & 0 \\ 
+	\end{bmatrix} \cong \mathbb{Z}_8\oplus\mathbb{Z}_8\oplus\mathbb{Z} $$
+	\subsubsection{Operações elementares de linha}
+	\hspace{12pt} Aqui, estamos em uma situação parecida com a de resolver sistemas lineares na Álgebra Linear. Lá, as operações elementares de linha eram fundamentais tanto para a solução dos sistemas quanto para a eliminação de Gauss. Vamos revisar as operações elementares de linha, e observar as diferenças para os grupos abelianos.
+	\paragraph{$R_i\leftrightarrow R_j$: trocar as linhas $i$ e $j$.} Esse movimento é equivalente a trocar um par de equações do nosso sistema e, assim como em Álgebra Linear, é permitido. O novo sistema é equivalente ao original e, portanto, os grupos são isomorfos. Por exemplo
+	$$
+	\begin{bmatrix}
+	8 & 6 & 5 \\
+	3 & 8 & -2 \\
+	1 & 0 & -3
+	\end{bmatrix}\cong\begin{bmatrix}
+	3 & 8 & -2 \\
+	8 & 6 & 5 \\
+	1 & 0 & -3
+	\end{bmatrix}
+	$$
+	\par\vspace{0.3cm} pois apenas trocamos as linhas $1$ e $2$.
+	\paragraph{$R_i \div k$: dividir a linha $i$ por $k$ ($k=\pm1$ apenas).} Aqui a nossa situação de grupos abelianos difere da Álgebra Linear. Aqui os nossos "escalares" são inteiros e a divisão, em geral, não é permitida. De fato, os únicos valores de $k$ para os quais essa operação é permitida são $k=\pm1$.
+	
+	\paragraph{$R_i - kR_j$: subtrair $k$ vezes a linha $j$ da linha $i$ ($k$ qualquer inteiro).} Essa é a operação de linha mais útil na Álgebra Linear, e também aqui. Note que aqui só podemos usar valores inteiros de $k$. Por exemplo, seja
+	$$
+	G = \begin{bmatrix}
+	8 & 6 & 5 \\
+	3 & 8 & -2 \\
+	1 & 0 & -3
+	\end{bmatrix} \stackrel{R_1 - 2R_2}{\cong} \begin{bmatrix}
+	2 & -10 & 9 \\
+	3 & 8 & -2 \\
+	1 & 0 & -3
+	\end{bmatrix} \stackrel{R_1\leftrightarrow R_3}{\cong} \begin{bmatrix}
+	1 & 0 & -3 \\
+	3 & 8 & -2 \\
+	2 & -10 & 9
+	\end{bmatrix}
+	$$ 
+	\par\vspace{0.3cm} Imitando a eliminação de Gauss, podemos efetuar as seguintes operações
+	\begin{align*} 
+	G \cong \begin{bmatrix}
+	1 & 0 & -3 \\
+	3 & 8 & -2 \\
+	2 & -10 & 9
+	\end{bmatrix} \\ \stackrel{R_2 - 3R_1}{\cong} \begin{bmatrix}
+	1 & 0 & -3 \\
+	0 & 8 & 7 \\
+	2 & -10 & 9
+	\end{bmatrix} \\ \stackrel{R_3 - 2R_1}{\cong} \begin{bmatrix}
+	1 & 0 & -3 \\
+	0 & 8 & 7 \\
+	0 & -10 & 15
+	\end{bmatrix} \\ \stackrel{R_2 + R_3}{\cong} \begin{bmatrix}
+	1 & 0 & -3 \\
+	0 & 8 & 7 \\
+	0 & -2 & 22
+	\end{bmatrix} \\ \stackrel{R_2 + 4R_3}{\cong} \begin{bmatrix}
+	1 & 0 & -3 \\
+	0 & 0 & 95 \\
+	0 & -2 & 22
+	\end{bmatrix} \\ \stackrel{R_2\leftrightarrow R_3}{\cong} \begin{bmatrix}
+	1 & 0 & -3 \\
+	0 & -2 & 22 \\
+	0 & 0 & 95 
+	\end{bmatrix}
+	\end{align*} 
+	\par\vspace{0.3cm} Se pudéssemos obter uma matriz diagonal, teríamos identificado nosso grupo $G$ como uma soma direta de grupos cíclicos. Mas aqui parece ser o máximo que podemos atingir: qualquer outra operação elementar de linha tornaria a matriz mais complicada, mais longe de uma matriz diagonal. Precisamos de operações adicionais.
+	
+	\subsubsection{Operações elementares de coluna}
+	\hspace{12pt} Enquanto que as operações elementares de linhas convertem um conjunto de equações homogêneas em outro conjunto, equivalente, nas mesmas variáveis, as operações elementares de colunas também convertem um conjunto de  equações homogêneas em outro conjunto, equivalente, mas muda as variáveis.
+	\par\vspace{0.3cm} Contudo, como estamos interessados na estrutura de grupo a menos de isomorfismo, essa mudança pode ser feita e podemos usar tais operações para obter equações mais simples em um conjunto gerador diferente mas equivalente.
+	\par\vspace{0.3cm} O caso mais simples é a troca de duas colunas. 
+	\paragraph{$C_i\leftrightarrow C_j$: trocar as colunas $i$ e $j$.} O efeito, na apresentação do grupo, é trocar os geradores correspondentes, sendo que os grupos descritos pelas duas apresentações são isomorfos. Por exemplo
+	\begin{align*}
+	\begin{bmatrix}
+	3 & 3 & 6 \\
+	8 & 4 & 0 \\
+	0 & 12 & 12
+	\end{bmatrix} &\cong [ a,b,c \vert 3a+3b+6c=8a+4b=12b+12c=0 ] \\ &\cong [ a,b,c \vert 3a+3c+6b=8a+4b=12c+12b=0 ] \\ &\cong [ a,b,c \vert 3a+6b+3c=8a+4b=12b+12c=0 ] \cong \begin{bmatrix}
+	3 & 6 & 3 \\
+	8 & 0 & 4 \\
+	0 & 12 & 12
+	\end{bmatrix}
+	\end{align*}
+	\par\vspace{0.3cm} No exemplo acima, fizemos $C_2\leftrightarrow C_3$.
+	\paragraph{$C_i\times k$: multiplicar uma coluna por $k$ ($k=\pm1$ apenas).} Para $k=1$ não há nenhuma alteração. Para $k=-1$, contudo, o efeito é trocar o sinal de cada entrada da coluna. Se $X_i$ é o gerador correspondente, essa operação equivale a substituir $X_i$ por $-X_i$.
+	\paragraph{$C_i - kC_j$: subtrair $k$ vezes a coluna $j$ da coluna $i$ ($k$ qualquer inteiro).} Para essa operação, o efeito é menos óbvio. Considere o exemplo
+	\begin{align*}
+	\begin{bmatrix}
+	3 & 6 & 3 \\
+	8 & 17 & 4 \\
+	0 & 5 & 2
+	\end{bmatrix} = [X_1, X_2, X_3 \vert 3X_1 + 6X_2 + 3X_3 = 8X_1 + 17X_2 + 4X_3 = 5X_2 + 2X_3 = 0] 
+	\end{align*}
+	\par\vspace{0.3cm} e defina $X_1' = X_1+2X_2$. Claramente, o grupo é gerado por $\left\{ X_1', X_2, X_3 \right\}$ pois $X_1 = X_1' - 2X_2$. Escrevendo as relações em termos do novo conjunto de geradores, temos
+	\begin{equation*}
+	3(X_1' - 2X_2) + 6X_2  + 3X_3 = 8(X_1' - 2X_2) + 17X_2 + 4X_3 = 5X_2 + 2X_3 = 0
+	\end{equation*} 
+	\par\vspace{0.3cm} Logo, o grupo tem a apresentação equivalente
+	\begin{align*}
+	[X_1', X_2, X_3 \vert 3X_1' + 3X_3 = 8X_1' + X_2 + 4X_3 = 5X_2 + 2X_3 = 0] \cong \begin{bmatrix}
+	3 & 0 & 3 \\
+	8 & 1 & 4  \\
+	0 & 5 & 2
+	\end{bmatrix}
+	\end{align*}
+	\par\vspace{0.3cm} O efeito da mudança de variáveis $X_1\to X_1' = X_1 + 2X_2$ é a operação elementar de coluna $C_2 - 2C_1$. Note que o sinal muda e os índices também.
+	\par\vspace{0.3cm} Então, se os geradores são $X_1, \dots, X_n$, temos que
+	\begin{itemize}
+		\item $C_i\leftrightarrow C_j$ corresponde a $X_i\leftrightarrow X_j$
+		\item $C_i\times-1$ corresponde a $X_i\to -X_i$
+		\item $C_i -kC_j$ corresponde a $X_j\to X_j + kX_i$
+	\end{itemize}
+	\par\vspace{0.3cm} Com essas observações, provamos o seguinte teorema:
+	\begin{theorem}
+		\label{equivalencia matrizes}
+		Se a matriz inteira (i.e., com entradas inteiras) $B$ é obtida da matriz inteira $A$ por uma sequência de operações elementares de linhas e colunas, então $[B]\cong[A]$.
+	\end{theorem}
+	\par\vspace{0.3cm} Por exemplo
+	\begin{align*}
+	\begin{bmatrix}
+	10 & 14 & 4 \\
+	12 & 16 & 8 \\
+	14 & 18 & 8
+	\end{bmatrix} \stackrel{C_1\leftrightarrow C_3}{\cong} 
+	\begin{bmatrix}
+	4 & 14 & 10 \\
+	8 & 16 & 12 \\
+	8 & 18 & 14
+	\end{bmatrix}& \\  \stackrel{C_2 - 3C_1, C_3 - 2C_1}{\cong} 
+	\begin{bmatrix}
+	4 & 2 & 2 \\
+	8 & -8 & -4 \\
+	8 & -6 & -2
+	\end{bmatrix}& \\ \stackrel{R_2 - 2R_1, R_3 - 2R_1}{\cong}
+	\begin{bmatrix}
+	4 & 2 & 2 \\
+	0 & -12 & -8 \\
+	0 & -10 & -6
+	\end{bmatrix}& \\ \stackrel{C_1\leftrightarrow C_2}{\cong} 
+	\begin{bmatrix}
+	2 & 4 & 2 \\
+	-12 & 0 & -8 \\
+	-10 & 0 & 6
+	\end{bmatrix}& \\ \stackrel{C_2 - 2C_1, C_3 - C_1}{\cong} 
+	\begin{bmatrix}
+	2 & 0 & 0 \\
+	-12 & 24 & 4 \\
+	-10 & 20 & 4
+	\end{bmatrix}& \\ \stackrel{R_2 + 6R_1, R_3 + 5R_1}{\cong} 
+	\begin{bmatrix}
+	2 & 0 & 0 \\
+	0 & 24 & 4 \\
+	0 & 20 & 4
+	\end{bmatrix}& \\ \stackrel{C_2\leftrightarrow C_3}{\cong} 
+	\begin{bmatrix}
+	2 & 0 & 0 \\
+	0 & 4 & 0 \\
+	0 & 4 & -4
+	\end{bmatrix}& \\ \stackrel{R_3 - R_2}{\cong} 
+	\begin{bmatrix}
+	2 & 0 & 0 \\
+	0 & 4 & 0 \\
+	0 & 0 & -4 
+	\end{bmatrix}& \\ \stackrel{R_3\div-1}{\cong} 
+	\begin{bmatrix}
+	2 & 0 & 0 \\
+	0 & 4 & 0 \\
+	0 & 0 & 4
+	\end{bmatrix}& \cong \mathbb{Z}_2\oplus\mathbb{Z}_4\oplus\mathbb{Z}_4
+	\end{align*}
+	\paragraph{Teorema Fundamental dos Grupos Abelianos Finitamente Gerados.} Usando as operações elementares de linhas e colunas, podemos colocar todas as matrizes inteiras na forma diagonal, e temos o seguinte teorema:
+	\begin{theorem}
+		\label{teorema fundamental abelianos finitamente apresentados}
+		Todo grupo abeliano finitamente apresentado é uma soma direta de grupos cíclicos.
+	\end{theorem}
+	\begin{proof}
+		Seja $A$ a matriz da apresentação finita de um grupo abeliano. 
+		\par\textbf{1° caso: $A$ é $1\times1$.} Seja $A = (m)$. Podemos multiplicar por $-1$, se necessário, então podemos assumir $m\geq0$. Então, $[A]\cong\mathbb{Z}$ se $m=0$ e $[A]\cong\mathbb{Z}_m$ se $m>0$ ($\mathbb{Z}_1$ é o grupo trivial e pode ser desconsiderado caso apareça).
+		\par\textbf{2° caso: $A = (m,0,\dots,0)$ para algum $m$.} Nesse caso, podemos ver que $[A]$ é isomorfo à soma direta $\mathbb{Z}_m\oplus\underbrace{\mathbb{Z}\oplus\cdots\oplus\mathbb{Z}}_{n-1}$.
+		\par\textbf{3° caso:} \textbf{$A = \begin{pmatrix}m\\0\\\vdots\\0\end{pmatrix}$ para algum $m$.} Podemos ver que $[A]\cong\mathbb{Z}_m$.
+		\par\textbf{4° caso: $A$ é a matriz nula $m\times n$.} Podemos ver que $[A]$ é isomorfo à soma direta de $n$ cópias de $\mathbb{Z}$.
+		\par\textbf{5° caso: caso geral.} Suponha que $A\neq0$ e possui pelo menos $2$ linhas e $2$ colunas. Escolha um elemento não nulo de menor valor absoluto e permute linhas e colunas para trazer esse elemento para a posição $a_{11}$ multiplicando, se necessário, por $-1$ para torná-lo positivo. Agora, subtraia múltiplos adequados da primeira linha e da primeira coluna das outras linhas e colunas de modo que todas as entradas da primeira linha e da primeira coluna fiquem entre $0$(incluso) e $a_{11}$. Esse processo pode continuar, reduzindo o menor valor absoluto não nulo, até que a matriz tome a forma $(m,0,\dots,0)$, $\begin{pmatrix}
+		m\\
+		0\\
+		\vdots\\
+		0
+		\end{pmatrix}$ ou $\begin{pmatrix}
+		m & 0 \\
+		0 & B
+		\end{pmatrix}$, sendo $m$ um inteiro não negativo e $B$ uma matriz inteira com uma linha e uma coluna a menos que $A$. O teorema segue, então, por indução: já tratamos os dois primeiros casos e, para o último, aplicamos o processo para a matriz $B$.  
+	\end{proof}
+	\par\vspace{0.3cm} Por exemplo
+	\begin{align*}
+	\begin{bmatrix}
+	9 & 6 & 7 & 5 \\
+	30 & 21 & 17 & 13 \\
+	18 & 15 & 7 & 5
+	\end{bmatrix} \stackrel{\text{permutar colunas}}{\cong} 
+	\begin{bmatrix}
+	5 & 9 & 6 & 7 \\
+	13 & 30 & 21 & 17 \\
+	5 & 18 & 15 & 7
+	\end{bmatrix}& \\ \stackrel{C_3 - C_1}{\cong}
+	\begin{bmatrix}
+	5 & 9 & 1 & 7 \\
+	13 & 30 & 8 & 17 \\
+	5 & 18 & 10 & 7
+	\end{bmatrix}& \\ \stackrel{\text{permutar colunas}}{\cong}
+	\begin{bmatrix}
+	1 & 5 & 9 & 7 \\
+	8 & 13 & 30 & 17 \\
+	10 & 5 & 18 & 7
+	\end{bmatrix}& \\ \stackrel{R_2 - 8R_1, R_3 - 10R_1}{\cong}
+	\begin{bmatrix}
+	1 & 5 & 9 & 7 \\
+	0 & -27 & -42 & -39 \\
+	0 & -45 & -72 & -63 
+	\end{bmatrix}& \\ \stackrel{C_2 - 5C_1, C_3 - 9C_1, C_4 - 7C_1}{\cong} 
+	\begin{bmatrix}
+	1 & 0 & 0 & 0 \\
+	0 & 27 & 42 & 39 \\
+	0 & 45 & 72 & 63
+	\end{bmatrix}& \\ \stackrel{\text{omitir }\mathbb{Z}_1}{\cong}
+	\begin{bmatrix}
+	27 & 42 & 39 \\
+	45 & 72 & 63
+	\end{bmatrix}& \\ \stackrel{C_3 - C_1}{\cong}
+	\begin{bmatrix}
+	27 & 42 & 12 \\
+	45 & 72 & 18
+	\end{bmatrix}& \\ \stackrel{\text{permutar colunas}}{\cong}
+	\begin{bmatrix}
+	12 & 27 & 42 \\
+	18 & 45 & 72
+	\end{bmatrix}& \\ \stackrel{C_2 - 2C_1}{\cong}
+	\begin{bmatrix}
+	12 & 3 & 42 \\
+	18 & 9 & 72
+	\end{bmatrix}& \\ \stackrel{\text{permutar colunas}}{\cong}
+	\begin{bmatrix}
+	3 & 12 & 42 \\
+	9 & 18 & 72
+	\end{bmatrix}& \\ \stackrel{R_2 - 3R_1}{\cong}
+	\begin{bmatrix}
+	3 & 12 & 42 \\
+	0 & -18 & -54
+	\end{bmatrix}& \\ \stackrel{C_2 - 4C_1, C_3 - 14C_1}{\cong}
+	\begin{bmatrix}
+	3 & 0 & 0 \\
+	0 & 18 & 54
+	\end{bmatrix}& \\ \stackrel{}{\cong}
+	\mathbb{Z}_3\oplus\begin{bmatrix}
+	18 & 54
+	\end{bmatrix}& \\ \stackrel{C_3 - 3C_1}{\cong}
+	\mathbb{Z}_3\oplus\begin{bmatrix}
+	18 & 0
+	\end{bmatrix}& \cong \mathbb{Z}_3\oplus\mathbb{Z}_{18}\oplus\mathbb{Z}
+	\end{align*}
+	\par\vspace{0.3cm} Note que o Teorema \eqref{teorema fundamental abelianos finitamente apresentados} lida com grupos abelianos \textit{finitamente apresentados}, i.e., os grupos em que há não só um conjunto finito de geradores, mas também em que as relações entre eles podem ser deduzidas de um conjunto finito de relações.
+	\par\vspace{0.3cm} Não obstante, podemos adaptar a demonstração acima para mostrar que grupos abelianos \textit{finitamente gerados} também são somas diretas de grupos cíclicos. Além disso, como somas diretas de um número finito de grupos cíclicos é também finitamente apresentada, segue que todo grupo abeliano finitamente gerado é também finitamente apresentado, ou seja, para grupos abelianos, ser finitamente apresentado e finitamente gerado são características equivalentes.
+	\begin{theorem}
+		\label{teorema fundamental abelianos finitamente gerados}
+		Todo grupo abeliano finitamente gerado é soma direta de grupos cíclicos.
+	\end{theorem}
+	\begin{proof}
+		Suponha que temos um grupo abeliano $G$ finitamente gerado. Considere o conjunto de todas as relações entre seus geradores e sejam os coeficientes organizados em uma matriz inteira. De fato, essa matriz terá tantas colunas quanto houver geradores mas, possivelmente, infinitas linhas. O mesmo algoritmo da demonstração do Teorema \eqref{teorema fundamental abelianos finitamente apresentados} pode ser usado; claro que, havendo infinitas linhas, teríamos dificuldades práticas em implementar o algoritmo, mas como todas as colunas podem ser operadas em paralelo (i.e., simultaneamente), não há problemas na teoria. A finitude do número de colunas implica que o algoritmo terminará eventualmente.
+	\end{proof}
+	\section{Alguns subgrupos importantes de um grupo abeliano}
+	\hspace{12pt} Dados um inteiro $n$ e um grupo abeliano $G$, definimos $nG = \left\{ ng\vert g\in G \right\}$. Note que sendo $x,y^{-1}\in G$, temos que $(nx)(ny^{-1}) = \underbrace{x+\cdots+x}_{n} + \underbrace{(-y-\cdots-y)}_{n} = n(xy^{-1})\in nG$. Logo, $nG$ é subgrupo de $G$. 
+	\par\vspace{0.3cm} Em notação multiplicativa, escreveríamos $G^n = \left\{ g^n\vert g\in G \right\}$. Uma vez que $G^n$ pode não ser subgrupo de $G$ caso $G$ não seja abeliano, não definiremos tal grupo se $G$ não for abeliano.
+	\par\vspace{0.3cm} Por exemplo, se $G = \mathbb{Z}_4\oplus\mathbb{Z}_8$, então $2G = \left\{ (0,0), (0,2), (0,4), (0,6), (2,0), (2,2), (2,4), (2, 6) \right\}\cong \mathbb{Z}_2\oplus\mathbb{Z}_4$ e também $3G=G$. 
+	\par\vspace{0.3cm} Outro exemplo é $G = \mathbb{Z}_4\oplus\mathbb{Z}_6$. Nesse caso, $2G = \left\{ (0,0), (0,2), (0,4), (2,0), (2,2), (2,4) \right\}\cong \mathbb{Z}_2\oplus\mathbb{Z}_3$ e $3G = \left\{ (0,0), (0,3), (3,0), (3,3), (2,0), (2,3), (1,0), (1,3) \right\}\cong \mathbb{Z}_4\oplus\mathbb{Z}_2$. 
+	\par\vspace{0.3cm} Em ambos os exemplos acima, constatamos os isomorfismos calculando todos os elementos do grupo, ou seja, de modo braçal. Contudo, não é preciso fazer isso toda vez devido às duas proposições a seguir.
+	
+	\begin{prop}
+		\label{subgrupo abeliano nG}
+		Sejam $G$ e $H$ dois grupos abelianos. Então, $n(G\oplus H)\cong nG\oplus nH$.
+	\end{prop}
+	\begin{proof}
+		Vamos mostrar que a correspondência $n(x,y)\mapsto(nx,ny)$ é de fato isomorfismo. Para isso, seja $f: n(G\oplus H)\to nG\oplus nH$ que leva $n(x,y)$ em $(nx,ny)$. Primeiro, note que se $n(x_1,y_1) = n(x_2,y_2)$, então é claro que $f(n(x_1,y_1)) = f(n(x_2,y_2))$, logo $f$ está bem definida.
+		\par\vspace{0.3cm} Além disso, note que $\Ker f = \left\{ n(x,y)\in n(G\oplus H)\vert f( n(x,y) ) = (0,0) \right\} = \left\{ (0,0) \right\}$, logo $f$ tem núcleo trivial, ou seja, é injetiva.
+		\par\vspace{0.3cm} Note também que dado $(g,h)\in nG\oplus nH$, basta tomarmos $n(x,y)\in n(G\oplus H)$ tal que $nx = g$ e $ny = h$ para obtermos $f(n(x,y)) = (g,h)$, logo $f$ é sobrejetora.
+		\par\vspace{0.3cm} Por fim, sejam $n(x,y)$ e $n(x',y')$ em $n(G\oplus H)$. Daí, temos
+		\begin{align*}
+		f( n(x,y) + n(x',y') ) &= f( n(x+x', y+y') ) \\ &= ( n(x+x'), n(y+y') ) \\ &= (nx + nx', ny + ny') \\ &= (nx, ny) + (nx', ny') \\ &= f(n(x,y)) + f(n(x',y'))
+		\end{align*}
+		\par\vspace{0.3cm} logo $f$ preserva a operação. Portanto, $f$ é isomorfismo.
+	\end{proof}
+	\begin{prop}
+		\label{regra nG}
+		Temos $m\mathbb{Z}_n\cong\mathbb{Z}_d$, sendo $\displaystyle{ d = \frac{n}{\mdc(m,n)} }$.
+	\end{prop}
+	\begin{proof}
+		Note que $m\mathbb{Z}_n$ é cíclico gerado por $m$. Além disso, note que $km = 0$ em $\mathbb{Z}_n$ se, e somente se, $\displaystyle{\frac{n}{\mdc(m,n)}  }$ divide $k$. Isso porque $km = 0\implies n| km\implies \displaystyle{ \frac{n}{\mdc(m,n)}\Bigg| \frac{m}{\mdc(m,n)}k }\implies \displaystyle{ \frac{n}{\mdc(m,n)}\Bigg| k }$, pois $\displaystyle{ \frac{m}{\mdc(m,n)}\text{ e }\frac{n}{\mdc(m,n)}  }$ são relativamente primos.. Logo, $m$ tem ordem $\displaystyle{\frac{n}{\mdc(m,n)}}$ e gera um grupo cíclico isomorfo a $\mathbb{Z}_{n/\mdc(m,n)}$.
+	\end{proof}
+	\par\vspace{0.3cm} Por exemplo, se $G = \mathbb{Z}_{30}\oplus\mathbb{Z}_{100}$, então $2G \cong \mathbb{Z}_{15}\oplus\mathbb{Z}_{50}$, $3G \cong \mathbb{Z}_{10}\oplus\mathbb{Z}_{100}$, $6G \cong \mathbb{Z}_5\oplus\mathbb{Z}_{50}$ e $28G \cong \mathbb{Z}_{15}\oplus\mathbb{Z}_{25}$.
+	\par\vspace{0.3cm} Outro subgrupo muito útil é $G[n] = \left\{ g\in G\vert ng=0 \right\}$, $n\in\mathbb{Z}_+^\ast$. Note que $G[n]$ consiste nos elementos de $G$ cujas ordens dividem $n$. De maneira quase idêntica ao que fizemos para $nG$, podemos mostrar que $G[n]$ é subgrupo de $G$.
+	\par\vspace{0.3cm} Na forma multiplicativa, escrevemos $G[n] = \left\{ g\in G\vert g^n=1 \right\}$. Novamente, não definimos $G[n]$ a não ser que $G$ seja abeliano. 
+	\par\vspace{0.3cm} Por exemplo, se $G = \mathbb{Z}_4\oplus\mathbb{Z}_8$, então $G[2] = \left\{ (0,0), (0,4), (2,0), (2,4) \right\}\cong\mathbb{Z}_2\oplus\mathbb{Z}_2$ e $G[3] = 0$. 
+	\par\vspace{0.3cm} Se $G = \mathbb{Z}_4\oplus\mathbb{Z}_6$, temos $G[2] = \left\{ (0,0), (0,3), (2,0), (2,3) \right\}\cong \mathbb{Z}_2\oplus\mathbb{Z}_2$ e $G[3] = \left\{ (0,0), (0,2), (0,4) \right\}\cong\mathbb{Z}_3$.
+	\par\vspace{0.3cm} Se $G = U(20)$, então $G^2 = \left\{ 1, 3^2, 7^2, 9^2, 11^2, 13^2, 17^2, 19^2 \right\} = \left\{ 1, 3^2, 7^2, 9^2 \right\} = \left\{ 1, 9 \right\}\cong\mathbb{Z}_2$ e $G[2] = \left\{ 1,9,11,19 \right\}\cong\mathbb{Z}_2\oplus\mathbb{Z}_2$
+	\par\vspace{0.3cm} Assim como foi para o subgrupo $nG$, não precisamos calcular todos os elementos à mão para determinar a soma direta. Para isso, usamos as seguintes proposições.
+	
+	\begin{prop}
+		\label{subgrupo abeliano G[n]}
+		Sejam $G$ e $H$ grupos abelianos. Então, $(G\oplus H)[n] \cong G[n]\oplus H[n]$.
+	\end{prop}
+	\begin{proof}
+		Vamos usar a notação multiplicativa. Basta notar que como $(x,y)^n = (x^n, y^n)$, então $(x,y)^n = 1$ se, e somente se, $x^n = 1$ em $G$ e $y^n = 1$ em $H$. 
+	\end{proof}
+	
+	\begin{prop}
+		\label{regra G[n]}
+		$\mathbb{Z}_m[n]\cong \mathbb{Z}_{\mdc(m,n)}$.
+	\end{prop}
+	\begin{proof}
+		Suponha $k\in \mathbb{Z}_m[n]$. Então, $nk = 0$ em $\mathbb{Z}_m$, ou seja, $m|nk$. Consequentemente, $\displaystyle{ \frac{m}{\mdc(m,n)} }$ divide $k$, uma vez que $m|nk$ implica que $\displaystyle{ \frac{m}{\mdc(m,n)} \Bigg| \frac{n}{\mdc(m,n)}k  }$ que, por sua vez, implica que $\displaystyle{ \frac{m}{\mdc(m,n)} }\Bigg| k$, pois $\displaystyle{ \frac{m}{\mdc(m,n)}\text{ e }\frac{n}{\mdc(m,n)}  }$ são relativamente primos.
+		\par\vspace{0.3cm} Então, $\mathbb{Z}_m[n]$ é um grupo cíclico gerado por $\displaystyle{\frac{m}{\mdc(m,n)}}$, sendo isomorfo a $\mathbb{Z}_{\mdc(m,n)}$.
+	\end{proof}
+	\par\vspace{0.3cm} Por exemplo, se $G = \mathbb{Z}_{30}\oplus\mathbb{Z}_{100}$, temos $G[2]\cong \mathbb{Z}_2\oplus\mathbb{Z}_2$, $G[3]\cong \mathbb{Z}_3\oplus\mathbb{Z}_{100}$, $G[6]\cong \mathbb{Z}_6\oplus\mathbb{Z}_2$ e $G[28]\cong \mathbb{Z}_{2}\oplus\mathbb{Z}_4$.
+	
+	\subsubsection{O perfil das ordens de um grupo abeliano finito}
+	\hspace{12pt} Uma vez que todo grupo abeliano finito $G$ pode ser escrito como uma soma direta de grupos cíclicos, podemos facilmente determinar o número de elementos de cada ordem em $G$. Essa facilidade se deve ao fato de que podemos facilmente identificar os subgrupos $G[n]$ para cada $n$ e, portanto, recuperar informações acerca da ordem. A tabela que lista a quantidade de elementos de cada ordem é chamada de \textit{perfil das ordens} de $G$.
+	\par\vspace{0.3cm} Como a ordem de $G[n]$ é a quantidade de elementos cujas ordens dividem $n$, podemos contar a quantidade de elementos de ordem $n$ da seguinta forma:
+	\begin{equation*}
+	\#\text{elementos de ordem $n$ em $G$} = |G[n]| - \sum_{d|n, d<n}\#\text{elementos de ordem d}
+	\end{equation*}
+	\par\vspace{0.3cm} Por exemplo, podemos encontrar o perfil das ordens de $G = \mathbb{Z}_4\oplus\mathbb{Z}_6\oplus\mathbb{Z}_9$. Note que como $36G = 0$, a ordem de cada elemento divide $36$. Vamos listar os subgrupos $G[n]$ e suas ordens:
+	\begin{center}
+		\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
+		\hline
+		$n$ & 1 & 2 & 3 & 4 & 6 & 9 & 12 & 18 & 36 \\
+		\hline 
+		$G[n]$ & 1 & $\mathbb{Z}_2\oplus\mathbb{Z}_2$ & $\mathbb{Z}_3\oplus\mathbb{Z}_3$ & $\mathbb{Z}_4\oplus\mathbb{Z}_2$ & $\mathbb{Z}_2\oplus\mathbb{Z}_3\oplus\mathbb{Z}_3$ & $\mathbb{Z}_3\oplus\mathbb{Z}_9$ & $\mathbb{Z}_4\oplus\mathbb{Z}_6\oplus\mathbb{Z}_3$ & $\mathbb{Z}_2\oplus\mathbb{Z}_6\oplus\mathbb{Z}_9$ & $G$ \\
+		\hline 
+		$|G[n]|$ & 1 & 4 & 9 & 8 & 36 & 27 & 72 & 108 & 216 \\
+		\hline
+		\end{tabular}
+	\end{center}
+	\par\vspace{0.3cm} Então, o perfil das ordens é
+	\begin{center}
+		\begin{tabular}{|c|c|l}
+			\cline{1-2}
+			Ordem & Quantidade & \\
+			\cline{1-2}
+			1 & 1 & \\
+			\cline{1-2}
+			2 & 3 & $= 4 - 1$\\
+			\cline{1-2}
+			3 & 8 & $= 9 - 1$\\
+			\cline{1-2}
+			4 & 4 & $= 8 - 3 - 1$\\
+			\cline{1-2}
+			6 & 24 & $= 36 - 8 - 3 - 1$\\
+			\cline{1-2}
+			9 & 18 & $= 27 - 8 - 1$\\
+			\cline{1-2}
+			12 & 32 & $= 72 - 24 - 4 - 8 - 3 - 1$\\
+			\cline{1-2}
+			18 & 54 & $= 108 - 18 - 24 - 8 - 3 - 1$\\
+			\cline{1-2}
+			36 & 72 & $= 216 - 54 - 32 - 18 - 24 - 4 - 8 - 3 - 1$ \\
+			\cline{1-2}
+			Total & $216$ &  \\
+			\cline{1-2}
+		\end{tabular}
+	\end{center}
+	\par\vspace{0.3cm} O processo acima pode ser revertido para grupos abelianos finitos, i.e., sabendo a quantidade de elementos de cada ordem podemos determinar o grupo, a menos de isomorfismos. Contudo, essa reversão não é possível para grupos não abelianos.
+	\section{Subgrupos de Sylow} Um terceiro subgrupo interessante é o chamado \textit{subgrupo de Sylow}.
+	\begin{definition}
+		\label{def subgrupo de Sylow}
+		Sejam $p$ um primo e $G$ um grupo finito. O $p$-subgrupo de Sylow de $G$ é o conjunto de todos os elementos cujas ordens são potências de $p$. Denotamos o $p$-subgrupo de Sylow de $G$ por $\syl_p(G)$.
+	\end{definition}
+	\par\vspace{0.3cm} O nome é uma homenagem ao matemático norueguês Peter Ludwig Sylow (1832-1918). Por exemplo, o $2$-subgrupo de Sylow de $\mathbb{Z}_{100}$	é $\left\{ 0, 25, 50, 75 \right\} = \langle 25 \rangle$, que é isomorfo a $\mathbb{Z}_4$.
+	\par\vspace{0.3cm} Uma das grandes utilidades dos $p$-subgrupos de Sylow é mostrada no seguinte teorema.
+	\begin{theorem}
+		\label{subgrupos de Sylow e abelianos}
+		Todo grupo abeliano finito é a soma direta de seus subgrupos de Sylow.
+	\end{theorem}
+	\begin{proof}
+		Pelo Teorema \eqref{teorema fundamental abelianos finitamente gerados}, podemos escrever todo grupo abeliano finito como soma direta de grupos cíclicos. Além disso, pelo Corolário \eqref{C2}, sabemos que todo grupo cíclico pode ser escrito como soma direta de $p$-grupos, para vários primos $p$. Juntando todos os grupos para um primo $p$ particular, obtemos o $p$-subgrupo de Sylow correspondente, logo podemos escrever nosso grupo como soma direta de seus subgrupos de Sylow.
+	\end{proof}
+	\par\vspace{0.3cm} Similarmente aos subgrupos $nG$ e $G[n]$, temos a seguinte proposição para subgrupos de Sylow, que não será demonstrada.
+	\begin{prop}
+		\label{Sylow da soma direta}
+		Sejam $G$ e $H$ dois grupos abelianos finitos. Então, segue que  $\syl_p(G\oplus H)\cong \syl_p(G)\oplus\syl_p(H)$.
+	\end{prop}
+	\par\vspace{0.3cm} Por exemplo, $\syl_2(\mathbb{Z}_{100}\oplus\mathbb{Z}_{50}) \cong \syl_2(\mathbb{Z}_{100})\oplus\syl_2(\mathbb{Z}_{50})\cong \langle 25 \rangle \oplus \langle 25 \rangle$. É importante frisar que as duas parcelas da última soma direta não são iguais, pois apesar de ambas serem geradas aditivamente, elas estão em grupos diferentes. A primeira parcela é isomorfa a $\mathbb{Z}_4$, enquanto que a segunda é isomorfa a $\mathbb{Z}_2$. Logo, $\syl_2(\mathbb{Z}_{100}\oplus\mathbb{Z}_{50})\cong\mathbb{Z}_4\oplus\mathbb{Z}_2$.
+	\par\vspace{0.3cm} Como dissemos anteriormente, é possível, dado o perfil das ordens de um grupo abeliano finito, determinar que grupo é esse, identificando-o como soma direta de grupos cíclicos. Por exemplo, suponha que um grupo abeliano $G$ tem ordem $216=8\times 27$. Há $9$ possibilidades para $G$:
+	\begin{equation*}
+		\begin{array}{lll}
+			\mathbb{Z}_8\oplus\mathbb{Z}_{27} & \mathbb{Z}_4\oplus\mathbb{Z}_2\oplus\mathbb{Z}_{27} & \mathbb{Z}_2\oplus\mathbb{Z}_2\oplus\mathbb{Z}_2\oplus\mathbb{Z}_{27} \\
+			\mathbb{Z}_8\oplus\mathbb{Z}_9\oplus\mathbb{Z}_3 & \mathbb{Z}_4\oplus\mathbb{Z}_2\oplus\mathbb{Z}_9\oplus\mathbb{Z}_3 & \mathbb{Z}_2\oplus\mathbb{Z}_2\oplus\mathbb{Z}_2\oplus\mathbb{Z}_9\oplus\mathbb{Z}_3 \\
+			\mathbb{Z}_8\oplus\mathbb{Z}_3\oplus\mathbb{Z}_3\oplus\mathbb{Z}_3 & \mathbb{Z}_4\oplus\mathbb{Z}_2\oplus\mathbb{Z}_3\oplus\mathbb{Z}_3\oplus\mathbb{Z}_3 & \mathbb{Z}_2\oplus\mathbb{Z}_2\oplus\mathbb{Z}_2\oplus\mathbb{Z}_3\oplus\mathbb{Z}_3\oplus\mathbb{Z}_3	
+		\end{array}
+	\end{equation*}
+	\par\vspace{0.3cm} Suponha também que temos o seguinte perfil das ordens:
+	\begin{center}
+		\begin{tabular}{|c|c|}
+			\cline{1-2}
+			Ordem & Quantidade  \\
+			\cline{1-2}
+			1 & 1  \\
+			\cline{1-2}
+			2 & 3 \\
+			\cline{1-2}
+			3 & 8 \\
+			\cline{1-2}
+			4 & 4 \\
+			\cline{1-2}
+			6 & 24 \\
+			\cline{1-2}
+			9 & 18 \\
+			\cline{1-2}
+			12 & 32  \\
+			\cline{1-2}
+			18 & 54 \\
+			\cline{1-2}
+			36 & 72  \\
+			\cline{1-2}
+			Total & $216$ \\
+			\cline{1-2}
+		\end{tabular}
+	\end{center}
+	\par\vspace{0.3cm} Como $G$ tem elementos de ordem $4$ mas não de ordem $8$, temos $\syl_2(G)\cong \mathbb{Z}_2\oplus\mathbb{Z}_4$. Similarmente, $G[3]$ tem ordem $9$ e então $\syl_3(G)$ tem de ser a soma direta de dois grupos cíclicos, ou seja, $\mathbb{Z}_3\oplus\mathbb{Z}_9$. Logo, $G \cong \mathbb{Z}_2\oplus\mathbb{Z}_4\oplus\mathbb{Z}_3\oplus\mathbb{Z}_9\cong \mathbb{Z}_4\oplus\mathbb{Z}_6\oplus\mathbb{Z}_9$, que de fato tem o perfil mostrado, como vimos anteriormente.
+	
+	\section{Abelianização de um grupo}
+	\hspace{12pt} Dado um grupo $G$, o \textbf{subgrupo derivado} de $G$ (ou subgrupo comutador de $G$) é definido como o subgrupo de $G$ gerado por todos os comutadores $\left\{ g^{-1}h^{-1}gh \ | \ g,h\in G \right\}$ de elementos de $G$. Esse grupo é geralmente denotado por $G'$. Podemos ver que $G'\trianglelefteq G$ (a igualdade vale se $G$ é abeliano) e que $G/G'$ é um grupo abeliano. Além disso, $G'$ é o menor subgrupo de $G$ tal que
+	\begin{equation*}
+	\forall N\trianglelefteq G, \ G/N \text{ é abeliano} \iff N\supseteq
+	G'\end{equation*}
+	\par\vspace{0.3cm} ou seja, $G'$ é o menor subgrupo normal de $G$ tal que $G/G'$ é abeliano, e que qualquer outro subgrupo normal $N$ tal que $G/N$ é abeliano contém $G'$. Desse modo, temos que $G/G'$ é o maior quociente abeliano de $G$, e definimos $G_{ab} = G/G'$ como a \textbf{abelianização} de $G$. De fato, a abelianização de um grupo $G$ é um invariante de $G$.
+	\par\vspace{0.3cm} Sejam  $X = \left\{ x_1, x_2, \dots, x_r \right\}$ e $C = \left\{ [x_i, x_j] \ | \ 1\leq i < j \leq r \right\}, r\in\mathbb{N}$.
+	\begin{prop}
+		\label{apresentacao abelianizacao}
+		Se $G = \langle X|R \rangle$, então $G_{ab} = \langle X|R,C \rangle$.
+	\end{prop}
+	\begin{proof}
+		Pelo Teorema \eqref{teorema de Dyck}, é suficiente mostrar que $G'$ coincide com o fecho normal $\overline{C}$ de $C$ em $G$. Como os geradores de $\langle X|R,C \rangle = G/C$ todos comutam, temos que esse grupo é abeliano e, daí, temos que $G'\subseteq \overline{C}$ pela caracterização de subgrupo derivado. Por outro lado, $G'$ é um subgrupo normal de $G$ que contém $C$, portanto $\overline{C}\subseteq G'$.
+	\end{proof}
+	\par\vspace{0.3cm} Por exemplo, seja $G$ um grupo dado pela apresentação
+	\begin{equation*}
+	\langle x,y,z,t \ | \ (xyz)^6 = 1, \ t^2 = (xz)^2, \ (xy^3zt^2)^2 = 1, \ (yt^2)^2 = x^2z^3, \ (xyz)^4(yt)^2 = 1 \rangle.
+	\end{equation*}
+	\par\vspace{0.3cm} Então, $G_{ab}$ tem apresentação
+	\begin{align*}
+	\langle x,y,z,t \ | \ &(xyz)^6 = 1, \ t^2 = (xz)^2, \ (xy^3zt^2)^2 = 1, \\ 
+	&(yt^2)^2 = x^2z^3, \ (xyz)^4(yt)^2 = 1 \\ 
+	&[x,y] = [x,z] = [x,t] = [y,z] = [y,t] = [z,t] = 1\rangle
+	\end{align*}
+	\par\vspace{0.3cm} Usando as relações de comutadores da apresentação acima, chegamos à apresentação
+	\begin{align*}
+	\langle x,y,z,t \ | \ &x^6y^6z^6 = x^2z^2t^{-2} = x^2y^6z^2t^4 = x^{-2}y^2z^{-3}t^4 = x^4y^6z^4t^2 = 1, \\
+	&[x,y] = [x,z] = [x,t] = [y,z] = [y,t] = [z,t] = 1
+	\rangle
+	\end{align*}
+	\par\vspace{0.3cm} A potência de cada gerador em cada uma das cinco primeiras relações é chamada de seu expoente soma.
+	\par\vspace{0.3cm} Agora, suponha que temos uma apresentação $P = \langle X|R \rangle$ para um grupo $G$. Daí, naturalmente surgem as seguintes perguntas:
+	\begin{enumerate}[(i)]
+		\item Como obter informações de $G_{ab}$ a partir da apresentação $P$ de $G$?
+		\item O que as informações obtidas nos dizem? 
+	\end{enumerate}
+	\par\vspace{0.3cm} Para $X$ finito, ambas as questões podem ser respondidas satisfatoriamente. A resposta da segunda questão é um teorema de classificação: podemos listar todos os grupos abelianos finitamente gerados em um conjunto $L$ tais que todos os outros grupos abelianos finitamente gerados são isomorfos a algum grupo de $L$: esse é o chamado Teorema de Base para grupos abelianos finitamente gerados, cuja demonstração é um algoritmo numérico simples que responde a questão (i). Vamos agora falar de alguns fatos sobre grupos abelianos.
+	\par\vspace{0.3cm} Um \textit{grupo de torção} é um grupo em que todos os elementos têm ordem finita, e.g., os grupos cíclicos $\mathbb{Z}/n\mathbb{Z}$. Já sabemos o que é um \textit{grupo livre de torção}.
+	\par\vspace{0.3cm} Então, seja $G$ um grupo abeliano. O conjunto de elementos de ordem finita de $G$ é denotado por $\tor(G)$. Para $G$ abeliano, esse conjunto é na verdade um subgrupo de $G$, chamado de \textit{subgrupo de torção} de $G$. Logo, dizemos que $G$ é um grupo de torção se $\tor(G) = G$ e livre de torção se $\tor(G) = \left\{1\right\}$, o grupo trivial.
+	\begin{lemma}
+		\label{quociente por tor}
+		Seja $G$ um grupo abeliano. Então, $\tor(G)$ é um grupo de torção e $G/\tor(G)$ é um grupo livre de torção.
+	\end{lemma}
+	\begin{proof}
+		Para a primeira afirmação, basta notar que $\tor(\tor(G)) = \tor(G)$, logo $\tor(G)$ é um grupo de torção. Seja $x\in G$ e considere a classe $x + \tor(G)$ no quociente $G/\tor(G)$. Vamos mostrar que $x + \tor(G)$ não é elemento de torção, i.e., não tem ordem finita. Para isso, suponha o contrário. Então, existe $m\in\mathbb{Z}$ tal que $m( x+\tor(G) ) = mx + \tor(G) = \tor(G)$, que implica $mx\in\tor(G)$ e, consequentemente, $n(mx) = 0$ para algum $n\in\mathbb{Z}$. Mas isso significa que $x\in\tor(G)$, logo $x+\tor(G) = \left\{0\right\}$. Portanto, apenas a identidade tem ordem finita em $G/\tor(G)$. 
+	\end{proof}
+	\par\vspace{0.3cm} A proposição a seguir assegura quando que $G/nG$ é um espaço vetorial.
+	\begin{prop}
+		\label{G/nG espaco vetorial}
+		Sejam $G$ um grupo abeliano e $p$ um número primo, então $G/pG$ é um espaço vetorial sobre $\mathbb{F}_p$, o corpo em $p$ elementos.
+	\end{prop}
+	\begin{proof}
+		Como $pG$ é claramente normal em $G$, então o quociente $G/pG$ está bem definido e então basta munirmos $G/pG$ de uma multiplicação por escalar. Definamos então
+		\begin{equation*}
+		k(g+pG)  = kg + pG
+		\end{equation*}
+		\par\vspace{0.3cm} sendo $k\in\mathbb{Z}$. Logo, se $k'\equiv k\mod p$, então $k' = k + pm$, para algum $m\in\mathbb{Z}$. Portanto, $k'a + pG = (k+pm)a + pG = ka + pma + pG = ka + pG$, pois $pma\in pG$. resta mostrar as demais propriedades de um espaço vetorial, que fica a cargo do leitor.
+	\end{proof}
+	
+	
+	\section{Algumas propriedades de grupos livres}
+	\hspace{12pt} Vamos apresentar algumas outras propriedades interessantes dos grupos livres. Então, seja $F = F(X)$ o grupo livre em um conjunto fixo $X$ e considere a seguinte definição.
+	\begin{deff}
+		\label{def ciclicamente reduzida}
+		Uma palavra reduzida $a = x_1x_2\cdots x_l$, $x_i\in X^{\pm}$ (sendo $X^{\pm}$ o conjunto das letras de $X$ com seus respectivos inversos), $1\leq i\leq l$, é dita ciclicamente reduzida se $x_l\neq x_1^{-1}$. 
+	\end{deff}
+	\par\vspace{0.3cm} Com essa noção, podemos mostrar a seguinte proposição.
+	\begin{prop}
+		\label{grupo livre livre de torcao}
+		$F(X)$ é livre de torção.
+	\end{prop}
+	\begin{proof} Então, seja $a = x_1x_2\cdots x_l$ uma palavra reduzida qualquer em $X^{\pm}$, e seja $a^2 = x_1x_2\cdots x_{l-r}x_{r+l}\cdots x_l$ reduzida, de modo que $l(a^2) = l(a) - 2r$. O quão grande $r$ pode ser? Claramente, $r=0$ se, e somente se $a$ é ciclicamente reduzida. Para responder essa questão de forma geral, façamos primeiro $l = 2k + 1$, i.e., ímpar. Então, é claro que $r\leq k$, pois do contrário $x_{k+1} = x_{k+1}^{-1}$, isto é, $x_{k+1}^2 = e$. Mas isso é impossíve, pois  nenhuma palvra reduzida de comprimento positivo em $X^{\pm}$ é trivial. Por outro lado, se fizermos $l = 2k$, i.e., par, devemos ter $r<k$, pois do contrário $x_k = x_{k+1}^{-1}$, o que contraria o fato de que $a$ é reduzida. 
+		\par\vspace{0.3cm} Portanto, segue que $r< l/2$ e, portanto, $a = u^{-1}\check{a}u$, sendo
+		\begin{equation*}
+		u^{-1} = x_1\cdots x_r = x_l^{-1}\cdots x_{l-r+1}^{-1}, \ \check{a} = x_{r+1}\cdots x_{l-r}
+		\end{equation*}
+		\par\vspace{0.3cm} com $\check{a}\neq e$ e $x_{r+1}\neq x_{l-r}^{-1}$, de modo que $\check{a}$ é ciclicamente reduzida. Note que 
+		\begin{equation*}
+		l(a^2) = 2l - 2r \stackrel{r<l/2}{>} 2l - l = l = l(a)
+		\end{equation*}
+		\par\vspace{0.3cm} De modo mais geral, dado $n\in\mathbb{N}$, $a^n = u^{-1}\check{a}^nu$, e como é claro que $\check{a}^n$ é ciclicamente reduzida também segue que 
+		\begin{equation}
+		\label{comprimento de a^n}
+		l(a^n) = nl(\check{a}) + 2r > (n-1)l(\check{a}) + 2r = l(a^{n-1})
+		\end{equation}
+		\par\vspace{0.3cm} Logo, $F(X)$ não possui elementos não triviais de ordem finita, uma vez que tomar potências de uma palavra qualquer sempre aumenta seu comprimento. Concluímos, então, que $F(X)$ de fato é livre de torção.
+	\end{proof}
+	\par\vspace{0.3cm} O próximo ponto é que grupos livres são o mais não comutativos possível. Em qualquer grupo, se dois elementos são potências de um mesmo elemento, então eles comutam. O seguinte lema assegura que a recíproca é verdadeira para grupos livres.
+	\begin{lemma}
+		\label{comutatividade em grupos livres}
+		Sejam $a,b\in F(X)$ tais que $ab=ba$. Então, existe $c\in F(X)$ tal que $a = c^k$ e $b = c^h$, $k, h\in\mathbb{Z}$.
+	\end{lemma}
+	\begin{proof}
+		Vamos proceder por indução em $l(a) + l(b)$. Como o resultado é claro quando $a$ ou $b$ são triviais, já temos a base de indução e podemos assumir $a\neq e\neq b$. Tomando $a = x_1\cdots x_l$ e $b = y_1\cdots y_m$, assuma, por simetria, que $l = l(a) \leq l(b) = m$. Agora, considere a equação $ab=ba$ na forma reduzida:
+		\begin{equation}
+		\label{comutatividade reduzida}
+		x_1\cdots x_{l-r}y_{r+1}\cdots y_m = y_1\cdots y_{m-r}x_{r+1}\cdots x_l
+		\end{equation}
+		\par\vspace{0.3cm} sendo $0\leq r\leq\min(l,m) = l$, por hipótese. Vamos dividir nossa análise em três casos.
+		\paragraph{Caso (i):} $r=0$. Daí, segue de \eqref{comutatividade reduzida} que $x_i=y_i$, $1\leq i\leq l$ por comparação dos segmentos iniciais. Então, $b = au$, com $l(u) = m-l<m$, de modo que $l(a) + l(u)< l(a) + l(b)$. Então, $au = b = a^{-1}ba = a^{-1}aua = ua$ e a hipótese de indução nos dá que $a$ e $u$ são potências de um $c\in F(X)$, logo $b=au$ também é.
+		\paragraph{Caso (ii):} $r = l$. Aqui, $y_i = x_{l-i+1}^{-1}$ e $b = a^{-1}u$, com $l(u) = m-l<m$. Segue como no caso (i) que $a^{-1}$ e $u$ comutam e, portanto, são novamente potências de um elemento $c\in F(X)$, logo $b = a^{-1}u$ também é.
+		\paragraph{Caso (iii):} $0 < r < l$. Nesse caso, 
+		\begin{equation*}
+		x_1 = y_1, \ x_l = y_m, \ x_l = y_1^{-1}, \ y_m = x_1^{-1}
+		\end{equation*}
+		\par\vspace{0.3cm} de onde segue que
+		\begin{equation*}
+		a = x_1a'x_1^{-1}, \ b = x_1b'x_1^{-1}
+		\end{equation*}
+		\par\vspace{0.3cm} sendo $l(a') = l-2$ e $l(b') = m-2$. Pela hipótese de indução, $a'$ e $b'$ são potências de um mesmo elemento $c'$. Como a conjugação de $ab=ba$ por $x_1$ nos dá $a'b' = b'a'$, segue que $a$ e $b$ são potência de $c = x_1c'x_1^{-1}$, concluindo nossa demonstração. 
+	\end{proof}
+	\begin{prop}
+		\label{raizes n-esimas em grupos livres}
+		\begin{enumerate}
+			\item Em um grupo livre $F$, raízes $n$-ésimas, quando existem, são únicas, ou seja, se $a,b\in F$ satisfazem $a^n = b^n$, $n\in\mathbb{N}$, então $a = b$.
+			\item Qualquer elemento $w\in F$ tem um número finito de raízes, isto é, o conjunto $\left\{ a\in F \ \vert \ a^n = w, n\in\mathbb{N} \right\}$ é finito.
+		\end{enumerate}
+	\end{prop}
+	\begin{proof} Vamos começar com o item 1. Primeiro, escreva $a = u^{-1}\check{a}u$ e $b = v^{-1}\check{b}v$, com $\check{a}$ e $\check{b}$ ciclicamente reduzidas e $l(u) = r, l(v) = s$, digamos. Agora, aplique \eqref{comprimento de a^n} nas equações $a^n = b^n$ e $a^{2n} = b^{2n}$ para obter
+		\begin{align*}
+		nl(\check{a}) + 2r &= nl(\check{b}) + 2s \\
+		2nl(\check{a}) + 2r &= 2nl(\check{b}) + 2s
+		\end{align*}
+		\par\vspace{0.3cm} Então, $l(\check{a}) = l(\check{b})$ e $r=s$, e como a equação
+		\begin{equation*}
+		u^{-1}\check{a}^n = v^{-1}\check{b}^nv
+		\end{equation*}
+		\par\vspace{0.3cm} não tem cancelamentos, segue que $u = v$ e $\check{a} = \check{b}$, logo $a=b$.
+		\par\vspace{0.3cm} Para a demonstração do item 2, seja $a$ uma raiz de $w$, digamos $a^n = w, n\in\mathbb{N}$. Se $w = e$, o resultado segue da Proposição \eqref{grupo livre livre de torcao}. Se $w\neq e$, então nem $a$ nem $\check{a}$ são triviais, e segue de \eqref{comprimento de a^n} que $n\leq l(w)$. Então, $w$ é uma potência $n$-ésima para no máximo uma quantidade finita de $n$ e, para cada $n$, $w$ é a $n$-ésima potência de no máximo um elemento devido ao item 1. Logo, o número total de raízes é finito.
+	\end{proof}
+	\par\vspace{0.3cm} O item 1 da Proposição \eqref{raizes n-esimas em grupos livres} pode ser usado para fortalecer o Lema \eqref{comutatividade em grupos livres} da seguinte forma.
+	\begin{lemma}
+		\label{comutatividade fortalecida em grupos livres}
+		Se $a^hb^k = b^ka^h$ para $a,b\in F$ e $h,k\in\mathbb{Z}^\ast$, então $a$ e $b$ são potências de um elemento comum.
+	\end{lemma}
+	\begin{proof}
+		Devido a uma manipulação simples, podemos assumir $h,k\in\mathbb{N}$. Então, 
+		\begin{equation*}
+		a^h = b^ka^hb^{-k} = (b^kab^{-k})^h
+		\end{equation*}
+		\par\vspace{0.3cm} de onde segue que $a = b^kab^{-k}$ pelo item 1 da Proposição \eqref{raizes n-esimas em grupos livres}. Logo,
+		\begin{equation*}
+		b^k = ab^ka^{-1} = (aba^{-1})^k
+		\end{equation*}
+		\par\vspace{0.3cm} de onde segue, novamente pelo item 1 da Proposição \eqref{raizes n-esimas em grupos livres}, que $b = aba^{-1}$, ou seja, $ab = ba$. Daí, o resultado segue do Lema \eqref{comutatividade em grupos livres}.
+	\end{proof}
+	
+	\begin{prop}
+		\label{comutatividade e relacao de equivalencia em grupos livres}
+		Comutatividade é uma relação de equivalência em $F - \left\{ e \right\}$, isto é, o centralizador $C(w) = \left\{ w\in F \ \vert \ aw = wa \right\}$ de qualquer $a\in F - \left\{e\right\}$ é abeliano.
+	\end{prop}
+	\begin{proof}
+		Devemos mostrar que se $u,v\in F$ comutam com algum $a\in F - \left\{ e \right\}$, então eles comutam um com o outro. Suponha que $ua=au$ e $va = av$, e que $u\neq e\neq v$ para evitar trivialidade. Então, pelo Lema \eqref{comutatividade em grupos livres}, existem $b,d\in F$ e $p,q,r,s\in\mathbb{Z} - \left\{0\right\}$ tais que 
+		\begin{equation*}
+		u = b^p, \ a = b^q, \ a = d^r, \ v = d^s
+		\end{equation*}
+		\par\vspace{0.3cm} Mas então $b^q$ e $d^r$ comutam, pois são iguais, e segue do Lema \eqref{comutatividade fortalecida em grupos livres} que existe um $c\in F$ e $h,k\in\mathbb{Z}$ tais que
+		\begin{equation*}
+		b = c^h, \ d = c^k
+		\end{equation*}
+		\par\vspace{0.3cm} Logo, $u = c^{hp}$ e $v = c^{ks}$ também comutam.
+	\end{proof}
+	\par\vspace{0.3cm} Por fim, a Proposição \eqref{comutatividade e relacao de equivalencia em grupos livres} pode ser fortalecida da seguinte forma.
+	\begin{theorem}
+		\label{centralizadores em grupos livres}
+		Para qualquer $w\in F - \left\{ e \right\}$, $C(w)$ é um grupo cíclico infinito.
+	\end{theorem}
+	\begin{proof}
+		Como $e\neq w\in C(w)$, $C(w)$ não pode ser finito pela Proposição \eqref{grupo livre livre de torcao}.
+		\par\vspace{0.3cm} Agora, seja $d$ um elemento de comprimento minimal	em $C(w) - \left\{ e \right\}$, e seja $v\in C(w)$ arbitrário. Então, $v$ deve ser uma potência de $d$. Como $v$ e $d$ comutam (pela Proposição \eqref{comutatividade e relacao de equivalencia em grupos livres}), eles são potência de um elemento comum (pelo Lema \eqref{comutatividade em grupos livres}):
+		\begin{equation*}
+		d = a^h, \ v = a^k
+		\end{equation*}
+		\par\vspace{0.3cm} Da segunda equação, $a^k$ comuta com $w$, de onde temos que $a\in C(w)$ pelo Lema \eqref{comutatividade fortalecida em grupos livres}. Aplicando \eqref{comprimento de a^n} na primeira equação, 
+		\begin{equation*}
+		l(d) = l(a^h) = |h|l(\check{a}) + 2r \stackrel{2r = l(a) - l(\check{a})}{=} (|h| - 1)l(\check{a}) + l(a)
+		\end{equation*}
+		\par\vspace{0.3cm} sendo $|h|\neq 0$ e $d\neq e$. Como $a\in C(w)$, segue da minimalidade de $l(d)$ que $|h| = 1$ e então $v = d^{\pm k}$, como desejado.
+	\end{proof}
+	
+	
+	\section{Grupos, isometrias e polinômios}
+	\hspace{12pt} Vamos mostrar duas aplicações interessantes de apresentações de grupos: para isometrias de $\mathbb{R}^2$ e para polinômios.
+	\par\vspace{0.3cm} Primeiro, considere o reticulado dos pontos inteiros em $\mathbb{R}^2$, isto é,
+	\begin{equation*}
+	L = \left\{ (k,l)\in\mathbb{R}^2 \ | \ k,l\in\mathbb{Z} \right\}
+	\end{equation*}
+	\par\vspace{0.3cm} e o grupo $G = \Sim(L)$ das isometrias de $\mathbb{R}^2$ que levam $L$ em $L$, isto é, que deixam o reticulado fixo. Um exemplo de isometria é a translação $t$. Se $t$ leva a origem de $\mathbb{R}^2$ para o ponto $(m,n)$, então um ponto qualquer $(k,l)\in\mathbb{R}^2$ é levado em $(k+m, l+n)$.
+	\par\vspace{0.3cm} Então, vemos que a translação $t$ é determinada pelo par $(m,n)$. Além disso, denotando por $a$ e $b$ as translações $(0,0)\mapsto (1,0)$ e $(0,0)\mapsto(0,1)$, respectivamente, temos $t = a^mb^n$. Note também que se $t'$ é a translação $(0,0)\mapsto(k,l)$, então 
+	\begin{equation*}
+	tt'(0,0) = t(k,l) = (k+m, l+n)
+	\end{equation*}
+	\par\vspace{0.3cm} Em outras palavras, temos que $a^kb^la^mb^n = a^{k+m}b^{l+n}$. Portanto, o conjunto de todas as translações $T$ de $G$ formam um subgrupo de $G$. Sabendo disso, temos
+	\begin{equation*}
+	T = \langle a \rangle \times \langle b \rangle \stackrel{\text{Proposição }\eqref{apresentacao prod direto}}{=} \langle a,b \ | \ [a,b]=1 \rangle 
+	\end{equation*} 
+	\par\vspace{0.3cm} e, consequentemente, vemos que $T$ é um grupo abeliano livre com dois geradores (posto $2$).
+	\par\vspace{0.3cm} Agora, considere as isometrias $S$ que fixam a origem: a rotação $y$ no sentido anti-horário de um ângulo $\theta$, $0\leq \theta\leq \pi/2$, e a reflexão $x$ sobre a direção $(1,0)$, ou seja, sobre o eixo das abscissas. Em termos de matrizes sobre o sistema de coordenadas usual (pela direita), temos
+	\begin{equation*}
+	x = \begin{pmatrix}
+	-1 & 0 \\
+	0 & 1
+	\end{pmatrix}, \ y = \begin{pmatrix}
+	0 & -1 \\
+	1 & 0 
+	\end{pmatrix}
+	\end{equation*} 
+	\par\vspace{0.3cm} Note que todo elemento de $S$ induz uma única simetria do quadrado de vértices $(\pm1, 0), (0,\pm1)$. Logo, não podem haver mais de $8$ simetrias. Desse modo, como valem as relações $y^4=x^2=1$, $x^{-1}yx = y^{-1}$, então $S$ define o grupo
+	\begin{equation*}
+	S = \langle x,y \ | \ y^4=x^2=1, xyx^{-1}=y^{-1} \rangle
+	\end{equation*} 
+	\par\vspace{0.3cm} que é o grupo diedral de ordem $8$, $D_4$.
+	\par\vspace{0.3cm} Agora, seja $g\in G$ um elemento qualquer. Se $g(0) = (m,n)$ e $t = a^mb^n\in T$, então $gt^{-1}$ fixa a origem e, portanto, pertence a $S$. Fazendo $gt^{-1} = s\in S$, temos $g = st$, logo $G = ST$, pois $g$ é um elemento qualquer. Como uma translação que fixa qualquer ponto deve ser a identidade, temos $S\cap T = 1$ e, consequentemente, podemos ver $G$ como produto semidireto.
+	\par\vspace{0.3cm} Para mostrar que esse de fato é o caso, seja $P = (m,n)$ um ponto qualquer e note que, a partir das matrizes $x$ e $y$, temos
+	\begin{align*}
+	xax^{-1}(P) &= xa(-m,n) = x(-m+1, n) = (m-1, n) = a^{-1}(P) \\
+	xbx^{-1}(P) &= xb(-m,n) = x(-m, n+1) = (m, n+1) = b(P) \\
+	yay^{-1}(P) &= ya(n,-m) = y(n+1,-m) = (m, n+1) = b(P) \\
+	yby^{-1}(P) &= yb(n,-m) = y(n,-m+1) = (m-1,n) = a^{-1}(P)
+	\end{align*}
+	\par\vspace{0.3cm} Portanto, 
+	\begin{equation}
+	xax^{-1} = a^{-1}, \ xbx^{-1} = b, \ yay^{-1} = b, \ yby^{-1} = a^{-1}
+	\label{normaliza}
+	\end{equation}
+	\par\vspace{0.3cm} Então, $T$ é normalizado por $S$. Sendo $G=ST$ e $T$ abeliano, segue que $T\trianglelefteq G$. As equações em \eqref{normaliza} mostram que as matrizes $x$ e $y$ definem um homomorfismo 
+	\begin{equation*}
+	\alpha: S\to GL_2(\mathbb{Z}) = \aut(T)
+	\end{equation*}
+	\par\vspace{0.3cm} Portanto, $G = T\rtimes_{\alpha} S$. Também é possível mostrar que usando
+	\begin{equation*}
+	T = \langle a \rangle \times \langle b \rangle = \langle a,b \ | \ [a,b]=1 \rangle, \ S = \langle x,y \ | \ y^4=x^2=1, xyx^{-1} = y^{-1} \rangle
+	\end{equation*}
+	\par\vspace{0.3cm} e \eqref{normaliza}, $G$ tem apresentação
+	\begin{equation*}
+	G = \langle x,y,a,b \ | \ [a,b]=x^2=y^4=1,xyx^{-1} = y^{-1}, xax^{-1} = a^{-1}, \ xbx^{-1} = b, \ yay^{-1} = b, \ yby^{-1} = a^{-1} \rangle
+	\end{equation*}
+	\par\vspace{0.3cm} e obtemos uma apresentação para $\Sim(L)$.
+	\par\vspace{0.3cm} Agora, sejam $p$ primo e $n\in\mathbb{N}$. Considere
+	\begin{equation*}
+	f(x) = \sum_{k=0}^{n}a_kx^k = a_1x + a_2x^2 + \cdots + x^n, 
+	\end{equation*}
+	\par\vspace{0.3cm} ou seja, os monômios de grau menor ou igual a $n$, sobre o corpo $\mathbb{Z}_p$, com coeficiente independente nulo. Vamos chamar de $G_n(p)$ o conjunto de todos esses polinômios, isto é
+	\begin{equation*}
+	G_n(p) = \left\{ f(x) \ | \ gr(f)\leq n, a_i\in\mathbb{Z}_p, a_0=0,a_n=1 \right\}
+	\end{equation*}
+	\par\vspace{0.3cm} De fato, $( G_n(p), \circ )$ é grupo, sendo $\circ$ a operação de composição de funções $\mod(x^{n+1})$. Além disso, $|G_n(p)| = p^{n-1}$.
+	\par\vspace{0.3cm} Esse grupo tem muitas propriedades interessantes; vamos, no momento, obter uma apresentação para o grupo $G = G_5(2)$, de ordem $2^{5-1} = 16$. Note que os coeficientes são obtidos módulo $2$ e que a maior potência é $5$.
+	\par\vspace{0.3cm} Seja $a = x+x^2$. Daí, temos o seguinte:
+	\begin{align*}
+	a^2 &= a(x+x^2) = x+x^2+(x+x^2)^2 = x+x^4 \\
+	a^3 &= a(x+x^4) = x+x^4+(x+x^4)^2 = x+x^2+x^4 \\
+	a^4 &= a^2(x+x^4) = x+x^4+(x+x^4)^4 = x
+	\end{align*}
+	\par\vspace{0.3cm} Logo, $a$ tem ordem $4$ em $G$ e, portanto, $A = \langle a \rangle$ é um subgrupo de ordem $4$. Seja agora $b = x+x^3$. Semelhantemente:
+	\begin{align*}
+	b^2 &= b(x+x^3) = x+x^3 + (x+x^3)^3 = x+x^3+x^3+x^5 = x+x^5 \\
+	b^3 &= b(x+x^5) = x+x^5+(x+x^5)^3 = x+x^3+x^5 \\
+	b^4 &= b(x+x^3+x^5) = x+x^3+x^5+(x+x^3+x^5)^3 = x
+	\end{align*}
+	\par\vspace{0.3cm} Logo, o subgrupo $B = \langle b \rangle$ tem ordem $4$. Como $A\cap B = 1$ e $AB$ tem $16$ elementos, temos $AB=G$. Contudo, nesse caso nem $A$ nem $B$ são normais em $G$ e, portanto, não temos um produto semidireto. 
+	\par\vspace{0.3cm} Também temos que
+	\begin{align*}
+	ab &= a(x+x^3) = x+x^3+(x+x^3)^2 = x+x^2+x^3 \\
+	b^{-1} &= x+x^3+x^5 \\
+	\end{align*}
+	\par Desse modo
+	\begin{equation*}
+	ab^{-1} = a(x+x^3+x^5) = x+x^3+x^5+(x+x^3+x^5)^2 = x+x^2+x^3+x^5
+	\end{equation*}
+	\par\vspace{0.3cm} Assim, temos
+	\begin{align*}
+	(ab)^2 &= ab(x+x^2+x^3) = x+x^2+x^3 + (x+x^2+x^3)^2 + (x+x^2+x^3)^3 = x \\
+	(ab^{-1}) &= (ab^{-1})(x+x^2+x^3+x^5) = x
+	\end{align*}
+	\par\vspace{0.3cm} Portanto, temos $(ab)^2=(ab^{-1})^2$.

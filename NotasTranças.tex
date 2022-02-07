@@ -1,0 +1,215 @@
+\documentclass[12pt,oneside]{book}
+
+\usepackage{float}
+\usepackage{etoolbox}
+\usepackage[brazil]{babel}
+\usepackage{xfrac}
+\usepackage{mathtools}
+\usepackage{booktabs}
+\usepackage{cancel}
+\usepackage{subfig}
+\usepackage[all]{xy}
+\usepackage[shortlabels]{enumitem}
+\usepackage[fixlanguage]{babelbib}
+\selectbiblanguage{brazil}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+%
+\usepackage{makeidx}
+\makeindex
+%
+\usepackage{amsfonts}
+\usepackage[a4paper,bottom=2cm]{geometry} % geometry/margins of page
+\savegeometry{origin}
+\geometry{rmargin=2cm,lmargin=2cm}% for the title page
+\usepackage{multicol}		% multicolumn environments
+\usepackage{tikz}			% used for the 'logo' (remove if unwanted)
+\usepackage{subfig}			% Usada para alinhar o logo da capa
+\usepackage{enumitem}        % Usado para personalizar o ambiente de enumeração
+\usepackage{dsfont}
+\usepackage{graphicx}
+%
+\usepackage[nottoc,numbib]{tocbibind}
+\usepackage{makeidx}
+\makeindex
+\usepackage{amsmath,amsthm,amssymb,color}
+\usepackage{mathrsfs}
+\usepackage[pdfstartview=FitH,backref,colorlinks,bookmarksnumbered,bookmarksopen,linktocpage,urlcolor=blue,linkcolor=cyan]{hyperref}
+\usepackage[font={scriptsize}]{caption}
+%\usepackage{subcaption}
+%Permite quebra de páginas em equações longas no ambiente align e align*
+\allowdisplaybreaks
+% Retira a enumeração dos Capítulos
+\def\numberline#1{}
+%
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\renewcommand{\P}{\mathbb{P}}
+\newcommand{\F}{\mathcal{F}}
+\renewcommand{\Re}{\mathrm{Re}}
+\renewcommand{\Im}{\mathrm{Im}}
+%
+\theoremstyle{definition}
+\newtheorem{theorem}{Teorema}[section]
+\newtheorem*{definition}{Definição}
+\newtheorem{corollary}{Corolário}[theorem]
+\newtheorem{lemma}[theorem]{Lema}
+\newtheorem{remark}{Observação}[section]
+\newtheorem{deff}{Definição}[section]
+\newtheorem{fact}{Fato}[section]
+\newtheorem{exercise}{Exercício}[section]
+\newtheorem{example}{Exemplo}[section]
+\newtheorem{prop}{Proposição}[section]
+\newtheorem*{solution}{Solução}
+%
+\DeclareMathOperator{\supp}{supp}
+\DeclareMathOperator{\res}{res}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\aut}{Aut}
+\DeclareMathOperator{\inn}{Inn}
+\DeclareMathOperator{\stab}{stab}
+\DeclareMathOperator{\orb}{orb}
+\DeclareMathOperator{\Mod}{Mod}
+\DeclareMathOperator{\Ker}{Ker}
+\DeclareMathOperator{\mdc}{mdc}
+\DeclareMathOperator{\mmc}{mmc}
+\DeclareMathOperator{\syl}{Syl}
+\DeclareMathOperator{\tor}{Tor}
+\DeclareMathOperator{\Sim}{Sim}
+%
+\definecolor{Red}{cmyk}{0,1,1,0}
+\def\red{\color{Red}}
+\definecolor{Blue}{cmyk}{1,1,0,0}
+\def\blue{\color{Blue}}
+\definecolor{White}{cmyk}{0,0,0,0}
+\def\white{\color{White}}
+% não mostra avisos de badness <= 10.000 e overfull/underfull <= 30 pt
+% obs.: 30 pt ~ 10,545 mm 
+\hfuzz = 30pt
+\vfuzz = 30pt
+\hbadness = 10001
+\vbadness = \maxdimen
+
+% para criar diagramas de tranças
+\newcounter{braid}
+\newcounter{strands}
+\pgfkeyssetvalue{/tikz/braid height}{1cm}
+\pgfkeyssetvalue{/tikz/braid width}{1cm}
+\pgfkeyssetvalue{/tikz/braid start}{(0,0)}
+\pgfkeyssetvalue{/tikz/braid colour}{black}
+\pgfkeys{/tikz/strands/.code={\setcounter{strands}{#1}}}
+
+\makeatletter
+\def\cross{%
+	\@ifnextchar^{\message{Got sup}\cross@sup}{\cross@sub}}
+
+\def\cross@sup^#1_#2{\render@cross{#2}{#1}}
+
+\def\cross@sub_#1{\@ifnextchar^{\cross@@sub{#1}}{\render@cross{#1}{1}}}
+
+\def\cross@@sub#1^#2{\render@cross{#1}{#2}}
+
+
+\def\render@cross#1#2{
+	\def\strand{#1}
+	\def\crossing{#2}
+	\pgfmathsetmacro{\cross@y}{-\value{braid}*\braid@h}
+	\pgfmathtruncatemacro{\nextstrand}{#1+1}
+	\foreach \thread in {1,...,\value{strands}}
+	{
+		\pgfmathsetmacro{\strand@x}{\thread * \braid@w}
+		\ifnum\thread=\strand
+		\pgfmathsetmacro{\over@x}{\strand * \braid@w + .5*(1 - \crossing) * \braid@w}
+		\pgfmathsetmacro{\under@x}{\strand * \braid@w + .5*(1 + \crossing) * \braid@w}
+		\draw[braid] \pgfkeysvalueof{/tikz/braid start} +(\under@x pt,\cross@y pt) to[out=-90,in=90] +(\over@x pt,\cross@y pt -\braid@h);
+		\draw[braid] \pgfkeysvalueof{/tikz/braid start} +(\over@x pt,\cross@y pt) to[out=-90,in=90] +(\under@x pt,\cross@y pt -\braid@h);
+		\else
+		\ifnum\thread=\nextstrand
+		\else
+		\draw[braid] \pgfkeysvalueof{/tikz/braid start} ++(\strand@x pt,\cross@y pt) -- ++(0,-\braid@h);
+		\fi
+		\fi
+	}
+	\stepcounter{braid}
+}
+
+\tikzset{braid/.style={double=\pgfkeysvalueof{/tikz/braid colour},double distance=1pt,line width=2pt,white}}
+
+\newcommand{\braid}[2][]{%
+	\begingroup
+	\pgfkeys{/tikz/strands=2}
+	\tikzset{#1}
+	\pgfkeysgetvalue{/tikz/braid width}{\braid@w}
+	\pgfkeysgetvalue{/tikz/braid height}{\braid@h}
+	\setcounter{braid}{0}
+	\let\sigma=\cross
+	#2
+	\endgroup
+}
+\makeatother
+
+\renewcommand{\partname}{}
+
+\begin{document}
+
+\thispagestyle{empty}
+
+%
+\begin{tikzpicture}[remember picture,overlay]
+    \node[inner sep=0pt] (background) at (current page.center) {\includegraphics[width=\paperwidth]{Images/trefoil.png}};    
+
+    \draw (current page.center) 
+	node [fill=white!70, fill opacity=1,text opacity=1,inner sep=1cm]
+	{\Huge\centering\bfseries\sffamily\parbox[c][][t]{\paperwidth}{\centering
+	 Uma ``rápida'' viagem na teoria dos nós e tranças \\[15pt] % Book title
+	{\Large Notas produzidas por Caio Tomás de Paula} \\[20pt] % Subtitle
+	{\huge Orientadora: Sheila Campos Chagas}}}; % Author name
+\end{tikzpicture}
+%
+
+%-------------------------------------------
+\pagenumbering{roman}
+
+\tableofcontents
+
+\newpage
+
+\pagenumbering{arabic}
+	
+\setlength{\baselineskip}{7mm} 
+
+%-------------------------------------------	
+
+% Parte 1
+\part{Preliminares de Álgebra Abstrata}
+
+    \include{Part1/Chapter00/intro}
+
+    \include{Part1/Chapter01/groups}
+    
+    \include{Part1/Chapter02/free_groups}
+
+% Parte 2
+\part{Tranças e Nós}
+
+    \include{Part2/Chapter03/intro_braids}
+    
+    \include{Part2/Chapter04/braid_groups}
+    
+    \include{Part2/Chapter05/knots_and_braids}
+    
+    \include{Part2/Chapter06/curiosities}
+
+% Bibliografia
+\backmatter
+
+\nocite{*}
+
+\bibliographystyle{acm}
+%\bibliographystyle{babalpha}
+\bibliography{bibliography}
+
+\end{document}
