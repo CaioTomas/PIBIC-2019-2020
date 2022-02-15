@@ -14,374 +14,779 @@
 \end{minipage}
 
 \section{Grupos de permutação}
-
+    %
     \begin{lemma}
-		\label{lema identidade permutacoes}
-		\hspace{12pt} Se $e = \beta_{1}\beta_{2}\cdots\beta_{r}$, com $\beta$ sendo ciclos de tamanho 2, então $r$ é par.
+	\label{lema identidade permutacoes}
+        Se $e = \beta_{1}\beta_{2}\cdots\beta_{r}$, com $\beta$ sendo
+        ciclos de tamanho 2, então $r$ é par.
 	\end{lemma}
+	%
 	\begin{proof}
-		\vspace{0.3cm}\par Suponha $r>2$. Então, $\beta_{r-1}\beta_{r}$ tem uma das seguintes formas:
+		Suponha $r>2$. Então, $\beta_{r-1}\beta_{r}$ tem uma das
+		seguintes formas:
+		%
 		\begin{align}
-		e &= (ab)(ab) \\
-		(ab)(bc) &= (ac)(ab) \\
-		(ac)(cb) &= (bc)(ab) \\
-		(ab)(cd) &= (cd)(ab) 
+		    \label{1} e &= (ab)(ab) \\
+		    \label{2} (ab)(bc) &= (ac)(ab) \\
+		    \label{3} (ac)(cb) &= (bc)(ab) \\
+		    \label{4} (ab)(cd) &= (cd)(ab)
 		\end{align}
-		Se (1.1) ocorre, então $e = \beta_{1}\beta_{2}\cdots\beta_{r-2}$ e, pelo Segundo Princípio da Indução, $r-2$ é par e, portanto, $r$ é par. Se (1.2), (1.3) ou (1.4) ocorre, podemos substituir o lado direito pelo lado esquerdo em $e$, levando a última ocorrência de $a$ para o penúltimo ciclo da esquerda para a direita. Prosseguindo dessa maneira para reescrever os pares da forma $\beta_{i-1}\beta_{i}$, temos de, em algum momento, obter uma sequência com $r-2$ ciclos de tamanho 2. Porque, do contrário, teríamos
+		%
+		Se \eqref{1} ocorre, então 
+		$e = \beta_{1}\beta_{2}\cdots\beta_{r-2}$ e, pelo 
+		Segundo Princípio da Indução, $r-2$ é par e, portanto, 
+		$r$ é par. Se \eqref{2}, \eqref{3} ou \eqref{4} ocorre,
+		podemos substituir o lado direito pelo lado esquerdo em
+		$e$, levando a última ocorrência de $a$ para o penúltimo
+		ciclo da esquerda para a direita. Prosseguindo dessa
+		maneira para reescrever os pares da forma
+		$\beta_{i-1}\beta_{i}$, temos de, em algum momento, 
+		obter uma sequência com $r-2$ ciclos de tamanho 2 
+		porque, do contrário, teríamos
+		%
 		\begin{equation*}
-		e = (a \star)\cdots\gamma_{r}
-		\end{equation*}   
-		sendo $(a\star)$ a única ocorrência de $a$. Logo, $a$ seria levado em um elemento distinto de $a$ e teríamos um absurdo, pois $e$ fixa todos os  elementos. Portanto, devemos ter uma sequência de $r-2$ ciclos. Pelo Segundo Princípio da Indução Matemática, $r-2$ é par, logo $r$ é par.
+		    e = (a \star)\cdots\gamma_{r}
+		\end{equation*}
+		%
+		sendo $(a\star)$ a única ocorrência de $a$. Logo, 
+		$a$ seria levado em um elemento distinto de $a$ e 
+		teríamos um absurdo, pois $e$ fixa todos os elementos.
+		Portanto, devemos ter uma sequência de $r-2$ ciclos. 
+		Pelo Segundo Princípio da Indução Matemática, 
+		$r-2$ é par, logo $r$ é par.
 	\end{proof}
-	\par\vspace{0.3cm} Ao invés de ``ciclos de tamanho $2$'' ou ``$2$-ciclos'', podemos usar o termo \textit{transposições}. De fato, essa nomenclatura é mais intuitiva, pois o que uma permutação de $2$ elementos faz é trocar os dois de lugar, ou seja, transpô-los.
-	\par\vspace{0.3cm} Vamos chamar de $A_n$ o conjunto das permutações pares de $n$ elementos, ou seja, as permutações de $n$ elementos que podem ser decompostas em um produto de um número par de transposições. De fato, $A_n$ é subgrupo de $S_n$, como demonstrado abaixo.
+	%
+	\par\vspace{0.3cm} Ao invés de ``ciclos de tamanho $2$'' ou
+	``$2$-ciclos'', podemos usar o termo \textit{transposições}. 
+	De fato, essa nomenclatura é mais intuitiva, pois o que uma
+	permutação de $2$ elementos faz é trocar os dois de lugar, 
+	ou seja, transpô-los.
+	%
+	\par\vspace{0.3cm} Vamos chamar de $A_n$ o conjunto das
+	permutações pares de $n$ elementos, ou seja, as permutações 
+	de $n$ elementos que podem ser decompostas em um produto 
+	de um número par de transposições. De fato, $A_n$ é 
+	subgrupo de $S_n$, como demonstrado abaixo.
+	%
 	\begin{theorem}
-		\label{grupo alternante subgrupo de S_n}
+	\label{grupo alternante subgrupo de S_n}
 		$A_n \leq S_n$.
 	\end{theorem}
+	%
 	\begin{proof}
-	Se $\alpha, \beta \in A_n$, então $\alpha\beta = \sigma_1\sigma_2\cdots\sigma_r\gamma_1\gamma_2\cdots\gamma_s \in A_n$, pois $r+s$ é par já que $r$ e $s$ são pares. \end{proof}
+        Se $\alpha, \beta \in A_n$, então
+        %
+        \begin{equation*}
+        \alpha\beta
+        = 
+        \sigma_1\sigma_2\cdots\sigma_r\gamma_1\gamma_2\cdots\gamma_s \in A_n,
+        \end{equation*}
+        %
+        pois $r+s$ é par já que $r$ e $s$ são pares. 
+    \end{proof}
+    %
 	\begin{theorem}
-		\label{ordem do grupo alternante}
-		Para todo $n>1, |A_n| = \displaystyle{\frac{n!}{2}}$.\end{theorem}
+	\label{ordem do grupo alternante}
+		Para todo $n>1, |A_n| = \displaystyle{\frac{n!}{2}}$.
+	\end{theorem}
+	%
 	\begin{proof}
-		Como toda permutação pode ser escrita como produto de ciclos de tamanho 2, sabemos que se $\alpha\in S_n$, $\alpha$ é par ou $\alpha$ é ímpar. 
-		\par\vspace{0.3cm} Se $\alpha$ é par, então $(12)\alpha$ é ímpar. Além disso, $(12)\alpha\neq (12)\beta$ para $\alpha\neq\beta$. Logo, a quantidade de permutações pares é maior ou igual à de permutações ímpares, pois multiplicar uma permutação par por $(12)$ gera uma permutação ímpar, mas pode não gerar \textbf{todas} as permutações ímpares.
-		\par\vspace{0.3cm} Por outro lado, se $\alpha$ é ímpar, então $(12)\alpha$ é par. Novamente, $(12)\alpha\neq (12)\beta$ para $\alpha\neq\beta$. Logo, a quantidade de permutações ímpares é maior ou igual à de permutações pares, pois multiplicar uma permutação ímpar por $(12)$ gera uma permutação par, mas pode não gerar \textbf{todas} as permutações pares. 
-		\par\vspace{0.3cm} Portanto, a quantidade de permutações pares é igual à quantidade de permutações ímpares, logo $|A_n| = \displaystyle{\frac{|S_n|}{2} = \frac{n!}{2} }$. \end{proof} 
-	
-	%\begin{example}
-	%	Mostre que podemos escrever $(16523)$ como combinação de $(13456)$ e $(132)$.
-	%\end{example}
-	
-	%\begin{proof}
-	%	Sejam $r = (13456)$ e $s = (132)$. Queremos obter o ciclo $\alpha = (16523) = (13)(12)(15)(16)$. Note que $\alpha$ é par. Com programas de computador, sabemos que $|\langle r,s\rangle| = 360 = |A_6|$, logo $\langle r,s\rangle = A_6$. Como $\alpha\in A_6$, então podemos obter $\alpha$ a partir de $r$ e $s$.
-	%\end{proof} 
-	\par\vspace{0.3cm} Por exemplo, podemos escrever a permutação $(16523)$ como combinação das permutações $(13456)$ e $(132)$. De fato, façamos $r = (13456)$ e $s = (132)$. Queremos obter o ciclo $\alpha = (16523) = (13)(12)(15)(16)$. Note que $\alpha$ é uma permutação par. Com alguns cálculos (preferencialmente em computadores), podemos obter que $|\langle r,s \rangle| = 360 = |A_6|$, logo $A_6 = \langle r,s \rangle$. Como $\alpha\in A_6$, então é claro que podemos obtê-la a partir de $r$ e $s$.
+		Como toda permutação pode ser escrita como produto de 
+		ciclos de tamanho 2, sabemos que se 
+		$\alpha\in S_n$, $\alpha$ é par ou $\alpha$ é ímpar.
+		%
+		\par\vspace{0.3cm} Se $\alpha$ é par, então $(12)\alpha$ é ímpar.
+		Além disso, $(12)\alpha\neq (12)\beta$ para $\alpha\neq\beta$.
+		Logo, a quantidade de permutações pares é maior ou igual à de
+		permutações ímpares, pois multiplicar uma permutação par por
+		$(12)$ gera uma permutação ímpar, mas pode não gerar
+		\textbf{todas} as permutações ímpares.
+		%
+		\par\vspace{0.3cm} Por outro lado, se $\alpha$ é ímpar, então
+		$(12)\alpha$ é par. Novamente, $(12)\alpha\neq (12)\beta$ para
+		$\alpha\neq\beta$. Logo, a quantidade de permutações ímpares é
+		maior ou igual à de permutações pares, pois multiplicar uma
+		permutação ímpar por $(12)$ gera uma permutação par, mas pode 
+		não gerar \textbf{todas} as permutações pares.
+		%
+		\par\vspace{0.3cm} Portanto, a quantidade de permutações pares é
+		igual à quantidade de permutações ímpares, logo 
+		$|A_n| = \displaystyle{\frac{|S_n|}{2} = \frac{n!}{2} }$.
+	\end{proof} 
+	%
+	\par\vspace{0.3cm} Por exemplo, podemos escrever a permutação
+	$(16523)$ como combinação das permutações $(13456)$ e $(132)$. 
+	De fato, façamos $r = (13456)$ e $s = (132)$. Queremos obter 
+	o ciclo $\alpha = (16523) = (13)(12)(15)(16)$. Note que $\alpha$ 
+	é uma permutação par. Com alguns cálculos (preferencialmente em
+	computadores), podemos ver que 
+	$|\langle r,s \rangle| = 360 = |A_6|$, logo 
+	$A_6 = \langle r,s \rangle$. Como $\alpha\in A_6$, então é 
+	claro que podemos obtê-la a partir de $r$ e $s$.
 
 \section{Isomorfismos}
-
+    %
     \begin{definition}
-		\label{def isomorfismo}
-		Um \textbf{isomorfismo} $\phi$ de um grupo $G$ em um grupo $\overline{G}$ é uma aplicação bijetora de $G$ em $\overline{G}$ que preserva a operação, isto é, $\phi(ab) = \phi(a)\phi(b),\forall a,b\in G$.
+	\label{def isomorfismo}
+		Um \textbf{isomorfismo} $\phi$ de um grupo $G$ em um grupo
+		$\overline{G}$ é uma aplicação bijetora $\phi$ de $G$ em
+		$\overline{G}$ que preserva a operação do grupo, isto é, 
+		tal que $\phi(ab) = \phi(a)\phi(b),\forall a,b\in G$.
 	\end{definition}
-	\par\vspace{0.3cm} Na Definição \eqref{def isomorfismo}, no lado esquerdo da igualdade a operação é a de $G$, enquanto que no lado direito a operação é a de $\overline{G}$.
-	
+	%
+	\par\vspace{0.3cm} Na Definição \eqref{def isomorfismo}, no lado
+	esquerdo da igualdade a operação é a de $G$, enquanto que no lado
+	direito a operação é a de $\overline{G}$.
+	%
 	\begin{theorem}[Teorema de Cayley]
-		\label{Cayley}
+	\label{Cayley}
 		Todo grupo é isomorfo a um grupo de permutações.
 	\end{theorem}
-	
+	%
 	\begin{proof}
-		Seja $G$ um grupo. Para qualquer $g\in G$, defina $T_g:G\to G$ por $T_g(x) = gx, \forall x\in G$. Note que $T_g$ é uma permutação no conjunto de elementos de $G$, pois cada elemento $x\in G$ é levado no elemento $gx$, também em $G$. 
-		\par\vspace{0.3cm} Agora, seja $\overline{G} = \{ T_g | g\in G \}$. Então, $\overline{G}$ é um grupo sob a composição. Para verificar isso, observe que para quaisquer $g$ e $h$ em $G$, temos $T_gT_h(x) = T_g(T_h(x)) = T_g(hx) = g(hx) = (gh)x = T_{gh}(x)$, logo $T_gT_h = T_{gh}$.
-		\par\vspace{0.3cm} Daí, segue que $T_e$ é a identidade, e $(T_g)^{-1} = T_{g^{-1}}$. Como a composição é associativa, $\overline{G}$ é grupo.
-		\par\vspace{0.3cm} Agora, podemos definir $\phi: G\to\overline{G}$ dado por $\phi(g) = T_g, \forall g\in G$. Se $T_g = T_h$, então $T_g(e) = T_h(e)$ ou, equivalentemente, $ge = he$. Então, $g = h$ e $\phi$ é injetora. Pela maneira que construímos $\overline{G}$, vemos que $\phi$ é sobrejetora. Por fim, sejam $a,b\in G$ quaisquer. Então
-		\begin{align*}
-		\phi(ab) = T_{ab} = T_aT_b = \phi(a)\phi(b)
-		\end{align*}
-	\end{proof}
-	\par\vspace{0.3cm} Os isomorfismos têm algumas propriedades, listadas a seguir nos Teoremas \eqref{isomorfismos em elementos} e \eqref{isomorfismos em grupos}.
-	
-	\begin{theorem}
-		\label{isomorfismos em elementos}
-		\begin{enumerate}
-			\item \vspace{0.3cm} $\phi$ leva a identidade de $G$ na identidade de $\overline{G}$;
-			\item $\forall n\in\mathbb{N}, a\in G, \phi (a^n) = [\phi (a)]^n$;
-			\item Dados $a,b \in G$ quaisquer, $ab = ba \Leftrightarrow \phi (a)\phi (b) = \phi (b)\phi (a)$;
-			\item $G = \langle a \rangle \Leftrightarrow \overline{G} = \langle\phi(a) \rangle$;
-			\item $|a| = |\phi(a)|, \forall a\in G$;
-			\item Dados $k\in\mathbb{Z}$ e $b\in G$, a equação $x^k = b$ tem a mesma quantidade de soluções em $G$ que a equação $x^k = \phi(b)$ tem em $\overline{G}$;
-			\item Se $G$ é finito, $G$ e $\overline{G}$ têm o mesmo número de elementos de cada ordem. 
-		\end{enumerate}
-	\end{theorem}
-	
-	\begin{proof}
-		\textbf{1.} Sejam $e$, $\overline{e}$ as identidades de $G$ e $\overline{G}$, respectivamente. Logo, temos:
+		Seja $G$ um grupo. Para qualquer $g\in G$, defina $T_g:G\to G$
+		por $T_g(x) = gx, \forall x\in G$. Note que $T_g$ é uma
+		permutação no conjunto de elementos de $G$, pois cada elemento
+		$x\in G$ é levado no elemento $gx$, também em $G$.
+		%
+		\par\vspace{0.3cm} Agora, seja 
+		%
 		\begin{equation*}
-		e = e\cdot e \Rightarrow \phi (e) = \phi (e)\phi (e)
-		\end{equation*} 
-		Como $\phi (e)\in \overline{G}$, segue que $\phi(e) = \overline{e}$. 
-		\par\vspace{0.4cm}
-		\textbf{2.} Se $n=0$, temos $\phi (e) = \overline{e} = (\overline{e})^0$. 
-		Para $n>0$, temos $\phi (a^n) = \underbrace{\phi (a)\phi (a)\dots \phi (a)}_{n} = [\phi (a)]^n$.
-		Agora, se $n<0$, então $-n>0$ e temos:
-		\begin{equation*}
-		\phi (e) = \overline{e} = \phi (a^n a^{-n}) = \phi (a^n)[\phi (a)]^{-n} \Rightarrow [\phi (a)]^n = \phi (a^n)
+		    \overline{G} = \{ T_g | g\in G \}.
 		\end{equation*}
+		%
+		Então $\overline{G}$ é um grupo sob a composição. 
+		Para verificar isso, observe que para quaisquer $g$ e $h$ em $G$
+		temos 
+		%
+		\begin{equation*}
+		    T_gT_h(x) = T_g(T_h(x)) = T_g(hx) = (gh)x = T_{gh}(x), 
+        \end{equation*}
+		%
+		logo $T_gT_h = T_{gh}$.
+		%
+		\par\vspace{0.3cm} Daí, segue que $T_e$ é a identidade e
+		$(T_g)^{-1} = T_{g^{-1}}$. Como a composição é associativa,
+		$\overline{G}$ é grupo.
+		%
+		\par\vspace{0.3cm} Agora, podemos definir 
+		$\phi: G\to\overline{G}$ dada por 
+		$\phi(g) = T_g, \forall g\in G$. Se $T_g = T_h$, então 
+		$T_g(e) = T_h(e)$ ou, equivalentemente, $ge = he$. Então, 
+		$g = h$ e $\phi$ é injetora. Pela maneira que construímos
+		$\overline{G}$, vemos que $\phi$ é sobrejetora. Por fim, sejam
+		$a,b\in G$ quaisquer. Então
+		%
+		\begin{align*}
+		    \phi(ab) = T_{ab} = T_aT_b = \phi(a)\phi(b)
+		\end{align*}
+		%
+	\end{proof}
+	%
+	\par\vspace{0.3cm} Os isomorfismos têm algumas propriedades, 
+	listadas a seguir nos Teoremas \eqref{isomorfismos em elementos} 
+	e \eqref{isomorfismos em grupos}.
+	%
+	\begin{theorem}
+	\label{isomorfismos em elementos}
+	    Valem os seguintes itens:
+	    %
+		\begin{enumerate}
+			\item \vspace{0.3cm} $\phi$ leva a identidade de $G$ na
+			identidade de $\overline{G}$;
+			\item $\forall n\in\N, a\in G, \phi (a^n) = [\phi (a)]^n$;
+			\item Dados $a,b \in G$ quaisquer, 
+			$ab = ba \iff \phi (a)\phi (b) = \phi (b)\phi (a)$;
+			\item $G = \langle a \rangle \iff \overline{G} =
+			\langle\phi(a) \rangle$;
+			\item $|a| = |\phi(a)|, \forall a\in G$;
+			\item Dados $k\in\mathbb{Z}$ e $b\in G$, a equação 
+			$x^k = b$ tem a mesma quantidade de soluções em $G$ que a
+			equação $x^k = \phi(b)$ tem em $\overline{G}$;
+			\item Se $G$ é finito, $G$ e $\overline{G}$ têm o mesmo
+			número de elementos de cada ordem. 
+		\end{enumerate}
+		%
+	\end{theorem}
+	%
+	\begin{proof}
+		\textbf{1.} Sejam $e$, $\overline{e}$ as identidades de $G$ 
+		e $\overline{G}$, respectivamente. Logo, temos:
+		%
+		\begin{equation*}
+		    e = e\cdot e \Rightarrow \phi (e) = \phi (e)\phi (e)
+		\end{equation*} 
+		%
+		Como $\phi (e)\in \overline{G}$, segue que 
+		$\phi(e) = \overline{e}$. 
+		%
+		\par\vspace{0.4cm}
+		\textbf{2.} Se $n=0$, temos 
+		$\phi (e) = \overline{e} = (\overline{e})^0$. 
+		Para $n>0$, temos 
+		$\phi(a^n)=\underbrace{\phi(a)\phi(a)\dots\phi(a)}_{n} 
+		= [\phi(a)]^n$.
+		Agora, se $n<0$, então $-n>0$ e temos:
+		%
+		\begin{equation*}
+		    \phi (e) = \overline{e} = \phi (a^n a^{-n}) 
+		    = \phi (a^n)[\phi (a)]^{-n} \Rightarrow [\phi (a)]^n 
+		    = \phi (a^n)
+		\end{equation*}
+		%
 		\par\vspace{0.4cm}
 		\textbf{3.} Sejam $a,b \in G$. Temos que:
-		\par
+		%
 		\begin{equation*}
-		(\Rightarrow) \hspace{12pt}ab = ba \Rightarrow \phi (ab) = \phi (ba) \Rightarrow \phi (a)\phi (b) = \phi (b)\phi (a)
+		(\Rightarrow) \hspace{12pt}ab = ba \Rightarrow \phi (ab) 
+		= \phi (ba) \Rightarrow \phi (a)\phi (b) = \phi (b)\phi (a)
 		\end{equation*}
-		\par
+		%
 		\begin{equation*}
-		(\Leftarrow)\hspace{12pt}\phi(a)\phi(b) = \phi(b)\phi(a) \Rightarrow \phi(ab) = \phi(ba) \Rightarrow ab = ba
+		(\Leftarrow)\hspace{12pt}\phi(a)\phi(b) = \phi(b)\phi(a)
+		\Rightarrow \phi(ab) = \phi(ba) \Rightarrow ab = ba
 		\end{equation*}
+		%
 		em que a volta é devido à injetividade de $\phi$.
+		%
 		\par\vspace{0.4cm}
-		\textbf{4.} Seja $G = \langle a \rangle $. Como $\overline{G}$ é fechado, $\langle \phi(a)\rangle \subseteq \overline{G}$. Como $\phi$ é sobrejetora, então para todo $b\in\overline{G}$, existe $k$ inteiro tal que $b = \phi(a^k) = [\phi(a)]^k \in\langle \phi(a)\rangle $, logo $\overline{G}\subseteq\langle \phi(a)\rangle$ e, portanto, $\overline{G} = \langle \phi(a)\rangle.$
-		\par\vspace{0.3cm} Agora, seja $\overline{G} = \langle \phi(a)\rangle$. Como $G$ é fechado, $\langle a\rangle \subseteq G$. Note que $\forall b\in G, \phi(b)\in\langle \phi(a)\rangle$, i.e., existe $k\in\mathbb{Z}$ tal que $\phi(b) = [\phi(a)]^k = \phi(a^k)$. Logo, como $\phi$ é injetora, $b = a^k\in\langle a\rangle $ e $G \subseteq \langle a\rangle$. Portanto, $G = \langle a\rangle$. 
+		\textbf{4.} Seja $G = \langle a \rangle $. Como $\overline{G}$ 
+		é fechado, $\langle \phi(a)\rangle \subseteq \overline{G}$. 
+		Como $\phi$ é sobrejetora, então para todo $b\in\overline{G}$,
+		existe $k$ inteiro tal que 
+		$b = \phi(a^k) = [\phi(a)]^k \in\langle \phi(a)\rangle $, 
+		logo $\overline{G}\subseteq\langle \phi(a)\rangle$ e, portanto,
+		$\overline{G} = \langle \phi(a)\rangle.$
+		%
+		\par\vspace{0.3cm} Agora, seja 
+		$\overline{G} = \langle \phi(a)\rangle$. Como $G$ é fechado,
+		$\langle a\rangle \subseteq G$. Note que 
+		$\forall b\in G, \phi(b)\in\langle \phi(a)\rangle$, i.e., 
+		existe $k\in\mathbb{Z}$ tal que 
+		$\phi(b) = [\phi(a)]^k = \phi(a^k)$. Logo, como $\phi$ é
+		injetora, $b = a^k\in\langle a\rangle $ e 
+		$G \subseteq \langle a\rangle$. Portanto, $G = \langle a\rangle$.
+		%
 		\par\vspace{0.4cm}
 		\textbf{5.} Seja $a\in G$ com $|a| = n$ e $|\phi(a)| = k$. Então:
+		%
 		\begin{equation*}
-		\phi(a^n) = \overline{e} = [\phi(a)]^n.
+		    \phi(a^n) = \overline{e} = [\phi(a)]^n.
 		\end{equation*}
-		logo $k|n$
-		.	\par Por outro lado, temos que:
+		%
+		logo $k\mid n$.	Por outro lado, temos que:
+		%
 		\begin{equation*}
-		[\phi(a)]^k = \overline{e} \Rightarrow a^k = e
+		    [\phi(a)]^k = \overline{e} \Rightarrow a^k = e
 		\end{equation*}
+		%
 		logo $n|k$. Portanto, $n = k$.
 		\par\vspace{0.4cm}
-		\textbf{6.} Seja $a \in G$ tal que $a^k = b$. Então, $\phi(a^k) = [\phi(a)]^k = \phi(b)$, ou seja, se $a$ é solução de $x^k = b$ em $G$, então $\phi(a)$ é solução de $x^k = b$ em $\overline{G}$. Como $\phi$ é injetora, $\phi(a)\neq\phi(b)$ quando $a\neq b$, ou seja, soluções diferentes da equação em $G$ levam a soluções diferentes da equação em $\overline{G}$. 
+		\textbf{6.} Seja $a \in G$ tal que $a^k = b$. Então, 
+		$\phi(a^k) = [\phi(a)]^k = \phi(b)$, ou seja, se $a$ é 
+		solução de $x^k = b$ em $G$, então $\phi(a)$ é solução de 
+		$x^k = b$ em $\overline{G}$. Como $\phi$ é injetora,
+		$\phi(a)\neq\phi(b)$ quando $a\neq b$, ou seja, soluções
+		diferentes da equação em $G$ levam a soluções diferentes da
+		equação em $\overline{G}$.
+		%
 		\par\vspace{0.4cm}
-		\textbf{7.} Como $|a| = |\phi(a)|$ para todo $a\in G$, então se $G$ tem $k$ elementos de ordem $n_k$, então $\overline{G}$ também terá $k$ elementos de ordem $n_k$ devido à injetividade de $\phi$.	
-		
-	\end{proof}  
-	\par\vspace{0.3cm}
-	
+		\textbf{7.} Como $|a| = |\phi(a)|$ para todo $a\in G$, então 
+		se $G$ tem $k$ elementos de ordem $n_k$, então $\overline{G}$
+		também terá $k$ elementos de ordem $n_k$ devido à injetividade 
+		de $\phi$.	
+	\end{proof}
+	%
 	\begin{theorem}
-		\label{isomorfismos em grupos}
+	\label{isomorfismos em grupos}
+	    Valem os seguintes itens:
+	    %
 		\begin{enumerate}
-			\item Se $\phi$ é um isomorfismo de $G$ em $\overline{G}$, então $\phi ^{-1}$ é um isomorfismo de $\overline{G}$ em $G$;
+			\item Se $\phi$ é um isomorfismo de $G$ em $\overline{G}$,
+			então $\phi ^{-1}$ é um isomorfismo de $\overline{G}$ em $G$;
 			\item $G$ é abeliano se, e só se, $\overline{G}$ é abeliano;
 			\item $G$ é cíclico se, e só se, $\overline{G}$ é cíclico;
-			\item Se $K$ é um subgrupo de $G$, então $\phi(K) = \{\phi(k)|k\in K\}$ é um subgrupo de $\overline{G}$;
-			\item Se $\overline{K}$ é subgrupo de $\overline{G}$, então $\phi^{-1}(\overline{K}) = \{ g\in G|\phi(g)\in\overline{K}\}$ é subgrupo de $G$;
+			\item Se $K$ é um subgrupo de $G$, então 
+			$\phi(K) = \{\phi(k)|k\in K\}$ é um subgrupo de
+			$\overline{G}$;
+			\item Se $\overline{K}$ é subgrupo de $\overline{G}$, 
+			então $\phi^{-1}(\overline{K}) 
+			= \{ g\in G|\phi(g)\in\overline{K}\}$ é subgrupo de $G$;
 			\item $\phi(Z(G)) = Z(\overline{G})$.
-		\end{enumerate}	
+		\end{enumerate}
+		%
 	\end{theorem}
+	%
 	\begin{proof}
-		\textbf{1.} Como $\phi$ é bijetiva, $\phi^{-1}$ também é. Logo, basta verificarmos se $\phi^{-1}$ preserva a operação. 
+		\textbf{1.} Como $\phi$ é bijetiva, $\phi^{-1}$ também é. 
+		Logo, basta verificarmos se $\phi^{-1}$ preserva a operação.
+		%
 		\par\vspace{0.3cm} Para isso, note que 
+		%
 		\begin{align*}
-		\phi^{-1}(ab) = \phi^{-1}(a)\phi^{-1}(b) \Leftrightarrow ab = \phi(\phi^{-1}(a))\phi(\phi^{-1}(b)) \Leftrightarrow ab = ab.
+		    \phi^{-1}(ab) 
+		    = \phi^{-1}(a)\phi^{-1}(b) \iff ab 
+		    = \phi(\phi^{-1}(a))\phi(\phi^{-1}(b)) \iff ab = ab.
 		\end{align*} 
+		%
 		Logo, $\phi^{-1}$ de fato preserva a operação.
+		%
 		\par\vspace{0.4cm}
-		\textbf{2.} Pela propriedade 3 do Teorema \eqref{isomorfismos em elementos}, sabemos que $ab = ba$ se, e somente se, $\phi(a)\phi(b) = \phi(b)\phi(a)$, ou seja, os elementos de $G$ comutam se, e só se, os elementos de $\overline{G}$ comutam.
+		\textbf{2.} Pela propriedade 3 do Teorema 
+		\eqref{isomorfismos em elementos}, sabemos que $ab = ba$ se, e
+		somente se, $\phi(a)\phi(b) = \phi(b)\phi(a)$, ou seja, os
+		elementos de $G$ comutam se, e só se, os elementos de 
+		$\overline{G}$ comutam.
+		%
 		\par\vspace{0.4cm}
-		\textbf{3.} O resultado segue da propriedade 4 do \eqref{isomorfismos em elementos}, que diz que $G = \langle a\rangle \Leftrightarrow \overline{G} = \langle \phi(a)\rangle$.
+		\textbf{3.} O resultado segue da propriedade 4 do
+		Teorema \eqref{isomorfismos em elementos}, que diz que 
+		$G = \langle a\rangle \iff \overline{G} 
+		= \langle \phi(a)\rangle$.
+		%
 		\par\vspace{0.4cm}
 		\textbf{4.} Sejam $k_1, k_2 \in K$ quaisquer. Temos que:
+		%
 		\begin{equation*}
-		\phi(k_1)\phi(k_2^{-1}) = \phi(k_1k_2^{-1}) \in\phi(K)
+		    \phi(k_1)\phi(k_2^{-1}) = \phi(k_1k_2^{-1}) \in\phi(K)
 		\end{equation*}
-		pois $k_1k_2^{-1} \in K$ já que $K$ é subgrupo. 
+		%
+		pois $k_1k_2^{-1} \in K$ já que $K$ é subgrupo.
+		%
 		\par\vspace{0.4cm}
-		\textbf{5.} Se $\overline{K}$ é subgrupo de $\overline{G}$, então para quaisquer $\phi(g_1), \phi(g_2^{-1})\in \overline{K}$, temos:
+		\textbf{5.} Se $\overline{K}$ é subgrupo de $\overline{G}$, 
+		então para quaisquer $\phi(g_1), \phi(g_2^{-1})\in \overline{K}$,
+		temos:
+		%
 		\begin{align*}
-		\phi^{-1}(\phi(g_1))\phi^{-1}(\phi(g_2^{-1})) = \phi^{-1}(\underbrace{\phi(g_1)\phi(g_2^{-1})}_{\in\overline{K}}) \in \phi^{-1}(\overline{K})
+		    \phi^{-1}(\phi(g_1))\phi^{-1}(\phi(g_2^{-1})) 
+		    = \phi^{-1}(\underbrace{\phi(g_1)\phi(g_2^{-1})}_{\in\overline{K}}) 
+		    \in \phi^{-1}(\overline{K})
 		\end{align*}
-		\par\vspace{0.3cm} Portanto, $\phi^{-1}(\overline{K})$ é subgrupo de $G$.
+		%
+		\par\vspace{0.3cm} Portanto, $\phi^{-1}(\overline{K})$ é 
+		subgrupo de $G$.
+		%
 		\par\vspace{0.4cm}
-		\textbf{6.} Por definição, sabemos que $Z(G) = \{ z|gz = zg, \forall g\in G \}$. Daí, $\phi(Z(G)) = \{ \underbrace{\phi(z)}_{\in \overline{G}} | \phi(g)\phi(z) = \phi(z)\phi(g), \forall \phi(g)\in\overline{G}\}$, que é, por definição, $Z(\overline{G})$.
-		
+		\textbf{6.} Por definição, sabemos que 
+		$Z(G) = \{ z|gz = zg, \forall g\in G \}$. Daí, 
+		$\phi(Z(G)) = 
+		\{ \underbrace{\phi(z)}_{\in \overline{G}} | \phi(g)\phi(z) 
+		= \phi(z)\phi(g), \forall \phi(g)\in\overline{G}\}$, que é, 
+		por definição, $Z(\overline{G})$.
 	\end{proof}
-	\par\vspace{0.3cm} Na Definição \eqref{def isomorfismo}, nada nos impede de tomar $G = \overline{G}$. De fato, se o fizermos, obtemos um tipo de isomorfismo especial, chamado automorfismo.
-	
+	%
+	\par\vspace{0.3cm} Na Definição \eqref{def isomorfismo}, nada nos
+	impede de tomar $G = \overline{G}$. De fato, se o fizermos, obtemos
+	um tipo de isomorfismo especial, chamado {\bf automorfismo}.
+	%
 	\begin{deff}
-		\label{def automorfismo}
-		Um isomorfismo de um grupo $G$ em si mesmo é chamado automorfismo. O conjunto de todos os automorfismos de um grupo $G$ é denotado por $\aut(G)$.
+	\label{def automorfismo}
+		Um isomorfismo de um grupo $G$ em si mesmo é chamado 
+		automorfismo. O conjunto de todos os automorfismos de um 
+		grupo $G$ é denotado por $\aut(G)$.
 	\end{deff}
-	\par\vspace{0.3cm} Além disso, podemos ainda definir um tipo especial de automorfismo, chamado automorfismo interno.
+	%
+	\par\vspace{0.3cm} Além disso, podemos ainda definir um tipo 
+	especial de automorfismo, chamado {\bf automorfismo interno}.
+	%
 	\begin{deff}
-		\label{def automorfismo interno}
-		O automorfismo de $G$ definido por $\phi_a(x) = axa^{-1}$ para todo $x$ em $G$ é chamado automorfismo interno de $G$ induzido por $a$. O conjunto de todos os automorfismos internos de um grupo $G$ é denotado por $\inn(G)$.
+	\label{def automorfismo interno}
+		O automorfismo de $G$ definido por $\phi_a(x) = axa^{-1}$ 
+		para todo $x$ em $G$ é chamado automorfismo interno de $G$
+		induzido por $a$. O conjunto de todos os automorfismos
+		internos de um grupo $G$ é denotado por $\inn(G)$.
 	\end{deff}
-	\par\vspace{0.3cm} Um fato interessante de $\aut(G)$ e $\inn(G)$ é o seguinte.
+	%
+	\par\vspace{0.3cm} Um fato interessante de $\aut(G)$ e $\inn(G)$ 
+	é o seguinte.
+	%
 	\begin{theorem}
 		$\aut(G)$ e $\inn(G)$ são grupos sob composição.
 	\end{theorem}
+	%
 	\begin{proof}
-		\vspace{0.3cm}\par Sejam $\phi_a$ e $\phi_b$ elementos quaisquer de $\inn(G)$. Note que $(\phi_a\circ\phi_b)(x) = \phi_a(\phi_b(x)) = a(bxb^{-1})a^{-1} = abxb^{-1}a^{-1} = (ab)x(ab)^{-1} = \phi_{ab}(x) \in \inn(G)$, logo $\inn(G)$ é fechado para a composição. Além disso, a composição é associativa, $\phi_e(x) = x$ e $(\phi_a\circ\phi_{a^{-1}})(x) = \phi_e(x)$, ou seja, $\inn(G)$ tem identidade e contém os inversos. Logo, $\inn(G)$ é grupo sob composição.
-		
-		\vspace{0.3cm}\par Agora, sejam $\alpha$ e $\beta$ elementos quaisquer de $\aut(G)$. Note que 
+		Sejam $\phi_a$ e $\phi_b$ elementos quaisquer de $\inn(G)$. 
+		Note que $(\phi_a\circ\phi_b)(x) = \phi_a(\phi_b(x)) 
+		= a(bxb^{-1})a^{-1} = abxb^{-1}a^{-1} = (ab)x(ab)^{-1} 
+		= \phi_{ab}(x) \in \inn(G)$, logo $\inn(G)$ é fechado para a
+		composição. Além disso, a composição é associativa, 
+		$\phi_e(x) = x$ e $(\phi_a\circ\phi_{a^{-1}})(x) = \phi_e(x)$, 
+		ou seja, $\inn(G)$ tem identidade e contém os inversos. 
+		Logo, $\inn(G)$ é grupo sob composição.
+		%
+		\vspace{0.3cm}\par Agora, sejam $\alpha$ e $\beta$ elementos
+		quaisquer de $\aut(G)$. Note que
+		%
 		\begin{equation*}
-		\alpha^{-1}(xy) = \alpha^{-1}(x)\alpha^{-1}(y) \Leftrightarrow xy = \alpha(\alpha^{-1}(x)\alpha^{-1}(y)) \Leftrightarrow xy = \alpha(\alpha^{-1}(xy))\ \Leftrightarrow xy = xy
+		    \alpha^{-1}(xy) = \alpha^{-1}(x)\alpha^{-1}(y) 
+		    \iff xy = \alpha(\alpha^{-1}(x)\alpha^{-1}(y)) 
+		    \iff xy = \alpha(\alpha^{-1}(xy))\ \iff xy = xy
 		\end{equation*}
-		logo $\alpha^{-1}$ preserva a operação de $G$. Como $\alpha^{-1}$ é bijetiva, então é um isomorfismo, ou seja, temos $\alpha^{-1}\in \aut(G)$. Além disso, como a composição de funções é associativa, $(\alpha\circ\beta)(x) = \alpha(\underbrace{\beta(x)}_{\in G}) \in \aut(G)$ e o isomorfismo $\theta(x) = x$ é a identidade, concluímos que $\aut(G)$ é grupo sob composição.\end{proof}
-	\par\vspace{0.3cm} Por exemplo, se tomarmos $(\mathbb{C^{*}}, \cdot)$, o grupo dos complexos não nulos com a multiplicação, e defirnirmos a função $\phi : \mathbb{C^{*}}\to\mathbb{C^{*}}$ tal que $\phi(a+bi) = a-bi$, com $a,b\in\mathbb{R}$, então $\phi$ é automorfismo de $\mathbb{C^{*}}$. 
-	\par\vspace{0.3cm} De fato, note que se $\phi(a+bi) = \phi(c+di)$, então:
+		%
+		logo $\alpha^{-1}$ preserva a operação de $G$. 
+		Como $\alpha^{-1}$ é bijetiva, então é um isomorfismo, ou seja,
+		temos $\alpha^{-1}\in \aut(G)$. Além disso, como a composição
+		de funções é associativa, $(\alpha\circ\beta)(x) 
+		= \alpha(\underbrace{\beta(x)}_{\in G}) \in \aut(G)$ e o
+		isomorfismo $\theta(x) = x$ é a identidade, concluímos que
+		$\aut(G)$ é grupo sob composição.
+	\end{proof}
+	%
+	\par\vspace{0.3cm} Por exemplo, se tomarmos 
+	$(\mathbb{C^{*}}, \cdot)$, o grupo dos complexos não nulos com a
+	multiplicação, e definirmos a função 
+	$\phi : \mathbb{C^{*}}\to\mathbb{C^{*}}$ tal que 
+	$\phi(a+bi) = a-bi$, com $a,b\in\R$, então $\phi$ é automorfismo 
+	de $\mathbb{C^{*}}$.
+	%
+	\par\vspace{0.3cm} De fato, note que se $\phi(a+bi) = \phi(c+di)$,
+	então:
+	%
 	\begin{equation*}
-	a = bi = c - di \Leftrightarrow \begin{cases}a = b \\ c = d\end{cases}
+        a = bi = c - di 
+        \iff
+        \begin{cases}
+            a = b \\ 
+            c = d
+        \end{cases}
 	\end{equation*}
-	\par\vspace{0.3cm} logo $\phi$ é injetora.  Além disso, se $\alpha\in\mathbb{C^{*}}$, então existe $\beta\in\mathbb{C^{*}}$ tal que $\phi(\beta) = \alpha$, a saber, $\beta = \overline{\alpha}$. Logo, $\phi$ é sobrejetora. 
-	\par\vspace{0.3cm} Por fim, temos que 
+	%
+	\par\vspace{0.3cm} logo $\phi$ é injetora.  Além disso, se
+	$\alpha\in\mathbb{C^{*}}$, então existe $\beta\in\mathbb{C^{*}}$ 
+	tal que $\phi(\beta) = \alpha$, a saber, $\beta = \overline{\alpha}$.
+	Logo, $\phi$ é sobrejetora.
+	%
+	\par\vspace{0.3cm} Por fim, temos que
+	%
 	\begin{align*}
-	&\phi[(a + bi)(c + di)] = \phi[(ac - bd) + (ad + bc)i] \\ &= (ac - bd) - (ad + bc)i = (a- bi)(c - di) \\ &= \phi(a + bi)\cdot\phi(c + di)
-	\end{align*}.
-	\par\vspace{0.3cm} Logo, $\phi$ preserva a operação e, portanto, é automorfismo.
-	\par\vspace{0.3cm} Outro exemplo é o conjunto de automorfismos internos de $D_4$, o grupo diedral de ordem $8$. Vamos mostrar que $\inn(D_4) = \displaystyle{ \left\{ \phi_{R_0}, \phi_{R_{90}}, \phi_{H}, \phi_{D} \right\} }$. De fato, para tal basta mostrarmos que $\phi_{R_0}, \phi_{R_{90}}, \phi_{H}, \phi_{D}$ são todos distintos. Para isso, basta notar que
-	\begin{align*}
-	\phi_{R_{0}}(H) = H &\neq V = \phi_{R_{90}}(H) \\
-	\phi_{R_{0}}(R_{90}) = R_{90} &\neq R_{270} = \phi_{H}(R_{90}) \\
-	\phi_{R_{0}}(R_{270}) = R_{270} &\neq R_{90} = \phi_{D}(R_{270}) \\
-	\phi_{R_{90}}(R_{90}) = R_{90} &\neq R_{270} = \phi_{H}(R_{90}) \\
-	\phi_{R_{90}}(R_{90}) = R_{90} &\neq R_{270} = \phi_{D}(R_{90}) \\
-	\phi_{H}(V) = V &\neq H = \phi_{D}(V)
+        &\phi[(a + bi)(c + di)] = \phi[(ac - bd) + (ad + bc)i] \\ 
+        &= (ac - bd) - (ad + bc)i = (a- bi)(c - di) \\
+        &= \phi(a + bi)\cdot\phi(c + di).
 	\end{align*}
-	\par\vspace{0.3cm} Logo, $\phi_{R_0}, \phi_{R_{90}}, \phi_{H}, \phi_{D}$ são, de fato, todos distintos. 
-	\par\vspace{0.3cm} Em geral, dado um grupo $G$ não é simples determinar $\aut(G)$ e $\inn(G)$. Contudo, para alguns grupos conseguimos fazê-lo com relativa facilidade. Um desses grupos é $\mathbb{Z}_n$.
+	%
+	\par\vspace{0.3cm} Logo, $\phi$ preserva a operação e, portanto, 
+	é automorfismo.
+	%
+	\par\vspace{0.3cm} Outro exemplo é o conjunto de automorfismos
+	internos de $D_4$, o grupo diedral de ordem $8$. Vamos mostrar que
+	%
+	\begin{equation*}
+        \inn(D_4) =
+        \displaystyle{
+        \left\{
+        \phi_{R_0},\phi_{R_{90}},\phi_{H},\phi_{D}
+        \right\}}.
+	\end{equation*}
+	%
+	De fato, para tal basta mostrarmos que 
+	$\phi_{R_0}, \phi_{R_{90}}, \phi_{H}, \phi_{D}$ são todos distintos.
+	Para isso, basta notar que
+	%
+	\begin{align*}
+        \phi_{R_{0}}(H) = H &\neq V = \phi_{R_{90}}(H) \\
+        \phi_{R_{0}}(R_{90}) = R_{90} &\neq R_{270} = \phi_{H}(R_{90}) \\
+        \phi_{R_{0}}(R_{270}) = R_{270} &\neq R_{90} = \phi_{D}(R_{270}) \\
+        \phi_{R_{90}}(R_{90}) = R_{90} &\neq R_{270} = \phi_{H}(R_{90}) \\
+        \phi_{R_{90}}(R_{90}) = R_{90} &\neq R_{270} = \phi_{D}(R_{90}) \\
+        \phi_{H}(V) = V &\neq H = \phi_{D}(V)
+	\end{align*}
+	%
+	\par\vspace{0.3cm} Logo, $\phi_{R_0}, \phi_{R_{90}}, \phi_{H}, \phi_{D}$
+	são, de fato, todos distintos.
+	%
+	\par\vspace{0.3cm} Em geral, dado um grupo $G$, não é fácil determinar
+	$\aut(G)$ e $\inn(G)$. Contudo, para alguns grupos conseguimos fazê-lo 
+	com relativa facilidade. Um desses grupos é $\mathbb{Z}_n$.
+	%
 	\begin{theorem}
-		\label{automorfismos de Z_n}
+	\label{automorfismos de Z_n}
 		$\aut(\mathbb{Z}_n) \cong U(n)$.
 	\end{theorem}
-	
+	%
 	\begin{proof}
-		Seja $T: \aut(\mathbb{Z}_n)\to U(n)$ tal que $\alpha\mapsto\alpha(1)$, ou seja, o automorfismo $\alpha$ é levado na imagem de $1$ por $\alpha$. Como $a(k) = k\alpha(1)$, $T$ é injetora, pois se $\alpha(1) = \beta(1)$, então $\alpha(k) = k\alpha(1) = k\beta(1) = \beta(k)$, logo $\alpha = \beta$. 
-		\par\vspace{0.3cm} Agora, seja $r\in U(n)$ e tome o automorfismo $\alpha$ de $\mathbb{Z}_n$ dado por $\alpha(s) = sr \pmod n$. Como $T(\alpha) = \alpha(1) = r\pmod n = r$, $T$ é sobrejetora.
-		\par\vspace{0.3cm} Por fim, sejam $\alpha$ e $\beta$ elementos quaisquer de $\aut(\mathbb{Z}_n)$. Então, temos:
+		Seja $T: \aut(\mathbb{Z}_n)\to U(n)$ tal que $\alpha\mapsto\alpha(1)$,
+		ou seja, o automorfismo $\alpha$ é levado na imagem de $1$ por
+		$\alpha$. Como $a(k) = k\alpha(1)$, $T$ é injetora, pois se 
+		$\alpha(1) = \beta(1)$, então 
+		$\alpha(k) = k\alpha(1) = k\beta(1) = \beta(k)$, logo 
+		$\alpha = \beta$.
+		%
+		\par\vspace{0.3cm} Agora, seja $r\in U(n)$ e tome o automorfismo
+		$\alpha$ de $\mathbb{Z}_n$ dado por $\alpha(s) = sr \pmod n$. 
+		Como $T(\alpha) = \alpha(1) = r\pmod n = r$, $T$ é sobrejetora.
+		%
+		\par\vspace{0.3cm} Por fim, sejam $\alpha$ e $\beta$ elementos
+		quaisquer de $\aut(\mathbb{Z}_n)$. Então, temos:
+		%
 		\begin{align*}
-		T(\alpha\circ\beta) = (\alpha\circ\beta)(1) = \alpha(\beta(1)) = \alpha(\underbrace{1 + 1 + \cdots + 1}_{\beta(1)}) = \underbrace{\alpha(1) + \alpha(1) + \cdots + \alpha(1)}_{\beta(1)} = \alpha(1)\cdot\beta(1).
+            T(\alpha\circ\beta) = (\alpha\circ\beta)(1) = \alpha(\beta(1)) 
+            = \alpha(\underbrace{1 + 1 + \cdots + 1}_{\beta(1)}) 
+            = \underbrace{\alpha(1) + \alpha(1) + \cdots +
+            \alpha(1)}_{\beta(1)} 
+            = \alpha(1)\cdot\beta(1).
 		\end{align*}
-		\par\vspace{0.3cm} Logo, $T$ preserva a operação e, portanto, é isomorfismo.
+		%
+		\par\vspace{0.3cm} Logo, $T$ preserva a operação e, portanto, 
+		é isomorfismo.
 	\end{proof}
-	\par\vspace{0.3cm} Outro exemplo é $\aut(\mathbb{Z})$.	Pela propriedade 4 do Teorema \eqref{isomorfismos em elementos}, um isomorfismo deve levar gerador em gerador. Como $\mathbb{Z}$ possui apenas dois geradores, $1$ e $-1$, há apenas dois automorfismos em $\aut(\mathbb{Z})$: o automorfismo identidade, que leva $1$ em $1$ e $-1$ em $-1$; e o automorfismo que leva $1$ em $-1$ e $-1$ em $1$.
-	
-	
+	%
+	\par\vspace{0.3cm} Outro exemplo é $\aut(\mathbb{Z})$.	
+	Pela propriedade 4 do Teorema \eqref{isomorfismos em elementos}, 
+	um isomorfismo deve levar gerador em gerador. Como $\mathbb{Z}$ 
+	possui apenas dois geradores, $1$ e $-1$, há apenas dois 
+	automorfismos em $\aut(\mathbb{Z})$: o automorfismo identidade, 
+	que leva $1$ em $1$ e $-1$ em $-1$; e o automorfismo que leva 
+	$1$ em $-1$ e $-1$ em $1$.
+	%
 	\begin{remark}
-		Pelo Teorema \eqref{automorfismos de Z_n}, $|\aut(\mathbb{Z}_n)| = |U(n)| = \phi(n)$ (sendo $\phi(n)$ a função totiente de Euler). Por outro lado, vemos, a partir do que fizemos acima, que $|\aut(\mathbb{Z})| = 2$. Logo, em geral, $|\aut(\mathbb{Z}_n)| > |\aut(\mathbb{Z})|$, pois em geral $\phi(n) > 2$.
+		Pelo Teorema \eqref{automorfismos de Z_n}, 
+		$|\aut(\mathbb{Z}_n)| = |U(n)| = \phi(n)$ (sendo $\phi(n)$ a 
+		função totiente de Euler). Por outro lado, vemos, a partir do que
+		fizemos acima, que $|\aut(\mathbb{Z})| = 2$. Logo, em geral,
+		$|\aut(\mathbb{Z}_n)| > |\aut(\mathbb{Z})|$, pois em geral 
+		$\phi(n) > 2$.
 	\end{remark}
-
+    %
 \section{Classes laterais}
 \label{sec-classes-laterais}
-
-    \hspace{12pt} Um conceito importante no estudo de grupos é o de \textbf{classes laterais}.
+    %
+    Um conceito importante no estudo de grupos é o de 
+    \textbf{classes laterais}.
+    %
 	\begin{deff}
 		\label{def classes laterais}
-		Sejam $G$ um grupo e $H$ um subconjunto não vazio de $G$. Para qualquer $a\in G$,	o conjunto $\{ah | h \in H \}$ é denotado por $aH$. Analogamente, $Ha = \{ha | h \in H\}$
-		e $aHa^{-1} = \{aha^{-1} | h \in H\}$. Quando $H$ é subgrupo de $G$, o conjunto $aH$ é dito classe lateral à esquerda de $H$ em $G$ contendo $a$, enquanto que $Ha$ é dito classe lateral à direita de $H$ em $G$ contendo $a$. Nesse caso, o elemento $a$ é dito o representante da classe lateral $aH$ (ou $Ha$). Usamos $|aH|$ para denotar o número de elementos no conjunto $aH$, e $|Ha|$ para denotar o número de elementos em $Ha$.
+		Sejam $G$ um grupo e $H$ um subconjunto não vazio de $G$. 
+		Para qualquer $a\in G$,	o conjunto $\{ah | h \in H \}$ é 
+		denotado por $aH$. Analogamente, $Ha = \{ha | h \in H\}$
+		e $aHa^{-1} = \{aha^{-1} | h \in H\}$. Quando $H$ é subgrupo de $G$,
+		o conjunto $aH$ é dito classe lateral à esquerda de $H$ em $G$
+		contendo $a$, enquanto que $Ha$ é dito classe lateral à direita 
+		de $H$ em $G$ contendo $a$. Nesse caso, o elemento $a$ é dito o
+		representante da classe lateral $aH$ (ou $Ha$). Usamos $|aH|$ para
+		denotar o número de elementos no conjunto $aH$, e $|Ha|$ para 
+		denotar o número de elementos em $Ha$.
 	\end{deff}
+	%
 	\par\vspace{0.3cm} Assim como os isomorfismos, as classes laterais têm propriedades, listadas a seguir no Lema \eqref{propriedades}.
+	%
 	\begin{lemma}
-		\label{propriedades}
+	\label{propriedades}
+	    Valem os seguintes itens:
+	    %
 		\begin{enumerate}
-			\item $a\in aH$ (a classe lateral à esquerda de $H$ contendo $a$ contém $a$); 
-			\item $aH = H \Leftrightarrow a\in H$ (a classe lateral absorve um elemento se, e só se, esse elemento está em $H$);
+			\item $a\in aH$ (a classe lateral à esquerda de $H$ contendo 
+			$a$ contém $a$); 
+			\item $aH = H \iff a\in H$ (a classe lateral absorve um 
+			elemento se, e só se, esse elemento está em $H$);
 			\item $(ab)H = a(bH)$ e $H(ab) = (Ha)b$;
-			\item $aH = bH \Leftrightarrow a\in bH$ (uma classe lateral é unicamente determinada por um de seus elementos);
-			\item $aH = bH$ ou $aH \cap bH = \emptyset$ (duas classes laterais ou são iguais ou disjuntas);
-			\item $aH = bH \Leftrightarrow a^{-1}b\in H$ (uma questão de classe lateral se torna uma questão sobre $H$);
+			\item $aH = bH \iff a\in bH$ (uma classe lateral é unicamente
+			determinada por um de seus elementos);
+			\item $aH = bH$ ou $aH \cap bH = \emptyset$ (duas classes 
+			laterais ou são iguais ou disjuntas);
+			\item $aH = bH \iff a^{-1}b\in H$ (uma questão de classe 
+			lateral se torna uma questão sobre $H$);
 			\item $|aH| = |bH|$ (todas as classes laterais têm mesmo tamanho);
-			\item $aH = Ha \Leftrightarrow H = aHa^{-1}$;
-			\item $aH$ é subgrupo de $G$ se, e só se, $a\in H$ ($H$ é a única classe lateral que é subgrupo de $G$).
-		\end{enumerate}	
+			\item $aH = Ha \iff H = aHa^{-1}$;
+			\item $aH$ é subgrupo de $G$ se, e só se, $a\in H$ ($H$ é a 
+			única classe lateral que é subgrupo de $G$).
+		\end{enumerate}
+		%
 	\end{lemma}
+	%
 	\begin{proof}
 		\textbf{1.} Como $e\in H$, então $a = ae \in H$.
+		%
 		\par\vspace{0.4cm}
-		\textbf{2.} Se $aH = H$, então $a\in aH = H$. Por outro lado, se $a\in H$, é claro que $aH\subseteq H$. Além disso, se $h\in H$, então $a^{-1}h\in H$, pois $a^{-1}\in H$ já que $H$ é subgrupo. Logo, $h = (aa^{-1})h = a(a^{-1}h)\in aH$. Portanto, $H\subseteq aH$ e $H = aH$. 
+		\textbf{2.} Se $aH = H$, então $a\in aH = H$. Por outro lado, se 
+		$a\in H$, é claro que $aH\subseteq H$. Além disso, se $h\in H$, 
+		então $a^{-1}h\in H$, pois $a^{-1}\in H$ já que $H$ é subgrupo. 
+		Logo, $h = (aa^{-1})h = a(a^{-1}h)\in aH$. Portanto, $H\subseteq aH$ 
+		e $H = aH$. 
+		%
 		\par\vspace{0.4cm}
 		\textbf{3.} Como $(ab)h = a(bh)$ e $h(ab) = (ha)b$, o resultado segue.
+		%
 		\par\vspace{0.4cm}
-		\textbf{4.} Se $aH = bH$, então $a = ae\in aH = bH$. Por outro lado, se $a\in bH$, então $a = bh$, para algum $h\in H$, logo, $aH = (bh)H = b(hH) \overset{\textbf{2}}{=} bH$.
+		\textbf{4.} Se $aH = bH$, então $a = ae\in aH = bH$. Por outro lado,
+		se $a\in bH$, então $a = bh$, para algum $h\in H$, logo, 
+		$aH = (bh)H = b(hH) \overset{\textbf{2}}{=} bH$.
+		%
 		\par\vspace{0.4cm}
 		\textbf{5.} Note que se $c\in aH\cap bH$, então $c\in aH$ e $c\in bH$, i.e., $cH = aH = bH$. Logo, se $aH\cap bH\neq\emptyset$, $aH = bH$.
+		%
 		\par\vspace{0.4cm}
 		\textbf{6.} Temos que
+		%
 		\begin{equation*}
-		aH = bH \Leftrightarrow H = (a^{-1}b)H \overset{\textbf{2}}{\Leftrightarrow} a^{-1}b \in H
+		    aH = bH 
+		    \iff H = (a^{-1}b)H \overset{\textbf{2}}{\iff} a^{-1}b \in H
 		\end{equation*}
+		%
 		\par\vspace{0.4cm}
-		\textbf{7.} Se $aH = bH$, terminamos. Então, seja $f: aH\to bH$ tal que $f(x) = b^{-1}ax$. Tomando $x_1$ e $x_2$ em $aH$, temos que $f(x_1) = f(x_2)$ implica $x_1=x_2$, logo $f$ é injetiva. Além disso, tomando $a^{-1}by$ em $aH$, sendo $y\in bH$, temos $f(a^{-1}by) = y$, logo $f$ é sobrejetora. Consequentemente, definimos uma bijeção de $aH$ em $bH$ e, portanto, $|aH| = |bH|$.
+		\textbf{7.} Se $aH = bH$, terminamos. Então, seja $f: aH\to bH$ 
+		tal que $f(x) = b^{-1}ax$. Tomando $x_1$ e $x_2$ em $aH$, temos que
+		$f(x_1) = f(x_2)$ implica $x_1=x_2$, logo $f$ é injetiva. 
+		Além disso, tomando $a^{-1}by$ em $aH$, sendo $y\in bH$, temos
+		$f(a^{-1}by) = y$, logo $f$ é sobrejetora. Consequentemente, 
+		definimos uma bijeção de $aH$ em $bH$ e, portanto, $|aH| = |bH|$.
+		%
 		\par\vspace{0.4cm}
-		\textbf{8.} Note que $aH = Ha \Leftrightarrow (aH)a^{-1} = H(aa^{-1}) = H$, i.e., se, e só se, $aHa^{-1} = H$.
+		\textbf{8.} Note que $aH = Ha \iff (aH)a^{-1} = H(aa^{-1}) = H$,
+		i.e., se, e só se, $aHa^{-1} = H$.
+		%
 		\par\vspace{0.4cm}
-		\textbf{9.} Se $aH$ é subgrupo de $G$, então $e\in aH$. Então, $aH\cap eH \neq \emptyset$, logo $aH = eH = H$ e, por isso, $a\in H$. Por outro lado, se $a\in H, aH = H$, que é subgrupo de $G$.	
-		
+		\textbf{9.} Se $aH$ é subgrupo de $G$, então $e\in aH$. Então, 
+		$aH\cap eH \neq \emptyset$, logo $aH = eH = H$ e, por isso, 
+		$a\in H$. Por outro lado, se $a\in H, aH = H$, que é subgrupo de $G$.
 	\end{proof}
-	\par\vspace{0.3cm} Com a Definição \eqref{def classes laterais} e o Lema \eqref{propriedades}, podemos enunciar o Teorema \eqref{lagrange}.
+	%
+	\par\vspace{0.3cm} Com a Definição \eqref{def classes laterais} e o 
+	Lema \eqref{propriedades}, podemos enunciar o Teorema \eqref{lagrange}.
+	%
 	\begin{theorem}
-		\label{lagrange}
-		Se $|G|<\infty$ e $H$ é subgrupo de $G$, então a ordem de $H$ divide a ordem de $G$. Ademais, a quantidade de classes laterais à esquerda (direita) de $H$ em $G$ é $|G|/|H|$, ou seja, a ordem de um subgrupo divide a ordem do grupo. 
+	\label{lagrange}
+		Se $|G|<\infty$ e $H$ é subgrupo de $G$, então a ordem de $H$ divide 
+		a ordem de $G$. Ademais, a quantidade de classes laterais à esquerda
+		(direita) de $H$ em $G$ é $|G|/|H|$, ou seja, a ordem de um subgrupo
+		divide a ordem do grupo. 
 	\end{theorem}
-	
+	%
 	\begin{proof}
-		Sejam $a_1H, a_2H, \dots , a_rH$ as classes laterais distintas à esquerda de $H$ em $G$. Então, temos $aH = a_iH$ para todo $a$ em $G$ e algum $i = 1,2,\dots,r$. Pela propriedade \textbf{1} do Lema \eqref{propriedades}, $a\in aH$. Logo, temos $aH = H = a_iH$ e, daí:
+		Sejam $a_1H, a_2H, \dots , a_rH$ as classes laterais distintas à
+		esquerda de $H$ em $G$. Então, temos $aH = a_iH$ para todo $a$ em 
+		$G$ e algum $i = 1,2,\dots,r$. Pela propriedade \textbf{1} do 
+		Lema \eqref{propriedades}, $a\in aH$. Logo, temos $aH = H = a_iH$ 
+		e, daí:
+		%
 		\begin{align*}
-		G = \bigcup_{1\leq i\leq r}^{}a_iH \Rightarrow |G| = \sum_{1\leq i\leq r}^{}|a_iH| = \sum_{1\leq i\leq r}^{}|H| = r|H|
+		    G = \bigcup_{1\leq i\leq r}^{}a_iH \Rightarrow |G| 
+		    = \sum_{1\leq i\leq r}^{}|a_iH| = \sum_{1\leq i\leq r}|H| 
+		    = r|H|
 		\end{align*} 
+		%
 		\begin{equation*}
-		\therefore |G|/|H| = r
+		    \therefore |G|/|H| = r
 		\end{equation*}
-		
+		%
 	\end{proof}
-	\par\vspace{0.3cm} Alguns resultados seguem como consequência imediata do Teorema \eqref{lagrange}.
-	
+	\par\vspace{0.3cm} Alguns resultados seguem como consequência imediata 
+	do Teorema \eqref{lagrange}.
+	%
 	\begin{corollary}
-		\label{c2}
+	\label{c2}
 		Em um grupo finito, a ordem de cada elemento divide a ordem do grupo.
 	\end{corollary}
-	
+	%
 	\begin{proof}
-		Como $|a| = |\langle a\rangle|$ e $\langle a \rangle$ é um subgrupo de $G$, então $|a|$ divide $|G|$. 
+		Como $|a| = |\langle a\rangle|$ e $\langle a \rangle$ é um subgrupo 
+		de $G$, então $|a|$ divide $|G|$. 
 	\end{proof}
-	
+	%
 	\begin{corollary}
-		\label{c3}
+	\label{c3}
 		Um grupo de ordem prima é cíclico.
 	\end{corollary}
-	
+	%
 	\begin{proof}
-		Se $|G| = p$, $p$ primo, e $a\in G$, $a\neq e$, então $|a| = |\langle a\rangle | \neq 1$ divide $|G|$, logo $|a| = p = |G|$. Portanto, $G = \langle a\rangle$. 
+		Se $|G| = p$, $p$ primo, e $a\in G$, $a\neq e$, então 
+		$|a| = |\langle a\rangle | \neq 1$ divide $|G|$, logo 
+		$|a| = p = |G|$. Portanto, $G = \langle a\rangle$. 
 	\end{proof}
-	
+	%
 	\begin{corollary}
-		\label{c4}
+	\label{c4}
 		Seja $G$ um grupo finito, $a\in G$. Então, $a^{|G|} = e.$
 	\end{corollary}
 	
 	\begin{proof}
-		Pelo Corolário \eqref{c2}, $|G| = |a| k, k\in\mathbb{Z}_{+}^{*}$. Logo, $a^{|G|} = a^{|a|k} = e^k = e$. 
+		Pelo Corolário \eqref{c2}, $|G| = |a| k, k\in\mathbb{Z}_{+}^{*}$.
+		Logo, $a^{|G|} = a^{|a|k} = e^k = e$. 
 	\end{proof}
-	
+	%
 	\begin{corollary}[Pequeno Teorema de Fermat]
-		\label{c5}
+	\label{c5}
 		Para todo $a$ inteiro e para todo primo $p$, $a^p \pmod p = a\pmod p$.
 	\end{corollary}
-	
+	%
 	\begin{proof}
-		Pelo algoritmo da divisão, podemos escrever $a = pm + r, 0\leq r < p$. Daí, $a\pmod p = r$ e só precisamos mostrar que $r^p\pmod p = r$.
-		\par\vspace{0.3cm} Se $r = 0$, então $p|a$ e é claro que $r^p\pmod p = r\pmod p$.
-		\par\vspace{0.3cm} Suponha $r>0$. Então, $r\in U(p) = \{1, 2, \dots, p-1\}$, sendo a operação de $U(p)$ a multilicação módulo $p$. Note que $|U(p)| = p-1$. Daí, pelo Corolário \eqref{c4}, temos que $r^{p-1}\pmod p = 1$ e, consequentemente, $r^p\pmod p = r$. 
+		Pelo algoritmo da divisão, podemos escrever $a = pm + r, 0\leq r < p$.
+		Daí, $a\pmod p = r$ e só precisamos mostrar que $r^p\pmod p = r$.
+		%
+		\par\vspace{0.3cm} Se $r = 0$, então $p|a$ e é claro que 
+		$r^p\pmod p = r\pmod p$.
+		%
+		\par\vspace{0.3cm} Suponha $r>0$. Então, 
+		$r\in U(p) = \{1, 2, \dots, p-1\}$, sendo a operação de $U(p)$ a
+		multiplicação módulo $p$. Note que $|U(p)| = p-1$. Daí, pelo
+		Corolário \eqref{c4}, temos que $r^{p-1}\pmod p = 1$ e,
+		consequentemente, $r^p\pmod p = r$. 
 	\end{proof}
-	
+	%
 	\begin{theorem}
-		\label{ordem de HK}
-		Para dois subgrupos finitos $H$ e $K$ de um grupo $G$, seja $HK = \left\{ hk| h\in H, k\in K \right\}$. Então, $|HK| = |H||K|/|H\cap K|$.
+	\label{ordem de HK}
+		Para dois subgrupos finitos $H$ e $K$ de um grupo $G$, seja 
+		$HK = \left\{ hk| h\in H, k\in K \right\}$. Então, 
+		$|HK| = |H||K|/|H\cap K|$.
 	\end{theorem}
-	
+	%
 	\begin{proof}
-		Apesar do conjunto $HK$ ter $|H||K|$ produtos, nem todos eles são, necessariamente, distintos, isto é, podemos ter $hk = h'k'$ com $h\neq h'$ e $k\neq k'$. Para determinar $|HK|$, devemos descobrir quantas vezes isso ocorre. 
-		\par\vspace{0.3cm} Para todo $t$ em $H\cap K$, podemos escrever $hk = (ht)(t^{-1}k)$, então cada elemento de $HK$ pode ser representado por pelo menos $|H\cap K|$ produtos. Mas note que $hk = h'k'$ implica $t = h^{-1}h' = kk'^{-1}\in H\cap K$, logo $h' = ht$ e $k' = t^{-1}k$. Consequentemente, cada elemento em $HK$ pode ser representado por exatamente $|H\cap K|$ produtos. Daí, $|HK| = |H||K|/|H\cap K|$.
+		Apesar do conjunto $HK$ ter $|H||K|$ produtos, nem todos eles são,
+		necessariamente, distintos, isto é, podemos ter $hk = h'k'$ com 
+		$h\neq h'$ e $k\neq k'$. Para determinar $|HK|$, devemos descobrir
+		quantas vezes isso ocorre.
+		%
+		\par\vspace{0.3cm} Para todo $t$ em $H\cap K$, podemos escrever 
+		$hk = (ht)(t^{-1}k)$, então cada elemento de $HK$ pode ser
+		representado por pelo menos $|H\cap K|$ produtos. Mas note que 
+		$hk = h'k'$ implica $t = h^{-1}h' = kk'^{-1}\in H\cap K$, logo 
+		$h' = ht$ e $k' = t^{-1}k$. Consequentemente, cada elemento em $HK$
+		pode ser representado por exatamente $|H\cap K|$ produtos. Daí, 
+		$|HK| = |H||K|/|H\cap K|$.
 	\end{proof}
-	\par\vspace{0.3cm} Um exemplo interessante de isomorfismo é o fato de que $S_3\cong GL(2,\mathbb{Z}_2)$. De fato, seja $\phi:GL(2,\mathbb{Z}_2)\to S_3$, e sejam ainda
+	%
+	\par\vspace{0.3cm} Um exemplo interessante de isomorfismo é o fato 
+	de que $S_3\cong GL(2,\mathbb{Z}_2)$. De fato, seja
+	$\phi:GL(2,\mathbb{Z}_2)\to S_3$, e sejam ainda
+	%
 	\begin{align*}
-	v_1 = \begin{bmatrix}
-	1 \\
-	0
-	\end{bmatrix}, 
-	v_2 =  \begin{bmatrix}
-	0 \\ 
-	1
-	\end{bmatrix}, 
-	v_3 = \begin{bmatrix}
-	1 \\ 
-	1
-	\end{bmatrix}
+        v_1 = 
+        \begin{bmatrix}
+            1 \\
+            0
+        \end{bmatrix}, 
+        v_2 =
+        \begin{bmatrix}
+            0 \\ 
+            1
+        \end{bmatrix}, 
+        v_3 =
+        \begin{bmatrix}
+            1 \\ 
+            1
+        \end{bmatrix}.
 	\end{align*}
+	%
 	Todo elemento de $GL(2,\mathbb{Z}_2)$ permuta $v_1, v_2$ e $v_3$.
-	\par\vspace{0.3cm} Por exemplo, $\begin{bmatrix}
+	%
+	\par\vspace{0.3cm} Por exemplo, 
+	$\begin{bmatrix}
 	1 & 1 \\ 
 	0 & 1
 	\end{bmatrix}$
-	manda $v_1$ em $v_1$, $v_2$ em $v_3$ e $v_3$ em $v_2$, ou seja, nos dá a permutação $(v_2v_3)$.
-	\par\vspace{0.3cm} Além disso, note que matrizes diferentes em $GL(2, \mathbb{Z}_2)$ nos dão permutações diferentes de $\{v_1, v_2,v_3\}$, logo $\phi$ é injetiva.
-	\par\vspace{0.3cm} Por fim, como $|GL(2, \mathbb{Z}_2)| = 6 = |S_3|$, $\phi$ é sobrejetiva e, portanto, é bijetiva. Logo, é isomorfismo. 
-	\par\vspace{0.3cm} Outra demonstração possível é notar que para $S_3$ temos a tabela de multiplicação:
+	manda $v_1$ em $v_1$, $v_2$ em $v_3$ e $v_3$ em $v_2$, ou seja, 
+	nos dá a permutação $(v_2v_3)$.
+	%
+	\par\vspace{0.3cm} Além disso, note que matrizes diferentes em 
+	$GL(2, \mathbb{Z}_2)$ nos dão permutações diferentes de 
+	$\{v_1, v_2,v_3\}$, logo $\phi$ é injetiva.
+	%
+	\par\vspace{0.3cm} Por fim, como $|GL(2, \mathbb{Z}_2)| = 6 = |S_3|$,
+	$\phi$ é sobrejetiva e, portanto, é bijetiva. Logo, é isomorfismo.
+	%
+	\par\vspace{0.3cm} Outra demonstração possível é notar que para $S_3$
+	temos a tabela de multiplicação:
+	%
 	\begin{table}[H]
 		\centering
 		\noindent\begin{tabular}{c|cccccc}
@@ -395,34 +800,38 @@
 			(132) & (132) & (23) & (12) & (13) & 1 & (123) \\
 		\end{tabular}
 	\end{table}
-	\par \vspace{0.3cm} Fazendo 
+	%
+	\par \vspace{0.3cm} Fazendo
+	%
 	\begin{align*}
-	1 = \begin{bmatrix}
-	1 & 0 \\
-	0 & 1
-	\end{bmatrix}, 
-	i = \begin{bmatrix}
-	0 & 1 \\
-	1 & 0
-	\end{bmatrix}, 
-	j = \begin{bmatrix}
-	1 & 1 \\
-	0 & 1
-	\end{bmatrix}, 
-	k = \begin{bmatrix}
-	1 & 0 \\
-	1 & 1
-	\end{bmatrix},
-	a = \begin{bmatrix}
-	1 & 1 \\
-	1 & 0
-	\end{bmatrix}, 
-	b = \begin{bmatrix}
-	0 & 1 \\
-	1 & 1
-	\end{bmatrix}
-	\end{align*} 
+        1 = \begin{bmatrix}
+            1 & 0 \\
+            0 & 1
+        \end{bmatrix}, 
+        i = \begin{bmatrix}
+            0 & 1 \\
+            1 & 0
+        \end{bmatrix}, 
+        j = \begin{bmatrix}
+            1 & 1 \\
+            0 & 1
+        \end{bmatrix}, 
+        k = \begin{bmatrix}
+            1 & 0 \\
+            1 & 1
+        \end{bmatrix},
+        a = \begin{bmatrix}
+            1 & 1 \\
+            1 & 0
+        \end{bmatrix}, 
+        b = \begin{bmatrix}
+            0 & 1 \\
+            1 & 1
+        \end{bmatrix}
+	\end{align*}
+	%
 	obtemos a seguinte tabela de multiplicação para $GL(2, \mathbb{Z}_2)$:
+	%
 	\begin{table}[H]
 		\centering
 		\noindent\begin{tabular}{c|cccccc}
@@ -436,358 +845,710 @@
 			$b$ & $b$ & $k$ & $i$ & $j$ & 1 & $a$ \\
 		\end{tabular}
 	\end{table}
-	\par\vspace{0.3cm} Daí, podemos ver que os dois grupos são isomorfos via $\phi:GL(2, \mathbb{Z}_2)\to S_3$ com 
+	%
+	\par\vspace{0.3cm} Daí, podemos ver que os dois grupos são isomorfos 
+	via $\phi:GL(2, \mathbb{Z}_2)\to S_3$ com
+	%
 	\begin{equation*}
-	1\mapsto 1, i\mapsto(12), j\mapsto(13), k\mapsto(23), a\mapsto(123), b\mapsto(132).
+	    1\mapsto 1, i\mapsto(12), j\mapsto(13), k\mapsto(23), a\mapsto(123),
+	    b\mapsto(132).
 	\end{equation*}
-	\par\vspace{0.3cm}
-	
+	%
 	\begin{deff}
-		\label{def estabilizador}
-		Seja $G$ um grupo de permutações de um conjunto $S$. Para cada $i\in S$, seja $\stab_G(i) = \{ \phi\in G | \phi(i) = i\}$. Chamamos $\stab_G(i)$ de estabilizador de $i$ em $G$. Usamos $|\stab_G(i)|$ para denotar o número de elementos em $\stab_G(i)$.
+	\label{def estabilizador}
+		Seja $G$ um grupo de permutações de um conjunto $S$. Para cada 
+		$i\in S$, seja $\stab_G(i) = \{ \phi\in G | \phi(i) = i\}$. 
+		Chamamos $\stab_G(i)$ de estabilizador de $i$ em $G$. Usamos
+		$|\stab_G(i)|$ para denotar o número de elementos em $\stab_G(i)$.
 	\end{deff}
-	
+	%
 	\begin{deff}
-		\label{def orbita}
-		Seja $G$ um grupo de permutações de um conjunto $S$. Para cada $s\in S$, seja $\orb_G(s) = \{ \phi(s) | \phi\in G \}$. O conjunto $\orb_G(s)$ é um subconjunto de $S$ e é chamado de órbita de $s$ sob $G$. Usamos $|\orb_G(s)|$ para denotar o número de elementos em $\orb_G(s)$.
+	\label{def orbita}
+		Seja $G$ um grupo de permutações de um conjunto $S$. Para cada 
+		$s\in S$, seja $\orb_G(s) = \{ \phi(s) | \phi\in G \}$. O conjunto
+		$\orb_G(s)$ é um subconjunto de $S$ e é chamado de órbita de $s$ 
+		sob $G$. Usamos $|\orb_G(s)|$ para denotar o número de elementos 
+		em $\orb_G(s)$.
 	\end{deff}
-	
+	%
 	\begin{theorem}
-		\label{orb-stab}
-		Seja $G$ um grupo finito de permutações de um conjunto $S$. Então, para todo $i$ em $G$, $|G| = |\orb_G(s)|\cdot|\stab_G(i)|$.
+	\label{orb-stab}
+		Seja $G$ um grupo finito de permutações de um conjunto $S$. 
+		Então, para todo $i$ em $G$, $|G| = |\orb_G(s)|\cdot|\stab_G(i)|$.
 	\end{theorem}
-	
+	%
 	\begin{proof}
-		Pelo Teorema \eqref{lagrange}, $|G|/|\stab_G(i)|$ é o número de classes laterais distintas à esquerda de $\stab_G(i)$ em $G$. Logo, para provar o teorema, basta estabelecer um correspondência biunívoca entre as classes laterais à esquerda de $\stab_G(i)$ e os elementos de $\orb_G(s)$. 
-		\par\vspace{0.3cm} Para isso, definimos a correspondência $T$ que mapeia a classe lateral $\phi\stab_G(i)$ para $\phi(i)$. 
-		\par\vspace{0.3cm} Note que $T$ está bem definida, pois se $\alpha\stab_G(i) = \beta\stab_G(i)$, então, pela propriedade 6 do Lema \eqref{propriedades}, $\alpha^{-1}\beta\in\stab_G(i)$, ou seja, $(\alpha^{-1}\circ\beta)(i) = i$ e, portanto, $\alpha(i) = \beta(i)$.
-		\par\vspace{0.3cm} Por outro lado, se $\alpha(i) = \beta(i)$, então $(\alpha^{-1}\circ\beta)(i) = i$. Logo, $\alpha^{-1}\beta\in\stab_G(i)$ e, pela propriedade 6 do Lema \eqref{propriedades}, $\alpha\stab_G(i) = \beta\stab_G(i)$. Logo, $T$ é injetiva. 
-		\par\vspace{0.3cm} Por fim, seja $j\in\orb_G(s)$. Então $\alpha(i) = j$ para algum $\alpha \in G$ e é claro que $T(\alpha\stab_G(i)) = \alpha(i) = j$, logo $T$ é sobrejetiva e, portanto, é bijetiva.
-		\par\vspace{0.3cm} Mostramos então que $|G|/|\stab_G(i)| = |\orb_G(i)|$, ou seja, $|G| = |\orb_G(i)|\cdot|\stab_G(i)|$. 
-		
+		Pelo Teorema \eqref{lagrange}, $|G|/|\stab_G(i)|$ é o número de
+		classes laterais distintas à esquerda de $\stab_G(i)$ em $G$. 
+		Logo, para provar o teorema, basta estabelecer uma correspondência
+		biunívoca entre as classes laterais à esquerda de $\stab_G(i)$ e os
+		elementos de $\orb_G(s)$.
+		%
+		\par\vspace{0.3cm} Para isso, definimos a correspondência $T$ que
+		mapeia a classe lateral $\phi\stab_G(i)$ para $\phi(i)$. 
+		%
+		\par\vspace{0.3cm} Note que $T$ está bem definida, pois se 
+		$\alpha\stab_G(i) = \beta\stab_G(i)$, então, pela propriedade 6 do 
+		Lema \eqref{propriedades}, $\alpha^{-1}\beta\in\stab_G(i)$, ou seja, 
+		$(\alpha^{-1}\circ\beta)(i) = i$ e, portanto, $\alpha(i) = \beta(i)$.
+		%
+		\par\vspace{0.3cm} Por outro lado, se $\alpha(i) = \beta(i)$, então 
+		$(\alpha^{-1}\circ\beta)(i) = i$. Logo, 
+		$\alpha^{-1}\beta\in\stab_G(i)$ e, pela propriedade 6 do 
+		Lema \eqref{propriedades}, $\alpha\stab_G(i) = \beta\stab_G(i)$. 
+		Logo, $T$ é injetiva.
+		%
+		\par\vspace{0.3cm} Por fim, seja $j\in\orb_G(s)$. Então 
+		$\alpha(i) = j$ para algum $\alpha \in G$ e é claro que
+		$T(\alpha\stab_G(i)) = \alpha(i) = j$, logo $T$ é sobrejetiva e,
+		portanto, é bijetiva.
+		%
+		\par\vspace{0.3cm} Mostramos então que 
+		$|G|/|\stab_G(i)| = |\orb_G(i)|$, ou seja, 
+		$|G| = |\orb_G(i)|\cdot|\stab_G(i)|$. 
 	\end{proof}
-	
+	%
 	\begin{theorem}
-		\label{part}
-		O conjunto das órbitas dos elementos de $S$ sob um grupo $G$ particionam $S$.
+	\label{part}
+		O conjunto das órbitas dos elementos de $S$ sob um grupo 
+		$G$ particionam $S$.
 	\end{theorem}
-	
+	%
 	\begin{proof}
-		Sejam $a,b\in S$ quaisquer. É claro que $a\in\orb_G(a)$ e $b\in\orb_G(b)$. 
-		\par\vspace{0.3cm} Agora, seja $c\in\orb_G(a)\cap\orb_G(b)$. Então, $c = \alpha(a) = \beta(b)$ para algum $\alpha$ e algum $\beta$.
-		\par\vspace{0.3cm} Por um lado, temos que $b = (\beta^{-1}\circ\alpha)(a)$. Logo, se $x\in\orb_G(b)$, então $x = \gamma(b) = (\gamma\circ\beta^{-1}\circ\alpha)(a)\in\orb_G(a)$, para algum $\gamma$, ou seja, $\orb_G(b)\subseteq\orb_G(a)$.
-		\par\vspace{0.3cm} Por outro lado, temos que $a = (\alpha^{-1}\circ\beta)(b)$. Daí, se $y\in\orb_G(a)$, então $y = \sigma(a) = (\sigma\circ\alpha^{-1}\circ\beta)(b)\in\orb_G(b)$, para algum $\sigma$, ou seja, $\orb_G(b)\supseteq\orb_G(a)$. 
-		\par\vspace{0.3cm} Logo, as órbitas de elementos distintos ou são iguais ou são disjuntas. Por isso, as órbitas particionam $S$, mas não necessariamente particionam igualmente.  
-		
+		Sejam $a,b\in S$ quaisquer. É claro que $a\in\orb_G(a)$ e
+		$b\in\orb_G(b)$. 
+		%
+		\par\vspace{0.3cm} Agora, seja $c\in\orb_G(a)\cap\orb_G(b)$. 
+		Então, $c = \alpha(a) = \beta(b)$ para algum $\alpha$ 
+		e algum $\beta$.
+		%
+		\par\vspace{0.3cm} Por um lado, temos que 
+		$b = (\beta^{-1}\circ\alpha)(a)$. Logo, se $x\in\orb_G(b)$, então 
+		$x = \gamma(b) = (\gamma\circ\beta^{-1}\circ\alpha)(a)\in\orb_G(a)$,
+		para algum $\gamma$, ou seja, $\orb_G(b)\subseteq\orb_G(a)$.
+		%
+		\par\vspace{0.3cm} Por outro lado, temos que 
+		$a = (\alpha^{-1}\circ\beta)(b)$. Daí, se $y\in\orb_G(a)$, então 
+		$y = \sigma(a) = (\sigma\circ\alpha^{-1}\circ\beta)(b)\in\orb_G(b)$,
+		para algum $\sigma$, ou seja, $\orb_G(b)\supseteq\orb_G(a)$. 
+		%
+		\par\vspace{0.3cm} Logo, as órbitas de elementos distintos ou 
+		são iguais ou são disjuntas. Por isso, as órbitas particionam $S$, 
+		mas não necessariamente particionam igualmente.  
 	\end{proof}
-	
-	
-	
+	%
 	\begin{theorem}
-		\label{rotacoes iso a S_4}
+	\label{rotacoes iso a S_4}
 		O grupo de rotações de um cubo é isomorfo a $S_4$.
 	\end{theorem}
-	
+	%
 	\begin{proof}
-		Como o grupo de rotações de um cubo tem a mesma ordem de $S_4$, basta mostrar que o grupo de rotações é isomorfo a um subgrupo de $S_4$ (pela propriedade 5 do Teorema \eqref{isomorfismos em grupos}). 
-		\par\vspace{0.3cm} Para isso, note que um cubo possui 4 diagonais e o grupo de rotações no cubo induz um grupo de permutações nas diagonais. Contudo, rotações diferentes não provocam, necessariamente, permutações diferentes. Para ver que esse de fato é o caso, vamos mostrar que todas as 24 permutações são obtidas a partir das rotações.
-		\par\vspace{0.3cm} Numerando as diagonais consecutivas com 1, 2, 3 e 4, podemos ver que existe uma rotação de 90 graus que nos dá a permutação $\alpha = (1234)$; outra rotação de 90 graus em torno de um eixo perpendicular ao nosso primeiro eixo nos dá a permutação $\beta = (1423)$.
-		\par\vspace{0.3cm} Logo, o grupo de permutações induzido pelas rotações contém o subgrupo \\$\{e, \alpha, \alpha^2, \alpha^3, \beta^2, \beta^2\alpha, \beta^2\alpha^2, \beta^2\alpha^3\}$ de 8 elementos e também contém $\alpha\beta$, que tem ordem 3. 
-		\par\vspace{0.3cm} Portanto, o grupo de permutações induzido pelas rotações tem ordem 24 (já que sua ordem deve ser divisível por 8 e por 3) sendo, por isso, isomorfo a $S_4$, uma vez que conseguimos obter todas as permutações das diagonais a partir das rotações $\alpha$ e $\beta$ e suas combinações. 
-		
+		Como o grupo de rotações de um cubo tem a mesma ordem de $S_4$, 
+		basta mostrar que o grupo de rotações é isomorfo a um subgrupo de
+		$S_4$ (pela propriedade 5 do Teorema \eqref{isomorfismos em grupos}).
+		%
+		\par\vspace{0.3cm} Para isso, note que um cubo possui 4 diagonais 
+		e o grupo de rotações no cubo induz um grupo de permutações nas
+		diagonais. Contudo, rotações diferentes não provocam, 
+		necessariamente, permutações diferentes. Para ver que esse de fato 
+		é o caso, vamos mostrar que todas as 24 permutações são obtidas a
+		partir das rotações.
+		%
+		\par\vspace{0.3cm} Numerando as diagonais consecutivas com 
+		1, 2, 3 e 4, podemos ver que existe uma rotação de 90 graus que nos 
+		dá a permutação $\alpha = (1234)$; outra rotação de 90 graus em torno
+		de um eixo perpendicular ao nosso primeiro eixo nos dá a 
+		permutação $\beta = (1423)$.
+		%
+		\par\vspace{0.3cm} Logo, o grupo de permutações induzido pelas
+		rotações contém o subgrupo 
+		%
+		\begin{equation*}
+		    \{e, \alpha, \alpha^2, \alpha^3, \beta^2, \beta^2\alpha,
+		    \beta^2\alpha^2, \beta^2\alpha^3\}
+		\end{equation*}
+		%
+		de 8 elementos e também contém $\alpha\beta$, que tem ordem 3.
+		%
+		\par\vspace{0.3cm} Portanto, o grupo de permutações induzido pelas
+		rotações tem ordem 24 (já que sua ordem deve ser divisível por 8 e 
+		por 3) sendo, por isso, isomorfo a $S_4$, uma vez que conseguimos
+		obter todas as permutações das diagonais a partir das rotações
+		$\alpha$ e $\beta$ e suas combinações. 
 	\end{proof}
-
+    %
 \section{Produto direto externo de grupos}
 \label{sec-prod-direto-grupos}
-
-    \hspace{12pt} Vamos definir o produto direto externo de grupos, uma maneira de obter novos grupos a partir de grupos já conhecidos.
+    %
+    Vamos definir o produto direto externo de grupos, uma maneira de
+    obter novos grupos a partir de grupos já conhecidos.
+    %
 	\begin{deff}
-		\label{def prod direto externo}
-		Seja $G_1, G_2, \dots, G_n$ uma coleção finita de grupos. O produto direto externo de $G_1, G_2, \dots, G_n$, denotado por $\displaystyle{G_1\oplus G_2\oplus\cdots\oplus G_n}$, é o conjunto de todas as $n$-tuplas para as quais o $i$-ésimo componente é um elemento de $G_i$ e a operação é efetuada componente a componente.
+	\label{def prod direto externo}
+		Seja $\{G_1, G_2, \dots, G_n\}$ uma coleção finita de grupos. 
+		O produto direto externo de $G_1, G_2, \dots, G_n$, denotado por
+		$\displaystyle{G_1\oplus G_2\oplus\cdots\oplus G_n}$, é o conjunto 
+		de todas as $n$-tuplas para as quais o $i$-ésimo componente é um
+		elemento de $G_i$ e a operação é efetuada componente a componente.
 	\end{deff}
-	
+	%
 	\begin{theorem}
-		Seja $\displaystyle{H = \bigoplus_{i=1}^{n}G_i}$, com $G_i$ grupos. Então, $H$ é também um grupo.
+		Seja $\displaystyle{H = \bigoplus_{i=1}^{n}G_i}$, com $G_i$ grupos.
+		Então, $H$ é também um grupo.
 	\end{theorem}
-	
+	%
 	\begin{proof}
-		Sejam $a_i, b_i\in G_i$. Da Definição \eqref{def prod direto externo}, sabemos que:
+		Sejam $a_i, b_i\in G_i$. Da Definição \eqref{def prod direto externo},
+		sabemos que:
+		%
 		\begin{align*}
-		(a_1, a_2, \dots, a_n)(b_1, b_2, \dots, b_n) = (a_1b_1, a_2b_2, \dots, a_nb_n)\in H \text{ pois cada um dos } G_i \text{ é grupo.}
+		    (a_1, a_2, \dots, a_n)(b_1, b_2, \dots, b_n) 
+		    = 
+		    (a_1b_1, a_2b_2, \dots, a_nb_n)\in H 
+		    \text{ pois cada um dos } G_i \text{ é grupo.}
 		\end{align*}
+		%
 		\par Portanto $H$ é fechado. Além disso, temos que:
+		%
 		\begin{align*}
-		(a_1, a_2, \dots, a_n)[(b_1, b_2, \dots, b_n)(c_1, c_2, \dots, c_n)] &= (a_1, a_2, \dots, a_n)(b_1c_1, b_2c_2, \dots, b_nc_n) \\ &= ((a_1b_1)c_1, (a_2b_2)c_2, \dots, (a_nb_n)c_n) \\ &= (a_1b_1, a_2b_2, \dots, a_nb_n)(c_1, c_2, \dots, c_n) \\ &= [(a_1, a_2, \dots, a_n)(b_1, b_2, \dots, b_n)](c_1, c_2, \dots, c_n)
+		    (a_1, a_2, \dots, a_n)[(b_1, b_2, \dots, b_n)(c_1, c_2, \dots, c_n)] 
+		    &= (a_1, a_2, \dots, a_n)(b_1c_1, b_2c_2, \dots, b_nc_n) \\ 
+		    &= ((a_1b_1)c_1, (a_2b_2)c_2, \dots, (a_nb_n)c_n) \\ 
+		    &= (a_1b_1, a_2b_2, \dots, a_nb_n)(c_1, c_2, \dots, c_n) \\ 
+		    &= [(a_1, a_2, \dots, a_n)(b_1, b_2, \dots, b_n)](c_1, c_2, \dots, c_n)
 		\end{align*}
+		%
 		logo a associatividade se mantém em $H$.
-		\par\vspace{0.3cm} Podemos ver que a identidade de $H$ é $(e_1, e_2, \dots, e_n)$, sendo $e_i$ a identidade de $G_i$.
-		\par\vspace{0.3cm} Por fim, basta notar que o inverso de todo elemento $(a_1, a_2, \dots, a_n)$ em $H$ é $(a_1^{-1}, a_2^{-1}, \dots, a_n^{-1})$.
-		
+		%
+		\par\vspace{0.3cm} Podemos ver que a identidade de $H$ é 
+		$(e_1, e_2, \dots, e_n)$, sendo $e_i$ a identidade de $G_i$.
+		%
+		\par\vspace{0.3cm} Por fim, basta notar que o inverso de todo 
+		elemento $(a_1, a_2, \dots, a_n)$ em $H$ é 
+		$(a_1^{-1}, a_2^{-1}, \dots, a_n^{-1})$.
 	\end{proof}
-	
+	%
 	\begin{remark}
-		Segue da Definição \eqref{def prod direto externo} que $(g_1, g_2, \dots, g_n)^k = (g_1^k, g_2^k, \dots, g_n^k)$, ou seja, a potência é "distribuída" nas entradas.
+		Segue da Definição \eqref{def prod direto externo} que 
+		$(g_1, g_2, \dots, g_n)^k = (g_1^k, g_2^k, \dots, g_n^k)$, ou seja, 
+		a potência `` se distribui'' nas entradas.
 	\end{remark}
-	
+	%
 	\begin{theorem}
-		Todo grupo de ordem 4 é isomorfo a $\mathbb{Z}_4$ ou $\mathbb{Z}_2\oplus\mathbb{Z}_2$.
+		Todo grupo de ordem 4 é isomorfo a $\mathbb{Z}_4$ 
+		ou $\mathbb{Z}_2\oplus\mathbb{Z}_2$.
 	\end{theorem}
-	
+	%
 	\begin{proof}
-		Seja $G = \{e, a, b, ab\}$. Se $G$ não é cíclico, então $|a| = |b| = |ab| = 2$, pelo Teorema \eqref{lagrange}. Logo, podemos definir o mapeamento $e\to (0,0)$, $a\to (1,0), b\to (0,1)$, $ab\to (1,1)$, que é um isomorfismo de $G$ em $\mathbb{Z}_2\oplus\mathbb{Z}_2$.
-		\par\vspace{0.3cm} Se $G$ é cíclico, então é isomorfo a $\mathbb{Z}_4$, pois todo grupo cíclico de ordem $n$ é isomorfo a $\mathbb{Z}_n$. 
-		
+		Seja $G = \{e, a, b, ab\}$. Se $G$ não é cíclico, então 
+		$|a| = |b| = |ab| = 2$, pelo Teorema \eqref{lagrange}. 
+		Logo, podemos definir o mapeamento 
+		$e\to (0,0)$, $a\to (1,0), b\to (0,1)$, $ab\to (1,1)$, que é um
+		isomorfismo de $G$ em $\mathbb{Z}_2\oplus\mathbb{Z}_2$.
+		%
+		\par\vspace{0.3cm} Se $G$ é cíclico, então é isomorfo a
+		$\mathbb{Z}_4$, pois todo grupo cíclico de ordem $n$ é isomorfo 
+		a $\mathbb{Z}_n$. 
 	\end{proof}
-	
-	
+	%
 	\begin{theorem}
-		\label{ordem}
-		Seja $\displaystyle{\bigoplus_{i \leq n}}G_i = \{(g_1, g_2, \dots , g_n)| g_i\in G_i \}$. Então, 
+	\label{ordem}
+		Seja 
+		%
+		\begin{equation*}
+		\bigoplus_{i \leq n} G_i = \{(g_1, g_2, \dots , g_n)| g_i\in G_i \}. 
+		\end{equation*}
+		%
+		Então,
 		$|(g_1, g_2, \dots , g_n)| = \mmc(|g_1|, |g_2|, \dots , |g_n|)$.
 	\end{theorem}
-	
+	%
 	\begin{proof}
-		Seja $s = \mmc(|g_1|, |g_2|, \dots , |g_n|)$ e $t = |(g_1, g_2, \dots , g_n)|$. 
+		Sejam $s = \mmc(|g_1|, |g_2|, \dots, |g_n|)$ e 
+		$t = |(g_1, g_2, \dots , g_n)|$.
+		%
 		\par\vspace{0.3cm} Por um lado, temos que:
+		%
 		\begin{align*}
-		(g_1, g_2, \dots , g_n)^s = (g_1^s, g_2^s, \dots , g_n^s) = (e_1, e_2, \dots , e_n)
+		    (g_1, g_2, \dots , g_n)^s 
+		    = (g_1^s, g_2^s, \dots , g_n^s) 
+		    = (e_1, e_2, \dots , e_n)
 		\end{align*}
+		%
 		pois $s$ é múltiplo de cada $|g_i|$. Logo, $t\leq s$.
+		%
 		\par\vspace{0.3cm} Por outro lado, temos que:
+		%
 		\begin{align*}
-		(g_1^t, g_2^t, \dots , g_n^t) = (g_1, g_2, \dots , g_n)^t = (e_1, e_2, \dots , e_n)
+		    (g_1^t, g_2^t, \dots , g_n^t) 
+		    = (g_1, g_2, \dots , g_n)^t 
+		    = (e_1, e_2, \dots , e_n)
 		\end{align*}
-		logo $t$ é um múltiplo comum de $|g_1|, |g_2|, \dots , |g_n|$. Portanto, $s\leq t$ e concluímos que $s = t$, pelo Princípio da Tricotomia. 
-		
+		%
+		logo $t$ é um múltiplo comum de $|g_1|, |g_2|, \dots , |g_n|$.
+		Portanto, $s\leq t$ e concluímos que $s = t$, pelo 
+		Princípio da Tricotomia. 
 	\end{proof}
-	
-	
+	%
 	\begin{theorem}
-		\label{crit}
-		Sejam $G$ e $H$ grupos cíclicos finitos. Então, $G\oplus H$ é cíclico se, e só se, $\mdc(|G|, |H|) = 1$, isto é, $|G|$ e $|H|$ são primos entre si.
+	\label{crit}
+		Sejam $G$ e $H$ grupos cíclicos finitos. Então, $G\oplus H$ é 
+		cíclico se, e só se, $\mdc(|G|, |H|) = 1$, isto é, $|G|$ e $|H|$ 
+		são primos entre si.
 	\end{theorem}
-	
+	%
 	\begin{proof}
-		Sejam $|G| = m$ e $|H| = n$. Daí, $|G\oplus H| = mn$ (pelo Princípio Fundamental da Contagem). Suponha que $G\oplus H$ é cíclico e que $\langle (g, h) \rangle = G\oplus H$. Suponha que $\mdc(m,n) = d$. Como $(g, h)^{mn/d} = ((g^m)^{n/d} , (h^n)^{m/d}) = (e,e)$, temos que $mn = |(g, h)| \leq mn/d$ e, portanto, $d = 1$.
-		
-		\par\vspace{0.3cm} Agora, suponha que $\mdc(m, n) = 1$ e $G = \langle g  \rangle $ e $H = \langle h \rangle$. Então, $|(g,h)| = \mmc(|g|, |h|) = \mmc(m, n) \overset{\star}{=} mn = |G\oplus H|$, em que em $\star$ usamos o fato de que $\mmc(a,b)\mdc(a,b) = ab$ para quaisquer $a,b\in\mathbb{Z}$.
+		Sejam $|G| = m$ e $|H| = n$. Daí, $|G\oplus H| = mn$ 
+		(pelo Princípio Fundamental da Contagem). Suponha que $G\oplus H$ 
+		é cíclico e que $\langle (g, h) \rangle = G\oplus H$. Suponha que
+		$\mdc(m,n) = d$. Como 
+		$(g, h)^{mn/d} = ((g^m)^{n/d} , (h^n)^{m/d}) = (e,e)$, 
+		temos que $mn = |(g, h)| \leq mn/d$ e, portanto, $d = 1$.
+		%
+		\par\vspace{0.3cm} Agora, suponha que $\mdc(m, n) = 1$ e 
+		$G = \langle g  \rangle $ e $H = \langle h \rangle$. Então, 
+		$|(g,h)|=\mmc(|g|,|h|)=\mmc(m,n)\overset{\star}{=}mn=|G\oplus H|$, 
+		em que em $\star$ usamos o fato de que $\mmc(a,b)\mdc(a,b) = ab$ 
+		para quaisquer $a,b\in\mathbb{Z}$.
 		Logo, $G\oplus H = \langle (g, h) \rangle$. 
 	\end{proof}
-	
+	%
 	\begin{corollary}
-		\label{C1}
-		Um produto externo direto $G_1\oplus G_2\oplus\cdots\oplus G_n$ de um número finito de grupos cíclicos finitos é cíclico se, e só se, $|G_i|$ e $|G_j|$ são relativamente primos quando $i\neq j$.
+	\label{C1}
+		Um produto externo direto $G_1\oplus G_2\oplus\cdots\oplus G_n$ 
+		de um número finito de grupos cíclicos finitos é cíclico 
+		se, e só se, $|G_i|$ e $|G_j|$ são relativamente primos quando 
+		$i\neq j$.
 	\end{corollary}
-	
+	%
 	\begin{proof}
-		Para $n = 2$ temos o Teorema \eqref{crit}. Suponha que o corolário vale para $n = k>2$. Então, para $n = k+1$, temos $\underbrace{G_1\oplus G_2\oplus\cdots\oplus G_k }_{G}\oplus\underbrace{ G_{k+1}}_{H}$. 
-		\par\vspace{0.3cm} Sejam $|G_i| = n_i$ para $i = 1, 2, \dots , k + 1$, $\displaystyle{G = \bigoplus_{i=1}^{k}G_i}$ de modo que $\displaystyle{|G| = \prod_{i =1}^{k}n_i}$ e $H = G_{k+1}$. Daí, $\displaystyle{|G\oplus H| = \prod_{i = 1}^{k+1}n_i}$. 
-		\par\vspace{0.3cm} Suponha que $G\oplus H = \langle (g_1, g_2, \dots , g_k, h) \rangle$ e que $\displaystyle{\mdc(|G|, |H|)= \mdc\Bigg(\prod_{i = 1}^{k}n_i, n_{k+1}\Bigg) = d}$. Daí, temos:
+		Para $n = 2$ temos o Teorema \eqref{crit}. Suponha que o corolário
+		vale para $n = k>2$. Então, para $n = k+1$, temos
+		%
+		\begin{equation*}
+		    \underbrace{G_1\oplus G_2\oplus\cdots\oplus G_k}_{G}\oplus\underbrace{ G_{k+1}}_{H}. 
+		\end{equation*}
+		%
+		\par\vspace{0.3cm} Sejam $|G_i| = n_i$ para 
+		$i = 1, 2, \dots , k + 1$, $\displaystyle{G = \bigoplus_{i=1}^{k}G_i}$
+		de modo que $\displaystyle{|G| = \prod_{i =1}^{k}n_i}$ e 
+		$H = G_{k+1}$. Daí, 
+		$\displaystyle{|G\oplus H| = \prod_{i = 1}^{k+1}n_i}$.
+		%
+		\par\vspace{0.3cm} Suponha que 
+		$G\oplus H = \langle (g_1, g_2, \dots , g_k, h) \rangle$ e que
+		$\displaystyle{\mdc(|G|,|H|)=\mdc\Bigg(\prod_{i=1}^{k}n_i,n_{k+1}\Bigg)=d}$. Daí, temos:
+		%
 		\begin{align*}
-		(g_1, g_2, \dots, g_k, h)^{\displaystyle{\frac{1}{d}\prod_{i=1}^{k+1}n_i}} = \Bigg((g_1^{n_1})^{\displaystyle{\frac{1}{d}\prod_{i=2}^{k+1}n_i}}  ,\dots, (h^{n_{k+1}})^{\displaystyle{\frac{1}{d}\prod_{i = 1}^{k}n_i}} \Bigg) = (e, e, \dots, e)
+		    (g_1, g_2, \dots, g_k, h)^{\displaystyle{\frac{1}{d}\prod_{i=1}^{k+1}n_i}} 
+		    = \Bigg((g_1^{n_1})^{\displaystyle{\frac{1}{d}\prod_{i=2}^{k+1}n_i}},\dots,(h^{n_{k+1}})^{\displaystyle{\frac{1}{d}\prod_{i = 1}^{k}n_i}} \Bigg) 
+		    = (e, e, \dots, e)
 		\end{align*}
-		Logo, $\displaystyle{ \prod_{i=1}^{k+1}n_i = |(g_1, g_2,\dots, g_k, h)| \leq \frac{1}{d}\prod_{i=1}^{k+1}n_i }$, ou seja, $d = 1$.
-		\par\vspace{0.3cm} Como nenhum dos $n_i$ compartilha fator primo para $i = 1, 2, 3, \dots, k$ e $d = 1$ implica que $n_{k+1}$ não compartilha fator primo com nenhum dos $n_i$, concluímos que todos os $n_i$ são primos entre si para $i = 1, 2, 3, \dots, k, k+1$.
-		\par\vspace{0.3cm} Agora, suponha que $\displaystyle{\mdc\Bigg(\prod_{i=1}^{k}n_i , n_{k+1}\Bigg)} = 1$. Daí, pela hipótese de indução, sabemos que todos os $n_i$ são relativamente primos para $1\leq i\leq k$. Pela nossa hipótese, $n_{k+1}$ é relativamente primo ao produto dos $n_i$, que são primos entre si, logo $n_{k+1}$ é relativamente primo a todos os $n_i$, isto é, 
-		$\mdc(n_i, n_j) = 1$ para $i\neq j$. 
-		\par\vspace{0.3cm} Tome $G = \langle (g_1, g_2, \dots, g_k) \rangle$ e $H = \langle h \rangle$. Então, temos:
+		%
+		Logo, $\displaystyle{\prod_{i=1}^{k+1}n_i=|(g_1, g_2,\dots, g_k, h)|
+		\leq\frac{1}{d}\prod_{i=1}^{k+1}n_i}$, ou seja, $d = 1$.
+		%
+		\par\vspace{0.3cm} Como nenhum dos $n_i$ compartilha fator primo
+		para $i = 1, 2, 3, \dots, k$ e $d = 1$ implica que $n_{k+1}$ não
+		compartilha fator primo com nenhum dos $n_i$, concluímos que todos 
+		os $n_i$ são primos entre si para $i = 1, 2, 3, \dots, k, k+1$.
+		%
+		\par\vspace{0.3cm} Agora, suponha que
+		$\displaystyle{\mdc\Bigg(\prod_{i=1}^{k}n_i , n_{k+1}\Bigg)} = 1$.
+		Daí, pela hipótese de indução, sabemos que todos os $n_i$ são
+		relativamente primos para $1\leq i\leq k$. Pela nossa hipótese,
+		$n_{k+1}$ é relativamente primo ao produto dos $n_i$, que são primos
+		entre si, logo $n_{k+1}$ é relativamente primo a todos os $n_i$, 
+		isto é, $\mdc(n_i, n_j) = 1$ para $i\neq j$.
+		%
+		\par\vspace{0.3cm} Tome $G = \langle (g_1, g_2, \dots, g_k) \rangle$ 
+		e $H = \langle h \rangle$. Então, temos:
+		%
 		\begin{align*}
-		|(g_1, g_2, \dots, g_k, h)| = \mmc(|g_1|, |g_2|, \dots, |g_k|, |h|) = \mmc(n_1, n_2, \dots, n_k, n_{k+1}) \overset{\star}{=} \prod_{i=1}^{k+1}n_i = |G\oplus H|
+		    |(g_1, g_2, \dots, g_k, h)| 
+		    = \mmc(|g_1|, |g_2|, \dots, |g_k|, |h|) 
+		    = \mmc(n_1, n_2, \dots, n_k, n_{k+1}) 
+		    \overset{\star}{=} \prod_{i=1}^{k+1}n_i = |G\oplus H|
 		\end{align*} 
-		\par\vspace{0.3cm} em que $\star$ ressalta o fato de que como nenhum dos $n_i$ compartilha fator primo (já que o mdc de cada par distinto é 1), então o mmc será dado pelo produto dos $n_i$.
-		\par\vspace{0.3cm} Portanto, $G\oplus H = \langle (g_1, g_2, \dots, g_k, h) \rangle$. 
-		
+		%
+		\par\vspace{0.3cm} em que $\star$ ressalta o fato de que como nenhum
+		dos $n_i$ compartilha fator primo (já que o mdc de cada par distinto 
+		é 1), então o mmc será dado pelo produto dos $n_i$.
+		%
+		\par\vspace{0.3cm} Portanto, 
+		$G\oplus H = \langle (g_1, g_2, \dots, g_k, h) \rangle$.
 	\end{proof}
-	
+	%
 	\begin{corollary}
-		\label{C2}
-		Seja $\displaystyle{m = \prod_{i=1}^{k}n_i}$. Então $\mathbb{Z}_m$ é isomorfo a $\mathbb{Z}_{n_1}\oplus\mathbb{Z}_{n_2}\oplus\cdots\oplus\mathbb{Z}_{n_k}$ se, e só se, $n_i$ e $n_j$ são relativamente primos quando $i\neq j$.
+	\label{C2}
+		Seja $\displaystyle{m = \prod_{i=1}^{k}n_i}$. Então $\mathbb{Z}_m$ 
+		é isomorfo a
+		$\mathbb{Z}_{n_1}\oplus\mathbb{Z}_{n_2}\oplus\cdots\oplus\mathbb{Z}_{n_k}$ 
+		se, e só se, $n_i$ e $n_j$ são relativamente primos quando $i\neq j$.
 	\end{corollary}
-	
+	%
 	\begin{proof}
-		Do Corolário \eqref{C1}, sabemos que $\displaystyle{\bigoplus_{i=n_1}^{n_k} \mathbb{Z}_{n_i}}$ é cíclico se, e só se, $|\mathbb{Z}_{n_i}|$ e $|\mathbb{Z}_{n_j}|$ são primos entre si para $n_i\neq n_j$, ou seja, se, e só se, $n_i$ e $n_j$ são primos entre si para $i\neq j$. 
-		\par\vspace{0.3cm} Além disso, $\Bigg|\displaystyle{\bigoplus_{i=n_1}^{n_k} \mathbb{Z}_{n_i}\Bigg| = \prod_{i = 1}^{k}n_i = m = |\mathbb{Z}_m|}$. 
-		\par\vspace{0.3cm} Logo, como todo grupo cíclico finito de ordem $n$ é isomorfo a $\mathbb{Z}_n$, então $\displaystyle{\bigoplus_{i=n_1}^{n_k} \mathbb{Z}_{n_i} \cong \mathbb{Z}_{n_1n_2\cdots n_k}} = \mathbb{Z}_m$ se, e só se, $\mdc(n_i, n_j) = 1$ para $i\neq j$. 
-		
+		Do Corolário \eqref{C1}, sabemos que
+		$\displaystyle{\bigoplus_{i=n_1}^{n_k} \mathbb{Z}_{n_i}}$ é cíclico
+		se, e só se, $|\mathbb{Z}_{n_i}|$ e $|\mathbb{Z}_{n_j}|$ são primos
+		entre si para $n_i\neq n_j$, ou seja, se, e só se, $n_i$ e $n_j$ são
+		primos entre si para $i\neq j$. 
+		%
+		\par\vspace{0.3cm} Além disso, 
+		$\Bigg|\displaystyle{\bigoplus_{i=n_1}^{n_k} \mathbb{Z}_{n_i}\Bigg| 
+		= \prod_{i = 1}^{k}n_i = m = |\mathbb{Z}_m|}$.
+		%
+		\par\vspace{0.3cm} Logo, como todo grupo cíclico finito de ordem 
+		$n$ é isomorfo a $\mathbb{Z}_n$, então
+		$\displaystyle{\bigoplus_{i=n_1}^{n_k} \mathbb{Z}_{n_i} 
+		\cong \mathbb{Z}_{n_1n_2\cdots n_k}} = \mathbb{Z}_m$ se, e só se,
+		$\mdc(n_i, n_j) = 1$ para $i\neq j$. 
 	\end{proof}
-	
-	%\begin{remark}
-	%	No livro do Fraleigh, o Teorema \eqref{crit} e o corolário \eqref{C1} são enunciados (de certo modo) como o seguinte teorema: o grupo $\mathbb{Z}_m\oplus\mathbb{Z}_n$ é cíclico e isomorfo a $\mathbb{Z}_{mn}$ se, e só se, $\mdc(m,n) = 1$.
-	%\end{remark}
-	
-	
+	%
+	\begin{remark}
+        Em \cite{Livro-do-Fraleigh}, o Teorema \eqref{crit} e o 
+        Corolário \eqref{C1} são enunciados (de certo modo) como o 
+        seguinte teorema: o grupo $\mathbb{Z}_m\oplus\mathbb{Z}_n$ é 
+        cíclico e isomorfo a $\mathbb{Z}_{mn}$ se, e só se, $\mdc(m,n) = 1$.
+	\end{remark}
+	%
 	\begin{lemma}
-		\label{lema1}
-		Se $\mdc(s, t) = 1$, então $a\pmod {st} = b\pmod {st} \Leftrightarrow \begin{cases}
+	\label{lema1}
+		Se $\mdc(s, t) = 1$, então 
+		$a\pmod {st} = b\pmod {st} \iff 
+		\begin{cases}
 		a\pmod s = b\pmod s \\ a\pmod t = b\pmod t
 		\end{cases}$
-		
 	\end{lemma}
-	
+	%
 	\begin{proof}
 		Sejam 
+		%
 		\begin{align*}
-		a - b = \prod_{i = 1}^{n}p_i^{\alpha_i}, \hspace{0.2cm} s = \prod_{i = 1}^{n}p_i^{\beta_i}, \hspace{0.2cm} t = \prod_{i=1}^{n}p_i^{\gamma_i}, \hspace{0.4cm} p_i\text{ primos }, \alpha_i, \beta_i, \gamma_i\in\mathbb{N}.
+		    a - b = \prod_{i = 1}^{n}p_i^{\alpha_i}, \hspace{0.2cm} s 
+		    = \prod_{i = 1}^{n}p_i^{\beta_i}, \hspace{0.2cm} t 
+		    = \prod_{i=1}^{n}p_i^{\gamma_i}, \hspace{0.4cm} p_i
+		    \text{ primos }, \alpha_i, \beta_i, \gamma_i\in\N.
 		\end{align*}
-		
-		($\Rightarrow$) Se $a\pmod {st} = b\pmod {st}$, então $st|a-b$. Logo:
+		%
+		($\Rightarrow$) Se $a\pmod {st} = b\pmod {st}$, então $st|a-b$. 
+		Logo:
+		%
 		\begin{align*}
-		\begin{cases}
-		s|a-b \\
-		t|a-b
-		\end{cases}\Rightarrow
-		\begin{cases}
-		a\pmod s = b\pmod s\\
-		a\pmod t = b\pmod t
-		\end{cases}
+            \begin{cases}
+                s \mid a-b \\
+                t \mid a-b
+            \end{cases}
+		\Rightarrow
+            \begin{cases}
+                a\pmod s = b\pmod s \\
+                a\pmod t = b\pmod t
+            \end{cases}
 		\end{align*}
-		\par\vspace{0.3cm}($\Leftarrow$) Se 
+		%
+		\par\vspace{0.3cm}($\Leftarrow$) Se
+		%
 		\begin{align*}
-		\begin{cases}
-		a\pmod s = b\pmod s \\
-		a\pmod t = b\pmod t
-		\end{cases}
+            \begin{cases}
+                a\pmod s = b\pmod s \\
+                a\pmod t = b\pmod t
+            \end{cases}
 		\end{align*}
-		\par\vspace{0.3cm} então $s|a-b$ e $t|a-b$. Isso é equivalente a dizer que $\beta_i\leq\alpha_i$ e $\gamma_i\leq\alpha_i$. Como $\mdc(s,t) = 1$, então $\min(\beta_i, \gamma_i) = 0$, logo $\beta_i + \gamma_i \leq \alpha_i$.
-		\par\vspace{0.3cm} Mas isso implica que $st|a-b$, ou seja, $a\pmod {st} = b\pmod {st}$.
-		
+		%
+		\par\vspace{0.3cm} então $s\mid a-b$ e $t \mid a-b$. 
+		Isso é equivalente a dizer que $\beta_i\leq\alpha_i$ e
+		$\gamma_i\leq\alpha_i$. Como $\mdc(s,t) = 1$, então 
+		$\min(\beta_i, \gamma_i) = 0$, logo 
+		$\beta_i + \gamma_i \leq \alpha_i$.
+		%
+		\par\vspace{0.3cm} Mas isso implica que $st\mid a-b$, ou seja, 
+		$a\pmod {st} = b\pmod {st}$.
 	\end{proof}
-	
+	%
 	\begin{lemma}
-		\label{lema2}
-		$\mdc(a,bc) = 1 \Leftrightarrow \mdc(a,b) = 1 = \mdc(a,c)$ 
-		
+	\label{lema2}
+		$\mdc(a,bc) = 1 \iff \mdc(a,b) = 1 = \mdc(a,c)$.
 	\end{lemma}
-	
+	%
 	\begin{proof}
 		Sejam 
+		%
 		\begin{align*}
-		a = \prod_{i = 1}^{n}p_i^{\alpha_i},\hspace{0.2cm}
+        a = \prod_{i = 1}^{n}p_i^{\alpha_i},\hspace{0.2cm}
 		b = \prod_{i = 1}^{n}p_i^{\beta_i}, \hspace{0.2cm}
-		c = \prod_{i = 1}^{n}p_i^{\psi_i}, \hspace{0.4cm}\alpha_i, \beta_i, \psi_i\in\mathbb{N}
+		c = \prod_{i = 1}^{n}p_i^{\psi_i}, \hspace{0.4cm}
+		\alpha_i, \beta_i, \psi_i\in\N
 		\end{align*}
-		\par\vspace{0.3cm} Note que mostrar que $\mdc(a,bc) = 1 \Leftrightarrow \mdc(a,b) = 1 = \mdc(a,c)$ é equivalente a mostrar que $\min(\alpha_i, \beta_i + \psi_i) = 0 \Leftrightarrow \min(\alpha_i, \beta_i) = 0 = \min(\alpha_i, \psi_i)$.
-		\par\vspace{0.3cm} Note que $\min(\alpha_i, \beta_i + \psi_i) = 0$ se, e só se, $\alpha_i = 0$ ou $\beta_i = \psi_i = 0$. Em ambos os casos, temos $\min(\alpha_i, \beta_i) = 0 = \min(\alpha_i, \psi_i)$.
-		
+		%
+		\par\vspace{0.3cm} Note que mostrar que 
+		$\mdc(a,bc) = 1 \iff \mdc(a,b) = 1 = \mdc(a,c)$ é equivalente a
+		mostrar que 
+		$\min(\alpha_i,\beta_i+\psi_i)=0\iff\min(\alpha_i,\beta_i)=0
+		=\min(\alpha_i,\psi_i)$.
+		%
+		\par\vspace{0.3cm} Note que $\min(\alpha_i, \beta_i + \psi_i) = 0$ 
+		se, e só se, $\alpha_i = 0$ ou $\beta_i = \psi_i = 0$. Em ambos os
+		casos, temos $\min(\alpha_i, \beta_i) = 0 = \min(\alpha_i, \psi_i)$.
 	\end{proof}
-	\par\vspace{0.3cm} Antes de prosseguir para o próximo teorema, uma definição é necessária.
+	%
+	\par\vspace{0.3cm} Antes de prosseguir para o próximo teorema, uma
+	definição é necessária.
+	%
 	\begin{deff}
-		\label{def U_k(n)}
+	\label{def U_k(n)}
 		$U_k(n) = \{x\in U(n)|x\pmod k = 1 \}$.
 	\end{deff}
-	
+	%
 	\begin{theorem}
-		\label{produto direto}
-		Suponha que $s$ e $t$ são primos entre si. Então, $U(st)\cong U(s)\oplus U(t)$. Além disso, $U_s(st)\cong U(t)$ e $U_t(st)\cong U(s).$
+	\label{produto direto}
+		Suponha que $s$ e $t$ são primos entre si. Então, 
+		$U(st)\cong U(s)\oplus U(t)$. Além disso, $U_s(st)\cong U(t)$ e
+		$U_t(st)\cong U(s).$
 	\end{theorem}
-	
+	%
 	\begin{proof}
-		Um isomorfismo ($\phi_1$) de $U(st)$ em $U(s)\oplus U(t)$ é $x\to (x\pmod s, x\pmod t)$.
-		\par\vspace{0.3cm} Um isomorfismo ($\phi_2$) de $U_s(st)$ em $U(t)$ é $x\to x\pmod t$.
-		\par\vspace{0.3cm} Um isomorfismo ($\phi_3$) de $U_t(st)$ em $U(s)$ é $x\to x\pmod s$.
+		Um isomorfismo ($\phi_1$) de $U(st)$ em $U(s)\oplus U(t)$ é 
+		$x\mapsto (x\pmod s, x\pmod t)$.
+		%
+		\par\vspace{0.3cm} Um isomorfismo ($\phi_2$) de $U_s(st)$ em $U(t)$ 
+		é $x\mapsto x\pmod t$.
+		%
+		\par\vspace{0.3cm} Um isomorfismo ($\phi_3$) de $U_t(st)$ em $U(s)$ 
+		é $x\mapsto x\pmod s$.
+		%
 		\par\vspace{0.3cm} Vamos mostrar que $\phi_1$ de fato é isomorfismo.
-		\vspace{0.3cm}\par Note que se $x, y \in U(st)$, então: \begin{align*} \phi_1(xy) = (xy\text{ }(\mathrm{mod} s), xy\text{ }(\mathrm{mod} t)) = [(x\text{ }\mathrm{mod} s)(y\text{ }\mathrm{mod} s), (x\text{ }\mathrm{mod} t)(y\text{ }\mathrm{mod} t)] = \phi_1(x)\phi_1(y)
+		%
+		\vspace{0.3cm}\par Note que se $x, y \in U(st)$, então: 
+		%
+		\begin{align*} 
+		    \phi_1(xy) 
+		    = (xy\text{ }(\mathrm{mod} s), xy\text{ }(\mathrm{mod} t)) 
+		    = [(x\text{ }\mathrm{mod} s)(y\text{ }\mathrm{mod} s), 
+		    (x\text{ }\mathrm{mod} t)(y\text{ }\mathrm{mod} t)] 
+		    = \phi_1(x)\phi_1(y)
 		\end{align*} 
-		\par\vspace{0.3cm}logo $\phi_1$ preserva a operação.
-		\par\vspace{0.3cm} Agora, se $(x\pmod s, x\pmod t) = (y\pmod s, y\pmod t)$, então 
+		%
+		\par\vspace{0.3cm} logo $\phi_1$ preserva a operação.
+		%
+		\par\vspace{0.3cm} Agora, se $(x\pmod s, x\pmod t) 
+		= (y\pmod s, y\pmod t)$, então 
+		%
 		\begin{align*}
-		\begin{cases}
-		x\pmod s = y\pmod s \\ x\pmod t = y\pmod t
-		\end{cases} \overset{\text{Lema \eqref{lema1}}}{\Leftrightarrow } x\pmod {st} = y\pmod {st} 
+            \begin{cases}
+                x\pmod s = y\pmod s \\ 
+                x\pmod t = y\pmod t
+            \end{cases} 
+        \overset{\text{Lema \eqref{lema1}}}{\iff } x\pmod {st} = y\pmod {st} 
 		\end{align*}
-		\par\vspace{0.3cm}logo $\phi_1$ é injetora.
+		%
+		\par\vspace{0.3cm} logo $\phi_1$ é injetora.
+		%
 		\par\vspace{0.3cm} Agora vamos mostrar que $\phi_1$ é sobrejetora.
-		\par\vspace{0.3cm} Seja $(a,b)\in U(s)\oplus U(t)$. Então, $\mdc(a,s) = 1 = \mdc(b,t)$. Como $\mdc(s,t) = 1, \exists q_1, q_2\in \mathbb{Z}: sq_1 + tq_2 = 1$. Logo, $\mdc(t,q_1) = 1 = \mdc(s,q_2)$. 
-		\par\vspace{0.3cm} Tome $z = bsq_1 + atq_2$. Suponha que um primo $p$ divide $st$. Então $p|s$ ou $p|t$. Se $p|s$, então $p|bsq_1$ mas $p\nmid atq_2$ pois $\mdc(s,a) = 1 = \mdc(s,q_2)$, o que implica que $\mdc(s,aq_2) = 1$ pelo Lema \eqref{lema2}. Além disso, $\mdc(s,t) = 1$, logo $\mdc(s,atq_2) = 1$ pelo Lema \eqref{lema2} novamente.
-		\par\vspace{0.3cm} Então, se $p|s$, $p\nmid z$. 
-		\par\vspace{0.3cm} Se $p|t$, então $p|atq_2$ mas $p\nmid bsq_1$ pois $\mdc(b,t) = 1 = \mdc(q_1,t)$ logo $\mdc(t,bq_1) = 1$ pelo Lema \eqref{lema2} e, como $\mdc(t,s) = 1$, então $\mdc(t,bsq_1) = 1$ pelo Lema \eqref{lema2} novamente.
-		\par\vspace{0.3cm} Então, se $p|t$, $p\nmid z$. 
-		\par\vspace{0.3cm} Logo, nenhum primo $p$ que divide $st$ divide $z$. Daí, $\mdc(z,st) = 1$, ou seja, $z\in U(st)$.
-		\par\vspace{0.3cm} Finalmente, tendo em mente que $sq_1 + tq_2 = 1$, obtemos:
+		%
+		\par\vspace{0.3cm} Seja $(a,b)\in U(s)\oplus U(t)$. Então, 
+		$\mdc(a,s) = 1 = \mdc(b,t)$. Como 
+		$\mdc(s,t) = 1, \exists q_1, q_2\in \mathbb{Z}: sq_1 + tq_2 = 1$.
+		Logo, $\mdc(t,q_1) = 1 = \mdc(s,q_2)$.
+		%
+		\par\vspace{0.3cm} Tome $z = bsq_1 + atq_2$. Suponha que um primo 
+		$p$ divide $st$. Então $p\mid s$ ou $p\mid t$. Se $p\mid s$, 
+		então $p|bsq_1$ mas $p\nmid atq_2$ pois $\mdc(s,a) = 1 = \mdc(s,q_2)$,
+		o que implica que $\mdc(s,aq_2) = 1$ pelo Lema \eqref{lema2}. 
+		Além disso, $\mdc(s,t) = 1$, logo $\mdc(s,atq_2) = 1$ pelo 
+		Lema \eqref{lema2} novamente.
+		%
+		\par\vspace{0.3cm} Então, se $p\mid s$, $p\nmid z$.
+		%
+		\par\vspace{0.3cm} Se $p\mid t$, então $p\mid atq_2$ mas 
+		$p\nmid bsq_1$ pois $\mdc(b,t) = 1 = \mdc(q_1,t)$ logo 
+		$\mdc(t,bq_1) = 1$ pelo Lema \eqref{lema2} e, como $\mdc(t,s) = 1$,
+		então $\mdc(t,bsq_1) = 1$ pelo Lema \eqref{lema2} novamente.
+		%
+		\par\vspace{0.3cm} Então, se $p\mid t$, $p\nmid z$. 
+		%
+		\par\vspace{0.3cm} Logo, nenhum primo $p$ que divide $st$ divide $z$.
+		Daí, $\mdc(z,st) = 1$, ou seja, $z\in U(st)$.
+		%
+		\par\vspace{0.3cm} Finalmente, tendo em mente que $sq_1 + tq_2 = 1$,
+		obtemos:
+		%
 		\begin{align*}
-		\phi_1(z) &= \Big((bsq_1 + atq_2)\text{ }\mathrm{mod} s , (bsq_1 + atq_2)\text{ }\mathrm{mod} t\Big) \\ &= ( atq_2\pmod s, bsq_1\pmod t) \\ &= \Big((a - asq_1)\text{ }\mathrm{mod} s , (b - btq_2)\text{ }\mathrm{mod} t \Big) \\ &= (a\pmod s, b\pmod t)
+		    \phi_1(z) 
+		    &= 
+		    \Big((bsq_1+atq_2)\text{ }\mathrm{mod} s,(bsq_1+atq_2)
+		    \text{ }\mathrm{mod} t\Big) \\ 
+		    &= ( atq_2\pmod s, bsq_1\pmod t) \\ 
+		    &= \Big((a - asq_1)\text{ }\mathrm{mod} s , (b - btq_2)
+		    \text{ }\mathrm{mod} t \Big) \\ 
+		    &= (a\pmod s, b\pmod t)
 		\end{align*}
-		\par\vspace{0.3cm}logo $\phi_1$ é sobrejetora.
+		%
+		\par\vspace{0.3cm} logo $\phi_1$ é sobrejetora.
+		%
 		\vspace{0.3cm}\par Vamos mostrar que $\phi_2$ de fato é isomorfismo.
+		%
 		\par\vspace{0.3cm} Sejam $x, y\in U_s(st)$ quaisquer. Então, temos:
+		%
 		\begin{align*}
-		\phi_2(xy) = (xy)\text{ }(\mathrm{mod} t) = (x\text{ }\mathrm{mod} t)(y\text{ }\mathrm{mod} t) = \phi_2(x)\phi_2(y)
+		    \phi_2(xy) = 
+		    (xy)\text{ }(\mathrm{mod}t)=(x\text{ }\mathrm{mod}t)(y\text{ }\mathrm{mod}t) 
+		    = \phi_2(x)\phi_2(y)
 		\end{align*}
-		\par\vspace{0.3cm}logo $\phi_2$ preserva a operação.
-		\par\vspace{0.3cm} Agora, suponha $x,y\in U_s(st)$ com $\phi_2(x) = \phi_2(y)$. Sabemos que $x\text{ }\mathrm{mod} s = 1 = y\text{ }\mathrm{mod} s$. Logo, temos
+		%
+		\par\vspace{0.3cm} logo $\phi_2$ preserva a operação.
+		%
+		\par\vspace{0.3cm} Agora, suponha $x,y\in U_s(st)$ com 
+		$\phi_2(x) = \phi_2(y)$. Sabemos que 
+		$x\text{ }\mathrm{mod} s = 1 = y\text{ }\mathrm{mod} s$. Logo, temos
+		%
 		\begin{align*}
-		\begin{cases}
-		\phi_2(x) = \phi_2(y) \\
-		x\pmod s = y\pmod s
-		\end{cases}\Leftrightarrow
-		\begin{cases}
-		x\pmod t = y\pmod t \\
-		y\pmod s = y\pmod s
-		\end{cases} \overset{\text{Lema } \eqref{lema1}}{\Leftrightarrow } x\pmod {st} = y\pmod{st} 
+            \begin{cases}
+                \phi_2(x) = \phi_2(y) \\
+                x\pmod s = y\pmod s
+            \end{cases}
+            \iff
+            \begin{cases}
+                x\pmod t = y\pmod t \\
+                y\pmod s = y\pmod s
+            \end{cases} 
+            \overset{\text{Lema } \eqref{lema1}}{\iff } x\pmod {st} 
+            = y\pmod{st} 
 		\end{align*}
-		\par\vspace{0.3cm}logo $\phi_2$ é injetora. 
+		%
+		\par\vspace{0.3cm} logo $\phi_2$ é injetora.
+		%
 		\par\vspace{0.3cm} Agora, vamos mostrar que $\phi_2$ é sobrejetora.
-		\par\vspace{0.3cm} Seja $b\in U(t)$. Então, $\mdc(b,t) = 1$. Além disso, sabemos que $\exists q_1, q_2\in\mathbb{Z}: sq_1 + tq_2 = 1$, pois $\mdc(s,t) = 1$ e também sabemos que $\mdc(t,q_1) = 1 = \mdc(s, q_2)$. 
-		\par\vspace{0.3cm} Tome $z = bsq_1 + tq_2$ e suponha que um primo $p$ divide $st$. Então, $p|s$ ou $p|t$. Se $p|s$, então $p|bsq_1$ mas $p\nmid tq_2$, pois $\mdc(s,t) = 1 = \mdc(s,q_2)$, logo $\mdc(s, tq_2) = 1$ pelo Lema \eqref{lema2}. 
-		\par\vspace{0.3cm} Logo, se $p|s$, $p\nmid z$.
-		\par\vspace{0.3cm} Se $p|t$, então $p|tq_2$ mas $p\nmid bsq_1$, pois $\mdc(b,t) = 1 = \mdc(q_1, t) = \mdc(s,t)$, logo $\mdc(t, bsq_1) = 1$ pelo Lema \eqref{lema2}.
-		\par\vspace{0.3cm} Logo, se $p|t$, $p\nmid z$.
-		\par\vspace{0.3cm} Portanto, $\mdc(z, st) = 1$, pois nenhum primo que divida $st$ divide $z$. Além disso, note que 
+		%
+		\par\vspace{0.3cm} Seja $b\in U(t)$. Então, $\mdc(b,t) = 1$. 
+		Além disso, sabemos que 
+		$\exists q_1, q_2\in\mathbb{Z}: sq_1 + tq_2 = 1$, pois 
+		$\mdc(s,t) = 1$ e também sabemos que $\mdc(t,q_1) = 1 = \mdc(s, q_2)$.
+		%
+		\par\vspace{0.3cm} Tome $z = bsq_1 + tq_2$ e suponha que um primo 
+		$p$ divide $st$. Então, $p\mid s$ ou $p\mid t$. Se $p\mid s$, então
+		$p\mid bsq_1$ mas $p\nmid tq_2$, pois $\mdc(s,t) = 1 = \mdc(s,q_2)$,
+		logo $\mdc(s, tq_2) = 1$ pelo Lema \eqref{lema2}.
+		%
+		\par\vspace{0.3cm} Logo, se $p\mid s$, $p\nmid z$.
+		%
+		\par\vspace{0.3cm} Se $p\mid t$, então $p\mid tq_2$ mas 
+		$p\nmid bsq_1$, pois $\mdc(b,t) = 1 = \mdc(q_1, t) = \mdc(s,t)$, 
+		logo $\mdc(t, bsq_1) = 1$ pelo Lema \eqref{lema2}.
+		%
+		\par\vspace{0.3cm} Logo, se $p\mid t$, $p\nmid z$.
+		%
+		\par\vspace{0.3cm} Portanto, $\mdc(z, st) = 1$, pois nenhum primo 
+		que divida $st$ divide $z$. Além disso, note que 
+		%
 		\begin{align*}
-		z\text{ }\mathrm{mod} s = tq_2\text{ }\mathrm{mod} s = 1 - sq_1 \text{ }\mathrm{mod} s = 1
+		    z\text{ }\mathrm{mod} s 
+		    = tq_2\text{ }\mathrm{mod} s 
+		    = 1 - sq_1 \text{ }\mathrm{mod} s = 1
 		\end{align*} 
+		%
 		\par\vspace{0.3cm} Logo, $z\in U_s(st)$. 
-		\par\vspace{0.3cm} Finalmente, tendo em mente que $sq_1 + tq_2 = 1$, temos
+		%
+		\par\vspace{0.3cm} Finalmente, tendo em mente que 
+		$sq_1 + tq_2 = 1$, temos
+		%
 		\begin{align*}
-		\phi_2(z) &= (bsq_1 + tq_2)\text{ }\mathrm{mod} t \\ &= bsq_1\text{ }\mathrm{mod} t \\ &= (b - btq_2)\text{ }\mathrm{mod} t \\ &= b\text{ }\mathrm{mod} t
+		\phi_2(z) 
+		&= (bsq_1 + tq_2)\text{ }\mathrm{mod} t \\ 
+		&= bsq_1\text{ }\mathrm{mod} t \\ 
+		&= (b - btq_2)\text{ }\mathrm{mod} t \\ 
+		&= b\text{ }\mathrm{mod} t
 		\end{align*}
+		%
 		\par\vspace{0.3cm}logo $\phi_2$ é sobrejetora.
-		
-		
+		%
 		\vspace{0.3cm}\par Vamos mostrar que $\phi_3$ de fato é isomorfismo.
+		%
 		\par\vspace{0.3cm} Sejam $x,y\in U_t(st)$ quaisquer. Então, temos:
+		%
 		\begin{align*}
-		\phi_3(xy) = (xy)\text{ }\mathrm{mod} s = (x\text{ }\mathrm{mod} s)(y\text{ }\mathrm{mod} s) = \phi_3(x)\phi_3(y)
+		    \phi_3(xy) 
+		    = (xy)\text{ }\mathrm{mod} s 
+		    = (x\text{ }\mathrm{mod} s)(y\text{ }\mathrm{mod} s) 
+		    = \phi_3(x)\phi_3(y)
 		\end{align*}
-		\par\vspace{0.3cm}logo $\phi_3$ preserva a operação.
-		\par\vspace{0.3cm} Agora, suponha $x,y\in U_t(st)$ com $\phi_3(x) = \phi_3(y)$. Sabemos que $x\text{ }\mathrm{mod} t = 1 = y\text{ }\mathrm{mod} t$. Logo, temos:
+		%
+		\par\vspace{0.3cm} logo $\phi_3$ preserva a operação.
+		%
+		\par\vspace{0.3cm} Agora, suponha $x,y\in U_t(st)$ com 
+		$\phi_3(x) = \phi_3(y)$. Sabemos que 
+		$x\text{ }\mathrm{mod} t = 1 = y\text{ }\mathrm{mod} t$. 
+		Logo, temos:
+		%
 		\begin{align*}
-		\begin{cases}
-		\phi_3(x) = \phi_3(y) \\
-		x\text{ }\mathrm{mod} t = y\text{ }\mathrm{mod} t
-		\end{cases}\Leftrightarrow
-		\begin{cases}
-		x\text{ }\mathrm{mod} s = y\text{ }\mathrm{mod} s \\
-		y\text{ }\mathrm{mod} t = y\text{ }\mathrm{mod} t
-		\end{cases} \overset{\text{Lema } \eqref{lema1}}{\Leftrightarrow } x\text{ }\mathrm{mod} {st} = y\text{ }\mathrm{mod} {st} 
+            \begin{cases}
+                \phi_3(x) = \phi_3(y) \\
+                x\text{ }\mathrm{mod} t = y\text{ }\mathrm{mod} t
+            \end{cases}
+            \iff
+            \begin{cases}
+                x\text{ }\mathrm{mod} s = y\text{ }\mathrm{mod} s \\
+                y\text{ }\mathrm{mod} t = y\text{ }\mathrm{mod} t
+            \end{cases} 
+            \overset{\text{Lema }\eqref{lema1}}{\iff}x\text{ }\mathrm{mod} {st} 
+            = y\text{ }\mathrm{mod} {st} 
 		\end{align*}
-		\par\vspace{0.3cm}logo $\phi_3$ é injetora. 
+		%
+		\par\vspace{0.3cm} logo $\phi_3$ é injetora. 
+		%
 		\par\vspace{0.3cm} Agora, vamos mostrar que $\phi_3$ é sobrejetora.
-		\par\vspace{0.3cm} Seja $b\in U(s)$. Então, $\mdc(b,s) = 1$. Além disso, sabemos que $\exists q_1, q_2\in\mathbb{Z}: sq_1 + tq_2 = 1$, pois $\mdc(s,t) = 1$ e também sabemos que $\mdc(t,q_1) = 1 = \mdc(s, q_2)$. 
-		\par\vspace{0.3cm} Tome $z = sq_1 + btq_2$ e suponha que um primo $p$ divide $st$. Então, $p|s$ ou $p|t$. Se $p|s$, então $p|sq_1$ mas $p\nmid btq_2$, pois $\mdc(s,t) = 1 = \mdc(s,q_2) = \mdc(s,b)$, logo $\mdc(s, btq_2) = 1$ pelo Lema \eqref{lema2}. 
-		\par\vspace{0.3cm} Logo, se $p|s$, $p\nmid z$.
-		\par\vspace{0.3cm} Se $p|t$, então $p|btq_2$ mas $p\nmid sq_1$, pois $\mdc(q_1, t) = 1 = \mdc(s,t)$, logo $\mdc(t, sq_1) = 1$ pelo Lema \eqref{lema2}.
-		\par\vspace{0.3cm} Logo, se $p|t$, $p\nmid z$.
-		\par\vspace{0.3cm} Portanto, $\mdc(z, st) = 1$, pois nenhum primo que divida $st$ divide $z$. Além disso, note que 
+		%
+		\par\vspace{0.3cm} Seja $b\in U(s)$. Então, $\mdc(b,s) = 1$.
+		Além disso, sabemos que 
+		$\exists q_1, q_2\in\mathbb{Z}: sq_1 + tq_2 = 1$, pois 
+		$\mdc(s,t) = 1$ e também sabemos que $\mdc(t,q_1) = 1 = \mdc(s, q_2)$.
+		%
+		\par\vspace{0.3cm} Tome $z = sq_1 + btq_2$ e suponha que um primo 
+		$p$ divide $st$. Então, $p\mid s$ ou $p\mid t$. Se $p\mid s$, então
+		$p\mid sq_1$ mas $p\nmid btq_2$, pois 
+		$\mdc(s,t) = 1 = \mdc(s,q_2) = \mdc(s,b)$, logo $\mdc(s, btq_2) = 1$
+		pelo Lema \eqref{lema2}.
+		%
+		\par\vspace{0.3cm} Logo, se $p\mid s$, $p\nmid z$.
+		%
+		\par\vspace{0.3cm} Se $p\mid t$, então $p\mid btq_2$ mas 
+		$p\nmid sq_1$, pois $\mdc(q_1, t) = 1 = \mdc(s,t)$, logo 
+		$\mdc(t, sq_1) = 1$ pelo Lema \eqref{lema2}.
+		%
+		\par\vspace{0.3cm} Logo, se $p\mid t$, $p\nmid z$.
+		%
+		\par\vspace{0.3cm} Portanto, $\mdc(z, st) = 1$, pois nenhum 
+		primo que divida $st$ divide $z$. Além disso, note que 
+		%
 		\begin{align*}
-		z\text{ }\mathrm{mod} t = sq_1\text{ }\mathrm{mod} t = 1 - tq_2 \text{ }\mathrm{mod} t = 1
+		    z\text{ }\mathrm{mod} t 
+		    = sq_1\text{ }\mathrm{mod} t 
+		    = 1 - tq_2 \text{ }\mathrm{mod} t 
+		    = 1
 		\end{align*} 
-		\par\vspace{0.3cm} Logo, $z\in U_t(st)$. 
-		\par\vspace{0.3cm} Finalmente, tendo em mente que $sq_1 + tq_2 = 1$, temos
+		%
+		\par\vspace{0.3cm} Logo, $z\in U_t(st)$.
+		%
+		\par\vspace{0.3cm} Finalmente, tendo em mente que 
+		$sq_1 + tq_2 = 1$, temos
+		%
 		\begin{align*}
-		\phi_3(z) &= (sq_1 + btq_2)\text{ }\mathrm{mod} s \\ &= btq_2\text{ }\mathrm{mod} s \\ &= (b - bsq_1)\text{ }\mathrm{mod} s \\ &= b\text{ }\mathrm{mod} s
+		\phi_3(z) 
+		&= (sq_1 + btq_2)\text{ }\mathrm{mod} s \\ 
+		&= btq_2\text{ }\mathrm{mod} s \\ 
+		&= (b - bsq_1)\text{ }\mathrm{mod} s \\ 
+		&= b\text{ }\mathrm{mod} s
 		\end{align*}
+		%
 		\par\vspace{0.3cm}logo $\phi_3$ é sobrejetora.
-		
 	\end{proof}
-	
-	
+	%
 	\begin{corollary}
-		\label{produto direto de U(m)}
-		Seja $\displaystyle{m = \prod_{i = 1}^{k}n_i}$ com $\mdc(n_i, n_j) = 1$ quando $i\neq j$. Então, 
+	\label{produto direto de U(m)}
+		Seja $\displaystyle{m = \prod_{i = 1}^{k}n_i}$ com 
+		$\mdc(n_i, n_j) = 1$ quando $i\neq j$. Então,
 		$\displaystyle{U(m)\cong\bigoplus_{i = 1}^{k} U(n_i)}$
 	\end{corollary}
-	
+	%
 	\begin{proof}
 		Para o caso $k = 2$ temos o Teorema \eqref{produto direto}. Suponha então que o corolário vale para $i = k-1$, sendo $k$ um inteiro maior que 3. Vamos mostrar, por indução, que o corolário vale para $i = k$.	Por hipótese, sabemos que $U(n_1n_2\cdots n_{k-1})\cong \displaystyle{\bigoplus_{i=1}^{k-1}U(n_i)}$. Como $\mdc \Bigg(\displaystyle{ \prod_{i=1}^{k-1}n_i }, n_k\Bigg) = 1$, devido às condições do enunciado, temos:
 		\begin{align*}
@@ -953,7 +1714,7 @@
 		\end{align*}
 		\par\vspace{0.3cm} para alguns $i,j\in\mathbb{Z}$. Daí,
 		\begin{align*}
-		b^{-1} = a^iba^jb^{-1} \Leftrightarrow e = a^iba^j \Leftrightarrow b = a^{-i-j}\in \langle a \rangle
+		b^{-1} = a^iba^jb^{-1} \iff e = a^iba^j \iff b = a^{-i-j}\in \langle a \rangle
 		\end{align*}
 		
 		\par\vspace{0.3cm} o que é absurdo. Portanto, para todo $a$ em $G$, o subgrupo $\langle a \rangle$ é normal. 
@@ -995,7 +1756,7 @@
 			\item $\phi(g^n) = (\phi(g))^n, \forall n\in \mathbb{Z}$;
 			\item se $|g|$ é finita, então $|\phi(g)|$ divide $|g|$;
 			\item $\Ker\phi$ é subgrupo de $G$;
-			\item $\phi(a) = \phi(b) \Leftrightarrow a\Ker\phi = b\Ker\phi$;
+			\item $\phi(a) = \phi(b) \iff a\Ker\phi = b\Ker\phi$;
 			\item Se $\phi(g) = g'$, então $\phi^{-1}(g') = \{ x\in G | \phi(x) = g' \} = g\Ker\phi$.
 		\end{enumerate}
 	\end{theorem}
@@ -1028,12 +1789,12 @@
 		
 		\par\vspace{0.3cm}\hspace{17pt}\textbf{5.} Note que 
 		\begin{align*}
-		\phi(a) = \phi(b) \Leftrightarrow (\phi(b))^{-1}\phi(a) = \overline{e} \Leftrightarrow b^{-1}a\in \Ker\phi \overset{\text{Lema }\eqref{propriedades}}{\Leftrightarrow} a\Ker\phi = b\Ker\phi
+		\phi(a) = \phi(b) \iff (\phi(b))^{-1}\phi(a) = \overline{e} \iff b^{-1}a\in \Ker\phi \overset{\text{Lema }\eqref{propriedades}}{\iff} a\Ker\phi = b\Ker\phi
 		\end{align*}
 		
 		\par\vspace{0.3cm}\hspace{17pt}\textbf{6.} Seja $x\in\phi^{-1}(g')$. Então, sabemos que
 		\begin{align*}
-		\phi(x) = \phi(g) \overset{5}{\Leftrightarrow} x\Ker\phi = g\Ker\phi \overset{\text{Lema }\eqref{propriedades}}{\Leftrightarrow} x\in g\Ker\phi \therefore \phi^{-1}(g') \subseteq g\Ker\phi
+		\phi(x) = \phi(g) \overset{5}{\iff} x\Ker\phi = g\Ker\phi \overset{\text{Lema }\eqref{propriedades}}{\iff} x\in g\Ker\phi \therefore \phi^{-1}(g') \subseteq g\Ker\phi
 		\end{align*}
 		
 		\par\vspace{0.3cm} em que foi usada a propriedade anterior na primeira equivalência. Agora, seja $k\in\Ker\phi$. Daí, sabemos que
@@ -1201,7 +1962,7 @@
 	\par\vspace{0.3cm} com $\theta_s(r^i) = r^{-i}$
 	\par\vspace{0.3cm} O grupo alternante $A_n$ é normal em $S_n$ (pois tem índice 2) e $C_2 = \left\{ (12) \right\}$ é isomorfo a $S_n/A_n$. Portanto, $S_n = A_n\rtimes C_2$
 	\par\vspace{0.3cm} Um grupo cíclico de ordem $p^2$, $p$ primo, não pode ser escrito como produto semidireto, uma vez que tem apenas um subgrupo de ordem $p$ e seriam necessários 2.
-	\par\vspace{0.3cm} Seja $G = GL(n,\mathbb{F})$. Seja $B$ o subgrupo de matrizes triangulares superiores em $G$, $T$ o subgrupo de matrizes diagonais em $G$ e $U$ o subgrupo de matrizes triangulares superiores com coeficientes diagonais unitários. Então, para $n=2$,
+	\par\vspace{0.3cm} Seja $G = GL(n,\F)$. Seja $B$ o subgrupo de matrizes triangulares superiores em $G$, $T$ o subgrupo de matrizes diagonais em $G$ e $U$ o subgrupo de matrizes triangulares superiores com coeficientes diagonais unitários. Então, para $n=2$,
 	\begin{equation*}
 	B = \left\{ \left(\begin{array}{cc}
 	\ast & \ast \\
