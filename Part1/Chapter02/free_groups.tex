@@ -22,386 +22,452 @@
     sendo $x_i\in S\cup S^{-1}$. Os elementos de $W(S)$ são chamados \textit{palavras} de $S$. 
     A sequência com nenhum símbolo está em $W(S)$ e é chamada \textit{palavra vazia}, denotada por $e$.
 	
-	\par\vspace{0.3cm} Podemos definir uma operação binária em $W(S)$ por justaposição, isto é, se $x_1x_2\cdots x_k$ e $y_1y_2\cdots y_t$ pertencem a $W(S)$, então $x_1x_2\cdots x_ky_1y_2\cdots y_t$ também pertence. Observe que a operação é associativa e que a palavra vazia é a identidade. Além disso, note que uma palavra como $aa^{-1}$ não é a identidade, porque estamos tratando os elementos de $W(S)$ como símbolos formais sem nenhum significado implícito.
+	\par\vspace{0.3cm} Podemos definir uma operação binária em $W(S)$ por justaposição, isto é, 
+	se $x_1x_2\cdots x_k$ e $y_1y_2\cdots y_t$ pertencem a $W(S)$, então $x_1x_2\cdots x_ky_1y_2\cdots y_t$ 
+	também pertence. Observe que a operação é associativa e que a palavra vazia é a identidade. 
+	Além disso, note que uma palavra como $aa^{-1}$ não é a identidade, porque estamos tratando 
+	os elementos de $W(S)$ como símbolos formais sem nenhum significado implícito.
 	
-	\par\vspace{0.3cm} Agora, temos tudo para definir um grupo com $W(S)$, exceto inversos. Aqui encontramos uma dificuldade, pois $abb^{-1}a^{-1}$ não é a palavra vazia. Por isso, utilizamos classes de equivalências.
-	
+	\par\vspace{0.3cm} Agora, temos tudo para definir um grupo com $W(S)$, exceto inversos. 
+	Aqui encontramos uma dificuldade, pois $abb^{-1}a^{-1}$ não é a palavra vazia. Por isso, 
+	utilizamos classes de equivalências.
+	%
 	\begin{deff}[Classes de equivalências de palavras]
-		Para quaisquer pares $u$ e $v$ de $W(S)$, dizemos que $u$ está relacionado a $v$ se $v$ pode ser obtido a partir de $u$ através de uma sequência finita de inserções ou exclusões de palavras da forma $xx^{-1}$ ou $x^{-1}x$, $x\in S$.
+		Para quaisquer pares $u$ e $v$ de $W(S)$, dizemos que $u$ está relacionado a $v$ se $v$ 
+		pode ser obtido a partir de $u$ através de uma sequência finita de inserções ou exclusões 
+		de palavras da forma $xx^{-1}$ ou $x^{-1}x$, $x\in S$.
 	\end{deff}
-	
+	%
 	\par\vspace{0.3cm} Vamos mostrar que essa relação é uma relação de equivalência em $W(S)$.
-	
+	%
 	\begin{proof}
-		Seja $u$ uma palavra de $S$. Sabemos que $u$ está relacionado a $u$, pois podemos obter $u$ de $u$ sem fazer nenhuma inserção nem exclusão (ou seja, $u\sim u$). Agora, se $u$ está relacionado a $v$, então podemos obter $u$ a partir de $v$ inserindo ou excluindo elementos da forma $xx^{-1}$ ou $x^{-1}x$. Portanto, basta realizar o processo inverso para obter $v$ a partir de $u$ (ou seja, $u\sim v$ implica $v\sim u$). Por fim, Se $u$ pode ser obtido de $v$ e $v$ pode ser obtido de $w$, então, para obter $u$ de $w$ basta primeiro obter $v$ de $w$ e, em seguida, obter $u$ de $v$ (ou seja, $u\sim v$ e $v\sim w$ implica $u\sim w$).
+		Seja $u$ uma palavra de $S$. Sabemos que $u$ está relacionado a $u$, pois podemos 
+		obter $u$ de $u$ sem fazer nenhuma inserção nem exclusão (ou seja, $u\sim u$). 
+		Agora, se $u$ está relacionado a $v$, então podemos obter $u$ a partir de $v$ 
+		inserindo ou excluindo elementos da forma $xx^{-1}$ ou $x^{-1}x$. 
+		Portanto, basta realizar o processo inverso para obter $v$ a partir de $u$ 
+		(ou seja, $u\sim v$ implica $v\sim u$). Por fim, Se $u$ pode ser obtido de $v$ e 
+		$v$ pode ser obtido de $w$, então, para obter $u$ de $w$ basta primeiro obter 
+		$v$ de $w$ e, em seguida, obter $u$ de $v$ (ou seja, $u\sim v$ e $v\sim w$ implica $u\sim w$).
 	\end{proof}
-	
-	\par\vspace{0.3cm} Por exemplo, podemos ter $S = \{a, b, c\}$. Então, $acc^{-1}b$ é equivalente  a $ab$; $aab^{-1}bbaccc^{-1}$ é equivalente a $aabac$; $a^{-1}aabb^{-1}a^{-1}$ é equivalente à palavra vazia e a palavra $ca^{-1}b$ é equivalente a $cc^{-1}caa^{-1}a^{-1}bbca^{-1}ac^{-1}b^{-1}$
-	
-	
+	%
+	\par\vspace{0.3cm} Por exemplo, podemos ter $S = \{a, b, c\}$. Então, $acc^{-1}b$ é equivalente 
+	a $ab$; $aab^{-1}bbaccc^{-1}$ é equivalente a $aabac$; $a^{-1}aabb^{-1}a^{-1}$ é equivalente à 
+	palavra vazia e a palavra $ca^{-1}b$ é equivalente a $cc^{-1}caa^{-1}a^{-1}bbca^{-1}ac^{-1}b^{-1}$.
+	%
 	\begin{theorem}[Grupo livre]
-		\label{grupo livre}
-		Seja $S$ um conjunto de símbolos distintos. Para qualquer palavra $u$ em $W(S)$, seja $\overline{u}$ o conjunto de todas as palavras de $W(S)$ que são equivalentes a $u$ (ou seja, $\overline{u}$ é a classe de equivalência contendo $u$). Então, o conjunto de todas as classes de equivalência de elementos de $W(S)$ é um grupo sob a operação $\overline{u}\cdot\overline{v} = \overline{uv}$. 
+	\label{grupo livre}
+		Seja $S$ um conjunto de símbolos distintos. Para qualquer palavra $u$ em $W(S)$, seja 
+		$\overline{u}$ o conjunto de todas as palavras de $W(S)$ que são equivalentes a $u$ 
+		(ou seja, $\overline{u}$ é a classe de equivalência contendo $u$). Então, o conjunto 
+		de todas as classes de equivalência de elementos de $W(S)$ é um grupo sob a operaçã
+		o $\overline{u}\cdot\overline{v} = \overline{uv}$. 
 	\end{theorem}
-	
+	%
 	\begin{proof}
-		Se $u$ e $v$ são duas palavras de $S$, então $uv$ também é. Daí, é claro que $\overline{u}\cdot\overline{v} = \overline{uv}$, logo nosso conjunto é fechado para essa operação. Podemos ver que a identidade é a classe $\overline{e}$ (ou seja, o conjunto de palavras equivalentes à palavra vazia). Agora, sejam $u,v$ e $w$ palavras distintas de $S$. Então, note que 
-		
+		Se $u$ e $v$ são duas palavras de $S$, então $uv$ também é. Daí, é claro que
+		$\overline{u}\cdot\overline{v} = \overline{uv}$, logo nosso conjunto é fechado para essa operação. 
+		Podemos ver que a identidade é a classe $\overline{e}$ (ou seja, o conjunto de palavras equivalentes
+		à palavra vazia). Agora, sejam $u,v$ e $w$ palavras distintas de $S$. Então, note que
+		%
 		\begin{align*}
-		(\overline{u}\cdot\overline{v})\cdot\overline{w} = \overline{uv}\cdot\overline{w} = \overline{uvw} = \overline{u}\cdot (\overline{vw}) = \overline{u}\cdot (\overline{v}\cdot\overline{w})
+		    (\overline{u}\cdot\overline{v})\cdot\overline{w} 
+		    = \overline{uv}\cdot\overline{w} 
+		    = \overline{uvw} 
+		    = \overline{u}\cdot (\overline{vw}) 
+		    = \overline{u}\cdot (\overline{v}\cdot\overline{w})
 		\end{align*}
-		
-		\par\vspace{0.3cm} logo, a operação é associativa. Por fim, o inverso de $\overline{u}$ é a classe de equivalência da palavra $v$ que, justaposta com $u$, nos dá uma palavra equivalente à palavra vazia. Em símbolos, se $uv\sim e$, então $\overline{u}\cdot\overline{v} = \overline{e}$ e $\overline{v}$ é o inverso de $\overline{u}$.
-		
+		%
+		\par\vspace{0.3cm} logo, a operação é associativa. Por fim, o inverso de $\overline{u}$ é 
+		a classe de equivalência da palavra $v$ que, justaposta com $u$, nos dá uma palavra equivalente 
+		à palavra vazia. Em símbolos, se $uv\sim e$, então $\overline{u}\cdot\overline{v} = \overline{e}$ 
+		e $\overline{v}$ é o inverso de $\overline{u}$.
 	\end{proof}
-	
+	%
 	\begin{theorem}[Propriedade do mapeamento universal]
-		\label{mapeamento universal}
+	\label{mapeamento universal}
 		Todo grupo é imagem homomórfica de um grupo livre.
 	\end{theorem}
-	
+	%
 	\begin{proof}
-		Sejam $G$ um grupo, $S$ o conjunto dos geradores de $G$ (tal conjunto existe pois podemos tomar $S = G$) e $F$ o grupo livre em $S$. Para maior claridade, vamos denotar a palavra $x_1x_2\cdots x_n$ em $W(S)$ por $(x_1x_2\cdots x_n)_F$ e o produto em $G$ por $(x_1x_2\cdots x_n)_G$. Além disso, assim como antes, $\overline{x_1x_2\cdots x_n}$ é a classe de equivalência em $F$ contendo $(x_1x_2\cdots x_n)_F$.
+		Sejam $G$ um grupo, $S$ o conjunto dos geradores de $G$ (tal conjunto existe pois podemos tomar $S = G$) 
+		e $F$ o grupo livre em $S$. Para maior claridade, vamos denotar a palavra $x_1x_2\cdots x_n$ 
+		em $W(S)$ por $(x_1x_2\cdots x_n)_F$ e o produto em $G$ por $(x_1x_2\cdots x_n)_G$. Além disso, 
+		assim como antes, $\overline{x_1x_2\cdots x_n}$ é a classe de equivalência em $F$ contendo 
+		$(x_1x_2\cdots x_n)_F$.
 		
 		\par\vspace{0.3cm} Agora, considere a correspondência $\phi: F\to G$ dada por: 
-		
+		%
 		\begin{align*}
-		\phi(\overline{x_1x_2\cdots x_n}) = (x_1x_2\cdots x_n)_G
+		    \phi(\overline{x_1x_2\cdots x_n}) = (x_1x_2\cdots x_n)_G
 		\end{align*}
-		
-		\par\vspace{0.3cm} 
-		Podemos ver que $\phi$ está bem definida, uma vez que inserir ou deletar expressões da forma $xx^{-1}$ ou $x^{-1}x$ na palavra equivale a inserir ou deletar identidades no produto em $G$. Agora, para verificar que $\phi$ preserva a operação, basta notar que
-		
+		%
+		\par\vspace{0.3cm} Podemos ver que $\phi$ está bem definida, uma vez que inserir ou deletar 
+		expressões da forma $xx^{-1}$ ou $x^{-1}x$ na palavra equivale a inserir ou deletar identidades 
+		no produto em $G$. Agora, para verificar que $\phi$ preserva a operação, basta notar que
+		%
 		\begin{align*}
-		&\phi[(\overline{x_1x_2\cdots x_n})(\overline{y_1y_2\cdots y_m})] =  \phi(\overline{x_1x_2\cdots x_ny_1y_2\cdots y_m}) = \\ = &(x_1\cdots x_ny_1\cdots y_m)_G = (x_1\cdots x_n)_G(y_1\cdots y_m)_G
+		    &\phi[(\overline{x_1x_2\cdots x_n})(\overline{y_1y_2\cdots y_m})] 
+		    = \phi(\overline{x_1x_2\cdots x_ny_1y_2\cdots y_m}) = \\ 
+		    = &(x_1\cdots x_ny_1\cdots y_m)_G = (x_1\cdots x_n)_G(y_1\cdots y_m)_G
 		\end{align*}
-		
+		%
 	\end{proof}
-	
+	%
 	\begin{corollary}
-		\label{iso grupo quociente}
+	\label{iso grupo quociente}
 		Todo grupo é isomorfo a um grupo quociente de um grupo livre.
 	\end{corollary}
-	
+	%
 	\begin{proof}
-		Do Teorema \eqref{primeiro teorema de isomorfismo}, sabemos que $F/\Ker\phi\cong \phi(F)$, sendo $\phi(F)$ um subgrupo de $G$. Como $S$ gera $G$, então a nossa aplicação $\phi$ é sobrejetora. Portanto, $\phi(F) = G$ e, consequentemente, $F/\Ker\phi\cong G$.
+		Do Teorema \eqref{primeiro teorema de isomorfismo}, sabemos que $F/\Ker\phi\cong \phi(F)$, 
+		sendo $\phi(F)$ um subgrupo de $G$. Como $S$ gera $G$, então a nossa aplicação $\phi$ é sobrejetora.
+		Portanto, $\phi(F) = G$ e, consequentemente, $F/\Ker\phi\cong G$.
 	\end{proof}
-	
+	%
 	\begin{deff}[Geradores e relações]
-		Seja $G$ um grupo gerado por algum subconjunto $A = \{ a_1, a_2, \dots, a_n \}$ e seja $F$ o grupo livre em $A$. Seja $W = \{ w_1, w_2, \dots, w_t \}$ um subconjunto de $F$ e seja $N$ o menor subgrupo normal de $F$ contendo $W$. Dizemos que $G$ é dado pelos geradores $a_1, a_2, \dots, a_n$ e pelas relações $w_1 = w_2 = \cdots = w_t = e$ se existe um isomorfismo de $F/N$ em $G$ que leva $a_iN$ para $a_i$.
+		Seja $G$ um grupo gerado por algum subconjunto $A = \{ a_1, a_2, \dots, a_n \}$ e seja 
+		$F$ o grupo livre em $A$. Seja $W = \{ w_1, w_2, \dots, w_t \}$ um subconjunto de $F$ e seja 
+		$N$ o menor subgrupo normal de $F$ contendo $W$. Dizemos que $G$ é dado pelos geradores 
+		$a_1, a_2, \dots, a_n$ e pelas relações $w_1 = w_2 = \cdots = w_t = e$ se existe um isomorfismo 
+		de $F/N$ em $G$ que leva $a_iN$ para $a_i$.
 	\end{deff}
-	
+	%
 	\par\vspace{0.3cm} A notação para essa situação é
-	
+	%
 	\begin{equation*}
-	G = \langle a_1, a_2, \dots, a_n | w_1 = w_2 = \cdots = w_t = e \rangle.
+	    G = \langle a_1, a_2, \dots, a_n | w_1 = w_2 = \cdots = w_t = e \rangle.
 	\end{equation*}
-	
-	\par\vspace{0.3cm} Note que restringimos o número de geradores e relações a um número finito, mas isso não é necessário. Além disso, geralmente é mais conveniente escrever as relações na forma implícita. Por exemplo, a relação $a^{-1}b^{-3}ab = e$ é usualemente escrita como $ab = b^3a$. Na prática, não escrevemos o subgrupo normal $N$ que contém as relações. Em vez disso, manipulamos os geradores e tratamos qualquer coisa em $N$ como a identidade. Ao invés de dizer que $G$ é dado por  
-	
+	%
+	\par\vspace{0.3cm} Note que restringimos o número de geradores e relações a um número finito, 
+	mas isso não é necessário. Além disso, geralmente é mais conveniente escrever as relações na 
+	forma implícita. Por exemplo, a relação $a^{-1}b^{-3}ab = e$ é usualmente escrita como $ab = b^3a$.
+	Na prática, não escrevemos o subgrupo normal $N$ que contém as relações. Em vez disso, manipulamos os
+	geradores e tratamos qualquer coisa em $N$ como a identidade. Ao invés de dizer que $G$ é dado por  
+	%
 	\begin{equation*}
-	G = \langle a_1, a_2, \dots, a_n | w_1 = w_2 = \cdots = w_t = e \rangle.
+	    G = \langle a_1, a_2, \dots, a_n | w_1 = w_2 = \cdots = w_t = e \rangle.
 	\end{equation*}
-	
+	%
 	\par\vspace{0.3cm} muitos autores preferem dizer que $G$ tem a apresentação 
-	
+	%
 	\begin{equation*}
-	G = \langle a_1, a_2, \dots, a_n | w_1 = w_2 = \cdots = w_t = e \rangle.
+	    G = \langle a_1, a_2, \dots, a_n | w_1 = w_2 = \cdots = w_t = e \rangle.
 	\end{equation*}
+	%
+	\par\vspace{0.3cm} Note que um grupo livre é ``livre'' de relações, isto é, a classe de equivalência 
+	contendo a palavra vazia é a única relação. Um fato interessante é que todo subgrupo de um grupo livre 
+	também é livre: esse é o chamado \textbf{Teorema de Nielsen-Schreier}. Além disso, grupos livres são
+	fundamentais para a Teoria Combinatória dos Grupos, um dos ramos da Álgebra.
 	
-	\par\vspace{0.3cm} Note que um grupo livre é "livre" de relações, isto é, a classe de equivalência contendo a palavra vazia é a única relação. Um fato interessante é que todo subgrupo de um grupo livre também é livre: esse é o chamado \textbf{Teorema de Nielsen-Schreier}. Além disso, grupos livres são fundamentais para a Teoria Combinatória dos Grupos, um dos ramos da Álgebra.
-	
-	\par\vspace{0.3cm}
-	
-	%\begin{example}
-	%	Vamos mostrar que, de fato, os elementos de \\ $\{ bN,baN,ba^2N,ba^3N,b^2N,babN,ba^2bN,ba^3bN \}$ são os mesmos elementos de \\ ${N,aN,a^2N,a^3N,bN,abN,a^2bN,a^3bN}$ (sabendo que $a^4$,$b^2$,$(ab)^2\in N$, sendo $N$ normal e \\ $a^4=b^2=(ab)^2=e$). 
-	%	\par\vspace{0.3cm} Para isso, basta notar que 
-	
-	%	\begin{equation*}
-	%	b^2N=b^2aa^{-1}N=ba^{-1}(abab)b^{-1}a^{-1}N=ba^{-1}Nb^{-1}a^{-1}=(ab)^{-2}N=N
-	%	\end{equation*}
-	
-	%	\begin{equation*}
-	%	babN=a^{-1}(abab)N=a^3N
-	%	\end{equation*}
-	
-	%	\begin{equation*}
-	%	ba^3N=b^{-1}a^{-1}N=(ab)^{-1}N=abN
-	%	\end{equation*}
-	
-	%	\begin{equation*}
-	%	ba^3bN=ba^{-1}bN=aN
-	%	\end{equation*}
-	
-	%	\begin{equation*}
-	%	ba^2bN=a^{-1}(abab)b^{-1}abN=a^3babN=a^2N
-	%	\end{equation*}
-	
-	%	\begin{equation*}
-	%	ba^2N=a^{-1}(abab)b^{-1}aN=a^{-1}b^{-1}aN=a^{-1}baN=a^{-1}a^{-1}b^{-1}N=a^2bN
-	%	\end{equation*}
-	
-	%\end{example}
 	\par\vspace{0.3cm} Por exemplo, podemos escrever 
-	
+	%
 	\begin{align}
-	D_4 = \langle a,b | a^4 = b^2 = (ab)^2 = e \rangle
 	\label{apresentacao d4}
+	    D_4 = \langle a,b | a^4 = b^2 = (ab)^2 = e \rangle
 	\end{align}
-	
-	%\begin{example}
-	%	\label{apresentacao d4}
-	%	Podemos escrever
-	
-	%	\begin{align*}
-	%	D_4 = \langle a,b | a^4 = b^2 = (ab)^2 = e \rangle
-	%	\end{align*}
-	
-	%\end{example}
-	
+	%
 	\par\vspace{0.3cm} Outro exemplo é o grupo dos quatérnios, aqui denotado por $Q_8$, que tem apresentação
-	
+	%
 	\begin{align}
-	Q_8 = \langle a,b| a^2=b^2=(ab)^2 \rangle
 	\label{apresentacao quaternios}
+	    Q_8 = \langle a,b| a^2=b^2=(ab)^2 \rangle
 	\end{align}
-	
-	%\begin{example}
-	%	\label{apresentacao quaternios}
-	%	O grupos dos quatérnios, aqui denotado por $Q_8$, tem apresentação
-	
-	%	\begin{align*}
-	%	Q_8 = \langle a,b| a^2=b^2=(ab)^2 \rangle
-	%	\end{align*}
-	
-	%\end{example}
-	
-	\par\vspace{0.3cm} Vamos chamar de $\cal{Q}(+)$ o grupo dos racionais com a adição. Observe que os elementos da forma
+	%
+	\par\vspace{0.3cm} Vamos chamar de $\cal{Q}(+)$ o grupo dos racionais com a adição. 
+	Observe que os elementos da forma
+	%
 	\begin{equation*}
-	x_n = \frac{1}{n!}, \ n\in\mathbb{N}
+	    x_n = \frac{1}{n!}, \ n\in\mathbb{N}
 	\end{equation*}
-	\par\vspace{0.3cm} geram $\cal{Q}(+)$. De fato, se $\displaystyle{ \frac{a}{b}\in\cal{Q}(+) }$, sendo $a\in\mathbb{Z}$ e $b\in\mathbb{N}$, temos que
+	%
+	\par\vspace{0.3cm} geram $\cal{Q}(+)$. De fato, se $\displaystyle{ \frac{a}{b}\in\cal{Q}(+) }$, 
+	sendo $a\in\mathbb{Z}$ e $b\in\mathbb{N}$, temos que
+	%
 	\begin{equation*}
-	\frac{a}{b} = \frac{a(b-1)!}{b(b-1)!} = a(b-1)!\cdot x_b
+	    \frac{a}{b} = \frac{a(b-1)!}{b(b-1)!} = a(b-1)!\cdot x_b
 	\end{equation*}
+	%
 	\par\vspace{0.3cm} Como $x_n$ satisfaz a seguinte igualdade
+	%
 	\begin{equation*}
-	nx_n = x_{n-1}
+	    nx_n = x_{n-1},
 	\end{equation*}
-	\par\vspace{0.3cm} então é razoável assumir que $\cal{Q}(+)$ tem apresentação, escrita na forma multiplicativa, dada por
+	%
+	\par\vspace{0.3cm} então é razoável assumir que $\cal{Q}(+)$ tem apresentação, escrita na forma
+	multiplicativa, dada por
+	%
 	\begin{equation*}
-	P = \langle x_n, n\geq 1 \ | \ x_n^n = x_{n-1}, n\geq 2 \rangle
+	    P = \langle x_n, n\geq 1 \ | \ x_n^n = x_{n-1}, n\geq 2 \rangle.
 	\end{equation*}
-	\par\vspace{0.3cm} Como quaisquer dois pares de geradores de $P$ comutam, já que um é potência do outro, então $P$ é abeliano. Por conveniência, podemos usar a notação aditiva:
+	%
+	\par\vspace{0.3cm} Como quaisquer dois pares de geradores de $P$ comutam, já que um é potência do outro, 
+	então $P$ é abeliano. Por conveniência, podemos usar a notação aditiva:
+	%
 	\begin{equation}
-	\mathcal{Q}(+) = \langle x_n, n\geq 1 \ | \ nx_n = x_{n-1}, n\geq 2 \rangle
 	\label{apresentacao racionais}
+	    \mathcal{Q}(+) = \langle x_n, n\geq 1 \ | \ nx_n = x_{n-1}, n\geq 2 \rangle.
 	\end{equation}
-	\par\vspace{0.3cm} De fato, a apresentação em \eqref{apresentacao racionais} é uma apresentação de $\mathcal{Q}(+)$. Note que ela é o nosso primeiro exemplo de apresentação com infinitos geradores.
-	\par\vspace{0.3cm} Por fim, o grupo dos inteiros com a adição é um grupo livre em uma letra, isto é, $\mathbb{Z} = \langle a|- \rangle$. Esse é o único grupo abeliano não trivial livre.
+	%
+	\par\vspace{0.3cm} De fato, a apresentação em \eqref{apresentacao racionais} é uma apresentação de
+	$\mathcal{Q}(+)$. Note que ela é o nosso primeiro exemplo de apresentação com infinitos geradores.
 	
-	%\begin{example}
-	%	O grupo dos inteiros é um grupo livre em uma letra, ou seja, $\mathbb{Z} = \langle a | -\rangle$. Esse é o único grupo abeliano não trivial que é livre.
-	%\end{example}
-	
-	%\par\vspace{0.3cm}
-	
+	\par\vspace{0.3cm} Por fim, o grupo dos inteiros com a adição é um grupo livre em uma letra, isto é,
+	$\mathbb{Z} = \langle a|- \rangle$. Esse é o único grupo abeliano não trivial livre.
+	%
 	\begin{theorem}[2$^\circ$ Teorema de Isomorfismos]
-		\label{segundo teorema de isomorfismos}
+	\label{segundo teorema de isomorfismos}
 		Sejam $K$ um subgrupo de $G$ e $N$ um subgrupo normal de $G$. Então, $K/(K\cap N)\cong KN/N$.
 	\end{theorem}
-	
+	%
 	\begin{proof}
-		Seja $\phi:\underset{k\mapsto kN}{K\to KN/N}$. Vamos mostrar que $\phi$ é um homomorfismo cujo núcleo é $K\cap N$.
-		\par\vspace{0.3cm}
-		Note que $\phi$ está bem definida, pois se $k_1$ e $k_2$ são dois elementos de $K$ tais que $k_1=k_2$, então $k_1k_2^{-1} = e\in N$. Logo, $k_1N = k_2N$, ou seja, $\phi(k_1)=\phi(k_2)$.	
-		\par\vspace{0.3cm}
-		Além disso, se $kN$ é um elemento qualquer de $KN/N$, então basta tomar $x=k$ para obtermos $\phi(k)=kN$. Logo, $\phi$ é sobrejetora. 	
-		\par\vspace{0.3cm}
-		Note também que se $k_1,k_2\in K$, então $\phi(k_1k_2)=k_1k_2N=k_1Nk_2N=\phi(k_1)\phi(k_2)$, logo $\phi$ preserva a operação.	
-		\par\vspace{0.3cm}
-		Por fim, $\Ker\phi= \{ k\in K | \phi(k) = N \} = \{ k\in K | kN = N \}= \{ k\in K | k\in N \} = K\cap N$. Consequentemente, pelo Teorema \eqref{primeiro teorema de isomorfismo},  $K/(K\cap N)\cong KN/N$.  
+		Seja $\phi:\underset{k\mapsto kN}{K\to KN/N}$. Vamos mostrar que $\phi$ é um homomorfismo cujo 
+		núcleo é $K\cap N$.
+		
+		\par\vspace{0.3cm} Note que $\phi$ está bem definida, pois se $k_1$ e $k_2$ são dois elementos de 
+		$K$ tais que $k_1=k_2$, então $k_1k_2^{-1} = e\in N$. Logo, $k_1N = k_2N$, 
+		ou seja, $\phi(k_1)=\phi(k_2)$.	
+		
+		\par\vspace{0.3cm} Além disso, se $kN$ é um elemento qualquer de $KN/N$, então basta tomar $x=k$ 
+		para obtermos $\phi(k)=kN$. Logo, $\phi$ é sobrejetora.
+		
+		\par\vspace{0.3cm} Note também que se $k_1,k_2\in K$, então
+		$\phi(k_1k_2)=k_1k_2N=k_1Nk_2N=\phi(k_1)\phi(k_2)$, logo $\phi$ preserva a operação.
+		
+		\par\vspace{0.3cm} Por fim, $\Ker\phi= \{ k\in K | \phi(k) = N \} 
+		= \{ k\in K | kN = N \}= \{ k\in K | k\in N \} = K\cap N$. Consequentemente, pelo 
+		Teorema \eqref{primeiro teorema de isomorfismo},  $K/(K\cap N)\cong KN/N$.  
 	\end{proof}
-	
-	\par\vspace{0.3cm}
-	
+	%
 	\begin{theorem}[3$^\circ$ Teorema de Isomorfismos]
-		\label{terceiro teorema de isomorfismos}
+	\label{terceiro teorema de isomorfismos}
 		Sejam $M$ e $N$ subgrupos normais de $G$, com $N\leq M$. Então, $(G/N)/(M/N)\cong G/M$.
 	\end{theorem}
-	
+	%
 	\begin{proof}
-		Seja $\phi:\underset{gN\mapsto gM}{G/N\to G/M}$. Vamos mostrar que $\phi$ é um homomorfismo de núcleo $M/N$.
-		\par\vspace{0.3cm}
-		Primeiro, note que $\phi$ está bem definida pois se $g_1$ e $g_2$ são dois elementos quaisquer de $G$ e $g_1N=g_2N$, então $g_1g_2^{-1}\in N$. Como $N\subseteq M$, então $g_1g_2^{-1}\in M$ e, por isso, $g_1M=g_2M$, ou seja $\phi(g_1N)=\phi(g_2N)$.
-		\par\vspace{0.3cm}
-		Além disso, note que se $g_1,g_2\in G$, então $\phi(g_1Ng_2N)=\phi(g_1g_2N)=g_1g_2M=g_1Mg_2M=\phi(g_1N)\phi(g_2N)$, logo $\phi$ preserva a operação.
-		\par\vspace{0.3cm}
-		Note também que se $gM$ é um elemento qualquer de $G/M$, então basta tomarmos $x=gN$ para obter $\phi(x)=gM$, logo $\phi$ é sobrejetora.
-		\par\vspace{0.3cm}
-		Por fim,  $\Ker\phi={gN\in G/N|\phi(gN)=M}={gN\in G/N|gM=M}={gN\in G/N|g\in M}=MN/N=M/(M\cap N)=M/N$, em que na penúltima igualdade usamos o Teorema \eqref{segundo teorema de isomorfismos}. Portanto, pelo Teorema \eqref{primeiro teorema de isomorfismo}, $(G/N)/(M/N)\cong G/M$. 
+		Seja $\phi:\underset{gN\mapsto gM}{G/N\to G/M}$. Vamos mostrar que $\phi$ é um homomorfismo 
+		de núcleo $M/N$.
+		\par\vspace{0.3cm} Primeiro, note que $\phi$ está bem definida pois se $g_1$ e $g_2$ são 
+		dois elementos quaisquer de $G$ e $g_1N=g_2N$, então $g_1g_2^{-1}\in N$. Como $N\subseteq M$, 
+		então $g_1g_2^{-1}\in M$ e, por isso, $g_1M=g_2M$, ou seja $\phi(g_1N)=\phi(g_2N)$.
+		
+		\par\vspace{0.3cm} Além disso, note que se $g_1,g_2\in G$, então
+		$\phi(g_1Ng_2N)=\phi(g_1g_2N)=g_1g_2M=g_1Mg_2M=\phi(g_1N)\phi(g_2N)$, logo $\phi$ preserva a operação.
+		
+		\par\vspace{0.3cm} Note também que se $gM$ é um elemento qualquer de $G/M$, então basta tomarmos 
+		$x=gN$ para obter $\phi(x)=gM$, logo $\phi$ é sobrejetora.
+		
+		\par\vspace{0.3cm} Por fim,  $\Ker\phi={gN\in G/N|\phi(gN)=M}={gN\in G/N|gM=M}
+		={gN\in G/N|g\in M}=MN/N=M/(M\cap N)=M/N$, em que na penúltima igualdade usamos o 
+		Teorema \eqref{segundo teorema de isomorfismos}. Portanto, pelo 
+		Teorema \eqref{primeiro teorema de isomorfismo}, $(G/N)/(M/N)\cong G/M$. 
 	\end{proof}
-	
-	\par\vspace{0.3cm}
-	
+	%
 	\begin{theorem}[Teorema de Dyck]
-		\label{teorema de Dyck}
-		Sejam \begin{align*}
-		G = \langle a_1, a_2, \dots, a_n | w_1 = w_2 = \cdots = w_t = e \rangle
-		\end{align*} 
-		\begin{center}
-			e
-		\end{center} 
+	\label{teorema de Dyck}
+		Sejam 
+		%
 		\begin{align*}
-		\overline{G} = \langle a_1, a_2, \dots, a_n | w_1 = w_2 = \cdots = w_t = w_{t+1} = \cdots = w_{t+k} = e \rangle
+		    G = \langle a_1, a_2, \dots, a_n | w_1 = w_2 = \cdots = w_t = e \rangle
+		\end{align*} 
+		%
+		e
+		%
+		\begin{align*}
+		    \overline{G} 
+		    = \langle a_1, a_2, \dots, a_n | w_1 = w_2 = \cdots = w_t = w_{t+1} = \cdots = w_{t+k} = e \rangle
 		\end{align*}
-		
+		%
 		\par\vspace{0.3cm} Então, $\overline{G}$ é uma imagem homomórfica de $G$.
-		
 	\end{theorem}
-	
+	%
 	\begin{proof}
-		Sejam $F$ o grupo livre em $\{a_1, a_2, \dots, a_n\}$, $N$ o menor subgrupo normal contendo $\{w_1, w_2, \dots, w_t\}$ e $M$ o menor subgrupo normal contendo $\{w_1, w_2, \dots, w_t, w_{t+1}, \dots, w_{t+k}\}$. Então, $F/N\cong G$ e $F/M\cong \overline{G}$. 
+		Sejam $F$ o grupo livre em $\{a_1, a_2, \dots, a_n\}$, $N$ o menor subgrupo normal contendo 
+		$\{w_1, w_2, \dots, w_t\}$ e $M$ o menor subgrupo normal contendo 
+		$\{w_1, w_2, \dots, w_t, w_{t+1}, \dots, w_{t+k}\}$. Então, $F/N\cong G$ e $F/M\cong \overline{G}$. 
 		
-		\par\vspace{0.3cm} A correspondência $\phi:\underset{aN\mapsto aM}{F/N\to F/M}$ define um homomorfismo de $F/N$ em $F/M$. Para ver isso, note que $\phi$ está bem definida, pois se $a_1$ e $a_2$ são elementos quaisquer de $F$ e $a_1N=a_2N$, então $a_1a_2^{-1}\in N\subseteq M$. Logo, $a_1a_2^{-1}\in M$, portanto $a_1M=a_2M$, ou seja, $\phi(a_1N)=\phi(a_2N)$.
+		\par\vspace{0.3cm} A correspondência $\phi:\underset{aN\mapsto aM}{F/N\to F/M}$ define 
+		um homomorfismo de $F/N$ em $F/M$. Para ver isso, note que $\phi$ está bem definida, pois 
+		se $a_1$ e $a_2$ são elementos quaisquer de $F$ e $a_1N=a_2N$, então $a_1a_2^{-1}\in N\subseteq M$. 
+		Logo, $a_1a_2^{-1}\in M$, portanto $a_1M=a_2M$, ou seja, $\phi(a_1N)=\phi(a_2N)$.
 		
-		\par\vspace{0.3cm} Além disso, se $aM$ é um elemento qualquer de $F/M$, então basta tomarmos $x=aN$ para obter $\phi(x)=aM$, logo $\phi$ é sobrejetora.
+		\par\vspace{0.3cm} Além disso, se $aM$ é um elemento qualquer de $F/M$, então basta tomarmos 
+		$x=aN$ para obter $\phi(x)=aM$, logo $\phi$ é sobrejetora.
 		
-		Por fim, sejam $a_1N,a_2N\in F/N$. Então, $\phi(a_1Na_2N)=\phi(a_1a_2N)=a_1a_2M=a_1Ma_2M=\phi(a_1N)\phi(a_2N)$, logo $\phi$ preserva a operação. 
+		Por fim, sejam $a_1N,a_2N\in F/N$. Então,
+		$\phi(a_1Na_2N)=\phi(a_1a_2N)=a_1a_2M=a_1Ma_2M=\phi(a_1N)\phi(a_2N)$, logo $\phi$ preserva a operação. 
 		
 		Como $F/N\cong G$ e $F/M\cong \overline{G}$, então $\phi$ induz um homomorfismo de $G$ em $\overline{G}$.
 	\end{proof}
-	
-	\par\vspace{0.3cm}
-	
+	%
 	\begin{corollary}
-		\label{corolario de Dyck}
-		Se $K$ é um grupo que satisfaz as relações de um grupo finito $G$ e $|K|\geq |G|$, então $K$ é isomorfo a $G$.
+	\label{corolario de Dyck}
+		Se $K$ é um grupo que satisfaz as relações de um grupo finito $G$ e $|K|\geq |G|$, 
+		então $K$ é isomorfo a $G$.
 	\end{corollary}
-	
+	%
 	\begin{proof}
-		Do Teorema \eqref{teorema de Dyck} anterior, sabemos que $K$ é imagem homomórfica de $G$, portanto $|K|\leq |G|$. Por hipótese, $|K|\geq |G|$, logo $|K| = |G|$. 
+		Do Teorema \eqref{teorema de Dyck} anterior, sabemos que $K$ é imagem homomórfica de $G$, 
+		portanto $|K|\leq |G|$. Por hipótese, $|K|\geq |G|$, logo $|K| = |G|$. 
 	\end{proof}
-	
-	\par\vspace{0.3cm}
-	
+	%
 	\begin{theorem}[Classificação dos grupos de ordem 8]
-		\label{classificacao grupos de ordem 8}
-		A menos de isomorfismo, há apenas 5 grupos de ordem 8: $\mathbb{Z}_8$, $\mathbb{Z}_4\oplus\mathbb{Z}_2$, $\mathbb{Z}_2\oplus\mathbb{Z}_2\oplus\mathbb{Z}_2$, $D_4$ e $Q_8$. %(os quatérnios).
+	\label{classificacao grupos de ordem 8}
+		A menos de isomorfismo, há apenas 5 grupos de ordem 8: 
+		$\mathbb{Z}_8$, $\mathbb{Z}_4\oplus\mathbb{Z}_2$, $\mathbb{Z}_2\oplus\mathbb{Z}_2\oplus\mathbb{Z}_2$,
+		$D_4$ e $Q_8$.
 	\end{theorem}
-	
+	%
 	\begin{proof}
-		O caso dos grupos abelianos já foi visto anteriormente na Seção \ref{sec-prod-direto-grupos}. Então, seja $G$ um grupo não abeliano de ordem 8. Além disso, sejam $G_1 = \langle a,b | a^4 = b^2 =(ab)^2 = e \rangle$ e $G_2 = \langle a,b | a^2 = b^2 = (ab)^2 \rangle$. Sabemos, das equações \eqref{apresentacao d4} e \eqref{apresentacao quaternios}, que $G_1$ é isomorfo a $D_4$ e $G_2$ é isomorfo a $Q_8$. Portanto, basta mostrarmos que todo grupo não abeliano de ordem 8 satisfaz as relações de $G_1$ ou de $G_2$. 
+		O caso dos grupos abelianos já foi visto anteriormente na Seção \ref{sec-prod-direto-grupos}. 
+		Então, seja $G$ um grupo não abeliano de ordem 8. Além disso, sejam 
+		$G_1 = \langle a,b | a^4 = b^2 =(ab)^2 = e \rangle$ e $G_2 = \langle a,b | a^2 = b^2 = (ab)^2 \rangle$.
+		Sabemos, das equações \eqref{apresentacao d4} e \eqref{apresentacao quaternios}, que $G_1$ 
+		é isomorfo a $D_4$ e $G_2$ é isomorfo a $Q_8$. Portanto, basta mostrarmos que todo grupo não abeliano 
+		de ordem 8 satisfaz as relações de $G_1$ ou de $G_2$. 
 		
-		\par\vspace{0.3cm} Como todo grupo que tem apenas elementos de ordem 2 é abeliano, %(exercício 47, capítulo 2) 
-		então sabemos, pelo Teorema \eqref{lagrange}, que $G$ tem pelo menos um elemento de ordem 4. Seja $a$ tal elemento. Então, se $b$ é um elemento de $G$ que não está em $\langle a \rangle$, sabemos que 
-		
+		\par\vspace{0.3cm} Como todo grupo que tem apenas elementos de ordem 2 é abeliano,
+		então sabemos, pelo Teorema \eqref{lagrange}, que $G$ tem pelo menos um elemento de ordem 4. 
+		Seja $a$ tal elemento. Então, se $b$ é um elemento de $G$ que não está em $\langle a \rangle$, 
+		sabemos que 
+		%
 		\begin{align*}
-		G = \langle a \rangle\cup\langle a \rangle b = \{e, a, a^2, a^3, b, ab, a^2b, a^3b\}
+		    G = \langle a \rangle\cup\langle a \rangle b = \{e, a, a^2, a^3, b, ab, a^2b, a^3b\}
 		\end{align*}
+		%
+		\par\vspace{0.3cm} Considere o elemento $b^2$ de $G$. Note que $b^2$ não pode ser $b, ab, a^2b$ 
+		nem $a^3b$, pois todos esses casos implicam em absurdos. Também não pode ser $a$, pois $b^2$ 
+		comuta com $b$ e $a$ não comuta com $b$. Também não pode ser $a^3$, pelo mesmo motivo. 
+		Logo, $b^2 = e$ ou $b^2 = a^2$. 
 		
-		\par\vspace{0.3cm} Considere o elemento $b^2$ de $G$. Note que $b^2$ não pode ser $b, ab, a^2b$ nem $a^3b$, pois todos esses casos implicam em absurdos. Também não pode ser $a$, pois $b^2$ comuta com $b$ e $a$ não comuta com $b$. Também não pode ser $a^3$, pelo mesmo motivo. Logo, $b^2 = e$ ou $b^2 = a^2$. 
+		\par\vspace{0.3cm} Como $\langle a \rangle$ é um subgrupo normal de $G$, sabemos que 
+		$bab^{-1}\in\langle a \rangle$. Disso e do fato que $|bab^{-1}| = |a|$, sabemos que $bab^{-1} = a$ 
+		ou $bab^{-1} = a^{-1}$. A primeira hipótese implica $G$ abeliano, o que não queremos, 
+		logo $bab^{-1} = a^{-1}$.
 		
-		\par\vspace{0.3cm} Como $\langle a \rangle$ é um subgrupo normal de $G$, sabemos que $bab^{-1}\in\langle a \rangle$. Disso e do fato que $|bab^{-1}| = |a|$, sabemos que $bab^{-1} = a$ ou $bab^{-1} = a^{-1}$. A primeira hipótese implica $G$ abeliano, o que não queremos, logo $bab^{-1} = a^{-1}$.
-		
-		\par\vspace{0.3cm} Agora, suponha $b^2 = e$. Então, $(ab)^2 = a(ba)b = a(a^{-1}b)b = b^2 = e$, ou seja, $G$ satisfaz as relações de $G_1$. Por outro lado, se $b^2 = a^2$, então $(ab)^2 = a(ba)b = a(a^{-1}b)b = b^2 = a^2$, ou seja, $G$ satisfaz as relações de $G_2$. 
-		
+		\par\vspace{0.3cm} Agora, suponha $b^2 = e$. Então, $(ab)^2 = a(ba)b = a(a^{-1}b)b = b^2 = e$, 
+		ou seja, $G$ satisfaz as relações de $G_1$. Por outro lado, se $b^2 = a^2$, então 
+		$(ab)^2 = a(ba)b = a(a^{-1}b)b = b^2 = a^2$, ou seja, $G$ satisfaz as relações de $G_2$.
 	\end{proof}
-	
-	\par\vspace{0.3cm}
-	
+	%
 	\begin{lemma}
-		\label{lema geradores}
+	\label{lema geradores}
 		Para qualquer grupo $G$, $\langle a,b \rangle = \langle a,ab \rangle$
 	\end{lemma}
-	
+	%
 	\begin{proof}
-		Note que $a,ab\in\langle a,b \rangle$ , logo $\langle a,ab \rangle\subseteq \langle a,b \rangle$. Por outro lado, $a=a^1(ab)^0$ e $b=a^{-1}(ab)^1$, ou seja, $a,b\in\langle a,ab \rangle$, logo $\langle a,b \rangle \subseteq \langle a,ab \rangle$. Portanto, $\langle a,b \rangle = \langle a,ab \rangle$.
+		Note que $a,ab\in\langle a,b \rangle$ , logo $\langle a,ab \rangle\subseteq \langle a,b \rangle$. 
+		Por outro lado, $a=a^1(ab)^0$ e $b=a^{-1}(ab)^1$, ou seja, $a,b\in\langle a,ab \rangle$, 
+		logo $\langle a,b \rangle \subseteq \langle a,ab \rangle$. Portanto, 
+		$\langle a,b \rangle = \langle a,ab \rangle$.
 	\end{proof}
-	
-	\par\vspace{0.3cm}
-	
+	%
 	\begin{lemma}
-		\label{lema diedral}
-		A apresentação  $\langle x,y | x^2=y^n=(xy)^2=e \rangle$ de $D_n$ é equivalente à apresentação \par $\langle x,y | x^2=y^n=e,xyx=y^{-1} \rangle$.
+	\label{lema diedral}
+		A apresentação  $\langle x,y | x^2=y^n=(xy)^2=e \rangle$ de $D_n$ é equivalente à apresentação 
+		$\langle x,y | x^2=y^n=e,xyx=y^{-1} \rangle$.
 	\end{lemma}
 	
 	\begin{proof}
-		Partindo da segunda apresentação, note que $xyx=y^{-1}$ implica $xyxy=(xy)^2=e$. Por outro lado, partindo da primeira apresentação, note que $(xy)^2=xyxy=e$ implica $xyx=y^{-1}$. Logo, ambas as apresentações são equivalentes.
+		Partindo da segunda apresentação, note que $xyx=y^{-1}$ implica $xyxy=(xy)^2=e$. Por outro lado, 
+		partindo da primeira apresentação, note que $(xy)^2=xyxy=e$ implica $xyx=y^{-1}$. Logo, 
+		ambas as apresentações são equivalentes.
 	\end{proof}
-	
-	\par\vspace{0.3cm}
-	
+	%
 	\begin{theorem}[Classificação dos grupos diedrais]
 		Qualquer grupo gerado por um par de elementos de ordem 2 é diedral. 
 	\end{theorem}
-	
+	%
 	\begin{proof}
-		Seja $G$ um grupo gerado por um par de elementos distintos de ordem 2, $a$ e $b$. Se a ordem de $ab$ é infinita, então $G$ é infinito e satisfaz as relações de $D_{\infty}$. Vamos mostrar que $G\cong D_{\infty}$. 
+		Seja $G$ um grupo gerado por um par de elementos distintos de ordem 2, $a$ e $b$. 
+		Se a ordem de $ab$ é infinita, então $G$ é infinito e satisfaz as relações de $D_{\infty}$. 
+		Vamos mostrar que $G\cong D_{\infty}$. 
 		
-		\par\vspace{0.3cm} Pelo Teorema \eqref{teorema de Dyck}, sabemos que $G$ é isomorfo a um grupo quociente de $D_{\infty}$, digamos $D_{\infty}/H$. Suponha que $h$ é um elemento não identidade de $H$. Como todo elemento de $D_{\infty}$ tem uma das formas $(ab)^i$, $(ba)^i$, $(ab)^ia$ ou $(ba)^ib$, por simetria, podemos assumir que $h = (ab)^i$ ou $h = (ab)^ia$.
+		\par\vspace{0.3cm} Pelo Teorema \eqref{teorema de Dyck}, sabemos que $G$ é isomorfo a um 
+		grupo quociente de $D_{\infty}$, digamos $D_{\infty}/H$. Suponha que $h$ é um elemento não 
+		identidade de $H$. Como todo elemento de $D_{\infty}$ tem uma das formas 
+		$(ab)^i$, $(ba)^i$, $(ab)^ia$ ou $(ba)^ib$, por simetria, podemos assumir que 
+		$h = (ab)^i$ ou $h = (ab)^ia$.
 		
 		\par\vspace{0.3cm} Se $h = (ab)^i$, então $(ab)^i$ está em $H$ e, portanto, temos
+		%
 		\begin{align*}
-		H = (ab)^iH = (abH)^i
+		    H = (ab)^iH = (abH)^i
 		\end{align*}
+		%
 		\par\vspace{0.3cm} de modo que $(abH)^{-1} = (abH)^{i-1}$. Mas
+		%
 		\begin{align*}
-		(ab)^{-1}H = b^{-1}a^{-1}H = baH
+		    (ab)^{-1}H = b^{-1}a^{-1}H = baH
 		\end{align*}
+		%
 		\par\vspace{0.3cm} e segue que
+		%
 		\begin{align*}
-		aHabHaH = a^2HbHaH = baH = (abH)^{-1}
+		    aHabHaH = a^2HbHaH = baH = (abH)^{-1}
 		\end{align*}
-		\par\vspace{0.3cm} Pelo Lema \eqref{lema geradores}, $D_{\infty}/H = \langle aH, bH \rangle = \langle aH, abH \rangle$ e note que $D_{\infty}/H$ satisfaz as relações de $D_i$ (basta substituir $x$ e $y$ no lema 8.6 por $aH$ e $abH$, respectivamente). Em particular, $G$ é finito, o que é impossível.
-		\par\vspace{0.3cm} Agora, se $h = (ab)^ia$, então
-		\begin{align*}
-		H = (ab)^iaH = (ab)^iHaH
-		\end{align*}
-		\par\vspace{0.3cm} e, consequentemente, 
-		\begin{align*}
-		(abH)^i = (ab^i)H = (aH)^{-1} = a^{-1}H = aH
-		\end{align*}
-		\par\vspace{0.3cm} Segue então que
-		\begin{align*}
-		\langle aH, bH \rangle = \langle aH, abH \rangle\subseteq \langle abH \rangle
-		\end{align*}
-		\par\vspace{0.3cm} Contudo, 
-		\begin{align*}
-		(abH)^{2i} = (aH)^2 = H
-		\end{align*}
-		\par\vspace{0.3cm} então $D_{\infty}/H$ é finito novamente. Essa contradição força $H = \{e\}$ e $G$ isomorfo a $D_{\infty}$.
-		\par\vspace{0.3cm} Finalmente, suponha que $|ab| = n$. Como $G = \langle a,b \rangle = \langle a,ab \rangle$, podemos mostrar (devido ao Lema \eqref{lema diedral}) que $G$ é isomorfo a $D_n$ provando que $b(ab)b = (ab)^{-1}$, o que é equivalente a provar que $ba = (ab)^{-1}$ o que, por sua vez, é imediato, uma vez que $a$ e $b$ têm ordem 2.
+		%
+		\par\vspace{0.3cm} Pelo Lema \eqref{lema geradores}, $D_{\infty}/H = \langle aH, bH \rangle 
+		= \langle aH, abH \rangle$ e note que $D_{\infty}/H$ satisfaz as relações de $D_i$ 
+		(basta substituir $x$ e $y$ no lema 8.6 por $aH$ e $abH$, respectivamente). Em particular, 
+		$G$ é finito, o que é impossível.
 		
+		\par\vspace{0.3cm} Agora, se $h = (ab)^ia$, então
+		%
+		\begin{align*}
+		    H = (ab)^iaH = (ab)^iHaH
+		\end{align*}
+		%
+		\par\vspace{0.3cm} e, consequentemente, 
+		%
+		\begin{align*}
+		    (abH)^i = (ab^i)H = (aH)^{-1} = a^{-1}H = aH
+		\end{align*}
+		%
+		\par\vspace{0.3cm} Segue então que
+		%
+		\begin{align*}
+		    \langle aH, bH \rangle = \langle aH, abH \rangle\subseteq \langle abH \rangle
+		\end{align*}
+		%
+		\par\vspace{0.3cm} Contudo, 
+		%
+		\begin{align*}
+		    (abH)^{2i} = (aH)^2 = H
+		\end{align*}
+		%
+		\par\vspace{0.3cm} então $D_{\infty}/H$ é finito novamente. Essa contradição força 
+		$H = \{e\}$ e $G$ isomorfo a $D_{\infty}$.
+		
+		\par\vspace{0.3cm} Finalmente, suponha que $|ab| = n$. Como $G = \langle a,b \rangle 
+		= \langle a,ab \rangle$, podemos mostrar (devido ao Lema \eqref{lema diedral}) que $G$ é isomorfo 
+		a $D_n$ provando que $b(ab)b = (ab)^{-1}$, o que é equivalente a provar que $ba = (ab)^{-1}$ o que, 
+		por sua vez, é imediato, uma vez que $a$ e $b$ têm ordem 2.
 	\end{proof}
-	
-	\par\vspace{0.3cm}
-	
+	%
 	\begin{deff}[Matrizes de permutação]
-		Uma \textbf{matriz de permutação} é uma matriz quadrada de ordem $n$ formada apenas por zeros e uns (ou seja, binária). Em cada linha e coluna, há apenas uma entrada não nula. Tais matrizes têm como efeito permutar as linhas ou colunas de outras matrizes (ou, dependendo do contexto, as entradas de um vetor).
+		Uma \textbf{matriz de permutação} é uma matriz quadrada de ordem $n$ formada apenas por zeros 
+		e uns (ou seja, binária). Em cada linha e coluna, há apenas uma entrada não nula. Tais matrizes 
+		têm como efeito permutar as linhas ou colunas de outras matrizes (ou, dependendo do contexto, as 
+		entradas de um vetor).
 	\end{deff}
-	
-	\par\vspace{0.3cm}
-	
+	%
 	\begin{lemma}
-		\label{matrizes de permutacao}
+	\label{matrizes de permutacao}
 		O grupo formado pelas matrizes de permutação (denotado por $\mathbb{P}_{n\times n}$) é isomorfo a $S_n$.
 	\end{lemma}
-	
+	%
 	\begin{proof}
 		Seja $\phi: \underset{\alpha\mapsto P_{\alpha}}{S_n\to\mathbb{P}_{n\times n}}$, sendo $\displaystyle{P_{\alpha} = \begin{bmatrix}
 			e_{\alpha(1)} \\
 			\vdots \\
 			e_{\alpha(n)}
 			\end{bmatrix}}$ e sendo $e_i$ os vetores da base canônica de $\mathbb{R}^n$.
+			
+		\par\vspace{0.3cm} Note que $\psi$ está bem definida, pois permutações iguais são levadas 
+		em matrizes iguais.
 		
-		\par\vspace{0.3cm}
-		
-		Note que $\psi$ está bem definida, pois permutações iguais são levadas em matrizes iguais.
-		
-		\par\vspace{0.3cm}
-		
-		Além disso, note que $\displaystyle{ P_{\alpha}P_{\beta} = \begin{bmatrix}
+		\par\vspace{0.3cm}	Além disso, note que $\displaystyle{ P_{\alpha}P_{\beta} = \begin{bmatrix}
 			e_{\alpha(1)} \\
 			\vdots \\
 			e_{\alpha(n)}
@@ -413,58 +479,70 @@
 			e_{\alpha(\beta(1))} \\
 			\vdots \\
 			e_{\alpha(\beta(n))}
-			\end{bmatrix} = P_{\alpha\circ\beta} }$. Isso se justifica pois multiplicando $P_{\beta}$ por $P_{\alpha}$, estamos permutando as linhas de $P_{\beta}$ com a permutação $\alpha$. Mas as linhas de $P_{\beta}$ são as linhas da matriz identidade permutadas por $\beta$. Então, $P_{\alpha}P_{\beta}$ tem o mesmo efeito de permutar as linhas da matriz identidade por $\beta$ e depois por $\alpha$, ou seja, permutar por $\alpha\circ\beta$. 
+			\end{bmatrix} = P_{\alpha\circ\beta} }$. Isso se justifica pois multiplicando $P_{\beta}$ por
+			$P_{\alpha}$, estamos permutando as linhas de $P_{\beta}$ com a permutação $\alpha$. 
+			Mas as linhas de $P_{\beta}$ são as linhas da matriz identidade permutadas por $\beta$. 
+			Então, $P_{\alpha}P_{\beta}$ tem o mesmo efeito de permutar as linhas da matriz identidade 
+			por $\beta$ e depois por $\alpha$, ou seja, permutar por $\alpha\circ\beta$. 
+			
+		\par\vspace{0.3cm} Note também que $\psi$ preserva a operação, pois se $\alpha, \beta$ são 
+		permutações quaisquer de $S_n$, então $\psi(\alpha\circ\beta) = P_{\alpha\circ\beta} 
+		= P_{\alpha}P_{\beta} = \psi(\alpha)\psi(\beta)$.
 		
-		\par\vspace{0.3cm}
+		\par\vspace{0.3cm} Ademais, $\psi$ é sobrejetora, pois basta tomarmos, em $\mathbb{P}_{n\times n}$, 
+		a matriz cujas linhas estão permutadas do mesmo modo que a permutação $\alpha$ em $S_n$; em símbolos, 
+		para toda matriz $P_{\alpha}\in\mathbb{P}_{n\times n}$, devemos tomar $\alpha\in S_n$ de modo a obter
+		$\psi(\alpha) = P_{\alpha}$. 
 		
-		Note também que $\psi$ preserva a operação, pois se $\alpha, \beta$ são permutações quaisquer de $S_n$, então $\psi(\alpha\circ\beta) = P_{\alpha\circ\beta} = P_{\alpha}P_{\beta} = \psi(\alpha)\psi(\beta)$.
+		\par\vspace{0.3cm} Por fim, temos que $\Ker\psi = \{ \alpha\in S_n | \psi(\alpha) = I_n \} 
+		= \{ \alpha\in S_n | P_{\alpha} = I_n \} = \{ \alpha\in S_n | \alpha(i) = i, i=1,2,\dots,n \} = \{e\}$,
+		sendo $I_n$ a matriz identidade de ordem $n$.
 		
-		\par\vspace{0.3cm}
-		
-		Ademais, $\psi$ é sobrejetora, pois basta tomarmos, em $\mathbb{P}_{n\times n}$, a matriz cujas linhas estão permutadas do mesmo modo que a permutação $\alpha$ em $S_n$; em símbolos, para toda matriz $P_{\alpha}\in\mathbb{P}_{n\times n}$, devemos tomar $\alpha\in S_n$ de modo a obter $\psi(\alpha) = P_{\alpha}$. 
-		
-		\par\vspace{0.3cm}
-		
-		Por fim, temos que $\Ker\psi = \{ \alpha\in S_n | \psi(\alpha) = I_n \} = \{ \alpha\in S_n | P_{\alpha} = I_n \} = \{ \alpha\in S_n | \alpha(i) = i, i=1,2,\dots,n \} = \{e\}$, sendo $I_n$ a matriz identidade de ordem $n$.
-		
-		\par\vspace{0.3cm}
-		
-		Consequentemente, como $\psi$ é um homomorfismo sobrejetor, então pelo Teorema \eqref{primeiro teorema de isomorfismo} concluímos que $S_n\cong\mathbb{P}_{n\times n}$.
+		\par\vspace{0.3cm} Consequentemente, como $\psi$ é um homomorfismo sobrejetor, então pelo 
+		Teorema \eqref{primeiro teorema de isomorfismo} concluímos que $S_n\cong\mathbb{P}_{n\times n}$.
 	\end{proof}
-	
-	\par\vspace{0.3cm}
-	
+	%
 	\begin{remark}
-		Pelo Teorema \eqref{Cayley}, sabemos que todo grupo finito $G$ é isomorfo a um subgrupo de $S_n$, digamos, $H$. Como $S_n$ é isomorfo a $\mathbb{P}_{n\times n}$, e este é um subgrupo de $GL(n,K)$ (sendo $K$ um corpo), então podemos imergir $G$ em $GL(n,K)$. Em símbolos, $G\cong H\leq S_n\cong\mathbb{P}_{n\times n}\leq GL(n,K)$.
+		Pelo Teorema \eqref{Cayley}, sabemos que todo grupo finito $G$ é isomorfo a um subgrupo de $S_n$, 
+		digamos, $H$. Como $S_n$ é isomorfo a $\mathbb{P}_{n\times n}$, e este é um subgrupo de $GL(n,K)$ 
+		(sendo $K$ um corpo), então podemos imergir $G$ em $GL(n,K)$. Em símbolos, 
+		$G\cong H\leq S_n\cong\mathbb{P}_{n\times n}\leq GL(n,K)$.
 	\end{remark}
-	
-	\par\vspace{0.3cm}
-	
+	%
 	\begin{lemma}
-		\label{grupos de ordem 2p}
+	\label{grupos de ordem 2p}
 		Seja $p$ primo. Todo grupo de ordem $2p$ é cíclico ou isomorfo a $D_p$.
 	\end{lemma}
-	
+	%
 	\begin{proof}
-		Primeiro, note que ser cíclico de ordem $2p$ é equivalente a ser isomorfo a $\mathbb{Z}_{2p}$. 
-		\par\vspace{0.3cm}
-		Pelo Teorema \eqref{cauchy}, sabemos que $G$ tem um elemento de ordem $p$, digamos $a$. Agora, suponha que $G$ não possui elemento de ordem $2p$, ou seja, não é cíclico, e seja $b\in G$ não trivial tal que $b\notin\langle a \rangle$. Então, pelo Teorema \eqref{lagrange}, $|b|=2$ ou $|b|=p$. 
-		\par\vspace{0.3cm}
-		Como $|\langle a \rangle \cap \langle b \rangle|$ divide $|\langle a \rangle|=p$ e $\langle a \rangle\neq\langle b \rangle$, então $|\langle a \rangle \cap \langle b \rangle|=1$. 
-		\par\vspace{0.3cm}
-		Então, suponha $|b|=p$. Daí, 
-		pelo Teorema \eqref{ordem de HK},	
-		$|\langle a \rangle \langle b \rangle| = |\langle a\rangle||\langle b\rangle|/|\langle a\rangle\cap \langle b \rangle|=p^2>2p$, o que é absurdo. Portanto, $|b|=2$, ou seja, $b^2 = e$.
-		\par\vspace{0.3cm}
-		Usando o mesmo argumento que acima, mostramos que $|ab|=2$, ou seja, $(ab)^2 = e$. 
-		\par\vspace{0.3cm}
-		Como $D_p=\langle a,b|a^p=b^2=(ab)^2=e\rangle$ e $G$ tem ordem $2p$ e satisfaz as relações de $D_p$, então $G\cong D_p$.
-		\par\vspace{0.3cm}
-		Finalmente, se $G$ tem um elemento de ordem $2p$, então $G$ é cíclico e, portanto, isomorfo a $\mathbb{Z}_{2p}$.
+		Primeiro, note que ser cíclico de ordem $2p$ é equivalente a ser isomorfo a $\mathbb{Z}_{2p}$.
+		
+		\par\vspace{0.3cm} Pelo Teorema \eqref{cauchy}, sabemos que $G$ tem um elemento de ordem $p$, 
+		digamos $a$. Agora, suponha que $G$ não possui elemento de ordem $2p$, ou seja, não é cíclico, 
+		e seja $b\in G$ não trivial tal que $b\notin\langle a \rangle$. Então, pelo 
+		Teorema \eqref{lagrange}, $|b|=2$ ou $|b|=p$. 
+		
+		\par\vspace{0.3cm} Como $|\langle a \rangle \cap \langle b \rangle|$ divide 
+		$|\langle a \rangle|=p$ e $\langle a \rangle\neq\langle b \rangle$, então 
+		$|\langle a \rangle \cap \langle b \rangle|=1$. 
+		
+		\par\vspace{0.3cm} Então, suponha $|b|=p$. Daí, pelo Teorema \eqref{ordem de HK},	
+		$|\langle a \rangle \langle b \rangle| = |\langle a\rangle||\langle b\rangle|/
+		|\langle a\rangle\cap \langle b \rangle|=p^2>2p$, o que é absurdo. 
+		Portanto, $|b|=2$, ou seja, $b^2 = e$.
+		
+		\par\vspace{0.3cm} Usando o mesmo argumento que acima, mostramos que $|ab|=2$, ou seja, $(ab)^2 = e$. 
+		
+		\par\vspace{0.3cm} Como $D_p=\langle a,b|a^p=b^2=(ab)^2=e\rangle$ e $G$ tem ordem $2p$ e 
+		satisfaz as relações de $D_p$, então $G\cong D_p$.
+		
+		\par\vspace{0.3cm} Finalmente, se $G$ tem um elemento de ordem $2p$, então $G$ é cíclico 
+		e, portanto, isomorfo a $\mathbb{Z}_{2p}$.
 	\end{proof}
-	
-	\par\vspace{0.3cm} Sendo $Q_6 = \langle a,b|a^6=1, a^3=b^2=(ab)^2 \rangle$ o grupo dicíclico de ordem $12$ e $A_4$ o grupo alternante de ordem $12$, temos a seguinte tabela:
-	
+	%
+	\par\vspace{0.3cm} Sendo $Q_6 = \langle a,b|a^6=1, a^3=b^2=(ab)^2 \rangle$ o grupo dicíclico 
+	de ordem $12$ e $A_4$ o grupo alternante de ordem $12$, temos a seguinte tabela:
+	%
 	%\begin{table}[h!]
 	\begin{center}	
 		\begin{tabular}{ccc}
@@ -474,11 +552,14 @@
 			3 & $\mathbb{Z}_3$ & - \\
 			4 & $\mathbb{Z}_2\oplus\mathbb{Z}_2$, $\mathbb{Z}_4$ & - \\
 			5 & $\mathbb{Z}_5$ & - \\
-			6 & $\mathbb{Z}_6\cong\mathbb{Z}_2\oplus\mathbb{Z}_3\cong\mathbb{Z}_3\oplus\mathbb{Z}_2$ & $S_3\cong D_3\cong GL(2,\mathbb{Z}_2)$ \\
+			6 & $\mathbb{Z}_6\cong\mathbb{Z}_2\oplus\mathbb{Z}_3\cong\mathbb{Z}_3\oplus\mathbb{Z}_2$ & 
+			$S_3\cong D_3\cong GL(2,\mathbb{Z}_2)$ \\
 			7 & $\mathbb{Z}_7$ & - \\
-			8 & $\mathbb{Z}_2\oplus\mathbb{Z}_2\oplus\mathbb{Z}_2$, $\mathbb{Z}_4\oplus\mathbb{Z}_2$, $\mathbb{Z}_8$ & $D_4$, $Q_8$\\
+			8 & $\mathbb{Z}_2\oplus\mathbb{Z}_2\oplus\mathbb{Z}_2$, $\mathbb{Z}_4\oplus\mathbb{Z}_2$,
+			$\mathbb{Z}_8$ & $D_4$, $Q_8$\\
 			9 & $\mathbb{Z}_3\oplus\mathbb{Z}_3$, $\mathbb{Z}_9$ & - \\
-			10 & $\mathbb{Z}_{10}\cong\mathbb{Z}_2\oplus\mathbb{Z}_5\cong\mathbb{Z}_5\oplus\mathbb{Z}_2$ & $D_5$ \\
+			10 & $\mathbb{Z}_{10}\cong\mathbb{Z}_2\oplus\mathbb{Z}_5\cong\mathbb{Z}_5\oplus\mathbb{Z}_2$ 
+			& $D_5$ \\
 			11 & $\mathbb{Z}_{11}$ & - \\
 			12 & $\mathbb{Z}_2\oplus\mathbb{Z}_2\oplus\mathbb{Z}_3\cong\mathbb{Z}_2\oplus\mathbb{Z}_6\cong\mathbb{Z}_6\oplus\mathbb{Z}_2$ , $\mathbb{Z}_{12}$ & $D_6$, $A_4$, $Q_6$ \\
 			13 & $\mathbb{Z}_{13}$ & - \\
@@ -489,23 +570,36 @@
 	\end{center}
 	%\label{tabela grupos}
 	%\end{table}
+	%
 	\section{Apresentações de produtos diretos}
-	\hspace{12pt} Podemos, em termos das apresentações de dois grupos, escrever uma apresentação do produto direto desses grupos, da seguinte forma.
-	\begin{prop}
-	\label{apresentacao prod direto}
-	Sejam $G$ e $H$ grupos com apresentações $\langle X|R \rangle$ e $\langle Y|S \rangle$, respectivamente. Então, o produto direto $G\oplus H$ (ou $G\times H$) tem apresentação
-	$$ \langle X,Y \ | \ R,S, [X,Y] \ \rangle $$
-	onde $[X,Y]$ denota o comutador de $X$ e $Y$, ou seja, o conjunto que contém todos os comutadores de um elemento de $x$ com um elementos de $y$.
-	\end{prop}
-	\par\vspace{0.3cm} Por exemplo, os grupos $\mathbb{Z}_2 = \langle a\ | \ a^2=1 \rangle$ e $\mathbb{Z}_3 = \langle b\ | \ b^3=1 \rangle$ têm produto direto dado pela apresentação:
-	\begin{equation*}
-	\mathbb{Z}_3\oplus\mathbb{Z}_2 = \langle a,b \ | \ b^3=a^2=1, ab = ba \rangle \cong \mathbb{Z}_6 
-	\end{equation*}
-	\par\vspace{0.3cm} e obtemos outra apresentação para o grupo cíclico de ordem $6$, $\mathbb{Z}_6$.
-	
-	
+	    Podemos, em termos das apresentações de dois grupos, escrever uma apresentação do produto direto 
+	    desses grupos, da seguinte forma.
+    	%
+    	\begin{prop}
+    	\label{apresentacao prod direto}
+        	Sejam $G$ e $H$ grupos com apresentações $\langle X|R \rangle$ e $\langle Y|S \rangle$,
+        	respectivamente. Então, o produto direto $G\oplus H$ (ou $G\times H$) tem apresentação
+        	%
+        	\begin{equation*}
+        	    \langle X,Y \ | \ R,S, [X,Y] \ \rangle
+        	\end{equation*}
+        	%
+        	onde $[X,Y]$ denota o comutador de $X$ e $Y$, ou seja, o conjunto que contém todos os 
+        	comutadores de um elemento de $x$ com um elementos de $y$.
+    	\end{prop}
+    	%
+    	\par\vspace{0.3cm} Por exemplo, os grupos $\mathbb{Z}_2 = \langle a\ | \ a^2=1 \rangle$ e 
+    	$\mathbb{Z}_3 = \langle b\ | \ b^3=1 \rangle$ têm produto direto dado pela apresentação:
+    	%
+    	\begin{equation*}
+    	    \mathbb{Z}_3\oplus\mathbb{Z}_2 = \langle a,b \ | \ b^3=a^2=1, ab = ba \rangle \cong \mathbb{Z}_6 
+    	\end{equation*}
+    	%
+    	\par\vspace{0.3cm} e obtemos outra apresentação para o grupo cíclico de ordem $6$, $\mathbb{Z}_6$.
+	    %
 	\section{Grupos abelianos finitamente gerados}
-	\hspace{12pt} Grande parte dos grupos que surgem na topologia como grupos fundamentais de superfícies e também em outras áreas da Matemática são grupos abelianos, ou seja, são grupos $G$ tais que
+	    %
+	Grande parte dos grupos que surgem na topologia como grupos fundamentais de superfícies e também em outras áreas da Matemática são grupos abelianos, ou seja, são grupos $G$ tais que
 	\begin{equation*}
 	xy = yx\ , \forall x,y\in G
 	\end{equation*}
