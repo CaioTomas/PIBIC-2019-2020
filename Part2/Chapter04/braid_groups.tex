@@ -169,7 +169,7 @@
 		Suponha $\alpha = \begin{bmatrix}
 		1 & 2 & \cdots & n \\
 		i_1 & i_2 & \cdots & i_n
-		\end{bmatrix}$ uma permutação de $S_n$. Queremos construir uma trança de $n$ cordas baseados em $\alpha$. Para isso, tome $n$ pontos $A_1, A_2, \dots, A_n$ na reta $l_1$ e $n$ pontos $B_1, B_2, \dots, B_n$ na reta $l_2$ paralela e "abaixo" de $l_1$. Tome os segmentos $d_j$ que ligam o ponto $A_j$ ao ponto $B_{i_j}$ e escolha para todo cruzamento dos $d_j$, escolha arbitrariamente se ele é por cima ou por baixo. Desse modo, formamos uma trança, $\gamma$ que, por construção, é tal que $\pi(\gamma) = \alpha$. Portanto, o homomorfismo $\pi$ do Lema \eqref{B_n iso S_n} é sobrejetor. 
+		\end{bmatrix}$ uma permutação de $S_n$. Queremos construir uma trança de $n$ cordas baseados em $\alpha$. Para isso, tome $n$ pontos $A_1, A_2, \dots, A_n$ na reta $l_1$ e $n$ pontos $B_1, B_2, \dots, B_n$ na reta $l_2$ paralela e ``abaixo'' de $l_1$. Tome os segmentos $d_j$ que ligam o ponto $A_j$ ao ponto $B_{i_j}$ e escolha para todo cruzamento dos $d_j$, escolha arbitrariamente se ele é por cima ou por baixo. Desse modo, formamos uma trança, $\gamma$ que, por construção, é tal que $\pi(\gamma) = \alpha$. Portanto, o homomorfismo $\pi$ do Lema \eqref{B_n iso S_n} é sobrejetor. 
 		
 		\par\vspace{0.3cm} Por exemplo, para a permutação $(1\text{ }2\text{ }3\text{ }4\text{ }5)$ em $S_5$, podemos construir a seguinte trança:
 		\begin{center}
@@ -185,7 +185,7 @@
 		
 	\end{proof}
 	
-	\par\vspace{0.3cm} Para $P_n$, encontrar um conjunto de geradores não é tão simples quanto foi com $B_n$, pois nem sempre podemos "fatiar" uma trança pura em pedações óbvios que também são puros. Michael Artin mostrou que, para $1\leq i<j\leq n$, se definirmos
+	\par\vspace{0.3cm} Para $P_n$, encontrar um conjunto de geradores não é tão simples quanto foi com $B_n$, pois nem sempre podemos ``fatiar'' uma trança pura em pedações óbvios que também são puros. Michael Artin mostrou que, para $1\leq i<j\leq n$, se definirmos
 	
 	\begin{equation*}
 	\tag{Geradores de Artin}
@@ -243,13 +243,13 @@
 	
 	\par\vspace{0.3cm} Da Figura \eqref{full twist}, podemos ver que $\Delta_n^2 = (\sigma_1\sigma_2\cdots\sigma_{n-1})^n$. Além disso, podemos também denotar por $\Delta_n$ a meia volta, e podemos escrevê-la em termos dos geradores $\sigma_i$ de $B_n$ da seguinte forma: $\Delta_n = (\sigma_1\sigma_2\cdots\sigma_{n-1})(\sigma_1\sigma_2\cdots\sigma_{n-2})\cdots(\sigma_2\sigma_1)\sigma_1$. Daí, como a notação sugere, $\Delta_n^2$ realmente é o quadrado de uma trança (e também a raiz $n$-ésima de uma trança, como podemos ver da Figura \eqref{full twist}).
 	
-	\par\vspace{0.3cm} Em particular, note que a meia volta não comuta, em geral, com os geradores de $B_n$, uma vez que $\Delta_n\sigma_2\neq\sigma_2\Delta_n$, por exemplo. De fato, o que ocorre é que $\sigma_i\Delta_n = \Delta_n\sigma_{n-i}$, ou seja, o cruzamento $\sigma_i$ "desliza" (é claro que se $n$ é par e $i=n/2$, então $\Delta_n$ comuta com $\sigma_i$).
+	\par\vspace{0.3cm} Em particular, note que a meia volta não comuta, em geral, com os geradores de $B_n$, uma vez que $\Delta_n\sigma_2\neq\sigma_2\Delta_n$, por exemplo. De fato, o que ocorre é que $\sigma_i\Delta_n = \Delta_n\sigma_{n-i}$, ou seja, o cruzamento $\sigma_i$ ``desliza'' (é claro que se $n$ é par e $i=n/2$, então $\Delta_n$ comuta com $\sigma_i$).
 	
 	\begin{figure}[H]
 		\label{delta5}
 		\begin{center}	
 			\includegraphics[width=6cm]{Images/delta5.png}
-		\end{center}\caption{Diagrama de $\Delta_5$. Podemos ver que o cruzamento $\sigma_{i}$ "desliza", se tornando $\sigma_{n-i}$.}
+		\end{center}\caption{Diagrama de $\Delta_5$. Podemos ver que o cruzamento $\sigma_{i}$ ``desliza'', se tornando $\sigma_{n-i}$.}
 	\end{figure}
 	
 	
@@ -451,7 +451,7 @@
 	C_2(\mathbb{R}) = \big\{ (p_1,p_2)\in\mathbb{R}^2|p_1\neq p_2 \big\}
 	\end{align*}
 	\par\vspace{0.3cm} ou seja, os espaços de configuração não ordenado e ordenado, respectivamente, de dois pontos em uma reta. Não é difícil perceber que tanto $C_2(\mathbb{R})$ quanto $UC_2(\mathbb{R})$ possuem 3 componentes conexos e, em geral, $C_n(\mathbb{R})$ e $UC_n(\mathbb{R})$ possuem $n+1$ componentes conexos. Também podemos tomar $X = \mathbb{S}^1$, ou seja, uma circunferência. Nesse caso, $C_n(\mathbb{S}^1)$ e $UC_n(\mathbb{S}^1)$ têm $n$ componentes conexos.
-	\par\vspace{0.3cm} Agora, vamos considerar $X = \mathbb{S}^2$, a esfera em $\mathbb{R}^3$. Nesse caso, $B_n(X) = B_n(\mathbb{S}^2)$ é chamado de \textit{grupo de tranças esféricas}. Uma primeira pergunta natural seria: qual a diferença entre tranças esféricas e "tranças planares"? Bom, podemos imaginar as paredes dos diagramas das tranças planares como sendo pequenos pedaços de esferas enormes, por exemplo, como mostra a figura \eqref{diagrama tranca esferica}abaixo (na verdade, essa ideia pode ser aplicada a tranças em qualquer superfície, não apenas na esfera).
+	\par\vspace{0.3cm} Agora, vamos considerar $X = \mathbb{S}^2$, a esfera em $\mathbb{R}^3$. Nesse caso, $B_n(X) = B_n(\mathbb{S}^2)$ é chamado de \textit{grupo de tranças esféricas}. Uma primeira pergunta natural seria: qual a diferença entre tranças esféricas e ``tranças planares''? Bom, podemos imaginar as paredes dos diagramas das tranças planares como sendo pequenos pedaços de esferas enormes, por exemplo, como mostra a figura \eqref{diagrama tranca esferica}abaixo (na verdade, essa ideia pode ser aplicada a tranças em qualquer superfície, não apenas na esfera).
 	
 	\begin{figure}[H]
 		\begin{center}
@@ -460,7 +460,7 @@
 		\label{diagrama tranca esferica}
 	\end{figure}
 	\par\vspace{0.3cm} Logo, temos de modo natural a função $f: B_n(\mathbb{R}^2)\to B_n(\mathbb{S}^2)$. Não é muito difícil perceber que podemos obter toda trança esférica a partir de uma trança planar, i.e., que $f$ é sobrejetora. Contudo, $f$ não é injetora.
-	\par\vspace{0.3cm} Isso se deve ao fato de que, para tranças esféricas, as cordas podem ser deformadas de modo a "darem a volta", como mostra a figura a seguir. Podemos pensar em $B_n(\mathbb{R}^2)$ como tranças dentro de um cubo, ficando "presas" lá dentro e, portanto, impossibilitadas de realizar movimentos como os que estão abaixo.
+	\par\vspace{0.3cm} Isso se deve ao fato de que, para tranças esféricas, as cordas podem ser deformadas de modo a ``darem a volta'', como mostra a figura a seguir. Podemos pensar em $B_n(\mathbb{R}^2)$ como tranças dentro de um cubo, ficando ``presas'' lá dentro e, portanto, impossibilitadas de realizar movimentos como os que estão abaixo.
 	
 	\begin{figure}[H]
 		\begin{center}
@@ -799,7 +799,7 @@
 		Suponha que $\beta$ é desviada à direita, e observe o diagrama de curva reduzido $c$ de $\beta$. Encontre o primeiro $c_i$ que difere do $a_i$ correspondente, e chame esse arco de $c_k$. Denotando por $c^2$ o diagrama de curva de $\beta^2$, e por $c_i^2$ os arcos de $c^2$, imagine dois discos separados: um em que $a_i$ e $c_i$ estão desenhados e um em que $c_i$ e $c_i^2$ estão desenhados. Observe que a segunda figura é obtida da primeira aplicando a trança $\beta$ (pensada como um homeomorfismo). Então, como $c_k$ está à direita de $a_k$, segue que $c_k^2$ está à direita de $c_k$. Além disso, como não há biágonos na primeira figura, também não há biágonos na segunda figura.
 		\par\vspace{0.3cm} Queremos mostrar que $\beta^2$ é desviada à direita, i.e, que $c_k^2$ está à direita de $a_k$. Sabemos que $\beta$ não afeta os arcos $a_i$ para $i<k$, e então $\beta^2$ também não. Também sabemos que, nas figuras, $c_k$ está à direita de $a_k$ e $c_k^2$ está à direita de $c_k$.
 		\par\vspace{0.3cm} O que falta observar é que o diagrama de $\beta^2$ pode não estar reduzido. Sabemos que não há biágonos entre o eixo e $c$, e também que não há biágonos entre $c$ e $c^2$, mas se $c^2$ e o eixo formarem um biágono, então $c^2$ precisa ser reduzido e pode acabar não sendo desviado à direita.
-		\par\vspace{0.3cm} Felizmente, isso não ocorre. Para ver que esse é o caso, seja $d$ o segmento inicial de $c_k$ que vai até a primeira vez que $c_k$ intercepta o eixo, de forma que $d$ está contido em uma metade (a metade da direita) do disco (é possível que $d$ seja $c_k$ inteiro, mas em geral $c_k$ pode "passear" bastante antes de atingir uma perfuração). Agora, a única maneira de $c_k^2$ estar à esquerda (ou ser igual) do arco $a_k$ do eixo é formando um biágono com $a_k$. Mas isso forçaria $c_k^2$ a cruzar $d$, criando um biágono entre $c$ e $c^2$, o que sabemos que não existe. Veja a figura abaixo.
+		\par\vspace{0.3cm} Felizmente, isso não ocorre. Para ver que esse é o caso, seja $d$ o segmento inicial de $c_k$ que vai até a primeira vez que $c_k$ intercepta o eixo, de forma que $d$ está contido em uma metade (a metade da direita) do disco (é possível que $d$ seja $c_k$ inteiro, mas em geral $c_k$ pode ``passear'' bastante antes de atingir uma perfuração). Agora, a única maneira de $c_k^2$ estar à esquerda (ou ser igual) do arco $a_k$ do eixo é formando um biágono com $a_k$. Mas isso forçaria $c_k^2$ a cruzar $d$, criando um biágono entre $c$ e $c^2$, o que sabemos que não existe. Veja a figura abaixo.
 		
 		\begin{figure}[H]
 			\begin{center}
