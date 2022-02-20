@@ -14,25 +14,37 @@
 \end{minipage}
 
 \section{Introdução}
-
-\begin{deff}
-		\label{def informal tranca}
-		Uma \textbf{trança} de $n$ cordas nada mais é que um conjunto de $n$ cordas (que podem se cruzar ou não). Contudo, em uma trança cada corda deve ``se mover'' monotônicamente da esquerda para a direita, isto é, se seguirmos qualquer corda da esquerda para a direita, ela não pode ``voltar'' (ir para a esquerda), apenas ``ir'' (ir para a direita) e, também, duas cordas não podem passar uma por dentro da outra.
-	\end{deff}
+    %
+    \begin{deff}
+    \label{def informal tranca}
+    	Uma \textbf{trança} de $n$ cordas nada mais é que um conjunto de $n$ cordas (que podem se cruzar ou não).
+    	Contudo, em uma trança cada corda deve ``se mover'' monotonicamente da esquerda para a direita, isto é, 
+    	se seguirmos qualquer corda da esquerda para a direita, ela não pode ``voltar'' (ir para a esquerda),
+    	apenas ``ir'' (ir para a direita) e, também, duas cordas não podem passar uma por dentro da outra.
+    \end{deff}
+    %	
+    \par\vspace{0.3cm} A Definição \eqref{def informal tranca}, apesar de informal, ajuda a ter um entendimento
+    intuitivo do conceito de trança. Essa definição será formalizada no Teorema \eqref{apresentacao de B_n}.
+    	
+	\par\vspace{0.3cm} O conjunto das tranças de $n$ cordas (mais precisamente, o conjunto das classes 
+	de equivalência das tranças de $n$ cordas) forma um grupo sob a operação de concatenação 
+	(que será aqui tratada como produto), grupo esse denotado por $B_n$. 
 	
-	\par\vspace{0.3cm} A Definição \eqref{def informal tranca}, apesar de informal, ajuda a ter um entendimento intuitivo do conceito de trança. Essa definição será formalizada no Teorema \eqref{apresentacao de B_n}.
-	
-	\par\vspace{0.3cm} O conjunto das tranças de $n$ cordas (mais precisamente, o conjunto das classes de equivalência das tranças de $n$ cordas) forma um grupo sob a operação de concatenação (que será aqui tratada como produto), grupo esse denotado por $B_n$. 
-	\par\vspace{0.3cm} Podemos ainda imaginar as tranças como cordas que tiveram suas extremidades coladas em duas paredes opostas no espaço tridimensional. Nesse sentido, é fácil pensar em vários exemplos de tranças que surgem no cotidiano: a trança francesa no cabelo, os pães artesanais feitos com a massa trançada (nas extremidades do pão as ``cordas'' da trança são ``coladas'' juntas, então o pão não é, em si, uma trança, mas o padrão contido nele é). Veja os exemplos abaixo.
-	
+	\par\vspace{0.3cm} Podemos ainda imaginar as tranças como cordas que tiveram suas extremidades coladas 
+	em duas paredes opostas no espaço tridimensional. Nesse sentido, é fácil pensar em vários exemplos de tranças
+	que surgem no cotidiano: a trança francesa no cabelo, os pães artesanais feitos com a massa trançada 
+	(nas extremidades do pão as ``cordas'' da trança são ``coladas'' juntas, então o pão não é, em si, 
+	uma trança, mas o padrão contido nele é). Veja os exemplos abaixo.
+    %	
 	\begin{figure}[H]
 		\begin{center}
 			\includegraphics[width=6.1cm]{Images/exemplos_trancas.png}
 		\end{center}
 		\caption{Trança francesa (à esquerda) e pão trançado (à direita)}\label{exemplos de trancas}
 	\end{figure}
-	\par\vspace{0.3cm} Podemos ainda representar as tranças através de diagramas, como mostram os exemplos abaixo.
-	
+    %
+    \par\vspace{0.3cm} Podemos ainda representar as tranças através de diagramas, como mostram os exemplos abaixo.
+    %
 	\begin{figure}[H]
 		\captionsetup{justification=centering}
 		\begin{center}
@@ -40,12 +52,15 @@
 			\caption{
 				(a) Uma trança de 3 cordas com 2 cruzamentos \\
 				(b) A trança ``comum'' de 3 cordas (trança francesa) \\
-				(c) Corda 3 passa sobre a corda 4
-			}\label{diagramas de trancas}\end{center}
+				(c) Corda 3 passa sobre a corda 4}
+				\label{diagramas de trancas}\end{center}
 	\end{figure}
-	
-	\par\vspace{0.3cm} Note que cada corda recebe um número (a numeração pode ser feita de cima para baixo ou de baixo para cima). Como dito anteriormente, podemos definir o produto de duas tranças como sendo a concatenação dessas tranças. Além disso, também definimos a trança identidade de maneira bastante intuitiva: ela é apenas o conjunto de $n$ cordas, sem nenhum cruzamento. Veja exemplos abaixo.
-	
+    %
+	\par\vspace{0.3cm} Note que cada corda recebe um número (a numeração pode ser feita de cima para baixo 
+	ou de baixo para cima). Como dito anteriormente, podemos definir o produto de duas tranças como sendo 
+	a concatenação dessas tranças. Além disso, também definimos a trança identidade de maneira bastante 
+	intuitiva: ela é apenas o conjunto de $n$ cordas, sem nenhum cruzamento. Veja exemplos abaixo.
+    %	
 	\begin{figure}[H]
 		\captionsetup{justification=centering}
 		\begin{center}
@@ -53,149 +68,164 @@
 		\end{center}\caption{O produto de duas tranças de 3 cordas
 		}\label{produto de trancas}
 	\end{figure}
-	
+    %	
 	\begin{figure}[H]
 		\captionsetup{justification=centering}
 		\begin{center}
 			\includegraphics[width=5cm]{Images/identidade_b3.png}
 		\end{center}\caption{A identidade em $B_3$}\label{identidade em b3}
 	\end{figure}
-	
+    %
 	\begin{figure}[H]
-		
 		\captionsetup{justification=centering}
 		\begin{center}
 			\includegraphics[width=10cm]{Images/identidade_b2.png}
 		\end{center}\caption{Duas representações para a identidade em $B_2$. Apesar de parecerem diferentes à primeira vista, elas pertencem à mesma classe de equivalência, ou seja, são a mesma trança em $B_n$}\label{identidade b2}
 	\end{figure}
+	%
+	\par\vspace{0.3cm} Definido o produto da forma acima, o que significa ter o inverso de uma trança? 
+	Por exemplo, qual seria o inverso da trança $\alpha$ na Figura \eqref{diagramas de trancas}(b)?. 
+	Bom, para saber isso devemos, primeiro, conhecer a identidade em $B_3$, que é mostrada acima.
 	
-	\par\vspace{0.3cm} Definido o produto da forma acima, o que significa ter o inverso de uma trança? Por exemplo, qual seria o inverso da trança $\alpha$ na Figura \eqref{diagramas de trancas}(b)?. Bom, para saber isso devemos, primeiro, conhecer a identidade em $B_3$, que é mostrada acima.
+	\par\vspace{0.3cm} Bom, como poderíamos estender $\alpha$ para fazê-la parecer a identidade? 
+	É impossível: $\alpha$ tem cruzamentos, e desenhar mais coisas não vai mudar isso. Precisamos de uma 
+	maneira de cancelar cruzamentos, de modo que as duas tranças na Figura \eqref{identidade b2} 
+	sejam equivalentes. 
 	
-	\par\vspace{0.3cm} Bom, como poderíamos estender $\alpha$ para fazê-la parecer a identidade? É impossível: $\alpha$ tem cruzamentos, e desenhar mais coisas não vai mudar isso. Precisamos de uma maneira de cancelar cruzamentos, de modo que as duas tranças na Figura \eqref{identidade b2} sejam equivalentes. 
+	\par\vspace{0.3cm} Para isso, a ideia é que devemos ser capazes de mover as tranças do mesmo modo que 
+	fazemos no espaço (ou seja, sem passar nenhuma corda por dentro de outra) e obter uma trança equivalente. 
+	Para definir equivalência, é necessário dizer que quando movemos as tranças, as extremidades devem ficar 
+	fixas (do contrário, qualquer trança seria equivalente à identidade).
 	
-	\par\vspace{0.3cm} Para isso, a ideia é que devemos ser capazes de mover as tranças do mesmo modo que fazemos no espaço (ou seja, sem passar nenhuma corda por dentro de outra) e obter uma trança equivalente. Para definir equivalência, é necessário dizer que quando movemos as tranças, as extremidades devem ficar fixas (do contrário, qualquer trança seria equivalente à identidade).
+	\par\vspace{0.3cm} Podemos ainda imaginar que as extremidades da esquerda de cada trança estão presas 
+	à parede vertical $x=0$ no espaço tridimensional e as extremidades da direita estão presas à parede $x=1$.
+	Nessa configuração, duas tranças são ditas \textit{equivalentes} se podemos mover uma delas, mantendo-a 
+	entre as paredes e com as extremidades fixas, e fazê-la parecer a outra. 
 	
-	\par\vspace{0.3cm} Podemos ainda imaginar que as extremidades da esquerda de cada trança estão presas à parede vertical $x=0$ no espaço tridimensional e as extremidades da direita estão presas à parede $x=1$. Nessa configuração, duas tranças são ditas \textit{equivalentes} se podemos mover uma delas, mantendo-a entre as paredes e com as extremidades fixas, e fazê-la parecer a outra. 
-	
-	\par\vspace{0.3cm} Com essa definição, as duas últimas tranças da Figura \eqref{identidade b2} são equivalentes, assim como as tranças abaixo.
-	
+	\par\vspace{0.3cm} Com essa definição, as duas últimas tranças da Figura \eqref{identidade b2} 
+	são equivalentes, assim como as tranças abaixo.
+	%
 	\begin{figure}[H]
 		\captionsetup{justification=centering}
 		\begin{center}
 			\includegraphics[width=12cm]{Images/fig_18_6.png}
 		\end{center}\caption{Duas tranças equivalentes}\label{trancas equivalentes}
 	\end{figure}   
+	%
+	\par\vspace{0.3cm} Apenas um aspecto técnico: se fixarmos as paredes que limitam as tranças como 
+	sendo $x = 0$ e $x=1$, devemos tomar mais cuidado com o que significa multiplicar duas tranças.
+	Especificamente, para formar $\beta$ vezes $\beta'$, devemos transladar $\beta'$ uma unidade no eixo $x$, 
+	tomar a união de $\beta$ com a versão transladada de $\beta'$ e redimensionar tudo por um fator de $1/2$. 
+	Isso torna o produto de duas tranças em uma trança.
 	
-	\par\vspace{0.3cm} Apenas um aspecto técnico: se fixarmos as paredes que limitam as tranças como sendo $x = 0$ e $x=1$, devemos tomar mais cuidado com o que significa multiplicar duas tranças. Especificamente, para formar $\beta$ vezes $\beta'$, devemos transladar $\beta'$ uma unidade no eixo $x$, tomar a união de $\beta$ com a versão transladada de $\beta'$ e redimensionar tudo por um fator de $1/2$. Isso torna o produto de duas tranças em uma trança.
+	\par\vspace{0.3cm} Desse modo, note que se fizermos o produto de uma trança $\gamma$ qualquer pela 
+	segunda trança da Figura \eqref{identidade b2}, seja à esquerda ou à direita, não alteraremos o número 
+	de cruzamentos nem sua configuração, ou seja, não alteraremos a trança $\gamma$. Portanto, de fato, a 
+	segunda trança da Figura \eqref{identidade b2} é a identidade em $B_2$.
 	
-	\par\vspace{0.3cm} Desse modo, note que se fizermos o produto de uma trança $\gamma$ qualquer pela segunda trança da Figura \eqref{identidade b2}, seja à esquerda ou à direita, não alteraremos o número de cruzamentos nem sua configuração, ou seja, não alteraremos a trança $\gamma$. Portanto, de fato, a segunda trança da Figura \eqref{identidade b2} é a identidade em $B_2$.
-	
-	\par\vspace{0.3cm} Note também que para obter o inverso de uma trança $\alpha$, basta espelharmos $\alpha$, ou seja, o inverso de uma trança qualquer $\alpha$, denotado por $\alpha^{-1}$, nada mais é que a imagem espelhada de $\alpha$.   
-	
-	
-	%\begin{exercise}
-	%\label{exercicio 1 tranca}
-	%(a) Se convença de que a segunda trança da Figura \eqref{identidade b2} é de fato a identidade em relação ao produto. \\
-	
-	%(b) Encontre uma trança $\beta$ tal que $\alpha$ (Figura \eqref{diagramas de trancas}(b)) vezes $\beta$ é igual (equivalente) à identidade. \\
-	
-	%(c) Descreva um procedimento geral para construir o inverso de uma trança.
-	%\end{exercise}
-	
-	%\begin{solution}
-	%	(a) Se fizermos o produto de qualquer trança $\gamma$ pela segunda trança da Figura \eqref{identidade b2}, seja à esquerda ou à direita, não alteraremos o número de cruzamentos nem sua configuração, ou seja, não alteraremos nada na trança. \\
-	
-	%	(b) $\beta$ nada mais é do que $\alpha$ refletida em um espelho. (Introduziremos mais à frente uma notação que nos permitirá representar tranças apenas com símbolos. Nessa notação, $\alpha = (\sigma_1\sigma_2^{-1})^4$ e $\beta = (\alpha)^{-1} = (\sigma_2\sigma_1^{-1})^4$ \\
-	
-	%	(c) Análogo ao item anterior: basta espelhar a trança desejada.
-	%\end{solution}
-	
-	\par\vspace{0.3cm} 
-	
+	\par\vspace{0.3cm} Note também que para obter o inverso de uma trança $\alpha$, basta espelharmos $\alpha$, 
+	ou seja, o inverso de uma trança qualquer $\alpha$, denotado por $\alpha^{-1}$, nada mais é que a imagem
+	espelhada de $\alpha$.
+	%
 	\begin{remark}
-		Nesse sentido, encontrar o inverso de uma trança é parecido com encontrar o inverso de uma matriz: devemos ir ``desfazendo'' a trança, de trás para frente (da direita para a esquerda), assim como o inverso de um produto $ABC$ de matrizes é dado por $(ABC)^{-1} = C^{-1}B^{-1}A^{-1}$.
+		Nesse sentido, encontrar o inverso de uma trança é parecido com encontrar o inverso de uma matriz: 
+		devemos ir ``desfazendo'' a trança, de trás para frente (da direita para a esquerda), assim como o 
+		inverso de um produto $ABC$ de matrizes é dado por $(ABC)^{-1} = C^{-1}B^{-1}A^{-1}$.
 	\end{remark}
-	
-	\par\vspace{0.3cm} 
-	
+	%
 	\begin{lemma}
-		\label{B_n grupo}
+	\label{B_n grupo}
 		Mostre que, para $n$ fixo, as (classes de equivalência de) tranças de $n$ cordas forma um grupo.
 	\end{lemma}
-	
+	%
 	\begin{proof}
-		A identidade é evidente: ela é apenas o conjunto de n cordas, sem nenhum cruzamento. Anteriormente, enunciamos um procedimento para construir o inverso de uma trança (inverso esse que também é uma trança), logo toda trança possui inverso (inverso esse que também é uma trança). A concatenação (que nada mais é que o produto) de duas tranças de $n$ cordas nos dá outra trança também de $n$ cordas (como vimos anteriormente), logo o conjunto é fechado para o produto. Por fim, a associatividade pode ser verificada através de um diagrama, como o da Figura \eqref{associatividade de trancas}.
-		
+		A identidade é evidente: ela é apenas o conjunto de n cordas, sem nenhum cruzamento. 
+		Anteriormente, enunciamos um procedimento para construir o inverso de uma trança 
+		(inverso esse que também é uma trança), logo toda trança possui inverso 
+		(inverso esse que também é uma trança). A concatenação (que nada mais é que o produto) de duas 
+		tranças de $n$ cordas nos dá outra trança também de $n$ cordas (como vimos anteriormente), 
+		logo o conjunto é fechado para o produto. Por fim, a associatividade pode ser verificada através 
+		de um diagrama, como o da Figura \eqref{associatividade de trancas}.
+		%
 		\begin{figure}[H]
 			\captionsetup{justification=centering}
 			\begin{center}
 				\includegraphics[width=7.1cm]{Images/associatividade.png}
 			\end{center}\caption{Associatividade do produto de tranças}\label{associatividade de trancas}
 		\end{figure}
+		%
 	\end{proof}
-	\par\vspace{0.3cm} Quando estamos desenhando uma trança, podemos sempre usar a equivalência para evitar que três ou mais cordas se cruzem no mesmo ponto do desenho. Também podemos fazer com que nenhum cruzamento ocorra diretamente acima de outro, como mostra a Figura abaixo.
-	
+	%
+	\par\vspace{0.3cm} Quando estamos desenhando uma trança, podemos sempre usar a equivalência para 
+	evitar que três ou mais cordas se cruzem no mesmo ponto do desenho. Também podemos fazer com que 
+	nenhum cruzamento ocorra diretamente acima de outro, como mostra a Figura abaixo.
+	%
 	\begin{figure}[H]
 		\captionsetup{justification=centering}
 		\begin{center}
 			\includegraphics[width=12cm]{Images/desenhos_evitaveis.png}
 		\end{center}\caption{Podemos evitar fazer desenhos como esses}\label{diagramas indesejaveis}
 	\end{figure}
-	
-	\par\vspace{0.3cm} Por conta disso, podemos sempre ``cortar'' qualquer trança, usando linhas verticais, de modo que cada pedaço seja uma trança que contenha somente um cruzamento, como abaixo.
-	
+	%
+	\par\vspace{0.3cm} Por conta disso, podemos sempre ``cortar'' qualquer trança, usando linhas verticais, 
+	de modo que cada pedaço seja uma trança que contenha somente um cruzamento, como abaixo.
+	%
 	\begin{figure}[H]
 		\captionsetup{justification=centering}
 		\begin{center}
 			\includegraphics[width=8.6cm]{Images/fig_18_8.png}
 		\end{center}\caption{Uma trança como produto de cruzamentos}\label{cortar trancas}
 	\end{figure} 
+	%
+	\par\vspace{0.3cm} Em outras palavras, $B_n$ é gerado pelo conjunto de todas as tranças de $n$ 
+	cordas que têm exatamente um cruzamento. A trança em que a corda $i$ passa por cima da corda $i+1$ é 
+	usualmente denotada por $\sigma_i$. Por exemplo, a Figura \eqref{diagramas de trancas}(c) mostra a trança
+	$\sigma_3$ em $B_7$. O seu inverso seria $\sigma_3^{-1}$, a corda 3 passando por baixo da corda 4. 
+	Em geral, a trança em que a corda $i$ passa por baixo da corda $i+1$ (ou, equivalentemente, a corda 
+	$i+1$ passa por cima da corda $i$) é denotada por $\sigma_i^{-1}$. 
 	
-	\par\vspace{0.3cm} Em outras palavras, $B_n$ é gerado pelo conjunto de todas as tranças de $n$ cordas que têm exatamente um cruzamento. A trança em que a corda $i$ passa por cima da corda $i+1$ é usualmente denotada por $\sigma_i$. Por exemplo, a Figura \eqref{diagramas de trancas}(c) mostra a trança $\sigma_3$ em $B_7$. O seu inverso seria $\sigma_3^{-1}$, a corda 3 passando por baixo da corda 4. Em geral, a trança em que a corda $i$ passa por baixo da corda $i+1$ (ou, equivalentemente, a corda $i+1$ passa por cima da corda $i$) é denotada por $\sigma_i^{-1}$. 
+	\par\vspace{0.3cm} Agora, podemos ver que $B_n$ é gerado pelo conjunto $\{ \sigma_1, \dots, \sigma_{n-1} \}$.
+	Note, porém, que a notação $\sigma_i$ não diz em que grupo de trança estamos, exceto que deve ser pelo menos
+	$B_{i+1}$. Por exemplo, o cruzamento $\sigma_2$ é um gerador de $B_3$, mas também de $B_4$, $B_5$ e assim por
+	diante. O contexto geralmente deixa claro em qual grupo de tranças estamos. 
 	
-	\par\vspace{0.3cm} Agora, podemos ver que $B_n$ é gerado pelo conjunto $ \{ \sigma_1, \dots, \sigma_{n-1} \} $. Note, porém, que a notação $\sigma_i$ não diz em que grupo de trança estamos, exceto que deve ser pelo menos $B_{i+1}$. Por exemplo, o cruzamento $\sigma_2$ é um gerador de $B_3$, mas também de $B_4$, $B_5$ e assim por diante. O contexto geralmente deixa claro em qual grupo de tranças estamos. 
-	
-	\par\vspace{0.3cm} Tendo isso em mente, podemos escrever algumas das tranças vistas anteriormente em termos dos geradores $\sigma_i$. Por exemplo, as tranças (a), (b) e (c) da Figura \eqref{diagramas de trancas} podem ser escritas, respectivamente, como $\sigma_2\sigma_1$, $(\sigma_1\sigma_2^{-1})^4$ e $\sigma_3$; a trança da Figura \eqref{produto de trancas} pode ser escrita como $\sigma_2\sigma_1^{-1}$; tanto a trança da Figura \eqref{identidade em b3} quanto a trança da Figura \eqref{identidade b2} são a identidade em seus respectivos grupos ($B_3$ e $B_2$), podendo ser denotadas por $e$ ou, para evitar confusões, $1_3$ e $1_2$, respectivamente (de modo geral, podemos denotar a identidade em $B_n$ por $1_n$); a trança da Figura \eqref{trancas equivalentes} pode ser escrita como $\sigma_1\sigma_2\sigma_1$ ou também como $\sigma_2\sigma_1\sigma_2$. Mais à frente veremos que esse fato não é coincidência, mas uma relação muito importante para o grupo de trança.
-	
-	%\begin{exercise}
-	%	Escreva cada uma das tranças vistas anteriormente como produto de $\sigma_i$ e seus inversos.
-	%\end{exercise}
-	
-	%\begin{solution}
-	%	Figura \eqref{diagramas de trancas}(a): $\sigma_2\sigma_1$ \\
-	%	Figura \eqref{diagramas de trancas}(b): $(\sigma_1\sigma_2^{-1})^4$ \\
-	%	Figura \eqref{diagramas de trancas}(c): $\sigma_3$ \\
-	%	Figura \eqref{produto de trancas}: $\sigma_2\sigma_1^{-1}$ \\
-	%	Figura \eqref{identidade em b3}: $e$ (em $B_3$) \\
-	%	Figura \eqref{identidade b2}: $e$ (em $B_2$) \\
-	%	Figura \eqref{trancas equivalentes}: $\sigma_2\sigma_1\sigma_2$ e $\sigma_1\sigma_2\sigma_1$ %(esquerda e direita, respectivamente) 
-	%\end{solution}
-	
-	\par\vspace{0.3cm} Queremos agora pensar sobre como os diferentes $\sigma_i$ se relacionam. Note que se $\sigma_i$ e $\sigma_j$ envolvem cordas completamente distintas, então eles comutam, como ilustrado abaixo.
-	
+	\par\vspace{0.3cm} Tendo isso em mente, podemos escrever algumas das tranças vistas anteriormente em 
+	termos dos geradores $\sigma_i$. Por exemplo, as tranças (a), (b) e (c) da 
+	Figura \eqref{diagramas de trancas} podem ser escritas, respectivamente, como $\sigma_2\sigma_1$,
+	$(\sigma_1\sigma_2^{-1})^4$ e $\sigma_3$; a trança da Figura \eqref{produto de trancas} pode ser 
+	escrita como $\sigma_2\sigma_1^{-1}$; tanto a trança da Figura \eqref{identidade em b3} quanto a trança 
+	da Figura \eqref{identidade b2} são a identidade em seus respectivos grupos ($B_3$ e $B_2$), podendo ser
+	denotadas por $e$ ou, para evitar confusões, $1_3$ e $1_2$, respectivamente (de modo geral, podemos 
+	denotar a identidade em $B_n$ por $1_n$); a trança da Figura \eqref{trancas equivalentes} pode ser escrita 
+	como $\sigma_1\sigma_2\sigma_1$ ou também como $\sigma_2\sigma_1\sigma_2$. Mais à frente veremos que esse 
+	fato não é coincidência, mas uma relação muito importante para o grupo de trança.
+
+	\par\vspace{0.3cm} Queremos agora pensar sobre como os diferentes $\sigma_i$ se relacionam. Note que 
+	se $\sigma_i$ e $\sigma_j$ envolvem cordas completamente distintas, então eles comutam, como ilustrado abaixo.
+	%
 	\begin{figure}[H]
 		\captionsetup{justification=centering}
 		\begin{center}
 			\includegraphics[width=10cm]{Images/comutatividade.png}
 		\end{center}\caption{$\sigma_1\sigma_3$ e $\sigma_3\sigma_1$ são equivalentes.}\label{comutatividade de trancas}
 	\end{figure}
-	
-	\par\vspace{0.3cm}
-	
+	%
 	\begin{remark}
-		Intuitivamente, se dois cruzamentos envolvem cordas completamente distintas, então podemos ``deslizá-los'' livremente. Daí vem a comutatividade.
+		Intuitivamente, se dois cruzamentos envolvem cordas completamente distintas, então podemos 
+		``deslizá-los'' livremente. Daí vem a comutatividade.
 	\end{remark}
-	
+	%
 	\par\vspace{0.3cm} É natural pensar, então, que se dois cruzamentos têm uma corda em comum, então a comutatividade não deve valer. De fato, isso é demonstrado pelo seguinte lema.
-	
+	%
 	\begin{lemma}
-		\label{vizinhos nao comutam}
-		Dado $B_n$ e $\sigma_i$ um gerador de $B_n$, com $1\leq i\leq n-1$, os cruzamentos vizinhos não comutam, isto é, $\sigma_i\sigma_{i+1}\neq\sigma_{i+1}\sigma_i$.
+	\label{vizinhos nao comutam}
+		Dado $B_n$ e $\sigma_i$ um gerador de $B_n$, com $1\leq i\leq n-1$, os cruzamentos vizinhos não 
+		comutam, isto é, $\sigma_i\sigma_{i+1}\neq\sigma_{i+1}\sigma_i$.
 	\end{lemma}
-	
+	%
 	\begin{proof}
-		Basta fazer o desenho, como o do diagrama abaixo.%\eqref{trancas vizinhas nao comutam}.
-		
+		Basta fazer o desenho, como o do diagrama abaixo.
+		%
 		\begin{center}
 			\begin{tikzpicture}
 			\braid[braid colour=black,strands=3,braid start={(0,0)}]	{\sigma_1\sigma_2}
@@ -204,32 +234,25 @@
 			{\sigma_2\sigma_1}
 			\end{tikzpicture}
 		\end{center}
-		
-		\par\vspace{0.3cm} Note que não é possível deslizar os cruzamentos de uma das tranças para obter a outra e, consequentemente, cruzamentos vizinhos não comutam. 
-		
-		%\begin{figure}[H]
-		%	\captionsetup{justification=centering}
-		%	\begin{center}
-		%		\includegraphics[width=6.4cm]{Images/trancas_vizinhas_nao_comutam.jpeg}
-		%	\end{center}\caption{$\sigma_i\sigma_{i+1}\neq\sigma_{i+1}\sigma_i$}\label{trancas vizinhas nao comutam}		
-		%\end{figure}
+		%
+		\par\vspace{0.3cm} Note que não é possível deslizar os cruzamentos de uma das tranças para obter 
+		a outra e, consequentemente, cruzamentos vizinhos não comutam. 
 	\end{proof}
-	
-	\par\vspace{0.3cm} Contudo, os $\sigma_i$'s vizinhos satisfazem a seguinte relação, chamada \textit{relação de trança}:
-	
+	%
+	\par\vspace{0.3cm} Contudo, os $\sigma_i$'s vizinhos satisfazem a seguinte relação, 
+	chamada \textit{relação de trança}:
+	%
 	\begin{equation*}
-	\sigma_i\sigma_{i+1}\sigma_i = \sigma_{i+1}\sigma_i\sigma_{i+1}
+	    \sigma_i\sigma_{i+1}\sigma_i = \sigma_{i+1}\sigma_i\sigma_{i+1}
 	\end{equation*}
-	
-	\par\vspace{0.3cm} 
-	
+	%
 	\begin{lemma}
 		Em $B_n$, $\sigma_i\sigma_{i+1}\sigma_i = \sigma_{i+1}\sigma_i\sigma_{i+1}$, para todo $1\leq i\leq n-1$. 
 	\end{lemma}
-	
+	%
 	\begin{proof}
-		Basta olhar o diagrama abaixo.%\eqref{relacao de tranca}.
-		
+		Basta olhar o diagrama abaixo.
+		%
 		\begin{center}
 			\begin{tikzpicture}
 			\braid[braid colour=black,strands=3,braid start={(0,0)}]	{\sigma_1\sigma_2\sigma_1}
@@ -238,27 +261,31 @@
 			{\sigma_2\sigma_1\sigma_2}
 			\end{tikzpicture}
 		\end{center}
-		\par\vspace{0.3cm} Note que podemos obter o diagrama da direita a partir do diagrama da esquerda da seguinte forma: a corda $i$ (à esquerda) é puxada um pouco para baixo; a corda $i+1$ (centro) é puxada para a direita; e a corda $i+2$ (à direita) é puxada um pouco para cima.
-		\par\vspace{0.3cm} Então, de fato $\sigma_i\sigma_{i+1}\sigma_i = \sigma_{i+1}\sigma_i\sigma_{i+1}$ para todo $1\leq i\leq n-1$, como queríamos demonstrar.
-		%\begin{figure}[H]
-		%	\captionsetup{justification=centering}
-		%	\begin{center}
-		%		\includegraphics[width=6.4cm]{Images/braid_relation.jpeg}
-		%	\end{center}\caption{A relação fundamental das tranças}\label{relacao de tranca}
-		%\end{figure}
+		%
+		\par\vspace{0.3cm} Note que podemos obter o diagrama da direita a partir do diagrama da esquerda 
+		da seguinte forma: a corda $i$ (à esquerda) é puxada um pouco para baixo; a corda $i+1$ (centro) 
+		é puxada para a direita; e a corda $i+2$ (à direita) é puxada um pouco para cima.
+		
+		\par\vspace{0.3cm} Então, de fato $\sigma_i\sigma_{i+1}\sigma_i = \sigma_{i+1}\sigma_i\sigma_{i+1}$ 
+		para todo $1\leq i\leq n-1$, como queríamos demonstrar.
 	\end{proof}
 	%
-	\par\vspace{0.3cm} Essas duas relações, a comutatividade e a relação de trança, implicam todas as outras relações entre os $\sigma_i$. Em outras palavras:
-	
+	\par\vspace{0.3cm} Essas duas relações, a comutatividade e a relação de trança, implicam todas as 
+	outras relações entre os $\sigma_i$. Em outras palavras:
+	%
 	\begin{theorem}
-		\label{apresentacao de B_n}
+	\label{apresentacao de B_n}
 		O grupo de trança tem a apresentação
+		%
 		\begin{equation*}
-		B_n = \langle \sigma_1, \dots, \sigma_{n-1} | \sigma_i\sigma_j = \sigma_j\sigma_i, \text{ para } |i - j|>1, \\ 
-		\sigma_i\sigma_{i+1}\sigma_i = \sigma_{i+1}\sigma_i\sigma_{i+1}, \text{ para } 1\leq i\leq n-2 \rangle
+		    B_n 
+		    = \langle \sigma_1, \dots, \sigma_{n-1} | \sigma_i\sigma_j 
+		    = \sigma_j\sigma_i, \text{ para } |i - j|>1, \\ 
+		    \sigma_i\sigma_{i+1}\sigma_i = \sigma_{i+1}\sigma_i\sigma_{i+1}, \text{ para } 1\leq i\leq n-2\rangle.
 		\end{equation*}
+		%
 	\end{theorem}
-	
+	%
 	\par\vspace{0.3cm} Aceitaremos o Teorema \eqref{apresentacao de B_n} sem demonstração.
 	
 	\par\vspace{0.3cm} As duas relações do Teorema \eqref{apresentacao de B_n} nos ajudam a simplificar e manipular palavras em $B_n$. Por exemplo, sabendo que $[a,b] = a^{-1}b^{-1}ab$, podemos manipular $(\sigma_i\sigma_{i+1})^{-1}[\sigma_{i+2}\sigma_i^{-1}, \sigma_i\sigma_{i+1}^{-1}]\sigma_i\sigma_{i+1}$ para obter $\sigma_{i+2}\sigma_i^{-1}$ da seguinte forma:
