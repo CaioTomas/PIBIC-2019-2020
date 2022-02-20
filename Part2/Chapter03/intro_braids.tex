@@ -80,7 +80,9 @@
 		\captionsetup{justification=centering}
 		\begin{center}
 			\includegraphics[width=10cm]{Images/identidade_b2.png}
-		\end{center}\caption{Duas representações para a identidade em $B_2$. Apesar de parecerem diferentes à primeira vista, elas pertencem à mesma classe de equivalência, ou seja, são a mesma trança em $B_n$}\label{identidade b2}
+		\end{center}\caption{Duas representações para a identidade em $B_2$. 
+		Apesar de parecerem diferentes à primeira vista, elas pertencem à mesma classe de equivalência, 
+		ou seja, são a mesma trança em $B_n$}\label{identidade b2}
 	\end{figure}
 	%
 	\par\vspace{0.3cm} Definido o produto da forma acima, o que significa ter o inverso de uma trança? 
@@ -207,7 +209,8 @@
 		\captionsetup{justification=centering}
 		\begin{center}
 			\includegraphics[width=10cm]{Images/comutatividade.png}
-		\end{center}\caption{$\sigma_1\sigma_3$ e $\sigma_3\sigma_1$ são equivalentes.}\label{comutatividade de trancas}
+		\end{center}\caption{$\sigma_1\sigma_3$ e $\sigma_3\sigma_1$ são equivalentes.}
+		\label{comutatividade de trancas}
 	\end{figure}
 	%
 	\begin{remark}
@@ -215,7 +218,8 @@
 		``deslizá-los'' livremente. Daí vem a comutatividade.
 	\end{remark}
 	%
-	\par\vspace{0.3cm} É natural pensar, então, que se dois cruzamentos têm uma corda em comum, então a comutatividade não deve valer. De fato, isso é demonstrado pelo seguinte lema.
+	\par\vspace{0.3cm} É natural pensar, então, que se dois cruzamentos têm uma corda em comum, 
+	então a comutatividade não deve valer. De fato, isso é demonstrado pelo seguinte lema.
 	%
 	\begin{lemma}
 	\label{vizinhos nao comutam}
@@ -288,221 +292,241 @@
 	%
 	\par\vspace{0.3cm} Aceitaremos o Teorema \eqref{apresentacao de B_n} sem demonstração.
 	
-	\par\vspace{0.3cm} As duas relações do Teorema \eqref{apresentacao de B_n} nos ajudam a simplificar e manipular palavras em $B_n$. Por exemplo, sabendo que $[a,b] = a^{-1}b^{-1}ab$, podemos manipular $(\sigma_i\sigma_{i+1})^{-1}[\sigma_{i+2}\sigma_i^{-1}, \sigma_i\sigma_{i+1}^{-1}]\sigma_i\sigma_{i+1}$ para obter $\sigma_{i+2}\sigma_i^{-1}$ da seguinte forma:
+	\par\vspace{0.3cm} As duas relações do Teorema \eqref{apresentacao de B_n} nos ajudam a simplificar 
+	e manipular palavras em $B_n$. Por exemplo, sabendo que $[a,b] = a^{-1}b^{-1}ab$, podemos manipular
+	$(\sigma_i\sigma_{i+1})^{-1}[\sigma_{i+2}\sigma_i^{-1}, \sigma_i\sigma_{i+1}^{-1}]\sigma_i\sigma_{i+1}$ 
+	para obter $\sigma_{i+2}\sigma_i^{-1}$ da seguinte forma:
+	%
 	\begin{align*}
-	&(\sigma_i\sigma_{i+1})^{-1}[\sigma_{i+2}\sigma_i^{-1}, \sigma_i\sigma_{i+1}^{-1}]\sigma_i\sigma_{i+1} \\ 
-	&= \sigma_{i+1}^{-1}\sigma_i^{-1}\sigma_i\sigma_{i+2}^{-1}\sigma_{i+1}\sigma_i^{-1}\sigma_{i+2}\sigma_{i+1}^{-1}\sigma_i\sigma_{i+1}  \\
-	&= (\sigma_{i+1}^{-1}\sigma_{i+2}^{-1}\sigma_{i+1})\sigma_i^{-1}\sigma_{i+2}(\sigma_{i+1}^{-1}\sigma_i\sigma_{i+1})
+	    &(\sigma_i\sigma_{i+1})^{-1}[\sigma_{i+2}\sigma_i^{-1}, \sigma_i\sigma_{i+1}^{-1}]\sigma_i\sigma_{i+1} \\
+	    &= \sigma_{i+1}^{-1}\sigma_i^{-1}\sigma_i\sigma_{i+2}^{-1}\sigma_{i+1}\sigma_i^{-1}\sigma_{i+2}
+	    \sigma_{i+1}^{-1}\sigma_i\sigma_{i+1}  \\
+	    &= (\sigma_{i+1}^{-1}\sigma_{i+2}^{-1}\sigma_{i+1})\sigma_i^{-1}\sigma_{i+2}(\sigma_{i+1}^{-1}
+	    \sigma_i\sigma_{i+1})
 	\end{align*}
-	
+	%
 	\par\vspace{0.3cm} Usando a relação de trança, deduzimos a seguinte relação:
+	%
 	\begin{align*}
-	\sigma_i^{-1}\sigma_{i+1}^{-1}\sigma_i = \sigma_{i+1}\sigma_i^{-1}\sigma_{i+1}^{-1} \\
-	\sigma_{i+1}^{-1}\sigma_i\sigma_{i+1} = \sigma_i\sigma_{i+1}\sigma_i^{-1}   
+	    \sigma_i^{-1}\sigma_{i+1}^{-1}\sigma_i = \sigma_{i+1}\sigma_i^{-1}\sigma_{i+1}^{-1} \\
+	    \sigma_{i+1}^{-1}\sigma_i\sigma_{i+1} = \sigma_i\sigma_{i+1}\sigma_i^{-1}   
 	\end{align*}
-	
+	%
 	\par\vspace{0.3cm} Usando essa igualdade, temos
+	%
 	\begin{align*}
-	&(\sigma_{i+1}^{-1}\sigma_{i+2}^{-1}\sigma_{i+1})\sigma_i^{-1}\sigma_{i+2}(\sigma_{i+1}^{-1}\sigma_i\sigma_{i+1}) \\
-	&= (\sigma_{i+2}\sigma_{i+1}^{-1}\sigma_{i+2}^{-1})\sigma_i^{-1}\sigma_{i+2}(\sigma_i\sigma_{i+1}\sigma_i^{-1}) \\
-	&= \sigma_{i+2}\sigma_{i+1}^{-1}\sigma_{i+2}^{-1}\sigma_i^{-1}\sigma_i\sigma_{i+2}\sigma_{i+1}\sigma_i^{-1} \\
-	&= \sigma_{i+2}\sigma_i^{-1}.
+	    &(\sigma_{i+1}^{-1}\sigma_{i+2}^{-1}\sigma_{i+1})\sigma_i^{-1}\sigma_{i+2}(\sigma_{i+1}^{-1}
+	    \sigma_i\sigma_{i+1}) \\
+	    &= (\sigma_{i+2}\sigma_{i+1}^{-1}\sigma_{i+2}^{-1})\sigma_i^{-1}\sigma_{i+2}(\sigma_i\sigma_{i+1}
+	    \sigma_i^{-1}) \\
+    	&= \sigma_{i+2}\sigma_{i+1}^{-1}\sigma_{i+2}^{-1}\sigma_i^{-1}\sigma_i\sigma_{i+2}\sigma_{i+1}
+    	\sigma_i^{-1} \\
+    	&= \sigma_{i+2}\sigma_i^{-1}.
 	\end{align*}
+	%
+	\par\vspace{0.3cm} Outra aplicação do Teorema \eqref{apresentacao de B_n} é o fato de que 
+	$B_2\cong\mathbb{Z}$. Para perceber isso, basta notar que pelo Teorema \eqref{apresentacao de B_n}, 
+	$B_2 = \langle \sigma_1 | - \rangle$ e $\mathbb{Z}$ tem essa mesma apresentação. 
 	
-	%\begin{exercise}
-	%	Verifique a identidade
-	%	\begin{align*}
-	%	\sigma_{i+2}\sigma_i^{-1} = (\sigma_i\sigma_{i+1})^{-1}[\sigma_{i+2}\sigma_i^{-1}, \sigma_i\sigma_{i+1}^{-1}]\sigma_i\sigma_{i+1}
-	%	\end{align*}
-	%	\par\vspace{0.3cm} sendo $1\leq i\leq n-3$ e $[a,b] = a^{-1}b^{-1}ab$.
+	\par\vspace{0.3cm} Também com o Teorema \eqref{apresentacao de B_n}, podemos escrever 
+	$B_3 = \langle \sigma_1,\sigma_2 | \sigma_1\sigma_2\sigma_1 = \sigma_2\sigma_1\sigma_2 \rangle$ e, 
+	com isso, mostrar que $B_3 \cong\langle x,y | x^3=y^2 \rangle$ da seguinte maneira.
 	
-	%\end{exercise}
-	
-	%\begin{solution}
-	%	Vamos manipular o lado direito. Temos
-	
-	%	\begin{align*}
-	%	&(\sigma_i\sigma_{i+1})^{-1}[\sigma_{i+2}\sigma_i^{-1}, \sigma_i\sigma_{i+1}^{-1}]\sigma_i\sigma_{i+1} \\ 
-	%	&= \sigma_{i+1}^{-1}\sigma_i^{-1}\sigma_i\sigma_{i+2}^{-1}\sigma_{i+1}\sigma_i^{-1}\sigma_{i+2}\sigma_{i+1}^{-1}\sigma_i\sigma_{i+1}  \\
-	%	&= (\sigma_{i+1}^{-1}\sigma_{i+2}^{-1}\sigma_{i+1})\sigma_i^{-1}\sigma_{i+2}(\sigma_{i+1}^{-1}\sigma_i\sigma_{i+1})
-	%	\end{align*}
-	
-	%	\par\vspace{0.3cm} Da relação $\sigma_i\sigma_{i+1}\sigma_i = \sigma_{i+1}\sigma_i\sigma_{i+1}$, obtemos que
-	
-	%	\begin{align*}
-	%	\sigma_i^{-1}\sigma_{i+1}^{-1}\sigma_i = \sigma_{i+1}\sigma_i^{-1}\sigma_{i+1}^{-1} \\
-	%	\sigma_{i+1}^{-1}\sigma_i\sigma_{i+1} = \sigma_i\sigma_{i+1}\sigma_i^{-1}   
-	%	\end{align*}
-	
-	%	\par\vspace{0.3cm} Substituindo acima, segue
-	
-	%	\begin{align*}
-	%	&(\sigma_{i+1}^{-1}\sigma_{i+2}^{-1}\sigma_{i+1})\sigma_i^{-1}\sigma_{i+2}(\sigma_{i+1}^{-1}\sigma_i\sigma_{i+1}) \\
-	%	&= (\sigma_{i+2}\sigma_{i+1}^{-1}\sigma_{i+2}^{-1})\sigma_i^{-1}\sigma_{i+2}(\sigma_i\sigma_{i+1}\sigma_i^{-1}) \\
-	%	&= \sigma_{i+2}\sigma_{i+1}^{-1}\sigma_{i+2}^{-1}\sigma_i^{-1}\sigma_i\sigma_{i+2}\sigma_{i+1}\sigma_i^{-1} \\
-	%	&= \sigma_{i+2}\sigma_i^{-1}.
-	%	\end{align*}
-	
-	%	\par\vspace{0.3cm} que conclui a verificação.
-	%\end{solution}
-	
-	\par\vspace{0.3cm} Outra aplicação do Teorema \eqref{apresentacao de B_n} é o fato de que $B_2\cong\mathbb{Z}$. Para perceber isso, basta notar que pelo Teorema \eqref{apresentacao de B_n}, $B_2 = \langle \sigma_1 | - \rangle$ e $\mathbb{Z}$ tem essa mesma apresentação. 
-	
-	\par\vspace{0.3cm} Também com o Teorema \eqref{apresentacao de B_n}, podemos escrever $B_3 = \langle \sigma_1,\sigma_2 | \sigma_1\sigma_2\sigma_1 = \sigma_2\sigma_1\sigma_2 \rangle$ e, com isso, mostrar que $B_3 \cong\langle x,y | x^3=y^2 \rangle$ da seguinte maneira.
-	
-	\par\vspace{0.3cm} Da apresentação $B_3 = \langle \sigma_1,\sigma_2 | \sigma_1\sigma_2\sigma_1 = \sigma_2\sigma_1\sigma_2 \rangle$, podemos obter a relação equivalente $(\sigma_1\sigma_2)^3 = (\sigma_2\sigma_1\sigma_2)^2 = (\sigma_1\sigma_2\sigma_1)^2$. Daí, usando o Lema \eqref{lema geradores}, sabemos que $\langle \sigma_1,\sigma_2 \rangle = \langle \sigma_1\sigma_2,\sigma_2 \rangle = \langle \sigma_1\sigma_2, \sigma_2\sigma_1 \rangle = \langle \sigma_1\sigma_2, \sigma_1\sigma_2\sigma_1 \rangle$. Portanto, fazendo $x = \sigma_1\sigma_2$ e $y = \sigma_1\sigma_2\sigma_1$, concluímos que $B_3 \cong \langle x,y | x^3=y^2 \rangle$.
-	
-	%\begin{exercise}
-	%	\label{outra apresentacao de B_3}
-	%	(a) Usando o Teorema \eqref{apresentacao de B_n}, mostre que $B_2\cong\mathbb{Z}$. \\
-	
-	%	(b) Usando o Teorema \eqref{apresentacao de B_n}, escreva uma apresentação para $B_3$. \\
-	
-	%	(c) Mostre que $B_3\cong\langle x,y | x^3 = y^2 \rangle$.
-	%\end{exercise}
-	
-	%\begin{solution}
-	%	(a) Do Teorema \eqref{apresentacao de B_n}, $B_2 = \langle \sigma_1|- \rangle$, ou seja, $B_2$ é gerado por um elemento e não possui nenhuma relação, assim como $\mathbb{Z}$. Logo, eles são isomorfos. Podemos enxergar $\sigma_1$ como sendo equivalente a somar $1$ e $\sigma_1^{-1}$ como somar $-1$.\\
-	
-	%	(b) Do Teorema \eqref{apresentacao de B_n}, temos $B_3 = \langle \sigma_1, \sigma_2 | \sigma_1\sigma_2\sigma_1 = \sigma_2\sigma_1\sigma_2 \rangle$. \\
-	
-	%	(c) Da apresentação do item (b), sabemos que os geradores de $B_3$ satisfazem a relação $\sigma_1\sigma_2\sigma_1=\sigma_2\sigma_1\sigma_2$. Isso é equivalente a $(\sigma_1\sigma_2)^3=(\sigma_2\sigma_1\sigma_2)^2=(\sigma_1\sigma_2\sigma_1)^2$. Daí, usando o fato de que $\langle a,b\rangle=\langle a,ab\rangle$, também sabemos que $B_3$ é gerado por $\langle \sigma_1\sigma_2,\sigma_2\rangle=\langle \sigma_1\sigma_2,\sigma_2\sigma_1\rangle=\langle \sigma_1\sigma_2,\sigma_1\sigma_2\sigma_1\rangle$. Portanto, fazendo $x=\sigma_1\sigma_2$ e $y=\sigma_1\sigma_2\sigma_1$, concluímos que $B_3=\langle x,y|x^3=y^2\rangle$.
-	%\end{solution}
-	
-	\par\vspace{0.3cm}
-	
+	\par\vspace{0.3cm} Da apresentação $B_3 = \langle \sigma_1,\sigma_2 | \sigma_1\sigma_2\sigma_1 
+	= \sigma_2\sigma_1\sigma_2 \rangle$, podemos obter a relação equivalente 
+	$(\sigma_1\sigma_2)^3 = (\sigma_2\sigma_1\sigma_2)^2 = (\sigma_1\sigma_2\sigma_1)^2$. Daí, usando 
+	o Lema \eqref{lema geradores}, sabemos que $\langle \sigma_1,\sigma_2 \rangle 
+	= \langle \sigma_1\sigma_2,\sigma_2 \rangle = \langle \sigma_1\sigma_2, \sigma_2\sigma_1 \rangle 
+	= \langle \sigma_1\sigma_2, \sigma_1\sigma_2\sigma_1 \rangle$. Portanto, fazendo 
+	$x = \sigma_1\sigma_2$ e $y = \sigma_1\sigma_2\sigma_1$, concluímos que 
+	$B_3 \cong \langle x,y | x^3=y^2 \rangle$.
+	%
 	\begin{remark}
-		Um fato interessante é que como $SL(2,\mathbb{Z}) = \langle s,t | s^3 = t^2, t^4 = 1 \rangle$ (não será demonstrado), e $B_3 = \langle x,y| x^3 = y^2 \rangle$, podemos ver que o conjunto de relações de $B_3$ está contido no conjunto de relações de $SL(2,\mathbb{Z})$. Consequentemente, pelo Teorema \eqref{teorema de Dyck}, $SL(2,\mathbb{Z})$ é imagem homomórfica de $B_3$, i.e., $B_3$ é homomorfo a $SL(2,\mathbb{Z})$. 
+		Um fato interessante é que como $SL(2,\mathbb{Z}) = \langle s,t | s^3 = t^2, t^4 = 1 \rangle$ 
+		(não será demonstrado), e $B_3 = \langle x,y| x^3 = y^2 \rangle$, podemos ver que o conjunto de 
+		relações de $B_3$ está contido no conjunto de relações de $SL(2,\mathbb{Z})$. Consequentemente, 
+		pelo Teorema \eqref{teorema de Dyck}, $SL(2,\mathbb{Z})$ é imagem homomórfica de $B_3$, i.e., 
+		$B_3$ é homomorfo a $SL(2,\mathbb{Z})$. 
 	\end{remark}
-	
-	\par\vspace{0.3cm}
-	
+	%
 	\begin{lemma}
-		\label{homomorfismo de comprimento}
-		Defina a função $l$, chamada homomorfismo de comprimento, de $B_n$ para os inteiros da seguinte forma: Se $w$ é uma palavra nos geradores $\sigma_i$ e seus inversos, faça $l(w)$ ser a soma dos expoentes dos $\sigma_i$ em $w$. Em outras palavras, cada $\sigma_i$ conta como $1$ e cada $\sigma_i^{-1}$ conta como $-1$. Mostre que $l$ está bem definida e é um homomorfismo.
+	\label{homomorfismo de comprimento}
+		Defina a função $l$, chamada homomorfismo de comprimento, de $B_n$ para os inteiros da seguinte forma: 
+		se $w$ é uma palavra nos geradores $\sigma_i$ e seus inversos, faça $l(w)$ ser a soma dos expoentes 
+		dos $\sigma_i$ em $w$. Em outras palavras, cada $\sigma_i$ conta como $1$ e cada $\sigma_i^{-1}$ conta 
+		como $-1$. Mostre que $l$ está bem definida e é um homomorfismo.
 	\end{lemma}
-	
+	%
 	\begin{proof}
-		Sejam $w_1,w_2$ duas palavras em $B_n$ tais que $w_1=w_2$. Então, por definição, podemos, após uma quantidade finita de inserções e remoções de elementos da forma $\sigma_i\sigma_i^{-1}$, sair de $w_1$ e chegar em $w_2$. Como cada inserção/remoção desse tipo não altera a soma dos expoentes, pois estamos somando 0, então $l(w_1)=l(w_2)$, i.e., $l$ está bem definida. 
-		\par\vspace{0.3cm} Agora, sejam $w_1,w_2$ duas palavras quaisquer em $B_n$. Note que $l(w_1w_2)$ é, por definição, a soma dos expoentes de $w_1w_2$. Mas essa soma nada mais é do que a soma dos expoentes de $w_1$ acrescida à soma dos expoentes de $w_2$, i.e., nada mais é do que $l(w_1)+l(w_2)$. Note que essa igualdade vale ainda que o final de $w_1$ seja o inverso do início de $w_2$ (por exemplo, $w_1 = \cdots\sigma_1\sigma_2^{-1}$ e $w_2 = \sigma_2\sigma_3\cdots$. Nesse caso, $l(w_1w_2)$ continua sendo igual a $l(w_1) + l(w_2)$). Logo, $l(w_1w_2)=l(w_1)+l(w_2)$ e $l$ preserva a operação, sendo portanto, homomorfismo.
-		\par\vspace{0.3cm} Por fim, note também que $l$ é sobrejetora, uma vez que dado $n\in\mathbb{Z}$, podemos tomar a palavra $w = \underbrace{\sigma_1\sigma_1\cdots\sigma_1}_{n}$ de forma a obter $l(w) = n$.
+		Sejam $w_1,w_2$ duas palavras em $B_n$ tais que $w_1=w_2$. Então, por definição, podemos, 
+		após uma quantidade finita de inserções e remoções de elementos da forma $\sigma_i\sigma_i^{-1}$, 
+		sair de $w_1$ e chegar em $w_2$. Como cada inserção/remoção desse tipo não altera a soma dos expoentes,
+		pois estamos somando 0, então $l(w_1)=l(w_2)$, i.e., $l$ está bem definida. 
+		
+		\par\vspace{0.3cm} Agora, sejam $w_1,w_2$ duas palavras quaisquer em $B_n$. Note que $l(w_1w_2)$ é, 
+		por definição, a soma dos expoentes de $w_1w_2$. Mas essa soma nada mais é do que a soma dos expoentes 
+		de $w_1$ acrescida à soma dos expoentes de $w_2$, i.e., nada mais é do que $l(w_1)+l(w_2)$. Note que 
+		essa igualdade vale ainda que o final de $w_1$ seja o inverso do início de $w_2$ (por exemplo, 
+		$w_1 = \cdots\sigma_1\sigma_2^{-1}$ e $w_2 = \sigma_2\sigma_3\cdots$. Nesse caso, $l(w_1w_2)$ 
+		continua sendo igual a $l(w_1) + l(w_2)$). Logo, $l(w_1w_2)=l(w_1)+l(w_2)$ e $l$ preserva a operação, 
+		sendo portanto, homomorfismo.
+		
+		\par\vspace{0.3cm} Por fim, note também que $l$ é sobrejetora, uma vez que dado $n\in\mathbb{Z}$, 
+		podemos tomar a palavra $w = \underbrace{\sigma_1\sigma_1\cdots\sigma_1}_{n}$ de forma a obter $l(w) = n$.
 	\end{proof}
-	
+	%
 	\begin{remark}
-		A função $l$ do Lema \eqref{homomorfismo de comprimento} é bem útil na verificação de equivalência entre duas tranças. Isso porque a função $l$ é um invariante no grupo de tranças, i.e, se duas tranças são equivalentes, suas imagens por $l$ (expoentes) devem ser iguais (segue da boa definição de $l$). Daí, podemos usar a contrapositiva: se duas tranças têm expoentes diferentes, então elas não podem ser equivalentes.
+		A função $l$ do Lema \eqref{homomorfismo de comprimento} é bem útil na verificação de equivalência 
+		entre duas tranças. Isso porque a função $l$ é um invariante no grupo de tranças, i.e, se duas tranças 
+		são equivalentes, suas imagens por $l$ (expoentes) devem ser iguais (segue da boa definição de $l$). 
+		Daí, podemos usar a contrapositiva: se duas tranças têm expoentes diferentes, então elas não podem 
+		ser equivalentes.
 	\end{remark}
-	
+	%
 	\par\vspace{0.3cm} Da definição de $l$, é imediato que dada uma palavra $w$ qualquer, $l(w^{-1}) = -l(w)$.
 	
-	\par\vspace{0.3cm} Uma aplicação interessante de $l$ é a seguinte: se $\gamma$ é uma trança qualquer conjugada ao seu inverso, i.e., se existe um trança $\delta$ tal que $\delta\gamma\delta^{-1} = \gamma^{-1}$, então $l(\gamma) = 0$.
+	\par\vspace{0.3cm} Uma aplicação interessante de $l$ é a seguinte: se $\gamma$ é uma trança qualquer 
+	conjugada ao seu inverso, i.e., se existe um trança $\delta$ tal que $\delta\gamma\delta^{-1} = \gamma^{-1}$,
+	então $l(\gamma) = 0$.
 	
-	\par\vspace{0.3cm} De fato, se $\gamma$ é conjugada ao seu inverso, sabemos que $l(\delta\gamma\delta^{-1}) = l(\gamma^{-1})$. Pela definição de $l$, temos que $l(\delta\gamma\delta^{-1}) = l(\gamma)$. Daí, $l(\gamma) = l(\gamma^{-1}) = -l(\gamma)$ e, consequentemente, $l(\gamma) = 0$.
+	\par\vspace{0.3cm} De fato, se $\gamma$ é conjugada ao seu inverso, sabemos que $l(\delta\gamma\delta^{-1}) 
+	= l(\gamma^{-1})$. Pela definição de $l$, temos que $l(\delta\gamma\delta^{-1}) = l(\gamma)$. Daí, 
+	$l(\gamma) = l(\gamma^{-1}) = -l(\gamma)$ e, consequentemente, $l(\gamma) = 0$.
 	
-	%\begin{exercise}
-	%	(a) Mostre que os geradores $\sigma_i$ de $B_n$ são conjugados uns dos outros.\\
-	
-	%	(b) Sejam $\delta=\sigma_1\sigma_2\sigma_1$ e $\gamma=\sigma_2\sigma_1^{-1}$. Mostre que $\delta\gamma\delta^{-1}=\gamma^{-1}$. Então o grupo de tranças contém um elemento $\gamma$ que é conjugado ao próprio inverso.\\
-	
-	%	(c) Mostre que se $\gamma$ é qualquer trança que é conjugada ao próprio inverso, então $l(\gamma)=0$.
-	%\end{exercise}
-	
-	%\begin{proof}
-	%	(a) Sabemos que $\sigma_i\sigma_{i+1}\sigma_i=\sigma_{i+1}\sigma_i\sigma_{i+1}$, para $1\leq i\leq n-2$. Isso é equivalente a $(\sigma_i\sigma_{i+1})\sigma_i(\sigma_i\sigma_{i+1})^{-1}=\sigma_{i+1}$, logo $\sigma_i$ é conjugado de $\sigma_{i+1}$.\\
-	
-	%	(b) Note que $\delta\gamma^{-1}\delta^{-1}=(\sigma_1\sigma_2\sigma_1)(\sigma_2\sigma_1^{-1})(\sigma_1^{-1}\sigma_2^{-1}\sigma_1^{-1})=(\sigma_1\sigma_1\sigma_2)(\sigma_2^{-1}\sigma_1^{-1}\sigma_2^{-1})=\sigma_1\sigma_2^{-1}=\gamma^{-1}$.\\
-	
-	%	(c) Se $\gamma$ é conjugada ao seu inverso, então $\delta\gamma\delta^{-1}=\gamma^{-1}$, para algum $\delta$. Daí, note que $l(\delta\gamma\delta^{-1})=l(\gamma^{-1})\Rightarrow l(\gamma)=-l(\gamma)\Rightarrow l(\gamma)=0.$
-	%\end{proof}
-	
-	\par\vspace{0.3cm} Podemos, ainda, pensar em tranças em termos de permutações, no sentido de que existe um mapa $\pi: B_n\to S_n$ em que tomamos uma trança, ignorando se os cruzamentos são por cima ou por baixo, e, numerando as posições inicial e final de cada corda, apenas lemos a permutação correspondente (lembre que $S_n$ se refere ao grupo simétrico).
-	
-	\par\vspace{0.3cm}
-	
+	\par\vspace{0.3cm} Podemos, ainda, pensar em tranças em termos de permutações, no sentido de que existe 
+	um mapa $\pi: B_n\to S_n$ em que tomamos uma trança, ignorando se os cruzamentos são por cima ou por baixo, 
+	e, numerando as posições inicial e final de cada corda, apenas lemos a permutação correspondente 
+	(lembre que $S_n$ se refere ao grupo simétrico).
+    %
 	\begin{lemma}
-		\label{B_n iso S_n}
+	\label{B_n iso S_n}
 		Mostre que $\pi: B_n\to S_n$ é um homomorfismo.
 	\end{lemma}
-	
+	%
 	\begin{proof}
-		Seja $\psi:\underset{\sigma_i\mapsto(i\text{ }i+1)}{B_n\to S_n}$. Note que $\psi$ está bem definida, uma vez que $\sigma_i=\sigma_j\Rightarrow\psi(\sigma_i)=\psi(\sigma_j)$. Então, sejam $\sigma_i,\sigma_j\in B_n$ quaisquer. Suponha $|i-j|>1$. Então, $\psi(\sigma_i\sigma_j)=(i\text{ } i+1)(j\text{ } j+1)=\psi(\sigma_i)\psi(\sigma_j)$. Se $|i-j|=1$, podemos supor, sem perda de generalidade, que $j=i+1$. Então, temos $\psi(\sigma_i\sigma_{i+1})=(i\text{ } i+2\text{ } i+1)=(i\text{ } i+1)(i+1\text{ } i+2)=\psi(\sigma_i)\psi(\sigma_{i+1})$. Portanto, $\psi$ preserva a operação. 
-		\par\vspace{0.3cm} Por fim, note também que $\psi$ é sobrejetora, uma vez que dada uma permutação qualquer, sempre podemos construir uma trança cuja imagem por $\psi$ é tal permutação. Esse argumento será formalizado mais adiante.
+		Seja $\psi:\underset{\sigma_i\mapsto(i\text{ }i+1)}{B_n\to S_n}$. Note que $\psi$ está bem definida, 
+		uma vez que $\sigma_i=\sigma_j\Rightarrow\psi(\sigma_i)=\psi(\sigma_j)$. Então, sejam 
+		$\sigma_i,\sigma_j\in B_n$ quaisquer. Suponha $|i-j|>1$. Então, 
+		$\psi(\sigma_i\sigma_j)=(i\text{ } i+1)(j\text{ } j+1)=\psi(\sigma_i)\psi(\sigma_j)$. Se 
+		$|i-j|=1$, podemos supor, sem perda de generalidade, que $j=i+1$. Então, temos
+		$\psi(\sigma_i\sigma_{i+1})=(i\text{ } i+2\text{ } i+1)=(i\text{ } i+1)(i+1\text{ }
+		i+2)=\psi(\sigma_i)\psi(\sigma_{i+1})$. Portanto, $\psi$ preserva a operação. 
+		
+		\par\vspace{0.3cm} Por fim, note também que $\psi$ é sobrejetora, uma vez que dada uma permutação 
+		qualquer, sempre podemos construir uma trança cuja imagem por $\psi$ é tal permutação. Esse argumento 
+		será formalizado mais adiante.
 	\end{proof}
-	
-	\par\vspace{0.3cm}
-	
+	%
 	\begin{lemma}
-		\label{apresentacao de S_n}
+	\label{apresentacao de S_n}
 		Considere a seguinte apresentação, que lembra a apresentação do Teorema \eqref{apresentacao de B_n}:
-		
-		\begin{align*} G = \langle \tau_1,\dots,\tau_{n-1} | &\tau_i\tau_j = \tau_j\tau_i, \text{ para }|i - j|>1,\\ &\tau_i\tau_{i+1}\tau_i = \tau_{i+1}\tau_i\tau_{i+1}, \text{ para } 1\leq i\leq n-2, \\ &\tau_i^2 = 1, \text{ para }1\leq i\leq n-1\rangle. 
+		%
+		\begin{align*} 
+		G = 
+		\langle \tau_1,\dots,\tau_{n-1} | &\tau_i\tau_j = \tau_j\tau_i, \text{ para }|i - j|>1,\\
+		&\tau_i\tau_{i+1}\tau_i = \tau_{i+1}\tau_i\tau_{i+1}, \text{ para } 1\leq i\leq n-2, \\ 
+		&\tau_i^2 = 1, \text{ para }1\leq i\leq n-1\rangle. 
 		\end{align*}
-		
-		\par\vspace{0.3cm} Mostre que $S_n\cong G$, ou seja, \begin{align*} S_n = \langle \tau_1,\dots,\tau_{n-1} | &\tau_i\tau_j = \tau_j\tau_i, \text{ para }|i - j|>1,\\ &\tau_i\tau_{i+1}\tau_i = \tau_{i+1}\tau_i\tau_{i+1}, \text{ para } 1\leq i\leq n-2, \\ &\tau_i^2 = 1, \text{ para }1\leq i\leq n-1\rangle. 
+		%
+		\par\vspace{0.3cm} Mostre que $S_n\cong G$, ou seja, 
+		%
+		\begin{align*} 
+		S_n 
+		= \langle \tau_1,\dots,\tau_{n-1} | &\tau_i\tau_j = \tau_j\tau_i, \text{ para }|i - j|>1,\\
+		&\tau_i\tau_{i+1}\tau_i = \tau_{i+1}\tau_i\tau_{i+1}, \text{ para } 1\leq i\leq n-2, \\ 
+		&\tau_i^2 = 1, \text{ para }1\leq i\leq n-1\rangle. 
 		\end{align*}
-		
-		%(a) Encontre elementos $\tau_i\in S_n$ que satisfaçam tais relações. \\
-		
-		%(b) Use o item (a) para mostrar que a função levando $\tau_i\in G$ para $\tau_i\in S_n$ se extende para um homomorfismo sobrejetor bem definido de $G$ em $S_n$. \\
-		
-		%(c) Mostre que esse homomorfismo também é injetivo. Logo, a apresentação acima é a apresentação de $S_n$.
-		
+		%
 	\end{lemma}
-	
+	%
 	\begin{proof}
-		Primeiro, note que as transposições $\tau_i$ em $S_n$ satisfazem todas as relações de $G$. Seja $\gamma:\underset{\tau_i\mapsto (i\text{ }i+1)}{G\to S_n}$. A boa definição de $\gamma$ e a propriedade de preservar a operação são demonstradas de maneira análoga ao que foi feito no Lema \eqref{B_n iso S_n}.
-		\par\vspace{0.3cm} Então, seja $(i\text{ }i+1)\in S_n$ qualquer e tome $\tau_i\in G$. Daí, $\gamma(\tau_i) = (i\text{ }i+1)$ e, portanto, $\gamma$ é sobrejetora.
-		\par\vspace{0.3cm} Por fim, suponha $\gamma(\tau_i) = \gamma(\tau_j)$. Então, $(i\text{ }i+1) = (j\text{ }j+1)$, ou seja, $i = j$, o que é equivalente a $\tau_i = \tau_j$. Portanto, $\gamma$ é injetora e, consequentemente, $\gamma$ é um isomorfismo de $G$ em $S_n$, como queríamos demonstrar.
+		Primeiro, note que as transposições $\tau_i$ em $S_n$ satisfazem todas as relações de $G$. 
+		Seja $\gamma:\underset{\tau_i\mapsto (i\text{ }i+1)}{G\to S_n}$. A boa definição de $\gamma$ e 
+		a propriedade de preservar a operação são demonstradas de maneira análoga ao que foi feito no 
+		Lema \eqref{B_n iso S_n}.
+		
+		\par\vspace{0.3cm} Então, seja $(i\text{ }i+1)\in S_n$ qualquer e tome $\tau_i\in G$. Daí, 
+		$\gamma(\tau_i) = (i\text{ }i+1)$ e, portanto, $\gamma$ é sobrejetora.
+		
+		\par\vspace{0.3cm} Por fim, suponha $\gamma(\tau_i) = \gamma(\tau_j)$. Então, $(i\text{ }i+1) 
+		= (j\text{ }j+1)$, ou seja, $i = j$, o que é equivalente a $\tau_i = \tau_j$. Portanto, $\gamma$ é 
+		injetora e, consequentemente, $\gamma$ é um isomorfismo de $G$ em $S_n$, como queríamos demonstrar.
 	\end{proof}
-	
-	%\begin{solution}
-	%	(a) Tais elementos são as transposições $(i\text{ } i+1)$ de dois elementos (cordas) consecutivos. \\
-	
-	%	(b) Seja $\gamma:\underset{\tau_i\mapsto(i\text{ } i+1)}{G\to S_n}$. A boa definição e a preservação da operação são demonstradas de maneira análoga ao exercício anterior. Por fim, seja $(i\text{ } i+1)\in S_n$ qualquer. Então, tome $\tau_i\in G$. Daí, $\gamma(\tau_i)=(i\text{ } i+1)$ e, portanto, $\gamma$ é sobrejetora. \\
-	
-	%	(c) Suponha $\gamma(\tau_i)=\gamma(\tau_j)$. Então, $(i\text{ } i+1)=(j\text{ } j+1)$, ou seja, $i=j \Leftrightarrow \tau_i=\tau_j$. Portanto, $\gamma$ é injetora e, consequentemente, $\gamma$ define um isomorfismo de $G$ em $S_n$. Logo, $S_n$ tem a apresentação acima.
-	%\end{solution}
-	
+	%
 	\par\vspace{0.3cm} Podemos, ainda, definir uma trança geometricamente, como a seguir.
-	
+	%
 	\begin{deff}
-		\label{def geometrica tranca}
-		Seja $I = [0,1]$. Uma trança geométrica em $n\geq 1$ cordas é um conjunto $b\subset\mathbb{R}^2\times I$ formado por $n$ intervalos topológicos disjuntos chamados cordas de $b$ tal que a projeção $\mathbb{R}^2\times I\to I$ mapeia cada corda homeomorficamente em $I$ e 
-		
+	\label{def geometrica tranca}
+		Seja $I = [0,1]$. Uma trança geométrica em $n\geq 1$ cordas é um conjunto 
+		$b\subset\mathbb{R}^2\times I$ formado por $n$ intervalos topológicos disjuntos chamados cordas 
+		de $b$ tal que a projeção $\mathbb{R}^2\times I\to I$ mapeia cada corda homeomorficamente em $I$ e 
+		%
 		\begin{align*}
-		b\cap (\mathbb{R}^2\times \{ 0 \}) &= \left\{ (1,0,0), (2,0,0), \dots, (n,0,0) \right\} \\
-		b\cap (\mathbb{R}^2\times \{ 1 \}) &= \left\{ (1,0,1), (2,0,1), \dots, (n,0,1) \right\}.
+    		b\cap (\mathbb{R}^2\times \{ 0 \}) &= \left\{ (1,0,0), (2,0,0), \dots, (n,0,0) \right\} \\
+    		b\cap (\mathbb{R}^2\times \{ 1 \}) &= \left\{ (1,0,1), (2,0,1), \dots, (n,0,1) \right\}.
 		\end{align*}
+		%
 	\end{deff}
-	
-	\par\vspace{0.3cm} Da Definição \eqref{def geometrica tranca}, podemos ver que cada corda de $b$ intersecta cada plano $\mathbb{R}^2\times\{t\}$, com $t\in I$, em exatamente um ponto. Também vemos que cada corda de $b$ conecta um ponto $(i,0,0)$ a um ponto $(s(i), 0, 1)$, com $i,s(i)\in \{1, 2, \dots, n\}$. A sequência $(s(1), s(2), \dots, s(n))$ é uma permutação do conjunto $\{1, 2, \dots, n\}$ chamada permutação subjacente de $b$.
-	
+	%
+	\par\vspace{0.3cm} Da Definição \eqref{def geometrica tranca}, podemos ver que cada corda de $b$ 
+	intersecta cada plano $\mathbb{R}^2\times\{t\}$, com $t\in I$, em exatamente um ponto. Também vemos 
+	que cada corda de $b$ conecta um ponto $(i,0,0)$ a um ponto $(s(i), 0, 1)$, com $i,s(i)\in \{1, 2, \dots, n\}$.
+	A sequência $(s(1), s(2), \dots, s(n))$ é uma permutação do conjunto $\{1, 2, \dots, n\}$ chamada permutação
+	subjacente de $b$.
+	%
 	\begin{remark}
-		Apesar de ser técnica, note que o que a Definição \eqref{def geometrica tranca} nos diz algo simples; o que ela está falando é que uma trança é um subconjunto $b$ da região $0\leq z\leq 1 $ de $\mathbb{R}^3$. Além disso, as interseções entre $b$ e os planos $z = 0$ e $z = 1$ são, respectivamente, o conjunto de pontos $\left\{  (1,0,0), \dots, (n,0,0)\right\}$ e o conjunto de pontos $\left\{ (1,0,1), \dots, (n,0,1) \right\}$. Esses dois conjuntos são as extremidades de cada corda da trança.
+		Apesar de ser técnica, note que o que a Definição \eqref{def geometrica tranca} nos diz algo simples; 
+		o que ela está falando é que uma trança é um subconjunto $b$ da região $0\leq z\leq 1 $ 
+		de $\mathbb{R}^3$. Além disso, as interseções entre $b$ e os planos $z = 0$ e $z = 1$ são, 
+		respectivamente, o conjunto de pontos $\left\{  (1,0,0), \dots, (n,0,0)\right\}$ e o conjunto de 
+		pontos $\left\{ (1,0,1), \dots, (n,0,1) \right\}$. Esses dois conjuntos são as extremidades de 
+		cada corda da trança.
 		
-		\par\vspace{0.3cm} Note também que, da Definição \eqref{def informal tranca}, sabemos que as cordas de uma trança não podem passar uma por dentro da outra, ou seja, não podem se interceptar e também sabemos que cada corda deve ir monotonicamente da esquerda para a direita, ou seja, não pode haver loops. A Definição \eqref{def geometrica tranca} respeita essas condições, uma vez que cada plano $\mathbb{R}^2\times\{t\}$, com $t\in [0,1]$, intercepta cada corda de $b$ em exatamente um ponto, logo cada corda vai monotonicamente de cima para baixo, e as cordas de $b$ são disjuntas, isto é, não se interpcetam. Essa última propriedade significa que entre os planos $\mathbb{R}^2\times \{0\}$ e $\mathbb{R}^2\times \{1\}$, o valor da coordenada $y$ varia: começa em $0$, aumenta (em módulo), e retorna a $0$.
+		\par\vspace{0.3cm} Note também que, da Definição \eqref{def informal tranca}, sabemos que as 
+		cordas de uma trança não podem passar uma por dentro da outra, ou seja, não podem se interceptar 
+		e também sabemos que cada corda deve ir monotonicamente da esquerda para a direita, ou seja, não pode 
+		haver loops. A Definição \eqref{def geometrica tranca} respeita essas condições, uma vez que cada 
+		plano $\mathbb{R}^2\times\{t\}$, com $t\in [0,1]$, intercepta cada corda de $b$ em exatamente um ponto,
+		logo cada corda vai monotonicamente de cima para baixo, e as cordas de $b$ são disjuntas, isto é, 
+		não se interpcetam. Essa última propriedade significa que entre os planos $\mathbb{R}^2\times \{0\}$ 
+		e $\mathbb{R}^2\times \{1\}$, o valor da coordenada $y$ varia: começa em $0$, aumenta (em módulo), 
+		e retorna a $0$.
 	\end{remark}
-	
+	%
 	\par\vspace{0.3cm} Podemos, ainda, reescrever a Definição \eqref{def geometrica tranca} da seguinte forma:
-	
+	%
 	\begin{deff}
-		\label{outra def geometrica tranca}
-		Seja $n\in\mathbb{N}$ fixo. Sejam ainda $n$ pontos distintos $p_1, \dots, p_n$ em $\mathbb{R}^2$. Seja $(f_1, \dots, f_n)$ uma $n$-upla de funções $f_i:[0,1]\to\mathbb{R}^2$ tais que $f_i(0) = p_i$, $f_i(1) = p_j$ para algum $j=1,\dots,n$ e tais que os $n$ caminhos 
-		
+	\label{outra def geometrica tranca}
+		Seja $n\in\mathbb{N}$ fixo. Sejam ainda $n$ pontos distintos $p_1, \dots, p_n$ em $\mathbb{R}^2$. 
+		Seja $(f_1, \dots, f_n)$ uma $n$-upla de funções $f_i:[0,1]\to\mathbb{R}^2$ tais que $f_i(0) = p_i$,
+		$f_i(1) = p_j$ para algum $j=1,\dots,n$ e tais que os $n$ caminhos 
+		%
 		\begin{align*}
-		[0,1]&\to\mathbb{R}^2\times[0,1] \\
-		t&\mapsto (f_i(t), t)
+    		[0,1]&\to\mathbb{R}^2\times[0,1] \\
+    		t&\mapsto (f_i(t), t)
 		\end{align*}
-		
-		\par\vspace{0.3cm} chamados cordas, tenham imagens disjuntas. Essas $n$ cordas são chamadas de trança. O grupo de trança $B_n$ em $n$ cordas é o grupo de classes de isotopia de tranças. O produto de uma trança $( f_1(t), \dots, f_n(t) )$ por uma trança $( g_1(t), \dots, g_n(t) )$ é definido por
-		
+		%
+		\par\vspace{0.3cm} chamados cordas, tenham imagens disjuntas. Essas $n$ cordas são chamadas de trança. 
+		O grupo de trança $B_n$ em $n$ cordas é o grupo de classes de isotopia de tranças. O produto de uma 
+		trança $( f_1(t), \dots, f_n(t) )$ por uma trança $( g_1(t), \dots, g_n(t) )$ é definido por
+		%
 		\begin{align}
 		\label{def prod trancas}
-		(f\bullet g)_i(t) = \begin{cases}
-		f_i(2t), 0\leq t\leq \displaystyle{\frac{1}{2}} \\
-		g_j(2t-1), \displaystyle{\frac{1}{2}}\leq t\leq 1
-		\end{cases}\text{ sendo } j \text{ tal que }f_i(1) = p_j.
+    		(f\bullet g)_i(t) = 
+    		\begin{cases}
+        		f_i(2t), 0\leq t\leq \displaystyle{\frac{1}{2}} \\
+        		g_j(2t-1), \displaystyle{\frac{1}{2}}\leq t\leq 1
+    		\end{cases}\text{ sendo } j \text{ tal que }f_i(1) = p_j.
 		\end{align}
-		
+		%
 	\end{deff}
-	
-	\par\vspace{0.3cm} O interessante de se observar na Definição \eqref{outra def geometrica tranca} é o modo como o produto de tranças foi apresentado na Definição \eqref{outra def geometrica tranca}. O que a equação \eqref{def prod trancas} nos diz é que para multiplicar a trança $\alpha = ( f_1(t), \dots, f_n(t) )$ pela trança $\beta = ( g_1(t), \dots, g_n(t) )$, devemos diminuir o ``tamanho'' de ambas as tranças pela metade e, em seguida, conectá-las, colocando $\alpha$ ``em cima'' de $\beta$. Outra maneira equivalente de pensar é que apenas ``encurtamos'' $\alpha$ por um fator de $1/2$, sem transladá-la, e ``encurtamos'' $\beta$ também por um fator de $1/2$, mas transladamos $1/2$ na direção negativa do eixo $\cal{O}z$. Essa definição é a mesma que a Definição \eqref{def informal tranca}, apenas formalizada!
+	%
+	\par\vspace{0.3cm} O interessante de se observar na Definição \eqref{outra def geometrica tranca} é 
+	o modo como o produto de tranças foi apresentado na Definição \eqref{outra def geometrica tranca}. 
+	O que a equação \eqref{def prod trancas} nos diz é que para multiplicar a trança 
+	$\alpha = ( f_1(t), \dots, f_n(t) )$ pela trança $\beta = ( g_1(t), \dots, g_n(t) )$, devemos 
+	diminuir o ``tamanho'' de ambas as tranças pela metade e, em seguida, conectá-las, colocando $\alpha$ 
+	``em cima'' de $\beta$. Outra maneira equivalente de pensar é que apenas ``encurtamos'' $\alpha$ por 
+	um fator de $1/2$, sem transladá-la, e ``encurtamos'' $\beta$ também por um fator de $1/2$, mas 
+	transladamos $1/2$ na direção negativa do eixo $\cal{O}z$. Essa definição é a mesma que a 
+	Definição \eqref{def informal tranca}, apenas formalizada!
