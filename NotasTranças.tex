@@ -34,7 +34,15 @@
 \makeindex
 \usepackage{amsmath,amsthm,amssymb,color}
 \usepackage{mathrsfs}
-\usepackage[pdfstartview=FitH,colorlinks,bookmarksnumbered,bookmarksopen,linktocpage,urlcolor=blue,linkcolor=cyan,citecolor=purple]{hyperref}
+\usepackage[pdfstartview=FitH, %
+            %backref, %
+            colorlinks, %
+            bookmarksnumbered, %
+            bookmarksopen, %
+            linktocpage, %
+            urlcolor=blue, %
+            linkcolor=red!70!black, %
+            citecolor=red!70!black]{hyperref}
 \usepackage[font={small}]{caption}
 %\usepackage{subcaption}
 %Permite quebra de páginas em equações longas no ambiente align e align*
@@ -52,17 +60,17 @@
 \renewcommand{\Re}{\mathrm{Re}}
 \renewcommand{\Im}{\mathrm{Im}}
 %
-\theoremstyle{definition}
-\newtheorem{theorem}{Teorema}[section]
-\newtheorem*{definition}{Definição}
-\newtheorem{corollary}{Corolário}[theorem]
-\newtheorem{lemma}[theorem]{Lema}
-\newtheorem{remark}{Observação}[section]
+%\theoremstyle{definition}
+%\newtheorem{theorem}{Teorema}[section]
+%\newtheorem*{definition}{Definição}
+%\newtheorem{corollary}{Corolário}[theorem]
+%\newtheorem{lemma}[theorem]{Lema}
+%\newtheorem{remark}{Observação}[section]
 \newtheorem{deff}{Definição}[section]
 \newtheorem{fact}{Fato}[section]
-\newtheorem{exercise}{Exercício}[section]
-\newtheorem{example}{Exemplo}[section]
-\newtheorem{prop}{Proposição}[section]
+%\newtheorem{exercise}{Exercício}[section]
+%\newtheorem{example}{Exemplo}[section]
+%\newtheorem{prop}{Proposição}[section]
 \newtheorem*{solution}{Solução}
 %
 \DeclareMathOperator{\supp}{supp}
@@ -92,6 +100,8 @@
 \vfuzz = 30pt
 \hbadness = 10001
 \vbadness = \maxdimen
+
+\input{ambientes.tex}
 
 % para criar diagramas de tranças
 \newcounter{braid}
