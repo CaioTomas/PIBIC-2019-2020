@@ -16,7 +16,7 @@
 \section{Primeiras propriedades}
 
     Vamos demonstrar algumas propriedades das tranças. Para evitar confusões, por vezes será usada a notação $1_n$ para indicar a identidade de $B_n$.
-	
+	%
 	%\begin{prop}
 	%	\label{centro de B_n}
 	%	Para $1\leq i\leq n-1$, $(\sigma_1\sigma_2\cdots\sigma_{n-1})^n\sigma_i = \sigma_i(\sigma_1\sigma_2\cdots\sigma_{n-1})^n$, ou seja, $(\sigma_1\sigma_2\cdots\sigma_{n-1})^n$ pertence ao centro de $B_n$.
@@ -29,121 +29,156 @@
 	%\begin{remark}
 	%	É possível mostrar que $(\sigma_1\sigma_2\cdots\sigma_{n-1})^n$ gera o centro de $B_n$. Além disso, como $l((\sigma_1\sigma_2\cdots\sigma_{n-1})^n)\neq 0 = l(1_n)$ (sendo $l$ a função definida no Lema \eqref{homomorfismo de comprimento}), então $(\sigma_1\sigma_2\cdots\sigma_{n-1})^n\neq 1_n$ e, consequentemente, o centro de $B_n$ não é trivial.
 	%\end{remark}
-	
+	%
 	\begin{prop}
 		\label{B_m subgrupo de B_n}
-		Para $1\leq m\leq n$, o mapa $\psi: \underset{\sigma_i\mapsto\sigma_i}{B_m\to B_n}$ para $1\leq i\leq m-1$ é um homomorfismo injetor de $B_m$ em $B_n$ e então podemos considerar $B_m$ um subgrupo de $B_n$. 
+		Para $1\leq m\leq n$, a função $\psi: \underset{\sigma_i\mapsto\sigma_i}{B_m\to B_n}$ 
+		para $1\leq i\leq m-1$ é um homomorfismo injetor de $B_m$ em $B_n$ e então podemos 
+		considerar $B_m$ como um subgrupo de $B_n$. 
 	\end{prop}
-	
-	
+	%
 	\begin{proof}
-		Pelo Teorema \eqref{apresentacao de B_n}, temos
-		
+		Pelo Teorema \ref{apresentacao de B_n}, temos
+		%
 		\begin{align*}
-		B_m = \langle \sigma_1, \sigma_2, \dots, \sigma_{m-1} | &\sigma_i\sigma_j = \sigma_j\sigma_i, \text{ para }|i-j|>1 \\ 
-		&\sigma_i\sigma_{i+1}\sigma_i = \sigma_{i+1}\sigma_i\sigma_{i+1}, 1\leq i\leq m-2\rangle \\
-		B_n = \langle \sigma_1, \sigma_2, \dots, \sigma_{m-1}, \dots, \sigma_{n-1} | \sigma_i\sigma_j = &\sigma_j\sigma_i, \text{ para }|i-j|>1 \\ 
-		&\sigma_i\sigma_{i+1}\sigma_i = \sigma_{i+1}\sigma_i\sigma_{i+1}, 1\leq i\leq n-2\rangle
+		B_m = \langle \sigma_1, \sigma_2, \dots, \sigma_{m-1} | &\sigma_i\sigma_j = \sigma_j\sigma_i, 
+		\text{ para }|i-j|>1 \\ 
+		&\sigma_i\sigma_{i+1}\sigma_i = \sigma_{i+1}\sigma_i\sigma_{i+1}, 1\leq i\leq m-2\rangle, \\
+		B_n = \langle \sigma_1, \sigma_2, \dots, \sigma_{m-1}, \dots, \sigma_{n-1} | \sigma_i\sigma_j 
+		= &\sigma_j\sigma_i, \text{ para }|i-j|>1 \\ 
+		&\sigma_i\sigma_{i+1}\sigma_i = \sigma_{i+1}\sigma_i\sigma_{i+1}, 1\leq i\leq n-2\rangle.
 		\end{align*} 
+		%
+		Daí, como $B_n$ satisfaz as relações de $B_m$, então pelo Teorema \ref{teorema de Dyck}, 
+		$\psi$ é homomorfismo.
 		
-		\par\vspace{0.3cm} Daí, como $B_n$ satisfaz as relações de $B_m$, então pelo Teorema \eqref{teorema de Dyck}, $\psi$ é homomorfismo.
-		
-		\par\vspace{0.3cm} Agora, suponha que existe $\beta\in B_n$ tal que $\psi(\beta) = 1_n$, ou seja, existe uma trança $\beta$ de $m$ cordas que, quando adicionamos $n-m$ cordas retas, se torna a trança trivial em $B_n$. Mas então devemos ter $\beta = 1_m$, logo $\psi$ é injetora.
-		
+		\par\vspace{0.3cm} Agora, suponha que existe $\beta\in B_n$ tal que $\psi(\beta) = 1_n$, 
+		ou seja, existe uma trança $\beta$ de $m$ cordas que, quando adicionamos $n-m$ cordas retas, 
+		se torna a trança trivial em $B_n$. Mas então devemos ter $\beta = 1_m$, logo $\psi$ é injetora.
 	\end{proof}
-	
+	%
 	\begin{remark}
-		\begin{enumerate}
-			\item Como consequência da Proposição \eqref{B_m subgrupo de B_n}, se $\beta\in B_m$ é não trivial, então $\beta\in B_n$, $n\geq m$, também é não trivial (sendo $\beta\in B_n$ a trança $\beta$ de $m$ cordas adicionada de $n-m$ cordas retas).
-			\item Outra observação interessante é o fato de que, Em particular, $B_m\cong B_n$ se, e só se, $m=n$.
-		\end{enumerate}
+		Como consequência da Proposição \ref{B_m subgrupo de B_n}, se $\beta\in B_m$ é 
+		não trivial, então $\beta\in B_n$, $n\geq m$, também é não trivial (sendo $\beta\in B_n$ 
+		a trança $\beta$ de $m$ cordas adicionada de $n-m$ cordas retas);
 	\end{remark}
-	
+	%
+	\begin{remark}
+	    Em particular, $B_m\cong B_n$ se, e só se, $m=n$.
+	\end{remark}
+	%
 	\begin{prop}
 		\label{geradores de B_n tem ordem infinita}
-		$B_n$ é \textbf{livre de torção}, i.e., todo gerador de $B_n$ tem ordem infinita. Equivalentemente, $\sigma_i^k \neq 1, \forall k\in\mathbb{Z}^{\ast}$.
+		$B_n$ é \textbf{livre de torção}, i.e., todo gerador de $B_n$ tem ordem infinita. 
+		Equivalentemente, $\sigma_i^k \neq 1, \forall k\in\mathbb{Z}^{\ast}$.
 	\end{prop}
-	
+	%
 	\begin{proof}
-		Vamos demonstrar a Proposição \eqref{geradores de B_n tem ordem infinita} por indução em $i$, o índice dos geradores.	Como $B_2 = \langle \sigma_1 | - \rangle$, então $|\sigma_1| = \infty$. Logo, em $B_n$, $|\sigma_1| = \infty$. Suponha, então, que $\sigma_2\in B_n$ tem ordem finita. Logo, por definição, $\exists l\in\mathbb{Z}$ tal que $\sigma_2^l = 1_n$. Daí, 
-		
+		Vamos demonstrar a Proposição \ref{geradores de B_n tem ordem infinita} por indução em $i$, 
+		o índice dos geradores.	Como $B_2 = \langle \sigma_1 | - \rangle$, então $|\sigma_1| = \infty$. 
+		Logo, em $B_n$, $|\sigma_1| = \infty$. Suponha, então, que $\sigma_2\in B_n$ tem ordem finita. 
+		Logo, por definição, $\exists l\in\mathbb{Z}$ tal que $\sigma_2^l = 1_n$. Daí, 
+		%
 		\begin{equation*}
-		(\sigma_1\sigma_2\sigma_1)\sigma_2^l(\sigma_1\sigma_2\sigma_1)^{-1} = 1_n
+		    (\sigma_1\sigma_2\sigma_1)\sigma_2^l(\sigma_1\sigma_2\sigma_1)^{-1} = 1_n.
 		\end{equation*}
-		
-		\par\vspace{0.3cm} Note que como $\sigma_i\sigma_{i+1}\sigma_i = \sigma_{i+1}\sigma_i\sigma_{i+1}$, então $\sigma_i\sigma_{i+1}\sigma_i^{-1} = \sigma_{i+1}^{-1}\sigma_i\sigma_{i+1}$ e, consequentemente, $\sigma_i\sigma_{i+1}^l\sigma_i^{-1} = \sigma_{i+1}^{-1}\sigma_i^l\sigma_{i+1}$. Substituindo na equação acima, temos
-		
+		%
+		Note que como $\sigma_i\sigma_{i+1}\sigma_i = \sigma_{i+1}\sigma_i\sigma_{i+1}$, 
+		então $\sigma_i\sigma_{i+1}\sigma_i^{-1} = \sigma_{i+1}^{-1}\sigma_i\sigma_{i+1}$ e, 
+		consequentemente, $\sigma_i\sigma_{i+1}^l\sigma_i^{-1} = \sigma_{i+1}^{-1}\sigma_i^l\sigma_{i+1}$.
+		Substituindo na equação acima, temos
+		%
 		\begin{align*}
-		1_n &= \sigma_1\sigma_2\sigma_1\sigma_2^l\sigma_1^{-1}\sigma_2^{-1}\sigma_1^{-1} \\
-		&= \sigma_1\sigma_2\sigma_2^{-1}\sigma_1^l\sigma_2\sigma_2^{-1}\sigma_1^{-1} \\
-		&= \sigma_1^l
+    		1_n &= \sigma_1\sigma_2\sigma_1\sigma_2^l\sigma_1^{-1}\sigma_2^{-1}\sigma_1^{-1} \\
+    		&= \sigma_1\sigma_2\sigma_2^{-1}\sigma_1^l\sigma_2\sigma_2^{-1}\sigma_1^{-1} \\
+    		&= \sigma_1^l
 		\end{align*}
+		%
+		o que é absurdo, logo $|\sigma_2| = \infty$.
 		
-		\par\vspace{0.3cm} o que é absurdo, logo $|\sigma_2| = \infty$.
-		
-		\par\vspace{0.3cm} Então, suponha indutivamente que $|\sigma_j| = \infty, 1\leq j\leq i-1$. Suponha que $|\sigma_i| = l, l\in\mathbb{Z}$. Então, 
-		
+		\par\vspace{0.3cm} Então, suponha indutivamente que $|\sigma_j| = \infty, 1\leq j\leq i-1$. 
+		Suponha que $|\sigma_i| = l, l\in\mathbb{Z}$. Então, 
+		%
 		\begin{align*}
-		1_n &= \sigma_{i-1}\sigma_i\sigma_{i-1}\sigma_i^l\sigma_{i-1}^{-1}\sigma_i^{-1}\sigma_{i-1}^{-1} \\
-		&= \sigma_{i-1}\sigma_i\sigma_i^{-1}\sigma_{i-1}^l\sigma_i\sigma_i^{-1}\sigma_{i-1}^{-1} \\
-		&= \sigma_{i-1}^l
+    		1_n 
+    		&= \sigma_{i-1}\sigma_i\sigma_{i-1}\sigma_i^l\sigma_{i-1}^{-1}\sigma_i^{-1}\sigma_{i-1}^{-1} \\
+    		&= \sigma_{i-1}\sigma_i\sigma_i^{-1}\sigma_{i-1}^l\sigma_i\sigma_i^{-1}\sigma_{i-1}^{-1} \\
+    		&= \sigma_{i-1}^l
 		\end{align*}
-		
-		\par\vspace{0.3cm} o que é absurdo também. Então, por indução, $|\sigma_i| = \infty, i\geq 1$. 
+		%
+		o que é absurdo também. Então, por indução, $|\sigma_i| = \infty, i\geq 1$. 
 	\end{proof}
-	
+	%
 	\begin{remark}
-		Como todo elemento não trivial de $B_n$ tem ordem infinita, é possível mostrar que para toda trança $\beta$ não trivial de $B_n$, $\beta^k\neq 1_n$ se $k\neq 0$.
+		Como todo elemento não trivial de $B_n$ tem ordem infinita, é possível mostrar que para 
+		toda trança $\beta$ não trivial de $B_n$, $\beta^k\neq 1_n$ se $k\neq 0$.
 	\end{remark}
-	
+	%
 	\begin{prop}
-		\label{sigma1 e alfa geram B_n}
-		O grupo $B_n$, $n\geq 1$, é gerado pelos elementos $\sigma_1$ e $\alpha = \sigma_1\sigma_2\cdots\sigma_{n-1}$.
+	\label{sigma1 e alfa geram B_n}
+		O grupo $B_n$, $n\geq 1$, é gerado pelos elementos $\sigma_1$ e 
+		$\alpha = \sigma_1\sigma_2\cdots\sigma_{n-1}$.
 	\end{prop}
 	
 	\begin{proof}
-		Queremos obtes os $\sigma_i$, $i\geq 2$, em termos de $\sigma_1$ e $\alpha$. Primeiro, vamos mostrar que 
-		
+		Queremos obter os $\sigma_i$, $i\geq 2$, em termos de $\sigma_1$ e $\alpha$. Primeiro, 
+		vamos mostrar que 
+		%
 		\begin{equation}
 		\label{conjugacao}
-		\sigma_{i+1} = \alpha\sigma_i\alpha^{-1}
+		    \sigma_{i+1} = \alpha\sigma_i\alpha^{-1}.
 		\end{equation} 
-		
-		\par\vspace{0.3cm} Para isso, note que 
-		
+		%
+		Para isso, note que 
+		%
 		\begin{align*}
-		\alpha\sigma_i &= \sigma_1\sigma_2\cdots\sigma_{i-1}\sigma_i\sigma_{i+1}\sigma_{i+2}\cdots\sigma_{n-1}\sigma_i \\ 
-		&=\sigma_1\sigma_2\cdots\sigma_{i-1}(\sigma_{i}\sigma_{i+1}\sigma_i)\sigma_{i+2}\cdots\sigma_{n-1}  \\
-		&= \sigma_1\sigma_2\cdots\sigma_{i-1}(\sigma_{i+1}\sigma_i\sigma_{i+1})\sigma_{i+2}\cdots\sigma_{n-1} \\
-		&= \sigma_{i+1}\sigma_1\sigma_2\cdots\sigma_{i-1}\sigma_i\sigma_{i+1}\cdots\sigma_{n-1} \\
-		&= \sigma_{i+1}\alpha
+    		\alpha\sigma_i 
+    		&= \sigma_1\sigma_2\cdots\sigma_{i-1}\sigma_i\sigma_{i+1}\sigma_{i+2}
+    		\cdots\sigma_{n-1}\sigma_i \\
+    		&= \sigma_1\sigma_2\cdots\sigma_{i-1}(\sigma_{i}\sigma_{i+1}\sigma_i)\sigma_{i+2}
+    		\cdots\sigma_{n-1}  \\
+    		&= \sigma_1\sigma_2\cdots\sigma_{i-1}(\sigma_{i+1}\sigma_i\sigma_{i+1})\sigma_{i+2}
+    		\cdots\sigma_{n-1} \\
+    		&= \sigma_{i+1}\sigma_1\sigma_2\cdots\sigma_{i-1}\sigma_i\sigma_{i+1}\cdots\sigma_{n-1} \\
+    		&= \sigma_{i+1}\alpha,
 		\end{align*}
+		%
+		em que usamos as duas relações do Teorema \ref{apresentacao de B_n}. Mas 
+		$\alpha\sigma_i = \sigma_{i+1}\alpha$ é equivalente à equação \eqref{conjugacao}, como 
+		queríamos demonstrar.
 		
-		\par\vspace{0.3cm} em que usamos as duas relações do Teorema \eqref{apresentacao de B_n}. Mas $\alpha\sigma_i = \sigma_{i+1}\alpha$ é equivalente à equação \eqref{conjugacao}, como queríamos demonstrar.
+		\par\vspace{0.3cm} Agora, vamos mostrar, por indução, que 
+		$\sigma_i = \alpha^{i-1}\sigma_1\alpha^{1-i}$. 
 		
-		\par\vspace{0.3cm} Agora, vamos mostrar, por indução, que $\sigma_i = \alpha^{i-1}\sigma_1\alpha^{1-i}$. 
-		
-		\par\vspace{0.3cm} Para $i=1$, temos $\sigma_1 = \alpha^0\sigma_1\alpha^0 = \sigma_1$. Suponha que $\sigma_{i-1} = \alpha^{(i-1)-1}\sigma_1\alpha^{1-(i-1)}$. Daí, temos
-		
+		\par\vspace{0.3cm} Para $i=1$, temos $\sigma_1 = \alpha^0\sigma_1\alpha^0 = \sigma_1$. 
+		Suponha que $\sigma_{i-1} = \alpha^{(i-1)-1}\sigma_1\alpha^{1-(i-1)}$. Daí, temos
+		%
 		\begin{align*}
-		\alpha^{i-1}\sigma_1\alpha^{1-i} &= \alpha\Big( \alpha^{(i-1)-1}\sigma_1\alpha^{1- (i-1)} \Big) \alpha^{-1} \\
-		&= \alpha\sigma_{i-1}\alpha^{-1} \\
-		&= \sigma_i
+    		\alpha^{i-1}\sigma_1\alpha^{1-i} 
+    		&= \alpha\Big( \alpha^{(i-1)-1}\sigma_1\alpha^{1- (i-1)} \Big) \alpha^{-1} \\
+    		&= \alpha\sigma_{i-1}\alpha^{-1} \\
+    		&= \sigma_i,
 		\end{align*}
+		%
+		em que usamos a equação \eqref{conjugacao} na última igualdade. 
 		
-		\par\vspace{0.3cm} em que usamos a equação \eqref{conjugacao} na última igualdade. 
-		
-		\par\vspace{0.3cm} Ora! Então, como $\sigma_i = \alpha^{i-1}\sigma_1\alpha^{1-i}$, podemos representar todo gerador de $B_n$ em termos de $\sigma_1$ e $\alpha$. Consequentemente, $\sigma_1$ e $\alpha$ geram $B_n$.
-		
+		\par\vspace{0.3cm} Ora! Então, como $\sigma_i = \alpha^{i-1}\sigma_1\alpha^{1-i}$, 
+		podemos representar todo gerador de $B_n$ em termos de $\sigma_1$ e $\alpha$. 
+		Consequentemente, $\sigma_1$ e $\alpha$ geram $B_n$.
 	\end{proof}
-	
-	\begin{deff}
-		\label{def P_n}
-		O núcleo do homomorfismo $\pi$ definido no Lema \eqref{B_n iso S_n} é chamado grupo de tranças puras e denotado por $P_n$. Uma trança geométrica de $n$ cordas representa um elemento de $P_n$ se, e só se, para todo $i=1,2\dots,n$, a corda dessa trança ligada ao ponto $(i,0,0)$ tem o segundo ponto fixo em $(i,0,1)$. Em símbolos, $P_n = \Ker(\pi: B_n\to S_n )$.
-	\end{deff}
-	
-	\par\vspace{0.3cm} Em outras palavras, o grupo de tranças puras $P_n$ nada mais é que o grupo formado pelas tranças cujas cordam chegam na posição original, correspondendo à permutação identidade. Abaixo segue um exemplo de trança pura.
-	
+	%
+	\begin{definition}
+	\label{def P_n}
+		O núcleo do homomorfismo $\pi$ definido no Lema \ref{B_n iso S_n} é chamado grupo de tranças 
+		puras e denotado por $P_n$. Uma trança geométrica de $n$ cordas representa um elemento de 
+		$P_n$ se, e só se, para todo $i=1,2\dots,n$, a corda dessa trança ligada ao ponto $(i,0,0)$ 
+		tem o segundo ponto fixo em $(i,0,1)$. Em símbolos, $P_n = \Ker(\pi: B_n\to S_n )$.
+	\end{definition}
+	%
+	Em outras palavras, o grupo de tranças puras $P_n$ nada mais é que o grupo formado pelas 
+	tranças cujas cordas chegam na posição original, correspondendo à permutação identidade. 
+	Abaixo segue um exemplo de trança pura.
+	%
 	\begin{center}
 		\begin{tikzpicture}
 		\braid[braid colour=black,strands=4,braid start={(0,0)}]	{\sigma_3\sigma_2\sigma_1\sigma_1\sigma_2^{-1}\sigma_3^{-1}}
@@ -158,20 +193,31 @@
 		%	{\sigma_1 \sigma_2 \sigma_3\sigma_4\sigma_1\sigma_2\sigma_3\sigma_1\sigma_2\sigma_1\sigma_3}
 		%\end{tikzpicture}	
 	\end{center}
-	\par\vspace{0.3cm} Note que todas as cordas saem e chegam à posição original
-	
+	%
+	Note que todas as cordas saem e chegam à posição original.
+	%
 	\begin{prop}
-		\label{P_n normal em B_n}
-		Temos que $P_n\vartriangleleft B_n$. Além disso, $B_n/P_n \cong S_n$ e $[B_n:P_n] = |B_n/P_n| = |S_n| = n!$.
+	\label{P_n normal em B_n}
+		Temos que $P_n\vartriangleleft B_n$. Além disso, $B_n/P_n \cong S_n$ e 
+		$[B_n:P_n] = |B_n/P_n| = |S_n| = n!$.
 	\end{prop}
-	
+	%
 	\begin{proof}
-		Suponha $\alpha = \begin{bmatrix}
+		Suponha 
+		$\alpha = \begin{bmatrix}
 		1 & 2 & \cdots & n \\
 		i_1 & i_2 & \cdots & i_n
-		\end{bmatrix}$ uma permutação de $S_n$. Queremos construir uma trança de $n$ cordas baseados em $\alpha$. Para isso, tome $n$ pontos $A_1, A_2, \dots, A_n$ na reta $l_1$ e $n$ pontos $B_1, B_2, \dots, B_n$ na reta $l_2$ paralela e ``abaixo'' de $l_1$. Tome os segmentos $d_j$ que ligam o ponto $A_j$ ao ponto $B_{i_j}$ e escolha para todo cruzamento dos $d_j$, escolha arbitrariamente se ele é por cima ou por baixo. Desse modo, formamos uma trança, $\gamma$ que, por construção, é tal que $\pi(\gamma) = \alpha$. Portanto, o homomorfismo $\pi$ do Lema \eqref{B_n iso S_n} é sobrejetor. 
+		\end{bmatrix}$ uma permutação de $S_n$. Queremos construir uma trança de $n$ cordas baseados 
+		em $\alpha$. Para isso, tome $n$ pontos $A_1, A_2, \dots, A_n$ na reta $l_1$ e $n$ pontos 
+		$B_1, B_2, \dots, B_n$ na reta $l_2$ paralela e ``abaixo'' de $l_1$. Tome os segmentos $d_j$ 
+		que ligam o ponto $A_j$ ao ponto $B_{i_j}$ e escolha para todo cruzamento dos $d_j$, 
+		escolha arbitrariamente se ele é por cima ou por baixo. Desse modo, formamos uma trança, 
+		$\gamma$ que, por construção, é tal que $\pi(\gamma) = \alpha$. Portanto, o homomorfismo $\pi$ 
+		do Lema \ref{B_n iso S_n} é sobrejetor. 
 		
-		\par\vspace{0.3cm} Por exemplo, para a permutação $(1\text{ }2\text{ }3\text{ }4\text{ }5)$ em $S_5$, podemos construir a seguinte trança:
+		\par\vspace{0.3cm} Por exemplo, para a permutação $(1\text{ }2\text{ }3\text{ }4\text{ }5)$ 
+		em $S_5$, podemos construir a seguinte trança:
+		%
 		\begin{center}
 			\begin{tikzpicture}
 			\braid[braid colour=black,strands=5,braid start={(0,0)}]	{\sigma_4\sigma_3\sigma_2\sigma_1}
@@ -180,26 +226,35 @@
 			%{\sigma_1 \sigma_2 \sigma_3\sigma_4\sigma_1\sigma_2\sigma_3\sigma_1\sigma_2\sigma_1\sigma_3}
 			\end{tikzpicture}
 		\end{center}
-		
-		\par\vspace{0.3cm} Pela Definição \eqref{def nucleo}, $\Ker\pi = \left\{ \gamma\in B_n | \pi(\gamma) = (1) \right\} = P_n$. Daí, pelo Teorema \eqref{subgrupos normais e nucleos}, temos $P_n\triangleleft B_n$ e, pelo Teorema \eqref{primeiro teorema de isomorfismo}, temos $B_n/P_n\cong S_n$. Consequentemente, $[B_n:P_n] = |B_n/P_n| = |S_n| = n!$. 
-		
+		%
+		Pela Definição \ref{def nucleo}, $\Ker\pi = \left\{ \gamma\in B_n | \pi(\gamma) = (1) \right\} = P_n$.
+		Daí, pelo Teorema \ref{subgrupos normais e nucleos}, temos $P_n\triangleleft B_n$ e, pelo 
+		Teorema \ref{primeiro teorema de isomorfismo}, temos $B_n/P_n\cong S_n$. Consequentemente, 
+		$[B_n:P_n] = |B_n/P_n| = |S_n| = n!$.
 	\end{proof}
-	
-	\par\vspace{0.3cm} Para $P_n$, encontrar um conjunto de geradores não é tão simples quanto foi com $B_n$, pois nem sempre podemos ``fatiar'' uma trança pura em pedações óbvios que também são puros. Michael Artin mostrou que, para $1\leq i<j\leq n$, se definirmos
-	
+	%
+	Para $P_n$, encontrar um conjunto de geradores não é tão simples quanto foi com $B_n$, pois nem 
+	sempre podemos ``fatiar'' uma trança pura em pedações óbvios que também são puros. Michael Artin 
+	mostrou que, para $1\leq i<j\leq n$, se definirmos
+	%
 	\begin{equation*}
 	\tag{Geradores de Artin}
 	\label{geradores de Artin}
-	A_{i,j} = \sigma_{j-1}\sigma_{j-2}\cdots\sigma_{i+1}\sigma_i^2\sigma_{i+1}^{-1}\cdots\sigma_{j-2}^{-1}\sigma_{j-1}^{-1} 
+	    A_{i,j} = 
+	    \sigma_{j-1}\sigma_{j-2}
+	    \cdots\sigma_{i+1}\sigma_i^2\sigma_{i+1}^{-1}
+	    \cdots\sigma_{j-2}^{-1}\sigma_{j-1}^{-1},
 	\end{equation*}
-	
-	\vspace{0.3cm} então o conjunto $\{ A_{i,j} \}_{i,j}$ gera $P_n$. Em particular note que, usando um argumento combinatório, a cardinalidade desse conjunto é
-	
+	%
+	então o conjunto $\{ A_{i,j} \}_{i,j}$ gera $P_n$. Em particular note que, usando um 
+	argumento combinatório, a cardinalidade desse conjunto é
+	%
 	\begin{align*}
-	(n-1) + (n-2) + \cdots + 2 + 1 = \frac{n(n-1)}{2} = \binom{n}{2}.
+	    (n-1) + (n-2) + \cdots + 2 + 1 = \frac{n(n-1)}{2} = \binom{n}{2}.
 	\end{align*}
-	
-	\par\vspace{0.3cm} Abaixo está o diagrama de $A_{i,j}$, sendo $i$ a corda mais à esquerda e $j$ a corda mais à direita.
+	%
+	Abaixo está o diagrama de $A_{i,j}$, sendo $i$ a corda mais à esquerda e $j$ a corda mais à direita.
+	%
 	\begin{center}
 		\begin{tikzpicture}
 		\braid[braid colour=black,strands=6,braid start={(0,0)}]	{\sigma_5\sigma_4\sigma_3\sigma_2\sigma_1\sigma_1\sigma_2^{-1}\sigma_3^{-1}\sigma_4^{-1}\sigma_5^{-1}}
@@ -208,18 +263,22 @@
 		%{\sigma_1 \sigma_2 \sigma_3\sigma_4\sigma_1\sigma_2\sigma_3\sigma_1\sigma_2\sigma_1\sigma_3}
 		\end{tikzpicture}
 	\end{center}
-	
-	\par\vspace{0.3cm} Algo interessante de se notar é que as tranças do conjunto $\{A_{i,j}\}_{i,j}$ são conjugadas umas às outras em $B_n$. De fato, seja
-	
-	$$\alpha_{i,j} = \sigma_{j-1}\sigma_{j-2}\cdots\sigma_i$$
-	
-	\vspace{0.3cm} para $1\leq i<j\leq n$. Através de diagramas, podemos verificar que valem as relações abaixo, dados quaisquer $1\leq i<j<k\leq n$.
-	
+	%
+	Algo interessante de se notar é que as tranças do conjunto $\{A_{i,j}\}_{i,j}$ são conjugadas umas às outras em $B_n$. De fato, seja
+	%
+	\[\alpha_{i,j} = \sigma_{j-1}\sigma_{j-2}\cdots\sigma_i
+	\]
+	%
+	para $1\leq i<j\leq n$. Através de diagramas, podemos verificar que valem as relações abaixo, dados quaisquer $1\leq i<j<k\leq n$.
+	%
 	\begin{equation*}
-	\alpha_{j,k}A_{i,j}\alpha_{j,k}^{-1} = A_{i,k} \quad\text{ e }\quad \alpha_{i,k}A_{i,j}\alpha_{i,k}^{-1} = A_{j,k}
+	    \alpha_{j,k}A_{i,j}\alpha_{j,k}^{-1} = A_{i,k} 
+	    \quad\text{ e }\quad 
+	    \alpha_{i,k}A_{i,j}\alpha_{i,k}^{-1} = A_{j,k}.
 	\end{equation*}
-	
-	\par\vspace{0.3cm} Abaixo mostramos a primeira relação para $i=1, j=5, k=7=n$.
+	%
+	Abaixo mostramos a primeira relação para $i=1, j=5, k=7=n$.
+	%
 	\begin{center}
 		\begin{tikzpicture}
 		\braid[braid colour=black,strands=7,braid start={(0,0)}]	{\sigma_6\sigma_5\sigma_4\sigma_3\sigma_2\sigma_1\sigma_1\sigma_2^{-1}\sigma_3^{-1}\sigma_4^{-1}\sigma_5^{-1}\sigma_6^{-1}}
@@ -229,30 +288,39 @@
 		%\braid[braid colour=black,strands=7,braid %start={(7,0)}]{\sigma_6\sigma_5\sigma_5\sigma_6^{-1}}
 		\end{tikzpicture}
 	\end{center}
-	
 	%
 	\section{Centro de \texorpdfstring{$B_n$}{Bn}}\label{secao centro de B_n}
-	\hspace{12pt} Para estudar o centro de $B_n$ (e também de $P_n$), a trança abaixo é muito útil, chamada \textit{volta completa} e denotada por $\Delta_n^2$. 
-	%\newpage
+	Para estudar o centro de $B_n$ (e também de $P_n$), a trança abaixo é muito útil, chamada 
+	\textit{volta completa} e denotada por $\Delta_n^2$. 
+	%
 	\begin{figure}[H]
 		\begin{center}
 			\includegraphics[width=6.5cm]{Images/volta_completa.png}
 		\end{center}\caption{A volta completa, $\Delta_n^2$.}
 		\label{full twist}
 	\end{figure}
+	%
+	Da Figura \ref{full twist}, podemos ver que $\Delta_n^2 = (\sigma_1\sigma_2\cdots\sigma_{n-1})^n$. 
+	Além disso, podemos também denotar por $\Delta_n$ a meia volta, e podemos escrevê-la em termos 
+	dos geradores $\sigma_i$ de $B_n$ da seguinte forma: 
+	$\Delta_n 
+	= (\sigma_1\sigma_2\cdots\sigma_{n-1})
+	(\sigma_1\sigma_2\cdots\sigma_{n-2})
+	\cdots(\sigma_2\sigma_1)\sigma_1$. Daí, como a notação sugere, $\Delta_n^2$ realmente é o quadrado 
+	de uma trança (e também a raiz $n$-ésima de uma trança, como podemos ver da Figura \ref{full twist}).
 	
-	\par\vspace{0.3cm} Da Figura \eqref{full twist}, podemos ver que $\Delta_n^2 = (\sigma_1\sigma_2\cdots\sigma_{n-1})^n$. Além disso, podemos também denotar por $\Delta_n$ a meia volta, e podemos escrevê-la em termos dos geradores $\sigma_i$ de $B_n$ da seguinte forma: $\Delta_n = (\sigma_1\sigma_2\cdots\sigma_{n-1})(\sigma_1\sigma_2\cdots\sigma_{n-2})\cdots(\sigma_2\sigma_1)\sigma_1$. Daí, como a notação sugere, $\Delta_n^2$ realmente é o quadrado de uma trança (e também a raiz $n$-ésima de uma trança, como podemos ver da Figura \eqref{full twist}).
-	
-	\par\vspace{0.3cm} Em particular, note que a meia volta não comuta, em geral, com os geradores de $B_n$, uma vez que $\Delta_n\sigma_2\neq\sigma_2\Delta_n$, por exemplo. De fato, o que ocorre é que $\sigma_i\Delta_n = \Delta_n\sigma_{n-i}$, ou seja, o cruzamento $\sigma_i$ ``desliza'' (é claro que se $n$ é par e $i=n/2$, então $\Delta_n$ comuta com $\sigma_i$).
-	
+	\par\vspace{0.3cm} Em particular, note que a meia volta não comuta, em geral, com os geradores 
+	de $B_n$, uma vez que $\Delta_n\sigma_2\neq\sigma_2\Delta_n$, por exemplo. De fato, o que 
+	ocorre é que $\sigma_i\Delta_n = \Delta_n\sigma_{n-i}$, ou seja, o cruzamento $\sigma_i$ 
+	``desliza'' (é claro que se $n$ é par e $i=n/2$, então $\Delta_n$ comuta com $\sigma_i$).
+	%
 	\begin{figure}[H]
 		\label{delta5}
 		\begin{center}	
 			\includegraphics[width=6cm]{Images/delta5.png}
 		\end{center}\caption{Diagrama de $\Delta_5$. Podemos ver que o cruzamento $\sigma_{i}$ ``desliza'', se tornando $\sigma_{n-i}$.}
 	\end{figure}
-	
-	
+	%
 	%\begin{center}
 	%	\begin{tikzpicture}
 	%	\label{delta}
@@ -262,224 +330,421 @@
 	%	{\sigma_1 \sigma_2 \sigma_3\sigma_4\sigma_1\sigma_2\sigma_3\sigma_1\sigma_2\sigma_1\sigma_3}
 	%	\end{tikzpicture}
 	%\end{center}
-	
-	\par\vspace{0.3cm} Contudo, $\Delta_n^2$ comuta com toda trança de $B_n$, como é mostrado abaixo.
-	
+	%
+	Contudo, $\Delta_n^2$ comuta com toda trança de $B_n$, como é mostrado abaixo.
+	%
 	\begin{proof}
 		%Queremos mostrar que $\forall\beta\in B_n$, $\Delta_n^2\beta = \beta\Delta_n^2$. Isso equivale a mostrar que $\Delta_n^2\sigma_i = \sigma_i\Delta_n^2$. Por outro lado, como mostrado na Proposição \eqref{sigma1 e alfa geram B_n}, todo gerador de $B_n$ pode ser escrito em termos de $\sigma_1$ e $\alpha = \sigma_1\sigma_2\cdots\sigma_{n-1}$. Como $\alpha$ comuta com $\alpha^n = \Delta_n^2$, basta mostrarmos que $\sigma_1$ comuta com $\alpha^n$.
-		
-		
-		
-		Primeiro, note que $\sigma_i\Delta_n = \Delta_n\sigma_{n-i}$, como ilustram os diagramas acima. Daí, temos
-		
+		Primeiro, note que $\sigma_i\Delta_n = \Delta_n\sigma_{n-i}$, como ilustram os diagramas acima. 
+		Daí, temos
+		%
 		\begin{equation*}
-		\sigma_i\Delta_n^2 = \sigma_i\Delta_n\Delta_n = \Delta_n\sigma_{n-i}\Delta_n = \Delta_n^2\sigma_i
+		    \sigma_i\Delta_n^2 = \sigma_i\Delta_n\Delta_n = \Delta_n\sigma_{n-i}\Delta_n = \Delta_n^2\sigma_i,
 		\end{equation*}
-		
-		\par\vspace{0.3cm} ou seja, $\Delta_n^2$ comuta com todo gerador de $B_n$ e, consequentemente, com toda trança de $B_n$.
-		
-		\par\vspace{0.3cm} 
-		
+		%
+		ou seja, $\Delta_n^2$ comuta com todo gerador de $B_n$ e, consequentemente, com toda trança de $B_n$.
 	\end{proof}
-	
-	\par\vspace{0.3cm} Ora! Então $\Delta_n^2$ pertence ao centro de $B_n$. Na verdade, é possível mostrar que $\Delta_n^2$ gera o centro de $B_n$ para $n\geq 3$, i.e.
-	
-	
+	%
+	Ora! Então $\Delta_n^2$ pertence ao centro de $B_n$. Na verdade, é possível mostrar que $\Delta_n^2$ 
+	gera o centro de $B_n$ para $n\geq 3$, i.e.
+	%
 	\begin{theorem}
-		\label{centro de B_n}
-		Se $n\geq 3$, então $Z(B_n) = Z(P_n) = \langle \Delta_n^2 \rangle = \langle (\sigma_1\sigma_2\cdots\sigma_{n-1})^n \rangle$.
+	\label{centro de B_n}
+		Se $n\geq 3$, então $Z(B_n) = Z(P_n) = \langle \Delta_n^2 \rangle 
+		= \langle (\sigma_1\sigma_2\cdots\sigma_{n-1})^n \rangle$.
 	\end{theorem}
-	
-	\par\vspace{0.3cm} Em outras palavras, toda trança do centro de $B_n$ é uma potência de $\Delta_n^2$.%, isto é, toda trança que comuta com todas as outras é uma potência da volta completa.
-	
-	\par\vspace{0.3cm} Demonstramos o Teorema \eqref{centro de B_n} para $n=3$.
-	
+	%
+	Em outras palavras, toda trança do centro de $B_n$ é uma potência de $\Delta_n^2$.%, isto é, toda trança que comuta com todas as outras é uma potência da volta completa.
+	Demonstramos o Teorema \ref{centro de B_n} para $n=3$.
+	%
 	\begin{prop}
-		$Z(B_3) = \langle (\sigma_1\sigma_2)^3 \rangle$
+		$Z(B_3) = \langle (\sigma_1\sigma_2)^3 \rangle$.
 	\end{prop}
-	
+	%
 	\begin{proof}
-		Primeiro, note que $(\sigma_1\sigma_2)^3\sigma_1 = \sigma_1\sigma_2\sigma_1\sigma_2\sigma_1\sigma_2\sigma_1 = \sigma_1(\sigma_1\sigma_2\sigma_1\sigma_2\sigma_1\sigma_2) = \sigma_1(\sigma_1\sigma_2)^3$ e também que $(\sigma_1\sigma_2)^3\sigma_2 = \sigma_1\sigma_2\sigma_1\sigma_2\sigma_1\sigma_2\sigma_2 = \sigma_2(\sigma_1\sigma_2\sigma_1\sigma_2\sigma_1\sigma_2) = \sigma_2(\sigma_1\sigma_2)^3$. Portanto, $\langle (\sigma_1\sigma_2)^3 \rangle\subseteq Z(B_3)$.
+		Primeiro, note que 
+		$(\sigma_1\sigma_2)^3\sigma_1 = \sigma_1\sigma_2\sigma_1\sigma_2\sigma_1\sigma_2\sigma_1 
+		= \sigma_1(\sigma_1\sigma_2\sigma_1\sigma_2\sigma_1\sigma_2) 
+		= \sigma_1(\sigma_1\sigma_2)^3$ e também que 
+		$(\sigma_1\sigma_2)^3\sigma_2 
+		= \sigma_1\sigma_2\sigma_1\sigma_2\sigma_1\sigma_2\sigma_2 
+		= \sigma_2(\sigma_1\sigma_2\sigma_1\sigma_2\sigma_1\sigma_2) 
+		= \sigma_2(\sigma_1\sigma_2)^3$. Portanto, 
+		$\langle (\sigma_1\sigma_2)^3 \rangle\subseteq Z(B_3)$.
 		
 		\par\vspace{0.3cm} Agora, seja $g\in Z(B_3)$. Então, devemos ter, necessariamente, $g\sigma_1 = \sigma_1g$ e $g\sigma_2 = \sigma_2g$. Suponha, então, $g = \sigma_1^i\sigma_2^j$. Daí, temos
-		
+		%
 		\begin{align*}
-		\begin{cases}
-		\sigma_1^i\sigma_2^j\sigma_1 = \sigma_1^{i+1}\sigma_2^j \\
-		\sigma_1^i\sigma_2^{j+1} = \sigma_2\sigma_1^{i}\sigma_2^j
-		\end{cases} \Rightarrow \begin{cases}
-		\sigma_2^j\sigma_1 = \sigma_1\sigma_2^j \\
-		\sigma_1^i\sigma_2 = \sigma_2\sigma_1^i
-		\end{cases} \Rightarrow i = j = 0 
+    		\begin{cases}
+        		\sigma_1^i\sigma_2^j\sigma_1 = \sigma_1^{i+1}\sigma_2^j \\
+        		\sigma_1^i\sigma_2^{j+1} = \sigma_2\sigma_1^{i}\sigma_2^j
+    		\end{cases} 
+    		\Rightarrow 
+    		\begin{cases}
+        		\sigma_2^j\sigma_1 = \sigma_1\sigma_2^j \\
+        		\sigma_1^i\sigma_2 = \sigma_2\sigma_1^i
+    		\end{cases} 
+    		\Rightarrow i = j = 0.
 		\end{align*} 
-		
-		\par\vspace{0.3cm} Suponha, agora, $g = (\sigma_1\sigma_2)^i$, $i\neq 0$. Então, temos
-		
+		%
+		Suponha, agora, $g = (\sigma_1\sigma_2)^i$, $i\neq 0$. Então, temos
+		%
 		\begin{align*}
-		\begin{cases}
-		(\sigma_1\sigma_2)^i\sigma_1 = \sigma_1(\sigma_1\sigma_2)^i \\
-		(\sigma_1\sigma_2)^i\sigma_2 = \sigma_2(\sigma_1\sigma_2)^i
-		\end{cases} \Rightarrow i = 3k, k\in\mathbb{Z}
+    		\begin{cases}
+        		(\sigma_1\sigma_2)^i\sigma_1 = \sigma_1(\sigma_1\sigma_2)^i \\
+        		(\sigma_1\sigma_2)^i\sigma_2 = \sigma_2(\sigma_1\sigma_2)^i
+    		\end{cases} 
+    		\Rightarrow i = 3k, k\in\mathbb{Z}.
 		\end{align*}
-		
-		\par\vspace{0.3cm} A última implicação se deve ao seguinte raciocínio. A quantidade de termos no produto $(\sigma_1\sigma_2)^i\sigma_1$ é $2i+1$. Para transformar $(\sigma_1\sigma_2)^i\sigma_1$ em $\sigma_1(\sigma_1\sigma_2)^i$, devemos manipular os $2i$ termos de $\sigma_2(\sigma_1\sigma_2)^{i-1}\sigma_1$ usando a relação $\sigma_1\sigma_2\sigma_1 = \sigma_2\sigma_1\sigma_2$ para chegar em $(\sigma_1\sigma_2)^i$. Ora! Mas para utilizar a relação, precisamos de blocos de $3$ geradores, ou seja, devemos ter $i\in\mathbb{Z}$ tal que $\displaystyle{\frac{2i}{3}\in\mathbb{Z}}$. Como $2$ e $3$ são relativamente primos, devemos ter $i$ múltiplo de $3$.
-		\par Por exemplo, $$\sigma_2(\sigma_1\sigma_2)^{4-1}\sigma_1 = \sigma_2\sigma_1\sigma_2\sigma_1\sigma_2\sigma_1\sigma_2\sigma_1 = \sigma_1\sigma_2\sigma_1\sigma_2\sigma_1\sigma_2\sigma_2\sigma_1 = (\sigma_1\sigma_2)^3\sigma_2\sigma_1\neq(\sigma_1\sigma_2)^4.$$
-		
-		\par\vspace{0.3cm} Daí, concluímos que todo elemento do centro de $B_3$ é uma potência de $(\sigma_1\sigma_2)^3$, ou seja, $Z(B_3)\subseteq\langle (\sigma_1\sigma_2)^3 \rangle$.
-		
-		\par\vspace{0.3cm} Portanto, $Z(B_3) = \langle (\sigma_1\sigma_2)^3 \rangle$.
-		
+		%
+		A última implicação se deve ao seguinte raciocínio. 
+		A quantidade de termos no produto $(\sigma_1\sigma_2)^i\sigma_1$ é $2i+1$. 
+		Para transformar $(\sigma_1\sigma_2)^i\sigma_1$ em $\sigma_1(\sigma_1\sigma_2)^i$, 
+		devemos manipular os $2i$ termos de $\sigma_2(\sigma_1\sigma_2)^{i-1}\sigma_1$ 
+		usando a relação $\sigma_1\sigma_2\sigma_1 = \sigma_2\sigma_1\sigma_2$ 
+		para chegar em $(\sigma_1\sigma_2)^i$. Ora! Mas para utilizar a relação, 
+		precisamos de blocos de $3$ geradores, ou seja, devemos ter $i\in\mathbb{Z}$ 
+		tal que $\displaystyle{\frac{2i}{3}\in\mathbb{Z}}$. Como $2$ e $3$ são relativamente primos, 
+		devemos ter $i$ múltiplo de $3$.
+		Por exemplo, 
+		%
+		\[
+		\sigma_2(\sigma_1\sigma_2)^{4-1}\sigma_1 
+		= \sigma_2\sigma_1\sigma_2\sigma_1\sigma_2\sigma_1\sigma_2\sigma_1 
+		= \sigma_1\sigma_2\sigma_1\sigma_2\sigma_1\sigma_2\sigma_2\sigma_1 
+		= (\sigma_1\sigma_2)^3\sigma_2\sigma_1\neq(\sigma_1\sigma_2)^4.
+		\]
+		%
+		Daí, concluímos que todo elemento do centro de $B_3$ é uma potência de $(\sigma_1\sigma_2)^3$, ou seja, $Z(B_3)\subseteq\langle (\sigma_1\sigma_2)^3 \rangle$. Portanto, 
+		$Z(B_3) = \langle (\sigma_1\sigma_2)^3 \rangle$.
 	\end{proof}
-	
+	%
 	\begin{prop}
-		Mostre que $l(\Delta_n^2) = n(n-1)$, sendo $l$ a função homomorfismo de comprimento definida no Lema \eqref{homomorfismo de comprimento} e $\Delta_n^2$ a volta completa em $B_n$.
+		Temos $l(\Delta_n^2) = n(n-1)$, sendo $l$ a função homomorfismo de comprimento definida 
+		no Lema \ref{homomorfismo de comprimento} e $\Delta_n^2$ a volta completa em $B_n$.
 	\end{prop}
-	
+	%
 	\begin{proof}
-		Escrevendo $\Delta_n^2 = (\sigma_1\sigma_2\cdots\sigma_{n-1})^n$, segue da definição de $l$ que $l(\Delta_n^2) = n(n-1)$. 
+		Escrevendo $\Delta_n^2 = (\sigma_1\sigma_2\cdots\sigma_{n-1})^n$, segue da definição 
+		de $l$ que $l(\Delta_n^2) = n(n-1)$. 
 		
-		\par\vspace{0.3cm} Também podemos escrever $l(\Delta_n^2) = 2l(\Delta_n)$ e, como $\Delta_n = (\sigma_1\sigma_2\cdots\sigma_{n-1})(\sigma_1\sigma_2\cdots\sigma_{n-2})\cdots(\sigma_1\sigma_2)\sigma_1$, então $l(\Delta_n^2) = 2\Big( (n-1) + (n-2) + \cdots + 2 + 1 \Big) 2\Big( \displaystyle{\frac{n(n-1)}{2}} \Big) = n(n-1)$.
-		
+		\par\vspace{0.3cm} Também podemos escrever $l(\Delta_n^2) = 2l(\Delta_n)$ e, como
+		%
+		\[
+		\Delta_n 
+		= (\sigma_1\sigma_2\cdots\sigma_{n-1})(\sigma_1\sigma_2\cdots\sigma_{n-2})
+		\cdots(\sigma_1\sigma_2)\sigma_1,
+		\]
+		% 
+		então
+		%
+		\[
+		l(\Delta_n^2) 
+		= 2\Big( (n-1) + (n-2) + \cdots + 2 + 1 \Big) = 2\Big( \displaystyle{\frac{n(n-1)}{2}} \Big) = n(n-1).
+		\]
+		%
 	\end{proof}
-	
+	%
 	%\begin{remark}
 	%	No Teorema \eqref{centro de B_n}, usamos o fato de que $Z(B_n) = Z(P_n)$. Isso se deve ao fato de que $P_n$ é homomorfo a $B_n$, logo (como um homomorfismo preserva a operação) o centro de $B_n$ é levado no centro de $P_n$.
 	%\end{remark}
-	
-	
-	
+	%
 	%\begin{theorem}
 	%	$B_n$ e todos seus subgrupos são residualmente finitos.
 	%\end{theorem}
+	%
+	Podemos ainda definir $f_n: P_n\to P_{n-1}$ como sendo a função que 
+	pega uma trança em $P_n$, retira a $n$-ésima 
+	corda e a mapeia à trança resultante em $P_{n-1}$. Essa função é um homomorfismo sobrejetor, chamada
+	\textit{homomorfismo esquecido}.
 	
-	\par\vspace{0.3cm} Por fim, seja $f_n: P_n\to P_{n-1}$. Essa função é um homomorfismo sobrejetor, chamada \textit{homomorfismo esquecido}. A função $f_n$ pega uma trança em $P_n$, retira a $n$-ésima corda e a mapeia à trança resultante em $P_{n-1}$.
-	\par\vspace{0.3cm} Para $n\geq 2$, definimos $U_n\vcentcolon=\Ker(f_n: P_n\to P_{n-1})$. Do diagrama do gerador de Artin, $A_{i,j}$, fica claro que $A_{i,n}\in U_n$, com $1\leq i\leq n-1$. 
-	
+	\par\vspace{0.3cm} Para $n\geq 2$, definimos $U_n\vcentcolon=\Ker(f_n: P_n\to P_{n-1})$. 
+	Do diagrama do gerador de Artin, $A_{i,j}$, fica claro que $A_{i,n}\in U_n$, com $1\leq i\leq n-1$. 
+	%
 	\begin{theorem}
-		\label{U_n livre nos geradores de Artin}
+	\label{U_n livre nos geradores de Artin}
 		Para todo $n\geq 2$, $U_n$ é livre nos $n-1$ geradores $\{ A_{i,n} \}_{i=1,2,\dots,n-1}$.
 	\end{theorem}
-	
-	\par\vspace{0.3cm} Aceitaremos o Teorema \eqref{U_n livre nos geradores de Artin} sem demonstração. Contudo, um corolário interessante é o seguinte.
-	
+	%
+	Aceitaremos o Teorema \ref{U_n livre nos geradores de Artin} sem demonstração. 
+	Contudo, um corolário interessante é o seguinte.
+	%
 	\begin{corollary}
-		\label{B_n residualmente finito}
+	\label{B_n residualmente finito}
 		$B_n$ e seus subgrupos são residualmente finitos.
 	\end{corollary}
-	
+	%
 	\begin{proof}
-		Um grupo $G$ é dito residualmente finito se para todo $\beta\in G-\{1\}$ existe um homomorfismo $f$ de $G$ em um grupo finito tal que $f(\beta)\neq 1$.
-		\par\vspace{0.3cm} Sabemos que grupos livres são residualmente finitos e que o produto semidireto de dois grupos finitamente gerados e residualmente finitos é também residualmente finito.
-		\par\vspace{0.3cm} Também sabemos, do Teorema \eqref{subgrupos normais e nucleos}, que $U_n\vartriangleleft P_n$. Da Definição \eqref{produto semidireto}, temos $P_n\cong U_n\rtimes P_{n-1}$. Tanto $U_n$ quanto $P_{n-1}$ são finitamente gerados e do Teorema \eqref{U_n livre nos geradores de Artin}, $U_n$ é residualmente finito. Daí, por indução em $n$, o Teorema \eqref{U_n livre nos geradores de Artin} implica $P_n$ residualmente finito.
-		\par\vspace{0.3cm} Note que qualquer extensão de um grupo residualmente finito $P$ por um grupo finito é residualmente finita. Como $B_n$ é uma extensão de $P_n$ por $S_n$ e $P_n$ é residualmente finito, concluímos que $B_n$ também é.
+		Um grupo $G$ é dito residualmente finito se para todo $\beta\in G-\{1\}$ existe 
+		um homomorfismo $f$ de $G$ em um grupo finito tal que $f(\beta)\neq 1$.
+		
+		\par\vspace{0.3cm} Sabemos que grupos livres são residualmente finitos e que o produto 
+		semidireto de dois grupos finitamente gerados e residualmente finitos é também residualmente finito.
+		
+		\par\vspace{0.3cm} Também sabemos, do Teorema \ref{subgrupos normais e nucleos}, que
+		$U_n\vartriangleleft P_n$. Da Definição \ref{produto semidireto}, temos 
+		$P_n\cong U_n\rtimes P_{n-1}$. Tanto $U_n$ quanto $P_{n-1}$ são finitamente gerados e do 
+		Teorema \ref{U_n livre nos geradores de Artin}, $U_n$ é residualmente finito. 
+		Daí, por indução em $n$, o Teorema \ref{U_n livre nos geradores de Artin} implica 
+		$P_n$ residualmente finito.
+		
+		\par\vspace{0.3cm} Note que qualquer extensão de um grupo residualmente finito $P$ por 
+		um grupo finito é residualmente finita. Como $B_n$ é uma extensão de $P_n$ por $S_n$ e $P_n$ é
+		residualmente finito, concluímos que $B_n$ também é.
+		
 		\par\vspace{0.3cm} Por fim, observe que todos os subgrupos de um grupo residualmente finito são também residualmente finitos.	
 	\end{proof}
+	%
 	\section{Tranças como espaços de configuração}\label{secao trancas como espacos de configuracao}
-	\hspace{12pt} Há varias conexões entre grupos de tranças e topologia, e uma delas envolve \textit{espaços de configuração}, que nada mais são do que um espaço que contém todos os estados possíveis de um sistema. Por vezes, espaços de configuração são chamados de \textit{espaços de estado} ou \textit{espaços de parâmetros}.
-	\par\vspace{0.3cm} Por exemplo, podemos usar um espaço de configuração para modelar o movimento coletivo de vários objetos, como carros nas ruas de uma cidade ou pacotes em uma \textit{network} ou moléculas em uma solução ou ainda robôs em uma fábrica.
-	\par\vspace{0.3cm} Para um exemplo mais concreto, considere o seu braço. Nele, há três juntas: uma no ombro, uma no cotovelo e uma no pulso. Tanto o seu ombro quanto o seu pulso têm dois graus de liberdade (i.e., podem girar em dois sentidos diferentes), enquanto que o seu cotovelo tem apensa um grau de liberdade, totalizando cinco dimensões de configuração.
-	\par\vspace{0.3cm} Um braço robótico modelado a partir do seu braço tem de navegar por um espaço de configuração cinco-dimensional para poder aproveitar toda a flexibilidade existente nesse sistema de juntas. Para ilustrar, imagine que ao invés de uma mão, você tem uma plataforma rígida conectada ao seu pulso e suponha que você queira levantar um copo d'água de abaixo da sua cintura até acima do seu ombro. Isso não será possível de fazer com a plataforma rígida no lugar da mão, porque apenas a rotação do ombro não é suficiente para fazer o movimento desejado (isso é o que os bebês fazem, e eles derramam a água sempre).
-	\par\vspace{0.3cm} Mas qual a conexão entre espaços de configuração e grupos de trança? Bom, até agora, falamos de tranças individuais como objetos topológicos, como indicam as Definições \eqref{def geometrica tranca} e \eqref{outra def geometrica tranca}. Contudo, os grupos de trança em si também são objetos topológicos, no sentido de que cada grupo de trança descreve, de forma natural, os diferentes tipos de \textit{loops} que existem em um certo espaço de configuração. O espaço em questão modela o movimento coletivo de $n$ partículas distintas no plano que não podem colidir.
-	\par\vspace{0.3cm} Então, imagine $n$ partículas no plano e estenda esse plano para formar a parede esquerda de uma trança. Agora, deslize o plano da esquerda para a direita, e imagine que cada partícula deixa um rastro à medida que o plano se move. O que acontece?
-	\par\vspace{0.3cm} Bom, se as partículas ficam paradas (no plano), então quando o plano parar, você terá $n$ trilhas paralelas: a trança identidade! 
+	Há varias conexões entre grupos de tranças e topologia, e uma delas envolve 
+	\textit{espaços de configuração}, que nada mais são do que espaços que contêm 
+	todos os estados possíveis de um sistema. Por vezes, espaços de configuração são 
+	chamados de \textit{espaços de estado} ou \textit{espaços de parâmetros}.
 	
+	\par\vspace{0.3cm} Por exemplo, podemos usar um espaço de configuração para modelar o 
+	movimento coletivo de vários objetos, como carros nas ruas de uma cidade ou moléculas em 
+	uma solução ou ainda robôs em uma fábrica.
 	
+	\par\vspace{0.3cm} Para um exemplo mais concreto, considere o seu braço. Nele, há três juntas: 
+	uma no ombro, uma no cotovelo e uma no pulso. Tanto o seu ombro quanto o seu pulso têm dois 
+	graus de liberdade (i.e., podem girar em dois sentidos diferentes), enquanto que o seu cotovelo 
+	tem apenas um grau de liberdade, totalizando cinco dimensões de configuração.
+	
+	\par\vspace{0.3cm} Um braço robótico modelado a partir do seu braço tem de navegar por um 
+	espaço de configuração cinco-dimensional para poder aproveitar toda a flexibilidade existente 
+	nesse sistema de juntas. Para ilustrar, imagine que ao invés de uma mão, você tem uma plataforma 
+	rígida conectada ao seu pulso e suponha que você queira levantar um copo d'água de abaixo da sua 
+	cintura até acima do seu ombro. Isso não será possível de fazer com a plataforma rígida no lugar da 
+	mão, porque apenas a rotação do ombro não é suficiente para fazer o movimento desejado (isso é 
+	o que os bebês fazem, e eles sempre derramam a água).
+	
+	\par\vspace{0.3cm} Mas qual a conexão entre espaços de configuração e grupos de trança? 
+	Bom, até agora, falamos de tranças individuais como objetos topológicos, como indicam as 
+	Definições \ref{def geometrica tranca} e \ref{outra def geometrica tranca}. Contudo, os grupos 
+	de trança em si também são objetos topológicos, no sentido de que cada grupo de trança descreve, 
+	de forma natural, os diferentes tipos de \textit{loops} que existem em um certo espaço de configuração. 
+	O espaço em questão modela o movimento coletivo de $n$ partículas distintas no plano que não 
+	podem colidir.
+	
+	\par\vspace{0.3cm} Então, imagine $n$ partículas no plano e estenda esse plano para formar 
+	a parede esquerda de uma trança. Agora, deslize o plano da esquerda para a direita, e imagine 
+	que cada partícula deixa um rastro à medida que o plano se move. O que acontece?
+	
+	\par\vspace{0.3cm} Bom, se as partículas ficam paradas (no plano), então quando o plano parar, 
+	você terá $n$ trilhas paralelas: a trança identidade!
+	%
 	\begin{figure}[H]
 		\begin{center} 
 			\includegraphics[width=9cm]{Images/tranca_identidade_conf.png}
 		\end{center}\caption{A trança identidade em um espaço de configuração}\label{tranca identidade espaco configuracao}
 	\end{figure}
+	%
+	Entretanto, se as partículas se movem no plano à medida que eles desliza, o que ocorre? 
+	Bom, desde que nenhum par de partículas colida, veremos uma trança! E claramente toda trança 
+	pode ser feita desse modo. Veja a figura abaixo. Note que estamos visualizando a direção 
+	$x$ como o eixo temporal.
 	
-	\par\vspace{0.3cm} Entretanto, se as partículas se movem no plano à medida que eles desliza, o que ocorre? Bom, desde que nenhum par de partículas colida, veremos uma trança! E claramente toda trança pode ser feita desse modo. Veja a figura abaixo. Note que estamos visualizando a direção $x$ como o eixo temporal.
-	\par\vspace{0.3cm} Para um exemplo mais visual, podemos observar o movimento dos planetas do Sistema Solar, como nesse vídeo.\footnote{ \url{https://www.youtube.com/watch?v=0jHsq36_NTU&list=WL&index=2&t=50s}} 
-	
+	\par\vspace{0.3cm} Para um exemplo mais visual, podemos observar o movimento dos planetas 
+	do Sistema Solar, como 
+	\href{https://www.youtube.com/watch?v=0jHsq36_NTU&list=WL&index=2&t=50s}{nesse vídeo}. 
+	%
 	\begin{figure}[H]
 		\begin{center}
 			\includegraphics[width=10cm]{Images/tranca_conf.png}
 		\end{center}\caption{Uma trança não trivial em um espaço de configuração.}\label{tranca espaco configuracao}
 	\end{figure} 
-	%\newpage
-	\par\vspace{0.3cm} Para fazermos o produto de duas tranças usando essa ideia, precisamos ter certeza de que o coletivo de partículas no final da trança está no mesmo lugar que no começo da trança, pois assim podemos concatenar duas tranças sem haver nenhuma descontinuidade no meio.
-	\par\vspace{0.3cm} A posição inicial é uma \textit{configuração} de $n$ partículas. O conjunto de todas as configurações possíveis é o espaço de configuração
+	%
+	Para fazermos o produto de duas tranças usando essa ideia, precisamos ter certeza de que 
+	o conjunto de partículas no final da trança está no mesmo lugar que no começo da trança, 
+	pois assim podemos concatenar duas tranças sem haver nenhuma descontinuidade no meio.
+	
+	\par\vspace{0.3cm} A posição inicial é uma \textbf{configuração} de $n$ partículas. 
+	O conjunto de todas as configurações possíveis é o espaço de configuração
+	%
 	\begin{align}
-	C_n(\mathbb{R}^2) = \{ (p_1, \dots, p_n)\in (\mathbb{R}^2)^n | p_i\neq p_j \text{ para }i\neq j \} 
 	\label{configuracao ordenada}
+	    C_n(\mathbb{R}^2) 
+	    = \{ (p_1, \dots, p_n)\in (\mathbb{R}^2)^n \ | \ p_i\neq p_j \text{ para }i\neq j \},
 	\end{align}
-	\par\vspace{0.3cm} em que a condição $p_i\neq p_j$ indica a necessidade de um par partículas não colidirem.
-	\par\vspace{0.3cm} O que definimos em \eqref{configuracao ordenada} foi o conjunto de configurações \textit{ordenadas}. Como o nosso propósito é descrever tranças, gostaríamos de ignorar a ordem e apenas focar no conjunto de partículas, e.g., queremos considerar $(p_1, p_2)$ como o mesmo que $(p_2, p_1)$ e pensar em ambos apenas como $\{p_1, p_2\}$. Para isso, definimos a versão não ordenada:
+	%
+	em que a condição $p_i\neq p_j$ indica a necessidade de um par partículas não colidirem.
+	
+	\par\vspace{0.3cm} O que definimos em \eqref{configuracao ordenada} foi o conjunto de 
+	configurações \textbf{ordenadas}. Como o nosso propósito é descrever tranças, gostaríamos 
+	de ignorar a ordem e apenas focar no conjunto de partículas, e.g., queremos considerar $(p_1, p_2)$ 
+	como o mesmo que $(p_2, p_1)$ e pensar em ambos apenas como $\{p_1, p_2\}$. Para isso, 
+	definimos a versão não ordenada:
+	%
 	\begin{align}
-	UC_n(\mathbb{R}^2) = \{ \{ p_1, \dots, p_n\}\subset\mathbb{R}^2| p_i\neq p_j \text{ para }i\neq j  \}\label{configuracao nao ordenada}
+	\label{configuracao nao ordenada}
+	    UC_n(\mathbb{R}^2) 
+	    = \{ \{ p_1, \dots, p_n\}\subset\mathbb{R}^2 \ | \ p_i\neq p_j \text{ para }i\neq j \}
 	\end{align} 
-	\par\vspace{0.3cm} ou, em palavras, o conjunto de subconjuntos de $n$ pontos do plano. 
-	\par\vspace{0.3cm} Podemos também denotar $C_n(\mathbb{R}^2)$ por $\mathbb{F}_n(\mathbb{R}^2)$ e $UC_n(\mathbb{R}^2)$ por $\widetilde{\mathbb{F}}_n(\mathbb{R}^2)$, sendo $\sim$ a relação de equivalência cujas classes são os conjuntos de permutações de um dado ponto em $(\mathbb{R}^2)^n$. 
-	\par\vspace{0.3cm} De forma geral, se $\mathbb{M}$ é uma variedade de dimensão maior ou igual a 2, então $\mathbb{F}_n(\mathbb{M})$ denota o subespaço de $\mathbb{M}^{(n)}$ definido por
+	%
+	ou, em palavras, o conjunto de subconjuntos de $n$ pontos do plano. 
+	
+	\par\vspace{0.3cm} Podemos também denotar $C_n(\mathbb{R}^2)$ por $\mathbb{F}_n(\mathbb{R}^2)$ 
+	e $UC_n(\mathbb{R}^2)$ por $\widetilde{\mathbb{F}}_n(\mathbb{R}^2)$, sendo $\sim$ a 
+	relação de equivalência cujas classes são os conjuntos de permutações de um dado 
+	ponto em $(\mathbb{R}^2)^n$.
+	
+	\par\vspace{0.3cm} De forma geral, se $\mathbb{M}$ é uma variedade de dimensão maior ou 
+	igual a 2, então $\mathbb{F}_n(\mathbb{M})$ denota o subespaço de $\mathbb{M}^{(n)}$ 
+	definido por
+	%
 	\begin{align}
-	\mathbb{F}_n(\mathbb{M}) = \{ (x_1, \dots, x_n)\in \mathbb{M}^{(n)} | x_i\neq x_j \text{ para }i\neq j \} 
 	\label{espaco de configuracao de M}
+	    \mathbb{F}_n(\mathbb{M}) 
+	    = \{ (x_1, \dots, x_n)\in \mathbb{M}^{(n)} \ | \ x_i\neq x_j \text{ para }i\neq j \}.
 	\end{align}
-	\par\vspace{0.3cm} Esse subespaço é chamado \textit{espaço de configuração} de $\mathbb{M}$. Sendo $\sim$ a mesma relação de equivalência definida acima, o espaço quociente $^{\displaystyle{\mathbb{F}_n(\mathbb{M})}}/_{\sim}$, que também pode ser denotado por $\widetilde{\mathbb{F}}_n(\mathbb{M})$, é definido por
+	%
+	Esse subespaço é chamado \textit{espaço de configuração} de $\mathbb{M}$. Sendo $\sim$ a mesma 
+	relação de equivalência definida acima, o espaço quociente
+	$^{\displaystyle{\mathbb{F}_n(\mathbb{M})}}/_{\sim}$, que também 
+	pode ser denotado por $\widetilde{\mathbb{F}}_n(\mathbb{M})$, é definido por
+	%
 	\begin{align}
-	\widetilde{\mathbb{F}}_n(\mathbb{M}) = \{ \{ x_1, \dots, x_n\}\subset\mathbb{M}| x_i\neq x_j \text{ para }i\neq j  \}\label{espaco de configuracao nao ordenado de M}
+	\label{espaco de configuracao nao ordenado de M}
+	    \widetilde{\mathbb{F}}_n(\mathbb{M}) 
+	    = \{ \{ x_1, \dots, x_n\}\subset\mathbb{M} \ | \ x_i\neq x_j \text{ para }i\neq j \}.
 	\end{align} 
-	\par\vspace{0.3cm} Pelo modo como definimos $\sim$ acima, podemos ver que $UC_n(\mathbb{R}^2) = \displaystyle{C_n(\mathbb{R}^2)}/\displaystyle{S_n}$. Agora, voltando na Figura \eqref{tranca espaco configuracao}, tanto a parede da esquerda quando a parede da direita representam pontos de $UC_3(\mathbb{R}^2)$. Na verdade, as duas paredes representam o mesmo ponto (mas não o mesmo ponto de $C_3(\mathbb{R}^2)$, pois a configuração final é $(p_2, p_3, p_1)$, sendo $p_1$ o ponto inferior e $p_3$ o ponto superior). 
-	\par\vspace{0.3cm} Além disso, quando deslizamos a parede da esquerda para a direita de forma a criar a trança, em cada instante de tempo temos um ponto de $UC_3(\mathbb{R}^2)$. Isso se deve ao fato de que cada corda é monotônica. Em outras palavras, podemos ver a trança como um \textit{loop} em $UC_3(\mathbb{R}^2)$.
-	\par\vspace{0.3cm} Para fixar, podemos pensar em esquerda-direita como o eixo temporal, e então a trança tridimensional toda é como um filme de três partículas dançando no plano bidimensional (sem colidir) e retornando ao lugar onde começaram.
-	\par\vspace{0.3cm} Equivalentemente, a trança é o gráfico de uma função $[0,1]\to UC_3(\mathbb{R}^2)$, cujos pontos inicial e final concordam. Ou seja, podemos pensar em tranças como \textit{loops} de configurações. De fato, essa é, essencialmente, uma correspondência injetiva.
+	%
+	Pelo modo como definimos $\sim$ acima, podemos ver que 
+	$UC_n(\mathbb{R}^2) = \displaystyle{C_n(\mathbb{R}^2)}/\displaystyle{S_n}$. 
+	Agora, voltando na Figura \ref{tranca espaco configuracao}, tanto a parede da esquerda 
+	quando a parede da direita representam pontos de $UC_3(\mathbb{R}^2)$. Na verdade, 
+	as duas paredes representam o mesmo ponto (mas não o mesmo ponto de $C_3(\mathbb{R}^2)$, 
+	pois a configuração final é $(p_2, p_3, p_1)$, sendo $p_1$ o ponto inferior e $p_3$ o ponto superior).
+	
+	\par\vspace{0.3cm} Além disso, quando deslizamos a parede da esquerda para a direita de forma 
+	a criar a trança, em cada instante de tempo temos um ponto de $UC_3(\mathbb{R}^2)$. Isso se 
+	deve ao fato de que cada corda é monotônica. Em outras palavras, podemos ver a trança como um
+	\textit{loop} em $UC_3(\mathbb{R}^2)$.
+	
+	\par\vspace{0.3cm} Para fixar, podemos pensar em esquerda-direita como o eixo temporal, 
+	e então a trança tridimensional toda é como um filme de três partículas dançando no 
+	plano bidimensional (sem colidir) e retornando ao lugar onde começaram.
+	
+	\par\vspace{0.3cm} Equivalentemente, a trança é o gráfico de uma função 
+	$[0,1]\to UC_3(\mathbb{R}^2)$, cujos pontos inicial e final concordam, ou seja, 
+	podemos pensar em tranças como \textit{loops} de configurações. De fato, essa é, 
+	essencialmente, uma correspondência injetiva.
+	
 	\par\vspace{0.3cm} Antes de prosseguir, definimos (informalmente) o conceito de grupo fundamental.
-	
-	\begin{deff}
-		\label{def informal grupo fundamental}
+	%
+	\begin{definition}
+	\label{def informal grupo fundamental}
 		Dado um espaço topológico $X$ e um ponto $x_0\in X$, o conjunto de loops que começam e terminam em $x_0$ e que são caminhos fechados em $X$ é chamado grupo fundamental de $X$ com ponto base $x_0$ e denotado por $\pi_1(X,x_0)$.
-	\end{deff}
+	\end{definition}
+	%
+	Um detalhe importante é que se $X$ é conexo por caminhos (i.e., dado um par de pontos em $X$, 
+	existe um caminho totalmente contido em $X$ que liga esses dois pontos), então a escolha do 
+	ponto base não faz diferença. Esse é o nosso caso, e então denotaremos o grupo fundamental 
+	de $X$ por $\pi_1(X)$ apenas.
 	
-	\par\vspace{0.3cm} Um detalhe importante é que se $X$ é conexo por caminhos (i.e., dado um par de pontos em $X$, existe um caminho totalmente contido em $X$ que liga esses dois pontos), então a escolha do ponto base não faz diferença. Esse é o nosso caso, e então denotaremos o grupo fundamental de $X$ por $\pi_1(X)$ apenas.
-	\par\vspace{0.3cm} Com a Definição \eqref{def informal grupo fundamental}, podemos enunciar o seguinte teorema.
-	
+	\par\vspace{0.3cm} Com a Definição \ref{def informal grupo fundamental}, podemos enunciar 
+	o seguinte teorema.
+	%
 	\begin{theorem}
-		\label{grupo fundamental de tranca}
-		O grupo fundamental $\pi_1(UC_n(\mathbb{R}^2))$ é isomorfo ao grupo de trança $B_n$, e o grupo fundamental $\pi_1(C_n(\mathbb{R}^2))$ é isomorfo ao grupo de tranças puras $P_n$.
+	\label{grupo fundamental de tranca}
+		O grupo fundamental $\pi_1(UC_n(\mathbb{R}^2))$ é isomorfo ao grupo de trança $B_n$, 
+		e o grupo fundamental $\pi_1(C_n(\mathbb{R}^2))$ é isomorfo ao grupo de tranças puras $P_n$.
 	\end{theorem} 
+	%
+	Da Definição \ref{def informal grupo fundamental}, podemos ver que o grupo fundamental trata 
+	sobre os diferentes \textit{loops} em um espaço topológico. A noção de equivalência de 
+	\textit{loops} (i.e., homotopia, que nada mais é que uma deformação contínua de um caminho 
+	para outro) se traduz diretamente para nossa noção de equivalência de tranças.
 	
-	\par\vspace{0.3cm} Da Definição \eqref{def informal grupo fundamental}, podemos ver que o grupo fundamental trata sobre os diferentes \textit{loops} em um espaço topológico. A noção de equivalência de \textit{loops} (i.e., homotopia, que nada mais é que uma deformação contínua de um caminho para outro) se traduz diretamente para nossa noção de equivalência de tranças.
-	\par\vspace{0.3cm} Portanto, o Teorema \eqref{grupo fundamental de tranca} nos diz não só que tranças podem ser vistas como \textit{loops} em um espaço de configuração, mas também que podemos construir todos os \textit{loops} nesse espaço de configuração dessa maneira.
-	\par\vspace{0.3cm} Além de nos proporcionar um outro modo de pensar em tranças, essa perspectiva topológica é útil tanto para provar coisas sobre tranças quanto para realizar generalizações interessantes. Por exemplo, é possível demonstrar o Teorema \eqref{apresentacao de B_n} usando essas ideias. 
-	\par\vspace{0.3cm} Para outro exemplo, observe que a própria notação, $C_n(\mathbb{R}^2)$ sugere uma generalização óbvia, de substituir $\mathbb{R}^2$ por outros espaços topológicos, como superfícies, grafos ou variedades. Da mesma forma, o conjunto de (classes de equivalência de) \textit{loops} em um espaço de configuração de $n$ partículas em um espaço topológico $X$ é chamado de \textit{grupo de trança associado a $X$}.
-	\par\vspace{0.3cm} Em símbolos, escrevemos $\pi_1(UC_n(X)) = B_n(X)$ e $\pi_1(C_n(X)) = P_n(X)$. Desse modo, os grupos usuais $B_n$ e $P_n$ são, na verdade, $B_n(\mathbb{R}^2)$ e $P_n(\mathbb{R}^2)$.
+	\par\vspace{0.3cm} Portanto, o Teorema \ref{grupo fundamental de tranca} nos diz não só 
+	que tranças podem ser vistas como \textit{loops} em um espaço de configuração, mas também 
+	que podemos construir todos os \textit{loops} nesse espaço de configuração dessa maneira.
+	
+	\par\vspace{0.3cm} Além de nos proporcionar um outro modo de pensar em tranças,
+	essa perspectiva topológica é útil tanto para provar coisas sobre tranças quanto 
+	para realizar generalizações interessantes. Por exemplo, é possível demonstrar o 
+	Teorema \ref{apresentacao de B_n} usando essas ideias. 
+	
+	\par\vspace{0.3cm} Para outro exemplo, observe que a própria notação, 
+	$C_n(\mathbb{R}^2)$ sugere uma generalização óbvia, de substituir $\mathbb{R}^2$ 
+	por outros espaços topológicos, como superfícies, grafos ou variedades. 
+	Da mesma forma, o conjunto de (classes de equivalência de) \textit{loops} em um 
+	espaço de configuração de $n$ partículas em um espaço topológico $X$ é chamado de 
+	\textit{grupo de trança associado a $X$}.
+	
+	\par\vspace{0.3cm} Em símbolos, escrevemos $\pi_1(UC_n(X)) = B_n(X)$ e $\pi_1(C_n(X)) = P_n(X)$. 
+	Desse modo, os grupos usuais $B_n$ e $P_n$ são, na verdade, $B_n(\mathbb{R}^2)$ e $P_n(\mathbb{R}^2)$.
+	
 	\par\vspace{0.3cm} Por exemplo, sendo $X = \mathbb{R}$ e tomando $n=2$, temos que
+	%
 	\begin{align*}
-	UC_2(\mathbb{R}) = \big\{  \{p_1,p_2\}\subset\mathbb{R}|p_1\neq p_2  \big\} \\
-	C_2(\mathbb{R}) = \big\{ (p_1,p_2)\in\mathbb{R}^2|p_1\neq p_2 \big\}
+    	UC_2(\mathbb{R}) = \big\{  \{p_1,p_2\}\subset\mathbb{R} \ | \ p_1\neq p_2  \big\}, \\
+    	C_2(\mathbb{R}) = \big\{ (p_1,p_2)\in\mathbb{R}^2 \ | \ p_1\neq p_2 \big\},
 	\end{align*}
-	\par\vspace{0.3cm} ou seja, os espaços de configuração não ordenado e ordenado, respectivamente, de dois pontos em uma reta. Não é difícil perceber que tanto $C_2(\mathbb{R})$ quanto $UC_2(\mathbb{R})$ possuem 3 componentes conexos e, em geral, $C_n(\mathbb{R})$ e $UC_n(\mathbb{R})$ possuem $n+1$ componentes conexos. Também podemos tomar $X = \mathbb{S}^1$, ou seja, uma circunferência. Nesse caso, $C_n(\mathbb{S}^1)$ e $UC_n(\mathbb{S}^1)$ têm $n$ componentes conexos.
-	\par\vspace{0.3cm} Agora, vamos considerar $X = \mathbb{S}^2$, a esfera em $\mathbb{R}^3$. Nesse caso, $B_n(X) = B_n(\mathbb{S}^2)$ é chamado de \textit{grupo de tranças esféricas}. Uma primeira pergunta natural seria: qual a diferença entre tranças esféricas e ``tranças planares''? Bom, podemos imaginar as paredes dos diagramas das tranças planares como sendo pequenos pedaços de esferas enormes, por exemplo, como mostra a figura \eqref{diagrama tranca esferica}abaixo (na verdade, essa ideia pode ser aplicada a tranças em qualquer superfície, não apenas na esfera).
+	%
+	ou seja, os espaços de configuração não ordenado e ordenado, respectivamente, de dois 
+	pontos em uma reta. Não é difícil perceber que tanto $C_2(\mathbb{R})$ quanto 
+	$UC_2(\mathbb{R})$ possuem 3 componentes conexos e, em geral, $C_n(\mathbb{R})$ e 
+	$UC_n(\mathbb{R})$ possuem $n+1$ componentes conexos. Também podemos tomar $X = \mathbb{S}^1$, 
+	ou seja, uma circunferência. Nesse caso, $C_n(\mathbb{S}^1)$ e $UC_n(\mathbb{S}^1)$ 
+	têm $n$ componentes conexos.
 	
+	\par\vspace{0.3cm} Agora, vamos considerar $X = \mathbb{S}^2$, a esfera em 
+	$\mathbb{R}^3$. Nesse caso, $B_n(X) = B_n(\mathbb{S}^2)$ é chamado de 
+	\textit{grupo de tranças esféricas}. Uma primeira pergunta natural seria: qual a 
+	diferença entre tranças esféricas e ``tranças planares''? Bom, podemos imaginar as 
+	paredes dos diagramas das tranças planares como sendo pequenos pedaços de esferas enormes, 
+	por exemplo, como mostra a Figura \ref{diagrama tranca esferica} 
+	abaixo (na verdade, essa ideia pode ser aplicada a tranças em qualquer superfície, não apenas na esfera).
+	%
 	\begin{figure}[H]
 		\begin{center}
 			\includegraphics[width=12cm]{Images/diagrama_tranca_esferica.png}
 		\end{center}\caption{Diagrama de uma trança esférica}
 		\label{diagrama tranca esferica}
 	\end{figure}
-	\par\vspace{0.3cm} Logo, temos de modo natural a função $f: B_n(\mathbb{R}^2)\to B_n(\mathbb{S}^2)$. Não é muito difícil perceber que podemos obter toda trança esférica a partir de uma trança planar, i.e., que $f$ é sobrejetora. Contudo, $f$ não é injetora.
-	\par\vspace{0.3cm} Isso se deve ao fato de que, para tranças esféricas, as cordas podem ser deformadas de modo a ``darem a volta'', como mostra a figura a seguir. Podemos pensar em $B_n(\mathbb{R}^2)$ como tranças dentro de um cubo, ficando ``presas'' lá dentro e, portanto, impossibilitadas de realizar movimentos como os que estão abaixo.
+	%
+	Logo, temos de modo natural a função $f: B_n(\mathbb{R}^2)\to B_n(\mathbb{S}^2)$. 
+	Não é muito difícil perceber que podemos obter toda trança esférica a partir de 
+	uma trança planar, i.e., que $f$ é sobrejetora. Contudo, $f$ não é injetora.
 	
+	\par\vspace{0.3cm} Isso se deve ao fato de que, para tranças esféricas, as cordas 
+	podem ser deformadas de modo a ``darem a volta'', como mostra a figura a seguir. 
+	Podemos pensar em $B_n(\mathbb{R}^2)$ como tranças dentro de um cubo, ficando ``presas'' 
+	lá dentro e, portanto, impossibilitadas de realizar movimentos como os que estão abaixo.
+	%
 	\begin{figure}[H]
 		\begin{center}
 			\includegraphics[width=10cm]{Images/movimentos_trancas_esfericas.png}
 		\end{center}\caption{Movimentos possíveis para tranças esféricas, mas impossíveis para tranças planares}
 		\label{movimentos trancas esfericas}
 	\end{figure} 
-	
-	\par\vspace{0.3cm} Como os geradores $\sigma_i$ de $B_n(\mathbb{R}^2)$ também são geradores de $B_n(\mathbb{S}^2)$, as relações das tranças planares continuam válidas para as tranças esféricas. Contudo, os novos movimentos mostrados na Figura \eqref{movimentos trancas esfericas} nos dão uma nova relação em $B_n(\mathbb{S}^2)$, a saber
+	%
+	Como os geradores $\sigma_i$ de $B_n(\mathbb{R}^2)$ também são geradores de $B_n(\mathbb{S}^2)$, 
+	as relações das tranças planares continuam válidas para as tranças esféricas. 
+	Contudo, os novos movimentos mostrados na Figura \ref{movimentos trancas esfericas} 
+	nos dão uma nova relação em $B_n(\mathbb{S}^2)$, a saber
+	%
 	\begin{align}
-	\sigma_{i-1}\sigma_{i-2}\cdots\sigma_2\sigma_1^2\sigma_2\sigma_3\cdots\sigma_{n-2}\sigma_{n-1}^2\sigma_{n-2}\sigma_{n-3}\cdots\sigma_i = 1
 	\label{novas relacoes}
+	    \sigma_{i-1}\sigma_{i-2}
+	    \cdots\sigma_2\sigma_1^2\sigma_2\sigma_3
+	    \cdots\sigma_{n-2}\sigma_{n-1}^2\sigma_{n-2}\sigma_{n-3}
+	    \cdots\sigma_i = 1.
 	\end{align}
-	\par\vspace{0.3cm} Contudo, toda relação, para $i=1,2\dots,n-1$, em \eqref{novas relacoes} é consequência da única relação
+	%
+	Contudo, toda relação, para $i=1,2\dots,n-1$, em \eqref{novas relacoes} é consequência da 
+	única relação
+	%
 	\begin{align}
-	(\sigma_1\sigma_2\cdots\sigma_{n-1})(\sigma_{n-1}\sigma_{n-2}\cdots\sigma_1) = 1
 	\label{nova relacao}
+	    (\sigma_1\sigma_2\cdots\sigma_{n-1})(\sigma_{n-1}\sigma_{n-2}\cdots\sigma_1) = 1.
 	\end{align}
-	\par\vspace{0.3cm} De fato, essa relação é dada pelo mesmo movimento que o diagrama (b) da Figura \eqref{movimentos trancas esfericas}, mas com a corda $1$ indo para a direita, como o diagrama abaixo.
+	%
+	De fato, essa relação é dada pelo mesmo movimento que o diagrama (b) da 
+	Figura \ref{movimentos trancas esfericas}, mas com a corda $1$ indo para a direita, 
+	como o diagrama abaixo.
+	%
 	\begin{center}
 		\begin{tikzpicture}
 		\braid[braid colour=black,strands=4,braid start={(0,0)}]	{\sigma_1\sigma_2\sigma_3\sigma_3\sigma_2\sigma_1}
@@ -490,149 +755,291 @@
 		%gama em $B_4(\mathbb{S}^2)$
 		\end{tikzpicture}
 	\end{center}
-	\par\vspace{0.3cm} Portanto, uma apresentação de $B_n(\mathbb{S}^2)$ tem os mesmos geradores e relações que $B_n(\mathbb{R}^2)$, mas com a última relação em \eqref{nova relacao}. De fato, essa é a apresentação completa de $B_n(\mathbb{S}^2)$, conforme o teorema abaixo, que não será demonstrado.
-	
+	%
+	Portanto, uma apresentação de $B_n(\mathbb{S}^2)$ tem os mesmos geradores e relações 
+	que $B_n(\mathbb{R}^2)$, mas com a última relação em \eqref{nova relacao}. 
+	De fato, essa é a apresentação completa de $B_n(\mathbb{S}^2)$, conforme o teorema abaixo, 
+	que não será demonstrado.
+	%
 	\begin{theorem}
-		\label{apresentacao de B_n(S^2)}
-		O grupo de tranças esféricas $B_n(\mathbb{S}^2)$ tem apresentação	
+	\label{apresentacao de B_n(S^2)}
+		O grupo de tranças esféricas $B_n(\mathbb{S}^2)$ tem apresentação
+		%
 		\begin{align*}
-		B_n(\mathbb{S}^2) = \langle \sigma_1, \sigma_2, \dots, \sigma_{n-1}|&\sigma_i\sigma_j = \sigma_j\sigma_i, \text{ para } |i - j|>1, \\ 
-		&\sigma_i\sigma_{i+1}\sigma_i = \sigma_{i+1}\sigma_i\sigma_{i+1}, \text{ para } 1\leq i\leq n-2 , \\
-		&\sigma_1\sigma_2\cdots\sigma_{n-2}\sigma_{n-1}^2\sigma_{n-2}\cdots\sigma_2\sigma_1 = 1  \rangle.
-		\end{align*} 
+    		B_n(\mathbb{S}^2) 
+    		= \langle \sigma_1, \sigma_2, \dots, \sigma_{n-1}|&\sigma_i\sigma_j 
+    		= \sigma_j\sigma_i, \text{ para } |i - j|>1, \\ 
+    		&\sigma_i\sigma_{i+1}\sigma_i 
+    		= \sigma_{i+1}\sigma_i\sigma_{i+1}, \text{ para } 1\leq i\leq n-2 , \\
+    		&\sigma_1\sigma_2\cdots\sigma_{n-2}\sigma_{n-1}^2\sigma_{n-2}\cdots\sigma_2\sigma_1 = 1 \rangle.
+		\end{align*}
+		%
 	\end{theorem}  
+	%
+	Então, voltando à nossa função $f$: ela não é injetora, pois a trança em \eqref{nova relacao} 
+	pertence ao núcleo de $f$, ou seja, $\Ker f$ não é trivial. Outra trança que pertence ao núcleo 
+	de $f$ é $\displaystyle{(\Delta_n^2)^2}$, o quadrado da volta completa, que tem ordem 
+	$2$ em $B_n(\mathbb{S}^2)$.
 	
-	\par\vspace{0.3cm} Então, voltando à nossa função $f$: ela não é injetora, pois a trança em \eqref{nova relacao} pertence ao núcleo de $f$, ou seja, $\Ker f$ não é trivial. Outra trança que pertence ao núcleo de $f$ é $\displaystyle{(\Delta_n^2)^2}$, o quadrado da volta completa, que tem ordem $2$ em $B_n(\mathbb{S}^2)$.
 	\par\vspace{0.3cm} Na verdade, esse fato pode ser generalizado no seguinte lema.
-	
+	%
 	\begin{lemma}
-		\label{potencia da volta completa trivial}
-		Para todo $n> 2$, a trança de Dirac $\delta = (\sigma_1\sigma_2\cdots\sigma_{n-1})^{kn} = (\Delta_n^2)^k$ é trivial em $B_n(\mathbb{S}^2)$ se, e só se, $k$ é par. 
+	\label{potencia da volta completa trivial}
+		Para todo $n> 2$, a trança de Dirac 
+		$\delta = (\sigma_1\sigma_2\cdots\sigma_{n-1})^{kn} = (\Delta_n^2)^k$ 
+		é trivial em $B_n(\mathbb{S}^2)$ se, e só se, $k$ é par. 
 	\end{lemma}
-	
+	%
 	\begin{proof}
-		Já sabemos que $(\Delta_n^2)^2 = 1$ em $B_n(\mathbb{S}^2)$. Então, se $k$ é par, podemos escrever $k=2j$ e segue que $(\Delta_n^2)^k = [(\Delta_n^2)^2]^j = 1^j = 1$. Por outro lado, como $|\Delta_n^2| = 2$ em $B_n(\mathbb{S}^2)$, então $(\Delta_n^2)^k = 1$ implica que $2|k$, i.e, $k$ par.
+		Já sabemos que $(\Delta_n^2)^2 = 1$ em $B_n(\mathbb{S}^2)$. Então, se $k$ é par, 
+		podemos escrever $k=2j$ e segue que $(\Delta_n^2)^k = [(\Delta_n^2)^2]^j = 1^j = 1$. 
+		Por outro lado, como $|\Delta_n^2| = 2$ em $B_n(\mathbb{S}^2)$, então $(\Delta_n^2)^k = 1$ 
+		implica que $2\mid k$, i.e, $k$ par.
 	\end{proof}
-	\par\vspace{0.3cm} Do Teorema \eqref{apresentacao de B_n(S^2)}, podemos obter alguns fatos interessantes sobre o grupo de tranças esféricas. Por exemplo, $B_2(\mathbb{S}^2) = \langle \sigma_1|\sigma_1^2=1 \rangle$, ou seja, $B_2(\mathbb{S}^2)$ é um grupo finito de ordem $2$ com um gerador: $\mathbb{Z}_2$. Além disso, também podemos definir o homomorfismo de comprimento que definimos para as tranças planares, mas com uma pequena alteração.
-	
+	%
+	Do Teorema \ref{apresentacao de B_n(S^2)}, podemos obter alguns fatos interessantes sobre 
+	o grupo de tranças esféricas. Por exemplo, 
+	$B_2(\mathbb{S}^2) = \langle \sigma_1 \ | \ \sigma_1^2=1 \rangle$, ou seja, $B_2(\mathbb{S}^2)$ 
+	é um grupo finito de ordem $2$ com um gerador: $\mathbb{Z}_2$. Além disso, também podemos definir 
+	o homomorfismo de comprimento que definimos para as tranças planares, mas com uma pequena alteração.
+	%
 	\begin{prop}
-		\label{homomorfismo de comprimento em trancas esfericas}
-		Seja $\beta\in B_n(\mathbb{S}^2)$. Tomando $\beta = \sigma_{i_1}^{\varepsilon_1}\cdots\sigma_{i_k}^{\varepsilon_k}$, sendo $\varepsilon_i = \pm1$ para $i=1,2,\dots,k$, então podemos definir a função $l$, chamada \textit{homomorfismo de comprimento}, de $B_n(\mathbb{S}^2)$ em $\mathbb{Z}$ como	
+	\label{homomorfismo de comprimento em trancas esfericas}
+		Seja $\beta\in B_n(\mathbb{S}^2)$. 
+		Tomando $\beta = \sigma_{i_1}^{\varepsilon_1}\cdots\sigma_{i_k}^{\varepsilon_k}$, 
+		sendo $\varepsilon_i = \pm1$ para $i=1,2,\dots,k$, então podemos definir a função $l$, 
+		chamada \textit{homomorfismo de comprimento}, de $B_n(\mathbb{S}^2)$ em $\mathbb{Z}$ como	
+		%
 		\begin{align*}
-		l(\beta) = \sum_{i=1}^{k}\varepsilon_i\text{ }\mathrm{mod}(2(n-1))
+		    l(\beta) = \sum_{i=1}^{k}\varepsilon_i\text{ }\mathrm{mod}(2(n-1)),
 		\end{align*}
-		\par\vspace{0.3cm} ou seja, a soma dos expoentes módulo $2(n-1)$. Então, $l$ é invariante em $B_n(\mathbb{S}^2)$, i.e., se $\beta = \beta'$ em $B_n(\mathbb{S}^2)$, então $l(\beta) = l(\beta')\text{ }\mathrm{mod}(2(n-1))$.
+		%
+		ou seja, a soma dos expoentes módulo $2(n-1)$. Então, $l$ é invariante 
+		em $B_n(\mathbb{S}^2)$, i.e., se $\beta = \beta'$ em $B_n(\mathbb{S}^2)$, 
+		então $l(\beta) = l(\beta')\text{ }\mathrm{mod}(2(n-1))$.
 	\end{prop}
-	
+	%
 	\begin{proof}
-		Do Teorema \eqref{apresentacao de B_n(S^2)}, sabemos todas as relações de $B_n(\mathbb{S}^2)$. Para as duas primeiras, $l(\beta)$ é constante para cada uma dessas relações. Contudo, para a terceira relação, $l(\beta)$ difere por um fator de $\pm2(n-1)$ para os dois lados da relação. Como $l(1) = 0$ e $l$ está bem definida (demonstração análoga à do Lema \eqref{homomorfismo de comprimento}), devemos ter a igualdade módulo $2(n-1)$.
+		Do Teorema \ref{apresentacao de B_n(S^2)}, sabemos todas as relações de $B_n(\mathbb{S}^2)$. 
+		Para as duas primeiras, $l(\beta)$ é constante para cada uma dessas relações. 
+		Contudo, para a terceira relação, $l(\beta)$ difere por um fator de $\pm2(n-1)$ para os 
+		dois lados da relação. Como $l(1) = 0$ e $l$ está bem definida (demonstração análoga à 
+		do Lema \ref{homomorfismo de comprimento}), devemos ter a igualdade módulo $2(n-1)$.
 	\end{proof}
+	%
+	\begin{example}
+    	Como $l((\sigma_1\sigma_2)^3) = 6\neq 0\text{ }\mathrm{mod}4$ e $l(1) = 0$, 
+    	então, em $B_3(\mathbb{S}^2)$, $(\sigma_1\sigma_2)^3\neq 1$.
+    \end{example}
+    %
+    \begin{example}
+    	Temos $\sigma_1^4=1$ em $B_3(\mathbb{S}^2)$, mas $\sigma_1^4\neq1$ em $B_4(\mathbb{S}^2)$. 
+    	Esse exemplo nos mostra uma diferença notável entre $B_n(\mathbb{R}^2)$ e $B_n(\mathbb{S}^2)$, 
+    	pois se $\beta$ é trivial em $B_m(\mathbb{R}^2)$ e $m\leq n$, então $\beta$ também 
+    	é trivial em $B_n(\mathbb{R}^2)$, enquanto que para $B_m(\mathbb{S}^2)$ e $B_n(\mathbb{S}^2)$ 
+    	isso, em geral, não é verdade.
+	\end{example}
+	%
+	Note também que a recíproca da Proposição \ref{homomorfismo de comprimento em trancas esfericas} 
+	é falsa. Por exemplo, $\sigma_1^6\neq1$ em $B_4(\mathbb{S}^2)$ mas 
+	$l((\sigma_1)^6) = 0\text{ }\mathrm{mod}6 = l(1)$.
 	
-	\par\vspace{0.3cm} Por exemplo, como $l((\sigma_1\sigma_2)^3) = 6\neq 0\text{ }\mathrm{mod}4$ e $l(1) = 0$, então, em $B_3(\mathbb{S}^2)$, $(\sigma_1\sigma_2)^3\neq 1$. Outro exemplo: $\sigma_1^4=1$ em $B_3(\mathbb{S}^2)$, mas $\sigma_1^4\neq1$ em $B_4(\mathbb{S}^2)$. Esse exemplo nos mostra uma diferença notável entre $B_n(\mathbb{R}^2)$ e $B_n(\mathbb{S}^2)$, pois se $\beta$ é trivial em $B_m(\mathbb{R}^2)$ e $m\leq n$, então $\beta$ também é trivial em $B_n(\mathbb{R}^2)$, enquanto que para $B_m(\mathbb{S}^2)$ e $B_n(\mathbb{S}^2)$ isso, em geral, não é verdade.
-	\par\vspace{0.3cm} Note também que a recíproca da Proposição \eqref{homomorfismo de comprimento em trancas esfericas} é falsa. Por exemplo, $\sigma_1^6\neq1$ em $B_4(\mathbb{S}^2)$ mas $l((\sigma_1)^6) = 0\text{ }\mathrm{mod}6 = l(1)$.
-	\par\vspace{0.3cm} A apresentação no Teorema \eqref{apresentacao de B_n(S^2)} tem também uma interessante consequência, enunciada no Lema \eqref{B_3(S^2) tem ordem 12}. Antes, contudo, introduziremos um pequeno conceito, as \textit{transformações de Tietze}.
+	\par\vspace{0.3cm} A apresentação no Teorema \ref{apresentacao de B_n(S^2)} tem também 
+	uma interessante consequência, enunciada no Lema \ref{B_3(S^2) tem ordem 12}. 
+	Antes, contudo, introduziremos um pequeno conceito, as \textit{transformações de Tietze}.
+	%
 	\subsubsection{Transformações de Tietze}
-	\hspace{12pt} Dada uma apresentação de um grupo $G$, temos os seguintes movimentos:
+	Dada uma apresentação de um grupo $G$, temos os seguintes movimentos:
+	%
 	\begin{enumerate}
-		\item se uma relação pode ser deduzida a partir das relações existentes, então podemos adicionar essa nova relação à apresentação. Por exemplo, se $G = \langle x|x^3=1 \rangle$, obtemos a relação $x^6 = 1$ a partir de $x^3=1$. Logo, podemos escrever $G = \langle x|x^3=1,x^6=1 \rangle$.
-		\item Reciprocamente, se uma relação da apresentação pode ser deduzida a partir das outras, então podemos removê-la. Em $G = \langle x|x^3=1,x^6=1 \rangle$, a relação $x^6=1$ pode ser deduzida de $x^3=1$ e, portanto, pode ser removida da apresentação. Contudo, note que não podemos remover $x^3=1$, pois teríamos outro grupo.
-		\item Podemos adicionar um gerador escrito como uma palavra nos geradores originais. Começando com $G = \langle x|x^3=1 \rangle$ e fazendo $y=x^2$, a nova apresentação $G = \langle x,y|x^3=1,y=x^2 \rangle$ define o mesmo grupo.
-		\item De modo semelhante, se podemos formar uma relação em que um dos geradores é uma palavra nos outros geradores, então esse gerador pode ser removido. Por exemplo, a apresentação do grupo abeliano de ordem $4$, $G = \langle x,y,z|x=yz, y^2=1, z^2=1, x=x^{-1} \rangle$ pode ser substituído por $G = \langle y,z|y^2=1,z^2=1,(yz)=(yz)^{-1} \rangle$.
+		\item se uma relação pode ser deduzida a partir das relações existentes, 
+		então podemos adicionar essa nova relação à apresentação. Por exemplo, 
+		se $G = \langle x \ | \ x^3=1 \rangle$, obtemos a relação $x^6 = 1$ a partir de $x^3=1$. 
+		Logo, podemos escrever $G = \langle x \ | \ x^3=1,x^6=1 \rangle$.
+		
+		\item Reciprocamente, se uma relação da apresentação pode ser deduzida a partir das outras, 
+		então podemos removê-la. Em $G = \langle x \ | \ x^3=1,x^6=1 \rangle$, a relação $x^6=1$ pode ser 
+		deduzida de $x^3=1$ e, portanto, pode ser removida da apresentação. Contudo, note que 
+		não podemos remover $x^3=1$, pois teríamos outro grupo.
+		
+		\item Podemos adicionar um gerador escrito como uma palavra nos geradores originais. 
+		Começando com $G = \langle x \ | \ x^3=1 \rangle$ e fazendo $y=x^2$, a nova apresentação 
+		$G = \langle x,y \ | \ x^3=1,y=x^2 \rangle$ define o mesmo grupo.
+		
+		\item De modo semelhante, se podemos formar uma relação em que um dos geradores é uma 
+		palavra nos outros geradores, então esse gerador pode ser removido. Por exemplo, a 
+		apresentação do grupo abeliano de ordem $4$, 
+		$G = \langle x,y,z \ | \ x=yz, y^2=1, z^2=1, x=x^{-1} \rangle$ 
+		pode ser substituído por $G = \langle y,z \ | \ y^2=1,z^2=1,(yz)=(yz)^{-1} \rangle$.
 	\end{enumerate}
-	
-	\par\vspace{0.3cm} Usaremos essas transformações para demonstrar o seguinte lema.
-	
+	%
+	Usaremos essas transformações para demonstrar o seguinte lema.
+	%
 	\begin{lemma}
-		\label{B_3(S^2) tem ordem 12}
-		$B_3(\mathbb{S}^2)$ tem apresentação $\langle a,b|b^6=1,a^2=b^3=(ab)^2 \rangle$, sendo, portanto, isomorfo a $Q_6$, o grupo dicíclico de ordem $12$. 
+	\label{B_3(S^2) tem ordem 12}
+		$B_3(\mathbb{S}^2)$ tem apresentação $\langle a,b \ | \ b^6=1,a^2=b^3=(ab)^2 \rangle$, 
+		sendo, portanto, isomorfo a $Q_6$, o grupo dicíclico de ordem $12$. 
 	\end{lemma} 
-	
+	%
 	\begin{proof}
-		Sabemos, do Teorema \eqref{apresentacao de B_n(S^2)}, que $B_3(\mathbb{S}^2) = \langle \sigma_1,\sigma_2 | \sigma_1\sigma_2\sigma_1 = \sigma_2\sigma_1\sigma_2\text{, } \sigma_1\sigma_2^2\sigma_1 = 1\rangle$. Fazendo $a = \sigma_1\sigma_2\sigma_1$ e $b = \sigma_1\sigma_2$, temos:
-		
+		Sabemos, do Teorema \ref{apresentacao de B_n(S^2)}, que
+		%
+		\[
+		B_3(\mathbb{S}^2) 
+		= \langle \sigma_1,\sigma_2 \ | \ \sigma_1\sigma_2\sigma_1 
+		= \sigma_2\sigma_1\sigma_2\text{, } \sigma_1\sigma_2^2\sigma_1 
+		= 1\rangle.
+		\]
+		%
+		Fazendo $a = \sigma_1\sigma_2\sigma_1$ e $b = \sigma_1\sigma_2$, temos:
+		%
 		\begin{align*}
-		a^2 = \sigma_1\sigma_2\sigma_1\sigma_1\sigma_2\sigma_1 = \sigma_1\sigma_2\sigma_1\sigma_2\sigma_1\sigma_2 = (\sigma_1\sigma_2)^3 = b^3 \\
-		(ab)^2 = \sigma_1\sigma_2\sigma_1\sigma_1\sigma_2\sigma_1\sigma_2\sigma_1\sigma_1\sigma_2 =  \sigma_1\sigma_2\sigma_1\sigma_2\underbrace{\sigma_1\sigma_2\sigma_2\sigma_1}_{1}\sigma_1\sigma_2 = (\sigma_1\sigma_2)^3 = b^3 \\
-		b^6 = \sigma_1\sigma_2\sigma_1\sigma_2\sigma_1\sigma_2\sigma_1\sigma_2\sigma_1\sigma_2 = \underbrace{\sigma_1\sigma_2\sigma_2\sigma_1}_{1}\sigma_2\sigma_2\underbrace{\sigma_1\sigma_2\sigma_2\sigma_1}_{1}\sigma_2\sigma_2 = \sigma_2^4 
+    		a^2 
+    		= \sigma_1\sigma_2\sigma_1\sigma_1\sigma_2\sigma_1 
+    		= \sigma_1\sigma_2\sigma_1\sigma_2\sigma_1\sigma_2 
+    		= (\sigma_1\sigma_2)^3 
+    		= b^3, \\
+    		(ab)^2 
+    		= \sigma_1\sigma_2\sigma_1\sigma_1\sigma_2\sigma_1\sigma_2\sigma_1\sigma_1\sigma_2 
+    		= \sigma_1\sigma_2\sigma_1\sigma_2
+    		\underbrace{\sigma_1\sigma_2\sigma_2\sigma_1}_{1}\sigma_1\sigma_2 
+    		= (\sigma_1\sigma_2)^3 
+    		= b^3, \\
+    		b^6 
+    		= \sigma_1\sigma_2\sigma_1\sigma_2\sigma_1\sigma_2\sigma_1\sigma_2\sigma_1\sigma_2 
+    		= \underbrace{\sigma_1\sigma_2\sigma_2\sigma_1}_{1}\sigma_2\sigma_2
+    		\underbrace{\sigma_1\sigma_2\sigma_2\sigma_1}_{1}\sigma_2\sigma_2 
+    		= \sigma_2^4.
 		\end{align*}
+		%
+		Vamos mostrar que tanto $\sigma_1$ quanto $\sigma_2$ têm ordem 4. Então, 
+		seja $N$ o fecho normal de $a^2$, i.e., $N = \{1,a\}$. 
+		Daí, $N\vartriangleleft B_3(\mathbb{S}^2)$ e, portanto, o grupo quociente 
+		$B_3(\mathbb{S}^2)/N$ tem apresentação $\langle a,b|a^2=b^3=(ab)^2=1 \rangle$, 
+		que é a apresentação de $S_3$, o grupo simétrico em $3$ elementos. Logo, 
+		$|B_3(\mathbb{S}^2)| = |N|\cdot|S_3| = 12$.
 		
-		\par\vspace{0.3cm} Vamos mostrar que tanto $\sigma_1$ quanto $\sigma_2$ têm ordem 4. Então, seja $N$ o fecho normal de $a^2$, i.e., $N = \{1,a\}$. Daí, $N\vartriangleleft B_3(\mathbb{S}^2)$ e, portanto, o grupo quociente $B_3(\mathbb{S}^2)/N$ tem apresentação $\langle a,b|a^2=b^3=(ab)^2=1 \rangle$, que é a apresentação de $S_3$, o grupo simétrico em $3$ elementos. Logo, $|B_3(\mathbb{S}^2)| = |N||S_3| = 12$.
 		\par\vspace{0.3cm} Por fim, note que $(ab)^2 = a^2$ implica $a = b^{-1}ab^{-1}$, logo
+		%
 		\begin{align*}
-		\sigma_1^4 = (b^{-1}a)^4 = (b^{-1}ab^{-1})a(b^{-1}ab^{-1})a = a^4 = 1\text{ (observe o diagrama abaixo)}
+		    \sigma_1^4 = (b^{-1}a)^4 = (b^{-1}ab^{-1})a(b^{-1}ab^{-1})a = a^4 = 1.
 		\end{align*}  
-		
+		%
+		Observe o diagrama abaixo.
+		%
 		\begin{figure}[H]
 			\begin{center}
 				\includegraphics[width=12cm]{Images/manipulacao_de_a4.png}
 			\end{center}\caption{$a^4 = 1$ em $B_3(\mathbb{S}^2)$}
 		\end{figure}
+		%
+		Como $\sigma_1\neq 1$ e $\sigma_1^2\neq 1$, então, pela 
+		Proposição \ref{homomorfismo de comprimento em trancas esfericas}, $|\sigma_1| = 4$.
 		
-		\par\vspace{0.3cm} Como $\sigma_1\neq 1$ e $\sigma_1^2\neq 1$, então, pela Proposição \eqref{homomorfismo de comprimento em trancas esfericas}, $|\sigma_1| = 4$.
 		\par\vspace{0.3cm} Similarmente, $(ab)^2 = a^2$ implica $bab=a$ e também $ba=a^{-1}b^2$, logo
+		%
 		\begin{align*}
-		\sigma_2^4 = (a^{-1}b^2)^4 = (ba)^4 = (bab)a(bab)a = a^4 = 1
+		    \sigma_2^4 = (a^{-1}b^2)^4 = (ba)^4 = (bab)a(bab)a = a^4 = 1.
 		\end{align*}
-		\par\vspace{0.3cm} Como $\sigma_2\neq1$ e $\sigma_2^2\neq1$ então, da Proposição \eqref{homomorfismo de comprimento em trancas esfericas}, temos $|\sigma_2|=4$. 
-		\par\vspace{0.3cm} Além disso, como $a^4 = 1$, temos $b^6=1$.
-		\par\vspace{0.3cm} Por fim, da tabela \eqref{tabela grupos}, vemos que $B_3(\mathbb{S}^2)\cong Q_6$, o grupo dicíclico de ordem 12.
+		%
+		Como $\sigma_2\neq1$ e $\sigma_2^2\neq1$ então, da 
+		Proposição \ref{homomorfismo de comprimento em trancas esfericas}, temos $|\sigma_2|=4$.
+		Além disso, como $a^4 = 1$, temos $b^6=1$.
+		Por fim, da Tabela \ref{tabela grupos}, vemos que $B_3(\mathbb{S}^2)\cong Q_6$, 
+		o grupo dicíclico de ordem 12.
 	\end{proof}
-	
-	\par\vspace{0.3cm} Do Lema \eqref{B_3(S^2) tem ordem 12}, podemos listar os elementos de $B_3(\mathbb{S}^2)$:
+	%
+	Do Lema \ref{B_3(S^2) tem ordem 12}, podemos listar os elementos de $B_3(\mathbb{S}^2)$:
+	%
 	\begin{align*}
-	B_3(\mathbb{S}^2) = \left\{ 1, a, a^2, a^3, b, b^2, b^4, b^5, ab, ab^2, ab^4, ab^5 \right\}
+	    B_3(\mathbb{S}^2) = \left\{ 1, a, a^2, a^3, b, b^2, b^4, b^5, ab, ab^2, ab^4, ab^5 \right\}.
 	\end{align*}
-	\par\vspace{0.3cm} Podemos ainda escrever esse elementos em termos dos geradores $\sigma_1$ e $\sigma_2$. Com algumas simplificações, obtemos:
+	%
+	Podemos ainda escrever esse elementos em termos dos geradores $\sigma_1$ e $\sigma_2$. 
+	Com algumas simplificações, obtemos:
+	%
 	\begin{align*}
-	B_3(\mathbb{S}^2) = \left\{ 1, \sigma_1\sigma_2\sigma_1, (\sigma_1\sigma_2\sigma_1)^2, (\sigma_1\sigma_2\sigma_1)^3, \sigma_1\sigma_2, (\sigma_1\sigma_2)^2, \sigma_1^3\sigma_2, \sigma_2\sigma_1, \sigma_1, \sigma_2^3, \sigma_2\sigma_1^3\sigma_2, \sigma_1^3 \right\}
+    	B_3(\mathbb{S}^2) 
+    	= \left\{ 1, \sigma_1\sigma_2\sigma_1, (\sigma_1\sigma_2\sigma_1)^2, 
+    	(\sigma_1\sigma_2\sigma_1)^3, \sigma_1\sigma_2, (\sigma_1\sigma_2)^2, \sigma_1^3\sigma_2,
+    	\sigma_2\sigma_1, \sigma_1, \sigma_2^3, \sigma_2\sigma_1^3\sigma_2, \sigma_1^3 \right \}.
 	\end{align*}
-	\par\vspace{0.3cm} Fazendo os diagramas, vemos que apenas $1$ e $(\sigma_1\sigma_2\sigma_1)^2 = a^2 = b^3$ são tranças puras. Além disso, como $a^4 = 1 = b^6$, concluímos que $P_3(\mathbb{S}^2) = \langle a^2 \rangle = \langle b^3 \rangle$.
+	%
+	Fazendo os diagramas, vemos que apenas $1$ e $(\sigma_1\sigma_2\sigma_1)^2 = a^2 = b^3$ 
+	são tranças puras. Além disso, como $a^4 = 1 = b^6$, concluímos que 
+	$P_3(\mathbb{S}^2) = \langle a^2 \rangle = \langle b^3 \rangle$.
 	
 	\par\vspace{0.3cm} Agora, vamos considerar $B_4(\mathbb{S}^2)$, que tem apresentação
+	%
 	\begin{align*}
-	B_4(\mathbb{S}^2) = \langle \sigma_1, \sigma_2, \sigma_3| &\sigma_1\sigma_2\sigma_1 = \sigma_2\sigma_1\sigma_2 \\ &\sigma_2\sigma_3\sigma_2 = \sigma_3\sigma_2\sigma_3 \\
-	&\sigma_1\sigma_3 = \sigma_3\sigma_1\\
-	&\sigma_1\sigma_2\sigma_3^2\sigma_2\sigma_1 = 1\rangle
+	    B_4(\mathbb{S}^2) 
+	    = \langle \sigma_1, \sigma_2, \sigma_3| &\sigma_1\sigma_2\sigma_1 
+	    = \sigma_2\sigma_1\sigma_2 \\ 
+	    &\sigma_2\sigma_3\sigma_2 
+	    = \sigma_3\sigma_2\sigma_3 \\
+    	&\sigma_1\sigma_3 = \sigma_3\sigma_1 \\
+    	&\sigma_1\sigma_2\sigma_3^2\sigma_2\sigma_1 = 1\rangle.
 	\end{align*}
-	
-	\par\vspace{0.3cm} Seja $N$ o fecho normal de $\sigma_1\sigma_3^{-1}$. Então, a apresentação do grupo quociente $G = B_4(\mathbb{S}^2)/N$, é obtida de $B_4(\mathbb{S}^2)$ adicionando a relação $\sigma_1\sigma_3^{-1} = 1$ ou, equivalentemente, $\sigma_1=\sigma_3$. O efeito dessa relação extra é reduzir o número de relações para duas, a saber
+	%
+	Seja $N$ o fecho normal de $\sigma_1\sigma_3^{-1}$. Então, a apresentação do grupo quociente 
+	$G = B_4(\mathbb{S}^2)/N$, é obtida de $B_4(\mathbb{S}^2)$ adicionando a relação 
+	$\sigma_1\sigma_3^{-1} = 1$ ou, equivalentemente, $\sigma_1=\sigma_3$. 
+	O efeito dessa relação extra é reduzir o número de relações para duas, a saber
+	%
 	\begin{center}
 		\begin{tabular}{ccc}
-			$\sigma_1\sigma_2\sigma_1 = \sigma_2\sigma_1\sigma_2$ & e & $\sigma_1\sigma_2\sigma_1^2\sigma_2\sigma_1 = 1$ \\
+			$\sigma_1\sigma_2\sigma_1 = \sigma_2\sigma_1\sigma_2$ & e & $\sigma_1\sigma_2\sigma_1^2\sigma_2\sigma_1 = 1$.
 		\end{tabular}
 	\end{center}
-	
-	\par\vspace{0.3cm} A última relação pode ser manipulada como a seguir:
+	%
+	A última relação pode ser manipulada como segue:
+	%
 	\begin{align*}
-	1 &= \sigma_1\sigma_2\sigma_1\sigma_1\sigma_2\sigma_1 \\
-	&= \sigma_1\sigma_2\sigma_1\sigma_2\sigma_1\sigma_2 \\ 
-	&= (\sigma_1\sigma_2)^3  
+    	1 &= \sigma_1\sigma_2\sigma_1\sigma_1\sigma_2\sigma_1 \\
+    	&= \sigma_1\sigma_2\sigma_1\sigma_2\sigma_1\sigma_2 \\ 
+    	&= (\sigma_1\sigma_2)^3
 	\end{align*}
-	\par\vspace{0.3cm} Portanto, $G = \langle \sigma_1, \sigma_2| \sigma_1\sigma_2\sigma_1=\sigma_2\sigma_1\sigma_2\text{, } (\sigma_1\sigma_2)^3=1 \rangle$. Como antes, tome $a = \sigma_1\sigma_2\sigma_1$ e $b = \sigma_1\sigma_2$. Como $\sigma_1 = b^{-1}a$ e $\sigma_2 = a^{-1}b^2$, as relações de $G$ se tornam $a^2 = b^3$ e $b^3 = 1$, logo $G = \langle a,b|a^2=b^3=1 \rangle$. Vamos mostrar que $G$ é infinito, usando o seguinte lema, que será aceito sem demonstração.
-	
+	%
+	Portanto, 
+	$G = \langle \sigma_1, \sigma_2 \ | \ \sigma_1\sigma_2\sigma_1 = \sigma_2\sigma_1\sigma_2\text{, }
+	(\sigma_1\sigma_2)^3 = 1 \rangle$. Como antes, tome 
+	$a = \sigma_1\sigma_2\sigma_1$ e $b = \sigma_1\sigma_2$. Como $\sigma_1 = b^{-1}a$ 
+	e $\sigma_2 = a^{-1}b^2$, as relações de $G$ se tornam $a^2 = b^3$ e $b^3 = 1$, logo 
+	$G = \langle a,b \ | \ a^2=b^3=1 \rangle$. 
+	Vamos mostrar que $G$ é infinito, usando o seguinte lema, que será aceito sem demonstração.
+	%
 	\begin{lemma}
-		\label{grupo triangular}
-		O grupo triangular, ou grupo de Dyck, $T(l,m,n) = \langle a,b|a^l=b^m=(ab)^n=1 \rangle$ é finito se, e só se, $\displaystyle{\frac{1}{l} + \frac{1}{m} + \frac{1}{n} - 1 > 0}$.
+	\label{grupo triangular}
+		O grupo triangular, ou grupo de Dyck, $T(l,m,n) = \langle a,b \ | \ a^l=b^m=(ab)^n=1 \rangle$ 
+		é finito se, e só se, $\displaystyle{\frac{1}{l} + \frac{1}{m} + \frac{1}{n} - 1 > 0}$.
 	\end{lemma}
-	
-	
+	%
 	\begin{prop}
-		\label{quociente de B4(S2) infinito}
-		$G = \langle a,b|a^2=b^3=1 \rangle$ é infinito e, consequentemente, $B_4(\mathbb{S}^2)$ é infinito.
+	\label{quociente de B4(S2) infinito}
+		$G = \langle a,b \ | \ a^2=b^3=1 \rangle$ é infinito e, consequentemente, 
+		$B_4(\mathbb{S}^2)$ é infinito.
 	\end{prop}
-	
+	%
 	\begin{proof}
-		Seja $\widehat{G} = \langle a,b|a^2=b^3=(ab)^7=1 \rangle$. Note que $\widehat{G}$ é um grupo quociente de $G$ e, além disso, $\widehat{G} = T(2,3,7)$. Do Lema \eqref{grupo triangular}, temos $\widehat{G}$ infinito, pois $\displaystyle{\frac{1}{2} + \frac{1}{3} + \frac{1}{7} - 1 < 0}$. Logo, como $\widehat{G}$ é um grupo quociente de $G$, então $G$ também é infinito, pois se todo grupo finito com apresentação finita tem, no máximo, tantos geradores quanto relações. Por fim, como $G$ é um grupo quociente de $B_4(\mathbb{S}^2)$, temos $B_4(\mathbb{S}^2)$ infinito, também pelo mesmo fato citado acima sobre grupos finitos e finitamente apresentados. Observe que o número $7$ não tem nada de especial: poderíamos tomar qualquer $k\geq 7$.
+		Seja $\widehat{G} = \langle a,b|a^2=b^3=(ab)^7=1 \rangle$. Note que $\widehat{G}$ 
+		é um grupo quociente de $G$ e, além disso, $\widehat{G} = T(2,3,7)$. 
+		Do Lema \ref{grupo triangular}, temos $\widehat{G}$ infinito, pois 
+		$\displaystyle{\frac{1}{2} + \frac{1}{3} + \frac{1}{7} - 1 < 0}$. Logo, como 
+		$\widehat{G}$ é um grupo quociente de $G$, então $G$ também é infinito, pois se todo 
+		grupo finito com apresentação finita tem, no máximo, tantos geradores quanto relações. 
+		Por fim, como $G$ é um grupo quociente de $B_4(\mathbb{S}^2)$, temos $B_4(\mathbb{S}^2)$ 
+		infinito, também pelo mesmo fato citado acima sobre grupos finitos e finitamente apresentados.
+		Observe que o número $7$ não tem nada de especial: poderíamos tomar qualquer $k\geq 7$.
 	\end{proof}
-	
-	\par\vspace{0.3cm} Podemos, ainda, generalizar esse fato no seguinte lema, que não será demonstrado.
-	
+	%
+	Podemos, ainda, generalizar esse fato no seguinte lema, que não será demonstrado.
+	%
 	\begin{lemma}
-		\label{grupo de trancas esfericas infinitos}
+	\label{grupo de trancas esfericas infinitos}
 		$|B_n(\mathbb{S}^2)| = \infty$ para todo $n\geq 4$.
 	\end{lemma}
-	
-	\par\vspace{0.3cm} Observando o Lema \eqref{grupo de trancas esfericas infinitos}, a distinção mais simples que podemos fazer entre $B_n(\mathbb{R}^2)$ e $B_n(\mathbb{S}^2)$ é que $B_n(\mathbb{R}^2)$ é finito apenas para $n=1$, enquanto que $B_n(\mathbb{S}^2)$ é finito para $n=1,2$ e $3$.
+	%
+	Observando o Lema \eqref{grupo de trancas esfericas infinitos}, a distinção mais simples que podemos fazer entre $B_n(\mathbb{R}^2)$ e $B_n(\mathbb{S}^2)$ é que $B_n(\mathbb{R}^2)$ é finito apenas para $n=1$, enquanto que $B_n(\mathbb{S}^2)$ é finito para $n=1,2$ e $3$.
 	\par\vspace{0.3cm} Contudo, a maior diferença entre esses dois grupos (ou famílias de grupos) é o fato de que $B_n(\mathbb{R}^2)<B_{n+1}(\mathbb{R}^2)$, como mostrado na Proposição \eqref{B_m subgrupo de B_n}, enquanto que $B_n(\mathbb{S}^2)\nless B_{n+1}(\mathbb{S}^2)$.
 	\par\vspace{0.3cm} De fato, a relação $(\sigma_1\sigma_2\cdots\sigma_{n-1})(\sigma_{n-1}\cdots\sigma_2\sigma_1) = 1$ em $B_n(\mathbb{S}^2)$ pode não ser válida em $B_{n+1}(\mathbb{S}^2)$. Por exemplo, do Teorema \eqref{apresentacao de B_n(S^2)}, sabemos que $\sigma_1^2 = 1$ em $B_2(\mathbb{S}^2)$, mas não em $B_3(\mathbb{S}^2)$, devido à Proposição \eqref{homomorfismo de comprimento em trancas esfericas}.
 	\par\vspace{0.3cm} Além disso, também do Teorema \eqref{apresentacao de B_n(S^2)}, $\sigma_1\sigma_2^2\sigma_1 = 1$ em $B_3(\mathbb{S}^2)$, mas não em $B_4(\mathbb{S}^2)$, de novo devido à Proposição \eqref{homomorfismo de comprimento em trancas esfericas}.

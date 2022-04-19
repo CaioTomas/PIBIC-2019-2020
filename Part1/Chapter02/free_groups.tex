@@ -1682,7 +1682,7 @@
     		    x_1\cdots x_{l-r}y_{r+1}\cdots y_m = y_1\cdots y_{m-r}x_{r+1}\cdots x_l
     		\end{equation}
     		%
-    		\par\vspace{0.3cm} sendo $0\leq r\leq\min(l,m) = l$, por hipótese. Vamos dividir nossa análise 
+    		sendo $0\leq r\leq\min(l,m) = l$, por hipótese. Vamos dividir nossa análise 
     		em três casos.
     		
     		\paragraph{Caso (i):} $r=0$. Daí, segue de \eqref{comutatividade reduzida} que 
@@ -1691,7 +1691,7 @@
     		e a hipótese de indução nos dá que $a$ e $u$ são potências de um $c\in F(X)$, logo $b=au$ também é.
     		
     		\paragraph{Caso (ii):} $r = l$. Aqui, $y_i = x_{l-i+1}^{-1}$ e $b = a^{-1}u$, com $l(u) = m-l<m$.
-    		Segue como no caso (i) que $a^{-1}$ e $u$ comutam e, portanto, são novamente potências de um 
+    		Segue como no Caso (i) que $a^{-1}$ e $u$ comutam e, portanto, são novamente potências de um 
     		elemento $c\in F(X)$, logo $b = a^{-1}u$ também é.
     		
     		\paragraph{Caso (iii):} $0 < r < l$. Nesse caso, 
@@ -1700,25 +1700,32 @@
     		    x_1 = y_1, \ x_l = y_m, \ x_l = y_1^{-1}, \ y_m = x_1^{-1}
     		\end{equation*}
     		%
-    		\par\vspace{0.3cm} de onde segue que
+    		de onde segue que
     		%
     		\begin{equation*}
     		    a = x_1a'x_1^{-1}, \ b = x_1b'x_1^{-1}
     		\end{equation*}
     		%
-    		\par\vspace{0.3cm} sendo $l(a') = l-2$ e $l(b') = m-2$. Pela hipótese de indução, $a'$ e $b'$ 
+    		sendo $l(a') = l-2$ e $l(b') = m-2$. Pela hipótese de indução, $a'$ e $b'$ 
     		são potências de um mesmo elemento $c'$. Como a conjugação de $ab=ba$ por $x_1$ nos dá $a'b' = b'a'$,
     		segue que $a$ e $b$ são potência de $c = x_1c'x_1^{-1}$, concluindo nossa demonstração. 
     	\end{proof}
     	%
     	\begin{prop}
     	\label{raizes n-esimas em grupos livres}
+    	    Valem os seguintes itens:
+    	    %
     		\begin{enumerate}
-    			\item Em um grupo livre $F$, raízes $n$-ésimas, quando existem, são únicas, ou seja,
-    			se $a,b\in F$ satisfazem $a^n = b^n$, $n\in\mathbb{N}$, então $a = b$.
+    			\item em um grupo livre $F$, raízes $n$-ésimas, quando existem, são únicas, ou seja,
+    			se $a,b\in F$ satisfazem $a^n = b^n$, $n\in\mathbb{N}$, então $a = b$;
     			\item Qualquer elemento $w\in F$ tem um número finito de raízes, isto é, o conjunto 
-    			$\left\{ a\in F \ \vert \ a^n = w, n\in\mathbb{N} \right\}$ é finito.
+    			%
+    			\[
+    			\sharp\left\{ a\in F \ \vert \ a^n = w, n\in\mathbb{N} \right\} < +\infty.
+    			\]
+    			%
     		\end{enumerate}
+    		%
     	\end{prop}
     	%
     	\begin{proof} 
@@ -1728,28 +1735,28 @@
         	obter
         	%
     		\begin{align*}
-    		    nl(\check{a}) + 2r &= nl(\check{b}) + 2s \\
-    		    2nl(\check{a}) + 2r &= 2nl(\check{b}) + 2s
+    		    nl(\check{a}) + 2r &= nl(\check{b}) + 2s, \\
+    		    2nl(\check{a}) + 2r &= 2nl(\check{b}) + 2s.
     		\end{align*}
     		%
-    		\par\vspace{0.3cm} Então, $l(\check{a}) = l(\check{b})$ e $r=s$, e como a equação
+    		Então, $l(\check{a}) = l(\check{b})$ e $r=s$, e como a equação
     		%
     		\begin{equation*}
     		    u^{-1}\check{a}^n = v^{-1}\check{b}^nv
     		\end{equation*}
     		%
-    		\par\vspace{0.3cm} não tem cancelamentos, segue que $u = v$ e $\check{a} = \check{b}$, logo $a=b$.
+    		não tem cancelamentos, segue que $u = v$ e $\check{a} = \check{b}$, logo $a=b$.
     		
     		\par\vspace{0.3cm} Para a demonstração do item 2, seja $a$ uma raiz de $w$, digamos 
     		$a^n = w, n\in\mathbb{N}$. Se $w = e$, o resultado segue da 
-    		Proposição \eqref{grupo livre livre de torcao}. Se $w\neq e$, então nem $a$ nem $\check{a}$ 
-    		são triviais, e segue de \eqref{comprimento de a^n} que $n\leq l(w)$. Então, $w$ é uma potência
+    		Proposição \ref{grupo livre livre de torcao}. Se $w\neq e$, então nem $a$ nem $\check{a}$ 
+    		são triviais, e segue de \ref{comprimento de a^n} que $n\leq l(w)$. Então, $w$ é uma potência
     		$n$-ésima para no máximo uma quantidade finita de $n$ e, para cada $n$, $w$ é a $n$-ésima 
     		potência de no máximo um elemento devido ao item 1. Logo, o número total de raízes é finito.
     	\end{proof}
     	%
-    	\par\vspace{0.3cm} O item 1 da Proposição \eqref{raizes n-esimas em grupos livres} pode ser 
-    	usado para fortalecer o Lema \eqref{comutatividade em grupos livres} da seguinte forma.
+    	O item 1 da Proposição \ref{raizes n-esimas em grupos livres} pode ser 
+    	usado para fortalecer o Lema \ref{comutatividade em grupos livres} da seguinte forma.
     	%
     	\begin{lemma}
     	\label{comutatividade fortalecida em grupos livres}
@@ -1764,48 +1771,48 @@
     		    a^h = b^ka^hb^{-k} = (b^kab^{-k})^h
     		\end{equation*}
     		%
-    		\par\vspace{0.3cm} de onde segue que $a = b^kab^{-k}$ pelo item 1 da 
-    		Proposição \eqref{raizes n-esimas em grupos livres}. Logo,
+    		de onde segue que $a = b^kab^{-k}$ pelo item 1 da 
+    		Proposição \ref{raizes n-esimas em grupos livres}. Logo,
     		%
     		\begin{equation*}
     		    b^k = ab^ka^{-1} = (aba^{-1})^k
     		\end{equation*}
     		%
-    		\par\vspace{0.3cm} de onde segue, novamente pelo item 1 da 
-    		Proposição \eqref{raizes n-esimas em grupos livres}, que $b = aba^{-1}$, ou seja, $ab = ba$. 
-    		Daí, o resultado segue do Lema \eqref{comutatividade em grupos livres}.
+    		de onde segue, novamente pelo item 1 da 
+    		Proposição \ref{raizes n-esimas em grupos livres}, que $b = aba^{-1}$, ou seja, $ab = ba$. 
+    		Daí, o resultado segue do Lema \ref{comutatividade em grupos livres}.
     	\end{proof}
     	%
     	\begin{prop}
     	\label{comutatividade e relacao de equivalencia em grupos livres}
-    		Comutatividade é uma relação de equivalência em $F - \left\{ e \right\}$, isto é, o 
-    		centralizador $C(w) = \left\{ w\in F \ \vert \ aw = wa \right\}$ de qualquer 
+    		A comutatividade é uma relação de equivalência em $F - \left\{ e \right\}$, isto é, o 
+    		centralizador $C(a) = \left\{ w\in F \ \vert \ aw = wa \right\}$ de qualquer 
     		$a\in F - \left\{e\right\}$ é abeliano.
     	\end{prop}
     	%
     	\begin{proof}
     		Devemos mostrar que se $u,v\in F$ comutam com algum $a\in F - \left\{ e \right\}$, então 
     		eles comutam um com o outro. Suponha que $ua=au$ e $va = av$, e que $u\neq e\neq v$ para evitar
-    		trivialidade. Então, pelo Lema \eqref{comutatividade em grupos livres}, existem $b,d\in F$ e
+    		trivialidade. Então, pelo Lema \ref{comutatividade em grupos livres}, existem $b,d\in F$ e
     		$p,q,r,s\in\mathbb{Z} - \left\{0\right\}$ tais que 
     		%
     		\begin{equation*}
-    		    u = b^p, \ a = b^q, \ a = d^r, \ v = d^s
+    		    u = b^p, \ a = b^q, \ a = d^r, \ v = d^s.
     		\end{equation*}
     		%
-    		\par\vspace{0.3cm} Mas então $b^q$ e $d^r$ comutam, pois são iguais, e segue do 
-    		Lema \eqref{comutatividade fortalecida em grupos livres} que existe um $c\in F$ e 
+    		Mas então $b^q$ e $d^r$ comutam, pois são iguais, e segue do 
+    		Lema \ref{comutatividade fortalecida em grupos livres} que existe um $c\in F$ e 
     		$h,k\in\mathbb{Z}$ tais que
     		%
     		\begin{equation*}
-    		    b = c^h, \ d = c^k
+    		    b = c^h, \ d = c^k.
     		\end{equation*}
     		%
-    		\par\vspace{0.3cm} Logo, $u = c^{hp}$ e $v = c^{ks}$ também comutam.
+    		Logo, $u = c^{hp}$ e $v = c^{ks}$ também comutam.
     	\end{proof}
     	%
-    	\par\vspace{0.3cm} Por fim, a 
-    	Proposição \eqref{comutatividade e relacao de equivalencia em grupos livres} pode ser 
+    	Por fim, a 
+    	Proposição \ref{comutatividade e relacao de equivalencia em grupos livres} pode ser 
     	fortalecida da seguinte forma.
     	%
     	\begin{theorem}
@@ -1815,28 +1822,29 @@
     	%
     	\begin{proof}
     		Como $e\neq w\in C(w)$, $C(w)$ não pode ser finito pela 
-    		Proposição \eqref{grupo livre livre de torcao}.
+    		Proposição \ref{grupo livre livre de torcao}.
     		
     		\par\vspace{0.3cm} Agora, seja $d$ um elemento de comprimento minimal em 
     		$C(w) - \left\{ e \right\}$, e seja $v\in C(w)$ arbitrário. Então, $v$ deve ser uma potência de $d$.
     		Como $v$ e $d$ comutam (pela 
-    		Proposição \eqref{comutatividade e relacao de equivalencia em grupos livres}), eles são potência 
-    		de um elemento comum (pelo Lema \eqref{comutatividade em grupos livres}):
+    		Proposição \ref{comutatividade e relacao de equivalencia em grupos livres}), eles são potência 
+    		de um elemento comum (pelo Lema \ref{comutatividade em grupos livres}):
     		%
     		\begin{equation*}
-    		    d = a^h, \ v = a^k
+    		    d = a^h, \ v = a^k.
     		\end{equation*}
     		%
-    		\par\vspace{0.3cm} Da segunda equação, $a^k$ comuta com $w$, de onde temos que $a\in C(w)$ 
-    		pelo Lema \eqref{comutatividade fortalecida em grupos livres}. Aplicando \eqref{comprimento de a^n} 
-    		na primeira equação, 
+    		Da segunda equação, $a^k$ comuta com $w$, de onde temos que $a\in C(w)$ 
+    		pelo Lema \ref{comutatividade fortalecida em grupos livres}. Aplicando 
+    		\eqref{comprimento de a^n} 
+    		na primeira equação, temos
     		%
     		\begin{equation*}
     		    l(d) = l(a^h) 
     		    = |h|l(\check{a}) + 2r \stackrel{2r = l(a) - l(\check{a})}{=} (|h| - 1)l(\check{a}) + l(a)
     		\end{equation*}
     		%
-    		\par\vspace{0.3cm} sendo $|h|\neq 0$ e $d\neq e$. Como $a\in C(w)$, segue da minimalidade de 
+    		sendo $|h|\neq 0$ e $d\neq e$. Como $a\in C(w)$, segue da minimalidade de 
     		$l(d)$ que $|h| = 1$ e então $v = d^{\pm k}$, como desejado.
     	\end{proof}
 	    %
@@ -1850,7 +1858,7 @@
     	    L = \left\{ (k,l)\in\mathbb{R}^2 \ | \ k,l\in\mathbb{Z} \right\}
     	\end{equation*}
     	%
-    	\par\vspace{0.3cm} e o grupo $G = \Sim(L)$ das isometrias de $\mathbb{R}^2$ que levam $L$ em $L$, 
+    	e o grupo $G = \Sim(L)$ das isometrias de $\mathbb{R}^2$ que levam $L$ em $L$, 
     	isto é, que deixam o reticulado fixo. Um exemplo de isometria é a translação $t$. Se $t$ leva a 
     	origem de $\mathbb{R}^2$ para o ponto $(m,n)$, então um ponto qualquer $(k,l)\in\mathbb{R}^2$ é 
     	levado em $(k+m, l+n)$.
@@ -1860,18 +1868,18 @@
     	temos $t = a^mb^n$. Note também que se $t'$ é a translação $(0,0)\mapsto(k,l)$, então 
     	%
     	\begin{equation*}
-    	    tt'(0,0) = t(k,l) = (k+m, l+n)
+    	    tt'(0,0) = t(k,l) = (k+m, l+n).
     	\end{equation*}
     	%
-    	\par\vspace{0.3cm} Em outras palavras, temos que $a^kb^la^mb^n = a^{k+m}b^{l+n}$. Portanto, o 
+    	Em outras palavras, temos que $a^kb^la^mb^n = a^{k+m}b^{l+n}$. Portanto, o 
     	conjunto de todas as translações $T$ de $G$ formam um subgrupo de $G$. Sabendo disso, temos
     	%
     	\begin{equation*}
     	    T = \langle a \rangle \times \langle b \rangle \stackrel{\text{Proposição }
-    	    \eqref{apresentacao prod direto}}{=} \langle a,b \ | \ [a,b]=1 \rangle 
+    	    \ref{apresentacao prod direto}}{=} \langle a,b \ | \ [a,b]=1 \rangle 
     	\end{equation*} 
     	%
-    	\par\vspace{0.3cm} e, consequentemente, vemos que $T$ é um grupo abeliano livre com dois geradores 
+    	e, consequentemente, vemos que $T$ é um grupo abeliano livre com dois geradores 
     	(posto $2$).
     	
     	\par\vspace{0.3cm} Agora, considere as isometrias $S$ que fixam a origem: a rotação $y$ no 
@@ -1887,18 +1895,18 @@
         	y = \begin{pmatrix}
         	0 & -1 \\
         	1 & 0 
-        	\end{pmatrix}
+        	\end{pmatrix}.
     	\end{equation*} 
     	%
-    	\par\vspace{0.3cm} Note que todo elemento de $S$ induz uma única simetria do quadrado de 
+    	Note que todo elemento de $S$ induz uma única simetria do quadrado de 
     	vértices $(\pm1, 0), (0,\pm1)$. Logo, não podem haver mais de $8$ simetrias. Desse modo, como 
     	valem as relações $y^4=x^2=1$, $x^{-1}yx = y^{-1}$, então $S$ define o grupo
     	%
     	\begin{equation*}
-    	    S = \langle x,y \ | \ y^4=x^2=1, xyx^{-1}=y^{-1} \rangle
+    	    S = \langle x,y \ | \ y^4=x^2=1, xyx^{-1}=y^{-1} \rangle,
     	\end{equation*} 
     	%
-    	\par\vspace{0.3cm} que é o grupo diedral de ordem $8$, $D_4$.
+    	que é o grupo diedral de ordem $8$, $D_4$.
     	
     	\par\vspace{0.3cm} Agora, seja $g\in G$ um elemento qualquer. Se $g(0) = (m,n)$ e $t = a^mb^n\in T$, 
     	então $gt^{-1}$ fixa a origem e, portanto, pertence a $S$. Fazendo $gt^{-1} = s\in S$, temos $g = st$,
@@ -1909,13 +1917,13 @@
     	note que, a partir das matrizes $x$ e $y$, temos
     	%
     	\begin{align*}
-        	xax^{-1}(P) &= xa(-m,n) = x(-m+1, n) = (m-1, n) = a^{-1}(P) \\
-        	xbx^{-1}(P) &= xb(-m,n) = x(-m, n+1) = (m, n+1) = b(P) \\
-        	yay^{-1}(P) &= ya(n,-m) = y(n+1,-m) = (m, n+1) = b(P) \\
-        	yby^{-1}(P) &= yb(n,-m) = y(n,-m+1) = (m-1,n) = a^{-1}(P)
+        	xax^{-1}(P) &= xa(-m,n) = x(-m+1, n) = (m-1, n) = a^{-1}(P), \\
+        	xbx^{-1}(P) &= xb(-m,n) = x(-m, n+1) = (m, n+1) = b(P), \\
+        	yay^{-1}(P) &= ya(n,-m) = y(n+1,-m) = (m, n+1) = b(P), \\
+        	yby^{-1}(P) &= yb(n,-m) = y(n,-m+1) = (m-1,n) = a^{-1}(P).
     	\end{align*}
     	%
-    	\par\vspace{0.3cm} Portanto,
+    	Portanto,
     	%
     	\begin{equation}
     	\label{normaliza}
@@ -1927,24 +1935,24 @@
     	um homomorfismo 
     	%
     	\begin{equation*}
-    	    \alpha: S\to GL_2(\mathbb{Z}) = \aut(T)
+    	    \alpha: S\to GL_2(\mathbb{Z}) = \aut(T).
     	\end{equation*}
     	%
-    	\par\vspace{0.3cm} Portanto, $G = T\rtimes_{\alpha} S$. Também é possível mostrar que usando
+    	Portanto, $G = T\rtimes_{\alpha} S$. Também é possível mostrar que usando
     	%
     	\begin{equation*}
     	    T = \langle a \rangle \times \langle b \rangle = \langle a,b \ | \ [a,b]=1 \rangle, \ 
     	    S = \langle x,y \ | \ y^4=x^2=1, xyx^{-1} = y^{-1} \rangle
     	\end{equation*}
     	%
-    	\par\vspace{0.3cm} e \eqref{normaliza}, $G$ tem apresentação
+    	e \eqref{normaliza}, $G$ tem apresentação
     	%
     	\begin{equation*}
     	    G = \langle x,y,a,b \ | \ [a,b]=x^2=y^4=1,xyx^{-1} = y^{-1}, xax^{-1} = a^{-1}, \ 
     	    xbx^{-1} = b, \ yay^{-1} = b, \ yby^{-1} = a^{-1} \rangle
     	\end{equation*}
     	%
-    	\par\vspace{0.3cm} e obtemos uma apresentação para $\Sim(L)$.
+    	e obtemos uma apresentação para $\Sim(L)$.
     	
     	\par\vspace{0.3cm} Agora, sejam $p$ primo e $n\in\mathbb{N}$. Considere
     	%
@@ -1952,16 +1960,16 @@
     	    f(x) = \sum_{k=0}^{n}a_kx^k = a_1x + a_2x^2 + \cdots + x^n, 
     	\end{equation*}
     	%
-    	\par\vspace{0.3cm} ou seja, os monômios de grau menor ou igual a $n$, sobre o corpo $\mathbb{Z}_p$, 
+    	ou seja, os monômios de grau menor ou igual a $n$, sobre o corpo $\mathbb{Z}_p$, 
     	com coeficiente independente nulo. Vamos chamar de $G_n(p)$ o conjunto de todos esses polinômios, 
     	isto é
     	%
     	\begin{equation*}
-    	    G_n(p) = \left\{ f(x) \ | \ gr(f)\leq n, a_i\in\mathbb{Z}_p, a_0=0,a_n=1 \right\}
+    	    G_n(p) = \left\{ f(x) \ | \ gr(f)\leq n, a_i\in\mathbb{Z}_p, a_0=0,a_n=1 \right\}.
     	\end{equation*}
     	%
-    	\par\vspace{0.3cm} De fato, $( G_n(p), \circ )$ é grupo, sendo $\circ$ a operação de composição 
-    	de funções $\mod(x^{n+1})$. Além disso, $|G_n(p)| = p^{n-1}$.
+    	De fato, $( G_n(p), \circ )$ é grupo, sendo $\circ$ a operação de composição 
+    	de funções $\pmod {x^{n+1}}$. Além disso, $|G_n(p)| = p^{n-1}$.
     	
     	\par\vspace{0.3cm} Esse grupo tem muitas propriedades interessantes; vamos, no momento, 
     	obter uma apresentação para o grupo $G = G_5(2)$, de ordem $2^{5-1} = 16$. Note que os coeficientes 
@@ -1970,42 +1978,42 @@
     	\par\vspace{0.3cm} Seja $a = x+x^2$. Daí, temos o seguinte:
     	%
     	\begin{align*}
-        	a^2 &= a(x+x^2) = x+x^2+(x+x^2)^2 = x+x^4 \\
-        	a^3 &= a(x+x^4) = x+x^4+(x+x^4)^2 = x+x^2+x^4 \\
-        	a^4 &= a^2(x+x^4) = x+x^4+(x+x^4)^4 = x
+        	a^2 &= a(x+x^2) = x+x^2+(x+x^2)^2 = x+x^4, \\
+        	a^3 &= a(x+x^4) = x+x^4+(x+x^4)^2 = x+x^2+x^4, \\
+        	a^4 &= a^2(x+x^4) = x+x^4+(x+x^4)^4 = x.
     	\end{align*}
     	%
-    	\par\vspace{0.3cm} Logo, $a$ tem ordem $4$ em $G$ e, portanto, $A = \langle a \rangle$ é um 
+    	Logo, $a$ tem ordem $4$ em $G$ e, portanto, $A = \langle a \rangle$ é um 
     	subgrupo de ordem $4$. Seja agora $b = x+x^3$. Semelhantemente:
     	%
     	\begin{align*}
-        	b^2 &= b(x+x^3) = x+x^3 + (x+x^3)^3 = x+x^3+x^3+x^5 = x+x^5 \\
-        	b^3 &= b(x+x^5) = x+x^5+(x+x^5)^3 = x+x^3+x^5 \\
-        	b^4 &= b(x+x^3+x^5) = x+x^3+x^5+(x+x^3+x^5)^3 = x
+        	b^2 &= b(x+x^3) = x+x^3 + (x+x^3)^3 = x+x^3+x^3+x^5 = x+x^5, \\
+        	b^3 &= b(x+x^5) = x+x^5+(x+x^5)^3 = x+x^3+x^5, \\
+        	b^4 &= b(x+x^3+x^5) = x+x^3+x^5+(x+x^3+x^5)^3 = x.
     	\end{align*}
     	%
-    	\par\vspace{0.3cm} Logo, o subgrupo $B = \langle b \rangle$ tem ordem $4$. Como $A\cap B = 1$ e 
+    	Logo, o subgrupo $B = \langle b \rangle$ tem ordem $4$. Como $A\cap B = 1$ e 
     	$AB$ tem $16$ elementos, temos $AB=G$. Contudo, nesse caso nem $A$ nem $B$ são normais em $G$ e, 
     	portanto, não temos um produto semidireto. 
     	
     	\par\vspace{0.3cm} Também temos que
     	%
     	\begin{align*}
-        	ab &= a(x+x^3) = x+x^3+(x+x^3)^2 = x+x^2+x^3 \\
-        	b^{-1} &= x+x^3+x^5 \\
+        	ab &= a(x+x^3) = x+x^3+(x+x^3)^2 = x+x^2+x^3, \\
+        	b^{-1} &= x+x^3+x^5.
     	\end{align*}
     	%
-    	\par\vspace{0.3cm} Desse modo
+    	Desse modo,
     	%
     	\begin{equation*}
         	ab^{-1} = a(x+x^3+x^5) = x+x^3+x^5+(x+x^3+x^5)^2 = x+x^2+x^3+x^5
     	\end{equation*}
     	%
-    	\par\vspace{0.3cm} Assim, temos
+    	e temos
     	%
     	\begin{align*}
-        	(ab)^2 &= ab(x+x^2+x^3) = x+x^2+x^3 + (x+x^2+x^3)^2 + (x+x^2+x^3)^3 = x \\
-        	(ab^{-1}) &= (ab^{-1})(x+x^2+x^3+x^5) = x
+        	(ab)^2 &= ab(x+x^2+x^3) = x+x^2+x^3 + (x+x^2+x^3)^2 + (x+x^2+x^3)^3 = x, \\
+        	(ab^{-1}) &= (ab^{-1})(x+x^2+x^3+x^5) = x.
     	\end{align*}
     	%
-    	\par\vspace{0.3cm} Portanto, temos $(ab)^2=(ab^{-1})^2$.
+    	Portanto, $(ab)^2=(ab^{-1})^2$.
