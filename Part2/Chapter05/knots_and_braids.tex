@@ -388,141 +388,230 @@
 	\end{remark}
 	%
 	\section{Algumas aplicações do Teorema de Markov}
-	\hspace{12pt} Seja $K$ um nó (ou \textit{link}) orientado em $\mathbb{R}^3$. Se considerarmos o plano $xy$ como um espelho, então a imagem de $K$ nesse espelho também é um nó em $\mathbb{R}^3$, veja a figura abaixo.
-	
+	Seja $K$ um nó (ou \textit{link}) orientado em $\mathbb{R}^3$. Se considerarmos o plano 
+	$xy$ como um espelho, então a imagem de $K$ nesse espelho também é um nó em $\mathbb{R}^3$, 
+	veja a figura abaixo.
+	%
 	\begin{figure}[H]
 		\begin{center}
 			\includegraphics[width=6cm]{Images/no_espelhado.png}
 		\end{center}\caption{O nó $K$ refletido em torno do plano $xy$.}\label{no espelhado}
 	\end{figure}
-	\par\vspace{0.3cm} O nó $K^\ast$ é chamado de imagem espelhada de $K$. Como $K$ é orientado, $K^\ast$ herda uma orientação de $K$.
+	%
+	O nó $K^\ast$ é chamado de imagem espelhada de $K$. Como $K$ é orientado, $K^\ast$ 
+	herda uma orientação de $K$.
+	%
 	\begin{prop}
-		\label{troca de cruzamentos}
-		Seja $D$ um diagrama (orientado) de um nó $K$. Então, o diagrama $D^\ast$ do nó $K^\ast$ é obtido de $D$ substituindo cruzamentos superiores por cruzamentos inferiores.	
+	\label{troca de cruzamentos}
+		Seja $D$ um diagrama (orientado) de um nó $K$. Então, o diagrama $D^\ast$ do nó 
+		$K^\ast$ é obtido de $D$ substituindo cruzamentos superiores por cruzamentos inferiores.	
 	\end{prop}
+	%
 	\begin{proof}
-		Como a imagem espelhada de $K$ é obtida a partir de uma rotação de $K$, então os cruzamentos superiores passam a ser inferiores e vice-versa.
+		Como a imagem espelhada de $K$ é obtida a partir de uma rotação de $K$, 
+		então os cruzamentos superiores passam a ser inferiores e vice-versa.
 	\end{proof}
-	\par\vspace{0.3cm} Na Figura \eqref{no de trevo} abaixo estão representados os diagramas $D$ e $D^\ast$ de um nó $K$. Esse nó $K$ é chamado de \textit{nó de trevo}.
-	
+	%
+	Na Figura \ref{no de trevo} abaixo estão representados os diagramas $D$ e $D^\ast$ 
+	de um nó $K$. Esse nó $K$ é chamado de \textit{nó de trevo}.
+	%
 	\begin{figure}[H]
 		\begin{center}
 			\includegraphics[width=9cm]{Images/no_de_trevo.png}
 		\end{center}\caption{O nó de trevo orientado.}
 		\label{no de trevo}
 	\end{figure} 
-	
-	\par\vspace{0.3cm} Apesar de que, em geral, um nó e sua imagem espelhada não são equivalentes, há casos em que isso acontece. Um nó que é equivalente a sua imagem espelhada é chamado de \textit{anfiquiral} ou \textit{aquiral}. Um exemplo de nó aquiral é o nó da figura abaixo.
-	
+	%
+	Apesar de que, em geral, um nó e sua imagem espelhada não são equivalentes, 
+	há casos em que isso acontece. Um nó que é equivalente à sua imagem espelhada 
+	é chamado de \textit{aquiral}. Um exemplo de nó aquiral é o nó da figura abaixo.
+	%
 	\begin{figure}[H]
 		\begin{center}
 			\includegraphics[width=11cm]{Images/no_aquiral.png}
 		\end{center}\caption{O nó figura oito, um exemplo de nó aquiral.}\label{no aquiral}
 	\end{figure}
-	
-	\par\vspace{0.3cm} O nó da Figura \eqref{no aquiral}(a), representado pelo diagrama $D$, pode ser representado pelo fecho da trança de $3$ cordas $\beta = \sigma_1\sigma_2^{-1}\sigma_1\sigma_2^{-1} = (\sigma_1\sigma_2^{-1})^2$. Na sua forma de trança, a imagem espelhada $K^\ast$ de $K$ é exatamente o fecho da trança $\beta^{-1}$ (com a orientação inversa), como mostra a figura abaixo.
-	
+	%
+	O nó da Figura \ref{no aquiral}(a), representado pelo diagrama $D$, pode ser 
+	representado pelo fecho da trança de $3$ cordas 
+	$\beta = \sigma_1\sigma_2^{-1}\sigma_1\sigma_2^{-1} = (\sigma_1\sigma_2^{-1})^2$. 
+	Na sua forma de trança, a imagem espelhada $K^\ast$ de $K$ é exatamente o fecho 
+	da trança $\beta^{-1}$ (com a orientação inversa), como mostra a figura abaixo.
+	%
 	\begin{figure}[H]
 		\begin{center}
 			\includegraphics[width=10cm]{Images/tranca_no_de_oito.png}
 		\end{center}\caption{Trança do nó figura oito.}\label{tranca no de oito}
 	\end{figure} 
-	
-	\par\vspace{0.3cm} Esse exemplo suscita a pergunta: dado um nó (ou \textit{link}) orientado e uma trança que representa esse nó, como podemos expressar $K^\ast$ baseados em $\beta$? A resposta está na proposição a seguir.
-	
+	%
+	Esse exemplo suscita a pergunta: dado um nó (ou \textit{link}) orientado e uma trança 
+	que representa esse nó, como podemos expressar $K^\ast$ baseados em $\beta$? 
+	A resposta está na proposição a seguir.
+	%
 	\begin{prop}
-		\label{representacao no espelhado}
-		Seja $K$ um nó (ou \textit{link}) orientado e suponha que $K$ é o fecho de uma trança de $n$ cordas $\beta = \sigma_{i_1}^{\varepsilon_1}\cdots\sigma_{i_k}^{\varepsilon_k}$, sendo $1\leq i_1, i_2, \dots, i_k\leq n-1$ e $\varepsilon_i=\pm1$. Então, 
+	\label{representacao no espelhado}
+		Seja $K$ um nó (ou \textit{link}) orientado e suponha que $K$ é o fecho de 
+		uma trança de $n$ cordas $\beta = \sigma_{i_1}^{\varepsilon_1}\cdots\sigma_{i_k}^{\varepsilon_k}$, 
+		sendo $1\leq i_1, i_2, \dots, i_k\leq n-1$ e $\varepsilon_i=\pm1$. Então,
+		%
 		\begin{enumerate}
-			\item a imagem espelhada $K^\ast$ de $K$, com a orientação invertida, pode ser representada como o fecho de 
+			\item a imagem espelhada $K^\ast$ de $K$, com a orientação invertida, 
+			pode ser representada como o fecho de 
 			$\beta^{-1}  = \sigma_{i_k}^{-\varepsilon_{k}}\cdots\sigma_{i_1}^{-\varepsilon_1}$ 
 			\item o nó $\overline{K}$ obtido de $K$ revertendo a orientação de $K$ pode ser representado por
-			
+			%
 			\begin{align*}
 			\overline{\beta} = \sigma_{i_k}^{\varepsilon_k}&\cdots\sigma_{i_i}^{\varepsilon_1} \\
 			&\text{ou} \\
 			\overline{\overline{\beta}} = \sigma_{n-i_k}^{\varepsilon_k}&\cdots\sigma_{n - i_1}^{\varepsilon_1}
 			\end{align*}
-			\par\vspace{0.3cm} e, portanto, $\overline{\beta}\underset{M}{\sim}\overline{\overline{\beta}}$. 
+			%
+			e, portanto, $\overline{\beta}\underset{M}{\sim}\overline{\overline{\beta}}$. 
 		\end{enumerate}
+		%
 	\end{prop}
-	
+	%
 	\begin{proof}
-		A demonstração do item 1 segue diretamente dos diagramas da Figura \eqref{tranca no de oito}. De fato, inverter a orientação de $K$ equivale a espelhar a trança $\beta$, ou seja, invertê-la. Para o item 2, observe a Figura \eqref{no invertido}, que ilustra o processo aqui descrito. Primeiro, mude a orientação da Figura \eqref{no invertido}(a) para obter a Figura \eqref{no invertido}(b). Então, vire a Figura \eqref{no invertido}(b) de cabeça para baixo, Figura \eqref{no invertido}(c). Em seguida, rotacione a Figura \eqref{no invertido}(c) em torno do eixo vertical por um ângulo de $\pi$ radianos, Figura \eqref{no invertido}(d). Podemos ver que a Figura \eqref{no invertido}(c) é $\overline{\overline{\beta}}$ e que a Figura \eqref{no invertido}(d) é $\overline{\beta}$. Como não alteramos o nosso nó $\overline{K}$, então os fechos de $\overline{\beta}$ e $\overline{\overline{\beta}}$ são equivalentes e representam o mesmo nó, $\overline{K}$. Por fim, pelo Teorema \eqref{teorema de Markov simplificado}, temos $\overline{\beta}\underset{M}{\sim}\overline{\overline{\beta}}$.
-		
+		A demonstração do item 1 segue diretamente dos diagramas da Figura \ref{tranca no de oito}. 
+		De fato, inverter a orientação de $K$ equivale a espelhar a trança $\beta$, ou seja, invertê-la. 
+		Para o item 2, observe a Figura \ref{no invertido}, que ilustra o processo aqui descrito. 
+		Primeiro, mude a orientação da Figura \ref{no invertido}(a) para obter a 
+		Figura \ref{no invertido}(b). Então, vire a Figura \ref{no invertido}(b) de cabeça para baixo, 
+		obtendo a Figura \ref{no invertido}(c). Em seguida, rotacione a Figura \ref{no invertido}(c) 
+		em torno do eixo vertical por um ângulo de $\pi$ radianos, Figura \ref{no invertido}(d). 
+		Podemos ver que a Figura \ref{no invertido}(c) é $\overline{\overline{\beta}}$ e que a 
+		Figura \ref{no invertido}(d) é $\overline{\beta}$. Como não alteramos o nosso nó $\overline{K}$, 
+		então os fechos de $\overline{\beta}$ e $\overline{\overline{\beta}}$ são equivalentes e 
+		representam o mesmo nó, $\overline{K}$. Por fim, pelo Teorema \ref{teorema de Markov simplificado}, 
+		temos $\overline{\beta}\underset{M}{\sim}\overline{\overline{\beta}}$.
+		%
 		\begin{figure}[H]
 			\begin{center}
 				\includegraphics[width=12cm]{Images/no_invertido.png}
 			\end{center}\caption{Inversão da orientação de um nó.}\label{no invertido}
 		\end{figure}
-		
-		\par\vspace{0.3cm} 
-		
+		%
 	\end{proof}
-	\par\vspace{0.3cm} Se os nós $K$ e $\overline{K}$ são equivalentes, então $K$ é dito \textit{inversível}. O nó da Figura \eqref{no aquiral}(a) é inversível, uma vez que os dois nós das Figuras \eqref{no aquiral}(c) e (d) são equivalentes. Apesar de muitos nós serem inversíveis, isso não quer dizer que todos os nós o são. De fato, um contraexemplo é o nó $K$ da Figura \eqref{orientacao markov no}.
+	%
+	Se os nós $K$ e $\overline{K}$ são equivalentes, então $K$ é dito \textit{inversível}. 
+	O nó da Figura \ref{no aquiral}(a) é inversível, uma vez que os dois nós das 
+	Figuras \ref{no aquiral}(c) e (d) são equivalentes. Apesar de muitos nós serem inversíveis, 
+	isso não quer dizer que todos os nós o são. De fato, um contraexemplo é o nó $K$ da 
+	Figura \ref{orientacao markov no}.
 	%COMECEI AQUI
 	\section{Grupos de nó}
-	\hspace{12pt} Até agora, tratamos de nós de maneira um tanto quanto informal. Contudo, assim como fizemos para a trança, podemos tomar uma abordagem mais topológica. De fato, podemos utilizar, assim como foi com as tranças, grupos fundamentais. Para isso, recorde que definimos nó como uma curva poligonal simples fechada em $\mathbb{R}^3$. Contudo, por conveniência, é comum substituir $\mathbb{R}^3$ por $\mathbb{S}^3$ (a 3-esfera unitária), pois $\mathbb{S}^3$ pode ser obtida de $\mathbb{R}^3$ adicionando um único ponto (de fato, isso é verdade para $\mathbb{S}^n$ e $\mathbb{R}^n$, realizando-se um análogo da projeção estereográfica para dimensões superiores. Como exercício, imagine o caso $n = 1$. Informalmente, estamos adicionando a $\mathbb{R}$ o ``ponto infinito'', $\infty$.)
-	\par\vspace{0.3cm} Nesse contexto, podemos definir o \textit{complemento de um nó}.
-	\begin{deff}
-		\label{def complemento no}
-		Dado um nó $K$, o complemento de $K$ é o subconjunto $\mathbb{S}^3 - K$ de $\mathbb{S}^3$.
-	\end{deff}
-	\par\vspace{0.3cm} Com essa definição, podemos então definir o \textbf{grupo fundamental do complemento de nó}, muitas vezes chamado simplesmente de \textbf{grupo fundamental de nó}.
-	\begin{deff}
-		\label{grupo fundamental de no}
-		O grupo fundamental de um nó $K$ com ponto base $b\in\mathbb{S}^3 - \text{Im}(K)$ é o grupo fundamental do complemento de $K$, com $b$ como ponto base.
-	\end{deff}
-	\par\vspace{0.3cm} Como $\mathbb{S}^3$ é conexo por caminhos, podemos omitir o ponto base, pois a escolha dele não afeta a estrutura de grupo. Em síbolos, denotamos o grupo fundamental do nó $K$ por $\pi_1(\mathbb{S}^3\setminus K)$. 
-	\par\vspace{0.3cm} Um primeiro exemplo é o grupo fundamental do nó trivial. Apesar do nó ser trivial, seu grupo não o é; de fato, o grupo fundamental do nó trivial é o grupo cíclico infinito, $\mathbb{Z}$. Outro exemplo é o nó de trevo, mostrado na figura \eqref{no de trevo}; o seu grupo fundamental tem apresentação 
-	\begin{align*}
-	\langle x,y|x^3 = y^2 \rangle
-	\end{align*}
-	\par\vspace{0.3cm} ou seja, o grupo do nó de trevo é (isomorfo a) $B_3(\mathbb{R}^2)$! Um último exemplo é o nó figura oito, mostrado na figura \eqref{no aquiral}; seu grupo fundamental tem apresentação
-	\begin{align*}
-	\langle x,y | yxy^{-1}xy = xyx^{-1}yx \rangle
-	\end{align*}
-	\par\vspace{0.3cm} O grupo fundamental de nó também é um invariante: se dois nós são equivalentes, então seus grupos fundamentais são isomorfos. Contudo, o contrário não é verdadeiro. Por exemplo, os dois nós de trevo abaixo têm o mesmo grupo fundamental, mas não são equivalentes (pois o nó de trevo é quiral, como vimos).
+	Até agora, tratamos de nós de maneira um tanto quanto informal. Contudo, assim como 
+	fizemos para a trança, podemos tomar uma abordagem mais topológica. De fato, podemos utilizar, 
+	assim como foi com as tranças, grupos fundamentais. Para isso, recorde que definimos nó como 
+	uma curva poligonal simples fechada em $\mathbb{R}^3$. Contudo, por conveniência, é 
+	comum substituir $\mathbb{R}^3$ por $\mathbb{S}^2$ (a esfera tridimensional unitária), pois $\mathbb{S}^2$ 
+	pode ser obtida de $\mathbb{R}^3$ adicionando um único ponto (de fato, isso é verdade para 
+	$\mathbb{S}^{n-1}$ e $\mathbb{R}^n$, realizando-se um análogo da projeção estereográfica para 
+	dimensões superiores. Como exercício, imagine o caso $n = 1$. Informalmente, estamos adicionando a
+	$\mathbb{R}$ o ``ponto infinito'', $\infty$.)
 	
+	\par\vspace{0.3cm} Nesse contexto, podemos definir o \textit{complemento de um nó} como abaixo.
+	%
+	\begin{definition}
+	\label{def complemento no}
+		Dado um nó $K$, o complemento de $K$ é o subconjunto $\mathbb{S}^2 - K$ de $\mathbb{S}^2$.
+	\end{definition}
+	%
+	Com essa definição, podemos então definir o \textbf{grupo fundamental do complemento de nó}, 
+	muitas vezes chamado simplesmente de \textbf{grupo fundamental de nó}.
+	%
+	\begin{definition}
+	\label{grupo fundamental de no}
+		O grupo fundamental de um nó $K$ com ponto base $b\in\mathbb{S}^2 - \text{Im}(K)$ 
+		é o grupo fundamental do complemento de $K$, com $b$ como ponto base.
+	\end{definition}
+	%
+	Como $\mathbb{S}^2$ é conexo por caminhos, podemos omitir o ponto base, pois a escolha dele 
+	não afeta a estrutura de grupo. Em símbolos, denotamos o grupo fundamental do nó $K$ por
+	$\pi_1(\mathbb{S}^2\setminus K)$.
+	
+	\par\vspace{0.3cm} Um primeiro exemplo é o grupo fundamental do nó trivial. 
+	Apesar do nó ser trivial, seu grupo não o é; de fato, o grupo fundamental do nó 
+	trivial é o grupo cíclico infinito, $\mathbb{Z}$. Outro exemplo é o nó de trevo, 
+	mostrado na Figura \ref{no de trevo}; o seu grupo fundamental tem apresentação
+	%
+	\begin{align*}
+	    \langle x,y|x^3 = y^2 \rangle,
+	\end{align*}
+	%
+	ou seja, o grupo do nó de trevo é (isomorfo a) $B_3(\mathbb{R}^2)$! Um último exemplo é o nó figura oito, mostrado na Figura \ref{no aquiral}; seu grupo fundamental tem apresentação
+	%
+	\begin{align*}
+	    \langle x,y | yxy^{-1}xy = xyx^{-1}yx \rangle.
+	\end{align*}
+	%
+	O grupo fundamental de nó também é um invariante: se dois nós são equivalentes, 
+	então seus grupos fundamentais são isomorfos. Contudo, o contrário não é verdadeiro. 
+	Por exemplo, os dois nós de trevo abaixo têm o mesmo grupo fundamental, mas não são 
+	equivalentes (pois o nó de trevo é quiral, como vimos).
+	%
 	\begin{figure}[H]
 		\begin{center}
 			\includegraphics[width=6cm]{Images/nos_de_trevo.png}
 		\end{center}\caption{Os nós de trevo destro (à esquerda) e canhoto (à direita).}\label{nos de trevo destro e canhoto}
 	\end{figure} 
+	%
+	Uma das maiores questões quando estudamos nós é determinar se dois nós são ou não 
+	equivalentes, ou seja, como podemos distinguir dois nós. Uma das ferramentas que nos 
+	ajuda nessa tarefa são os chamados \textit{invariantes de nós}. Demos um exemplo de 
+	invariante de nó acima, a saber, o número de componentes $\mu(\beta)$. 
+	Esse invariante era, de certo modo, esperado, uma vez que não podemos ``cortar'' nosso nó, 
+	ou seja, é impossível alterar o número de componentes por meio de movimentos de Reidemeister
+	($\Omega_1^{\pm1}$, $\Omega_2^{\pm1}$ e $\Omega_3^{\pm1}$). Outros exemplos de invariantes 
+	são o polinômio de Alexander e o polinômio de Jones, que serão abordados a seguir. Antes, 
+	porém, uma curiosidade.
 	
-	\par\vspace{0.3cm} Uma das maiores questões quando estudamos nós é determinar se dois nós são ou não equivalentes, ou seja, como podemos distinguir dois nós. Uma das ferramentas que nos ajuda nessa tarefa são os chamados \textit{invariantes de nós}. Demos um exemplo de invariante de nó acima, a saber, o número de componentes $\mu(\beta)$. Esse invariante era, de certo modo, esperado, uma vez que não podemos ``cortar'' nosso nó, ou seja, é impossível alterar o número de componentes por meio de movimentos de Reidemeister ($\Omega_1^{\pm1}$, $\Omega_2^{\pm1}$ e $\Omega_3^{\pm1}$). Outros exemplos de invariantes são o polinômio de Alexander e o polinômio de Jones, que serão abordados a seguir. Antes, porém, uma curiosidade.
-	\par\vspace{0.3cm} Um tipo particular de nó são os chamados \textit{nós de toro} (ou \textit{nós torais}). Como o nome sugere, são nós que pertencem à superfície de um toro (que, por sua vez, é um subconjunto de $\mathbb{R}^3$). Podemos definir um nó de toro usando coordenadas da seguinte forma.\footnote{Veja \cite{no-toral}.}
-	
-	\begin{deff}
-		\label{def no de toro}
-		Para todo par de inteiros $a$ e $b$ coprimos, o nó de toro padrão $K_{a,b}: \mathbb{S}^1\to\mathbb{S}^3$ correspondente ao par $(a,b)$ é dado, em coordenadas Euclidianas, por 
+	\par\vspace{0.3cm} Um tipo particular de nó são os chamados \textit{nós de toro} 
+	(ou \textit{nós torais}). Como o nome sugere, são nós que pertencem à superfície 
+	de um toro (que, por sua vez, é um subconjunto de $\mathbb{R}^3$). Podemos definir 
+	um nó de toro usando coordenadas da seguinte forma \cite{no-toral}.
+	%
+	\begin{definition}
+	\label{def no de toro}
+		Para todo par de inteiros $a$ e $b$ coprimos, o nó de toro padrão 
+		$K_{a,b}: \mathbb{S}^1\to\mathbb{S}^2$ correspondente ao par $(a,b)$ é dado, em 
+		coordenadas euclidianas, por 
+		%
 		\begin{align*}
-		\theta\mapsto
-		\left( 
-		\begin{matrix}
-		(2+\cos(b\theta))\cos(a\theta) \\
-		(2+\cos(b\theta))\sin(a\theta) \\
-		-\sin(a\theta)
-		\end{matrix} 
-		\right)
-		\end{align*}	
-	\end{deff}
-	\par\vspace{0.3cm} Essa função é uma imersão do círculo ($\mathbb{S}^1$) no toro $T$ parametrizado por
+    		\theta\mapsto
+    		\left( 
+    		\begin{matrix}
+    		(2+\cos(b\theta))\cos(a\theta) \\
+    		(2+\cos(b\theta))\sin(a\theta) \\
+    		-\sin(a\theta)
+    		\end{matrix} 
+    		\right).
+		\end{align*}
+		%
+	\end{definition}
+	%
+	Essa função é uma imersão do círculo ($\mathbb{S}^1$) no toro $T$ parametrizado por
+	%
 	\begin{align*}
-	(\theta, \varphi)\mapsto 
-	\left( \begin{matrix}
-	(2+\cos(\theta))\cos(\varphi) \\
-	(2+\cos(\theta))\sin(\varphi) \\
-	\sin(\theta)
-	\end{matrix}  \right)
+    	(\theta, \varphi)\mapsto 
+    	\left( \begin{matrix}
+    	(2+\cos(\theta))\cos(\varphi) \\
+    	(2+\cos(\theta))\sin(\varphi) \\
+    	\sin(\theta)
+    	\end{matrix}  \right).
 	\end{align*}
+	%
 	\begin{figure}[H]
 		\begin{center}
 			\includegraphics[width=8cm]{Images/toro.png}
 		\end{center}\caption{O toro $T$ em $\mathbb{R}^3$.}\label{toro}
 	\end{figure}
-	\par\vspace{0.3cm} Os exemplos mais simples de nós torais são os nós de toro $K_{2,3}$ e $K_{2,-3}$, que são os nós de trevo destro e canhoto, respectivamente. Note que os nós de trevo ficam completamente contidos na superfície do toro $T$, assim como todos os nós torais. Em particular, se $a = \pm1$ ou se $b = \pm1$, então o nó $K_{a,b}$ resultante é trivial.
-	
+	%
+	Os exemplos mais simples de nós torais são os nós de toro $K_{2,3}$ e $K_{2,-3}$, que 
+	são os nós de trevo destro e canhoto, respectivamente. Note que os nós de trevo ficam 
+	completamente contidos na superfície do toro $T$, assim como todos os nós torais. 
+	Em particular, se $a = \pm1$ ou se $b = \pm1$, então o nó $K_{a,b}$ resultante é trivial.
+	%
 % 	\begin{figure}[H]
 % 		\centering
 % 		\begin{subfigure}[t]{0.5\textwidth}
@@ -538,98 +627,184 @@
 % 		\end{subfigure}
 % 		\caption{O nó toral $K_{2,3}$ (nó de trevo destro), figura (a) e parte do toro, envolvendo $K_{2,3}$, figura (b)}
 % 	\end{figure}
-	
+	%
 	\begin{figure}[H]
         \centering
         \subfloat[]{{\includegraphics[width=6cm,height=5cm]{Images/no_de_trevo_parametrizado.png}}}\hfill
         \subfloat[]{{\includegraphics[width=6cm,height=5cm]{Images/no_de_trevo_no_toro.png}}}
         \caption{O nó toral $K_{2,3}$ (nó de trevo destro), figura (a) e parte do toro, envolvendo $K_{2,3}$, figura (b)}
     \end{figure}
-	
+	%
 	%\newpage
-	\par\vspace{0.3cm} É interessante observar que, sem a restrição de $(a,b)$ coprimos, a função de $K_{a,b}:\mathbb{S}^1\to\mathbb{S}^3$ descreve um \textit{link}. Logo, podemos generalizar a Definição \eqref{def no de toro} para \textit{links}, da seguinte forma.
-	\begin{deff}
-		\label{def link de toro}
-		Para todo par de inteiros $a$ e $b$ (não necessariamente coprimos), o \textit{link} de toro (ou link toral) padrão $K_{a,b}: \mathbb{S}^1\to\mathbb{S}^3$ correspondente ao par $(a,b)$ é dado, em coordenadas Euclidianas, por 
+	É interessante observar que, sem a restrição de $(a,b)$ coprimos, a função de
+	$K_{a,b}:\mathbb{S}^1\to\mathbb{S}^3$ descreve um \textit{link}. Logo, 
+	podemos generalizar a Definição \ref{def no de toro} para \textit{links}, da seguinte forma.
+	%
+	\begin{definition}
+	\label{def link de toro}
+		Para todo par de inteiros $a$ e $b$ (não necessariamente coprimos), o 
+		\textit{link} de toro (ou link toral) padrão $K_{a,b}: \mathbb{S}^1\to\mathbb{S}^2$ 
+		correspondente ao par $(a,b)$ é dado, em coordenadas euclidianas, por
+		%
 		\begin{align*}
-		\theta\mapsto
-		\left( 
-		\begin{matrix}
-		(2+\cos(b\theta))\cos(a\theta) \\
-		(2+\cos(b\theta))\sin(a\theta) \\
-		-\sin(a\theta)
-		\end{matrix} 
-		\right)
+    		\theta\mapsto
+    		\left( 
+    		\begin{matrix}
+    		(2+\cos(b\theta))\cos(a\theta) \\
+    		(2+\cos(b\theta))\sin(a\theta) \\
+    		-\sin(a\theta)
+    		\end{matrix} 
+    		\right).
 		\end{align*}
-		\par\vspace{0.3cm} O número de componentes do link correspondente ao par $(a,b)$ é dado por $d = \mdc(a,b)$, e cada componente é uma cópia do nó $\displaystyle{K_{a/d, b/d}}$ rotacionado em torno do eixo $z$.
-	\end{deff}
-	\par\vspace{0.3cm} Uma propriedade interessante é que todo nó toral não trivial é quiral, i.e., não é igual à sua imagem espelhada (daí a nomenclatura ``destro'' e ``canhoto''). Por fim, vale mencionar que todo nó toral $K_{a,b}$ pode ser representado pela trança fechada $(\sigma_1\sigma_2\cdots\sigma_{a-1})^b$.  
+		%
+		O número de componentes do link correspondente ao par $(a,b)$ é dado por $d = \mdc(a,b)$, 
+		e cada componente é uma cópia do nó $\displaystyle{K_{a/d, b/d}}$ rotacionado em torno do eixo $z$.
+	\end{definition}
+	%
+	Uma propriedade interessante é que todo nó toral não trivial é quiral, i.e., não é igual 
+	à sua imagem espelhada (daí a nomenclatura ``destro'' e ``canhoto''). Por fim, vale 
+	mencionar que todo nó toral $K_{a,b}$ pode ser representado pela trança fechada
+	$(\sigma_1\sigma_2\cdots\sigma_{a-1})^b$.  
 	
 	\subsection{Cálculo do grupo de nó}
-	\hspace{12pt} Como dito antes, dados dois nós equivalentes $K_1$ e $K_2$, então $\pi_1(\mathbb{R}^3\setminus K_1) \cong \pi_1(\mathbb{R}^3\setminus K_2)$. Contudo, novamente, a recíproca não é verdadeira: $\pi_1(\mathbb{R}^3\setminus K_1) \cong \pi_1(\mathbb{R}^3\setminus K_2)$ não implica $K_1$ e $K_2$ equivalentes. 
-	\par\vspace{0.3cm} Se queremos usar os grupos de nó para obter informações acerca dos nós, devemos ser capazes de efetivamente determinar esses grupos. Felizmente, existe um algoritmo simples, introduzido por Wirtinger por volta de 1904 em suas aulas em Vienna e publicado em 1908 por Tietze. Vamos descrever o \textbf{método de Wirtinger}.
+	Como dito antes, dados dois nós equivalentes $K_1$ e $K_2$, então 
+	$\pi_1(\mathbb{R}^3\setminus K_1) \cong \pi_1(\mathbb{R}^3\setminus K_2)$. Contudo, 
+	novamente, a recíproca não é verdadeira: 
+	$\pi_1(\mathbb{R}^3\setminus K_1) \cong \pi_1(\mathbb{R}^3\setminus K_2)$ não implica 
+	$K_1$ e $K_2$ equivalentes.
+	
+	\par\vspace{0.3cm} Se queremos usar os grupos de nó para obter informações acerca dos nós, 
+	devemos ser capazes de efetivamente determinar esses grupos. Felizmente, existe um algoritmo 
+	simples, introduzido por Wirtinger por volta de 1904 em suas aulas em Viena e publicado em 
+	1908 por Tietze. Vamos descrever o \textbf{método de Wirtinger}.
+	
 	\subsubsection*{Algoritmo de Wirtinger}
-	\hspace{12pt} Suponha que temos uma projeção de nó.
+	Suponha que temos uma projeção de nó.
+	%
 	\begin{enumerate}
-		\item Fixe uma direção ao longo de $K$ e denote os arcos sucessivos entre dois cruzamentos inferiores por $\alpha_1, \dots, \alpha_n$.
-		\item Para $1\leq i\leq n$, desenhe um seta curta $x_i$ passando por baixo de $\alpha_i$, em que a direção de $x_i$ é dada pela regra da mão direita, com o dedão apontando na direção escolhida sobre $K$. Tal seta representa um \textit{loop} em $\mathbb{R}^3\setminus K$ do seguinte modo: tome um ponto base acima do plano de desenho; então o \textit{loop} consiste do triângulo orientado a partir do ponto base para a cauda de $x_i$, ao longo de $x_i$ até a ponta e de volta para o ponto base.
+		\item Fixe uma direção ao longo de $K$ e denote os arcos sucessivos entre dois 
+		cruzamentos inferiores por $\alpha_1, \dots, \alpha_n$.
+		\item Para $1\leq i\leq n$, desenhe um seta curta $x_i$ passando por baixo de $\alpha_i$, 
+		em que a direção de $x_i$ é dada pela regra da mão direita, com o dedão apontando na 
+		direção escolhida sobre $K$. Tal seta representa um \textit{loop} em $\mathbb{R}^3\setminus K$ 
+		do seguinte modo: tome um ponto base acima do plano de desenho; então o \textit{loop} 
+		consiste do triângulo orientado a partir do ponto base para a cauda de $x_i$, ao 
+		longo de $x_i$ até a ponta e de volta para o ponto base.
+		%
 		\begin{figure}[H]
 			\begin{center}
 				\includegraphics[width=15cm]{Images/arcosgrupono.png}
 			\end{center}\caption{Desenhos possíveis}
 			\label{desenhos possiveis}
 		\end{figure}
-		\item Em cada cruzamento, indique o quadrado formado pelas setas sob os arcos envolvidos no cruzamento, e escreva a relação $r_i$ indicada por esse quadrado; há duas possibilidades dadas pelos desenhos na Figura \eqref{desenhos possiveis}(note que $k=i$ ou $k=i+1$ é possível)
-		\par Então o grupo do nó $K$ é gerado por (classes de homotopia de) \textit{loops} $x_i$ e tem apresentação
+		%
+		\item Em cada cruzamento, indique o quadrado formado pelas setas sob os arcos 
+		envolvidos no cruzamento, e escreva a relação $r_i$ indicada por esse quadrado; 
+		há duas possibilidades dadas pelos desenhos na 
+		Figura \ref{desenhos possiveis} (note que $k=i$ ou $k=i+1$ é possível)
+		
+		\par Então o grupo do nó $K$ é gerado por (classes de homotopia de) \textit{loops} $x_i$ 
+		e tem apresentação
+		%
 		\begin{align*}
-		\tag{Apresentação de Wirtinger}
-		\pi_1(\mathbb{R}^3\setminus K) = \left< x_1, \dots, x_n \ | \ r_1, \dots, r_n \right>
+    	\tag{Apresentação de Wirtinger}
+    		\pi_1(\mathbb{R}^3\setminus K) = \langle x_1, \dots, x_n \ | \ r_1, \dots, r_n \rangle.
 		\end{align*}
-		\par Ademais, qualquer das relações $r_i$ é consequência das $n-1$ relações restantes e pode, portanto, ser omitida.
+		%
+		Ademais, qualquer das relações $r_i$ é consequência das $n-1$ relações restantes e pode, portanto, ser omitida.
 	\end{enumerate}
-	\par\vspace{0.3cm} Não vamos, aqui, demonstrar precisamente o teorema, mas vamos dar algumas observações. É razoavelmente claro, geometricamente, que $\pi_1(\mathbb{R}^3\setminus K)$ é gerado pelos \textit{loops} $x_i$; para qualquer \textit{loop} em $\mathbb{R}^3\setminus K$, basta checar quantas voltas ele dá em cada um dos arcos $\alpha_i$ e deformá-lo conformemente. Também é claro que as relações $r_i$ devem valer, i.e., que $x_kx_ix_k^{-1}x_{i+1}^{-1}$ (caso 1) ou $x_ix_kx_{i+1}^{-1}x_k^{-1}$ (caso 2) podem ser reduzidas a um ponto em $\mathbb{R}^3\setminus K$. Isso é mostrado nas seguintes figuras.
+	%
+	Não vamos, aqui, demonstrar precisamente o teorema, mas vamos dar algumas observações. 
+	É razoavelmente claro, geometricamente, que $\pi_1(\mathbb{R}^3\setminus K)$ é gerado 
+	pelos \textit{loops} $x_i$; para qualquer \textit{loop} em $\mathbb{R}^3\setminus K$, 
+	basta checar quantas voltas ele dá em cada um dos arcos $\alpha_i$ e deformá-lo de acordo. 
+	Também é claro que as relações $r_i$ devem valer, i.e., que $x_kx_ix_k^{-1}x_{i+1}^{-1}$ (caso 1) 
+	ou $x_ix_kx_{i+1}^{-1}x_k^{-1}$ (caso 2) podem ser reduzidas a um ponto em $\mathbb{R}^3\setminus K$. 
+	Isso é mostrado nas seguintes figuras.
+	%
 	\begin{figure}[H]
 		\begin{center}
 			\includegraphics[width=15cm]{Images/deformacaoloops.png}
 		\end{center}\caption{Redução em cada caso}
 	\end{figure}
-	\par\vspace{0.3cm} O que não é tão óbvio é que nenhuma relação adicional vale e que qualquer uma das $n$ relações pode ser omitida. Vamos olhar os dois exemplos dados acima, do nó de trevo e do nó figura oito, mais de perto.
+	%
+	O que não é tão óbvio é que nenhuma relação adicional vale e que qualquer uma das $n$ 
+	relações pode ser omitida. Vamos olhar os dois exemplos dados acima, do nó de trevo e 
+	do nó figura oito, mais de perto.
+	%
 	\begin{example}[Nó de trevo]
 		Seja $K$ o nó de trevo dado abaixo.
+		%
 		\begin{figure}[H]
 			\begin{center}
 				\includegraphics[width=12cm]{Images/gruponotrevo.png}
 			\end{center}\caption{Cálculo do grupo de nó do nó de trevo.}
 			\label{grupo no de trevo}
 		\end{figure}
-		\par\vspace{0.3cm} Usando a terminologia da figura, vemos que $\pi_1(\mathbb{R}^3\setminus K)$ é gerado por $3$ elementos $x, y, z$, sujeitos às relações $xz = zy, xz = yx$ e $zy = yx$. De acordo com o teorema de Wirtinger, qualquer uma dessas relações, digamos a terceira, pode ser omitida; isso pode ser verificado algebricamente: eliminando $z = x^{-1}yx$ da segunda relação, a primeira relação se torna $xyx = yxy$. Logo, obtemos uma apresentação para $\pi_1(\mathbb{R}^3\setminus K)$ do nó de trevo:
+		%
+		Usando a terminologia da figura, vemos que $\pi_1(\mathbb{R}^3\setminus K)$ é 
+		gerado por $3$ elementos $x, y, z$, sujeitos às relações $xz = zy, xz = yx$ e $zy = yx$. 
+		De acordo com o teorema de Wirtinger, qualquer uma dessas relações, digamos a terceira, 
+		pode ser omitida; isso pode ser verificado algebricamente: eliminando $z = x^{-1}yx$ da 
+		segunda relação, a primeira relação se torna $xyx = yxy$. Logo, obtemos uma apresentação 
+		para $\pi_1(\mathbb{R}^3\setminus K)$ do nó de trevo:
+		%
 		\begin{align*}
-		\pi_1(\mathbb{R}^3\setminus K) = \left< x,y \ | \ xyx = yxy \right>
+		    \pi_1(\mathbb{R}^3\setminus K) = \langle x,y \ | \ xyx = yxy \rangle.
 		\end{align*}
-		\par\vspace{0.3cm} Fazendo $a = xyx$ e $b = xy$, temos $x = b^{-1}a, y = a^{-1}b^2$ e $a^2 = (xyx)^2 = (xyx)(xyx) = (xyx)(yxy) = (xy)^3 = b^3$. Assim, podemos escrever o grupo do nó de trevo como
+		%
+		Fazendo $a = xyx$ e $b = xy$, temos $x = b^{-1}a, y = a^{-1}b^2$ e 
+		$a^2 = (xyx)^2 = (xyx)(xyx) = (xyx)(yxy) = (xy)^3 = b^3$. 
+		Assim, podemos escrever o grupo do nó de trevo como
+		%
 		\begin{align*}
-		\pi_1(\mathbb{R}^3\setminus K) = \left< a,b \ | \ a^2 = b^3 \right>
+		    \pi_1(\mathbb{R}^3\setminus K) = \langle a,b \ | \ a^2 = b^3 \rangle.
 		\end{align*}
-		\par\vspace{0.3cm} Note que $\alpha = (12)$ e $\beta = (123)$ em $S_3$ também satisfazem $\alpha^2 = \beta^3 = e$. Logo, $S_3$ é imagem homomórfica de $\pi_1(\mathbb{R}^3\setminus K)$, o que implica que $\pi_1(\mathbb{R}^3\setminus K)$ não é abeliano. Em particular, o grupo de $K$ não é isomorfo ao grupo do nó trivial ($\mathbb{Z}$), logo $K$ não pode ser desatado sem cortes e colagens (como esperado).
+		%
+		Note que $\alpha = (12)$ e $\beta = (123)$ em $S_3$ também satisfazem $\alpha^2 = \beta^3 = e$. 
+		Logo, $S_3$ é imagem homomórfica de $\pi_1(\mathbb{R}^3\setminus K)$, o que implica que
+		$\pi_1(\mathbb{R}^3\setminus K)$ não é abeliano. Em particular, o grupo de $K$ não é 
+		isomorfo ao grupo do nó trivial ($\mathbb{Z}$), logo $K$ não pode ser desatado sem 
+		cortes e colagens (como esperado).
 	\end{example}
+	%
 	\begin{example}[Nó figura oito]
 		O nó figura oito é mostrado abaixo.
+		%
 		\begin{figure}[H]
 			\begin{center}
 				\includegraphics[width=10cm]{Images/gruponooito.png}
 			\end{center}\caption{Cálculo do grupo de nó do nó figura oito}
 			\label{grupo no de oito}	
 		\end{figure}
-		\par\vspace{0.3cm} O algoritmo de Wirtinger nos dá quatro geradores $x,y,z,w$ e quatro relações $xz = yx, wz = zx, yz = wy$ e $wx = yw$. Novamente, a última dessas relações pode ser omitida. Escrevemos a primeira relação na forma $z = x^{-1}yx$ e então a segunda relação na forma $w = zxz^{-1} = (x^{-1}yx)x(x^{-1}y^{-1}x) = x^{-1}yxy^{-1}x$; e a última relação, a terceira, torna-se $yx^{-1}yx = x^{-1}yxy^{-1}xy$. Logo, o grupo $\pi_1(\mathbb{R}^3\setminus K)$ do nó de trevo pode ser apresentado como
+		%
+		O algoritmo de Wirtinger nos dá quatro geradores $x,y,z,w$ e quatro relações 
+		$xz = yx, wz = zx, yz = wy$ e $wx = yw$. Novamente, a última dessas relações 
+		pode ser omitida. Escrevemos a primeira relação na forma $z = x^{-1}yx$ e 
+		então a segunda relação na forma $w = zxz^{-1} = (x^{-1}yx)x(x^{-1}y^{-1}x) = x^{-1}yxy^{-1}x$; 
+		e a última relação, a terceira, torna-se $yx^{-1}yx = x^{-1}yxy^{-1}xy$. 
+		Logo, o grupo $\pi_1(\mathbb{R}^3\setminus K)$ do nó de trevo pode ser apresentado como
+		%
 		\begin{align*}
-		\pi_1(\mathbb{R}^3\setminus K) = \left< x,y \ | \ yx^{-1}yx = x^{-1}yxy^{-1}xy \right>
+		    \pi_1(\mathbb{R}^3\setminus K) = \langle x,y \ | \ yx^{-1}yx = x^{-1}yxy^{-1}xy \rangle.
 		\end{align*}
+		%
 	\end{example}
-	\par\vspace{0.3cm} Se dois nós têm grupos não isomorfos, então não é possível deformar um dos nós no outro; em particular, se o grupo de um nó não é isomorfo a $\mathbb{Z}$, então esse nó não é trivial. Portanto, podemos utilizar a teoria dos grupos para distinguir tipos diferentes de nós. Contudo, vale pontuar que se dois nós são dados por uma apresentação (como a apresentação de Wirtinger), em geral é um problema algébrico difícil decidir se esses grupos são isomorfos ou não.
-	\par\vspace{0.3cm} Por outro lado, pode ser nos dado o problema puramente algébrico de decidir se dois grupos dados por apresentações são isomorfos ou não. Se soubermos que esses grupos ocorrem como grupos de nó, e também soubermos, por considerações topológicas, que esses nós não são equivalentes, então podemos concluir que esses dois grupos não são isomorfos. Portanto, não apenas a teoria dos grupos ajuda a topologia, mas reciprocamente!
+	%
+	Se dois nós têm grupos não isomorfos, então não é possível deformar um dos nós no outro; 
+	em particular, se o grupo de um nó não é isomorfo a $\mathbb{Z}$, então esse nó não é trivial. 
+	Portanto, podemos utilizar a teoria dos grupos para distinguir tipos diferentes de nós. 
+	Contudo, vale pontuar que se dois nós são dados por uma apresentação (como a apresentação de Wirtinger), 
+	em geral é um problema algébrico difícil decidir se esses grupos são isomorfos ou não.
+	
+	\par\vspace{0.3cm} Por outro lado, pode-se pensar no problema puramente algébrico de decidir 
+	se dois grupos dados por apresentações são isomorfos ou não. Se soubermos que esses grupos 
+	ocorrem como grupos de nó, e também soubermos, por considerações topológicas, que esses nós 
+	não são equivalentes, então podemos concluir que esses dois grupos não são isomorfos. 
+	Portanto, não apenas a teoria dos grupos ajuda a topologia, mas reciprocamente!
 	
 	\section{Representação de Burau e os polinômios de Alexander e Jones} 
-	\hspace{12pt} Como consequência do Teorema \eqref{teorema de Markov}, podemos usar tranças e a teoria das tranças para determinar invariantes de nós. Um dos exemplos mais elegantes desse método é o chamado \textit{polinômio de Alexander}, nomeado em homenagem ao matemático norte-americano J.W. Alexander, e denotado por $\Delta_K(t)$, sendo $K$ um nó (ou \textit{link}).
+	Como consequência do Teorema \ref{teorema de Markov}, podemos usar tranças e a teoria das tranças para determinar invariantes de nós. Um dos exemplos mais elegantes desse método é o chamado \textit{polinômio de Alexander}, nomeado em homenagem ao matemático norte-americano J.W. Alexander, e denotado por $\Delta_K(t)$, sendo $K$ um nó (ou \textit{link}).
 	\par\vspace{0.3cm} Mesmo com a descoberta do polinômio de Jones (outro invariante que também será tratado mais à frente) e seus híbridos em 1980, o polinômio de Alexander ainda permanece, mesmo após mais de 50 anos de pesquisa, um dos mais importantes e úteis invariantes de nós (e \textit{links}).
 	\par\vspace{0.3cm} Para definir o polinômio de Alexander, devemos primeiro introduzir a chamada \textit{representação de Burau} de $B_n(\mathbb{R}^2)$. Então, seja $\beta\in B_n(\mathbb{R}^2)$. Podemos representar essa trança como
 	\begin{align*}
