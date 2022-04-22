@@ -803,144 +803,242 @@
 	não são equivalentes, então podemos concluir que esses dois grupos não são isomorfos. 
 	Portanto, não apenas a teoria dos grupos ajuda a topologia, mas reciprocamente!
 	
-	\section{Representação de Burau e os polinômios de Alexander e Jones} 
-	Como consequência do Teorema \ref{teorema de Markov}, podemos usar tranças e a teoria das tranças para determinar invariantes de nós. Um dos exemplos mais elegantes desse método é o chamado \textit{polinômio de Alexander}, nomeado em homenagem ao matemático norte-americano J.W. Alexander, e denotado por $\Delta_K(t)$, sendo $K$ um nó (ou \textit{link}).
-	\par\vspace{0.3cm} Mesmo com a descoberta do polinômio de Jones (outro invariante que também será tratado mais à frente) e seus híbridos em 1980, o polinômio de Alexander ainda permanece, mesmo após mais de 50 anos de pesquisa, um dos mais importantes e úteis invariantes de nós (e \textit{links}).
-	\par\vspace{0.3cm} Para definir o polinômio de Alexander, devemos primeiro introduzir a chamada \textit{representação de Burau} de $B_n(\mathbb{R}^2)$. Então, seja $\beta\in B_n(\mathbb{R}^2)$. Podemos representar essa trança como
+	\section{Representação de Burau e os polinômios de Alexander e Jones}
+	%
+	Como consequência do Teorema \ref{teorema de Markov}, podemos usar tranças e a teoria 
+	das tranças para determinar invariantes de nós. Um dos exemplos mais elegantes desse 
+	método é o chamado \textit{polinômio de Alexander}, nomeado em homenagem ao matemático 
+	norte-americano J.W. Alexander, e denotado por $\Delta_K(t)$, sendo $K$ um nó (ou \textit{link}).
+	
+	\par\vspace{0.3cm} Mesmo com a descoberta do polinômio de Jones (outro invariante que também 
+	será tratado mais à frente) e seus híbridos em 1980, o polinômio de Alexander ainda permanece, 
+	mesmo após mais de 50 anos de pesquisa, um dos mais importantes e úteis invariantes 
+	de nós (e \textit{links}).
+	
+	\par\vspace{0.3cm} Para definir o polinômio de Alexander, devemos primeiro introduzir a chamada
+	\textit{representação de Burau} de $B_n(\mathbb{R}^2)$. Então, seja $\beta\in B_n(\mathbb{R}^2)$. 
+	Podemos representar essa trança como
+	%
 	\begin{align*}
-	\beta = \sigma_{i_1}^{\varepsilon_1}\cdots\sigma_{i_k}^{\varepsilon_k}
+	    \beta = \sigma_{i_1}^{\varepsilon_1}\cdots\sigma_{i_k}^{\varepsilon_k},
 	\end{align*}
-	\par\vspace{0.3cm} com $1\leq i_1, \dots, i_k\leq n-1$ e $\varepsilon_i = \pm1$. Agora, vamos definir a função
+	%
+	com $1\leq i_1, \dots, i_k\leq n-1$ e $\varepsilon_i = \pm1$. Agora, vamos definir a função
+	%
 	\begin{align*}
-	\varphi_n: B_n\to M(n, \mathbb{Z}[t, t^{-1}])
+	    \varphi_n: B_n\to M(n, \mathbb{Z}[t, t^{-1}])
 	\end{align*}
-	sendo $M(n, \mathbb{Z}[t,t^{-1}])$ as matrizes de ordem $n$ sobre o módulo $\mathbb{Z}[t,t^{-1}]$, tal que
+	%
+	sendo $M(n, \mathbb{Z}[t,t^{-1}])$ as matrizes de ordem $n$ sobre o módulo $\mathbb{Z}[t,t^{-1}]$, 
+	tal que
+	%
 	\begin{equation}
 	\label{representacao de Burau}
-	\varphi_n(\sigma_i) = 
-	\left[ 
-	\begin{array}{c|cc|c}
-	I_{i-1} &  &  & \\
-	\hline 
-	& 1-t & t &  \\
-	& 1 & 0 &  \\ 
-	\hline
-	&  &  & I_{n-i-1}
-	\end{array}
-	\right] 
+    	\varphi_n(\sigma_i) = 
+    	\left[ 
+    	\begin{array}{c|cc|c}
+        	I_{i-1} &  &  & \\
+        	\hline 
+        	& 1-t & t &  \\
+        	& 1 & 0 &  \\ 
+        	\hline
+        	&  &  & I_{n-i-1}
+    	\end{array}
+    	\right],
 	\end{equation}
-	\par\vspace{0.3cm} sendo $I_m$ a matriz identidade de ordem $m$ e os espaços vazios correspondem a matrizes nulas. A representação de $B_n$ dada em \eqref{representacao de Burau} é chamada \textit{representação de Burau}. De fato, $\varphi_n$ é homomorfismo, como mostraremos a seguir.
+	%
+	sendo $I_m$ a matriz identidade de ordem $m$ e os espaços vazios correspondem a matrizes nulas. 
+	A representação de $B_n$ dada em \eqref{representacao de Burau} é chamada \textit{representação de Burau}. 
+	De fato, $\varphi_n$ é homomorfismo, como mostraremos a seguir.
+	%
 	\begin{prop}
-		\label{Burau e homomorfismo}
-		A função $\varphi_n$ definida em \eqref{representacao de Burau} é homomorfismo. 
+	\label{Burau e homomorfismo}
+		A função $\varphi_n$ definida em \eqref{representacao de Burau} é um homomorfismo. 
 	\end{prop}
+	%
 	\begin{proof}
-		Basta mostrarmos que toda relação de $B_n$ é mapeada na matriz identidade ou, equivalentemente, que as relações de $B_n$ se mantêm para $\varphi_n$. 
-		\par\vspace{0.3cm} Primeiro, vamos mostrar que se $|i - j|\geq 2$, então $\varphi_n(\sigma_i)\varphi_n(\sigma_j) = \varphi_n(\sigma_j)\varphi_n(\sigma_i)$. Sem perda de generalidade, podemos tomar $j>i+1$ e, portanto
-		\begin{equation*}
-		\varphi_n(\sigma_i)\varphi_n(\sigma_j) = 
-		\left[ 
-		\begin{array}{c|cc|c|cc|c}
-		I_{i-1} & & & & & & \\
-		\hline
-		& 1-t & t & & & & \\
-		& 1 & 0 & & & & \\
-		\hline
-		& & & I_{j-i-2} & & &\\
-		\hline
-		& & & & 1-t & t &\\
-		& & & & 1 & 0 & \\
-		\hline 
-		& & & & & & I_{n-j-1} 
-		\end{array}	
-		\right] = \varphi_n(\sigma_j)\varphi_n(\sigma_i)
-		\end{equation*}
-		\par\vspace{0.3cm} sendo os espaços vazios preenchidos por matrizes nulas.
-		\par\vspace{0.3cm} Agora, para a segunda e última relação, $\sigma_i\sigma_{i+1}\sigma_i = \sigma_{i+1}\sigma_i\sigma_{i+1}$, basta considerarmos o caso $n=3$, uma vez que na representação de Burau as entradas não nulas correspondem a matrizes identidade, ou seja, aumentando $n$ a partir de $3$, estaremos apenas acrescentando uma nova linha e uma nova coluna que serão ambas nulas com exceção da entrada diagonal, que será $1$; portanto, a multiplicação das matrizes não é afetada. 
-		\par\vspace{0.3cm} Então, tomando $n = 3$, temos
+		Basta mostrarmos que toda relação de $B_n$ é mapeada na matriz identidade ou, 
+		equivalentemente, que as relações de $B_n$ se mantêm para $\varphi_n$.
+		
+		\par\vspace{0.3cm} Primeiro, vamos mostrar que se $|i - j|\geq 2$, então
+		$\varphi_n(\sigma_i)\varphi_n(\sigma_j) = \varphi_n(\sigma_j)\varphi_n(\sigma_i)$. 
+		Sem perda de generalidade, podemos tomar $j>i+1$ e, portanto,
+		%
 		\begin{align*}
-		\varphi_3(\sigma_1\sigma_2\sigma_1) &= \varphi_3(\sigma_1)\varphi_3(\sigma_2)\varphi_3(\sigma_1) \\ &= 
-		\begin{bmatrix}
-		1-t & t & 0 \\
-		1 & 0 & 0 \\
-		0 & 0 & 1
-		\end{bmatrix}\begin{bmatrix}
-		1 & 0 & 0 \\
-		0 & 1-t & t \\
-		0 & 1 & 0
-		\end{bmatrix}\begin{bmatrix}
-		1-t & t & 0 \\
-		1 & 0 & 0 \\
-		0 & 0 & 1
-		\end{bmatrix} \\
-		&= \begin{bmatrix}
-		(1-t)^2 +t(1-t) & t(1-t) & t^2 \\
-		1-t & t & 0 \\
-		1 & 0 & 0
-		\end{bmatrix} \\
-		&= \begin{bmatrix}
-		1 & 0 & 0 \\
-		0 & 1-t & t \\
-		0 & 1 & 0
-		\end{bmatrix}\begin{bmatrix}
-		1-t & t & 0 \\
-		1 & 0 & 0 \\
-		0 & 0 & 1
-		\end{bmatrix}\begin{bmatrix}
-		1 & 0 & 0 \\
-		0 & 1-t & t \\
-		0 & 1 & 0
-		\end{bmatrix}\\
-		&= \varphi_3(\sigma_2)\varphi_3(\sigma_1)\varphi_3(\sigma_2)\\
-		&=\varphi_3(\sigma_2\sigma_1\sigma_2)
+    		\varphi_n(\sigma_i)\varphi_n(\sigma_j) &=
+    		\left[ 
+        	\begin{array}{c|cc|c}
+            	I_{i-1} &  &  & \\
+            	\hline 
+            	& 1-t & t &  \\
+            	& 1 & 0 &  \\ 
+            	\hline
+            	&  &  & I_{n-i-1}
+        	\end{array}
+        	\right]\cdot
+        	\left[ 
+        	\begin{array}{c|cc|c}
+            	I_{j-1} &  &  & \\
+            	\hline 
+            	& 1-t & t &  \\
+            	& 1 & 0 &  \\ 
+            	\hline
+            	&  &  & I_{n-j-1}
+        	\end{array}
+        	\right] \\
+        	&=
+    		\left[ 
+    		\begin{array}{c|cc|c|cc|c}
+        		I_{i-1} & & & & & & \\
+        		\hline
+        		& 1-t & t & & & & \\
+        		& 1 & 0 & & & & \\
+        		\hline
+        		& & & I_{j-i-2} & & &\\
+        		\hline
+        		& & & & 1-t & t &\\
+        		& & & & 1 & 0 & \\
+        		\hline 
+        		& & & & & & I_{n-j-1}
+    		\end{array}
+    		\right] \\
+    		&= \left[ 
+        	\begin{array}{c|cc|c}
+            	I_{j-1} &  &  & \\
+            	\hline 
+            	& 1-t & t &  \\
+            	& 1 & 0 &  \\ 
+            	\hline
+            	&  &  & I_{n-j-1}
+        	\end{array}
+        	\right]\cdot
+        	\left[ 
+        	\begin{array}{c|cc|c}
+            	I_{i-1} &  &  & \\
+            	\hline 
+            	& 1-t & t &  \\
+            	& 1 & 0 &  \\ 
+            	\hline
+            	&  &  & I_{n-i-1}
+        	\end{array}
+        	\right] \\
+    		&= \varphi_n(\sigma_j)\varphi_n(\sigma_i)
 		\end{align*}
+		%
+		sendo os espaços vazios preenchidos por matrizes nulas.
+		
+		\par\vspace{0.3cm} Agora, para a segunda e última relação, 
+		$\sigma_i\sigma_{i+1}\sigma_i = \sigma_{i+1}\sigma_i\sigma_{i+1}$, 
+		basta considerarmos o caso $n=3$, uma vez que na representação de 
+		Burau as entradas não nulas correspondem a matrizes identidade, ou seja, 
+		aumentando $n$ a partir de $3$, estaremos apenas acrescentando uma nova 
+		linha e uma nova coluna que serão ambas nulas com exceção da entrada diagonal, 
+		que será $1$; portanto, a multiplicação das matrizes não é afetada.
+		
+		\par\vspace{0.3cm} Então, tomando $n = 3$, temos
+		%
+		\begin{align*}
+    		\varphi_3(\sigma_1\sigma_2\sigma_1) &= \varphi_3(\sigma_1)\varphi_3(\sigma_2)\varphi_3(\sigma_1) \\ 
+    		&= 
+    		\begin{bmatrix}
+    		1-t & t & 0 \\
+    		1 & 0 & 0 \\
+    		0 & 0 & 1
+    		\end{bmatrix}\begin{bmatrix}
+    		1 & 0 & 0 \\
+    		0 & 1-t & t \\
+    		0 & 1 & 0
+    		\end{bmatrix}\begin{bmatrix}
+    		1-t & t & 0 \\
+    		1 & 0 & 0 \\
+    		0 & 0 & 1
+    		\end{bmatrix} \\
+    		&= \begin{bmatrix}
+    		(1-t)^2 +t(1-t) & t(1-t) & t^2 \\
+    		1-t & t & 0 \\
+    		1 & 0 & 0
+    		\end{bmatrix} \\
+    		&= \begin{bmatrix}
+    		1 & 0 & 0 \\
+    		0 & 1-t & t \\
+    		0 & 1 & 0
+    		\end{bmatrix}\begin{bmatrix}
+    		1-t & t & 0 \\
+    		1 & 0 & 0 \\
+    		0 & 0 & 1
+    		\end{bmatrix}\begin{bmatrix}
+    		1 & 0 & 0 \\
+    		0 & 1-t & t \\
+    		0 & 1 & 0
+    		\end{bmatrix}\\
+    		&= \varphi_3(\sigma_2)\varphi_3(\sigma_1)\varphi_3(\sigma_2)\\
+    		&=\varphi_3(\sigma_2\sigma_1\sigma_2).
+		\end{align*}
+		%
 	\end{proof}
+	%
 	\begin{remark}
-		Em geral, a função $\varphi_n$ não é fiel, i.e., injetiva. Para $n=2$ e $n=3$, é sabido que $\varphi_n$ é fiel; para $n=4$, contudo, não sabemos.
+		Em geral, a função $\varphi_n$ não é fiel, i.e., injetiva. Para $n=2$ e $n=3$, 
+		é sabido que $\varphi_n$ é fiel; para $n=4$, contudo, não sabemos.
 	\end{remark}
-	\par\vspace{0.3cm} Note também que como $\det(\varphi_n(\sigma_i)) = -t$ (basta expandir o determinante pelas primeiras $i-1$ linhas e, em seguida, pelas últimas $n-i-1$ linhas, restando apenas a matriz $\left[\begin{smallmatrix}
+	%
+	Note também que como $\det(\varphi_n(\sigma_i)) = -t$ (basta expandir o determinante pelas 
+	primeiras $i-1$ linhas e, em seguida, pelas últimas $n-i-1$ linhas, restando apenas a matriz
+	$\left[\begin{smallmatrix}
 	1-t & t \\
 	1 & 0
-	\end{smallmatrix}\right]$), então existe o inverso de $\varphi_n(\sigma_i)$. Para computá-lo, note que
+	\end{smallmatrix}\right]$), então existe o inverso de $\varphi_n(\sigma_i)$. 
+	Para computá-lo, note que
+	%
 	\begin{align*}
-	\varphi_n(1) = I_n = \varphi_n(\sigma_i\sigma_i^{-1}) = \varphi_n(\sigma_i)\varphi_n(\sigma_i^{-1}) \Leftrightarrow \varphi_n(\sigma_i^{-1}) = (\varphi_n(\sigma_i))^{-1}
+    	\varphi_n(1) = I_n 
+    	= \varphi_n(\sigma_i\sigma_i^{-1}) = \varphi_n(\sigma_i)\varphi_n(\sigma_i^{-1}) 
+    	\Leftrightarrow \varphi_n(\sigma_i^{-1}) = (\varphi_n(\sigma_i))^{-1}.
 	\end{align*} 
-	\par\vspace{0.3cm} Calculando o inverso de $\varphi_n(\sigma_i)$ (que se resume basicamente a encontrar o inverso de $\left[\begin{smallmatrix}
+	%
+	Calculando o inverso de $\varphi_n(\sigma_i)$ (que se resume basicamente a encontrar 
+	o inverso de 
+	$\left[\begin{smallmatrix}
 	1-t & t\\
 	1 & 0
 	\end{smallmatrix}\right]$), obtemos
+	%
 	\begin{align*}
-	\varphi_n(\sigma_i^{-1}) = 
-	\left[ 
-	\begin{array}{c|cc|c}
-	I_{i-1} &  &  & \\
-	\hline 
-	& 0 & 1 &  \\
-	& t^{-1} & 1-t^{-1} &  \\ 
-	\hline
-	&  &  & I_{n-i-1}
-	\end{array}
-	\right] 
+    	\varphi_n(\sigma_i^{-1}) = 
+    	\left[ 
+    	\begin{array}{c|cc|c}
+        	I_{i-1} &  &  & \\
+        	\hline 
+        	& 0 & 1 &  \\
+        	& t^{-1} & 1-t^{-1} &  \\ 
+        	\hline
+        	&  &  & I_{n-i-1}
+        	\end{array}
+    	\right].
 	\end{align*}
-	\par\vspace{0.3cm} Por exemplo, tomando $\beta = \sigma_1\sigma_2^{-1}$, temos
+	%
+	Por exemplo, tomando $\beta = \sigma_1\sigma_2^{-1}$, temos
+	%
 	\begin{align*}
-	\varphi_3(\beta) &= 
-	\begin{bmatrix}
-	1-t & t & 0 \\
-	1 & 0 & 0 \\
-	0 & 0 & 1
-	\end{bmatrix}\begin{bmatrix}
-	1 & 0 & 0 \\
-	0 & 0 & 1 \\
-	0 & t^{-1} & 1-t^{-1}
-	\end{bmatrix}\\
-	&= \begin{bmatrix}
-	1-t & 0 & t \\
-	1 & 0 & 0 \\
-	0 & t^{-1} & 1-t^{-1}
-	\end{bmatrix}
+    	\varphi_3(\beta) = 
+    	\begin{bmatrix}
+    	1-t & t & 0 \\
+    	1 & 0 & 0 \\
+    	0 & 0 & 1
+    	\end{bmatrix}\begin{bmatrix}
+    	1 & 0 & 0 \\
+    	0 & 0 & 1 \\
+    	0 & t^{-1} & 1-t^{-1}
+    	\end{bmatrix}
+    	= \begin{bmatrix}
+    	1-t & 0 & t \\
+    	1 & 0 & 0 \\
+    	0 & t^{-1} & 1-t^{-1}
+    	\end{bmatrix}
 	\end{align*}
-	\par\vspace{0.3cm} Vamos, agora, tratar do polinômio de Alexander em si.
+	%
+	Vamos, agora, tratar do polinômio de Alexander em si.
+	
 	\par\vspace{0.3cm} Então, suponha que percebemos que uma quantidade $\lambda(\beta)$, derivada de uma trança $\beta$ de $n$ cordas, é um invariante de nó (ou \textit{link}). Devido ao Teorema \eqref{teorema de Markov}, para mostrar que $\lambda(\beta)$ é realmente um invariante, é suficiente mostrar que para uma trança $\beta$ de $n$ cordas valem as seguintes propriedades:
 	\begin{enumerate}
 		\item $\lambda(\beta) = \lambda(\gamma\beta\gamma^{-1})$ para $\gamma\in B_n$ arbitrária;
