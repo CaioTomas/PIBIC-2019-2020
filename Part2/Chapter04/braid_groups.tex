@@ -354,7 +354,8 @@
 		= \langle (\sigma_1\sigma_2\cdots\sigma_{n-1})^n \rangle$.
 	\end{theorem}
 	%
-	Em outras palavras, toda trança do centro de $B_n$ é uma potência de $\Delta_n^2$.%, isto é, toda trança que comuta com todas as outras é uma potência da volta completa.
+	Em outras palavras, toda trança do centro de $B_n$ é uma potência de $\Delta_n^2$.
+	%, isto é, toda trança que comuta com todas as outras é uma potência da volta completa.
 	Demonstramos o Teorema \ref{centro de B_n} para $n=3$.
 	%
 	\begin{prop}
@@ -372,7 +373,8 @@
 		= \sigma_2(\sigma_1\sigma_2)^3$. Portanto, 
 		$\langle (\sigma_1\sigma_2)^3 \rangle\subseteq Z(B_3)$.
 		
-		\par\vspace{0.3cm} Agora, seja $g\in Z(B_3)$. Então, devemos ter, necessariamente, $g\sigma_1 = \sigma_1g$ e $g\sigma_2 = \sigma_2g$. Suponha, então, $g = \sigma_1^i\sigma_2^j$. Daí, temos
+		\par\vspace{0.3cm} Agora, seja $g\in Z(B_3)$. Então, devemos ter, necessariamente, 
+		$g\sigma_1 = \sigma_1g$ e $g\sigma_2 = \sigma_2g$. Suponha, então, $g = \sigma_1^i\sigma_2^j$. Daí, temos
 		%
 		\begin{align*}
     		\begin{cases}
@@ -415,7 +417,8 @@
 		= (\sigma_1\sigma_2)^3\sigma_2\sigma_1\neq(\sigma_1\sigma_2)^4.
 		\]
 		%
-		Daí, concluímos que todo elemento do centro de $B_3$ é uma potência de $(\sigma_1\sigma_2)^3$, ou seja, $Z(B_3)\subseteq\langle (\sigma_1\sigma_2)^3 \rangle$. Portanto, 
+		Daí, concluímos que todo elemento do centro de $B_3$ é uma potência de $(\sigma_1\sigma_2)^3$, 
+		ou seja, $Z(B_3)\subseteq\langle (\sigma_1\sigma_2)^3 \rangle$. Portanto, 
 		$Z(B_3) = \langle (\sigma_1\sigma_2)^3 \rangle$.
 	\end{proof}
 	%
@@ -446,7 +449,9 @@
 	\end{proof}
 	%
 	%\begin{remark}
-	%	No Teorema \eqref{centro de B_n}, usamos o fato de que $Z(B_n) = Z(P_n)$. Isso se deve ao fato de que $P_n$ é homomorfo a $B_n$, logo (como um homomorfismo preserva a operação) o centro de $B_n$ é levado no centro de $P_n$.
+	%	No Teorema \eqref{centro de B_n}, usamos o fato de que $Z(B_n) = Z(P_n)$. 
+	%Isso se deve ao fato de que $P_n$ é homomorfo a $B_n$, logo (como um homomorfismo preserva a operação) 
+	%o centro de $B_n$ é levado no centro de $P_n$.
 	%\end{remark}
 	%
 	%\begin{theorem}
@@ -492,7 +497,8 @@
 		um grupo finito é residualmente finita. Como $B_n$ é uma extensão de $P_n$ por $S_n$ e $P_n$ é
 		residualmente finito, concluímos que $B_n$ também é.
 		
-		\par\vspace{0.3cm} Por fim, observe que todos os subgrupos de um grupo residualmente finito são também residualmente finitos.	
+		\par\vspace{0.3cm} Por fim, observe que todos os subgrupos de um grupo residualmente 
+		finito são também residualmente finitos.	
 	\end{proof}
 	%
 	\section{Tranças como espaços de configuração}\label{secao trancas como espacos de configuracao}
@@ -634,7 +640,9 @@
 	%
 	\begin{definition}
 	\label{def informal grupo fundamental}
-		Dado um espaço topológico $X$ e um ponto $x_0\in X$, o conjunto de loops que começam e terminam em $x_0$ e que são caminhos fechados em $X$ é chamado grupo fundamental de $X$ com ponto base $x_0$ e denotado por $\pi_1(X,x_0)$.
+		Dado um espaço topológico $X$ e um ponto $x_0\in X$, o conjunto de loops que começam e 
+		terminam em $x_0$ e que são caminhos fechados em $X$ é chamado grupo fundamental de $X$ 
+		com ponto base $x_0$ e denotado por $\pi_1(X,x_0)$.
 	\end{definition}
 	%
 	Um detalhe importante é que se $X$ é conexo por caminhos (i.e., dado um par de pontos em $X$, 
@@ -747,7 +755,8 @@
 	%
 	\begin{center}
 		\begin{tikzpicture}
-		\braid[braid colour=black,strands=4,braid start={(0,0)}]	{\sigma_1\sigma_2\sigma_3\sigma_3\sigma_2\sigma_1}
+		\braid[braid colour=black,strands=4,braid start={(0,0)}]
+		{\sigma_1\sigma_2\sigma_3\sigma_3\sigma_2\sigma_1}
 		%\node[font=\Huge] at (4.5,-1.0) {\(\neq\)};
 		%\braid[strands=3,braid start={(5,0)}]
 		%{\sigma_2\sigma_1}
@@ -988,7 +997,8 @@
 	%
 	\begin{center}
 		\begin{tabular}{ccc}
-			$\sigma_1\sigma_2\sigma_1 = \sigma_2\sigma_1\sigma_2$ & e & $\sigma_1\sigma_2\sigma_1^2\sigma_2\sigma_1 = 1$.
+			$\sigma_1\sigma_2\sigma_1 = \sigma_2\sigma_1\sigma_2$ & e &
+			$\sigma_1\sigma_2\sigma_1^2\sigma_2\sigma_1 = 1$.
 		\end{tabular}
 	\end{center}
 	%
@@ -1039,194 +1049,413 @@
 		$|B_n(\mathbb{S}^2)| = \infty$ para todo $n\geq 4$.
 	\end{lemma}
 	%
-	Observando o Lema \eqref{grupo de trancas esfericas infinitos}, a distinção mais simples que podemos fazer entre $B_n(\mathbb{R}^2)$ e $B_n(\mathbb{S}^2)$ é que $B_n(\mathbb{R}^2)$ é finito apenas para $n=1$, enquanto que $B_n(\mathbb{S}^2)$ é finito para $n=1,2$ e $3$.
-	\par\vspace{0.3cm} Contudo, a maior diferença entre esses dois grupos (ou famílias de grupos) é o fato de que $B_n(\mathbb{R}^2)<B_{n+1}(\mathbb{R}^2)$, como mostrado na Proposição \eqref{B_m subgrupo de B_n}, enquanto que $B_n(\mathbb{S}^2)\nless B_{n+1}(\mathbb{S}^2)$.
-	\par\vspace{0.3cm} De fato, a relação $(\sigma_1\sigma_2\cdots\sigma_{n-1})(\sigma_{n-1}\cdots\sigma_2\sigma_1) = 1$ em $B_n(\mathbb{S}^2)$ pode não ser válida em $B_{n+1}(\mathbb{S}^2)$. Por exemplo, do Teorema \eqref{apresentacao de B_n(S^2)}, sabemos que $\sigma_1^2 = 1$ em $B_2(\mathbb{S}^2)$, mas não em $B_3(\mathbb{S}^2)$, devido à Proposição \eqref{homomorfismo de comprimento em trancas esfericas}.
-	\par\vspace{0.3cm} Além disso, também do Teorema \eqref{apresentacao de B_n(S^2)}, $\sigma_1\sigma_2^2\sigma_1 = 1$ em $B_3(\mathbb{S}^2)$, mas não em $B_4(\mathbb{S}^2)$, de novo devido à Proposição \eqref{homomorfismo de comprimento em trancas esfericas}.
-	\par\vspace{0.3cm} Consequentemente, a função identidade $\displaystyle{\psi: \underset{\sigma_i\mapsto\sigma_i}{B_n(\mathbb{S}^2)\to B_{n+1}(\mathbb{S}^2)}}$, para $1\leq i\leq n-1$, não é um homomorfismo e não podemos considerar $B_n(\mathbb{S}^2)$ como um subgrupo natural de $B_{n+1}(\mathbb{S}^2)$.
-	\par\vspace{0.3cm} É interessante notar também que algumas tranças não identidades são triviais em $B_n(\mathbb{S}^2)$, i.e., $B_n(\mathbb{S}^2)$ \textbf{não é} livre de torção, como mostrado no seguinte lema.
+	Observando o Lema \ref{grupo de trancas esfericas infinitos}, a distinção mais simples 
+	que podemos fazer entre $B_n(\mathbb{R}^2)$ e $B_n(\mathbb{S}^2)$ é que 
+	$B_n(\mathbb{R}^2)$ é finito apenas para $n=1$, enquanto que $B_n(\mathbb{S}^2)$ 
+	é finito para $n=1,2$ e $3$.
 	
+	\par\vspace{0.3cm} Contudo, a maior diferença entre esses dois grupos 
+	(ou famílias de grupos) é o fato de que $B_n(\mathbb{R}^2)<B_{n+1}(\mathbb{R}^2)$, 
+	como mostrado na Proposição \ref{B_m subgrupo de B_n}, enquanto que 
+	$B_n(\mathbb{S}^2)\nless B_{n+1}(\mathbb{S}^2)$.
+	
+	\par\vspace{0.3cm} De fato, a relação 
+	$(\sigma_1\sigma_2\cdots\sigma_{n-1})(\sigma_{n-1}\cdots\sigma_2\sigma_1) = 1$ 
+	em $B_n(\mathbb{S}^2)$ pode não ser válida em $B_{n+1}(\mathbb{S}^2)$. Por exemplo, do 
+	Teorema \ref{apresentacao de B_n(S^2)}, sabemos que $\sigma_1^2 = 1$ em 
+	$B_2(\mathbb{S}^2)$, mas não em $B_3(\mathbb{S}^2)$, devido à 
+	Proposição \ref{homomorfismo de comprimento em trancas esfericas}.
+	
+	\par\vspace{0.3cm} Além disso, também do Teorema \ref{apresentacao de B_n(S^2)},
+	$\sigma_1\sigma_2^2\sigma_1 = 1$ em $B_3(\mathbb{S}^2)$, mas não em $B_4(\mathbb{S}^2)$, 
+	de novo devido à Proposição \ref{homomorfismo de comprimento em trancas esfericas}.
+	
+	\par\vspace{0.3cm} Consequentemente, a função identidade 
+	$\displaystyle{\psi: \underset{\sigma_i\mapsto\sigma_i}{B_n(\mathbb{S}^2)
+	\to B_{n+1}(\mathbb{S}^2)}}$, para $1\leq i\leq n-1$, não é um homomorfismo e 
+	não podemos considerar $B_n(\mathbb{S}^2)$ como um subgrupo natural de $B_{n+1}(\mathbb{S}^2)$.
+	
+	\par\vspace{0.3cm} É interessante notar também que algumas tranças não identidades são 
+	triviais em $B_n(\mathbb{S}^2)$, i.e., $B_n(\mathbb{S}^2)$ \textbf{não é} livre de torção, 
+	como mostrado no seguinte lema.
+	%
 	\begin{lemma}
-		\label{B_(S^2) nao livre de torcao}
-		Para todo $n\geq2$, $\gamma = \sigma_1\sigma_2\cdots\sigma_{n-1}$ (a raiz $n$-ésima da volta completa) tem ordem finita maior que $1$ e, portanto, $B_n(\mathbb{S}^2)$ tem elementos de torção.
+	\label{B_(S^2) nao livre de torcao}
+		Para todo $n\geq2$, $\gamma = \sigma_1\sigma_2\cdots\sigma_{n-1}$ 
+		(a raiz $n$-ésima da volta completa) tem ordem finita maior que $1$ e, portanto, 
+		$B_n(\mathbb{S}^2)$ tem elementos de torção.
 	\end{lemma}
-	
+	%
 	\begin{proof}
-		Primeiro, note que como $l(\gamma) = (n-1)\neq0\text{ }\mathrm{mod}(2(n-1))$, então, para todo $n\geq2$, $\gamma\neq1$. Por outro lado, sabemos que o quadrado da volta completa é trivial, i.e., $(\Delta_n^2)^2 = 1$, logo, como $\Delta_n^2 = \gamma^n$, temos $\gamma^{2n} = 1$.
-		\par\vspace{0.3cm} Portanto, $\gamma$ tem ordem finita $k$ com $2\leq k\leq 2n$, para todo $n\geq 2$. Consequentemente, $B_n(\mathbb{S}^2)$ tem elemento não trivial de ordem finita, não sendo, portanto, livre de torção.
+		Primeiro, note que como $l(\gamma) = (n-1)\neq0\text{ }\mathrm{mod}(2(n-1))$,
+		então, para todo $n\geq2$, $\gamma\neq1$. Por outro lado, sabemos que o quadrado 
+		da volta completa é trivial, i.e., $(\Delta_n^2)^2 = 1$, logo, como $\Delta_n^2 = \gamma^n$, 
+		temos $\gamma^{2n} = 1$.
+		
+		\par\vspace{0.3cm} Portanto, $\gamma$ tem ordem finita $k$ com $2\leq k\leq 2n$, para 
+		todo $n\geq 2$. Consequentemente, $B_n(\mathbb{S}^2)$ tem elemento não trivial de ordem 
+		finita, não sendo, portanto, livre de torção.
 	\end{proof}
-	
+	%
 	\section{Diagrama de van Kampen}
-	\hspace{12pt} Vamos nos deter brevemente para descrever o \textbf{diagrama de van Kampen}. Inicialmente, podemos descrever o diagrama de van Kampen de modo visual: ele ilustra o fato de que uma palavra $w\in F(X)$ no grupo livre sobre $X$ é uma relação em um grupo $G$, i.e., $w$ é um produto de palavras em $R\cup R^{-1}$. Em um nível mais rigoroso, os diagrama de van Kampen são a base de um dos métodos mais poderosos da Teoria Combinatória dos Grupos.
-	\par\vspace{0.3cm} Informalmente, o diagrama de van Kampen para uma apresentação $G = \langle X|R \rangle$ é um grafo conexo finito planar $\Gamma\subseteq\mathbb{R}^2$, cujas arestas são direcionadas e marcadas por elementos de $X$ em um caminho tal que toda face de $\Gamma$ é um disco cuja fronteira é marcada e pertence a $R$ (ou seja, é uma relação). Daí, é quase imediato que a palavra marcada sobre o bordo de $\Gamma$ é ela própria uma relação em $G$. Assim, o diagrama de van Kampen pode ser utilizado para ilustrar a dedução de novas relações a partir das antigas relações.
-	\par\vspace{0.3cm} Antes dos exemplos, vejamos como que cada relator de $G$ é uma palavra limitando algum diagrama de van Kampen $\Gamma$ de $G$. Podemos, ainda, assumir que $\Gamma$ está reduzido, no sentido de que nenhum circuito não trivial carrega a palavra vazia. Agora, o fato de que $\Gamma$ está imerso no plano impõe severas restrições sobre sua estrutura, e.g., sobre a característica de Euler. Essas restrições podem ser usadas para argumentar sobre propriedades locais de $\Gamma$ (correspondendo a condições combinatoriais no conjunto $R$) e sobre propriedades do bordo (correspondendo a propriedades grupo teóricas de $G$).
-	\par\vspace{0.3cm} Um modo de construir o diagrama de van Kampen para uma apresentação $G = \langle X|R \rangle$ é o seguinte. Pensemos em cada relator como o bordo de uma célula bidimensional. Podemos, então, colar coleções dessas células ao longo de arestas com a mesma palavra e orientação.
+	Vamos nos deter brevemente para descrever o \textbf{diagrama de van Kampen}. 
+	Inicialmente, podemos descrever o diagrama de van Kampen de modo visual: ele ilustra o fato de que uma
+	palavra $w\in F(X)$ no grupo livre sobre $X$ é uma relação em um grupo $G$, i.e., $w$ é um produto de
+	palavras em $R\cup R^{-1}$. Em um nível mais rigoroso, os diagrama de van Kampen são a base de uma das
+	técnicas mais poderosas da Teoria Combinatória dos Grupos.
+	
+	\par\vspace{0.3cm} Informalmente, o diagrama de van Kampen para uma apresentação 
+	$G = \langle X \ | \ R \rangle$ é um grafo conexo finito planar $\Gamma\subseteq\mathbb{R}^2$, 
+	cujas arestas são direcionadas e marcadas por elementos de $X$ em um caminho tal que toda face 
+	de $\Gamma$ é um disco cuja fronteira é marcada e pertence a $R$ (ou seja, é uma relação). 
+	Daí, é quase imediato que a palavra marcada sobre o bordo de $\Gamma$ é ela própria uma relação em $G$.
+	Assim, o diagrama de van Kampen pode ser utilizado para ilustrar a dedução de novas relações a 
+	partir das antigas relações.
+	
+	\par\vspace{0.3cm} Antes dos exemplos, vejamos como que cada relator de $G$ é uma palavra limitando 
+	algum diagrama de van Kampen $\Gamma$ de $G$. Podemos, ainda, assumir que $\Gamma$ está reduzido, 
+	no sentido de que nenhum circuito não trivial carrega a palavra vazia. Agora, o fato de que 
+	$\Gamma$ está imerso no plano impõe várias restrições sobre sua estrutura, e.g., sobre a 
+	característica de Euler. Essas restrições podem ser usadas para argumentar sobre propriedades 
+	locais de $\Gamma$ (correspondendo a condições combinatoriais no conjunto $R$) e sobre 
+	propriedades do bordo (correspondendo a propriedades grupo-teóricas de $G$).
+	
+	\par\vspace{0.3cm} Um modo de construir o diagrama de van Kampen para uma apresentação 
+	$G = \langle X \ | \ R \rangle$ é o seguinte. Pensemos em cada relator como o bordo de uma 
+	célula bidimensional. Podemos, então, colar coleções dessas células ao longo de arestas com 
+	a mesma palavra e orientação.
+	
 	\par\vspace{0.3cm} Por exemplo, o grupo dos quatérnios, $Q_8$, tem ordem $8$ e apresentação:
-		\begin{equation*}
-		\langle x,y \ | \ x^4=1, x^2=y^2, y^{-1}xy = x^{-1} \rangle
-		\end{equation*}
-		\par\vspace{0.3cm} Vamos fazer $r = x^4$, $s = x^2y^{-2}$ e $t = y^{-1}xyx$. Daí, o diagrama de van Kampen é o seguinte.
-		\begin{figure}[H]
-			\begin{center}
-				\includegraphics[width=5cm]{Images/diagrama_quaternios.png}
-			\end{center}
-		\caption{Diagrama de van Kampen para o grupo dos quatérnios, $Q_8$}
-		\label{figura diagrama quaternios}
-		\end{figure}
-	\par\vspace{0.3cm} Na parte superior da face esquerda, a fronteira, lida no sentido horário a partir de $A$ é $s = x^2y^{-2}$. De modo análogo, a face contendo $B$, lida no sentido anti-horário a partir de $B$ também nos dá $s = x^2y^{-2}$. Na face inferior contendo $B$, a delimitação do bordo lida no sentido horário a partir de $A$ nos dá $t = y^{-1}xyx$. Do mesmo modo, a face mais à direita, lida no sentido horário a partir de $C$ também nos dá $t = y^{-1}xyx$. Por fim, como a marca sobre a fronteira, lida no sentido horário a partir de $A$, é $x^4=1$, isso nos mostra que essa primeira relação na apresentação de $Q_8$ é supérflua.	
+	%
+	\begin{equation*}
+		\langle x,y \ | \ x^4=1, x^2=y^2, y^{-1}xy = x^{-1} \rangle.
+	\end{equation*}
+	%
+	Vamos fazer $r = x^4$, $s = x^2y^{-2}$ e $t = y^{-1}xyx$. Daí, o diagrama de van Kampen é o seguinte.
+	%
+	\begin{figure}[H]
+		\begin{center}
+			\includegraphics[width=5cm]{Images/diagrama_quaternios.png}
+		\end{center}
+	\caption{Diagrama de van Kampen para o grupo dos quatérnios, $Q_8$}
+	\label{figura diagrama quaternios}
+	\end{figure}
+	%
+	Na parte superior da face esquerda, a fronteira, lida no sentido horário a partir de $A$ é 
+	$s = x^2y^{-2}$. De modo análogo, a face contendo $B$, lida no sentido anti-horário a partir 
+	de $B$ também nos dá $s = x^2y^{-2}$. Na face inferior contendo $B$, a delimitação do bordo 
+	lida no sentido horário a partir de $A$ nos dá $t = y^{-1}xyx$. Do mesmo modo, a face mais à direita, 
+	lida no sentido horário a partir de $C$ também nos dá $t = y^{-1}xyx$. Por fim, como a marca sobre a
+	fronteira, lida no sentido horário a partir de $A$, é $x^4=1$, isso nos mostra que essa primeira 
+	relação na apresentação de $Q_8$ é supérflua.
+	%
 	\par\vspace{0.3cm} Outro exemplo é o grupo 
-		\begin{equation*}
-		G = \langle a,b,c,d \ | \ ab = c, bc = d, cd = a, da = b \rangle
-		\end{equation*}
-		\par\vspace{0.3cm} é claramente gerado por $a$ e $b$, uma vez que $c = ab$ e $d = bc = bab$. Contudo, esse fato pode ser verificado a partir do diagrama de van Kampen para essa apresentação. Nele, as faces estão marcadas pelas seguintes relações definidoras:
-		\begin{equation*}
-		r_1 = abc^{-1}, \ r_2 = bcd^{-1}, \ r_3 = cda^{-1}, \ r_4 = dab^{-1}
-		\end{equation*}
-		\begin{figure}[H]
-			\begin{center}
-				\includegraphics[width=7.5cm]{Images/diagrama_ciclico.png}
-			\end{center}
-		\caption{Diagrama de van Kampen de $G$}
-		\label{figura diagrama ciclico}
-		\end{figure}
-		\par\vspace{0.3cm} A partir do diagrama, vemos que lendo a fronteira, no sentido anti-horário, a partir do vértice superior direito, temos $ab^3 = 1$, ou seja, $a = b^{-3}$ e, portanto, $G$ é gerado apenas por $b$, sendo cíclico. De fato, podemos fazer uma manipulação desse diagrama para obter o seguinte diagrama:
-		\begin{figure}[H]
-			\begin{center}
-				\includegraphics[width=7.5cm]{Images/diagrama_ciclico_2.png}
-			\end{center}
-		\caption{Diagrama de van Kampen manipulado de $G$}
-		\label{figura diagrama ciclico 2}
-		\end{figure}
-	\par\vspace{0.3cm} A partir desse diagrama, vemos, a partir da leitura do bordo, que $b^5=1$. Logo, $G$ é o grupo cíclico de ordem $5$ ($b$ não trivial) ou $1$ ($b$ trivial).
-	\par\vspace{0.3cm} É interessante notar que se $a$, $b$, $c$ e $d$ são geradores de um grupo tais que $a$ e $b$ comutam com $c$ e $d$, então o fato de que $ab$ comuta com $cd$ pode ser deduzido pelo seguinte diagrama:
-		\begin{figure}[H]
-			\begin{center}
-				\includegraphics[width=5cm]{Images/diagrama_comutatividade.png}
-			\end{center}
-		\caption{Diagrama de van Kampen em que $a$ e $b$ comutam com $c$ e $d$}
-		\label{figura diagrama comutatividade}
-		\end{figure}
-	\par\vspace{0.3cm} Do diagrama, é imediato que $abcd(ab)^{-1}(cd)^{-1} = 1$, ou seja, $[ab,cd] = 1$.	
-	\par\vspace{0.3cm} Um último exemplo é o seguinte: fazendo $r = x^2yxy^3 = 1 = y^2xyx^3 = s$, obtemos o seguinte diagrama:
-		\begin{figure}[H]
-			\begin{center}
-				\includegraphics[width=7.5cm]{Images/diagrama_complicado.png}
-			\end{center}
-		\end{figure}
-		\par\vspace{0.3cm} Da leitura do bordo no sentido anti-horário, obtemos $x^7=1$.
-	\par\vspace{0.3cm} Dos exemplos acima, podemos ver que os diagramas de van Kampen nos ajudam a deduzir relações que não são tão imediatas tendo apenas a apresentação do grupo.
+	%
+	\begin{equation*}
+	    G = \langle a,b,c,d \ | \ ab = c, bc = d, cd = a, da = b \rangle.
+	\end{equation*}
+	%
+	Ele é claramente gerado por $a$ e $b$, uma vez que $c = ab$ e $d = bc = bab$. Contudo, 
+	esse fato pode ser verificado a partir do diagrama de van Kampen para essa apresentação. 
+	Nele, as faces estão marcadas pelas seguintes relações definidoras:
+	%
+	\begin{equation*}
+	    r_1 = abc^{-1}, \ r_2 = bcd^{-1}, \ r_3 = cda^{-1}, \ r_4 = dab^{-1}.
+	\end{equation*}
+	%
+	\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=7.5cm]{Images/diagrama_ciclico.png}
+	\end{center}
+	\caption{Diagrama de van Kampen de $G$}
+	\label{figura diagrama ciclico}
+	\end{figure}
+	%
+    A partir do diagrama, vemos que lendo a fronteira, no sentido anti-horário, a partir do vértice 
+    superior direito, temos $ab^3 = 1$, ou seja, $a = b^{-3}$ e, portanto, $G$ é gerado apenas por 
+    $b$, sendo cíclico. De fato, podemos fazer uma manipulação desse diagrama para obter o seguinte 
+    diagrama:
+	%
+	\begin{figure}[H]
+		\begin{center}
+			\includegraphics[width=7.5cm]{Images/diagrama_ciclico_2.png}
+		\end{center}
+	\caption{Diagrama de van Kampen manipulado de $G$}
+	\label{figura diagrama ciclico 2}
+	\end{figure}
+	%
+	A partir desse diagrama, vemos, a partir da leitura do bordo, que $b^5=1$. Logo, $G$ é o 
+	grupo cíclico de ordem $5$ ($b$ não trivial) ou $1$ ($b$ trivial).
+	
+	\par\vspace{0.3cm} É interessante notar que se $a$, $b$, $c$ e $d$ são geradores de um grupo 
+	tais que $a$ e $b$ comutam com $c$ e $d$, então o fato de que $ab$ comuta com $cd$ pode ser 
+	deduzido pelo seguinte diagrama:
+	%
+	\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=5cm]{Images/diagrama_comutatividade.png}
+	\end{center}
+	\caption{Diagrama de van Kampen em que $a$ e $b$ comutam com $c$ e $d$}
+	\label{figura diagrama comutatividade}
+	\end{figure}
+	%
+	Do diagrama, é imediato que $abcd(ab)^{-1}(cd)^{-1} = 1$, ou seja, $[ab,cd] = 1$.
+	
+	\par\vspace{0.3cm} Um último exemplo é o seguinte: fazendo $r = x^2yxy^3 = 1 = y^2xyx^3 = s$, 
+	obtemos o seguinte diagrama:
+	%
+	\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=7.5cm]{Images/diagrama_complicado.png}
+	\end{center}
+	\end{figure}
+	%
+	Da leitura do bordo no sentido anti-horário, obtemos $x^7=1$.
+	
+	\par\vspace{0.3cm} Dos exemplos acima, podemos ver que os diagramas de van Kampen nos ajudam 
+	a deduzir relações que não são tão imediatas tendo apenas a apresentação do grupo.
 	
 	\section{Tranças como discos perfurados}\label{secao trancas como discos perfurados}
-	\hspace{12pt} Podemos, ainda, pensar em tranças de uma terceira maneira. Voltando na trança da Figura \eqref{tranca espaco configuracao}, vamos imaginar o seguinte: suponha que a trança é feita de fios rígidos, e que o plano é, na verdade, uma seção quadrada do plano (como está desenhado), ou seja, um disco topológico, exceto que esse disco tem buracos.
-	\par\vspace{0.3cm} Agora, imagine que o interior do disco é feito de um material muito flexível e que a fronteira (bordo) quadrada é uma armação rígida (parecida com aqueles \textit{frisbees} de tecido, apenas quadrados). Imagine o processo de empurrar esse disco perfurado ao longo da trança de fios rígidos até chegar na parede da direita. A trança não se moveu, mas o disco em si foi todo torcido, ou seja, a trança provocou uma mudança na superfície.
-	\par\vspace{0.3cm} Mais especificamente, o que aconteceu ao disco perfurado foi que a trança implementou um homeomorfismo da superfície nela mesma. O bordo fica fixo, porque é rígido, e as perfurações são permutadas conforme a permutação associada à trança. Funções como essa, a menos de homotopia, formam o \textit{grupo de classes} de $D_n$, um disco com $n$ perfurações com bordo $\partial D_n$ (e não o grupo diedral):
+	Podemos, ainda, pensar em tranças de uma terceira maneira. Voltando na trança da 
+	Figura \ref{tranca espaco configuracao}, vamos imaginar o seguinte: suponha que a 
+	trança é feita de fios rígidos, e que o plano é, na verdade, uma seção quadrada do plano 
+	(como está desenhado), ou seja, um disco topológico, exceto que esse disco tem buracos.
+	
+	\par\vspace{0.3cm} Agora, imagine que o interior do disco é feito de um material muito flexível 
+	e que a fronteira (bordo) quadrada é uma armação rígida (parecida com aqueles \textit{frisbees} 
+	de tecido, mas agora quadrados). Imagine o processo de empurrar esse disco perfurado ao longo da 
+	trança de fios rígidos até chegar na parede da direita. A trança não se moveu, mas o disco em si 
+	foi todo torcido, ou seja, a trança provocou uma mudança na superfície.
+	
+	\par\vspace{0.3cm} Mais especificamente, o que aconteceu ao disco perfurado foi que a trança 
+	implementou um homeomorfismo da superfície nela mesma. O bordo fica fixo, porque é rígido, e 
+	as perfurações são permutadas conforme a permutação associada à trança. Funções como essa, a 
+	menos de homotopia, formam o \textit{grupo de classes} de $D_n$, um disco com $n$ perfurações 
+	com bordo $\partial D_n$ (e não o grupo diedral):
+	%
 	\begin{align*}
-	\Mod(D_n) = \{ f:D_n\to D_n|& f\text{ é homeomorfismo}, \\
-	&f|_{\partial D_n} = 1 \}/\text{Homotopia}
+    	\Mod(D_n) = \{ f:D_n\to D_n|& f\text{ é homeomorfismo}, \\
+    	&f|_{\partial D_n} = 1 \}/\text{Homotopia}.
 	\end{align*}
-	
+	%
 	\begin{figure}[H]
-		\begin{center}
-			\includegraphics[width=10cm]{Images/tranca_disco_perfurado.png}
-		\end{center}\caption{Diagrama de curva associado a $\sigma_1$.}
-		\label{tranca disco perfurado}
+	\begin{center}
+		\includegraphics[width=10cm]{Images/tranca_disco_perfurado.png}
+	\end{center}\caption{Diagrama de curva associado a $\sigma_1$.}
+	\label{tranca disco perfurado}
 	\end{figure}
-	
-	\par\vspace{0.3cm} A operação do grupo é a composição de funções: dois homeomorfismos $f$ e $g$ podem ser compostos para formar um homeomorfismo $g\circ f$ (ou $f\circ g$, que geralmente é diferente). Acima, descrevemos uma função $\psi: B_n\to\Mod(D_n)$, a saber, dada uma trança, deslize o disco pela trança e considere o homeomorfismo resultante. De fato, $\psi$ é, na verdade, um isomorfismo.
-	
+	%
+	A operação do grupo é a composição de funções: dois homeomorfismos $f$ e $g$ podem ser 
+	compostos para formar um homeomorfismo $g\circ f$ (ou $f\circ g$, que geralmente é diferente). 
+	Acima, descrevemos uma função $\psi: B_n\to\Mod(D_n)$, a saber, dada uma trança, deslize o 
+	disco pela trança e considere o homeomorfismo resultante. De fato, $\psi$ é, na verdade, um isomorfismo.
+	%
 	\begin{theorem}
-		\label{B_n isomorfo a Mod(D_n)}
+	\label{B_n isomorfo a Mod(D_n)}
 		$B_n\cong \Mod(D_n)$ 
 	\end{theorem}
-	
+	%
 	\begin{proof}
-		Não demonstraremos a sobrejetividade de $\psi$, pois exige conhecimentos além do escopo deste relatório.
-		\par\vspace{0.3cm} Primeiro, note que $\psi$ está bem definida, pois se $\alpha, \beta\in B_n$ são tais que $\alpha = \beta$, então elas induzem a mesma deformação no disco, i.e., o mesmo homeomorfismo e, portanto, temos $\psi(\alpha) = \psi(\beta)$.
-		\par\vspace{0.3cm} Além disso, o núcleo de $\psi$ é, por definição, formado pelas tranças que induzem o homeomorfismo identidade, ou seja, as tranças que não fazem nada com o interior do disco (o bordo fica fixo sempre). Ora, mas a única trança que não deforma o interior do disco é a identidade e, portanto, $\Ker\psi = \{1\}$.
-		\par\vspace{0.3cm} Agora, sejam $\alpha, \beta\in B_n$ duas tranças quaisquer tais que $\psi(\alpha) = f$ e $\psi(\beta) = g$. Daí, temos
+		Não demonstraremos a sobrejetividade de $\psi$, pois exige conhecimentos além do escopo 
+		deste texto.
+		
+		\par\vspace{0.3cm} Primeiro, note que $\psi$ está bem definida, pois se $\alpha, \beta\in B_n$ 
+		são tais que $\alpha = \beta$, então elas induzem a mesma deformação no disco, i.e., 
+		o mesmo homeomorfismo e, portanto, temos $\psi(\alpha) = \psi(\beta)$.
+		
+		\par\vspace{0.3cm} Além disso, o núcleo de $\psi$ é, por definição, formado pelas 
+		tranças que induzem o homeomorfismo identidade, ou seja, as tranças que não fazem nada com 
+		o interior do disco (o bordo fica fixo sempre). Ora, mas a única trança que não deforma o 
+		interior do disco é a identidade e, portanto, $\Ker\psi = \{1\}$.
+		
+		\par\vspace{0.3cm} Agora, sejam $\alpha, \beta\in B_n$ duas tranças quaisquer tais que 
+		$\psi(\alpha) = f$ e $\psi(\beta) = g$. Daí, temos
+		%
 		\begin{align*}
-		\psi(\alpha\beta) = g\circ f = \psi(\alpha)\circ\psi(\beta)
+		    \psi(\alpha\beta) = g\circ f = \psi(\alpha)\circ\psi(\beta).
 		\end{align*}
-		\par\vspace{0.3cm} Essa última igualdade nos diz simplesmente que, fazendo o produto de duas tranças $\alpha$ e $\beta$, a deformação resultante é equivalente a aplicar a deformação da segunda trança ($\beta$) na deformação da primeira trança ($\alpha$), ou seja, compor as duas deformações. 
-		\par\vspace{0.3cm} Portanto, como $\psi$ é um homomorfismo sobrejetor de núcleo trivial, então $B_n\cong\Mod(D_n)$.
+		%
+		Essa última igualdade nos diz simplesmente que, fazendo o produto de duas tranças 
+		$\alpha$ e $\beta$, a deformação resultante é equivalente a aplicar a deformação 
+		da segunda trança ($\beta$) na deformação da primeira trança ($\alpha$), ou seja, 
+		compor as duas deformações.
+		
+		\par\vspace{0.3cm} Portanto, como $\psi$ é um homomorfismo sobrejetor de núcleo 
+		trivial, então $B_n\cong\Mod(D_n)$.
 	\end{proof}
-	
+	%
 	\subsection{Diagramas de curvas}
-	\hspace{12pt} Vamos nos aprofundar um pouco nessa nova perspectiva dos grupos de tranças. Olhe novamente a Figura \eqref{tranca espaco configuracao}, mas foque agora nos discos quadrados perfurados nas extremidades da imagem. Imagine que há uma linha vertical pontilhada no disco da esquerda passando por todas as perfurações. A pergunta é: para onde irá a linha pontilhada após deslizarmos o disco pela trança?
-	\par\vspace{0.3cm} A Figura \eqref{tranca disco perfurado} mostra um exemplo mais simples. Nela, a trança é simplesmente $\sigma_1$, e tanto a linha pontilhada original quanto o resultado torcido estão desenhados. A linha pontilhada na parede da direita é dita \textit{diagrama de curva} induzido pela trança ($\sigma_1$, nesse caso). 
-	\par\vspace{0.3cm} Vamos chamar a linha pontilhada original de \textbf{eixo} do disco. Ele consiste de $n+1$ segmentos pontilhados $a_0, \dots, a_n$, numerados em ordem de baixo para cima. Então, em geral, o diagrama de curva associado a uma trança $\beta$ é a união dos arcos $\psi_{\beta}(a_i)$ (os arcos que são as imagens dos $a_i$'s), i.e., você pensa em $\beta$ como um homeomorfismo do disco e o diagrama de curva é para onde o eixo vai (a imagem do eixo). 
-	\par\vspace{0.3cm} Denotaremos os arcos do diagrama de curva por $c_i$, e o diagrama todo por $c$. Note que, como $\beta$ fixa $\partial D_n$ (o bordo), os $c_i$'s (isto é, o diagrama de curva) se encaixam ponta a ponta, em ordem, para formar o único arco $c$ que começa no centro inferior, nunca se cruza, passa por cada perfuração uma única vez e termina no centro superior. Veja novamente a Figura \eqref{tranca disco perfurado}.  
-	\par\vspace{0.3cm} Diagramas de curva podem ser extremamente complicados, como poderíamos esperar se tivermos uma trança longa. Por exemplo, o diagrama de curva da trança da Figura \eqref{tranca espaco configuracao} é bem complicado de desenhar. 
-	\par\vspace{0.3cm} Uma maneira preliminar de simplificar um diagrama de curva é ter certeza de que ele está \textit{reduzido}, no seguinte sentido: dado um diagrama de cruva em um disco perfurado, desenhe o eixo no mesmo disco. O diagrama é dito \textit{reduzido} se não existem \textit{biágonos} na figura, i.e., regiões cujas fronteiras consistem de um subarco de um único $a_i$ e um subarco de um único $c_i$. 
+	Vamos nos aprofundar um pouco nessa nova perspectiva dos grupos de tranças. 
+	Olhe novamente a Figura \ref{tranca espaco configuracao}, mas foque agora nos discos quadrados 
+	perfurados nas extremidades da imagem. Imagine que há uma linha vertical pontilhada no disco 
+	da esquerda passando por todas as perfurações. A pergunta é: para onde irá a linha pontilhada 
+	após deslizarmos o disco pela trança?
+	
+	\par\vspace{0.3cm} A Figura \ref{tranca disco perfurado} mostra um exemplo mais simples. 
+	Nela, a trança é simplesmente $\sigma_1$, e tanto a linha pontilhada original quanto o 
+	resultado torcido estão desenhados. A linha pontilhada na parede da direita é dita 
+	\textit{diagrama de curva} induzido pela trança ($\sigma_1$, nesse caso).
+	
+	\par\vspace{0.3cm} Vamos chamar a linha pontilhada original de \textbf{eixo} do disco. 
+	Ele consiste de $n+1$ segmentos pontilhados $a_0, \dots, a_n$, numerados em ordem de baixo 
+	para cima. Então, em geral, o diagrama de curva associado a uma trança $\beta$ é a união 
+	dos arcos $\psi_{\beta}(a_i)$ (os arcos que são as imagens dos $a_i$'s), i.e., você pensa 
+	em $\beta$ como um homeomorfismo do disco e o diagrama de curva é para onde o eixo vai (a imagem do eixo).
+	
+	\par\vspace{0.3cm} Denotaremos os arcos do diagrama de curva por $c_i$, e o diagrama todo por $c$. 
+	Note que, como $\beta$ fixa $\partial D_n$ (o bordo), os $c_i$'s (isto é, o diagrama de curva) 
+	se encaixam ponta a ponta, em ordem, para formar o único arco $c$ que começa no centro inferior, 
+	nunca se cruza, passa por cada perfuração uma única vez e termina no centro superior. 
+	Veja novamente a Figura \ref{tranca disco perfurado}.
+	
+	\par\vspace{0.3cm} Diagramas de curva podem ser extremamente complicados, como poderíamos esperar 
+	se tivermos uma trança longa. Por exemplo, o diagrama de curva da trança da 
+	Figura \ref{tranca espaco configuracao} é bem complicado de desenhar.
+	
+	\par\vspace{0.3cm} Uma maneira preliminar de simplificar um diagrama de curva é ter certeza 
+	de que ele está \textit{reduzido}, no seguinte sentido: dado um diagrama de curva em um disco 
+	perfurado, desenhe o eixo no mesmo disco. O diagrama é dito \textit{reduzido} se não 
+	existem \textit{biágonos} na figura, i.e., regiões cujas fronteiras consistem de um 
+	sub-arco de um único $a_i$ e um sub-arco de um único $c_i$.
+	
 	\par\vspace{0.3cm} Podemos resumir o que foi dito no parágrafo anterior nas seguintes definições:
-	\begin{deff}
-		\label{def biagono}
-		Um biágono é um região cuja fronteira consiste de um subarco de um único $a_i$ e um subarco de um único $c_i$.
-	\end{deff}
-	\begin{deff}
-		\label{def reducao}
+	%
+	\begin{definition}
+	\label{def biagono}
+		Um biágono é um região cuja fronteira consiste de um sub-arco de um único $a_i$ e um 
+		sub-arco de um único $c_i$.
+	\end{definition}
+	%
+	\begin{definition}
+	\label{def reducao}
 		Um diagrama de curva é dito reduzido quando não possui biágonos.
-	\end{deff}
-	\par\vspace{0.3cm} Os biágonos podem ser facilmente eliminados, de modo que todo diagrama de curva pode ser reduzido. 
-	
+	\end{definition}
+	%
+	Os biágonos podem ser facilmente eliminados, de modo que todo diagrama de curva pode ser reduzido. 
+	%
 	\begin{figure}[H]
-		\begin{center}
-			\includegraphics[width=7cm]{Images/biagonos.png}
-		\end{center}\caption{Esse diagrama possui 2 biágonos (em vermelho e em azul), e pode ser reduzido ao diagrama da Figura \eqref{tranca disco perfurado}.}
-		\label{diagrama nao reduzido com biagonos}
+	\begin{center}
+		\includegraphics[width=7cm]{Images/biagonos.png}
+	\end{center}\caption{Esse diagrama possui 2 biágonos (em vermelho e em azul), e 
+	pode ser reduzido ao diagrama da Figura \ref{tranca disco perfurado}.}
+	\label{diagrama nao reduzido com biagonos}
 	\end{figure}
-	\par\vspace{0.3cm} É, então, natural considerar os diagramas das Figuras \eqref{tranca disco perfurado} e \eqref{diagrama nao reduzido com biagonos} como equivalentes. Esse fato nos leva à seguinte definição.
-	
-	\begin{deff}
-		\label{def equivalencia diagramas}
+	%
+	É, então, natural considerar os diagramas das 
+	Figuras \ref{tranca disco perfurado} e \ref{diagrama nao reduzido com biagonos} como equivalentes. 
+	Esse fato nos leva à seguinte definição.
+	%
+	\begin{definition}
+	\label{def equivalencia diagramas}
 		Dois diagramas de curva são ditos equivalentes se têm a mesma forma reduzida.
-	\end{deff}  
-	\par\vspace{0.3cm} Vamos, agora, mostrar uma aplicação interessante dos diagramas de curva, a saber, na demonstração da Proposição \eqref{geradores de B_n tem ordem infinita}.
-	\par\vspace{0.3cm} Dada uma trança $\beta$, vamos olhar para o seu diagrama de curva $c$. Começe na parte de baixo e observe o primeiro arco $c_i$ que não é igual ao arco correspondente $a_i$ no eixo. Se $c_i$ está à direita de $a_i$, dizemos que $\beta$ é \textit{desviada à direita} e, se $c_i$ está à esquerda de $a_i$, dizemos que $\beta$ é \textit{desviada à esquerda}. Se $c_i = a_i$ para todo $i$, então $\beta$ é a trança identidade (tecnicamente, estamos usando o Teorema \eqref{B_n isomorfo a Mod(D_n)}). A trança da Figura \eqref{tranca disco perfurado} é desviada à esquerda, pois começando na parte inferior, o arco $c_0$ desvia para a esquerda.
+	\end{definition} 
+	%
+	Vamos, agora, mostrar uma aplicação interessante dos diagramas de curva, a saber, na demonstração da Proposição \ref{geradores de B_n tem ordem infinita}.
+	
+	\par\vspace{0.3cm} Dada uma trança $\beta$, vamos olhar para o seu diagrama de curva $c$. 
+	Comece na parte de baixo e observe o primeiro arco $c_i$ que não é igual ao arco correspondente $a_i$ 
+	no eixo. Se $c_i$ está à direita de $a_i$, dizemos que $\beta$ é \textit{desviada à direita} e, 
+	se $c_i$ está à esquerda de $a_i$, dizemos que $\beta$ é \textit{desviada à esquerda}. 
+	Se $c_i = a_i$ para todo $i$, então $\beta$ é a trança identidade (tecnicamente, estamos usando o 
+	Teorema \ref{B_n isomorfo a Mod(D_n)}). A trança da Figura \ref{tranca disco perfurado} é 
+	desviada à esquerda, pois começando na parte inferior, o arco $c_0$ desvia para a esquerda.
+	%
 	\begin{prop}
-		\label{desvio a direita desvio a esquerda}
+	\label{desvio a direita desvio a esquerda}
 		Se $\beta$ é desviada à esquerda, então $\beta^{-1}$ é desviada à direita.
 	\end{prop}
+	%
 	\begin{proof}
-		O efeito, no diagrama de curva, de inverter uma trança é simplesmente realizar uma reflexão em torno de uma das arestas do disco paralelas ao eixo. Observe a Figura \eqref{diagrama inverso de sigma1}.
+		O efeito, no diagrama de curva, de inverter uma trança é simplesmente realizar uma 
+		reflexão em torno de uma das arestas do disco paralelas ao eixo. Observe a 
+		Figura \ref{diagrama inverso de sigma1}.
+		%
 		\begin{figure}[H]
-			\begin{center}
-				\includegraphics[width=5cm]{Images/inverso.png}
-			\end{center}\caption{Diagrama de curva de $\sigma_1^{-1}$}\label{diagrama inverso de sigma1}
+		\begin{center}
+			\includegraphics[width=5cm]{Images/inverso.png}
+		\end{center}\caption{Diagrama de curva de $\sigma_1^{-1}$}\label{diagrama inverso de sigma1}
 		\end{figure}
-		\par\vspace{0.3cm} Portanto, como inverter uma trança equivale a refletir o seu diagrama de curva, segue que se a trança original era desviada à esquerda, o seu inverso será desviado à direita e vice-versa.
+		%
+		Portanto, como inverter uma trança equivale a refletir o seu diagrama de curva, segue que 
+		se a trança original era desviada à esquerda, o seu inverso será desviado à direita e vice-versa.
 	\end{proof}
-	\par\vspace{0.3cm} Queremos mostrar que $B_n$ é livre de torção. Esse fato segue do seguinte lema.
-	
+	%
+	Queremos mostrar que $B_n$ é livre de torção. Esse fato segue do seguinte lema.
+	%
 	\begin{lemma}
-		\label{desviada a direita, sempre a direita}
+	\label{desviada a direita, sempre a direita}
 		Se $\beta$ é desviada à direita, então $\beta^n$ é desviada à direita para todo $n>0$.
 	\end{lemma}
+	%
 	\begin{proof}
-		Suponha que $\beta$ é desviada à direita, e observe o diagrama de curva reduzido $c$ de $\beta$. Encontre o primeiro $c_i$ que difere do $a_i$ correspondente, e chame esse arco de $c_k$. Denotando por $c^2$ o diagrama de curva de $\beta^2$, e por $c_i^2$ os arcos de $c^2$, imagine dois discos separados: um em que $a_i$ e $c_i$ estão desenhados e um em que $c_i$ e $c_i^2$ estão desenhados. Observe que a segunda figura é obtida da primeira aplicando a trança $\beta$ (pensada como um homeomorfismo). Então, como $c_k$ está à direita de $a_k$, segue que $c_k^2$ está à direita de $c_k$. Além disso, como não há biágonos na primeira figura, também não há biágonos na segunda figura.
-		\par\vspace{0.3cm} Queremos mostrar que $\beta^2$ é desviada à direita, i.e, que $c_k^2$ está à direita de $a_k$. Sabemos que $\beta$ não afeta os arcos $a_i$ para $i<k$, e então $\beta^2$ também não. Também sabemos que, nas figuras, $c_k$ está à direita de $a_k$ e $c_k^2$ está à direita de $c_k$.
-		\par\vspace{0.3cm} O que falta observar é que o diagrama de $\beta^2$ pode não estar reduzido. Sabemos que não há biágonos entre o eixo e $c$, e também que não há biágonos entre $c$ e $c^2$, mas se $c^2$ e o eixo formarem um biágono, então $c^2$ precisa ser reduzido e pode acabar não sendo desviado à direita.
-		\par\vspace{0.3cm} Felizmente, isso não ocorre. Para ver que esse é o caso, seja $d$ o segmento inicial de $c_k$ que vai até a primeira vez que $c_k$ intercepta o eixo, de forma que $d$ está contido em uma metade (a metade da direita) do disco (é possível que $d$ seja $c_k$ inteiro, mas em geral $c_k$ pode ``passear'' bastante antes de atingir uma perfuração). Agora, a única maneira de $c_k^2$ estar à esquerda (ou ser igual) do arco $a_k$ do eixo é formando um biágono com $a_k$. Mas isso forçaria $c_k^2$ a cruzar $d$, criando um biágono entre $c$ e $c^2$, o que sabemos que não existe. Veja a figura abaixo.
+		Suponha que $\beta$ é desviada à direita, e observe o diagrama de curva reduzido $c$ de $\beta$. 
+		Encontre o primeiro $c_i$ que difere do $a_i$ correspondente, e chame esse arco de $c_k$. 
+		Denotando por $c^2$ o diagrama de curva de $\beta^2$, e por $c_i^2$ os arcos de $c^2$, 
+		imagine dois discos separados: um em que $a_i$ e $c_i$ estão desenhados e um em que 
+		$c_i$ e $c_i^2$ estão desenhados. Observe que a segunda figura é obtida da primeira 
+		aplicando a trança $\beta$ (pensada como um homeomorfismo). Então, como $c_k$ está à 
+		direita de $a_k$, segue que $c_k^2$ está à direita de $c_k$. Além disso, como não há 
+		biágonos na primeira figura, também não há biágonos na segunda figura.
 		
+		\par\vspace{0.3cm} Queremos mostrar que $\beta^2$ é desviada à direita, i.e, que $c_k^2$ 
+		está à direita de $a_k$. Sabemos que $\beta$ não afeta os arcos $a_i$ para $i<k$, e 
+		então $\beta^2$ também não. Também sabemos que, nas figuras, $c_k$ está à direita de 
+		$a_k$ e $c_k^2$ está à direita de $c_k$.
+		
+		\par\vspace{0.3cm} O que falta observar é que o diagrama de $\beta^2$ pode não estar reduzido. 
+		Sabemos que não há biágonos entre o eixo e $c$, e também que não há biágonos entre $c$ e $c^2$, 
+		mas se $c^2$ e o eixo formarem um biágono, então $c^2$ precisa ser reduzido e pode acabar não 
+		sendo desviado à direita.
+		
+		\par\vspace{0.3cm} Felizmente, isso não ocorre. Para ver que esse é o caso, seja $d$ o 
+		segmento inicial de $c_k$ que vai até a primeira vez que $c_k$ intercepta o eixo, de forma 
+		que $d$ está contido em uma metade (a metade da direita) do disco (é possível que $d$ seja 
+		$c_k$ inteiro, mas em geral $c_k$ pode ``passear'' bastante antes de atingir uma perfuração). 
+		Agora, a única maneira de $c_k^2$ estar à esquerda (ou ser igual) do arco $a_k$ do eixo é 
+		formando um biágono com $a_k$. Mas isso forçaria $c_k^2$ a cruzar $d$, criando um biágono 
+		entre $c$ e $c^2$, o que sabemos que não existe. Veja a figura abaixo.
+		%
 		\begin{figure}[H]
-			\begin{center}
-				\includegraphics[width=8cm]{Images/demosntracao_lema.png}
-			\end{center}\caption{Ilustração da demonstração}
-			\label{ilustracao da demonstracao}
+		\begin{center}
+			\includegraphics[width=8cm]{Images/demosntracao_lema.png}
+		\end{center}\caption{Ilustração da demonstração}
+		\label{ilustracao da demonstracao}
 		\end{figure}
-		\par\vspace{0.3cm} Portanto, $\beta^2$ é, de fato, desviada à direita. Repetindo o argumento, mostramos que $\beta^n$ é desviada à direita para todo $n>0$.
+		%
+		Portanto, $\beta^2$ é, de fato, desviada à direita. Repetindo o argumento, mostramos que 
+		$\beta^n$ é desviada à direita para todo $n>0$.
 	\end{proof}
-	
+	%
 	\begin{corollary}
-		\label{B_n livre de torcao por diagramas de curva}
+	\label{B_n livre de torcao por diagramas de curva}
 		$B_n$ é livre de torção.
 	\end{corollary}
+	%
 	\begin{proof}
-		Do Lema \eqref{desviada a direita, sempre a direita}, sabemos que se $\beta$ é desviada à direita, $\beta^n$ também o é para todo $n$ positivo. Da Proposição \eqref{desvio a direita desvio a esquerda}, sabemos que $\beta^{-1}$ é desviada à esquerda e então, novamente do Lema \eqref{desviada a direita, sempre a direita}, $(\beta^{-1})^n$ também o é para todo $n$ positivo. Portanto, toda trança que é desviada (seja à direita ou à esquerda) tem ordem infinita. Como, do Teorema \eqref{B_n isomorfo a Mod(D_n)}, a trança trivial é a única trança que não é desviada, temos que $B_n$ é livre de torção.
+		Do Lema \ref{desviada a direita, sempre a direita}, sabemos que se $\beta$ é desviada à direita, 
+		$\beta^n$ também o é para todo $n$ positivo. Da 
+		Proposição \ref{desvio a direita desvio a esquerda}, sabemos que $\beta^{-1}$ é desviada 
+		à esquerda e então, novamente do Lema \ref{desviada a direita, sempre a direita}, 
+		$(\beta^{-1})^n$ também o é para todo $n$ positivo. Portanto, toda trança que é desviada 
+		(seja à direita ou à esquerda) tem ordem infinita. Como, do 
+		Teorema \ref{B_n isomorfo a Mod(D_n)}, a trança trivial é a única trança que não é desviada, 
+		temos que $B_n$ é livre de torção.
 	\end{proof}
-	
+	%
 	\begin{remark}
-		Na demonstração do Lema \eqref{desviada a direita, sempre a direita}, alguns detalhes foram omitidos. Por exemplo, homeomorfismos podem ser complicados: poderia ser o caso de que o arco $c_0$ interceptasse $a_0$ infinitas vezes. Então, como reduzi-lo? Esse e outros detalhes podem ser tratados de maneira rigorosa, o que está além do escopo desse relatório.
+		Na demonstração do Lema \ref{desviada a direita, sempre a direita}, alguns detalhes 
+		foram omitidos. Por exemplo, homeomorfismos podem ser complicados: poderia ser o caso 
+		de que o arco $c_0$ interceptasse $a_0$ infinitas vezes. Então, como reduzi-lo? 
+		Esse e outros detalhes podem ser tratados de maneira rigorosa, mas isso está além do 
+		escopo desse texto.
 	\end{remark}
-	
-	\par\vspace{0.3cm} Uma última aplicação interessante dessa nova visualização dos grupos de trança é na identificação de tranças (palavras) que são equivalentes à identidade, ou seja, o problema da palavra (veja Seção \ref{secao o problema da palavra}). Usando o Teorema \eqref{B_n isomorfo a Mod(D_n)}, sabemos que uma trança $\beta$ é trivial se, e só se, $\psi(\beta) = \text{Id}$, ou seja, se, e só se, $\beta$ induz o homeomorfismo identidade (não faz nada com o disco). Portanto, dada uma trança $\beta$ qualquer, basta observarmos o efeito de $\beta$ no disco perfurado: se provoca torção, não é trivial; se não provoca torção, é trivial. Esse procedimento é complicado de computar para tranças longas, mas continua sendo uma solução igualmente válida.
+	%
+	Uma última aplicação interessante dessa nova visualização dos grupos de trança é na 
+	identificação de tranças (palavras) que são equivalentes à identidade, ou seja, o 
+	problema da palavra (veja Seção \ref{secao o problema da palavra}). Usando o 
+	Teorema \ref{B_n isomorfo a Mod(D_n)}, sabemos que uma trança $\beta$ é trivial se, 
+	e só se, $\psi(\beta) = \text{Id}$, ou seja, se, e só se, $\beta$ induz o homeomorfismo 
+	identidade (não faz nada com o disco). Portanto, dada uma trança $\beta$ qualquer, basta 
+	observarmos o efeito de $\beta$ no disco perfurado: se provoca torção, não é trivial; se 
+	não provoca torção, é trivial. Esse procedimento é complicado de computar para tranças longas, 
+	mas continua sendo uma solução igualmente válida.

@@ -16,184 +16,377 @@
 \section{Conexões entre tranças e nós}
 
     Vamos agora discutir algumas conexões entre tranças e a teoria dos nós.
-	\par\vspace{0.3cm} Resumidamente, um nó é uma curva poligonal simples fechada em $\mathbb{R}^3$, mas para os propósitos desse relatório poderemos pensar em um nó como sendo uma curva suave simples, como os diagramas da figura \eqref{exemplos de nos}.
+    
+	\par\vspace{0.3cm} Resumidamente, um nó é uma curva poligonal simples fechada em $\mathbb{R}^3$, 
+	mas para os propósitos deste texto poderemos pensar em um nó como sendo uma curva suave simples, 
+	como os diagramas da Figura \ref{exemplos de nos}.
 	
-	\par\vspace{0.3cm} Os nós (ou, de modo mais geral, \textit{links}) e as tranças possuem semelhanças. Por exemplo, ambos são definidos em termos de figuras de cordas no espaço tridimensional, e ambos têm uma noção de equivalência, geralmente chamada de isotopia, que descreve quando duas figuras são equivalentes, ou seja, quando duas figuras representam o mesmo nó ou a mesma trança.  
-	
+	\par\vspace{0.3cm} Os nós (ou, de modo mais geral, \textit{links}) e as tranças possuem semelhanças. 
+	Por exemplo, ambos são definidos em termos de figuras de cordas no espaço tridimensional, e ambos 
+	têm uma noção de equivalência, geralmente chamada de isotopia, que descreve quando duas figuras 
+	são equivalentes, ou seja, quando duas figuras representam o mesmo nó ou a mesma trança.  
+	%
 	\begin{figure}[H]
-		\begin{center}
-			\includegraphics[width=7cm]{Images/exemplos_de_no.png}
-		\end{center}\caption{Exemplos de nós}
-		\label{exemplos de nos}
+	\begin{center}
+		\includegraphics[width=7cm]{Images/exemplos_de_no.png}
+	\end{center}\caption{Exemplos de nós}
+	\label{exemplos de nos}
 	\end{figure}
+	%
+	\par\vspace{0.3cm} É claro que há algumas diferenças, a principal delas sendo o fato de que 
+	as tranças têm extremidades que não podem se mover durante isotopias, i.e., as extremidades 
+	ficam fixas conforme deformamos a trança, como vimos nas seções anteriores. Outra diferença 
+	é que cada corda de uma trança vai monotonicamente da esquerda para a direita, enquanto que 
+	não há essa restrição em relação aos \textit{links}.
 	
-	\par\vspace{0.3cm} É claro que há algumas diferenças, a principal delas sendo o fato de que as tranças têm extremidades que não podem se mover durante isotopias, i.e., as extremidades ficam fixas conforme deformamos a trança, como vimos nas seções anteriores. Outra diferença é que cada corda de uma trança vai monotonicamente da esquerda para a direita, enquanto que não há essa restrição em relação aos \textit{links}. 
-	\par\vspace{0.3cm} Na verdade, uma das primeiras motivações para o estudo das tranças era ajudar a entender a teoria dos nós e \textit{links}. A conexão é que toda trança pode ser ``fechada'' para formar um \textit{link}. Era esperado que a estrutura de grupo nas tranças levasse a algum tipo de estrutura de grupo no conjunto de \textit{links}, o que não acontece. Não obstante, há outras maneiras de usar tranças para ajudar com o estudo de \textit{links}.
-	\par\vspace{0.3cm} Mas como formamos um \textit{link} a partir de uma trança? Fácil: basta ligar as extremidades sem introduzir novos cruzamentos.
-	\par\vspace{0.3cm} Assim como fizemos para as tranças, também é possível alterar diagramas de nós através de deformações (ou movimentos) elementares (e seus respectivos inversos). Esses movimentos são chamados de \textit{movimentos de Reidemeister}, classificados em 3 tipos.
+	\par\vspace{0.3cm} Na verdade, uma das primeiras motivações para o estudo das tranças era ajudar 
+	a entender a teoria dos nós e \textit{links}. A conexão é que toda trança pode ser ``fechada'' 
+	para formar um \textit{link}. Era esperado que a estrutura de grupo nas tranças levasse a algum 
+	tipo de estrutura de grupo no conjunto de \textit{links}, mas isso não acontece. Não obstante, 
+	há outras maneiras de usar tranças para ajudar com o estudo de \textit{links}.
 	
+	\par\vspace{0.3cm} Mas como formamos um \textit{link} a partir de uma trança? Fácil: basta 
+	ligar as extremidades sem introduzir novos cruzamentos.
+	
+	\par\vspace{0.3cm} Assim como fizemos para as tranças, também é possível alterar diagramas de 
+	nós através de deformações (ou movimentos) elementares (e seus respectivos inversos). 
+	Esses movimentos são chamados de \textit{movimentos de Reidemeister}, classificados em 3 tipos.
+	%
 	\begin{figure}[H]
 		\begin{center}
 			\includegraphics[width=10cm]{Images/reidemeister_1.png}
 		\end{center}\caption{Movimento de Reidemeister do tipo I}
 		\label{reidemeister tipo 1}
 	\end{figure}
-	
+	%
 	\begin{figure}[H]
 		\begin{center}
 			\includegraphics[width=14cm]{Images/reidemeister_2_e_3.png}
 		\end{center}\caption{Movimentos de Reidemeister dos tipos II e III}
 		\label{reidemeister tipos 2 e 3}
 	\end{figure}
-	\par\vspace{0.3cm} O teorema a seguir, que não será demonstrado, nos dá os análogos, para nós e \textit{links}, das relações de trança.
-	
+	%
+	O teorema a seguir, que não será demonstrado, nos dá os análogos, para nós e \textit{links}, 
+	das relações de trança.
+	%
 	\begin{theorem}
-		\label{equivalencia de nos}
-		Seja $K$ um nó (ou \textit{link}) e suponha que $D$ e $D'$ são dois diagramas de nó de $K$. Então, $D$ pode ser deformado em $D'$ através de uma sequência finita de movimentos de Reidemeister, ou seja, através de uma sequência finita das deformações $\Omega_1^{\pm1}, \Omega_2^{\pm1}$ e $\Omega_3^{\pm1}$. 
+	\label{equivalencia de nos}
+		Seja $K$ um nó (ou \textit{link}) e suponha que $D$ e $D'$ são dois diagramas de nó de $K$. 
+		Então, $D$ pode ser deformado em $D'$ através de uma sequência finita de movimentos de 
+		Reidemeister, ou seja, através de uma sequência finita das deformações 
+		$\Omega_1^{\pm1}, \Omega_2^{\pm1}$ e $\Omega_3^{\pm1}$. 
 	\end{theorem}  
+	%
+	O Teorema \ref{equivalencia de nos} nos dá um algoritmo conceitualmente muito simples 
+	para verificar se dois diagramas são, de fato, equivalentes, i.e., representam o mesmo nó: 
+	basta tentar todas as sequências possíveis de movimentos em um dos diagramas e ver se o outro 
+	diagrama é produzido em alguma dessas sequências. Esse método de tentativa é válido pois 
+	recentemente foi provado que, dados dois diagramas, se um deles pode ser deformado no outro, 
+	ou seja, se eles representam o mesmo nó, então a quantidade de movimentos é limitada superiormente 
+	por uma função do número de cruzamentos no diagrama. Contudo, como esse limite superior é extremamente
+	grande \cite{limite-superior-1, limite-superior-2, limite-superior-3}, esse algoritmo ainda não é prático.
+	Ainda assim, os movimentos de Reidemeister são úteis para vários propósitos teóricos, como estabelecer 
+	vários invariantes de nós.
 	
-	\par\vspace{0.3cm} O Teorema \eqref{equivalencia de nos} nos dá um algoritmo conceitualmente muito simples para verificar se dois diagramas são, de fato, equivalentes, i.e., representam o mesmo nó: basta tentar todas as sequências possíves de movimentos em um dos diagramas e ver se o outro diagrama é produzido em alguma dessas sequências. Esse método de tentativa é válido pois recentemente foi provado que, dados dois diagramas, se um deles pode ser deformado no outro, ou seja, se eles representam o mesmo nó, então a quantidade de movimentos é limitada superiormente por uma função do número de cruzamentos no diagrama. Contudo, como esse limite superior é extremamente grande\footnote{Para detalhes, veja \cite{limite-superior-1, limite-superior-2, limite-superior-3}}, esse algoritmo ainda não é prático. Ainda assim, os movimentos de Reidemeister são úteis para vários propósitos teóricos, como estabelecer vários invariantes de nós.
-	\par\vspace{0.3cm} Os movimentos de Reidemeister, definidos para nós e \textit{links}, possuem análogos para as tranças. Esses análogos são os próprios movimentos de Reidemeister, com exceção do tipo I, uma vez que cada corda da trança deve ser monotônica. Isso significa que nunca podemos fazer um movimento do tipo I, pois não podemos ter \textit{loops}.  
-	\par\vspace{0.3cm} Mas e os movimentos tipo II? Se, na trança, há uma parte que parece com o diagrama à esquerda da Figura \eqref{identidade b2}, então podemos endireitar ambas as cordas: esse é um movimento tipo II. Algebricamente, ele corresponde a cancelar $\sigma_i\sigma_i^{-1}$ (ou $\sigma_i^{-1}\sigma_i$) em uma palavra, o que é claro que podemos fazer. Também podemos sempre inserir tais pares sempre que quisermos, sem alterar a trança.
-	\par\vspace{0.3cm} E os movimentos tipo III? Observe a Figura \eqref{trancas equivalentes}: ela é um movimento de Reidemeister tipo III!
-	\par\vspace{0.3cm} De forma análoga ao Teorema \eqref{equivalencia de nos}, por meio de uma sequência de movimentos de Reidemeister dos tipos II e III, podemos partir de um diagrama de uma trança e chegar em qualquer outro diagrama de uma trança equivalente. Note, em particular, que esses movimentos (tipo II e tipo III) não alteram a paridade do número de cruzamentos. 
-	\par\vspace{0.3cm} Voltando às conexões entre tranças e \textit{links} (e nós), lembre-se do que foi dito no início da seção: que fechando uma trança, obtemos um \textit{link}. De fato, não só podemos obter \textit{links} (e nós) a partir de tranças, como também podemos obter \textbf{todos} os \textit{links} a partir de tranças, como diz o seguinte teorema, que não será demonstrado aqui.
+	\par\vspace{0.3cm} Os movimentos de Reidemeister, definidos para nós e \textit{links}, possuem 
+	análogos para as tranças. Esses análogos são os próprios movimentos de Reidemeister, com exceção 
+	do tipo I, uma vez que cada corda da trança deve ser monotônica. Isso significa que nunca podemos 
+	fazer um movimento do tipo I, pois não podemos ter \textit{loops}.
 	
+	\par\vspace{0.3cm} Mas e os movimentos tipo II? Se, na trança, há uma parte que parece com o diagrama à
+	esquerda da Figura \ref{identidade b2}, então podemos endireitar ambas as cordas: esse é um movimento 
+	tipo II. Algebricamente, ele corresponde a cancelar $\sigma_i\sigma_i^{-1}$ (ou $\sigma_i^{-1}\sigma_i$) 
+	em uma palavra, o que é claro que podemos fazer. Também podemos sempre inserir tais pares sempre que
+	quisermos, sem alterar a trança.
+	
+	\par\vspace{0.3cm} E os movimentos tipo III? Observe a Figura \ref{trancas equivalentes}: 
+	ela é um movimento de Reidemeister tipo III!
+	
+	\par\vspace{0.3cm} De forma análoga ao Teorema \ref{equivalencia de nos}, por meio de uma 
+	sequência de movimentos de Reidemeister dos tipos II e III, podemos partir de um diagrama 
+	de uma trança e chegar em qualquer outro diagrama de uma trança equivalente. 
+	Note, em particular, que esses movimentos (tipo II e tipo III) não alteram a paridade do 
+	número de cruzamentos.
+	
+	\par\vspace{0.3cm} Voltando às conexões entre tranças e \textit{links} (e nós), lembre-se 
+	do que foi dito no início da seção: que fechando uma trança, obtemos um \textit{link}. 
+	De fato, não só podemos obter \textit{links} (e nós) a partir de tranças, como também 
+	podemos obter \textbf{todos} os \textit{links} a partir de tranças, como diz o seguinte 
+	teorema, que não será demonstrado aqui.
+	%
 	\begin{theorem}[Alexander]
-		\label{teorema de Alexander}
+	\label{teorema de Alexander}
 		Qualquer nó ou link $K$ pode ser representado como uma trança fechada.
 	\end{theorem}
+	%
+	Uma consequência boa do Teorema \ref{teorema de Alexander} é que temos uma maneira direta de 
+	descrever qualquer nó (e \textit{link}) sem precisar fazer um desenho. Em vez de dizer 
+	``é o nó que vai por cima, depois por baixo, e volta por trás para onde estava antes só que 
+	do outro lado e$\dots$'', o que tem desvantagens óbvias, podemos simplesmente dizer ``é o nó 
+	que obtemos fechando a trança de 3 cordas $\sigma_1\sigma_2^{-1}\sigma_1\sigma_2^2\sigma_1^2\sigma_2^3$''.
+	Muito mais simples.
 	
-	\par\vspace{0.3cm} Uma consequência boa do Teorema \eqref{teorema de Alexander} é que temos uma maneira direta de descrever qualquer nó (e \textit{link}) sem precisar fazer um desenho. Em vez de dizer ``é o nó que vai por cima, depois por baixo, e volta por trás para onde estava antes só que do outro lado e$\dots$'', o que tem desvantagens óbvias, podemos simplesmente dizer ``é o nó que obtemos fechando a trança de 3 cordas $\sigma_1\sigma_2^{-1}\sigma_1\sigma_2^2\sigma_1^2\sigma_2^3$''. Muito mais simples.
-	\par\vspace{0.3cm} Contudo, o Teorema \eqref{teorema de Alexander} não nos dá uma correspondência única entre tranças e \textit{links}. Várias tranças diferentes podem ser fechadas no mesmo \textit{link} e pode até ser o caso de que tranças com quantidades de cordas diferentes fechem no mesmo \textit{link}, como mostra a figura a seguir.
-	
+	\par\vspace{0.3cm} Contudo, o Teorema \ref{teorema de Alexander} não nos dá uma correspondência 
+	única entre tranças e \textit{links}. Várias tranças diferentes podem ser fechadas no mesmo 
+	\textit{link} e pode até ser o caso de que tranças com quantidades de cordas diferentes 
+	fechem no mesmo \textit{link}, como mostra a figura a seguir.
+	%
 	\begin{figure}[H]
 		\begin{center}
 			\includegraphics[width=12cm]{Images/fechamento_de_trancas_em_nos.png}
 		\end{center}\caption{Tranças não equivalentes que fecham em nós equivalentes.}
 		\label{fechamento de trancas em nos}
-	\end{figure} 
-	\par\vspace{0.3cm} Quando dois nós (ou \textit{links}) podem ser deformados um no outro, dizemos que eles são \textit{equivalentes} ou \textit{isotópicos}. Por exemplo, todas as tranças de $B_2(\mathbb{R}^2)$ (ou seja, todas as tranças de duas cordas) são fechadas no mesmo nó: o trivial.
-	\par\vspace{0.3cm} Logo, se queremos estudar teoria dos nós via teoria das tranças, precisamos de um método para determinar se duas tranças fechadas são equivalentes, ou seja, se dois \textit{links} são isotópicos. De fato, a resposta para essa pergunta está no chamado \textit{teorema de Markov}, que será enunciado mais à frente.
-	\par\vspace{0.3cm} Outro fato importante é que invariantes de trança podem não ser invariantes na trança fechada associada. Por exemplo, sabemos que dada uma trança $\beta$, $l$ (o homomorfismo de comprimento) é um invariante de $\beta$. Contudo, $l$ não precisa ser um invariante de $\widetilde{\beta}$, a trança fechada associada a $\beta$. Por exemplo, na Figura \eqref{fechamento de trancas em nos} $l(\beta_1) = 3 \neq 4 = l(\beta_2)$, mas $\widetilde{\beta_1}\sim\widetilde{\beta_2}$, i.e., os seus fechamentos são nós equivalentes.
-	\par\vspace{0.3cm} Isso suscita a seguinte questão: existe um invariante de nó da trança fechada $\widetilde{\beta}$ que é definido a partir de um invariante da trança $\beta$?
-	\par\vspace{0.3cm} A resposta é sim. Consideremos a permutação $\pi(\beta)$ associada à trança $\beta$. Sabemos que $\pi(\beta)$ pode ser expressa como produto de transposições, a saber
+	\end{figure}
+	%
+	Quando dois nós (ou \textit{links}) podem ser deformados um no outro, dizemos que eles 
+	são \textit{equivalentes} ou \textit{isotópicos}. Por exemplo, todas as tranças de 
+	$B_2(\mathbb{R}^2)$ (ou seja, todas as tranças de duas cordas) são fechadas no 
+	mesmo nó: o trivial.
+	
+	\par\vspace{0.3cm} Logo, se queremos estudar teoria dos nós via teoria das tranças, 
+	precisamos de um método para determinar se duas tranças fechadas são equivalentes, 
+	ou seja, se dois \textit{links} são isotópicos. De fato, a resposta para essa pergunta 
+	está no chamado \textit{teorema de Markov}, que será enunciado mais à frente.
+	
+	\par\vspace{0.3cm} Outro fato importante é que invariantes de trança podem não ser invariantes 
+	na trança fechada associada. Por exemplo, sabemos que dada uma trança $\beta$, $l$ 
+	(o homomorfismo de comprimento) é um invariante de $\beta$. Contudo, $l$ não precisa 
+	ser um invariante de $\widetilde{\beta}$, a trança fechada associada a $\beta$. 
+	Por exemplo, na Figura \ref{fechamento de trancas em nos} $l(\beta_1) = 3 \neq 4 = l(\beta_2)$, mas
+	$\widetilde{\beta_1}\sim\widetilde{\beta_2}$, i.e., os seus fechamentos são nós equivalentes.
+	
+	\par\vspace{0.3cm} Isso suscita a seguinte questão: existe um invariante de nó 
+	da trança fechada $\widetilde{\beta}$ que é definido a partir de um invariante da trança $\beta$?
+	
+	\par\vspace{0.3cm} A resposta é sim. Consideremos a permutação $\pi(\beta)$ associada 
+	à trança $\beta$. Sabemos que $\pi(\beta)$ pode ser expressa como produto de transposições, a saber
+	%
 	\begin{align*}
-	\pi(\beta) = C_1\cdots C_k
-	\end{align*} 
-	\par\vspace{0.3cm} Então $k$, que denotaremos por $\mu(\beta)$, é o número de componentes de $\widetilde{\beta}$ e um invariante do link $\widetilde{\beta}$, uma vez que o seguinte é válido:
-	\begin{align*}
-	\beta\sim\beta' \Rightarrow \pi(\beta) = \pi(\beta') \Rightarrow \mu(\beta) = \mu(\beta')
+	    \pi(\beta) = C_1\cdots C_k.
 	\end{align*}
-	\par\vspace{0.3cm} Portanto, $\widetilde{\beta}$ é um nó se, e somente se, $\pi(\beta)$ é um ciclo de ordem $n$, isto é, $\pi(\beta)$ não deixa pontos fixos. Nesse caso, dizemos que $\beta$ é uma trança fechada de um componente. Como um ciclo de ordem $n$ é escrito por um produto de $n-1$ transposições, então $\widetilde{\beta}$ é um nó se, e só se, $k = n-1$.
-	\par\vspace{0.3cm} Note também que da maneira que definimos $\mu(\beta)$, é claro que, escrevendo $\beta = \sigma_{i_1}^{\varepsilon_1}\cdots\sigma_{i_k}^{\varepsilon_k}$, sendo $\varepsilon_i = \pm1$, temos como consequência imediata o fato de que $\mu(\beta) = \displaystyle{\sum_{i}^{k}|\varepsilon_i|}$. 
-	\par\vspace{0.3cm} Até agora, vimos que a toda trança podemos associar um \textit{link}, mas que essa correspondência não é única (veja a Figura \eqref{fechamento de trancas em nos}). Esse fato levanta a questão: é possível dizer quando que o fechamento de duas tranças não equivalentes nos dá o mesmo \textit{link}? 
-	\par\vspace{0.3cm} A resposta (em parte) é sim, contida no \textit{teorema de Markov} (ainda que não tenha sido o próprio Markov quem demonstrou). Mas o quê exatamente é o teorema de Markov?
+	%
+	Então $k$, que denotaremos por $\mu(\beta)$, é o número de componentes de $\widetilde{\beta}$ 
+	e um invariante do link $\widetilde{\beta}$, uma vez que o seguinte é válido:
+	%
+	\begin{align*}
+	    \beta\sim\beta' \Rightarrow \pi(\beta) = \pi(\beta') \Rightarrow \mu(\beta) = \mu(\beta').
+	\end{align*}
+	%
+	Portanto, $\widetilde{\beta}$ é um nó se, e somente se, $\pi(\beta)$ é um ciclo de ordem $n$, 
+	isto é, $\pi(\beta)$ não deixa pontos fixos. Nesse caso, dizemos que $\beta$ é uma 
+	trança fechada de um componente. Como um ciclo de ordem $n$ é escrito por um produto 
+	de $n-1$ transposições, então $\widetilde{\beta}$ é um nó se, e só se, $k = n-1$.
+	
+	\par\vspace{0.3cm} Note também que da maneira que definimos $\mu(\beta)$, é claro que, 
+	escrevendo $\beta = \sigma_{i_1}^{\varepsilon_1}\cdots\sigma_{i_k}^{\varepsilon_k}$, 
+	sendo $\varepsilon_i = \pm1$, temos como consequência imediata o fato de que 
+	$\mu(\beta) = \displaystyle{\sum_{i}^{k}|\varepsilon_i|}$.
+	
+	\par\vspace{0.3cm} Até agora, vimos que a toda trança podemos associar um \textit{link}, 
+	mas que essa correspondência não é única (veja a Figura \ref{fechamento de trancas em nos}). 
+	Esse fato levanta a questão: é possível dizer quando que o fechamento de duas tranças não 
+	equivalentes nos dá o mesmo \textit{link}?
+	
+	\par\vspace{0.3cm} A resposta (em parte) é sim, contida no \textit{teorema de Markov} 
+	(ainda que não tenha sido o próprio Markov quem demonstrou). Mas o quê exatamente é o teorema de Markov?
+	
 	\par\vspace{0.3cm} Primeiro, vamos observar alguns fatos, como o lema a seguir.
-	
+	%
 	\begin{lemma}
-		\label{conjugacoes dao o mesmo link}
-		Sejam $\beta$ e $\gamma$ duas tranças de $n$ cordas. Então, o fechamento de $\beta$ e o fechamento de $\gamma\beta\gamma^{-1}$ nos dão o mesmo \textit{link}.
+	\label{conjugacoes dao o mesmo link}
+		Sejam $\beta$ e $\gamma$ duas tranças de $n$ cordas. Então, o fechamento de $\beta$ 
+		e o fechamento de $\gamma\beta\gamma^{-1}$ nos dão o mesmo \textit{link}.
 	\end{lemma}
-	
+	%
 	\begin{proof}
-		A demonstração segue a ideia da Figura \eqref{conjugacao nao altera link}. Basicamente, fechando a trança $\gamma\beta\gamma^{-1}$, podemos mover a trança $\gamma^{-1}$ pelo \textit{link} de modo que tenhamos a trança $\beta\gamma^{-1}\gamma$, ou seja, a trança  $\beta$. Observe a figura.
-		
+		A demonstração segue a ideia da Figura \ref{conjugacao nao altera link}. 
+		Basicamente, fechando a trança $\gamma\beta\gamma^{-1}$, podemos mover 
+		a trança $\gamma^{-1}$ pelo \textit{link} de modo que tenhamos a trança 
+		$\beta\gamma^{-1}\gamma$, ou seja, a trança  $\beta$. Observe a figura.
+		%
 		\begin{figure}[H]
 			\begin{center}
 				\includegraphics[width=12cm]{Images/conjugacao_nao_altera_link.png}
 			\end{center}\caption{Conjugações não alteram o \textit{link}.}
 			\label{conjugacao nao altera link}
 		\end{figure}
-	\end{proof}  
-	\par\vspace{0.3cm} Por fim, antes de enunciarmos o teorema de Markov, suponha que $\beta$ é um trança de $n$ cordas e considere $\sigma_n$ um gerador de $B_{n+1}(\mathbb{R}^2)$. De maneira natural, se considerarmos $\beta$ como um elemento de $B_{n+1}(\mathbb{R}^2)$ em vez de $B_n(\mathbb{R}^2)$, podemos definir outras duas tranças de $n+1$ cordas,
+		%
+	\end{proof} 
+	%
+	Por fim, antes de enunciarmos o teorema de Markov, suponha que $\beta$ é um trança de $n$
+	cordas e considere $\sigma_n$ um gerador de $B_{n+1}(\mathbb{R}^2)$. De maneira natural, 
+	se considerarmos $\beta$ como um elemento de $B_{n+1}(\mathbb{R}^2)$ em vez de $B_n(\mathbb{R}^2)$, 
+	podemos definir outras duas tranças de $n+1$ cordas,
+	%
 	\[
-	\begin{array}{ccc}
-	\beta' = \beta\sigma_n & \text{e} & \beta'' = \beta\sigma_n^{-1}
-	\end{array}
+    	\begin{array}{ccc}
+    	    \beta' = \beta\sigma_n & \text{e} & \beta'' = \beta\sigma_n^{-1}.
+    	\end{array}
 	\]
-	\par\vspace{0.3cm} Nesse caso, $\beta$, $\beta'$ e $\beta''$ fecham no mesmo \textit{link}, como ilustra a figura abaixo. A figura (a) mostra o fecho de $\beta$, a figura (b), o fecho de $\beta\sigma_n$ e a (c), o fecho de $\beta\sigma_n^{-1}$.
-	
+	%
+	Nesse caso, $\beta$, $\beta'$ e $\beta''$ fecham no mesmo \textit{link}, como ilustra a figura abaixo. 
+	A figura (a) mostra o fecho de $\beta$, a figura (b), o fecho de $\beta\sigma_n$ e a (c), 
+	o fecho de $\beta\sigma_n^{-1}$.
+	%
 	\begin{figure}[H]
 		\begin{center}
 			\includegraphics[width=13cm]{Images/movimentos_de_markov.png}
 		\end{center}\caption{Movimentos de Markov}
 		\label{movimentos de Markov}
 	\end{figure}
-	\par\vspace{0.3cm} É claro que há outras maneiras de obter tranças cujos fechos representam o mesmo \textit{link}, mas, como veremos adiante, as duas tranformações acima mostradas nas Figuras \eqref{conjugacao nao altera link} e \eqref{movimentos de Markov} são especiais. Como foi Markov quem primeiro as introduziu, elas são usualmente chamadas de \textit{movimento de Markov tipo I} e \textit{movimentos de Markov tipo II}. Vamos defini-los formalmente.
-	\begin{deff}
+	%
+	É claro que há outras maneiras de obter tranças cujos fechos representam o mesmo \textit{link}, 
+	mas, como veremos adiante, as duas transformações acima mostradas nas 
+	Figuras \ref{conjugacao nao altera link} e \ref{movimentos de Markov} são especiais. 
+	Como foi Markov quem primeiro as introduziu, elas são usualmente chamadas de 
+	\textit{movimento de Markov tipo I} e \textit{movimentos de Markov tipo II}. 
+	Vamos defini-los formalmente.
+	%
+	\begin{definition}
 		\label{def movimento de Markov tipo 1}
-		Um movimento de Markov tipo I, denotado $M_1$, substitui uma trança $\beta$ de $n$ cordas pelo seu conjugado $\gamma\beta\gamma^{-1}$, sendo $\gamma$ uma trança de $n$ cordas arbitrária.  
-	\end{deff}
-	\begin{deff}
+		Um movimento de Markov tipo I, denotado $M_1$, substitui uma trança $\beta$ de $n$ 
+		cordas pelo seu conjugado $\gamma\beta\gamma^{-1}$, sendo $\gamma$ uma trança de $n$ 
+		cordas arbitrária.  
+	\end{definition}
+	%
+	\begin{definition}
 		\label{def movimento de Markov tipo 2}
-		Um movimento de Markov do tipo II, denotado $M_2$, substitui a trança $\beta$ de $n$ cordas pela trança $\beta\sigma_n$ ou $\beta\sigma_n^{-1}$ de $n+1$ cordas, sendo $\beta$ visualizada com uma trança de $B_{n+1}(\mathbb{R}^2)$ e $\sigma_n$ um gerador de $B_{n+1}(\mathbb{R}^2)$. 
-	\end{deff}
-	\par\vspace{0.3cm} É claro que podemos definir também os inversos de $M_1$ e $M_2$, que denotaremos por $M_1^{-1}$ e $M_2^{-1}$, respectivamente. Agora, estamos prontos para enunciar o teorema (que não será demonstrado).
-	
+		Um movimento de Markov do tipo II, denotado $M_2$, substitui a trança $\beta$ 
+		de $n$ cordas pela trança $\beta\sigma_n$ ou $\beta\sigma_n^{-1}$ de $n+1$ cordas, 
+		sendo $\beta$ visualizada com uma trança de $B_{n+1}(\mathbb{R}^2)$ e $\sigma_n$ 
+		um gerador de $B_{n+1}(\mathbb{R}^2)$. 
+	\end{definition}
+	%
+	É claro que podemos definir também os inversos de $M_1$ e $M_2$, que denotaremos por 
+	$M_1^{-1}$ e $M_2^{-1}$, respectivamente. Agora, estamos prontos para enunciar o 
+	teorema (que não será demonstrado).
+	%
 	\begin{theorem}[Markov]
 		\label{teorema de Markov}
-		Suponha $\beta$ e $\beta'$ duas tranças (orientadas) não necessariamente com o mesmo número de cordas. Então, os fechos de $\beta$ e $\beta'$ representam o mesmo \textit{link} ou nó $K$ (orientado) se, e somente se, $\beta$ pode ser deformada em $\beta'$ por uma sequência finita dos movimentos $M_1^{\pm1}, M_2^{\pm1}$. Em símbolos, existe a seguinte sequência finita,
+		Suponha $\beta$ e $\beta'$ duas tranças (orientadas) não necessariamente com o mesmo 
+		número de cordas. Então, os fechos de $\beta$ e $\beta'$ representam o mesmo 
+		\textit{link} ou nó $K$ (orientado) se, e somente se, $\beta$ pode ser deformada 
+		em $\beta'$ por uma sequência finita dos movimentos $M_1^{\pm1}, M_2^{\pm1}$. 
+		Em símbolos, existe a seguinte sequência finita,
+		%
 		\begin{align*}
-		\beta = \beta_0\to\beta_1\to\cdots\to\beta_m = \beta',
+		    \beta = \beta_0\to\beta_1\to\cdots\to\beta_m = \beta'
 		\end{align*}
-		\par\vspace{0.3cm} tal que, para $i = 0,1,\dots,m-1$, $\beta_{i+1}$ é obtida a partir de $\beta_i$ pela aplicação de um dos movimentos $M_1^{\pm1}$ e $M_2^{\pm1}$.
+		%
+		tal que, para $i = 0,1,\dots,m-1$, $\beta_{i+1}$ é obtida a partir de $\beta_i$ 
+		pela aplicação de um dos movimentos $M_1^{\pm1}$ e $M_2^{\pm1}$.
 	\end{theorem}
-	\par\vspace{0.3cm} Podemos, ainda, pensar nos movimentos de Markov para as tranças como paralelos diretos dos movimentos de Reidemeister para \textit{links}. Por conveniência, diremos que duas tranças $\beta$ e $\beta'$ são \textit{Markov equivalentes}, denotado por $\beta\underset{M}{\sim}\beta'$, se uma pode ser deformada na outra por meio de uma sequência finita de movimentos de Markov. De fato,
+	%
+	Podemos, ainda, pensar nos movimentos de Markov para as tranças como paralelos diretos 
+	dos movimentos de Reidemeister para \textit{links}. Por conveniência, diremos que 
+	duas tranças $\beta$ e $\beta'$ são \textit{Markov equivalentes}, denotado por
+	$\beta\underset{M}{\sim}\beta'$, se uma pode ser deformada na outra por meio de uma 
+	sequência finita de movimentos de Markov. De fato,
+	%
 	\begin{prop}
-		\label{Markov equivalencia}
+	\label{Markov equivalencia}
 		Markov equivalência é uma relação de equivalência.
-	\end{prop}  
+	\end{prop} 
+	%
 	\begin{proof}
-		Sejam $\alpha$, $\beta$ e $\gamma$ tranças quaisquer, não necessariamente com o mesmo número de cordas. Note que 
+		Sejam $\alpha$, $\beta$ e $\gamma$ tranças quaisquer, não necessariamente com o 
+		mesmo número de cordas. Note que 
+		%
 		\begin{align*}
-		\alpha = \alpha_0\overset{M_1}{\to}\alpha_1\overset{M_1^{-1}}{\to}\alpha_2 = \alpha
+		    \alpha = \alpha_0\overset{M_1}{\to}\alpha_1\overset{M_1^{-1}}{\to}\alpha_2 = \alpha,
 		\end{align*}
-		\par\vspace{0.3cm} logo $\alpha\underset{M}{\sim}\alpha$ e, portanto, a relação $\underset{M}{\sim}$ é reflexiva.
-		\par\vspace{0.3cm} Agora, suponha que $\alpha\underset{M}{\sim}\beta$. Então, por definição, existe uma sequência finita
-		\begin{align*}
-		\alpha\to\cdots\to\beta 
-		\end{align*}
-		\par\vspace{0.3cm} de movimentos de Markov que nos permite deformar $\alpha$ em $\beta$. Consequentemente, podemos partir de $\beta$ e, usando a mesma sequência, só que de trás para frente, chegar em $\alpha$. Portanto, $\alpha\underset{M}{\sim}\beta$ implica $\beta\underset{M}{\sim}\alpha$ e a relação $\underset{M}{\sim}$ é simétrica.
-		\par\vspace{0.3cm} Por fim, suponha $\alpha\underset{M}{\sim}\beta$ e $\beta\underset{M}{\sim}\gamma$. Por definição, existem duas sequências finitas, $S_1$ e $S_2$, digamos, 
-		\begin{align*}
-		\alpha\overset{S_1}{\to}\beta \\
-		\beta\overset{S_2}{\to}\gamma 	
-		\end{align*}
-		\par\vspace{0.3cm} e, consequentemente, existe uma sequência finita $S_3$ de $\alpha$ em $\gamma$
-		\begin{align*}
-		\alpha\overset{S_1}{\to}\beta\overset{S_2}{\to}\gamma 
-		\end{align*}
-		\par\vspace{0.3cm} sendo $S_3$ a sequência $S_1$ seguida de $S_2$. Portanto, $\underset{M}{\sim}$ é transitiva e configura uma relação de equivalência.
-	\end{proof}
-	\par\vspace{0.3cm} Com a noção de Markov equivalência, podemos reescrever o Teorema \eqref{teorema de Markov} da seguinte forma.
-	\begin{theorem}[Markov simplificado]
-		\label{teorema de Markov simplificado}
-		Sejam $\widetilde{\beta}$ e $\widetilde{\beta'}$ dois \textit{links} (ou nós). Então, $\widetilde{\beta}$ é equivalente a $\widetilde{\beta'}$ se, e somente se, $\beta\underset{M}{\sim}\beta'$.
-	\end{theorem}
-	\par\vspace{0.3cm} Algumas obeservações são necessárias.
-	\begin{remark}
-		Primeiro, note que o Teorema \eqref{teorema de Markov}, em si, não é suficiente para classificarmos todos os \textit{links} e nós. O obstáculo é que, atualmente, não existe nenhum algoritmo conhecido para determinar se duas tranças $\beta$ e $\beta'$ são Markov equivalentes ou não. Dito isso, nos casos relativamente simples de tranças de 2 ou 3 cordas, se os fechos de $\beta$ e $\beta'$ são equivalentes, então (a menos de uma família de tranças de 3 cordas que já foi completamente classificada) $\beta$ e $\beta'$ são conjugadas.\cite{classificacao}
-		\par\vspace{0.3cm} Segundo, tenha em mente que nos restringimos a \textit{links} e nós \textbf{orientados}. Se ignorarmos a orientação, o teorema de Markov pode não valer. Por exemplo, considere a figura abaixo.
+		%
+		logo $\alpha\underset{M}{\sim}\alpha$ e, portanto, a relação $\underset{M}{\sim}$ 
+		é reflexiva.
 		
+		\par\vspace{0.3cm} Agora, suponha que $\alpha\underset{M}{\sim}\beta$. Então, por 
+		definição, existe uma sequência finita
+		%
+		\begin{align*}
+		    \alpha\to\cdots\to\beta 
+		\end{align*}
+		%
+		de movimentos de Markov que nos permite deformar $\alpha$ em $\beta$. 
+		Consequentemente, podemos partir de $\beta$ e, usando a mesma sequência, 
+		só que de trás para frente, chegar em $\alpha$. Portanto, $\alpha\underset{M}{\sim}\beta$ 
+		implica $\beta\underset{M}{\sim}\alpha$ e a relação $\underset{M}{\sim}$ é simétrica.
+		
+		\par\vspace{0.3cm} Por fim, suponha $\alpha\underset{M}{\sim}\beta$ e $\beta\underset{M}{\sim}\gamma$. 
+		Por definição, existem duas sequências finitas, $S_1$ e $S_2$, digamos, 
+		%
+		\begin{align*}
+    		\alpha\overset{S_1}{\to}\beta, \qquad \beta\overset{S_2}{\to}\gamma
+		\end{align*}
+		%
+		e, consequentemente, existe uma sequência finita $S_3$ de $\alpha$ em $\gamma$
+		%
+		\begin{align*}
+		    \alpha\overset{S_1}{\to}\beta\overset{S_2}{\to}\gamma 
+		\end{align*}
+		%
+		sendo $S_3$ a sequência $S_1$ seguida de $S_2$. Portanto, $\underset{M}{\sim}$ é 
+		transitiva e configura uma relação de equivalência.
+	\end{proof}
+	%
+	Com a noção de Markov equivalência, podemos reescrever o Teorema \ref{teorema de Markov} da seguinte forma.
+	%
+	\begin{theorem}[Markov simplificado]
+	\label{teorema de Markov simplificado}
+		Sejam $\widetilde{\beta}$ e $\widetilde{\beta'}$ dois \textit{links} (ou nós). 
+		Então, $\widetilde{\beta}$ é equivalente a $\widetilde{\beta'}$ se, e somente se,
+		$\beta\underset{M}{\sim}\beta'$.
+	\end{theorem}
+	%
+	Algumas observações são necessárias.
+	\begin{remark}
+		Primeiro, note que o Teorema \ref{teorema de Markov}, em si, não é suficiente para 
+		classificarmos todos os \textit{links} e nós. O obstáculo é que, atualmente, não 
+		existe nenhum algoritmo conhecido para determinar se duas tranças $\beta$ e $\beta'$ 
+		são Markov equivalentes ou não. Dito isso, nos casos relativamente simples de tranças 
+		de 2 ou 3 cordas, se os fechos de $\beta$ e $\beta'$ são equivalentes, então 
+		(a menos de uma família de tranças de 3 cordas que já foi completamente classificada, 
+		vide \cite{classificacao}) 
+		$\beta$ e $\beta'$ são conjugadas.
+		
+		\par\vspace{0.3cm} Segundo, tenha em mente que nos restringimos a \textit{links} e 
+		nós \textbf{orientados}. Se ignorarmos a orientação, o teorema de Markov pode não valer. 
+		Por exemplo, considere a figura abaixo.
+		%
 		\begin{figure}[H]
 			\begin{center}
 				\includegraphics[width=12cm]{Images/orientacao_markov_link.png}
 			\end{center}\caption{O \textit{link} $L$ e duas orientações possíveis.}\label{orientacao markov link}
 		\end{figure}
-		\par\vspace{0.3cm} Se orientarmos $L$ como na Figura \eqref{orientacao markov link}(b), então (o \textit{link} orientado) $L$ é o fecho da trança de 2 cordas $\sigma_1^4$. Por outro lado, se orientarmos $L$ como na Figura \eqref{orientacao markov link}(c), então o mesmo \textit{link} $L$ não pode ser o fecho de nenhuma trança de 2 cordas. Mas, de fato, é possível mostrar que com essa orientação, $L$ na verdade é o fecho da trança de 3 cordas $\sigma_1^{-1}\sigma_2\sigma_1^{2}\sigma_2^{1}$, Figura \eqref{orientacao markov link}(d).
-		\par\vspace{0.3cm} Portanto, o \textit{link} (não orientado) $L$ da Figura \eqref{orientacao markov link}(a) pode ser representado por duas tranças distintas, $\sigma_1^4$ e $\sigma_1^{-1}\sigma_2\sigma_1^{2}\sigma_2^{1}$. Contudo, essas duas tranças \textbf{não} são Markov equivalentes. 
-		\par\vspace{0.3cm} Outro exemplo é o da Figura \eqref{orientacao markov no}.
+		%
+		Se orientarmos $L$ como na Figura \ref{orientacao markov link}(b), então 
+		(o \textit{link} orientado) $L$ é o fecho da trança de 2 cordas $\sigma_1^4$. 
+		Por outro lado, se orientarmos $L$ como na Figura \ref{orientacao markov link}(c), 
+		então o mesmo \textit{link} $L$ não pode ser o fecho de nenhuma trança de 2 cordas. 
+		Mas, de fato, é possível mostrar que com essa orientação, $L$ na verdade é o fecho 
+		da trança de 3 cordas $\sigma_1^{-1}\sigma_2\sigma_1^{2}\sigma_2^{1}$, 
+		Figura \ref{orientacao markov link}(d).
 		
+		\par\vspace{0.3cm} Portanto, o \textit{link} (não orientado) $L$ da 
+		Figura \ref{orientacao markov link}(a) pode ser representado por duas tranças distintas, 
+		$\sigma_1^4$ e $\sigma_1^{-1}\sigma_2\sigma_1^{2}\sigma_2^{1}$. Contudo, essas duas 
+		tranças \textbf{não} são Markov equivalentes.
+		
+		\par\vspace{0.3cm} Outro exemplo é o da Figura \ref{orientacao markov no}.
+		%
 		\begin{figure}[H]
 			\begin{center}
 				\includegraphics[width=9cm]{Images/orientacao_markov_no.png}
 			\end{center}\caption{O nó $K$ e duas orientações possíveis.}\label{orientacao markov no}
 		\end{figure}
-		
-		\par\vspace{0.3cm} É sabido, mas não é fácil mostrar, que os nós (orientados) $K_1$ e $K_2$ da Figura \eqref{orientacao markov no}, apesar de obtidos a partir do mesmo nó não orientado $K$, não são equivalentes, justamente por serem dados por orientações diferentes. Pela figura, $K_1$ e $K_2$ são representados pelas tranças $\beta_1$ e $\beta_2$, respectivamente. Como $K_1$ e $K_2$ não são equivalentes, então $\beta_1$ e $\beta_2$ não são Markov equivalentes.  
-		
+		%
+		É sabido, mas não é fácil mostrar, que os nós (orientados) $K_1$ e $K_2$ da 
+		Figura \ref{orientacao markov no}, apesar de obtidos a partir do mesmo nó não 
+		orientado $K$, não são equivalentes, justamente por serem dados por orientações 
+		diferentes. Pela figura, $K_1$ e $K_2$ são representados pelas tranças $\beta_1$ e $\beta_2$,
+		respectivamente. Como $K_1$ e $K_2$ não são equivalentes, então $\beta_1$ e $\beta_2$ 
+		não são Markov equivalentes.  
 	\end{remark}
+	%
 	\section{Algumas aplicações do Teorema de Markov}
 	\hspace{12pt} Seja $K$ um nó (ou \textit{link}) orientado em $\mathbb{R}^3$. Se considerarmos o plano $xy$ como um espelho, então a imagem de $K$ nesse espelho também é um nó em $\mathbb{R}^3$, veja a figura abaixo.
 	
