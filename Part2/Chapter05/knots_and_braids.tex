@@ -1034,768 +1034,1091 @@
     	1-t & 0 & t \\
     	1 & 0 & 0 \\
     	0 & t^{-1} & 1-t^{-1}
-    	\end{bmatrix}
+    	\end{bmatrix}.
 	\end{align*}
 	%
 	Vamos, agora, tratar do polinômio de Alexander em si.
 	
-	\par\vspace{0.3cm} Então, suponha que percebemos que uma quantidade $\lambda(\beta)$, derivada de uma trança $\beta$ de $n$ cordas, é um invariante de nó (ou \textit{link}). Devido ao Teorema \eqref{teorema de Markov}, para mostrar que $\lambda(\beta)$ é realmente um invariante, é suficiente mostrar que para uma trança $\beta$ de $n$ cordas valem as seguintes propriedades:
+	\par\vspace{0.3cm} Então, suponha que percebemos que uma quantidade $\lambda(\beta)$, 
+	derivada de uma trança $\beta$ de $n$ cordas, é um invariante de nó (ou \textit{link}). 
+	Devido ao Teorema \ref{teorema de Markov}, para mostrar que $\lambda(\beta)$ é realmente 
+	um invariante, é suficiente mostrar que para uma trança $\beta$ de $n$ cordas valem as 
+	seguintes propriedades:
+	%
 	\begin{enumerate}
 		\item $\lambda(\beta) = \lambda(\gamma\beta\gamma^{-1})$ para $\gamma\in B_n$ arbitrária;
-		\item $\lambda(\beta\sigma_n) = \lambda(\beta) = \lambda(\beta\sigma_n^{-1})$ para tranças de $n+1$ cordas $\beta\sigma_n$ e $\beta\sigma_n^{-1}$.
+		\item $\lambda(\beta\sigma_n) = \lambda(\beta) = \lambda(\beta\sigma_n^{-1})$ 
+		para tranças de $n+1$ cordas $\beta\sigma_n$ e $\beta\sigma_n^{-1}$.
 	\end{enumerate}
-	\par\vspace{0.3cm} Voltando à representação de Burau apresentada anteriormente, uma quantidade que satisfaz as propriedades 1 e 2 é o determinante da matriz, pois como $\det(\varphi_n(\sigma_i)) = -t$, e sabendo que podemos escrever $\beta = \sigma_{i_1}^{\varepsilon_1}\cdots\sigma_{i_k}^{\varepsilon_k}$, temos
+	%
+	Voltando à representação de Burau apresentada anteriormente, uma quantidade que 
+	satisfaz as propriedades 1 e 2 é o determinante da matriz, pois como $\det(\varphi_n(\sigma_i)) = -t$,
+	e sabendo que podemos escrever $\beta = \sigma_{i_1}^{\varepsilon_1}\cdots\sigma_{i_k}^{\varepsilon_k}$, 
+	temos
+	%
 	\begin{align*} 
-	\det(\varphi_n(\beta)) 
-	&= 
-	\det\left( \prod_{i=1}^{k}\varphi_n^{\varepsilon_i}(\sigma_i) \right)
-	\\ 
-	&= \prod_{i=1}^{k}(\det(\varphi_n(\sigma_i)))^{\varepsilon_i}
-	\\ 
-	&= (-t)^{\sum_{i=1}^{k}\varepsilon_i}
-	\\
-	&=(-t)^{l(\beta)} 
-	\\
-	&=(-t)^{l(\gamma\beta\gamma^{-1})} 
-	\\
-	&=\det(\varphi_n(\gamma\beta\gamma^{-1}))
-	\end{align*} 
-	\par\vspace{0.3cm} sendo $l$ a função homomorfismo de comprimento definida no Lema \eqref{homomorfismo de comprimento}. Em particular, note que
+    	\det(\varphi_n(\beta)) 
+    	&= 
+    	\det\left( \prod_{i=1}^{k}\varphi_n^{\varepsilon_i}(\sigma_i) \right)
+    	\\ 
+    	&= \prod_{i=1}^{k}(\det(\varphi_n(\sigma_i)))^{\varepsilon_i}
+    	\\ 
+    	&= (-t)^{\sum_{i=1}^{k}\varepsilon_i}
+    	\\
+    	&=(-t)^{l(\beta)} 
+    	\\
+    	&=(-t)^{l(\gamma\beta\gamma^{-1})} 
+    	\\
+    	&=\det(\varphi_n(\gamma\beta\gamma^{-1})),
+	\end{align*}
+	%
+	sendo $l$ a função homomorfismo de comprimento definida no Lema \ref{homomorfismo de comprimento}. 
+	Em particular, note que
+	%
 	\begin{equation}
 	\label{det Burau de beta}
-	\det(\varphi_n(\beta)) = (-t)^{l(\beta)}
+	    \det(\varphi_n(\beta)) = (-t)^{l(\beta)}.
 	\end{equation}
-	\par \vspace{0.3cm} Portanto, se fizermos $\lambda(\beta) = \det(\varphi_n(\beta))(-t)^{-\epsilon}$, sendo $\epsilon=l(\beta)$, então $\lambda(\beta)$ se torna um invariante. 
-	\par\vspace{0.3cm} Contudo, esse invariante não é muito interessante, uma vez que $\lambda(\beta) = 1$ para toda trança $\beta$. Então, ao invés do determinante de $\varphi_n(\beta)$, vamos considerar o ``polinômio característico'' de $\varphi_n(\beta)$, a saber
+	%
+	Portanto, se fizermos $\lambda(\beta) = \det(\varphi_n(\beta))(-t)^{-\epsilon}$, 
+	sendo $\epsilon=l(\beta)$, então $\lambda(\beta)$ se torna um invariante.
+	
+	\par\vspace{0.3cm} Contudo, esse invariante não é muito interessante, uma vez 
+	que $\lambda(\beta) = 1$ para toda trança $\beta$. Então, ao invés do determinante 
+	de $\varphi_n(\beta)$, vamos considerar o ``polinômio característico'' de $\varphi_n(\beta)$, 
+	a saber
+	%
 	\begin{align*}
-	\det(\varphi_n(\beta) - I_n)
+	    \det(\varphi_n(\beta) - I_n).
 	\end{align*}
-	\par\vspace{0.3cm} Como veremos a seguir, isso leva a um invariante (não trivial) de nós, mas antes precisamos do seguinte lema técnico.
+	%
+	Como veremos a seguir, isso leva a um invariante (não trivial) de nós, mas antes 
+	precisamos do seguinte lema técnico.
+	%
 	\begin{lemma}
-		\label{propriedades representacao de Burau}
-		Escrevendo a representação de Burau de uma trança de $n$ cordas $\beta$ como $\varphi_n(\beta) = ||a_{ij}||$, $i,j=1,2,\dots,n$, então as seguintes propriedades valem:
+	\label{propriedades representacao de Burau}
+		Escrevendo a representação de Burau de uma trança de $n$ cordas $\beta$ como 
+		$\varphi_n(\beta) = ||a_{ij}||$, $i,j=1,2,\dots,n$, então as seguintes propriedades valem:
+		%
 		\begin{align}
 		\label{propriedade 1}
-		&\sum_{j=1}^{n}a_{ij} = 1 \\
+		    &\sum_{j=1}^{n}a_{ij} = 1, \\
 		\label{propriedade 2}
-		&\sum_{i=1}^{n} t^ia_{ij} = t^j 
+		    &\sum_{i=1}^{n} t^ia_{ij} = t^j,
 		\end{align}
-		\par Ou seja, a soma de todos os elementos da linha $i$ é igual a $1$ \eqref{propriedade 1} e somando os elementos da coluna $j$ (com o primeiro elemento multiplicado por $t$, o segundo por $t^2$ e assim por diante) obtemos $t^j$ \eqref{propriedade 2}.
+		%
+		ou seja, a soma de todos os elementos da linha $i$ é igual a $1$ \eqref{propriedade 1} 
+		e somando os elementos da coluna $j$ (com o primeiro elemento multiplicado por $t$, 
+		o segundo por $t^2$ e assim por diante) obtemos $t^j$, como em \eqref{propriedade 2}.
 	\end{lemma}
+	%
 	\begin{proof}
-		Primeiro, note que \eqref{propriedade 1} e \eqref{propriedade 2} valem se $\beta = \sigma_i^{\pm1}$, para $i$ qualquer, basta usar \eqref{representacao de Burau}. Agora, vamos mostrar que se $A$ e $B$ são duas matrizes que satisfazem \eqref{propriedade 1} e \eqref{propriedade 2}, então o seu produto $AB$ também satisfaz as mesmas equações. Mostrando isso, o resultado segue por indução.
-		\par\vspace{0.3cm} Então, suponha $A = ||a_{ij}||$ e $B = || b_{kl} ||$ duas matrizes de ordem $n$ para as quais \eqref{propriedade 1} e \eqref{propriedade 2} valem. Além disso, seja $AB = || c_{pq} ||$, com $c_{pq} = \displaystyle{ \sum_{j=1}^{n}a_{pj}b_{jq} }$. Daí, 
+		Primeiro, note que \eqref{propriedade 1} e \eqref{propriedade 2} valem se 
+		$\beta = \sigma_i^{\pm1}$, para $i$ qualquer, basta usar \eqref{representacao de Burau}. 
+		Agora, vamos mostrar que se $A$ e $B$ são duas matrizes que satisfazem 
+		\eqref{propriedade 1} e \eqref{propriedade 2}, então o seu produto $AB$ também 
+		satisfaz as mesmas equações. Mostrando isso, o resultado segue por indução.
+		
+		\par\vspace{0.3cm} Então, suponha $A = ||a_{ij}||$ e $B = || b_{kl} ||$ 
+		duas matrizes de ordem $n$ para as quais \eqref{propriedade 1} e \eqref{propriedade 2} 
+		valem. Além disso, seja $AB = || c_{pq} ||$, com 
+		$c_{pq} = \displaystyle{ \sum_{j=1}^{n}a_{pj}b_{jq} }$. Daí,
+		%
 		\begin{align*}
-		&\sum_{q=1}^{n}c_{pq} = \sum_{q=1}^{n}\sum_{j=1}^{n}a_{pj}b_{jq} = \sum_{j=1}^{n}a_{pj}\underbrace{\left\{\sum_{q=1}^{n}b_{jq}\right\}}_{=1} =
-		\sum_{j=1}^{n}a_{pj} = 1 \\
-		&\sum_{p=1}^{n}t^pc_{pq} = \sum_{p=1}^{n}\sum_{j=1}^{n}t^pa_{pj}b_{jq} = \sum_{j=1}^{n}\underbrace{ \left\{ \sum_{p=1}^{n}t^pa_{pj} \right\}}_{=t^j}b_{jq} = \sum_{j=1}^{n}t^jb_{jq} = t^q
-		\end{align*}	
+    		&\sum_{q=1}^{n}c_{pq} 
+    		= \sum_{q=1}^{n}\sum_{j=1}^{n}a_{pj}b_{jq} 
+    		= \sum_{j=1}^{n}a_{pj}\underbrace{\left\{\sum_{q=1}^{n}b_{jq}\right\}}_{=1} 
+    		= \sum_{j=1}^{n}a_{pj} = 1 \\
+    		&\sum_{p=1}^{n}t^pc_{pq} 
+    		= \sum_{p=1}^{n}\sum_{j=1}^{n}t^pa_{pj}b_{jq} 
+    		= \sum_{j=1}^{n}\underbrace{ \left\{ \sum_{p=1}^{n}t^pa_{pj} \right\}}_{=t^j}b_{jq} 
+    		= \sum_{j=1}^{n}t^jb_{jq} 
+    		= t^q.
+		\end{align*}
+		%
 	\end{proof}
-	\par Segue imediatamente do Lema \eqref{propriedades representacao de Burau} que
+	%
+	Segue imediatamente do Lema \ref{propriedades representacao de Burau} que
+	%
 	\begin{align}
 	\label{consequencia 1}
-	\sum_{j=1}^{n}(a_{ij} - \delta_{ij}) &= \sum_{j=1}^{n}a_{ij} - 1 = 0 \\ 
+	    \sum_{j=1}^{n}(a_{ij} - \delta_{ij}) &= \sum_{j=1}^{n}a_{ij} - 1 = 0, \\ 
 	\label{consequencia 2}
-	\sum_{i=1}^{n}(t^ia_{ij} - t^i\delta_{ij}) &= \sum_{i=1}^{n}t^ia_{ij} - t^j = 0
+	    \sum_{i=1}^{n}(t^ia_{ij} - t^i\delta_{ij}) &= \sum_{i=1}^{n}t^ia_{ij} - t^j = 0,
 	\end{align}
-	\par sendo $\delta_{ij}$ o delta de Kronecker.
-	\par\vspace{0.3cm} O significado da equação \eqref{consequencia 1} é que, na matriz $\varphi_n(\beta) - I_n$, excluindo a primeira coluna e adicionando todas as colunas restantes à primeira, obtemos uma coluna nula. Similarmente, na equação \eqref{consequencia 2} adicionamos a $i$-ésima linha multiplicada por $t^i$, $i=1,2,\dots,n$, à primeira linha, obtendo a linha nula. Consequentemente, obtemos
+	%
+	sendo $\delta_{ij}$ o delta de Kronecker.
+	
+	\par\vspace{0.3cm} O significado da equação \eqref{consequencia 1} é que, 
+	na matriz $\varphi_n(\beta) - I_n$, excluindo a primeira coluna e adicionando todas 
+	as colunas restantes à primeira, obtemos uma coluna nula. Similarmente, na 
+	equação \eqref{consequencia 2} adicionamos a $i$-ésima linha multiplicada por 
+	$t^i$, $i=1,2,\dots,n$, à primeira linha, obtendo a linha nula. Consequentemente, obtemos
+	%
 	\begin{equation*}
-	\det(\varphi_n(\beta) - I_n) = 0
+	    \det(\varphi_n(\beta) - I_n) = 0.
 	\end{equation*}
-	\par\vspace{0.3cm} Antes de seguir para o polinômio de Alexander em si, precisaremos dos dois lemas a seguir.
+	%
+	Antes de seguir para o polinômio de Alexander em si, precisaremos dos dois lemas a seguir.
+	%
 	\begin{lemma}
-		\label{exercicio}
-		Seja $M = \varphi_n(\beta)$ para uma trança $\beta$ de $n$ cordas. Denote por $M_{p,q}$ a matriz de ordem $(n-1)$ obtida de $M$ deletando a $p$-ésima linha e a $q$-ésima coluna, e denote o seu determinante por $\det[M]_{p,q}$. Então, valem as seguintes igualdades:
+	\label{exercicio}
+		Seja $M = \varphi_n(\beta)$ para uma trança $\beta$ de $n$ cordas. 
+		Denote por $M_{p,q}$ a matriz de ordem $(n-1)$ obtida de $M$ deletando a $p$-ésima 
+		linha e a $q$-ésima coluna, e denote o seu determinante por $\det[M]_{p,q}$. 
+		Então, valem as seguintes igualdades:
+		%
 		\begin{enumerate}
 			\item $\det[M - I_n]_{p,p} = t^{p-1}\det[M - I_n]_{1,1}$ para $p=1,2,\dots,n$
 			\item $\det[M - I_n]_{p,q} = (-1)^{p+q}t^{p-1}\det[M - I_n]_{1,1}$ para quaisquer $1\leq p,q\leq n$.
 		\end{enumerate}
+		%
 	\end{lemma}
+	%
 	\begin{proof}
-		
+		a
 	\end{proof}
-	\par\vspace{0.3cm} Antes do próximo lema, convém fazer algumas definições. Então, seja $S$ uma matriz de ordem $n$ tal que
+	%
+	Antes do próximo lema, convém fazer algumas definições. Então, seja $S$ uma matriz de ordem $n$ tal que
+	%
 	\begin{align*}
-	S &= \begin{bmatrix}
-	1 & 1 & 1 & \cdots & 1 & 1 \\
-	0 & 1 & 1 & \cdots & 1 & 1 \\
-	0 & 0 & 1 & \cdots & 1 & 1 \\
-	0 & 0 & 0 & \cdots & 1 & 1 \\
-	\vdots & \vdots & \vdots & \ddots & \vdots & \vdots \\
-	0 & 0 & 0 & \cdots & 1 & 1 \\
-	0 & 0 & 0 & \cdots & 0 & 1
-	\end{bmatrix}\\
-	S^{-1} &= \begin{bmatrix}
-	1 & -1 & 0 & \cdots & 0\\
-	0 & 1  & -1 & \cdots & 0\\
-	\vdots & \vdots & \ddots & \ddots & \vdots \\
-	0 & 0 & \cdots & 1 & -1 \\
-	0 & 0 & \cdots & 0 & 1
-	\end{bmatrix}
+    	S &= \begin{bmatrix}
+    	1 & 1 & 1 & \cdots & 1 & 1 \\
+    	0 & 1 & 1 & \cdots & 1 & 1 \\
+    	0 & 0 & 1 & \cdots & 1 & 1 \\
+    	0 & 0 & 0 & \cdots & 1 & 1 \\
+    	\vdots & \vdots & \vdots & \ddots & \vdots & \vdots \\
+    	0 & 0 & 0 & \cdots & 1 & 1 \\
+    	0 & 0 & 0 & \cdots & 0 & 1
+    	\end{bmatrix}, \\
+    	S^{-1} &= \begin{bmatrix}
+    	1 & -1 & 0 & \cdots & 0\\
+    	0 & 1  & -1 & \cdots & 0\\
+    	\vdots & \vdots & \ddots & \ddots & \vdots \\
+    	0 & 0 & \cdots & 1 & -1 \\
+    	0 & 0 & \cdots & 0 & 1
+    	\end{bmatrix}.
 	\end{align*}
-	\par\vspace{0.3cm} Então, sendo $M = \varphi_n(\beta)$, temos
+	%
+	Então, sendo $M = \varphi_n(\beta)$, temos
+	%
 	\begin{equation*}
-	S^{-1}MS = \left[\begin{array}{c|c}
-	\Lambda(t) & \\
-	\hline 
-	\ast \cdots \ast & 1
-	\end{array}\right] 
+    	S^{-1}MS = \left[\begin{array}{c|c}
+    	\Lambda(t) & \\
+    	\hline 
+    	\ast \cdots \ast & 1
+    	\end{array}\right],
 	\end{equation*}
-	\par\vspace{0.3cm} em que $\Lambda(t)$ é uma matriz não singular $(n-1)\times(n-1)$. Portanto, temos $ \det[ S^{-1}MS - I_n]_{n,n} = \det[S^{-1}(M - I_n)S]_{n,n} = \det(\Lambda(t) - I_{n-1})$, uma vez que
+	%
+	em que $\Lambda(t)$ é uma matriz não singular $(n-1)\times(n-1)$. Portanto, 
+	temos 
+	%
+	\[
+	    \det[ S^{-1}MS - I_n]_{n,n} = \det[S^{-1}(M - I_n)S]_{n,n} = \det(\Lambda(t) - I_{n-1}),
+	\]
+	% 
+	uma vez que
+	%
 	\begin{equation*}
-	\det[S^{-1}(M - I_n)S]_{n,n} = \det[S^{-1}MS - I_n]_{n,n} = \det\Bigg[ \left[\begin{array}{c|c}
-	\Lambda(t) - I_{n-1} & \\
-	\hline
-	\ast\cdots\ast & 0
-	\end{array}\right]\Bigg]_{n,n} = \det(\Lambda(t) - I_{n-1}). 
+    	\det[S^{-1}(M - I_n)S]_{n,n} 
+    	= \det[S^{-1}MS - I_n]_{n,n} 
+    	= \det\Bigg[ \left[\begin{array}{c|c}
+    	\Lambda(t) - I_{n-1} & \\
+    	\hline
+    	\ast\cdots\ast & 0
+    	\end{array}\right]\Bigg]_{n,n} = \det(\Lambda(t) - I_{n-1}).
 	\end{equation*}
+	%
 	\begin{lemma}
-		\label{lema Alexander}
-		Temos 
+	\label{lema Alexander}
+		Temos
+		%
 		\begin{align*}
-		\det(\Lambda(t) - I_{n-1}) \doteq(1+t+\cdots+t^{n-1})\det[M-I_n]_{1,1}
+		    \det(\Lambda(t) - I_{n-1}) \doteq(1+t+\cdots+t^{n-1})\det[M-I_n]_{1,1}
 		\end{align*}
-		\par\vspace{0.3cm} ou, equivalentemente, 
+		%
+		ou, equivalentemente, 
+		%
 		\begin{align*}
-		\det[S^{-1}(M - I_{n})S]_{n,n} \doteq(1+t+\cdots+t^{n-1})\det[M-I_n]_{1,1}
+		    \det[S^{-1}(M - I_{n})S]_{n,n} \doteq(1+t+\cdots+t^{n-1})\det[M-I_n]_{1,1},
 		\end{align*}
-		\par\vspace{0.3cm} em que $f\doteq g$ denota que $f = \pm t^kg$ para algum $k\in\mathbb{Z}$.
+		%
+		em que $f\doteq g$ denota que $f = \pm t^kg$ para algum $k\in\mathbb{Z}$.
 	\end{lemma}
-	
+	%
 	\begin{proof}
-		Seja $M = ||a_{ij}||_{1\leq i,j\leq n}$. Por simplicidade, denote por $[M - I_n]_{0,n}$ a matriz $n\times(n-1)$ obtida deletando a $n$-ésima coluna. Então, as linhas de $[M - I_n]_{0,n}$ têm a seguinte forma:
+		Seja $M = ||a_{ij}||_{1\leq i,j\leq n}$. Por simplicidade, denote por $[M - I_n]_{0,n}$ 
+		a matriz $n\times(n-1)$ obtida deletando a $n$-ésima coluna. Então, as linhas de 
+		$[M - I_n]_{0,n}$ têm a seguinte forma:
+		%
 		\begin{align*}
-		A_1 =& \text{ }(a_{11} - 1, a_{12}, \dots, a_{1\text{ }n-1}) \\
-		A_2 =& \text{ }(a_{21}, a_{22} - 1, \dots, a_{2\text{ }n-1}) \\
-		\vdots& \\
-		A_n =& \text{ }(a_{n1}, a_{n2}, \dots, a_{n\text{ }n-1})
+    		A_1 =& \text{ }(a_{11} - 1, a_{12}, \dots, a_{1\text{ }n-1}), \\
+    		A_2 =& \text{ }(a_{21}, a_{22} - 1, \dots, a_{2\text{ }n-1}), \\
+    		\vdots& \\
+    		A_n =& \text{ }(a_{n1}, a_{n2}, \dots, a_{n\text{ }n-1}).
 		\end{align*}
-		\par\vspace{0.3cm} Uma computação direta e cuidadosa nos dá
+		%
+		Uma computação direta e cuidadosa nos dá
+		%
 		\begin{equation*}
-		U(\Lambda(t) - I_{n-1})V = \begin{bmatrix}
-		A_1 - A_2 \\
-		A_1 - A_3 \\
-		\vdots \\
-		A_1 - A_n
-		\end{bmatrix}
+    		U(\Lambda(t) - I_{n-1})V = \begin{bmatrix}
+    		A_1 - A_2 \\
+    		A_1 - A_3 \\
+    		\vdots \\
+    		A_1 - A_n
+    		\end{bmatrix},
 		\end{equation*}
-		\par\vspace{0.3cm} sendo $U = [S^T]_{n,n}$ e $V = [S^{-1}]_{n,n}$. Daí, usando a multilinearidade do determinante, obtemos:
+		%
+		sendo $U = [S^T]_{n,n}$ e $V = [S^{-1}]_{n,n}$. Daí, usando a multilinearidade 
+		do determinante, obtemos:
+		%
 		\begin{align*}
-		\det(\Lambda(t) - I_{n-1}) 
-		&=\det[U(\Lambda(t) - I_{n-1})V] 
-		\\
-		&= \det\begin{bmatrix}
-		A_1 - A_2\\
-		A_1 - A_3 \\
-		\vdots \\
-		A_1 - A_n
-		\end{bmatrix}
-		\\
-		&= \det\begin{bmatrix}
-		A_1 \\
-		-A_3 \\
-		-A_4 \\
-		\vdots \\
-		-A_n
-		\end{bmatrix} + \det\begin{bmatrix}
-		-A_2 \\
-		A_1 \\
-		-A_4 \\
-		\vdots\\
-		-A_n
-		\end{bmatrix} +\cdots + \det\begin{bmatrix}
-		-A_2 \\
-		\vdots\\
-		-A_k \\
-		A_1\\
-		-A_{k+2}\\
-		\vdots\\
-		-A_n
-		\end{bmatrix} +\cdots + 
-		\det\begin{bmatrix}
-		-A_2\\
-		-A_3 \\
-		\vdots\\
-		-A_{n-1}\\
-		A_1
-		\end{bmatrix}+\det\begin{bmatrix}
-		-A_2\\
-		-A_3\\
-		\vdots\\
-		-A_n
-		\end{bmatrix}
+    		\det(\Lambda(t) - I_{n-1}) 
+    		&=\det[U(\Lambda(t) - I_{n-1})V] 
+    		\\
+    		&= \det\begin{bmatrix}
+    		A_1 - A_2\\
+    		A_1 - A_3 \\
+    		\vdots \\
+    		A_1 - A_n
+    		\end{bmatrix}
+    		\\
+    		&= \det\begin{bmatrix}
+    		A_1 \\
+    		-A_3 \\
+    		-A_4 \\
+    		\vdots \\
+    		-A_n
+    		\end{bmatrix} + \det\begin{bmatrix}
+    		-A_2 \\
+    		A_1 \\
+    		-A_4 \\
+    		\vdots\\
+    		-A_n
+    		\end{bmatrix} +\cdots + \det\begin{bmatrix}
+    		-A_2 \\
+    		\vdots\\
+    		-A_k \\
+    		A_1\\
+    		-A_{k+2}\\
+    		\vdots\\
+    		-A_n
+    		\end{bmatrix} +\cdots + 
+    		\det\begin{bmatrix}
+    		-A_2\\
+    		-A_3 \\
+    		\vdots\\
+    		-A_{n-1}\\
+    		A_1
+    		\end{bmatrix}+\det\begin{bmatrix}
+    		-A_2\\
+    		-A_3\\
+    		\vdots\\
+    		-A_n
+    		\end{bmatrix}.
 		\end{align*}
-		\par\vspace{0.3cm} Daí, temos
+		%
+		Daí, temos
+		%
 		\begin{align*}
-		\det\begin{bmatrix}
-		-A_2\\
-		-A_3\\
-		\vdots \\
-		-A_n
-		\end{bmatrix} = (-1)^{n-1}\det[M-I_n]_{1,n} = (-1)^{n-1+n+1}t^0\det[M - I_n]_{1,1} = \det[M-I_n]_{1,1}
+    		\det\begin{bmatrix}
+    		-A_2\\
+    		-A_3\\
+    		\vdots \\
+    		-A_n
+    		\end{bmatrix} 
+    		= (-1)^{n-1}\det[M-I_n]_{1,n} 
+    		= (-1)^{n-1+n+1}t^0\det[M - I_n]_{1,1} 
+    		= \det[M-I_n]_{1,1},
 		\end{align*}
-		\par\vspace{0.3cm} em que na primeira igualdade retiramos todos os fatores $-1$ do determinante e, na segunda igualdade, utilizamos o Lema \eqref{exercicio}. Analogamente, temos
+		%
+		em que na primeira igualdade retiramos todos os fatores $-1$ do determinante e, na segunda igualdade,
+		utilizamos o Lema \ref{exercicio}. Analogamente, temos
+		%
 		\begin{align*}
-		\det\begin{bmatrix}
-		A_1\\
-		-A_3\\
-		\vdots\\
-		-A_n
-		\end{bmatrix} = (-1)^{n-2}\det[M-I_n]_{2,n} = (-1)^{n-2+n+2}t^1\det[M - I_n]_{1,1} = t\det[M - I_n]_{1,1}
+    		\det\begin{bmatrix}
+    		A_1\\
+    		-A_3\\
+    		\vdots\\
+    		-A_n
+    		\end{bmatrix} = (-1)^{n-2}\det[M-I_n]_{2,n} 
+    		= (-1)^{n-2+n+2}t^1\det[M - I_n]_{1,1} 
+    		= t\det[M - I_n]_{1,1}.
 		\end{align*}
-		\par\vspace{0.3cm} Por fim, de modo análogo para todo $2\leq k\leq n-1$, obtemos
+		%
+		Por fim, de modo análogo para todo $2\leq k\leq n-1$, obtemos
+		%
 		\begin{equation*}
-		\det\begin{bmatrix}
-		-A_2 \\
-		\vdots\\
-		-A_k\\
-		A_1\\
-		-A_{k+2}\\
-		\vdots\\
-		-A_n
-		\end{bmatrix} = (-1)^{n-2+k-1}\det\begin{bmatrix}
-		A_1\\
-		A_2\\
-		\vdots\\
-		A_k\\
-		A_{k+2}\\
-		\vdots\\
-		A_n
-		\end{bmatrix} = (-1)^{n+k-3}\det[M - I_n]_{k+1, n} = t^k\det[M - I_n]_{1,1}
+    		\det\begin{bmatrix}
+    		-A_2 \\
+    		\vdots\\
+    		-A_k\\
+    		A_1\\
+    		-A_{k+2}\\
+    		\vdots\\
+    		-A_n
+    		\end{bmatrix} = (-1)^{n-2+k-1}\det\begin{bmatrix}
+    		A_1\\
+    		A_2\\
+    		\vdots\\
+    		A_k\\
+    		A_{k+2}\\
+    		\vdots\\
+    		A_n
+    		\end{bmatrix} = (-1)^{n+k-3}\det[M - I_n]_{k+1, n} = t^k\det[M - I_n]_{1,1}.
 		\end{equation*}
-		\par\vspace{0.3cm} Consequentemente, $\det(\Lambda(t) - I_{n-1}) = (1+t+\cdots+t^{n-1})\det[M - I_n]_{1,1}$	
+		%
+		Consequentemente, $\det(\Lambda(t) - I_{n-1}) = (1+t+\cdots+t^{n-1})\det[M - I_n]_{1,1}$.	
 	\end{proof}
-	\par\vspace{0.3cm} Agora estamos prontos para enunciar e demonstrar o teorema desejado.
+	%
+	Agora estamos prontos para enunciar e demonstrar o teorema desejado.
+	%
 	\begin{theorem}
-		\label{polinomio de Alexander}
-		Seja $K$ um nó (ou link) orientado e suponha $\beta$ uma trança de $n$ cordas cujo fecho é $K$. Se fizermos $M = \varphi_n(\beta)$, então $\det[M - I_n]_{1,1}$ é um invariante de $K$, a menos de um fator $\pm t^k$, para algum $k\in\mathbb{Z}$.
-	\end{theorem} 
-	\par\vspace{0.3cm} A essência do Teorema \eqref{polinomio de Alexander} é que se $\beta_1\in B_n$ e $\beta_2\in B_m$ são duas tranças cujos fechos são equivalentes, i.e., tais que $\widetilde{\beta_1}\approx\widetilde{\beta_2}$, então existe $k\in\mathbb{Z}$ tal que
+	\label{polinomio de Alexander}
+		Seja $K$ um nó (ou link) orientado e suponha $\beta$ uma trança de $n$ cordas cujo fecho é $K$. 
+		Se fizermos $M = \varphi_n(\beta)$, então $\det[M - I_n]_{1,1}$ é um invariante de $K$, 
+		a menos de um fator $\pm t^k$, para algum $k\in\mathbb{Z}$.
+	\end{theorem}
+	%
+	A essência do Teorema \ref{polinomio de Alexander} é que se $\beta_1\in B_n$ e $\beta_2\in B_m$ 
+	são duas tranças cujos fechos são equivalentes, i.e., tais que
+	$\widetilde{\beta_1}\approx\widetilde{\beta_2}$, então existe $k\in\mathbb{Z}$ tal que
+	%
 	\begin{equation*}
-	\det[\varphi_n(\beta_1) - I_n]_{1,1}=\pm t^k\det[\varphi_m(\beta_2) - I_m]_{1,1}
+	    \det[\varphi_n(\beta_1) - I_n]_{1,1}=\pm t^k\det[\varphi_m(\beta_2) - I_m]_{1,1}.
 	\end{equation*}
-	\par\vspace{0.3cm} Esse invariante é chamado \textit{polinômio de Alexander} (reduzido) de $K$ e denotado por $\Delta_K(t)$. Multiplicando por um fator adequado, $\Delta_K(t)$ (se não for nulo) pode ser escrito como
+	%
+	Esse invariante é chamado \textit{polinômio de Alexander} (reduzido) de $K$ e denotado por $\Delta_K(t)$.
+	Multiplicando por um fator adequado, $\Delta_K(t)$ (se não for nulo) pode ser escrito como
+	%
 	\begin{equation*}
-	\Delta_K(t) = c_0 + c_1t + \cdots + c_mt^m, c_0>0
+	    \Delta_K(t) = c_0 + c_1t + \cdots + c_mt^m, c_0>0.
 	\end{equation*}
-	\par\vspace{0.3cm} Agora, para a demonstração.
+	%
+	Agora, para a demonstração.
+	%
 	\begin{proof}
-		Pelo Teorema \eqref{teorema de Markov}, basta mostrarmos que para duas tranças quaisquer $\beta$ e $\gamma$ de $n$ cordas, valem
+		Pelo Teorema \ref{teorema de Markov}, basta mostrarmos que para duas tranças quaisquer 
+		$\beta$ e $\gamma$ de $n$ cordas, valem
+		%
 		\begin{enumerate}
-			\item $\det[\varphi_n(\gamma\beta\gamma^{-1}) - I_n]_{1,1} \doteq \det[\varphi_n(\beta) - I_n]_{1,1}$
-			\item $\det[\varphi_n(\beta\sigma_n) - I_{n+1}]_{1,1}\doteq\det[\varphi_n(\beta) - I_n]_{1,1} \doteq \det[\varphi_n(\beta\sigma_n^{-1}) - I_{n+1}]_{1,1}$
+			\item $\det[\varphi_n(\gamma\beta\gamma^{-1}) - I_n]_{1,1} \doteq \det[\varphi_n(\beta) - I_n]_{1,1}$;
+			\item $\det[\varphi_n(\beta\sigma_n) - I_{n+1}]_{1,1}\doteq\det[\varphi_n(\beta) - I_n]_{1,1} 
+			\doteq \det[\varphi_n(\beta\sigma_n^{-1}) - I_{n+1}]_{1,1}$.
 		\end{enumerate}
-		\par\vspace{0.3cm} Note que em 2, o centro é o determinante de uma matriz de ordem $n-1$, enquanto que nos lados esquerdo e direito temos o determinante de uma matrix de ordem $n$. Vamos começar com a demonstração de 1.
+		%
+		Note que em 2, o centro é o determinante de uma matriz de ordem $n-1$, enquanto que nos 
+		lados esquerdo e direito temos o determinante de uma matriz de ordem $n$. Vamos começar 
+		com a demonstração de 1.
+		
 		\par\vspace{0.3cm} Suponha $\beta$ e $\gamma$ duas tranças de $n$ cordas. Então, podemos escrever
+		%
 		\begin{equation*}
-		S^{-1}\varphi_n(\beta)S = \left[ \begin{array}{c|c}
-		\Lambda(\beta) & \\
-		\hline
-		a_1\cdots a_{n-1} & 1
-		\end{array}\right] \text{ e } 
-		S^{-1}\varphi_n(\gamma)S = \left[  \begin{array}{c|c}
-		\Lambda(\gamma) & \\
-		\hline 
-		b_1 \cdots b_{n-1} & 1
-		\end{array}\right]  
+    		S^{-1}\varphi_n(\beta)S = \left[ \begin{array}{c|c}
+    		\Lambda(\beta) & \\
+    		\hline
+    		a_1\cdots a_{n-1} & 1
+    		\end{array}\right] \text{ e } 
+    		S^{-1}\varphi_n(\gamma)S = \left[  \begin{array}{c|c}
+    		\Lambda(\gamma) & \\
+    		\hline 
+    		b_1 \cdots b_{n-1} & 1
+    		\end{array}\right].
 		\end{equation*}
-		\par\vspace{0.3cm} Similarmente, podemos escrever
+		%
+		Similarmente, podemos escrever
+		%
 		\begin{equation*}
-		S^{-1}\varphi_n(\gamma^{-1})S = \left[\begin{array}{c|c}
-		\Lambda^{-1}(\gamma) & \\
-		\hline 
-		c_1\cdots c_{n-1} & 1
-		\end{array}\right]
+    		S^{-1}\varphi_n(\gamma^{-1})S = \left[\begin{array}{c|c}
+    		\Lambda^{-1}(\gamma) & \\
+    		\hline 
+    		c_1\cdots c_{n-1} & 1
+    		\end{array}\right].
 		\end{equation*}
-		\par\vspace{0.3cm} Logo, multiplicando essas matrizes e usando o fato de que $\varphi_n$ é homomorfismo, temos
+		%
+		Logo, multiplicando essas matrizes e usando o fato de que $\varphi_n$ é homomorfismo, temos
+		%
 		\begin{equation*}
-		S^{-1}\varphi_n(\gamma\beta\gamma^{-1})S = \left[\begin{array}{c|c}
-		\Lambda(\gamma)\Lambda(\beta)\Lambda^{-1}(\gamma) & \\
-		\hline 
-		d_1\cdots d_{n-1} & 1
-		\end{array}\right]
+    		S^{-1}\varphi_n(\gamma\beta\gamma^{-1})S = \left[\begin{array}{c|c}
+    		\Lambda(\gamma)\Lambda(\beta)\Lambda^{-1}(\gamma) & \\
+    		\hline 
+    		d_1\cdots d_{n-1} & 1
+    		\end{array}\right]
 		\end{equation*}
-		\par\vspace{0.3cm} e, portanto, 
+		%
+		e, portanto,
+		%
 		\begin{align*}
-		\det[S^{-1}\varphi_n(\gamma\beta\gamma^{-1})S - I_n]_{n,n} &= \det(\Lambda(\gamma)\Lambda(\beta)\Lambda^{-1}(\gamma) - I_{n-1}) \\ 
-		&= \det[\Lambda(\gamma)(\Lambda(\beta) - I_{n-1})\Lambda^{-1}(\gamma)] \\
-		&= \det(\Lambda(\gamma))\det(\Lambda^{-1}(\gamma))\det(\Lambda(\beta) - I_{n-1}) \\
-		&= \det(\Lambda(\beta) - I_{n-1})
+    		\det[S^{-1}\varphi_n(\gamma\beta\gamma^{-1})S - I_n]_{n,n} &= \det(\Lambda(\gamma)\Lambda(\beta)\Lambda^{-1}(\gamma) - I_{n-1}) \\ 
+    		&= \det[\Lambda(\gamma)(\Lambda(\beta) - I_{n-1})\Lambda^{-1}(\gamma)] \\
+    		&= \det(\Lambda(\gamma))\det(\Lambda^{-1}(\gamma))\det(\Lambda(\beta) - I_{n-1}) \\
+    		&= \det(\Lambda(\beta) - I_{n-1}).
 		\end{align*}
-		\par\vspace{0.3cm} Aplicando o Lema \eqref{lema Alexander} a ambos os lados da igualdade, temos
+		%
+		Aplicando o Lema \ref{lema Alexander} a ambos os lados da igualdade, temos
+		%
 		\begin{align*}
-		(1 + t + \cdots + t^{n-1})\det[\varphi_n(\gamma\beta\gamma^{-1}) - I_n]_{1,1}\doteq(1+t+\cdots+t^{n-1})\det[\varphi_n(\beta) - I_n]_{1,1}
+    		(1 + t + \cdots + t^{n-1})\det[\varphi_n(\gamma\beta\gamma^{-1}) 
+    		- I_n]_{1,1}\doteq(1+t+\cdots+t^{n-1})\det[\varphi_n(\beta) - I_n]_{1,1}
 		\end{align*}
-		\par\vspace{0.3cm} e, portanto, 
+		%
+		e, portanto,
+		%
 		\begin{equation*}
-		\det[\varphi_n(\gamma\beta\gamma^{-1}) - I_n]_{1,1}\doteq\det[\varphi_n(\beta) - I_n]_{1,1}
+		    \det[\varphi_n(\gamma\beta\gamma^{-1}) - I_n]_{1,1}\doteq\det[\varphi_n(\beta) - I_n]_{1,1},
 		\end{equation*}
-		\par\vspace{0.3cm} finalizando a demonstração de 1. Agora, para a demonstração de 2.
-		\par\vspace{0.3cm} Suponha $\beta$ uma trança de $n$ cordas e seja $\varphi_n(\beta)(=M) = ||a_{ij}||$. Se considerarmos $\beta\in B_{n+1}$, então
+		%
+		finalizando a demonstração de 1. Agora, para a demonstração de 2.
+		
+		\par\vspace{0.3cm} Suponha $\beta$ uma trança de $n$ cordas e seja 
+		$\varphi_n(\beta)(=M) = ||a_{ij}||$. Se considerarmos $\beta\in B_{n+1}$, então
+		%
 		\begin{equation*}
-		\varphi_{n+1}(\beta) = \left[\begin{array}{c|c}
-		M & \\
-		\hline
-		& 1
-		\end{array}\right]
+    		\varphi_{n+1}(\beta) = \left[\begin{array}{c|c}
+    		M & \\
+    		\hline
+    		& 1
+    		\end{array}\right]
 		\end{equation*}
-		\par\vspace{0.3cm} e, como da definição da representação de Burau em \eqref{representacao de Burau}, temos
+		%
+		e, como da definição da representação de Burau em \eqref{representacao de Burau}, temos
+		%
 		\begin{equation*}
-		\varphi_{n+1}(\sigma_n) = \left[\begin{array}{c|cc}
-		I_{n-1} & & \\
-		\hline
-		& 1-t & t \\
-		& 1 & 0
-		\end{array}\right]
+    		\varphi_{n+1}(\sigma_n) = \left[\begin{array}{c|cc}
+    		I_{n-1} & & \\
+    		\hline
+    		& 1-t & t \\
+    		& 1 & 0
+    		\end{array}\right].
 		\end{equation*}
-		\par\vspace{0.3cm} Multiplicando as duas matrizes acima e usando o fato de que $\varphi_n$  é homomorfismo, segue que
+		%
+		Multiplicando as duas matrizes acima e usando o fato de que $\varphi_n$  é homomorfismo, segue que
+		%
 		\begin{equation*}
-		\varphi_{n+1}(\beta\sigma_n) = \left[\begin{array}{c|cc}
-		& a_{1n}(1-t) & a_{1n}t \\
-		M_{n,n} & \vdots & \vdots \\
-		& a_{n-1\text{ }n}(1-t) & a_{n-1\text{ }n}t \\
-		a_{n1}\cdots a_{n\text{ }n-1} & a_{n\text{ }n}(1-t) & a_{n\text{ }n}t \\
-		\hline 
-		& 1 & 0
-		\end{array}\right]
+    		\varphi_{n+1}(\beta\sigma_n) = \left[\begin{array}{c|cc}
+    		& a_{1n}(1-t) & a_{1n}t \\
+    		M_{n,n} & \vdots & \vdots \\
+    		& a_{n-1\text{ }n}(1-t) & a_{n-1\text{ }n}t \\
+    		a_{n1}\cdots a_{n\text{ }n-1} & a_{n\text{ }n}(1-t) & a_{n\text{ }n}t \\
+    		\hline 
+    		& 1 & 0
+    		\end{array}\right].
 		\end{equation*}
-		\par\vspace{0.3cm} Logo,
+		%
+		Logo,
+		%
 		\begin{align*}
-		\det[\varphi_{n+1}(\beta\sigma_n) - I_{n+1}]_{n,n} &= \det\left[\begin{array}{c|c}
-		& a_{1n}t \\
-		M_{n,n} - I_{n-1} & \vdots \\
-		& a_{n-1\text{ }n}t \\
-		\hline
-		& -1
-		\end{array}\right] \\
-		&= -\det[M_{n,n} - I_{n-1}] \\
-		&= -\det[\varphi_n(\beta) - I_n]_{n,n} \\
-		&\doteq \det[\varphi_n(\beta) - I_n]_{n,n} 
+    		\det[\varphi_{n+1}(\beta\sigma_n) - I_{n+1}]_{n,n} &= \det\left[\begin{array}{c|c}
+    		& a_{1n}t \\
+    		M_{n,n} - I_{n-1} & \vdots \\
+    		& a_{n-1\text{ }n}t \\
+    		\hline
+    		& -1
+    		\end{array}\right] \\
+    		&= -\det[M_{n,n} - I_{n-1}] \\
+    		&= -\det[\varphi_n(\beta) - I_n]_{n,n} \\
+    		&\doteq \det[\varphi_n(\beta) - I_n]_{n,n}.
 		\end{align*} 
-		\par\vspace{0.3cm} Pelo Lema \eqref{exercicio}, sabemos que $\det[M-I_n]_{1,1}\doteq\det[M-I_n]_{n,n}$. Daí, aplicando esse fato a ambos os lados da igualdade, obtemos
+		%
+		Pelo Lema \ref{exercicio}, sabemos que $\det[M-I_n]_{1,1}\doteq\det[M-I_n]_{n,n}$. 
+		Daí, aplicando esse fato a ambos os lados da igualdade, obtemos
+		%
 		\begin{equation*}
-		\det[\varphi_{n+1}(\beta\sigma_n) - I_{n+1}]_{1,1}\doteq\det[\varphi_{n+1}(\beta\sigma_n) - I_{n+1}]_{n,n}\doteq\det[\varphi_n(\beta) - I_n]_{1,1}
+    		\det[\varphi_{n+1}(\beta\sigma_n) - I_{n+1}]_{1,1}\doteq\det[\varphi_{n+1}(\beta\sigma_n) 
+    		- I_{n+1}]_{n,n}\doteq\det[\varphi_n(\beta) - I_n]_{1,1}.
 		\end{equation*}
-		\par\vspace{0.3cm} De modo similar, podemos escrever
+		%
+		De modo similar, podemos escrever
+		%
 		\begin{equation*}
-		\varphi_{n+1}(\sigma_n^{-1}) = \left[\begin{array}{c|cc}
-		I_{n-1} & & \\
-		\hline
-		& 0 & 1 \\
-		& t^{-1} & 1-t^{-1}
-		\end{array}\right]
+    		\varphi_{n+1}(\sigma_n^{-1}) = \left[\begin{array}{c|cc}
+    		I_{n-1} & & \\
+    		\hline
+    		& 0 & 1 \\
+    		& t^{-1} & 1-t^{-1}
+    		\end{array}\right].
 		\end{equation*}
-		\par\vspace{0.3cm} Daí, novamente usando a definição da representação de Burau em \eqref{representacao de Burau}, temos
+		%
+		Daí, novamente usando a definição da representação de Burau em \eqref{representacao de Burau}, temos
+		%
 		\begin{equation*}
-		\varphi_{n+1}(\beta\sigma_n^{-1}) = \left[\begin{array}{c|c|c}
-		&  & a_{1n} \\
-		M_{n,n} &  & \vdots \\
-		&  & a_{n-1\text{ }n} \\
-		a_{n1}\cdots a_{n\text{ }n-1} &  & a_{n\text{ }n} \\
-		\hline 
-		& t^{-1} & 1-t^{-1}
-		\end{array}\right]
+    		\varphi_{n+1}(\beta\sigma_n^{-1}) = \left[\begin{array}{c|c|c}
+    		&  & a_{1n} \\
+    		M_{n,n} &  & \vdots \\
+    		&  & a_{n-1\text{ }n} \\
+    		a_{n1}\cdots a_{n\text{ }n-1} &  & a_{n\text{ }n} \\
+    		\hline 
+    		& t^{-1} & 1-t^{-1}
+    		\end{array}\right].
 		\end{equation*}
-		\par\vspace{0.3cm} Logo, multiplicando as matrizes acima e usando o fato de que $\varphi_n$ é homomorfismo, segue que
+		%
+		Logo, multiplicando as matrizes acima e usando o fato de que $\varphi_n$ é homomorfismo, segue que
+		%
 		\begin{align*}
-		\det[\varphi_{n+1}(\beta\sigma_n^{-1}) - I_{n+1}]_{n,n} &= \det\left[\begin{array}{c|c}
-		& a_{1n} \\
-		M_{n,n} - I_{n-1} &  \vdots \\
-		& a_{n-1\text{ }n} \\
-		\hline
-		& -t^{-1}
-		\end{array}\right] \\
-		&= -t^{-1}\det[M_{n,n} - I_{n-1}] \\
-		&= -t^{-1}\det[\varphi_n(\beta) - I_n]_{n,n} \\
-		&\doteq \det[ \varphi_n(\beta) - I_n]_{n,n}
+    		\det[\varphi_{n+1}(\beta\sigma_n^{-1}) - I_{n+1}]_{n,n} &= \det\left[\begin{array}{c|c}
+    		& a_{1n} \\
+    		M_{n,n} - I_{n-1} &  \vdots \\
+    		& a_{n-1\text{ }n} \\
+    		\hline
+    		& -t^{-1}
+    		\end{array}\right] \\
+    		&= -t^{-1}\det[M_{n,n} - I_{n-1}] \\
+    		&= -t^{-1}\det[\varphi_n(\beta) - I_n]_{n,n} \\
+    		&\doteq \det[ \varphi_n(\beta) - I_n]_{n,n}.
 		\end{align*} 
-		\par\vspace{0.3cm} Pelo Lema \eqref{exercicio}, sabemos que $\det[M-I_n]_{1,1}\doteq\det[M-I_n]_{n,n}$. Daí, aplicando esse fato a ambos os lados da igualdade, obtemos
+		%
+		Pelo Lema \ref{exercicio}, sabemos que $\det[M-I_n]_{1,1}\doteq\det[M-I_n]_{n,n}$. 
+		Daí, aplicando esse fato a ambos os lados da igualdade, obtemos
+		%
 		\begin{equation*}
-		\det[\varphi_{n+1}(\beta\sigma_n^{-1}) - I_{n+1}]_{1,1}\doteq\det[\varphi_{n+1}(\beta\sigma_n^{-1}) - I_{n+1}]_{n,n}\doteq\det[\varphi_n(\beta) - I_n]_{1,1}
+		    \det[\varphi_{n+1}(\beta\sigma_n^{-1}) - I_{n+1}]_{1,1}\doteq\det[\varphi_{n+1}(\beta\sigma_n^{-1}) 
+		    - I_{n+1}]_{n,n}\doteq\det[\varphi_n(\beta) - I_n]_{1,1}
 		\end{equation*}
-		\par\vspace{0.3cm} e concluímos a demonstração.	
+		%
+		e concluímos a demonstração.	
 	\end{proof}
-	\par\vspace{0.3cm} Por exemplo, o nó trivial em $B_1$ é $\beta = 1$. Logo, $\varphi_1(1) = [1]$ e então $\varphi_1(1) - 1 = [0]$ e $[\varphi_1(1) - 1]_{1,1}$ é a matriz vazia, $\emptyset$. Vamos definir $\det(\emptyset) = 1$, e então $\Delta_{\widetilde{1}}(t) = 1$. 
+	%
+	Por exemplo, o nó trivial em $B_1$ é $\beta = 1$. Logo, $\varphi_1(1) = [1]$ e então 
+	$\varphi_1(1) - 1 = [0]$ e $[\varphi_1(1) - 1]_{1,1}$ é a matriz vazia, $\emptyset$. 
+	Vamos definir $\det(\emptyset) = 1$, e então $\Delta_{\widetilde{1}}(t) = 1$.
+	
 	\par\vspace{0.3cm} O nó trivial também é representado por $\sigma_1$ em $B_2$. Nesse caso, 
+	%
 	\begin{equation*}
 	N = \varphi_2(\sigma_1) - I_2 = \begin{bmatrix}
 	-t & t \\
 	1 & -1
-	\end{bmatrix}
+	\end{bmatrix},
 	\end{equation*}
-	\par\vspace{0.3cm} logo, $\det[N]_{1,1} = -1$ e $\det[N]_{2,2} = -t$ e temos, novamente, $\Delta_{\widetilde{\sigma}_1}(t) = 1$.
-	\par\vspace{0.3cm} Por outro lado, em $B_3$ a trança $\sigma_1$ representa o fecho de um \textit{link} trivial de 2 componentes. Nesse caso, 
+	%
+	logo $\det[N]_{1,1} = -1$ e $\det[N]_{2,2} = -t$ e temos, novamente, $\Delta_{\widetilde{\sigma}_1}(t) = 1$.
+	
+	\par\vspace{0.3cm} Por outro lado, em $B_3$ a trança $\sigma_1$ representa o fecho de um 
+	\textit{link} trivial de 2 componentes. Nesse caso, 
+	%
 	\begin{equation*}
-	N = \varphi_3(\sigma_1) - I_3 = \begin{bmatrix}
-	-t & t & 0 \\
-	1 & -1 & 0 \\
-	0 & 0 & 0
-	\end{bmatrix}
+    	N = \varphi_3(\sigma_1) - I_3 = \begin{bmatrix}
+    	-t & t & 0 \\
+    	1 & -1 & 0 \\
+    	0 & 0 & 0
+    	\end{bmatrix}
 	\end{equation*}
-	\par\vspace{0.3cm} e, portanto, $\det[N]_{1,1} = 0$. Logo, para $\sigma_1\in B_3$, $\Delta_{\widetilde{\sigma}_1}(t) = 0$. Note que acabamos de mostrar que o polinômio de Alexander pode ser $0$ para um \textit{link}.
-	\par\vspace{0.3cm} Tomando $\beta = \sigma_1\sigma_2$ em $B_3$, temos que $\widetilde{\beta}$, i.e, o fecho de $\beta$, é o nó trivial. Nesse caso, temos
+	%
+	e, portanto, $\det[N]_{1,1} = 0$. Logo, para $\sigma_1\in B_3$, $\Delta_{\widetilde{\sigma}_1}(t) = 0$. 
+	Note que acabamos de mostrar que o polinômio de Alexander pode ser $0$ para um \textit{link}.
+	
+	\par\vspace{0.3cm} Tomando $\beta = \sigma_1\sigma_2$ em $B_3$, temos que $\widetilde{\beta}$, 
+	i.e, o fecho de $\beta$, é o nó trivial. Nesse caso, temos
+	%
 	\begin{equation*}
-	\varphi_3(\beta) - I_3 = \begin{bmatrix}
-	-t & t(1-t) & t^2 \\
-	1 & -1 & 0 \\
-	0 & 1 & -1
-	\end{bmatrix}
+    	\varphi_3(\beta) - I_3 = \begin{bmatrix}
+    	-t & t(1-t) & t^2 \\
+    	1 & -1 & 0 \\
+    	0 & 1 & -1
+    	\end{bmatrix}
 	\end{equation*}
-	\par\vspace{0.3cm} logo, $\det[\varphi_3(\beta)-I_3]_{1,1} = 1 = \Delta_{\widetilde{\beta}}(t)$, como esperado.
-	\par\vspace{0.3cm} Da Figura \eqref{exemplo invariante de Alexander}, pode-se mostrar que $\beta_1\underset{M}{\sim}\beta_2$. Vamos ver o que acontece quando calculamos $\varphi_3(\beta_1)$ e $\varphi_2(\beta_2)$ (esperamos que sejam iguais).
+	%
+	logo, $\det[\varphi_3(\beta)-I_3]_{1,1} = 1 = \Delta_{\widetilde{\beta}}(t)$, como esperado.
+	
+	\par\vspace{0.3cm} Da Figura \ref{exemplo invariante de Alexander}, pode-se mostrar que
+	$\beta_1\underset{M}{\sim}\beta_2$. Vamos ver o que acontece quando calculamos 
+	$\varphi_3(\beta_1)$ e $\varphi_2(\beta_2)$ (esperamos que sejam iguais).
+	%
 	\begin{figure}[H]
 		\begin{center}
 			\includegraphics[width=9cm]{Images/exemplo_invariante_alexander.png}
 		\end{center}\caption{Dois nós Markov equivalentes.}\label{exemplo invariante de Alexander}
 	\end{figure}
-	\par\vspace{0.3cm} Como $\beta_1 = (\sigma_1\sigma_2)^2$ e $\beta_2 = \sigma_1^3$ e, por definição, 
+	%
+	Como $\beta_1 = (\sigma_1\sigma_2)^2$ e $\beta_2 = \sigma_1^3$ e, por definição,
+	%
 	\begin{equation*}
-	\varphi_3(\sigma_1) = \begin{bmatrix}
-	1-t & t & 0 \\
-	1 & 0 & 0 \\
-	0 & 0 & 1 
-	\end{bmatrix}\text{ e } \varphi_3(\sigma_2) = \begin{bmatrix}
-	1 & 0 & 0 \\
-	0 & 1-t & t \\
-	0 & 1 & 0
-	\end{bmatrix}
+    	\varphi_3(\sigma_1) = \begin{bmatrix}
+    	1-t & t & 0 \\
+    	1 & 0 & 0 \\
+    	0 & 0 & 1 
+    	\end{bmatrix}\text{ e } \varphi_3(\sigma_2) = \begin{bmatrix}
+    	1 & 0 & 0 \\
+    	0 & 1-t & t \\
+    	0 & 1 & 0
+    	\end{bmatrix}
 	\end{equation*}
-	\par\vspace{0.3cm} segue que
+	%
+	segue que
+	%
 	\begin{equation*}
-	\varphi_3(\sigma_1\sigma_2)^2 = \begin{bmatrix}
-	1-t & t-t^2+t^3 & t^2-t^3 \\
-	1-t & t-t^2 & t^2 \\
-	1 & 0 & 0
-	\end{bmatrix}
+    	\varphi_3(\sigma_1\sigma_2)^2 = \begin{bmatrix}
+    	1-t & t-t^2+t^3 & t^2-t^3 \\
+    	1-t & t-t^2 & t^2 \\
+    	1 & 0 & 0
+    	\end{bmatrix}.
 	\end{equation*}
-	\par\vspace{0.3cm} Logo, 
+	%
+	Logo,
+	%
 	\begin{equation*}
-	\Delta_{\widetilde{\beta}_1}(t) = \det[\varphi_3(\beta_1) - I_3]_{1,1} = \det\begin{bmatrix}
-	-1+t-t^2 & t^2 \\
-	0 & -1
-	\end{bmatrix} = 1-t+t^2
+    	\Delta_{\widetilde{\beta}_1}(t) = \det[\varphi_3(\beta_1) - I_3]_{1,1} = \det\begin{bmatrix}
+    	-1+t-t^2 & t^2 \\
+    	0 & -1
+    	\end{bmatrix} = 1-t+t^2.
 	\end{equation*}
-	\par\vspace{0.3cm} Por outro lado, 
+	%
+	Por outro lado,
+	%
 	\begin{equation*}
-	\varphi_2(\sigma_1) = \begin{bmatrix}
-	1-t & t \\
-	1 & 0
-	\end{bmatrix}\text{ e }\varphi_2(\sigma_1)^3 = \begin{bmatrix}
-	1-t+t^2-t^3 & t(1-t+t^2) \\
-	1-t+t^2 & t-t^2
-	\end{bmatrix}
+    	\varphi_2(\sigma_1) = \begin{bmatrix}
+    	1-t & t \\
+    	1 & 0
+    	\end{bmatrix}\text{ e }\varphi_2(\sigma_1)^3 = \begin{bmatrix}
+    	1-t+t^2-t^3 & t(1-t+t^2) \\
+    	1-t+t^2 & t-t^2
+    	\end{bmatrix}.
 	\end{equation*}
-	\par\vspace{0.3cm} Logo, 
+	%
+	Logo,
+	%
 	\begin{equation*}
-	\Delta_{\widetilde{\beta}_2}(t) = \det[\varphi_2(\beta_2) - I_2]_{1,1} = -1+t-t^2
+	    \Delta_{\widetilde{\beta}_2}(t) = \det[\varphi_2(\beta_2) - I_2]_{1,1} = -1+t-t^2
 	\end{equation*}
-	\par\vspace{0.3cm} e, consequentemente, $\Delta_{\widetilde{\beta}_1}(t) = -\Delta_{\widetilde{\beta}_2}(t)$, ou seja, 
+	%
+	e, consequentemente, $\Delta_{\widetilde{\beta}_1}(t) = -\Delta_{\widetilde{\beta}_2}(t)$, ou seja, 
+	%
 	\begin{equation*}
-	\Delta_{\widetilde{\beta}_1}(t)\doteq\Delta_{\widetilde{\beta}_2}(t)
+	    \Delta_{\widetilde{\beta}_1}(t)\doteq\Delta_{\widetilde{\beta}_2}(t),
 	\end{equation*}
-	\par\vspace{0.3cm} como esperado.
-	\par\vspace{0.3cm} Observe os nós da Figura \eqref{nos exemplo polinomio Alexander}. O nó (a) é o nó $K_a$, fecho de $(\sigma_1\sigma_2^{-1})^2$ em $B_3$ e o nó (b) é o nó $K_b$, fecho de $\sigma_1^n$ em $B_2$.
+	%
+	como esperado.
+	
+	\par\vspace{0.3cm} Observe os nós da Figura \ref{nos exemplo polinomio Alexander}. 
+	O nó (a) é o nó $K_a$, fecho de $(\sigma_1\sigma_2^{-1})^2$ em $B_3$ e o nó (b) é o nó $K_b$, 
+	fecho de $\sigma_1^n$ em $B_2$.
+	%
 	\begin{figure}[H]
 		\begin{center}
 			\includegraphics[width=9cm]{Images/no_de_oito_Alexander.png}
 		\end{center}\caption{O nó figura oito (a) e um nó com $n$ cruzamentos (b).}\label{nos exemplo polinomio Alexander}
 	\end{figure}
-	\par\vspace{0.3cm} Por definição, temos
+	%
+	Por definição, temos
+	%
 	\begin{equation*}
-	\varphi_3(\sigma_1\sigma_2^{-1}) = \begin{bmatrix}
-	1-t & t & 0 \\
-	1 & 0 & 0 \\
-	0 & 0 & 1
-	\end{bmatrix}\begin{bmatrix}
-	1 & 0 & 0 \\
-	0 & 0 & 1 \\
-	0 & t^{-1} & 1-t^{-1}
-	\end{bmatrix} = \begin{bmatrix}
-	1-t & 0 & t \\
-	1 & 0 & 0 \\
-	0 & t^{-1} & 1-t^{-1}
-	\end{bmatrix}
+    	\varphi_3(\sigma_1\sigma_2^{-1}) = \begin{bmatrix}
+    	1-t & t & 0 \\
+    	1 & 0 & 0 \\
+    	0 & 0 & 1
+    	\end{bmatrix}\begin{bmatrix}
+    	1 & 0 & 0 \\
+    	0 & 0 & 1 \\
+    	0 & t^{-1} & 1-t^{-1}
+    	\end{bmatrix} = \begin{bmatrix}
+    	1-t & 0 & t \\
+    	1 & 0 & 0 \\
+    	0 & t^{-1} & 1-t^{-1}
+    	\end{bmatrix}.
 	\end{equation*}
-	\par\vspace{0.3cm} Logo,
+	%
+	Logo,
+	%
 	\begin{equation*}
-	\varphi_3(\sigma_1\sigma_2^{-1})^2 = \begin{bmatrix}
-	1-t & 0 & t \\
-	1 & 0 & 0 \\
-	0 & t^{-1} & 1-t^{-1}
-	\end{bmatrix}\begin{bmatrix}
-	1-t & 0 & t \\
-	1 & 0 & 0 \\
-	0 & t^{-1} & 1-t^{-1}
-	\end{bmatrix} = \begin{bmatrix}
-	(1-t)^2 & 1 & -1 +2t-t^2 \\
-	1-t & 0 & t \\
-	t^{-1} & t^{-1}-t^{-2} & (1-t^{-1})^2
-	\end{bmatrix}
+    	\varphi_3(\sigma_1\sigma_2^{-1})^2 = \begin{bmatrix}
+    	1-t & 0 & t \\
+    	1 & 0 & 0 \\
+    	0 & t^{-1} & 1-t^{-1}
+    	\end{bmatrix}\begin{bmatrix}
+    	1-t & 0 & t \\
+    	1 & 0 & 0 \\
+    	0 & t^{-1} & 1-t^{-1}
+    	\end{bmatrix} = \begin{bmatrix}
+    	(1-t)^2 & 1 & -1 +2t-t^2 \\
+    	1-t & 0 & t \\
+    	t^{-1} & t^{-1}-t^{-2} & (1-t^{-1})^2
+    	\end{bmatrix}.
 	\end{equation*}
-	\par\vspace{0.3cm} Daí, obtemos
+	%
+	Daí, obtemos
+	%
 	\begin{equation*}
-	\Delta_{K_a}(t) = \det[\varphi_3(\sigma_1\sigma_2^{-1})^2 - I_3]_{1,1} = \det\begin{bmatrix}
-	-1 & t \\
-	t^{-1} - t^{-2} & -1+(1-t^{-1})^2
-	\end{bmatrix} = -1+3t^{-1}-t^{-2} \underset{\times (-t^2)}{\doteq} 1-3t+t^2
+    	\Delta_{K_a}(t) = \det[\varphi_3(\sigma_1\sigma_2^{-1})^2 - I_3]_{1,1} = \det\begin{bmatrix}
+    	-1 & t \\
+    	t^{-1} - t^{-2} & -1+(1-t^{-1})^2
+    	\end{bmatrix} = -1+3t^{-1}-t^{-2} \underset{\times (-t^2)}{\doteq} 1-3t+t^2.
 	\end{equation*}
-	\par\vspace{0.3cm} Para o nó $K_b$, temos que
+	%
+	Para o nó $K_b$, temos que
+	%
 	\begin{equation*}
-	\varphi_2(\sigma_1)^n = \begin{bmatrix}
-	1-t & t \\
-	1 & 0
-	\end{bmatrix}^n
+    	\varphi_2(\sigma_1)^n = \begin{bmatrix}
+    	1-t & t \\
+    	1 & 0
+    	\end{bmatrix}^n.
 	\end{equation*}
-	\par\vspace{0.3cm} Como $\varphi_2(\sigma_1)$ tem autovalores $\lambda_{1,2} = 1, -t$ e autovetores $v_{1,2} = (1,1), (-t,1)$, obtemos
+	%
+	Como $\varphi_2(\sigma_1)$ tem autovalores $\lambda_{1,2} = 1, -t$ e 
+	autovetores $v_{1,2} = (1,1), (-t,1)$, obtemos
+	%
 	\begin{align*}
-	\varphi_2(\sigma_1)^n &= \frac{1}{1+t}\begin{bmatrix}
-	1 & -t \\
-	1 & 1
-	\end{bmatrix}\begin{bmatrix}
-	1 & 0 \\
-	0 & -t
-	\end{bmatrix}^n\begin{bmatrix}
-	1 & t \\
-	-1 & 1
-	\end{bmatrix} \\
-	&= \frac{1}{1+t}\begin{bmatrix}
-	1 & -t \\
-	1 & 1
-	\end{bmatrix}\begin{bmatrix}
-	1 & 0 \\
-	0 & (-t)^n
-	\end{bmatrix}\begin{bmatrix}
-	1 & t \\
-	-1 & 1
-	\end{bmatrix} \\
-	&= \frac{1}{1+t}\begin{bmatrix}
-	1 & (-t)^{n+1} \\
-	1 & (-t)^n
-	\end{bmatrix}\begin{bmatrix}
-	1 & t \\
-	-1 & 1
-	\end{bmatrix} \\
-	&= \frac{1}{1+t}\begin{bmatrix}
-	1 - (-t)^{n+1} & t + (-t)^{n+1} \\
-	1 - (-t)^n & t + (-t)^n
-	\end{bmatrix}
+    	\varphi_2(\sigma_1)^n &= \frac{1}{1+t}\begin{bmatrix}
+    	1 & -t \\
+    	1 & 1
+    	\end{bmatrix}\begin{bmatrix}
+    	1 & 0 \\
+    	0 & -t
+    	\end{bmatrix}^n\begin{bmatrix}
+    	1 & t \\
+    	-1 & 1
+    	\end{bmatrix} \\
+    	&= \frac{1}{1+t}\begin{bmatrix}
+    	1 & -t \\
+    	1 & 1
+    	\end{bmatrix}\begin{bmatrix}
+    	1 & 0 \\
+    	0 & (-t)^n
+    	\end{bmatrix}\begin{bmatrix}
+    	1 & t \\
+    	-1 & 1
+    	\end{bmatrix} \\
+    	&= \frac{1}{1+t}\begin{bmatrix}
+    	1 & (-t)^{n+1} \\
+    	1 & (-t)^n
+    	\end{bmatrix}\begin{bmatrix}
+    	1 & t \\
+    	-1 & 1
+    	\end{bmatrix} \\
+    	&= \frac{1}{1+t}\begin{bmatrix}
+    	1 - (-t)^{n+1} & t + (-t)^{n+1} \\
+    	1 - (-t)^n & t + (-t)^n
+    	\end{bmatrix}.
 	\end{align*}
-	\par\vspace{0.3cm} Daí, temos que
+	%
+	Daí, temos que
+	%
 	\begin{align*}
-	\Delta_{K_b}(t) = \det[\varphi_2(\sigma_1)^n - I_2]_{1,1} &= \frac{1}{1+t}[t+(-t)^n] - 1 \\
-	&= \frac{-1 + (-t)^n}{1+t} \\
-	&= -\frac{1 - (-t)^n}{1+t} \\
-	&= -\sum_{i=1}^{n}(-t)^{i-1} \\
-	&= -(1-t+t^2-\cdots+(-1)^{n-1}t^{n-1}) \\
-	&\doteq 1-t+t^2-\cdots+(-1)^{n-1}t^{n-1} 
+    	\Delta_{K_b}(t) = \det[\varphi_2(\sigma_1)^n - I_2]_{1,1} &= \frac{1}{1+t}[t+(-t)^n] - 1 \\
+    	&= \frac{-1 + (-t)^n}{1+t} \\
+    	&= -\frac{1 - (-t)^n}{1+t} \\
+    	&= -\sum_{i=1}^{n}(-t)^{i-1} \\
+    	&= -(1-t+t^2-\cdots+(-1)^{n-1}t^{n-1}) \\
+    	&\doteq 1-t+t^2-\cdots+(-1)^{n-1}t^{n-1}
 	\end{align*}
-	\par\vspace{0.3cm} Em particular, para $n = 3$ temos o nó de trevo (veja Figura \eqref{no de trevo}) e o polinômio de Alexander $\Delta_{K_b} = 1-t+t^2\underset{\times(t^{-1})}{\doteq} t-1+t^{-1}$.
+	%
+	Em particular, para $n = 3$ temos o nó de trevo (veja Figura \ref{no de trevo}) e o 
+	polinômio de Alexander $\Delta_{K_b} = 1-t+t^2\underset{\times(t^{-1})}{\doteq} t-1+t^{-1}$.
+	
 	\par\vspace{0.3cm} Outro exemplo interessante é o nó toral $K_{a,b}$, cujo polinômio de Alexander é
+	%
 	\begin{equation*}
-	\Delta_{K_{a,b}} = \frac{(1-t^{ab})(1-t)}{(1-t^a)(1-t^b)}
+	    \Delta_{K_{a,b}} = \frac{(1-t^{ab})(1-t)}{(1-t^a)(1-t^b)}.
 	\end{equation*}
-	\par\vspace{0.3cm} Usando a representação de Burau $\varphi_n: B_n\to M(n, \mathbb{Z}[t,t^{-1}])$, podemos definir outras funções. Por exemplo, podemos definir $\overline{\varphi}_n: B_n\to M(n-1, \mathbb{Z}[t,t^{-1}])$ dada por
+	%
+	Usando a representação de Burau $\varphi_n: B_n\to M(n, \mathbb{Z}[t,t^{-1}])$, 
+	podemos definir outras funções. Por exemplo, podemos definir 
+	$\overline{\varphi}_n: B_n\to M(n-1, \mathbb{Z}[t,t^{-1}])$ dada por
+	%
 	\begin{equation*}
-	\overline{\varphi}_n(\beta) = \Lambda(t)
+	    \overline{\varphi}_n(\beta) = \Lambda(t),
 	\end{equation*} 
-	\par\vspace{0.3cm} sendo $\Lambda(t)$ a matriz definida logo antes do Lema \eqref{lema Alexander}. Daí, afirmamos o seguinte.
+	%
+	sendo $\Lambda(t)$ a matriz definida logo antes do Lema \ref{lema Alexander}. Daí, afirmamos o seguinte.
+	%
 	\begin{prop}
-		\label{parecido com Burau}
+	\label{parecido com Burau}
 		A função $\overline{\varphi}_n$ é um homomorfismo. %Além disso, para quaisquer $\beta, \gamma\in B_n$, valem as igualdades:
 		%\begin{enumerate}
 		%\item $\overline{\varphi}_n(\gamma\beta\gamma^{-1}) = %\overline{\varphi}_n(\beta)$
 		%\item %$\overline{\varphi}_{n+1}(\beta\sigma_n)(1+t+\cdots+t^%{n-1}) = \overline{\varphi}_n(\beta)(1+t+\cdots+t^n)$
 		%\end{enumerate}
 	\end{prop}
+	%
 	\begin{proof}
-		Vamos mostrar que $\overline{\varphi}_n$ é homomorfismo. Primeiro, note que se $|i-j|\geq 2$, temos
+		Primeiro, note que se $|i-j|\geq 2$, temos
+		%
 		\begin{align*}
-		(S^{-1}\varphi_n(\sigma_i)S)(S^{-1}\varphi_n(\sigma_j)S) &= S^{-1}\varphi_n(\sigma_i)\varphi_n(\sigma_j)S \\ 
-		&= S^{-1}\varphi_n(\sigma_j)\varphi_n(\sigma_i)S \\
-		&= (S^{-1}\varphi_n(\sigma_j)S)(S^{-1}\varphi_n(\sigma_i)S)
+    		(S^{-1}\varphi_n(\sigma_i)S)(S^{-1}\varphi_n(\sigma_j)S) 
+    		&= S^{-1}\varphi_n(\sigma_i)\varphi_n(\sigma_j)S \\ 
+    		&= S^{-1}\varphi_n(\sigma_j)\varphi_n(\sigma_i)S \\
+    		&= (S^{-1}\varphi_n(\sigma_j)S)(S^{-1}\varphi_n(\sigma_i)S)
 		\end{align*}
-		\par\vspace{0.3cm} Isso implica que
+		%
+		Isso implica que
+		%
 		\begin{align*}
-		\left[ \begin{array}{c|c}
-		\Lambda(\sigma_i)\Lambda(\sigma_j) & \\
-		\hline
-		\ast\cdots\ast & 1
-		\end{array}\right] = 
-		\left[ \begin{array}{c|c}
-		\Lambda(\sigma_i) & \\
-		\hline
-		\ast\cdots\ast & 1
-		\end{array}\right]\left[ \begin{array}{c|c}
-		\Lambda(\sigma_j) & \\
-		\hline
-		\ast\cdots\ast & 1
-		\end{array}\right]  = \left[\begin{array}{c|c}
-		\Lambda(\sigma_j) & \\
-		\hline
-		\ast\cdots\ast & 1
-		\end{array}\right]\left[ \begin{array}{c|c}
-		\Lambda(\sigma_i) & \\
-		\hline
-		\ast\cdots\ast & 1
-		\end{array}\right] =  \left[\begin{array}{c|c}
-		\Lambda(\sigma_j)\Lambda(\sigma_i) & \\
-		\hline
-		\ast\cdots\ast & 1
-		\end{array}\right]
+    		\left[ \begin{array}{c|c}
+    		\Lambda(\sigma_i)\Lambda(\sigma_j) & \\
+    		\hline
+    		\ast\cdots\ast & 1
+    		\end{array}\right] &= 
+    		\left[ \begin{array}{c|c}
+    		\Lambda(\sigma_i) & \\
+    		\hline
+    		\ast\cdots\ast & 1
+    		\end{array}\right]\left[ \begin{array}{c|c}
+    		\Lambda(\sigma_j) & \\
+    		\hline
+    		\ast\cdots\ast & 1
+    		\end{array}\right]  \\
+    		&= \left[\begin{array}{c|c}
+    		\Lambda(\sigma_j) & \\
+    		\hline
+    		\ast\cdots\ast & 1
+    		\end{array}\right]\left[ \begin{array}{c|c}
+    		\Lambda(\sigma_i) & \\
+    		\hline
+    		\ast\cdots\ast & 1
+    		\end{array}\right] \\
+    		&= \left[\begin{array}{c|c}
+    		\Lambda(\sigma_j)\Lambda(\sigma_i) & \\
+    		\hline
+    		\ast\cdots\ast & 1
+    		\end{array}\right],
 		\end{align*}
-		\par\vspace{0.3cm} ou seja, $\overline{\varphi}_n(\sigma_i)\overline{\varphi}_n(\sigma_j) = \overline{\varphi}_n(\sigma_j)\overline{\varphi}_n(\sigma_i)$ para $|i-j|\geq 2$.
-		\par\vspace{0.3cm} De modo similar, vamos mostrar que $\overline{\varphi}_n(\sigma_i)\overline{\varphi}_n(\sigma_{i+1})\overline{\varphi}_n(\sigma_i) = \overline{\varphi}_n(\sigma_{i+1})\overline{\varphi}_n(\sigma_i)\overline{\varphi}_n(\sigma_{i+1})$, ou seja, que $\Lambda(\sigma_i)\Lambda(\sigma_{i+1})\Lambda(\sigma_i) = \Lambda(\sigma_{i+1})\Lambda(\sigma_i)\Lambda(\sigma_{i+1})$. Para isso, basta considerar o caso para $n=3$ pelo mesmo motivo que o fizemos na demonstração da Proposição \eqref{Burau e homomorfismo}. Note que
+		%
+		ou seja, 
+		$\overline{\varphi}_n(\sigma_i)\overline{\varphi}_n(\sigma_j) =
+		\overline{\varphi}_n(\sigma_j)\overline{\varphi}_n(\sigma_i)$ para $|i-j|\geq 2$.
+		
+		\par\vspace{0.3cm} De modo similar, vamos mostrar que
+		$\overline{\varphi}_n(\sigma_i)\overline{\varphi}_n(\sigma_{i+1})\overline{\varphi}_n(\sigma_i) 
+		= \overline{\varphi}_n(\sigma_{i+1})\overline{\varphi}_n(\sigma_i)\overline{\varphi}_n(\sigma_{i+1})$, 
+		ou seja, que $\Lambda(\sigma_i)\Lambda(\sigma_{i+1})\Lambda(\sigma_i) =
+		\Lambda(\sigma_{i+1})\Lambda(\sigma_i)\Lambda(\sigma_{i+1})$. 
+		Para isso, basta considerar o caso para $n=3$ pelo mesmo motivo que o fizemos na demonstração da
+		Proposição \ref{Burau e homomorfismo}. Note que
+		%
 		\begin{align*}
-		(S^{-1}\varphi_3(\sigma_1)S)(S^{-1}\varphi_3(\sigma_2)S)(S^{-1}\varphi_3(\sigma_1)S) = (S^{-1}\varphi_3(\sigma_2)S)(S^{-1}\varphi_3(\sigma_1)S)(S^{-1}\varphi_3(\sigma_2)S)
+		    (S^{-1}\varphi_3(\sigma_1)S)(S^{-1}\varphi_3(\sigma_2)S)(S^{-1}\varphi_3(\sigma_1)S) 
+		    = (S^{-1}\varphi_3(\sigma_2)S)(S^{-1}\varphi_3(\sigma_1)S)(S^{-1}\varphi_3(\sigma_2)S).
 		\end{align*}
-		\par\vspace{0.3cm} Isso implica que 
+		%
+		Isso implica que
+		%
 		\begin{align*}
-		\left[\begin{array}{c|c}
-		\Lambda(\sigma_1)\Lambda(\sigma_2)\Lambda(\sigma_1) & \\
-		\hline 
-		\ast\cdots\ast & 1
-		\end{array}\right] &= \left[\begin{array}{c|c}
-		\Lambda(\sigma_1) & \\
-		\hline
-		\ast\cdots\ast & 1
-		\end{array}\right]\left[\begin{array}{c|c}
-		\Lambda(\sigma_2) & \\
-		\hline
-		\ast\cdots\ast & 1
-		\end{array}\right]\left[\begin{array}{c|c}
-		\Lambda(\sigma_1) & \\
-		\hline
-		\ast\cdots\ast & 1
-		\end{array}\right] \\ 
-		&= \left[\begin{array}{c|c}
-		\Lambda(\sigma_2) & \\
-		\hline
-		\ast\cdots\ast & 1
-		\end{array}\right]\left[\begin{array}{c|c}
-		\Lambda(\sigma_1) & \\
-		\hline
-		\ast\cdots\ast & 1
-		\end{array}\right]\left[\begin{array}{c|c}
-		\Lambda(\sigma_2) & \\
-		\hline
-		\ast\cdots\ast & 1
-		\end{array}\right] \\
-		&= \left[\begin{array}{c|c}
-		\Lambda(\sigma_2)\Lambda(\sigma_1)\Lambda(\sigma_2) & \\
-		\hline
-		\ast\cdots\ast & 1
-		\end{array}\right]
+    		\left[\begin{array}{c|c}
+    		\Lambda(\sigma_1)\Lambda(\sigma_2)\Lambda(\sigma_1) & \\
+    		\hline 
+    		\ast\cdots\ast & 1
+    		\end{array}\right] &= \left[\begin{array}{c|c}
+    		\Lambda(\sigma_1) & \\
+    		\hline
+    		\ast\cdots\ast & 1
+    		\end{array}\right]\left[\begin{array}{c|c}
+    		\Lambda(\sigma_2) & \\
+    		\hline
+    		\ast\cdots\ast & 1
+    		\end{array}\right]\left[\begin{array}{c|c}
+    		\Lambda(\sigma_1) & \\
+    		\hline
+    		\ast\cdots\ast & 1
+    		\end{array}\right] \\ 
+    		&= \left[\begin{array}{c|c}
+    		\Lambda(\sigma_2) & \\
+    		\hline
+    		\ast\cdots\ast & 1
+    		\end{array}\right]\left[\begin{array}{c|c}
+    		\Lambda(\sigma_1) & \\
+    		\hline
+    		\ast\cdots\ast & 1
+    		\end{array}\right]\left[\begin{array}{c|c}
+    		\Lambda(\sigma_2) & \\
+    		\hline
+    		\ast\cdots\ast & 1
+    		\end{array}\right] \\
+    		&= \left[\begin{array}{c|c}
+    		\Lambda(\sigma_2)\Lambda(\sigma_1)\Lambda(\sigma_2) & \\
+    		\hline
+    		\ast\cdots\ast & 1
+    		\end{array}\right],
 		\end{align*}
-		\par\vspace{0.3cm} como queríamos mostrar. Portanto, $\overline{\varphi}_n$ de fato é homomorfismo.
+		%
+		como queríamos mostrar. Portanto, $\overline{\varphi}_n$ de fato é homomorfismo.
 	\end{proof}
-	\par\vspace{0.3cm} Também é possível mostrar que para quaisquer $\beta, \gamma\in B_n$, valem as igualdades:
+	%
+	Também é possível mostrar que para quaisquer $\beta, \gamma\in B_n$, valem as igualdades:
+	%
 	\begin{enumerate}
 		\item $\overline{\varphi}_n(\gamma\beta\gamma^{-1}) = \overline{\varphi}_n(\beta)$
-		\item $\overline{\varphi}_{n+1}(\beta\sigma_n)(1+t+\cdots+t^{n-1}) = \overline{\varphi}_n(\beta)(1+t+\cdots+t^n)$
+		\item $\overline{\varphi}_{n+1}(\beta\sigma_n)(1+t+\cdots+t^{n-1}) 
+		= \overline{\varphi}_n(\beta)(1+t+\cdots+t^n)$
 	\end{enumerate}
-	\par\vspace{0.3cm} Desse modo, vamos definir, para uma trança $\beta\in B_n$ arbitrária, 
+	%
+	Desse modo, vamos definir, para uma trança $\beta\in B_n$ arbitrária,
+	%
 	\begin{equation*}
-	\lambda(\beta) = \frac{\overline{\varphi}_n(\beta)}{1+t+\cdots+t^{n-1}}
+	    \lambda(\beta) = \frac{\overline{\varphi}_n(\beta)}{1+t+\cdots+t^{n-1}}.
 	\end{equation*} 
-	\par\vspace{0.3cm} Então, $\lambda(\beta)$ é um invariante do fecho de $\beta$, ou seja, se os fechos de $\beta_1\in B_n$ e $\beta_2\in B_m$ representam o mesmo nó $K$, então
+	%
+	Então, $\lambda(\beta)$ é um invariante do fecho de $\beta$, ou seja, se os fechos de 
+	$\beta_1\in B_n$ e $\beta_2\in B_m$ representam o mesmo nó $K$, então
+	%
 	\begin{equation*}
-	\frac{\overline{\varphi}_n(\beta_1)}{1+t+\cdots+t^{n-1}} = \frac{\overline{\varphi}_m(\beta_2)}{1+t+\cdots+t^{m-1}}
+	    \frac{\overline{\varphi}_n(\beta_1)}{1+t+\cdots+t^{n-1}} = \frac{\overline{\varphi}_m(\beta_2)}{1+t+\cdots+t^{m-1}}
 	\end{equation*}
-	\par\vspace{0.3cm} Pode ser mostrado que, na verdade, $\overline{\varphi}_n(\beta)$ é o polinômio de Alexander de $\widetilde{\beta}$.
+	%
+	Pode ser mostrado que, na verdade, $\overline{\varphi}_n(\beta)$ é o polinômio de 
+	Alexander de $\widetilde{\beta}$.
+	
 	\par\vspace{0.3cm} Podemos definir também $\varphi_n^\ast: B_n\to M(n, \mathbb{Z}[t,t^{-1}])$ por
+	%
 	\begin{equation*}
-	\varphi_n^\ast(\sigma_{i_1}^{\varepsilon_1}\sigma_{i_2}^{\varepsilon_2}\cdots\sigma_{i_k}^{\varepsilon_k}) = \varphi_n(\sigma_{i_1}^{\varepsilon_1})^T\varphi_n(\sigma_{i_2}^{\varepsilon_2})^T\cdots\varphi_n(\sigma_{i_k}^{\varepsilon_k})^T
+	    \varphi_n^\ast(\sigma_{i_1}^{\varepsilon_1}\sigma_{i_2}^{\varepsilon_2}
+	    \cdots\sigma_{i_k}^{\varepsilon_k}) 
+	    = \varphi_n(\sigma_{i_1}^{\varepsilon_1})^T\varphi_n(\sigma_{i_2}^{\varepsilon_2})^T
+	    \cdots\varphi_n(\sigma_{i_k}^{\varepsilon_k})^T.
 	\end{equation*}
-	\par\vspace{0.3cm} De fato, $\varphi_n^\ast$ também é homomorfismo: a demonstração é praticamente idêntica à demonstração da Proposição \eqref{Burau e homomorfismo}, com a pequena diferença de que 
+	%
+	De fato, $\varphi_n^\ast$ também é homomorfismo: a demonstração é praticamente idêntica 
+	à demonstração da Proposição \ref{Burau e homomorfismo}, com a pequena diferença de que 
+	%
 	\begin{equation}
 	\label{phi estrela}
-	\varphi_n^\ast(\sigma_i) = 
-	\left[ 
-	\begin{array}{c|cc|c}
-	I_{i-1} &  &  & \\
-	\hline 
-	& 1-t & 1 &  \\
-	& t & 0 &  \\ 
-	\hline
-	&  &  & I_{n-i-1}
-	\end{array}
-	\right] 
+    	\varphi_n^\ast(\sigma_i) = 
+    	\left[ 
+    	\begin{array}{c|cc|c}
+    	I_{i-1} &  &  & \\
+    	\hline 
+    	& 1-t & 1 &  \\
+    	& t & 0 &  \\ 
+    	\hline
+    	&  &  & I_{n-i-1}
+    	\end{array}
+    	\right]
 	\end{equation}
-	\par\vspace{0.3cm} é a matriz com a qual devemos nos preocupar. Visto que a demonstração é virtualmente idêntica, não a faremos aqui. Ao leitor interessado, basta aplicar os mesmo passos da demonstração da Proposição \eqref{Burau e homomorfismo} à matriz em \eqref{phi estrela}.
-	\par\vspace{0.3cm} Além disso, é possível mostrar que 
+	%
+	é a matriz com a qual devemos nos preocupar. Visto que a demonstração é virtualmente idêntica, 
+	não a faremos aqui. Ao leitor interessado, basta aplicar os mesmo passos da demonstração da 
+	Proposição \ref{Burau e homomorfismo} à matriz em \eqref{phi estrela}.
+	
+	\par\vspace{0.3cm} Além disso, é possível mostrar que
+	%
 	\begin{equation*}
-	\det[\varphi_n^\ast(\beta) - I_n]_{1,1}\doteq\det[\varphi_n(\beta) - I_n]_{1,1}
+	    \det[\varphi_n^\ast(\beta) - I_n]_{1,1}\doteq\det[\varphi_n(\beta) - I_n]_{1,1},
 	\end{equation*}	
-	\par\vspace{0.3cm} logo
+	%
+	logo
+	%
 	\begin{equation*}
-	\Delta_{\widetilde{\beta}}(t) \doteq \det[\varphi_n^\ast(\beta) - I_n]_{1,1}
+	    \Delta_{\widetilde{\beta}}(t) \doteq \det[\varphi_n^\ast(\beta) - I_n]_{1,1},
 	\end{equation*}
-	\par\vspace{0.3cm} isto é, usar $\varphi_n^\ast(\beta)$ ao invés de $\varphi_n(\beta)$ preserva o polinômio de Alexander a menos de um fator de $\pm t^k$. 
-	\par\vspace{0.3cm} Por fim, antes de passarmos ao polinômio de Jones, seja $\beta\in B_n$ e defina um novo polinômio $\nabla_{\widetilde{\beta}}(t)$ na incógnita $\sqrt{t}$ da seguinte forma
+	%
+	isto é, usar $\varphi_n^\ast(\beta)$ ao invés de $\varphi_n(\beta)$ preserva o polinômio 
+	de Alexander a menos de um fator de $\pm t^k$.
+	
+	\par\vspace{0.3cm} Por fim, antes de passarmos ao polinômio de Jones, seja $\beta\in B_n$ 
+	e defina um novo polinômio $\nabla_{\widetilde{\beta}}(t)$ na incógnita $\sqrt{t}$ da seguinte forma
+	%
 	\begin{equation*}
-	\nabla_{\widetilde{\beta}}(t) = (-1)^{n-1}t^{-\frac{1}{2}(l(\beta)-n+1)}\det[\varphi_n(\beta) - I_n]_{1,1}
+	    \nabla_{\widetilde{\beta}}(t)
+	    = (-1)^{n-1}t^{-\frac{1}{2}(l(\beta)-n+1)}\det[\varphi_n(\beta) - I_n]_{1,1}.
 	\end{equation*}
-	\par\vspace{0.3cm} É possível mostrar que $\nabla_{\widetilde{\beta}}(t)$ é um invariante de nó. Além disso, se tomarmos $\sigma_p\in B_n$ e, por convenção, fizermos $(\sqrt{t})^2 = t$, então $\nabla$ satisfaz
+	%
+	É possível mostrar que $\nabla_{\widetilde{\beta}}(t)$ é um invariante de nó. 
+	Além disso, se tomarmos $\sigma_p\in B_n$ e, por convenção, fizermos $(\sqrt{t})^2 = t$, 
+	então $\nabla$ satisfaz
+	%
 	\begin{equation}
 	\label{polinomio Alexander-Conway}
-	\nabla_{\widetilde{\beta\sigma_p}}(t) - \nabla_{\widetilde{\beta\sigma_p^{-1}}}(t) = \left(\frac{1}{\sqrt{t}}- \sqrt{t}\right)\nabla_{\widetilde{\beta}}(t)
+    	\nabla_{\widetilde{\beta\sigma_p}}(t) - \nabla_{\widetilde{\beta\sigma_p^{-1}}}(t) 
+    	= \left(\frac{1}{\sqrt{t}}- \sqrt{t}\right)\nabla_{\widetilde{\beta}}(t).
 	\end{equation}
-	\par\vspace{0.3cm} O invariante $\nabla_{\widetilde{\beta}}(t)$ é chamado \textit{polinômio de Alexander-Conway} de $\widetilde{\beta}$, uma vez que foi J.H. Conway quem, por meio de sua (re)descoberta de \eqref{polinomio Alexander-Conway} em 1969, evidenciou essa maneira eficiente de determinar um invariante de um nó (ou \textit{link}). O próprio J.W. Alexander vários anos antes já havia mencionado uma fórmula similiar. Como $\Delta_{\widetilde{\beta}}(t)\doteq\nabla_{\widetilde{\beta}}(t)$ (claramente por um fator de $(-1)^{n-1}t^{-\frac{1}{2}(l(\beta)-n+1)}$), podemos considerar $\nabla_{\widetilde{\beta}}(t)$ como uma reinterpretação do polinômio de Alexander. 
-	\par \vspace{0.3cm} Agora, vamos tratar do polinômio de Jones.
-	\par\vspace{0.3cm} Em 1984, Vaughan Frederick Randal Jones definiu um novo invariante, hoje nomeado em sua homenagem, o \textit{polinômio de Jones}, denotado por $V_{\widetilde{\beta}}(t)$, para o fecho da trança $\beta$. Assim como o polinômio de Alexander, $V_{\widetilde{\beta}}(t)$ é independente da escolha de $\beta$ no sentido de que se $\widetilde{\beta}_1 = \widetilde{\beta}_2$, temos $V_{\widetilde{\beta}_1}(t) = V_{\widetilde{\beta}_2}(t)$. Antes de definir o invariante de Jones, precisamos de alguns fatos e definições preliminares.
-	\begin{deff}
-		\label{def prod tensorial}
-		Sejam $A = (a_{ij})$ e $B = (a_{kl})$ duas matrizes $p\times q$ e $r\times s$, respectivamente. Então, o produto tensorial de $A$ e $B$, denotado por $A\otimes B$, é a matriz $pr\times qs$ definida por
+	%
+	O invariante $\nabla_{\widetilde{\beta}}(t)$ é chamado \textit{polinômio de Alexander-Conway} 
+	de $\widetilde{\beta}$, uma vez que foi J.H. Conway quem, por meio de sua (re)descoberta de 
+	\eqref{polinomio Alexander-Conway} em 1969, evidenciou essa maneira eficiente de determinar 
+	um invariante de um nó (ou \textit{link}). O próprio J.W. Alexander vários anos antes já 
+	havia mencionado uma fórmula similar. Como 
+	$\Delta_{\widetilde{\beta}}(t)\doteq\nabla_{\widetilde{\beta}}(t)$ (claramente por um 
+	fator de $(-1)^{n-1}t^{-\frac{1}{2}(l(\beta)-n+1)}$), podemos pensar em 
+	$\nabla_{\widetilde{\beta}}(t)$ como uma reinterpretação do polinômio de Alexander.
+	
+	\par\vspace{0.3cm} Agora, vamos tratar do polinômio de Jones.
+	
+	\par\vspace{0.3cm} Em 1984, Vaughan Frederick Randal Jones definiu um novo invariante, 
+	hoje nomeado em sua homenagem, o \textit{polinômio de Jones}, denotado por 
+	$V_{\widetilde{\beta}}(t)$, para o fecho da trança $\beta$. Assim como o polinômio de Alexander,
+	$V_{\widetilde{\beta}}(t)$ é independente da escolha de $\beta$ no sentido de que se 
+	$\widetilde{\beta}_1 = \widetilde{\beta}_2$, temos 
+	$V_{\widetilde{\beta}_1}(t) = V_{\widetilde{\beta}_2}(t)$. Antes de definir o invariante de 
+	Jones, precisamos de alguns fatos e definições preliminares.
+	%
+	\begin{definition}
+	\label{def prod tensorial}
+		Sejam $A = (a_{ij})$ e $B = (a_{kl})$ duas matrizes $p\times q$ e $r\times s$, 
+		respectivamente. Então, o produto tensorial de $A$ e $B$, denotado por $A\otimes B$, 
+		é a matriz $pr\times qs$ definida por
+		%
 		\begin{equation*}
-		A\otimes B = 
-		\begin{bmatrix}
-		a_{11}B & a_{12}B & \cdots & a_{1q}B \\
-		a_{21}B & a_{22}B & \cdots & a_{2q}B \\
-		\vdots & \vdots & \ddots & \vdots \\
-		a_{p1}B & a_{p2}B & \cdots & a_{pq}B
-		\end{bmatrix}
+    		A\otimes B = 
+    		\begin{bmatrix}
+    		a_{11}B & a_{12}B & \cdots & a_{1q}B \\
+    		a_{21}B & a_{22}B & \cdots & a_{2q}B \\
+    		\vdots & \vdots & \ddots & \vdots \\
+    		a_{p1}B & a_{p2}B & \cdots & a_{pq}B
+    		\end{bmatrix}.
 		\end{equation*}
-	\end{deff}
-	\par\vspace{0.3cm} Por exemplo, se
-	\begin{equation*}
-	A = \begin{bmatrix}
-	a_{11} & a_{12}
-	\end{bmatrix}\text{ e } B = \begin{bmatrix}
-	b_{11}\\
-	b_{21}
-	\end{bmatrix} 
-	\end{equation*}
-	\par\vspace{0.3cm} então
-	\begin{equation*}
-	A\otimes B = \begin{bmatrix}
-	a_{11}B & a_{12}B
-	\end{bmatrix} = \begin{bmatrix}
-	a_{11}b_{11} & a_{12}b_{11}\\
-	a_{11}b_{21} & a_{12}b_{21}
-	\end{bmatrix}
-	\end{equation*}
-	\par\vspace{0.3cm} Da definição de produto tensorial, segue que 
+		%
+	\end{definition}
+	%
+	\begin{example}
+	    Se
+	    %
+    	\begin{equation*}
+        	A = \begin{bmatrix}
+        	a_{11} & a_{12}
+        	\end{bmatrix}\text{ e } B = \begin{bmatrix}
+        	b_{11}\\
+        	b_{21}
+        	\end{bmatrix} 
+        \end{equation*}
+        %
+        então
+        %
+        \begin{equation*}
+        	A\otimes B = \begin{bmatrix}
+        	a_{11}B & a_{12}B
+        	\end{bmatrix} = \begin{bmatrix}
+        	a_{11}b_{11} & a_{12}b_{11}\\
+        	a_{11}b_{21} & a_{12}b_{21}
+        	\end{bmatrix}.
+    	\end{equation*}
+    	%
+	\end{example}
+	%
+	Da definição de produto tensorial, segue que
+	%
 	\begin{equation}
 	\label{propriedade 1 tensorial}
-	(A\otimes B)\otimes C = A\otimes(B\otimes C)
+	    (A\otimes B)\otimes C = A\otimes(B\otimes C).
 	\end{equation}
-	\par\vspace{0.3cm} Além disso, note também que se $A$ e $C$ são duas matrizes de ordem $k$ e $B$ e  $D$ são duas matrizes de ordem $l$, então
+	%
+	Além disso, note também que se $A$ e $C$ são duas matrizes de ordem $k$ e $B$ e 
+	$D$ são duas matrizes de ordem $l$, então
+	%
 	\begin{equation}
 	\label{propriedade 2 tensorial}
-	(A\otimes B)\cdot(C\otimes D) = A\cdot C\otimes B\cdot D
+	    (A\otimes B)\cdot(C\otimes D) = (AC)\otimes (BD).
 	\end{equation}
-	\par\vspace{0.3cm} sendo $(\cdot)$ o produto ordinário de matrizes.
-	\par\vspace{0.3cm} De fato, da definição de produto de matrizes, temos que os elementos de $(A\otimes B)(C\otimes D)$ são da forma
+	%
+	De fato, da definição de produto de matrizes, temos que as entradas de 
+	$(A\otimes B)(C\otimes D)$ são da forma
+	%
 	\begin{equation*}
-	(A\otimes B)(C\otimes D) = \Bigg(\displaystyle{ \sum_{j=1}^{k}a_{ij}Bc_{js}D}\Bigg) = \Bigg(\displaystyle{ \sum_{j=1}^{k}a_{ij}c_{js}}BD\Bigg) = AC\otimes BD 
+	    (A\otimes B)(C\otimes D) = \left(\displaystyle{ \sum_{j=1}^{k}a_{ij}Bc_{js}D}\right) 
+	    = \left(\displaystyle{ \sum_{j=1}^{k}a_{ij}c_{js}}BD\right) = AC\otimes BD 
 	\end{equation*}
-	\par\vspace{0.3cm} Agora, dada uma matriz quadrada $M = (a_{ij})$ de ordem $n$, podemos definir o \textit{traço} de $M$, denotado por $\tr(M)$, como
+	%
+	Agora, dada uma matriz quadrada $M = (a_{ij})$ de ordem $n$, definimos o \textit{traço} 
+	de $M$, denotado por $\tr(M)$, como
+	%
 	\begin{equation*}
-	\tr(M) = \sum_{i=1}^{n}a_{ii} 
+	    \tr(M) = \sum_{i=1}^{n}a_{ii},
 	\end{equation*}
-	\par\vspace{0.3cm} ou seja, a soma dos elementos da diagonal principal. O traço de $M$ também pode ser definido em termos do polinômio característico de $M$. Se $\mu_M(\lambda) = \det(M - \lambda I_n)$ é o polinômio característico	de $M$, então $(-1)^{n-1}\tr(M)$ é igual ao coeficiente de $\lambda^{n-1}$ em $\mu_M(\lambda)$. %Vamos demonstrar isso logo mais. 
-	\par\vspace{0.3cm} Esse fato também é observado no algoritmo de Fadeev-LeVerrier, um algoritmo recursivo para o cálculo dos coeficientes do polinômio característico de uma matriz. 
+	%
+	ou seja, a soma dos elementos da diagonal principal. O traço de $M$ também 
+	pode ser definido em termos do polinômio característico de $M$. 
+	Se $\mu_M(\lambda) = \det(M - \lambda I_n)$ é o polinômio característico 
+	de $M$, então $(-1)^{n-1}\tr(M)$ é igual ao coeficiente de $\lambda^{n-1}$ em $\mu_M(\lambda)$. %Vamos demonstrar isso logo mais.
+	
+% 	\par\vspace{0.3cm} Esse fato também é observado no algoritmo de Fadeev-LeVerrier, 
+% 	um algoritmo recursivo para o cálculo dos coeficientes do polinômio característico de uma matriz. 
 	%\begin{prop}
 	%	\label{polinomio caracateristico e traco}
 	%	Seja $\mu_M(\lambda)$ o polinômio característico da matriz $M$, isto é, $\displaystyle{\mu_M(\lambda) = \sum_{k=0}^{n}c_k\lambda^k}$. Então, $c_n = (-1)^n$ e $c_{n-1} = (-1)^{n-1}\tr(M)$.
@@ -1814,144 +2137,248 @@
 	%	&= 
 	%	\end{align*}
 	%\end{proof}
-	\par\vspace{0.3cm} Essa reinterpretação pode ser usada como base para a demonstração do seguinte teorema:
+	Essa reinterpretação pode ser usada como base para a demonstração do seguinte teorema:
+	%
 	\begin{theorem}
-		\label{traco}
+	\label{traco}
 		Sejam $P$ uma matriz não singular de ordem $n$ e $M$ uma matriz de ordem $n$. Então, 
+		%
 		\begin{equation*}
-		\tr(M) = \tr(PMP^{-1})
+		    \tr(M) = \tr(PMP^{-1})
 		\end{equation*}
-		\par\vspace{0.3cm} e consequentemente
+		%
+		e, consequentemente,
+		%
 		\begin{equation*}
-		\tr(MP) = \tr(PM)
+		    \tr(MP) = \tr(PM).
 		\end{equation*}
+		%
 	\end{theorem} 
+	%
 	\begin{proof}
-		Para o primeiro item, usaremos o fato mencionado anteriormente sobre o coeficiente de $\lambda^{n-1}$ em $\mu_M(\lambda)$. Note que 
+		Para o primeiro item, usaremos o fato mencionado anteriormente sobre o 
+		coeficiente de $\lambda^{n-1}$ em $\mu_M(\lambda)$. Note que 
+		%
 		\begin{align*}
-		\det( PMP^{-1} - \lambda I_n ) &= \det[ PMP^{-1} - \lambda PP^{-1} ] \\
-		&= \det[ (PM - \lambda P)P^{-1} ] \\
-		&= \det[ (PM - P\lambda)P^{-1} ] \\
-		&= \det[ P(M - I_n\lambda)P^{-1} ] \\
-		&= \det[ P(M - \lambda I_n)P^{-1} ] \\
-		&= \det(M - \lambda I_n)
+    		\det( PMP^{-1} - \lambda I_n ) &= \det[ PMP^{-1} - \lambda PP^{-1} ] \\
+    		&= \det[ (PM - \lambda P)P^{-1} ] \\
+    		&= \det[ (PM - P\lambda)P^{-1} ] \\
+    		&= \det[ P(M - I_n\lambda)P^{-1} ] \\
+    		&= \det[ P(M - \lambda I_n)P^{-1} ] \\
+    		&= \det(M - \lambda I_n).
 		\end{align*}
-		\par\vspace{0.3cm} Portanto, $M$ e $PMP^{-1}$ têm o mesmo polinômio característico e, consequentemente, segue que $(-1)^{n-1}\tr(M) = (-1)^{n-1}\tr(PMP^{-1})$, ou seja, $\tr(M) = \tr(PMP^{-1})$.
-		\par\vspace{0.3cm} Para o segundo item, faremos uma demonstração mais simples e direta. Sejam $P = (a_{ij})$ e $M = (b_{kl})$ duas matrizes de ordem $n$, com $P$ não singular. Então, temos que
+		%
+		Portanto, $M$ e $PMP^{-1}$ têm o mesmo polinômio característico e, consequentemente, 
+		segue que $(-1)^{n-1}\tr(M) = (-1)^{n-1}\tr(PMP^{-1})$, ou seja, $\tr(M) = \tr(PMP^{-1})$.
+		
+		\par\vspace{0.3cm} Para o segundo item, faremos uma demonstração mais simples e direta. 
+		Sejam $P = (a_{ij})$ e $M = (b_{kl})$ duas matrizes de ordem $n$, com $P$ não singular. 
+		Então, temos que
+		%
 		\begin{align*}
-		\tr(PM) = \sum_{i=1}^{n}\sum_{j=1}^{n} a_{ij}b_{ji} = \sum_{j=1}^{n}\sum_{i=1}^{n} b_{ji}a_{ij} = \tr(MP)
+		    \tr(PM) 
+		    = \sum_{i=1}^{n}\sum_{j=1}^{n} a_{ij}b_{ji} 
+		    = \sum_{j=1}^{n}\sum_{i=1}^{n} b_{ji}a_{ij} 
+		    = \tr(MP).
 		\end{align*}
-		\par\vspace{0.3cm} Uma demonstração alternativa seria notar que
+		%
+		Uma demonstração alternativa seria notar que
+		%
 		\begin{align*}
-		\det(MP - \lambda I_n) &= \det(MP - \lambda PP^{-1}) \\
-		&= \det[ (M - \lambda P^{-1})P ] \\
-		&= \det[ (P^{-1}PM - P{-1}\lambda)P ] \\
-		&= \det[ P^{-1}(PM - \lambda I_n)P ] \\
-		&= \det(PM - \lambda I_n)
+    		\det(MP - \lambda I_n) &= \det(MP - \lambda P^{-1}P) \\
+    		&= \det[ (M - \lambda P^{-1})P ] \\
+    		&= \det[ (P^{-1}PM - P{-1}\lambda)P ] \\
+    		&= \det[ P^{-1}(PM - \lambda I_n)P ] \\
+    		&= \det(PM - \lambda I_n).
 		\end{align*}
-		\par\vspace{0.3cm} Portanto, $MP$ e $PM$ têm o mesmo polinômio característico e, consequentemente, segue que $(-1)^{n-1}\tr(MP) = (-1)^{n-1}\tr(PM)$, ou seja, $\tr(MP) = \tr(PM)$.
+		%
+		Portanto, $MP$ e $PM$ têm o mesmo polinômio característico e, consequentemente, 
+		segue que $(-1)^{n-1}\tr(MP) = (-1)^{n-1}\tr(PM)$, ou seja, $\tr(MP) = \tr(PM)$.
 	\end{proof}
-	\par\vspace{0.3cm} Por exemplo, seja 
-	\begin{equation}
-	\label{parte 1 invariante Jones}
-	\mu = \begin{bmatrix}
-	1 & 0 \\
-	0 & t
-	\end{bmatrix}
-	\end{equation}
-	\par\vspace{0.3cm} Denotando $\underbrace{\mu\otimes\mu\otimes\cdots\otimes\mu}_{n}$ por $\mu^{\otimes n}$, então $\mu^{\otimes n}$ é uma matriz $2^n\times 2^n$ e 
-	\begin{equation}
-	\label{mi tensor n vezes}
-	\tr(\mu^{\otimes n}) = (1+t)^n
-	\end{equation}
-	\par\vspace{0.3cm} Para perceber esse fato podemos desenvolver $\mu^{\otimes n}$ para alguns valores de $n$ ou então usar o fato de que $\tr(A\otimes B) = \tr(A)\tr(B)$, que pode ser verificado diretamente da definição de produto tensorial. De fato, tomando $A$ e $B$ matrizes de ordem $n$, temos
-	\begin{equation*}
-	\tr(A\otimes B) = a_{11}\tr(B) + a_{22}\tr(B) + \cdots + a_{nn}\tr(B) = \tr(A)\tr(B)
-	\end{equation*}
-	\par\vspace{0.3cm} pois, devido à definição de produto tensorial, cada entrada da diagonal de $A\otimes B$ tem a forma $a_{ii}B$, $1\leq i\leq n$. Consequentemente, o traço de $A\otimes B$ tem a forma
-	\begin{equation*}
-	\sum_{i=1}^{n}a_{ii}(b_{11} + b_{22} + \cdots + b_{nn}) = \tr(B)\sum_{i=1}^{n}a_{ii} = \tr(A)\tr(B)
-	\end{equation*}
-	\par\vspace{0.3cm} Para que possamos definir o invariante de Jones, precisamos primeiro definir uma nova função $\Phi_n: B_n\to M(2^n, \mathbb{Z}[\sqrt{t}, \frac{1}{\sqrt{t}}])$, baseada na matriz $R$ e em seu inverso. Note que $\Phi_n$ associa uma trança a uma matriz de ordem $2^n$ sobre o módulo $\mathbb{Z}[\sqrt{t}, \frac{1}{\sqrt{t}}]$. 
-	\par\vspace{0.3cm} Note também que $\Phi_n$ é similar à representação de Burau: ela também é uma função que associa uma trança a uma matriz de ordem $2^n$. Contudo, aqui o módulo é $\mathbb{Z}[\sqrt{t}, \frac{1}{\sqrt{t}}]$ ao invés de $\mathbb{Z}[t, t^{-1}]$. Além disso, como veremos a seguir, $\Phi_n$ também é definida, em um certo sentido, sobre os geradores $\sigma_i$ do grupo de tranças.
+	%
+	\begin{example}
+    	Por exemplo, seja
+    	%
+    	\begin{equation}
+    	\label{parte 1 invariante Jones}
+        	\mu = \begin{bmatrix}
+        	1 & 0 \\
+        	0 & t
+        	\end{bmatrix}.
+    	\end{equation}
+    	%
+    	Denotando $\underbrace{\mu\otimes\mu\otimes\cdots\otimes\mu}_{n}$ por $\mu^{\otimes n}$, 
+    	então $\mu^{\otimes n}$ é uma matriz $2^n\times 2^n$ e 
+    	%
+    	\begin{equation}
+    	\label{mi tensor n vezes}
+    	    \tr(\mu^{\otimes n}) = (1+t)^n.
+    	\end{equation}
+    	%
+    	Para perceber esse fato podemos desenvolver $\mu^{\otimes n}$ para alguns valores 
+    	de $n$ ou então usar o fato de que $\tr(A\otimes B) = \tr(A)\tr(B)$, que pode ser 
+    	verificado diretamente da definição de produto tensorial. De fato, tomando $A$ e $B$ 
+    	matrizes de ordem $n$, temos
+    	%
+    	\begin{equation*}
+    	    \tr(A\otimes B) = a_{11}\tr(B) + a_{22}\tr(B) + \cdots + a_{nn}\tr(B) = \tr(A)\tr(B)
+    	\end{equation*}
+    	%
+    	pois, devido à definição de produto tensorial, cada entrada da diagonal de $A\otimes B$ 
+    	tem a forma $a_{ii}B$, $1\leq i\leq n$. Consequentemente, o traço de $A\otimes B$ tem a forma
+    	%
+    	\begin{equation*}
+    	    \sum_{i=1}^{n}a_{ii}(b_{11} + b_{22} + \cdots + b_{nn}) = \tr(B)\sum_{i=1}^{n}a_{ii} = \tr(A)\tr(B).
+    	\end{equation*}
+    	%
+	\end{example}
+	%
+	Para que possamos definir o invariante de Jones, precisamos primeiro definir 
+	uma nova função $\Phi_n: B_n\to M(2^n, \mathbb{Z}[\sqrt{t}, \frac{1}{\sqrt{t}}])$, 
+	baseada na matriz $R$ dada abaixo e em seu inverso. Note que $\Phi_n$ associa uma trança a uma 
+	matriz de ordem $2^n$ sobre o módulo $\mathbb{Z}[\sqrt{t}, \frac{1}{\sqrt{t}}]$.
+	
+	\par\vspace{0.3cm} Note também que $\Phi_n$ é similar à representação de Burau: 
+	ela também é uma função que associa uma trança a uma matriz de ordem $2^n$. 
+	Contudo, aqui o módulo é $\mathbb{Z}[\sqrt{t}, \frac{1}{\sqrt{t}}]$ ao invés 
+	de $\mathbb{Z}[t, t^{-1}]$. Além disso, como veremos a seguir, $\Phi_n$ também 
+	é definida, em um certo sentido, sobre os geradores $\sigma_i$ do grupo de tranças.
+	
 	\par\vspace{0.3cm} Então, sejam
+	%
 	\begin{equation*}
-	R = \begin{bmatrix}
-	1 & 0 & 0 & 0 \\
-	0 & 0 & -\sqrt{t} & 0 \\
-	0 & -\sqrt{t} & 1-t & 0 \\
-	0 & 0 & 0 & 1
-	\end{bmatrix}\text{ e }R^{-1} = \begin{bmatrix}
-	1 & 0 & 0 & 0 \\
-	0 & 1 - \frac{1}{t} & -\frac{1}{\sqrt{t}} & 0 \\
-	0 & -\frac{1}{\sqrt{t}} & 0 & 0 \\
-	0 & 0 & 0 & 1
-	\end{bmatrix}
+    	R = \begin{bmatrix}
+    	1 & 0 & 0 & 0 \\
+    	0 & 0 & -\sqrt{t} & 0 \\
+    	0 & -\sqrt{t} & 1-t & 0 \\
+    	0 & 0 & 0 & 1
+    	\end{bmatrix}\text{ e }R^{-1} = \begin{bmatrix}
+    	1 & 0 & 0 & 0 \\
+    	0 & 1 - \frac{1}{t} & -\frac{1}{\sqrt{t}} & 0 \\
+    	0 & -\frac{1}{\sqrt{t}} & 0 & 0 \\
+    	0 & 0 & 0 & 1
+    	\end{bmatrix}.
 	\end{equation*}
-	\par\vspace{0.3cm} Como antes, usamos a convenção de que $(\sqrt{t})^2 = t$.
-	\par\vspace{0.3cm} Para um $i$ arbitrário, definimos $\Phi_n(\sigma_i^{\varepsilon})$ como a seguinte matriz de ordem $2^n$:
+	%
+	Como antes, usamos a convenção de que $(\sqrt{t})^2 = t$.
+	
+	\par\vspace{0.3cm} Para um $i$ arbitrário, definimos $\Phi_n(\sigma_i^{\varepsilon})$ 
+	como a seguinte matriz de ordem $2^n$:
+	%
 	\begin{equation}
 	\label{Phi invariante Jones}
-	\Phi_n(\sigma_i^{\varepsilon}) = \underbrace{I_2\otimes\cdots\otimes I_2}_{i-1}\otimes R^{\varepsilon}\otimes\underbrace{I_2\otimes\cdots\otimes I_2}_{n-i-1}
+	    \Phi_n(\sigma_i^{\varepsilon}) 
+	    = \underbrace{I_2\otimes\cdots\otimes I_2}_{i-1}
+	    \otimes R^{\varepsilon}\otimes\underbrace{I_2\otimes\cdots\otimes I_2}_{n-i-1}
+	    = I_2^{\otimes i-1}\otimes R^{\varepsilon}\otimes I_2^{n-i-1},
 	\end{equation}
-	\par\vspace{0.3cm} sendo $\varepsilon=\pm1$ e $I_2$ a matriz identidade de ordem 2. Note que, de fato $\Phi_n(\sigma_i^{\varepsilon})$ tem ordem $2^{i-1}\cdot4\cdot2^{n-i-1} = 2^n$.
+	%
+	sendo $\varepsilon=\pm1$ e $I_2$ a matriz identidade de ordem 2. Note que de fato
+	$\Phi_n(\sigma_i^{\varepsilon})$ tem ordem $2^{i-1}\cdot4\cdot2^{n-i-1} = 2^n$.
+	
 	\par\vspace{0.3cm} De \eqref{Phi invariante Jones} podemos definir
+	%
 	\begin{equation}
 	\label{parte 2 invariante Jones}
-	\Phi_n(\beta) = \Phi_n(\sigma_{i_1}^{\varepsilon_1})\cdots\Phi_n(\sigma_{i_k}^{\varepsilon_k})\in M(2^n, \mathbb{Z}[\sqrt{t}, \frac{1}{\sqrt{t}}])
+    	\Phi_n(\beta) 
+    	= \Phi_n(\sigma_{i_1}^{\varepsilon_1})\cdots\Phi_n(\sigma_{i_k}^{\varepsilon_k})
+    	\in M(2^n, \mathbb{Z}[\sqrt{t}, \frac{1}{\sqrt{t}}])
 	\end{equation}
-	\par\vspace{0.3cm} para $\beta = \sigma_{i_1}^{\varepsilon_1}\cdots\sigma_{i_k}^{\varepsilon_k}$, com $1\leq i_1, \dots, i_k\leq n-1$ e $\varepsilon_j=\pm1$. 
+	%
+	para $\beta = \sigma_{i_1}^{\varepsilon_1}\cdots\sigma_{i_k}^{\varepsilon_k}$, 
+	com $1\leq i_1, \dots, i_k\leq n-1$ e $\varepsilon_j=\pm1$.
+	
 	\par\vspace{0.3cm} A função
+	%
 	\begin{equation*}
-	\xi(\beta) = \frac{t^{\nu}\tr(\Phi_n(\beta)\mu^{\otimes n})}{1+t}
+	    \xi(\beta) = \frac{t^{\nu}\tr(\Phi_n(\beta)\mu^{\otimes n})}{1+t},
 	\end{equation*}
-	\par\vspace{0.3cm} sendo $\nu = \displaystyle{ \frac{1}{2}\big(l(\beta) - n + 1\big) }$, é o invariante de Jones. Essa afirmação será propriamente demonstrada no Teorema \eqref{polinomio de Jones}, a partir dos dois lemas a seguir.
+	%
+	sendo $\nu = \displaystyle{ \frac{1}{2}\big(l(\beta) - n + 1\big) }$, é o invariante de Jones. 
+	Essa afirmação será propriamente demonstrada no Teorema \ref{polinomio de Jones}, 
+	a partir dos dois lemas a seguir.
+	%
 	\begin{lemma}
-		\label{lema 1 Jones}
-		A função $\Phi_n$ é um homomorfismo de $B_n$ em $M(2^n, \mathbb{Z}[\sqrt{t}, \frac{1}{\sqrt{t}}])$
+	\label{lema 1 Jones}
+		A função $\Phi_n$ é um homomorfismo de $B_n$ em $M(2^n, \mathbb{Z}[\sqrt{t}, \frac{1}{\sqrt{t}}])$.
 	\end{lemma}
+	%
 	\begin{proof}
-		Precisamos mostrar que 
+		Precisamos mostrar que
+		%
 		\begin{enumerate}
-			\item $\Phi_n(\sigma_i\sigma_j) = \Phi_n(\sigma_j\sigma_i)$ se $|i-j|\geq 2$
-			\item $\Phi_n(\sigma_i\sigma_{i+1}\sigma_i) = \Phi_n(\sigma_{i+1}\sigma_i\sigma_{i+1})$ para $i=1,2,\dots, n-2$
+			\item $\Phi_n(\sigma_i\sigma_j) = \Phi_n(\sigma_j\sigma_i)$ se $|i-j|\geq 2$;
+			\item $\Phi_n(\sigma_i\sigma_{i+1}\sigma_i) = \Phi_n(\sigma_{i+1}\sigma_i\sigma_{i+1})$ para $i=1,2,\dots, n-2$.
 		\end{enumerate}
-		\par\vspace{0.3cm} Vamos começar com 1. Sem perda de generalidade, podemos supor $j>i+1$. Então, de \eqref{propriedade 1 tensorial} e \eqref{propriedade 2 tensorial} tomando $I = I_2$, temos
+		%
+		Vamos começar com 1. Sem perda de generalidade, podemos supor $j>i+1$. Então, 
+		de \eqref{propriedade 1 tensorial} e \eqref{propriedade 2 tensorial} tomando $I = I_2$, temos
+		%
 		\begin{align*}
-		\Phi_n(\sigma_i\sigma_j) &= \Phi_n(\sigma_i)\Phi_n(\sigma_j) \\
-		&= (I^{\otimes i-1} \otimes R \otimes I^{\otimes n-i-1})( I^{\otimes j-1} \otimes R \otimes I^{\otimes n-j-1} ) \\
-		&= ( I^{\otimes i-1} \otimes R \otimes I^{\otimes j-i-2}\otimes I^{\otimes 2} \otimes I^{\otimes n-j-1}  ) \times (I^{\otimes i-1} \otimes I^{\otimes 2} \otimes I^{\otimes j-i-2} \otimes R \otimes I^{\otimes n-j-1} ) \\
-		&=  [(I^{\otimes i-1} \otimes R \otimes I^{\otimes j-i-2})\underbrace{\times(I^{\otimes i-1}\otimes I^{\otimes 2} \otimes I^{\otimes j-i-2})}_{I^{\otimes j-1} = I_{2^{j-1}}}]\otimes [\underbrace{(I^{\otimes 2} \otimes I^{\otimes n-j-1})}_{I^{\otimes n-j+1} = I_{2^{n-j+1}}  }\times(R \otimes I^{\otimes n-j-1})] \\
-		&= I^{\otimes i-1} \otimes R \otimes I^{\otimes j-i-2} \otimes R \otimes I^{\otimes n-j-1}
+    		\Phi_n(\sigma_i\sigma_j) &= \Phi_n(\sigma_i)\Phi_n(\sigma_j) \\
+    		&= (I^{\otimes i-1} \otimes R \otimes I^{\otimes n-i-1})
+    		( I^{\otimes j-1} \otimes R \otimes I^{\otimes n-j-1} ) \\
+    		&= ( I^{\otimes i-1} \otimes R \otimes I^{\otimes j-i-2}\otimes I^{\otimes 2} 
+    		\otimes I^{\otimes n-j-1}  ) \times (I^{\otimes i-1} \otimes I^{\otimes 2} 
+    		\otimes I^{\otimes j-i-2} \otimes R \otimes I^{\otimes n-j-1} ) \\
+    		&= [(I^{\otimes i-1} \otimes R \otimes I^{\otimes j-i-2})
+    		\underbrace{\times(I^{\otimes i-1}\otimes I^{\otimes 2} \otimes I^{\otimes j-i-2})}_{I^{\otimes j-1} 
+    		= I_{2^{j-1}}}]\otimes [\underbrace{(I^{\otimes 2} \otimes I^{\otimes n-j-1})}_{I^{\otimes n-j+1} 
+    		= I_{2^{n-j+1}}  }\times(R \otimes I^{\otimes n-j-1})] \\
+    		&= I^{\otimes i-1} \otimes R \otimes I^{\otimes j-i-2} \otimes R \otimes I^{\otimes n-j-1}.
 		\end{align*} 
-		\par\vspace{0.3cm} De modo similar, obtemos
+		%
+		De modo similar, obtemos
+		%
 		\begin{equation*}
-		\Phi_n(\sigma_j\sigma_i) = I^{\otimes i-1} \otimes R \otimes I^{\otimes j-i-2} \otimes R \otimes I^{\otimes n-j-1}
+		    \Phi_n(\sigma_j\sigma_i) = I^{\otimes i-1} \otimes R \otimes I^{\otimes j-i-2} 
+		    \otimes R \otimes I^{\otimes n-j-1}.
 		\end{equation*}
-		\par\vspace{0.3cm} Vamos demonstrar 2 agora. Primeiro, note que de \eqref{propriedade 1 tensorial} e \eqref{propriedade 2 tensorial} temos
+		%
+		Vamos demonstrar 2 agora. Primeiro, note que de \eqref{propriedade 1 tensorial} 
+		e \eqref{propriedade 2 tensorial} temos
+		%
 		\begin{align*}
-		\Phi_n(\sigma_i\sigma_{i+1}\sigma_i) &= (I^{\otimes i-1} \otimes R \otimes I^{\otimes n-i-1}) (I^{\otimes i} \otimes R \otimes I^{\otimes n-i-2}) (I^{\otimes i-1} \otimes R \otimes I^{\otimes n-i-1}) \\
-		&= (I^{\otimes i-1} \otimes (R\otimes I) \otimes I^{\otimes n-i-2}) (I^{\otimes i-1} \otimes (I\otimes R) \otimes I^{\otimes n-i-2}) (I^{\otimes i-1} \otimes (R \otimes I) \otimes I^{\otimes n-i-2}) \\
-		&= I^{\otimes i-1}[(R \otimes I)(I \otimes R)(R \otimes I)]I^{\otimes n-i-2}
+    		\Phi_n(\sigma_i\sigma_{i+1}\sigma_i) &= (I^{\otimes i-1} 
+    		\otimes R \otimes I^{\otimes n-i-1}) (I^{\otimes i} 
+    		\otimes R \otimes I^{\otimes n-i-2}) (I^{\otimes i-1} 
+    		\otimes R \otimes I^{\otimes n-i-1}) \\
+    		&= (I^{\otimes i-1} \otimes (R\otimes I) 
+    		\otimes I^{\otimes n-i-2}) (I^{\otimes i-1} 
+    		\otimes (I\otimes R) \otimes I^{\otimes n-i-2}) (I^{\otimes i-1} 
+    		\otimes (R \otimes I) \otimes I^{\otimes n-i-2}) \\
+    		&= I^{\otimes i-1}[(R \otimes I)(I \otimes R)(R \otimes I)]I^{\otimes n-i-2},
 		\end{align*}
-		\par\vspace{0.3cm} enquanto que
+		%
+		enquanto que
+		%
 		\begin{align*}
-		\Phi_n(\sigma_{i+1}\sigma_i\sigma_{i+1}) = I^{\otimes i-1}[(I \otimes R)(R \otimes I)(I \otimes R)]I^{\otimes n-i-2}
+		    \Phi_n(\sigma_{i+1}\sigma_i\sigma_{i+1}) = I^{\otimes i-1}
+		    [(I \otimes R)(R \otimes I)(I \otimes R)]I^{\otimes n-i-2}.
 		\end{align*}
-		\par\vspace{0.3cm} Portanto, basta mostrar que
+		%
+		Portanto, basta mostrar que
+		%
 		\begin{equation*}
-		(R \otimes I)(I \otimes R)(R \otimes I) = (I \otimes R)(R \otimes I)(I \otimes R)
+		    (R \otimes I)(I \otimes R)(R \otimes I) = (I \otimes R)(R \otimes I)(I \otimes R),
 		\end{equation*}
-		\par\vspace{0.3cm} o que pode ser verificado por uma computação direta (mas entediante).
+		%
+		o que pode ser verificado por uma computação direta (mas entediante).
 	\end{proof}
+	%
 	\begin{lemma}
-		\label{lema 2 Jones}
-		Seja $\xi(\beta)$ a função definida acima (e também no Teorema \eqref{polinomio de Jones}). Então, ela satisfaz as seguintes condições:
+	\label{lema 2 Jones}
+		Seja $\xi(\beta)$ a função definida acima (e também no Teorema \ref{polinomio de Jones}). 
+		Então, ela satisfaz as seguintes condições:
+		%
 		\begin{enumerate}
-			\item Para quaisquer tranças $\beta, \gamma\in B_n$, $\xi(\gamma\beta\gamma^{-1})=\xi(\beta)$;
-			\item Para uma trança $\beta\in B_n$ qualquer e para as tranças $\beta\sigma_n^{\pm1}$, $\xi(\beta) = \xi(\beta\sigma_n) = \xi(\beta\sigma_n^{-1})$.
+			\item para quaisquer tranças $\beta, \gamma\in B_n$, $\xi(\gamma\beta\gamma^{-1})=\xi(\beta)$;
+			\item para uma trança $\beta\in B_n$ qualquer e para as tranças 
+			$\beta\sigma_n^{\pm1}$, $\xi(\beta) = \xi(\beta\sigma_n) = \xi(\beta\sigma_n^{-1})$.
 		\end{enumerate}
+		%
 	\end{lemma}
+	%
 	\begin{proof}
 		Vamos mostrar o item 1. Podemos escrever $\beta\in B_n$ como $\beta = \sigma_{i_1}^{\varepsilon_1}\cdots\sigma_{i_k}^{\varepsilon_k}$. Então,
 		\begin{equation*}
