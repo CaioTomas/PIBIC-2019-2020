@@ -20,10 +20,10 @@
 	\par\vspace{0.3cm} De modo geral, suponha que nos seja dado um grupo $G$ com apresentação
 	%
 	\begin{equation*}
-	    G = \langle x_1, x_2, \dots, x_n| w_1=w_2=\cdots=w_m=1 \rangle
+	    G = \langle x_1, x_2, \dots, x_n \ | \ w_1 = w_2 = \cdots = w_m = 1 \rangle,
 	\end{equation*}
 	%
-	\par\vspace{0.3cm} sendo $m$ e/ou $n$ não necessariamente finitos. Como vimos anteriormente no 
+	sendo $m$ e/ou $n$ não necessariamente finitos. Como vimos anteriormente no 
 	Capítulo \ref{cap-grupos-livres}, a partir dessa apresentação qualquer elemento $g$ de $G$ pode ser 
 	expresso como uma palavra nos geradores $x_i$ de $G$ e seus inversos. 
 	
@@ -55,7 +55,7 @@
 		    g = x_{i_1}^{\varepsilon_1}\cdots x_{i_m}^{\varepsilon_m}
 		\end{equation*}
 		%
-		\par\vspace{0.3cm} de $F$ é igual à palavra vazia, $1$, se e somente se podemos eliminar cada
+		de $F$ é igual à palavra vazia, $1$, se e somente se podemos eliminar cada
 		$x_{i_j}^{\varepsilon_j}$ cancelando produtos em $g$ da forma $x_ix_i^{-1}$ ou $x_i^{-1}x_i$. 
 		Se não encontrarmos tais cancelamentos, então $g$ nunca é igual à palavra vazia.
 		
@@ -65,24 +65,26 @@
 		problema da palavra é solúvel para um grupo livre. 
 	\end{proof}
 	%
-	\par\vspace{0.3cm} Por exemplo, se tomarmos $F = \langle a,b,c|- \rangle$, nenhuma das palavras 
+	\begin{example}
+    	Se tomarmos $F = \langle a,b,c \ | \ - \rangle$, então as palavras 
+    	%
+    	\begin{equation*}
+    	    g_1 = aba^{-1}b \qquad \text{ e } \qquad g_2 = b^{-1}a^2a^{-1}baa^{-1}b^{-2}a^{-1}
+    	\end{equation*}
+    	%
+    	não são iguais à identidade, mas $g_1 = g_2^{-1}$, ou seja, $g_1g_2 = 1$.
+	\end{example}
 	%
-	\begin{equation*}
-	    g_1 = aba^{-1}b \ \text{ e } \ g_2 = b^{-1}a^2a^{-1}baa^{-1}b^{-2}a^{-1}
-	\end{equation*}
-	%
-	é igual a identidade. Contudo, $g_1 = g_2^{-1}$, ou seja, $g_1g_2 = 1$.
-	
-	\par\vspace{0.3cm} Para o grupo de tranças, $B_n$, o problema da palavra consiste em, dadas duas 
+	Para o grupo de tranças, $B_n$, o problema da palavra consiste em perguntar se, dadas duas 
 	tranças $\beta_1$ e $\beta_2$, existe um método para determinar se $\beta_1 = \beta_2$? Note que 
 	podemos modificar essa pergunta e perguntar se existe um método que nos permita dizer se dada uma trança
 	$\beta$ $(=\beta_1\beta_2^{-1})$, temos $\beta = 1$. Felizmente, para $B_n$, tal método existe 
 	(e não é único). Um exemplo é a solução que demos ao final da 
-	Seção \eqref{secao trancas como discos perfurados}.
+	Seção \ref{secao trancas como discos perfurados}.
 	
 	\par\vspace{0.3cm} Outro problema interessante é o problema da conjugação: dados dois elementos 
-	$g_1$ e $g_2$ em $G$, encontre um método razoavelmente prático para determinar se $g_1$ é conjugado de 
-	$g_2$ em $G$, ou, equivalentemente, determine se existe um elemento $h$ em $G$ tal que $g_1 = hg_2h^{-1}$. 
+	$g_1$ e $g_2$ em $G$, encontrar um método razoavelmente prático para determinar se $g_1$ é conjugado de 
+	$g_2$ em $G$, ou, equivalentemente, determinar se existe um elemento $h$ em $G$ tal que $g_1 = hg_2h^{-1}$. 
 	Note que se tomarmos $g_2 = 1$, o problema da conjugação se reduz ao problema da palavra. Claro que o 
 	problema da conjugação é mais difícil de se resolver do que o problema da palavra. Para $B_n(\mathbb{R}^2)$, 
 	o grupo de tranças usual, o problema da conjugação também é solúvel.
@@ -106,7 +108,7 @@
 		\item Grupos abelianos finitamente gerados
 	\end{itemize}
 	%
-	\par\vspace{0.3cm} entre outras classes. O problema da conjugação também é conhecido como problema da
+	entre outras classes. O problema da conjugação também é conhecido como problema da
 	transformação; foi identificado em 1911 por Max Dehn como um dos problemas de decisão fundamentais 
 	em Teoria dos Grupos, junto com o problema da palavra e o problema do isomorfismo: dados dois grupos 
 	$G$ e $H$ com apresentações finitas, como determinar se $G\cong H$ ou não?
@@ -114,7 +116,7 @@
 \section{O \textit{linking number}}
 	Antes de introduzir uma aplicação interessante dos nós e tranças, convém definir o \textit{linking number}, 
 	ou número de enlaçamento, de um \textit{link} $K$, que também é outro invariante de \textit{link}, assim 
-	como os polinômios de Jones e Alexander, a função $l$ definida no Lema \eqref{homomorfismo de comprimento}, 
+	como os polinômios de Jones e Alexander, a função $l$ definida no Lema \ref{homomorfismo de comprimento}, 
 	o grupo e o número de Alexander.  
 	
 	\par\vspace{0.3cm} Então, sejam $M$ e $N$ dois componentes de um \textit{link}, e escolha uma orientação 
@@ -127,7 +129,7 @@
 		\end{center}\caption{Computando o \textit{linking number}}\label{linking number}
 	\end{figure}
 	%
-	\par\vspace{0.3cm} Contamos $+1$ se a seta ``por cima'' está à direita da seta ``por baixo'' e 
+	Contamos $+1$ se a seta ``por cima'' está à direita da seta ``por baixo'' e 
 	$-1$ se o contrário ocorre. Podemos ainda chamar $+1$ e $-1$ de cruzamentos destro e canhoto, respectivamente.
 	Às vezes, pode ser um pouco difícil determinar qual o tipo de cruzamento a partir do diagrama. Uma dica é 
 	notar que para cruzamentos destros, podemos girar a seta inferior no sentido horário de forma que as duas 
@@ -144,7 +146,7 @@
 		\end{center}\caption{\textit{Linking number}$ = (1+1+1-1)/2 = 1$}\label{exemplo linking number}
 	\end{figure}
 	%
-	\par\vspace{0.3cm} Note, na Figura \eqref{exemplo linking number}, que se revertermos a orientação de 
+	Note, na Figura \ref{exemplo linking number}, que se revertermos a orientação de 
 	apenas um dos dois componentes, o \textit{linking number} será multiplicado por $-1$. Contudo, se 
 	pensarmos no valor absoluto do \textit{linking number} então ele independe da orientação dada aos componentes.
 	
@@ -156,7 +158,7 @@
 	\textit{link} devem, necessariamente, nos dar o mesmo \textit{linking number}.
 	
 	\par\vspace{0.3cm} Vamos primeiro analisar o efeito de um movimento de Reidemeister tipo I, $\Omega_1$. 
-	Da Figura \eqref{reidemeister tipo 1}, vemos que esse movimento apenas introduz autocruzamentos, não 
+	Da Figura \ref{reidemeister tipo 1}, vemos que esse movimento apenas introduz autocruzamentos, não 
 	afetando, portanto, o \textit{linking number}. Agora os movimentos tipo II e III, $\Omega_2$ e $\Omega_3$.
 	Observe a figura a seguir.
 	%
@@ -167,14 +169,14 @@
         \caption{Os movimentos de Reidemeister tipo II e tipo III não alteram o \textit{linking number}}
     \end{figure}
 	%
-	\par\vspace{0.3cm} Portanto, os movimentos de Reidemeister de fato não alteram o \textit{linking number}. 
+	Portanto, os movimentos de Reidemeister de fato não alteram o \textit{linking number}. 
 	Daí, podemos dizer que o \textit{linking number} é um invariante de \textit{link} (orientado). Com isso,
 	podemos usá-lo para distinguir \textit{links} (se quisermos distinguir \textit{links} não orientados, 
 	basta tomar o módulo do \textit{linking number}).
 	
 \section{Tranças, nós e protetores solares de para-brisa}
     Você já deve estar familiarizado com aqueles protetores solares de para-brisa, meio arredondados como 
-    na Figura \eqref{protetor solar}, que lembram um disco e que se dobram de maneira um tanto quanto estranha.
+    na Figura \ref{protetor solar}, que lembram um disco e que se dobram de maneira um tanto quanto estranha.
 	%
 	\begin{figure}[H]
 		\begin{center}
@@ -182,7 +184,7 @@
 		\end{center}\caption{O protetor de para-brisa aberto e fechado}\label{protetor solar}
 	\end{figure}
 	%
-	\par\vspace{0.3cm} Vamos analisar mais de perto a estrutura desse protetor de para-brisa. 
+	Vamos analisar mais de perto a estrutura desse protetor de para-brisa. 
 	A parte fundamental do protetor é um arame metálico que percorre todo o perímetro do protetor, formando 
 	um \text{loop} contínuo. Esse arame é torcionalmente rígido, i.e., podemos dobrá-lo ao longo de seu 
 	comprimento sem problemas, mas não podemos torcê-lo. Esse fato servirá de base para a nossa análise.
@@ -197,7 +199,7 @@
 		termos de quantos \textit{loops} o arame faz? 
 	\end{enumerate} 
 	%
-	\par\vspace{0.3cm} Note que a parte de ``quantos'' da pergunta 1 pode ser respondida através de observações
+	Note que a parte de ``quantos'' da pergunta 1 pode ser respondida através de observações
 	experimentais, dobrando o protetor de fato, mas isso não nos ajuda a responder a parte do ``por quê''.
 	
 	\par\vspace{0.3cm} Antes de prosseguir, um pouco de terminologia: vamos dizer que o arame é uma fita. 
@@ -219,7 +221,7 @@
 		\caption{O centro da fita (pontilhado) e os círculos de fronteira (curvas sólidas) com o protetor aberto.}
 	\end{figure}
 	%
-	\par\vspace{0.3cm} A partir da maneira que estamos considerando o protetor e do que dissemos acima, 
+	A partir da maneira que estamos considerando o protetor e do que dissemos acima, 
 	podemos ver que o seguinte é verdade:
 	%
 	\begin{center}
@@ -227,17 +229,17 @@
 		ou seja, um nó.}
 	\end{center}
 	%
-	\par\vspace{0.3cm} Então, suponha que nossa trança fechada de um componente foi construída a partir 
+	Então, suponha que nossa trança fechada de um componente foi construída a partir 
 	de uma trança de $m$ cordas e com $n$ cruzamentos. Como nossa trança fechada tem apenas um componente, 
 	temos que $m$ e $n$ têm paridades diferentes.
 	
 	\par\vspace{0.3cm} Isso se deve ao fato de que a permutação associada à nossa trança fechada deve ter a forma
 	%
 	\begin{equation*}
-	    (i_1i_2\cdots i_m) = \underbrace{(i_1i_m)(i_1i_{m-1})\cdots(i_1i_2)}_{m-1\text{ transposições}}
+	    (i_1i_2\cdots i_m) = \underbrace{(i_1i_m)(i_1i_{m-1})\cdots(i_1i_2)}_{m-1\text{ transposições}},
 	\end{equation*}
 	%
-	\par\vspace{0.3cm} sendo que cada $i_j$ é um elemento distinto do conjunto $\left\{1, 2, \dots, m \right\}$.
+	sendo que cada $i_j$ é um elemento distinto do conjunto $\left\{1, 2, \dots, m \right\}$.
 	Consequentemente, como $m-1=n$, segue que $m$ e $n$ têm paridades distintas. Daí, sabemos também que o 
 	seguinte é verdade:
 	%
@@ -246,7 +248,7 @@
 		da fita tem n cruzamentos, então m e n têm paridades opostas.}
 	\end{center}
 	%
-	\par\vspace{0.3cm} Agora vamos considerar os dois círculos de fronteira da fita. Aqui entram os 
+	Agora vamos considerar os dois círculos de fronteira da fita. Aqui entram os 
 	\textit{links} e o \textit{linking number}!
 	
 	\par\vspace{0.3cm} Nessa análise, o que nos interessa é o fato de que o valor absoluto do 
@@ -259,9 +261,9 @@
 		\textbf{Afirmação 3. Com o protetor fechado, o \textit{linking number} dos círculos de fronteira é 0.}
 	\end{center}
 	%
-	\par\vspace{0.3cm} Agora, pense no protetor fechado. Como a fita não tem torções, os únicos 
+	Agora, pense no protetor fechado. Como a fita não tem torções, os únicos 
 	cruzamentos entre os círculos de fronteira ocorrem próximo dos $n$ autocruzamentos do centro, como 
-	na Figura \eqref{cruzamentos protetor}. O centro da fita já serviu seu próposito; podemos ignorá-lo agora.
+	na Figura \ref{cruzamentos protetor}. O centro da fita já serviu seu próposito; podemos ignorá-lo agora.
 	Agora, no lugar dos $n$ autocruzamentos do centro, vemos $4$ novos cruzamentos envolvendo os círculos 
 	de fronteira: dois autocruzamentos e dois cruzamentos. Como estamos interessados no \textit{linking number} 
 	dos círculos de fronteira, vamos ignorar os autocruzamentos. Então, temos um total de $2n$ cruzamentos,
@@ -277,8 +279,8 @@
 		\label{cruzamentos protetor}
 	\end{figure}
 	%
-	\par\vspace{0.3cm} Para computar o \textit{linking number}, olhe novamente para a 
-	Figura \eqref{cruzamentos protetor} e note que para cada círculo de fronteira, seus dois pedaços na figura
+	Para computar o \textit{linking number}, olhe novamente para a 
+	Figura \ref{cruzamentos protetor} e note que para cada círculo de fronteira, seus dois pedaços na figura
 	estarão orientados ambos para cima ou para baixo. Daí, segue que em cada um dos $n$ pares de cruzamentos 
 	temos ou dois $+1$ (círculos orientados para cima) ou dois $-1$ (círculos orientados para baixo). Portanto,
 	cada um desses $n$ pares de cruzamentos contribui com exatamente $1$ ou $-1$ para o \textit{linking number}.
@@ -292,7 +294,7 @@
 		Quando fechado, o arame do protetor deve ser enrolado em um número ímpar de \textit{loops}.
 	\end{theorem}  
 	%
-	\par\vspace{0.3cm} De fato, o arame do protetor se enrola em 3 \textit{loops} (respondendo à pergunta 1) 
+	De fato, o arame do protetor se enrola em 3 \textit{loops} (respondendo à pergunta 1) 
 	não havendo torsões no arame. Para responder à pergunta 2, você pode verificar experimentalmente que 
 	mesmo sendo possível forçar o protetor em 2 ou 4 \textit{loops}, isso causará torsões no arame. Contudo, 
 	$3$ \textit{loops} não é a única configuração possível, como demonstramos: em tese, qualquer número 

@@ -2380,525 +2380,880 @@
 	\end{lemma}
 	%
 	\begin{proof}
-		Vamos mostrar o item 1. Podemos escrever $\beta\in B_n$ como $\beta = \sigma_{i_1}^{\varepsilon_1}\cdots\sigma_{i_k}^{\varepsilon_k}$. Então,
+		Vamos mostrar o item 1. Podemos escrever $\beta\in B_n$ como 
+		$\beta = \sigma_{i_1}^{\varepsilon_1}\cdots\sigma_{i_k}^{\varepsilon_k}$. 
+		Então,
+		%
 		\begin{equation*}
-		\Phi_n(\beta) = R_{i_1}^{\varepsilon_1}\cdots R_{i_k}^{\varepsilon_k}
+		    \Phi_n(\beta) = R_{i_1}^{\varepsilon_1}\cdots R_{i_k}^{\varepsilon_k},
 		\end{equation*}
-		\par\vspace{0.3cm} sendo 
+		%
+		sendo
+		%
 		\begin{equation*}
-		R_{i_j}^{\varepsilon_j} = \underbrace{I\otimes \cdots \otimes I}_{i_j - 1}\otimes R^{\varepsilon_j}\otimes \underbrace{I\otimes \cdots\otimes I}_{n-i_j-1}.
+		    R_{i_j}^{\varepsilon_j} 
+		    = \underbrace{I\otimes \cdots \otimes I}_{i_j - 1}\otimes R^{\varepsilon_j}
+		    \otimes \underbrace{I\otimes \cdots\otimes I}_{n-i_j-1}.
 		\end{equation*} 
-		\par\vspace{0.3cm} Para qualquer trança $\beta\in B_n$
+		%
+		Para qualquer trança $\beta\in B_n$, temos
+		%
 		\begin{equation*}
-		\Phi_n(\beta)\mu^{\otimes n} = \mu^{\otimes n}\Phi_n(\beta)
+		    \Phi_n(\beta)\mu^{\otimes n} = \mu^{\otimes n}\Phi_n(\beta).
 		\end{equation*}
-		\par\vspace{0.3cm} Para ver isso, note que basta mostrarmos que
+		%
+		Para ver isso, note que basta mostrarmos que
+		%
 		\begin{equation}
 		\label{R mi duas vezes}
-		R^{\varepsilon}\mu^{\otimes 2} = \mu^{\otimes 2}R^{\varepsilon}
+		    R^{\varepsilon}\mu^{\otimes 2} = \mu^{\otimes 2}R^{\varepsilon},
 		\end{equation}
-		\par\vspace{0.3cm} sendo $\varepsilon=\pm1$, devido ao fato de que se $R^{\varepsilon}$ comuta com $\mu^{\otimes 2}$, então ele também comuta com $\mu^{\otimes n}$, pois $\mu^{\otimes n}$ é formada por blocos de $\mu^{\otimes 2}$ multiplicados por fatores $t^k$. Calculando, temos
+		%
+		sendo $\varepsilon=\pm1$, devido ao fato de que se $R^{\varepsilon}$ comuta 
+		com $\mu^{\otimes 2}$, então ele também comuta com $\mu^{\otimes n}$, pois 
+		$\mu^{\otimes n}$ é formada por blocos de $\mu^{\otimes 2}$ multiplicados por 
+		fatores $t^k$. Calculando, temos
+		%
 		\begin{align*}
-		R\mu^{\otimes 2} &= \begin{bmatrix}
-		1 & 0 & 0 & 0 \\
-		0 & 0 & -\sqrt{t} & 0 \\
-		0 & -\sqrt{t} & 1-t & 0 \\
-		0 & 0 & 0 & 1
-		\end{bmatrix}\begin{bmatrix}
-		1 \\
-		& t \\
-		& & t \\
-		& & & t^2
-		\end{bmatrix} \\
-		&= \begin{bmatrix}
-		1 & 0 & 0 & 0 \\
-		0 & 0 & -t\sqrt{t} & 0 \\
-		0 & -t\sqrt{t} & (1-t)t &  0 \\
-		0 & 0 & 0 & t^2
-		\end{bmatrix} \\
-		&= \begin{bmatrix}
-		1 \\
-		& t \\
-		& & t \\
-		& & & t^2
-		\end{bmatrix}\begin{bmatrix}
-		1 & 0 & 0 & 0 \\
-		0 & 0 & -\sqrt{t} & 0 \\
-		0 & -\sqrt{t} & 1-t & 0 \\
-		0 & 0 & 0 & 1
-		\end{bmatrix} 
-		= \mu^{\otimes 2}R
+    		R\mu^{\otimes 2} &= \begin{bmatrix}
+    		1 & 0 & 0 & 0 \\
+    		0 & 0 & -\sqrt{t} & 0 \\
+    		0 & -\sqrt{t} & 1-t & 0 \\
+    		0 & 0 & 0 & 1
+    		\end{bmatrix}\begin{bmatrix}
+    		1 \\
+    		& t \\
+    		& & t \\
+    		& & & t^2
+    		\end{bmatrix} \\
+    		&= \begin{bmatrix}
+    		1 & 0 & 0 & 0 \\
+    		0 & 0 & -t\sqrt{t} & 0 \\
+    		0 & -t\sqrt{t} & (1-t)t &  0 \\
+    		0 & 0 & 0 & t^2
+    		\end{bmatrix} \\
+    		&= \begin{bmatrix}
+    		1 \\
+    		& t \\
+    		& & t \\
+    		& & & t^2
+    		\end{bmatrix}\begin{bmatrix}
+    		1 & 0 & 0 & 0 \\
+    		0 & 0 & -\sqrt{t} & 0 \\
+    		0 & -\sqrt{t} & 1-t & 0 \\
+    		0 & 0 & 0 & 1
+    		\end{bmatrix} 
+    		= \mu^{\otimes 2}R
 		\end{align*}
-		\par\vspace{0.3cm} e também
+		%
+		e também
+		%
 		\begin{align*}
-		R^{-1}\mu^{\otimes 2} &= \begin{bmatrix}
-		1 & 0 & 0 & 0 \\
-		0 & 1 - \frac{1}{t} & -\frac{1}{\sqrt{t}} & 0 \\
-		0 & -\frac{1}{\sqrt{t}} & 0 & 0 \\
-		0 & 0 & 0 & 1
-		\end{bmatrix}\begin{bmatrix}
-		1 \\
-		& t \\
-		& & t \\
-		& & & t^2
-		\end{bmatrix} \\
-		&= \begin{bmatrix}
-		1 & 0 & 0 & 0 \\
-		0 & t-1 & -\frac{t}{\sqrt{t}} & 0 \\
-		0 & -\frac{t}{\sqrt{t}} & 0 &  0 \\
-		0 & 0 & 0 & t^2
-		\end{bmatrix} \\
-		&= \begin{bmatrix}
-		1 \\
-		& t \\
-		& & t \\
-		& & & t^2
-		\end{bmatrix}\begin{bmatrix}
-		1 & 0 & 0 & 0 \\
-		0 & 1 - \frac{1}{t} & -\frac{1}{\sqrt{t}} & 0 \\
-		0 & -\frac{1}{\sqrt{t}} & 0 & 0 \\
-		0 & 0 & 0 & 1
-		\end{bmatrix} = \mu^{\otimes 2}R^{-1}
+    		R^{-1}\mu^{\otimes 2} &= \begin{bmatrix}
+    		1 & 0 & 0 & 0 \\
+    		0 & 1 - \frac{1}{t} & -\frac{1}{\sqrt{t}} & 0 \\
+    		0 & -\frac{1}{\sqrt{t}} & 0 & 0 \\
+    		0 & 0 & 0 & 1
+    		\end{bmatrix}\begin{bmatrix}
+    		1 \\
+    		& t \\
+    		& & t \\
+    		& & & t^2
+    		\end{bmatrix} \\
+    		&= \begin{bmatrix}
+    		1 & 0 & 0 & 0 \\
+    		0 & t-1 & -\frac{t}{\sqrt{t}} & 0 \\
+    		0 & -\frac{t}{\sqrt{t}} & 0 &  0 \\
+    		0 & 0 & 0 & t^2
+    		\end{bmatrix} \\
+    		&= \begin{bmatrix}
+    		1 \\
+    		& t \\
+    		& & t \\
+    		& & & t^2
+    		\end{bmatrix}\begin{bmatrix}
+    		1 & 0 & 0 & 0 \\
+    		0 & 1 - \frac{1}{t} & -\frac{1}{\sqrt{t}} & 0 \\
+    		0 & -\frac{1}{\sqrt{t}} & 0 & 0 \\
+    		0 & 0 & 0 & 1
+    		\end{bmatrix} = \mu^{\otimes 2}R^{-1}.
 		\end{align*}
-		\par\vspace{0.3cm} Daí, sendo $\beta, \gamma\in B_n$ arbitrárias, 
+		%
+		Daí, sendo $\beta, \gamma\in B_n$ arbitrárias, temos
+		%
 		\begin{align*}
-		\Phi_n(\gamma\beta\gamma^{-1}) \mu^{\otimes n} &= \Phi_n(\gamma)\Phi_n(\beta)\Phi_n(\gamma^{-1})\mu^{\otimes n} \\
-		&= \Phi_n(\gamma)(\Phi_n(\beta)\mu^{\otimes n})\Phi_n(\gamma^{-1})
+    		\Phi_n(\gamma\beta\gamma^{-1}) \mu^{\otimes n} 
+    		&= \Phi_n(\gamma)\Phi_n(\beta)\Phi_n(\gamma^{-1})\mu^{\otimes n} \\
+    		&= \Phi_n(\gamma)(\Phi_n(\beta)\mu^{\otimes n})\Phi_n(\gamma^{-1}).
 		\end{align*}
-		\par\vspace{0.3cm} Logo, como $\Phi_n$ é homomorfismo e pelo Teorema \eqref{traco}, obtemos
+		%
+		Logo, como $\Phi_n$ é homomorfismo e pelo Teorema \ref{traco}, obtemos
+		%
 		\begin{align*}
-		\tr(\Phi_n(\gamma\beta\gamma^{-1}) \mu^{\otimes n})	&= \tr(\Phi_n(\gamma)(\Phi_n(\beta)\mu^{\otimes n})\Phi_n^{-1}(\gamma)) \\
-		&= \tr(\Phi_n(\beta)\mu^{\otimes n})
+    		\tr(\Phi_n(\gamma\beta\gamma^{-1}) \mu^{\otimes n})	
+    		&= \tr(\Phi_n(\gamma)(\Phi_n(\beta)\mu^{\otimes n})\Phi_n^{-1}(\gamma)) \\
+    		&= \tr(\Phi_n(\beta)\mu^{\otimes n}).
 		\end{align*}
-		\par\vspace{0.3cm} Como $l(\gamma\beta\gamma^{-1}) = l(\beta)$, segue que
+		%
+		Como $l(\gamma\beta\gamma^{-1}) = l(\beta)$, segue que
+		%
 		\begin{equation*}
-		\xi(\gamma\beta\gamma^{-1}) = \xi(\beta)
+		    \xi(\gamma\beta\gamma^{-1}) = \xi(\beta)
 		\end{equation*}
-		\par\vspace{0.3cm} e concluímos a demonstração de 1. Agora, 2.
-		\par\vspace{0.3cm} Suponha $\beta\in B_n$. Então, $\Phi_n(\beta) = M\in M(2^n, \mathbb{Z}[\sqrt{t}, \frac{1}{\sqrt{t}}])$. Precisamos computar a matriz $\Phi_{n+1}(\beta\sigma_n)$, de ordem $2^{n+1}$. De \eqref{parte 2 invariante Jones}, temos
+		%
+		e concluímos a demonstração de 1. Agora, 2.
+		
+		\par\vspace{0.3cm} Suponha $\beta\in B_n$. Então, 
+		$\Phi_n(\beta) = M\in M(2^n, \mathbb{Z}[\sqrt{t}, \frac{1}{\sqrt{t}}])$. 
+		Precisamos computar a matriz $\Phi_{n+1}(\beta\sigma_n)$, de ordem $2^{n+1}$. 
+		De \eqref{parte 2 invariante Jones}, temos
+		%
 		\begin{equation*}
-		\Phi_{n+1}(\beta\sigma_n) = \Phi_{n+1}(\beta)\Phi_{n+1}(\sigma_n)
+		    \Phi_{n+1}(\beta\sigma_n) = \Phi_{n+1}(\beta)\Phi_{n+1}(\sigma_n).
 		\end{equation*}
-		\par\vspace{0.3cm} Além disso, de \eqref{Phi invariante Jones}, temos
+		%
+		Além disso, de \eqref{Phi invariante Jones}, temos
+		%
 		\begin{equation*}
-		\Phi_{n+1}(\beta) = \Phi_n(\beta)\otimes I \text{ e }\Phi_{n+1}(\sigma_n) = I^{\otimes n-1}\otimes R
+		    \Phi_{n+1}(\beta) 
+		    = \Phi_n(\beta)\otimes I \text{ e }\Phi_{n+1}(\sigma_n) = I^{\otimes n-1}\otimes R.
 		\end{equation*}
-		\par\vspace{0.3cm} Se fizermos $\Phi_n(\beta) = M = ||a_{ij}||$, então
+		%
+		Se fizermos $\Phi_n(\beta) = M = ||a_{ij}||$, então
+		%
 		\begin{equation*}
-		\Phi_{n+1}(\beta\sigma_n)\mu^{\otimes n+1} = (M\otimes I)(I^{\otimes n-1}\otimes R)(\underbrace{\mu\otimes\cdots\otimes\mu}_{n+1})
+		    \Phi_{n+1}(\beta\sigma_n)\mu^{\otimes n+1} 
+		    = (M\otimes I)(I^{\otimes n-1}\otimes R)(\underbrace{\mu\otimes\cdots\otimes\mu}_{n+1}),
 		\end{equation*}
-		\par\vspace{0.3cm} enquanto que
+		%
+		enquanto que
+		%
 		\begin{equation*}
-		\Phi_n(\beta)\mu^{\otimes n} = M(\underbrace{\mu\otimes\cdots\otimes\mu}_{n})
+		    \Phi_n(\beta)\mu^{\otimes n} = M(\underbrace{\mu\otimes\cdots\otimes\mu}_{n}).
 		\end{equation*}
-		\par\vspace{0.3cm} Agora, se escrevermos 
+		%
+		Agora, se escrevermos 
+		%
 		\begin{align*}
-		\mu^{\otimes n} = \begin{bmatrix}
-		b_1 \\
-		& b_2 \\
-		& & \ddots \\
-		& & & b_{2^n}
-		\end{bmatrix}
+    		\mu^{\otimes n} = \begin{bmatrix}
+    		b_1 \\
+    		& b_2 \\
+    		& & \ddots \\
+    		& & & b_{2^n}
+    		\end{bmatrix},
 		\end{align*}
-		\par\vspace{0.3cm} então 
+		%
+		então
+		%
 		\begin{equation*}
-		\tr(\Phi_n(\beta)\mu^{\otimes n}) = \sum_{i=1}^{2^n}a_{ii}b_i
+		    \tr(\Phi_n(\beta)\mu^{\otimes n}) = \sum_{i=1}^{2^n}a_{ii}b_i,
 		\end{equation*}
-		\par\vspace{0.3cm} Os $b_i$ têm a forma
+		%
+		sendo os $b_i$ da forma
+		%
 		\begin{align*}
-		b_1 = 1&, b_2 = t \\
-		\text{para }p\geq 1, b_i = tb_p \text{ se }i=2p &\text{ e } b_i = b_p \text{ se }i=2p-1 
+		    b_1 = 1&, b_2 = t \\
+		    \text{para }p\geq 1, b_i = tb_p \text{ se }i=2p &\text{ e } b_i = b_p \text{ se }i=2p-1.
 		\end{align*}
-		\par\vspace{0.3cm} Isso pode ser verificado por indução em $n$. De fato, devido à definição de $\mu$ é imediato que $b_1 = 1$ e $b_2 = t$. Suponha, então, que essa forma é válida para $p = 2^{n-1}$, ou seja, para $\mu^{\otimes n-1 }$. Assim, segue da definição de produto tensorial que para $\mu^{\otimes n}$ a mesma forma se manterá.
-		\par\vspace{0.3cm} Como consequência imediata segue o fato de que se $i = 2^kq$, com $q =2r - 1$, então $b_i = t^kb_q$. Em particular, $b_{2^k} = t^k$.
-		\par\vspace{0.3cm} Como $\mu^{\otimes n+1}$ é uma matriz diagonal, para calcularmos $\tr( (\Phi_{n+1}(\beta\sigma_n))\mu^{\otimes n+1} )$ basta conhecer as entradas da diagonal de $\Phi_{n+1}(\beta\sigma_n)$, ou seja, as entradas da diagonal de $(M\otimes I)(I^{\otimes n-1}\otimes R)$. 
-		\par\vspace{0.3cm} Sabemos que $I^{\otimes n-1}\otimes R$ é uma matriz diagonal de ordem $2^{n+1}$ da forma
+		%
+		Isso pode ser verificado por indução em $n$. De fato, devido à definição de $\mu$ 
+		é imediato que $b_1 = 1$ e $b_2 = t$. Suponha, então, que essa forma é válida para 
+		$p = 2^{n-1}$, ou seja, para $\mu^{\otimes n-1 }$. Assim, segue da definição de 
+		produto tensorial que para $\mu^{\otimes n}$ a mesma forma se manterá.
+		
+		\par\vspace{0.3cm} Como consequência imediata segue o fato de que se $i = 2^kq$, 
+		com $q =2r - 1$, então $b_i = t^kb_q$. Em particular, $b_{2^k} = t^k$.
+		
+		\par\vspace{0.3cm} Como $\mu^{\otimes n+1}$ é uma matriz diagonal, para calcularmos 
+		$\tr( (\Phi_{n+1}(\beta\sigma_n))\mu^{\otimes n+1} )$ basta conhecer as entradas da 
+		diagonal de $\Phi_{n+1}(\beta\sigma_n)$, ou seja, as entradas da diagonal de 
+		$(M\otimes I)(I^{\otimes n-1}\otimes R)$.
+		
+		\par\vspace{0.3cm} Sabemos que $I^{\otimes n-1}\otimes R$ é uma matriz diagonal 
+		de ordem $2^{n+1}$ da forma
+		%
 		\begin{align*}
-		I^{\otimes n-1}\otimes R = \left.\begin{bmatrix}
-		R \\
-		& R \\
-		& & \ddots \\
-		& & & R
-		\end{bmatrix} \right \} 2^{n-1}\text{ blocos}
+    		I^{\otimes n-1}\otimes R = \left.\begin{bmatrix}
+    		R \\
+    		& R \\
+    		& & \ddots \\
+    		& & & R
+    		\end{bmatrix} \right \} 2^{n-1}\text{ blocos.}
 		\end{align*}
-		\par\vspace{0.3cm} Portanto, cada uma das entradas da diagonal de $\Phi_{n+1}(\beta\sigma_n)$ vêm do produto
+		%
+		Portanto, cada uma das entradas da diagonal de $\Phi_{n+1}(\beta\sigma_n)$ vêm do produto
+		%
 		\begin{align*}
-		\left( \begin{bmatrix}
-		a_{2i-1,2i-1} & a_{2i-1, 2i} \\
-		a_{2i,2i-1} & a_{2i, 2i}
-		\end{bmatrix}\otimes I \right)R
+    		\left( \begin{bmatrix}
+    		a_{2i-1,2i-1} & a_{2i-1, 2i} \\
+    		a_{2i,2i-1} & a_{2i, 2i}
+    		\end{bmatrix}\otimes I \right)R
 		\end{align*}
-		\par\vspace{0.3cm} que, ignorando todas as entradas fora da diagonal, pode ser expandido como segue
+		%
+		que, ignorando todas as entradas fora da diagonal, pode ser expandido como
+		%
 		\begin{align*}
-		\begin{bmatrix}
-		a_{2i-1, 2i-1} \\
-		& 0 \\
-		& & a_{2i,2i}(1-t) \\
-		& & & a_{2i,2i}
-		\end{bmatrix}
+    		\begin{bmatrix}
+    		a_{2i-1, 2i-1} \\
+    		& 0 \\
+    		& & a_{2i,2i}(1-t) \\
+    		& & & a_{2i,2i}
+    		\end{bmatrix}.
 		\end{align*}
-		\par\vspace{0.3cm} Usando a forma dos $b_i$ encontrada anteriormente, podemos computar $\tr((\Phi_{n+1}(\beta\sigma_n))\mu^{\otimes n+1})$
+		%
+		Usando a forma dos $b_i$ encontrada anteriormente, encontramos
+		%
 		\begin{align*}
-		\tr((\Phi_{n+1}(\beta\sigma_n))\mu^{\otimes n+1}) &= \sum_{i=1}^{2^{n-1}} \left\{ a_{2i-1,2i-1}b_{4i-3} + a_{2i,2i}(1-t)b_{4i-1} + a_{2i,2i}b_{4i} \right\} \\
-		&= \sum_{i=1}^{2^{n-1}} \left\{ a_{2i-1,2i-1}b_{2(2i-1)-1} + a_{2i,2i}(1-t)b_{2(2i)-1} + a_{2i,2i}b_{2(2i)} \right\} \\
-		&= \sum_{i=1}^{2^{n-1}} \left\{ a_{2i-1,2i-1}b_{2i-1} + a_{2i,2i}[(1-t)b_{2i} + tb_{2i}] \right\} \\
-		&= \sum_{i=1}^{2^{n-1}} \left\{ a_{2i-1,2i-1}b_{2i-1} + a_{2i,2i}b_{2i} \right\} \\
-		&= \sum_{j=1}^{2^n}a_{jj}b_j \\
-		&= \tr ( \Phi_n(\beta)\mu^{\otimes n}  )
+    		\tr((\Phi_{n+1}(\beta\sigma_n))\mu^{\otimes n+1}) 
+    		&= \sum_{i=1}^{2^{n-1}} \left\{ a_{2i-1,2i-1}b_{4i-3} 
+    		+ a_{2i,2i}(1-t)b_{4i-1} + a_{2i,2i}b_{4i} \right\} \\
+    		&= \sum_{i=1}^{2^{n-1}} \left\{ a_{2i-1,2i-1}b_{2(2i-1)-1} 
+    		+ a_{2i,2i}(1-t)b_{2(2i)-1} + a_{2i,2i}b_{2(2i)} \right\} \\
+    		&= \sum_{i=1}^{2^{n-1}} \left\{ a_{2i-1,2i-1}b_{2i-1} + a_{2i,2i}[(1-t)b_{2i} + tb_{2i}] \right\} \\
+    		&= \sum_{i=1}^{2^{n-1}} \left\{ a_{2i-1,2i-1}b_{2i-1} + a_{2i,2i}b_{2i} \right\} \\
+    		&= \sum_{j=1}^{2^n}a_{jj}b_j \\
+    		&= \tr ( \Phi_n(\beta)\mu^{\otimes n} ).
 		\end{align*}
-		\par\vspace{0.3cm} Uma vez que $l(\beta\sigma_n) = l(\beta) + 1$, segue que
+		%
+		Uma vez que $l(\beta\sigma_n) = l(\beta) + 1$, segue que
+		%
 		\begin{equation*}
-		\xi(\beta\sigma_n) = \xi(\beta)
+		    \xi(\beta\sigma_n) = \xi(\beta),
 		\end{equation*}
-		\par\vspace{0.3cm} pois os traços são iguais e o expoente de $t$ em $\xi(\beta\sigma_n)$ é $\displaystyle{ \frac{1}{2}(l(\beta) + 1 - (n +1) + 1) = \frac{1}{2}( l(\beta) - n + 1 ) }$, que é igual ao expoente de $t$ em $\xi(\beta)$.
-		\par\vspace{0.3cm} De modo similar, para $\sigma_n^{-1}$ no lugar de $\sigma_n$, basta substituirmos $R$ por $R^{-1}$. Desse modo, 
+		%
+		pois os traços são iguais e o expoente de $t$ em $\xi(\beta\sigma_n)$ 
+		é $\displaystyle{ \frac{1}{2}(l(\beta) + 1 - (n +1) + 1) = \frac{1}{2}( l(\beta) - n + 1 ) }$, 
+		que é igual ao expoente de $t$ em $\xi(\beta)$.
+		
+		\par\vspace{0.3cm} De modo similar, para $\sigma_n^{-1}$ no lugar de $\sigma_n$, 
+		basta substituirmos $R$ por $R^{-1}$. Desse modo,
+		%
 		\begin{equation*}
-		\Phi_{n+1}(\beta\sigma_n^{-1})\mu^{\otimes n+1} = (M\otimes I)(I^{\otimes n-1}\otimes R^{-1})\mu^{\otimes n+1}
+		    \Phi_{n+1}(\beta\sigma_n^{-1})\mu^{\otimes n+1} 
+		    = (M\otimes I)(I^{\otimes n-1}\otimes R^{-1})\mu^{\otimes n+1}.
 		\end{equation*}
-		\par\vspace{0.3cm} Como antes, para calcular $\tr ( (\Phi_{n+1}(\beta\sigma_n^{-1}))\mu^{\otimes n+1} )$ é suficiente saber as entradas da diagonal de $ \Phi_{n+1}(\beta\sigma_n^{-1}) $, ou seja, as entradas da diagonal de $(M\otimes I)(I^{\otimes n-1}\otimes R^{-1})$. 
-		\par\vspace{0.3cm} Sabemos que $I^{\otimes n-1}\otimes R^{-1}$ é uma matriz diagonal de ordem $2^{n+1}$, podendo ser escrita como
+		%
+		Como antes, para calcular $\tr ( (\Phi_{n+1}(\beta\sigma_n^{-1}))\mu^{\otimes n+1} )$ 
+		é suficiente saber as entradas da diagonal de $ \Phi_{n+1}(\beta\sigma_n^{-1}) $, 
+		ou seja, as entradas da diagonal de $(M\otimes I)(I^{\otimes n-1}\otimes R^{-1})$. 
+		
+		\par\vspace{0.3cm} Sabemos que $I^{\otimes n-1}\otimes R^{-1}$ é uma matriz 
+		diagonal de ordem $2^{n+1}$, podendo ser escrita como
+		%
 		\begin{align*}
-		I^{\otimes n-1}\otimes R^{-1} = \left. \begin{bmatrix}
-		R^{-1} \\
-		& R^{-1} \\
-		& & \ddots \\
-		& & & R^{-1}
-		\end{bmatrix} \right\} 2^{n-1}\text{ blocos}
+    		I^{\otimes n-1}\otimes R^{-1} = \left. \begin{bmatrix}
+    		R^{-1} \\
+    		& R^{-1} \\
+    		& & \ddots \\
+    		& & & R^{-1}
+    		\end{bmatrix} \right\} 2^{n-1}\text{ blocos.}
 		\end{align*}
-		\par\vspace{0.3cm} Consequentemente, as entradas diagonais de $\Phi_{n+1}(\beta\sigma_n^{-1})$ vêm do produto
+		%
+		Consequentemente, as entradas diagonais de $\Phi_{n+1}(\beta\sigma_n^{-1})$ vêm do produto
+		%
 		\begin{align*}
-		\left( \begin{bmatrix}
-		a_{2i-1,2i-1} & a_{2i-1,2i} \\
-		a_{2i,2i-1} & a_{2i,2i} 
-		\end{bmatrix}\otimes I \right)R^{-1}
+    		\left( \begin{bmatrix}
+    		a_{2i-1,2i-1} & a_{2i-1,2i} \\
+    		a_{2i,2i-1} & a_{2i,2i} 
+    		\end{bmatrix}\otimes I \right)R^{-1},
 		\end{align*}
-		\par\vspace{0.3cm} que, ignorando as entradas não diagonais, pode ser expandida como
+		%
+		que, ignorando as entradas não diagonais, pode ser expandida como
+		%
 		\begin{align*}
-		\begin{bmatrix}
-		a_{2i-1,2i-1} \\
-		& a_{2i-1,2i-1}(1-\frac{1}{t}) \\
-		& & 0 \\
-		& & & a_{2i,2i}
-		\end{bmatrix}
+    		\begin{bmatrix}
+    		a_{2i-1,2i-1} \\
+    		& a_{2i-1,2i-1}(1-\frac{1}{t}) \\
+    		& & 0 \\
+    		& & & a_{2i,2i}
+    		\end{bmatrix}.
 		\end{align*}
-		\par\vspace{0.3cm} Daí, usando a forma dos $b_i$ encontrada anteriormente, temos
+		%
+		Daí, usando a forma dos $b_i$ encontrada anteriormente, temos
+		%
 		\begin{align*}
-		\tr((\Phi_{n+1}(\beta\sigma_n^{-1}))\mu^{\otimes n+1}) &= \sum_{i=1}^{2^{n-1}} \left\{ a_{2i-1,2i-1}b_{4i-3} + a_{2i-1,2i-1}\left(1-\frac{1}{t}\right)b_{4i-2} + a_{2i,2i}b_{4i} \right\} \\
-		&= \sum_{i=1}^{2^{n-1}} \left\{ a_{2i-1,2i-1}b_{2(2i-1)-1} + a_{2i-1,2i-1}\left(1-\frac{1}{t}\right)b_{2(2i-1)} + a_{2i,2i}b_{2(2i)} \right\} \\
-		&= \sum_{i=1}^{2^{n-1}} \left\{ a_{2i-1,2i-1}[b_{2i-1} + tb_{2i-1} - b_{2i-1}] + a_{2i,2i}tb_{2i}\right\} \\
-		&= t\sum_{i=1}^{2^{n-1}} \left\{ a_{2i-1,2i-1}b_{2i-1} + a_{2i,2i}b_{2i} \right\} \\
-		&= t\sum_{j=1}^{2^n}a_{jj}b_j \\
-		&= t\tr ( \Phi_n(\beta)\mu^{\otimes n}  )
+    		\tr((\Phi_{n+1}(\beta\sigma_n^{-1}))\mu^{\otimes n+1}) 
+    		&= \sum_{i=1}^{2^{n-1}} \left\{ a_{2i-1,2i-1}b_{4i-3} 
+    		+ a_{2i-1,2i-1}\left(1-\frac{1}{t}\right)b_{4i-2} + a_{2i,2i}b_{4i} \right\} \\
+    		&= \sum_{i=1}^{2^{n-1}} \left\{ a_{2i-1,2i-1}b_{2(2i-1)-1} 
+    		+ a_{2i-1,2i-1}\left(1-\frac{1}{t}\right)b_{2(2i-1)} + a_{2i,2i}b_{2(2i)} \right\} \\
+    		&= \sum_{i=1}^{2^{n-1}} \left\{ a_{2i-1,2i-1}[b_{2i-1} 
+    		+ tb_{2i-1} - b_{2i-1}] + a_{2i,2i}tb_{2i}\right\} \\
+    		&= t\sum_{i=1}^{2^{n-1}} \left\{ a_{2i-1,2i-1}b_{2i-1} + a_{2i,2i}b_{2i} \right\} \\
+    		&= t\sum_{j=1}^{2^n}a_{jj}b_j \\
+    		&= t\tr ( \Phi_n(\beta)\mu^{\otimes n} ).
 		\end{align*}
-		\par\vspace{0.3cm} Como $l(\beta\sigma_n^{-1}) = l(\beta) - 1$, temos
+		%
+		Como $l(\beta\sigma_n^{-1}) = l(\beta) - 1$, temos
+		%
 		\begin{align*}
-		\xi(\beta\sigma_n^{-1}) &=  \frac{\tr(\Phi_n(\beta)\mu^{\otimes n}) }{ 1+t }t\cdot t^{ \frac{1}{2}(l(\beta) -1 - (n+1) + 1  ) } \\
-		&= \frac{\tr(\Phi_n(\beta)\mu^{\otimes n}) }{ 1+t }t^{ \frac{1}{2}(l(\beta)- n+1) } \\
-		&= \xi(\beta)
+    		\xi(\beta\sigma_n^{-1}) 
+    		&=  \frac{\tr(\Phi_n(\beta)\mu^{\otimes n})}{1+t}t\cdot t^{\frac{1}{2}(l(\beta) - 1 - (n+1) + 1)} \\
+    		&= \frac{\tr(\Phi_n(\beta)\mu^{\otimes n}) }{ 1+t }t^{ \frac{1}{2}(l(\beta)- n+1) } \\
+    		&= \xi(\beta)
 		\end{align*}
-		\par\vspace{0.3cm} e finalizamos a demonstração.
+		%
+		e finalizamos a demonstração.
 	\end{proof}
-	\par\vspace{0.3cm} Agora podemos demonstrar o teorema desejado.
+	%
+	Agora podemos demonstrar o teorema desejado.
+	%
 	\begin{theorem}
-		\label{polinomio de Jones}
-		Com a função $\Phi_n$ definida em \eqref{Phi invariante Jones} e \eqref{parte 2 invariante Jones} e a matriz $\mu$ definida em \eqref{parte 1 invariante Jones}, temos que
+	\label{polinomio de Jones}
+		Com a função $\Phi_n$ definida em \eqref{Phi invariante Jones} e \eqref{parte 2 invariante Jones} 
+		e a matriz $\mu$ definida em \eqref{parte 1 invariante Jones}, temos que
+		%
 		\begin{equation}
 		\label{invariante Jones}
-		\xi(\beta) = \frac{t^{\nu}\tr(\Phi_n(\beta)\mu^{\otimes n})}{1+t}
+		    \xi(\beta) = \frac{t^{\nu}\tr(\Phi_n(\beta)\mu^{\otimes n})}{1+t},
 		\end{equation}
-		\par\vspace{0.3cm} com $\nu = \displaystyle{ \frac{1}{2}(l(\beta) - n + 1) }$, é um invariante de $\widetilde{\beta}$, independente da escolha de $\beta$. Em outras palavras, se $\widetilde{\beta_1}\approx\widetilde{\beta_2}$, para $\beta_1\in B_n$ e $\beta_2\in B_m$, então $\xi(\beta_1) = \xi(\beta_2)$. Esse invariante de nó é chamado polinômio de Jones de um nó (ou link) e denotado por $V_{\widetilde{\beta}}(t)$.
+		%
+		com $\nu = \displaystyle{ \frac{1}{2}(l(\beta) - n + 1) }$, é um invariante 
+		de $\widetilde{\beta}$, independente da escolha de $\beta$. Em outras palavras, se
+		$\widetilde{\beta_1}\approx\widetilde{\beta_2}$, para $\beta_1\in B_n$ e $\beta_2\in B_m$, 
+		então $\xi(\beta_1) = \xi(\beta_2)$. Esse invariante de nó é chamado polinômio de Jones 
+		de um nó (ou link) e denotado por $V_{\widetilde{\beta}}(t)$.
 	\end{theorem}
+	%
 	\begin{proof}
-		Suponha que os fechos de $\beta$ e $\beta'$, $\widetilde{\beta}$ e $\widetilde{\beta'}$ respectivamente, são equivalentes. Então, pelo Teorema \eqref{teorema de Markov}, $\beta\underset{M}{\sim}\beta'$, i.e., existe uma sequência finita
+		Suponha que os fechos de $\beta$ e $\beta'$, $\widetilde{\beta}$ e $\widetilde{\beta'}$ 
+		respectivamente, são equivalentes. Então, pelo Teorema \ref{teorema de Markov},
+		$\beta\underset{M}{\sim}\beta'$, i.e., existe uma sequência finita
+		%
 		\begin{equation*}
-		\beta = \beta_0\to\beta_1\to\cdots\to\beta_m=\beta'
+		    \beta = \beta_0\to\beta_1\to\cdots\to\beta_m = \beta'
 		\end{equation*}
-		\par\vspace{0.3cm} tal que $\beta_{i+1}$ é obtida de $\beta_i$, para $i = 0,1,\dots,m-1$, aplicando um dos movimentos de Markov $M_1^{\pm1}$ e $M_2^{\pm1}$.
-		\par\vspace{0.3cm} Note que se $\beta$ e $\beta'$ são tranças equivalentes, então $\beta = \beta'$ como tranças de $n$ cordas e, portanto, $\Phi_n(\beta) = \Phi_n(\beta')$. Como $l(\beta) = l(\beta')$ (pois $l(\beta)$ é um invariante de tranças), segue que $\xi(\beta) = \xi(\beta')$.
-		\par\vspace{0.3cm} Se $\beta_{i+1}$ é conjugada de $\beta_i$, ou seja, se $\beta_i\xrightarrow{M_1}\beta_{i+1}$ ou $\beta_i\xrightarrow{M_1^{-1}}\beta_{i+1}$, então pelo item 1 do Lema \eqref{lema 2 Jones} temos $\xi(\beta_i) = \xi(\beta_{i+1})$.
-		\par\vspace{0.3cm} Por outro lado, se $\beta_i\xrightarrow{M_2}\beta_{i+1}$ ou $\beta_i\xrightarrow{M_2^{-1}}\beta_{i+1}$, então pelo item 2 do Lema \eqref{lema 2 Jones}, temos $\xi(\beta_i) = \xi(\beta_{i+1})$.
+		%
+		tal que $\beta_{i+1}$ é obtida de $\beta_i$, para $i = 0,1,\dots,m-1$, 
+		aplicando um dos movimentos de Markov $M_1^{\pm1}$ e $M_2^{\pm1}$.
+		
+		\par\vspace{0.3cm} Note que se $\beta$ e $\beta'$ são tranças equivalentes, 
+		então $\beta = \beta'$ como tranças de $n$ cordas e, portanto, $\Phi_n(\beta) = \Phi_n(\beta')$. 
+		Como $l(\beta) = l(\beta')$ (pois $l(\beta)$ é um invariante de tranças), segue que 
+		$\xi(\beta) = \xi(\beta')$.
+		
+		\par\vspace{0.3cm} Se $\beta_{i+1}$ é conjugada de $\beta_i$, ou seja, se
+		$\beta_i\xrightarrow{M_1}\beta_{i+1}$ ou $\beta_i\xrightarrow{M_1^{-1}}\beta_{i+1}$, 
+		então pelo item 1 do Lema \ref{lema 2 Jones} temos $\xi(\beta_i) = \xi(\beta_{i+1})$.
+		
+		\par\vspace{0.3cm} Por outro lado, se $\beta_i\xrightarrow{M_2}\beta_{i+1}$ ou
+		$\beta_i\xrightarrow{M_2^{-1}}\beta_{i+1}$, então pelo item 2 do Lema \ref{lema 2 Jones}, temos
+		$\xi(\beta_i) = \xi(\beta_{i+1})$.
+		
 		\par\vspace{0.3cm} Portanto, $\xi(\beta) = \xi(\beta')$, como queríamos mostrar.
 	\end{proof}
-	\par\vspace{0.3cm} Para $n=2$, por exemplo, temos $\Phi_2(\sigma_1) = R$ e $\tr( \Phi_2(\sigma_1)\mu^{\otimes 2} ) = \tr(R\mu^{\otimes 2}) = 1+t$ (veja o cálculo de \eqref{R mi duas vezes}). Daí, como $l(\sigma_1) = 1$, temos $V_{\widetilde{\sigma_1}}(t) = \xi(\sigma_1) = \displaystyle{\frac{t^{\frac{1}{2}(1-2+1)} 
-			(1+t) }{1+t}} = 1$.
-	\par\vspace{0.3cm} Para $n=3$ e $\beta = \sigma_1\sigma_2$ em $B_3$, é trabalhoso, mas não muito difícil, mostrar que
+	%
+	Para $n=2$, por exemplo, temos $\Phi_2(\sigma_1) = R$ e 
+	$\tr(\Phi_2(\sigma_1)\mu^{\otimes 2}) = \tr(R\mu^{\otimes 2}) = 1+t$ 
+	(veja o cálculo de \eqref{R mi duas vezes}). Daí, como $l(\sigma_1) = 1$, 
+	temos $V_{\widetilde{\sigma_1}}(t) = \xi(\sigma_1) 
+	= \displaystyle{\frac{t^{\frac{1}{2}(1-2+1)} (1+t)}{1+t}} = 1$.
+	
+	\par\vspace{0.3cm} Para $n=3$ e $\beta = \sigma_1\sigma_2$ em $B_3$, é trabalhoso, mas não muito difícil,
+	mostrar que
+	%
 	\begin{equation*}
-	\tr(\Phi_3(\sigma_1\sigma_2)\mu^{\otimes 3}) = \tr( (R\otimes I)(I\otimes R) \mu^{\otimes 3} ) = 1+t
+	    \tr(\Phi_3(\sigma_1\sigma_2)\mu^{\otimes 3}) = \tr((R\otimes I)(I\otimes R) \mu^{\otimes 3}) = 1+t.
 	\end{equation*} 
-	\par\vspace{0.3cm} Como $l(\beta) = 2$, temos
+	%
+	Como $l(\beta) = 2$, temos
+	%
 	\begin{align*}
-	V_{\widetilde{\beta}}(t) = \frac{t^{\frac{1}{2}(2-3+1)} (1+t)  }{1+t} = 1
+	    V_{\widetilde{\beta}}(t) = \frac{t^{\frac{1}{2}(2-3+1)} (1+t)}{1+t} = 1,
 	\end{align*}
-	\par\vspace{0.3cm} o que era esperado, pois $\sigma_1$ em $B_2$ e $\sigma_1\sigma_2$ em $B_3$ representam o nó trivial.
-	\par\vspace{0.3cm} Se considerarmos a trança trivial $\beta =1_n\in B_n$, então $\Phi_n(\beta) = I^{\otimes n}$ e, daí, usando $\eqref{mi tensor n vezes}$, temos
+	%
+	o que era esperado, pois $\sigma_1$ em $B_2$ e $\sigma_1\sigma_2$ em $B_3$ representam o nó trivial.
+	
+	\par\vspace{0.3cm} Se considerarmos a trança trivial $\beta =1_n\in B_n$, então 
+	$\Phi_n(\beta) = I^{\otimes n}$ e, daí, usando $\eqref{mi tensor n vezes}$, temos
+	%
 	\begin{equation*}
-	\tr( \Phi_n(\beta)\mu^{\otimes n} ) = \tr(\mu^{\otimes n}) = (1+t)^n
+	    \tr( \Phi_n(\beta)\mu^{\otimes n} ) = \tr(\mu^{\otimes n}) = (1+t)^n.
 	\end{equation*} 
-	\par\vspace{0.3cm} Uma vez que $l(\beta) = 0$,
+	%
+	Uma vez que $l(\beta) = 0$, segue que
+	%
 	\begin{align*}
-	V_{\widetilde{\beta}}(t) &= \frac{t^{-\frac{n-1}{2}} (1+t)^n}{1+t} \\
-	&= \left( \frac{1}{\sqrt{t}} + \sqrt{t} \right)^{n-1}
+	    V_{\widetilde{\beta}}(t) &= \frac{t^{-\frac{n-1}{2}} (1+t)^n}{1+t}
+	    = \left( \frac{1}{\sqrt{t}} + \sqrt{t} \right)^{n-1}.
 	\end{align*}
-	\par\vspace{0.3cm} Se fizermos $t=1$, então, como $\sqrt{1}$ é a raiz primitiva da unidade (i.e., $e^{i\pi} = -1$), temos $\sqrt{t} = -1$ e, portanto
+	%
+	Se fizermos $t=1$, então, como $\sqrt{1}$ é a raiz primitiva da unidade (i.e., $e^{i\pi} = -1$), 
+	temos $\sqrt{t} = -1$ e, portanto
+	%
 	\begin{equation}
 	\label{polinomio de jones tranca trivial}
-	V_{\widetilde{\beta}}(1) = V_{\widetilde{1_n}}(1) = (-2)^{n-1}
+	    V_{\widetilde{\beta}}(1) = V_{\widetilde{1_n}}(1) = (-2)^{n-1}.
 	\end{equation}
-	\par\vspace{0.3cm} Em geral, computar $V_{\widetilde{\beta}}(t)$ para uma trança $\beta$ arbitrária é algo trabalhoso.
-	\par\vspace{0.3cm} Outros exemplos são os polinômios de Jones para o nó figura oito 
-	\begin{equation*}
-	V_{\widetilde{\beta}}(t) = t^2 - t + 1 - t^{-1} + t^{-2}  
-	\end{equation*}
-	\par\vspace{0.3cm} e para os nós torais
-	\begin{equation*}
-	V_{K_{p,q}}(t) = \frac{1-t^{p+1}-t^{q+1} + t^{p+q}}{1-t^2}t^{(p-1)(q-1)/2}
-	\end{equation*}
+	%
+	Em geral, computar $V_{\widetilde{\beta}}(t)$ para uma trança $\beta$ arbitrária é algo trabalhoso.
+	\begin{example}
+    	Outros exemplos são os polinômios de Jones para o nó figura oito 
+    	%
+    	\begin{equation*}
+    	    V_{\widetilde{\beta}}(t) = t^2 - t + 1 - t^{-1} + t^{-2}  
+    	\end{equation*}
+    	%
+    	e para os nós torais
+    	%
+    	\begin{equation*}
+    	    V_{K_{p,q}}(t) = \frac{1-t^{p+1}-t^{q+1} + t^{p+q}}{1-t^2}t^{(p-1)(q-1)/2}.
+    	\end{equation*}
+    	%
+	\end{example}
+	%
 	\subsubsection{Alexander vs Jones}
-	\hspace{12pt} Agora, vamos falar um pouco das diferenças entre os dois invariantes de nós definidos anteriormente, os polinômios de Alexander e Jones.
-	\par\vspace{0.3cm} Uma primeira diferença notável entre os dois polinômios é que, por exemplo, para o \textit{link} $K = \widetilde{\sigma_1\sigma_3}$ em $B_4$, temos $\Delta_K(t) = 0$ (não é muito trabalhoso calcular). Contudo, vamos provar que $V_K(t)\neq 0$ qualquer que seja o \textit{link} ou nó $K$. Portanto, devido a essa observação, podemos dizer que nesse aspecto $V_K(t)$ é um invariante ``mais forte'' que $\Delta_K(t)$. 
+	Agora, vamos falar um pouco das diferenças entre os dois invariantes de nós definidos 
+	anteriormente, os polinômios de Alexander e Jones.
+	
+	\par\vspace{0.3cm} Uma primeira diferença notável entre os dois polinômios é que, por exemplo, 
+	para o \textit{link} $K = \widetilde{\sigma_1\sigma_3}$ em $B_4$, temos $\Delta_K(t) = 0$ 
+	(não é muito trabalhoso calcular). Contudo, vamos provar que $V_K(t)\neq 0$ qualquer 
+	que seja o \textit{link} ou nó $K$. Portanto, devido a essa observação, podemos dizer 
+	que nesse aspecto $V_K(t)$ é um invariante ``mais forte'' que $\Delta_K(t)$.
+	
 	\par\vspace{0.3cm} Começamos com um fato acerca do polinômio de Alexander.
+	%
 	\begin{prop}
-		\label{polinomio de Alexander para t=1}
+	\label{polinomio de Alexander para t=1}
 		Se $K$ é um nó, então $|\Delta_K(1)|=1$.
 	\end{prop}
+	%
 	\begin{proof}
-		Seja $\sigma_i$ um gerador de $B_n$ e defina $\widehat{\varphi}_n$ como
+		Seja $\sigma_i$ um gerador de $B_n$ e defina $\widehat{\varphi}_n$ por
+		%
 		\begin{equation*}
-		\widehat{\varphi}_n(\sigma_i) = \varphi_n(\sigma_i)|_{t=1} = \left[ \begin{array}{c|cc|c}
-		I_{i-1} & & & \\
-		\hline
-		& 0 & 1 & \\
-		& 1 & 0 & \\
-		\hline 
-		& & & I_{n-i-1}
-		\end{array}\right] 
+    		\widehat{\varphi}_n(\sigma_i) 
+    		= \varphi_n(\sigma_i)|_{t=1} 
+    		= \left[ \begin{array}{c|cc|c}
+    		I_{i-1} & & & \\
+    		\hline
+    		& 0 & 1 & \\
+    		& 1 & 0 & \\
+    		\hline 
+    		& & & I_{n-i-1}
+    		\end{array}\right].
 		\end{equation*}
-		\par\vspace{0.3cm} Daí, temos $\widehat{\varphi}_n(\sigma_i^2) = I_n$. Portanto, $\widehat{\varphi}_n$ define um homomorfismo de $B_n/\langle \sigma_i^2 \rangle$ em $M(n, \mathbb{Z})$. Como $B_n/\langle \sigma_i^2 \rangle\cong S_n$, $\widehat{\varphi}_n$ é um homomorfismo de $S_n$ em $M(n,\mathbb{Z})$. Contudo, o isomorfismo $B_n/\langle \sigma_i^2 \rangle\cong S_n$ é dado pela permutação $\pi(\beta)$ associada à trança $\beta\in B_n$. Logo, se $\pi(\beta) = \pi(\beta')$ então $\widehat{\varphi}_n(\beta) = \widehat{\varphi}_n(\beta')$, ou seja
+		%
+		Daí, temos $\widehat{\varphi}_n(\sigma_i^2) = I_n$. Portanto, $\widehat{\varphi}_n$ 
+		define um homomorfismo de $B_n/\langle \sigma_i^2 \rangle$ em $M(n, \mathbb{Z})$. 
+		Como $B_n/\langle \sigma_i^2 \rangle\cong S_n$, $\widehat{\varphi}_n$ é um 
+		homomorfismo de $S_n$ em $M(n,\mathbb{Z})$. Contudo, o isomorfismo 
+		$B_n/\langle \sigma_i^2 \rangle\cong S_n$ é dado pela permutação $\pi(\beta)$ 
+		associada à trança $\beta\in B_n$. Logo, se $\pi(\beta) = \pi(\beta')$ 
+		então $\widehat{\varphi}_n(\beta) = \widehat{\varphi}_n(\beta')$, ou seja
+		%
 		\begin{equation}
 		\label{igualdade de modulos}
-		|\Delta_{\widetilde{\beta}}(1)| = |\Delta_{\widetilde{\beta'}}(1)|
+		    |\Delta_{\widetilde{\beta}}(1)| = |\Delta_{\widetilde{\beta'}}(1)|.
 		\end{equation}
-		\par\vspace{0.3cm} Como $\widetilde{\beta}$ é um nó, $\pi(\beta)$ é uma permutação de ordem $n$. Daí, segue que tomando uma conjugação apropriada de $\beta$, temos
+		%
+		Como $\widetilde{\beta}$ é um nó, $\pi(\beta)$ é uma permutação de ordem $n$. 
+		Daí, segue que tomando uma conjugação apropriada de $\beta$, temos
+		%
 		\begin{equation*}
-		\pi(\gamma\beta\gamma^{-1}) = (123\dots n)
+		    \pi(\gamma\beta\gamma^{-1}) = (123\cdots n).
 		\end{equation*}
-		\par\vspace{0.3cm} Então, seja $\beta' = \sigma_{n-1}\sigma_{n-2}\cdots\sigma_2\sigma_1$. Consequentemente, $\pi(\beta') = (123\dots n)$ e, por \eqref{igualdade de modulos}
+		%
+		Então, seja $\beta' = \sigma_{n-1}\sigma_{n-2}\cdots\sigma_2\sigma_1$. 
+		Consequentemente, $\pi(\beta') = (123\dots n)$ e, por \eqref{igualdade de modulos}
+		%
 		\begin{equation*}
-		| \Delta_{\widetilde{\gamma\beta\gamma^{-1}}}(1) | = | \Delta_{\widetilde{\beta'}}(1) |
+		    | \Delta_{\widetilde{\gamma\beta\gamma^{-1}}}(1) | = | \Delta_{\widetilde{\beta'}}(1) |.
 		\end{equation*}
-		\par\vspace{0.3cm} Mas $\widetilde{\gamma\beta\gamma^{-1}}$ é o mesmo nó que $\widetilde{\beta}$, devido ao movimento de Markov tipo 1, $M_1$. Fazendo $K = \widetilde{\beta}$ e $K' = \widetilde{\beta'}$, temos
+		%
+		Mas $\widetilde{\gamma\beta\gamma^{-1}}$ é o mesmo nó que $\widetilde{\beta}$, 
+		devido ao movimento de Markov tipo 1, $M_1$. Fazendo $K = \widetilde{\beta}$ e 
+		$K' = \widetilde{\beta'}$, temos
+		%
 		\begin{equation*}
-		|\Delta_K(1)| = |\Delta_{K'}(1)|
+		    |\Delta_K(1)| = |\Delta_{K'}(1)|.
 		\end{equation*} 
-		\par\vspace{0.3cm} Como $K'$ é o nó trivial, segue que $\Delta_{K'}(t) = 1$ e, em particular, que $\Delta_{K'}(1) = 1$. Portanto, para qualquer nó $K$,
+		%
+		Como $K'$ é o nó trivial, segue que $\Delta_{K'}(t) = 1$ e, em particular, que 
+		$\Delta_{K'}(1) = 1$. Portanto, para qualquer nó $K$,
+		%
 		\begin{equation*}
-		|\Delta_K(1)| = |\Delta_{K'}(1)| = 1
+		    |\Delta_K(1)| = |\Delta_{K'}(1)| = 1.
 		\end{equation*}
+		%
 	\end{proof}
-	\par\vspace{0.3cm} Note que na Proposição \eqref{polinomio de Alexander para t=1} não escrevemos ``ou \textit{link}''. De fato, como veremos mais à frente, essa proposição não vale para \textit{links}. Na verdade, o módulo é zero para \textit{links}. 
+	%
+	Note que na Proposição \ref{polinomio de Alexander para t=1} não escrevemos ``ou \textit{link}''. 
+	De fato, como veremos mais à frente, essa proposição não vale para \textit{links}. 
+	Na verdade, o módulo é zero para \textit{links}.
+	
 	\par\vspace{0.3cm} Por outro lado, para o polinômio de Jones temos a seguinte proposição.
+	%
 	\begin{prop}
-		\label{polinomio de Jones para links}
-		Se $K$ é um link com $r$ componentes, $r\geq 1$, então $V_K(1) = (-2)^{r-1}$
+	\label{polinomio de Jones para links}
+		Se $K$ é um link com $r$ componentes, $r\geq 1$, então $V_K(1) = (-2)^{r-1}$.
 	\end{prop}
+	%
 	\begin{proof}
-		Primeiro, lembre que tomamos $\sqrt{t}|_{t=1} = -1$, i.e., a raiz primitiva da unidade. Daí, como
+		Primeiro, lembre que tomamos $\sqrt{t}|_{t=1} = -1$, i.e., a raiz primitiva da unidade. 
+		Daí, como
+		%
 		\begin{equation*}
-		R|_{t=1} = \begin{bmatrix}
-		1 & 0 & 0 & 0 \\
-		0 & 0 & 1 & 0 \\
-		0 & 1 & 0 & 0 \\
-		0 & 0 & 0 & 1
-		\end{bmatrix}
+    		R|_{t=1} = \begin{bmatrix}
+    		1 & 0 & 0 & 0 \\
+    		0 & 0 & 1 & 0 \\
+    		0 & 1 & 0 & 0 \\
+    		0 & 0 & 0 & 1
+    		\end{bmatrix},
 		\end{equation*}
-		\par\vspace{0.3cm} temos que
+		%
+		temos que
+		%
 		\begin{align*}
-		\widehat{\Phi}_n(\sigma_i^2) = \Phi_n(\sigma_i^2)|_{t=1} &= ( I^{\otimes i-1} \otimes R|_{t=1} \otimes I^{\otimes n-i-1} )( I^{\otimes i-1} \otimes R|_{t=1} \otimes I^{\otimes n-i-1} ) \\
-		&= ( I^{\otimes i-1}\cdot I^{\otimes i-1} )\otimes( R|_{t=1}\cdot R|_{t=1} )\otimes( I^{\otimes n-i-1}\cdot I^{\otimes n-i-1} ) \\
-		&= I^{\otimes i-1}\otimes I^{\otimes 2}\otimes I^{\otimes n-i-1} \\
-		&= I^{\otimes n} = I_{2^n}
+    		\widehat{\Phi}_n(\sigma_i^2) 
+    		= \Phi_n(\sigma_i^2)|_{t=1} 
+    		&= ( I^{\otimes i-1} \otimes R|_{t=1} \otimes I^{\otimes n-i-1} )( I^{\otimes i-1} 
+    		\otimes R|_{t=1} \otimes I^{\otimes n-i-1} ) \\
+    		&= ( I^{\otimes i-1}\cdot I^{\otimes i-1} )\otimes( R|_{t=1}\cdot R|_{t=1} )
+    		\otimes( I^{\otimes n-i-1}\cdot I^{\otimes n-i-1} ) \\
+    		&= I^{\otimes i-1}\otimes I^{\otimes 2}\otimes I^{\otimes n-i-1} \\
+    		&= I^{\otimes n} = I_{2^n}.
 		\end{align*}
-		\par\vspace{0.3cm} Portanto, $\widehat{\Phi}_n$ induz um homomorfismo de $S_n ( \cong B_n/\langle \sigma_i^2 \rangle )$ em $M(2^n, \mathbb{Z})$, as matrizes de ordem $2^n$ sobre $\mathbb{Z}$. Além disso, como
+		%
+		Portanto, $\widehat{\Phi}_n$ induz um homomorfismo de $S_n ( \cong B_n/\langle \sigma_i^2 \rangle )$ 
+		em $M(2^n, \mathbb{Z})$, as matrizes de ordem $2^n$ sobre $\mathbb{Z}$. Além disso, como
+		%
 		\begin{equation*}
-		\mu|_{t=1} = \begin{bmatrix}
-		1 & 0 \\
-		0 & 1
-		\end{bmatrix}
+    		\mu|_{t=1} = \begin{bmatrix}
+    		1 & 0 \\
+    		0 & 1
+    		\end{bmatrix},
 		\end{equation*}
-		\par\vspace{0.3cm} segue que $(\mu|_{t=1})^{\otimes n} = I_{2^n}$.
-		\par\vspace{0.3cm} Como antes, se $\pi(\beta) = \pi(\beta')$, então $V_{\widetilde{\beta}}(1) = V_{\widetilde{\beta'}}(1)$. Agora, suponha $K = \widetilde{\beta}$ um \textit{link} de $r$ componentes. Daí, $\pi(\beta)$ é um produto de $r$ ciclos mutuamente disjuntos  $C_1C_2\cdots C_r$. Tomando uma conjugação apropriada, podemos assumir que 
+		%
+		segue que $(\mu|_{t=1})^{\otimes n} = I_{2^n}$.
+		
+		\par\vspace{0.3cm} Como antes, se $\pi(\beta) = \pi(\beta')$, então 
+		$V_{\widetilde{\beta}}(1) = V_{\widetilde{\beta'}}(1)$. Agora, suponha 
+		$K = \widetilde{\beta}$ um \textit{link} de $r$ componentes. Daí, 
+		$\pi(\beta)$ é um produto de $r$ ciclos mutuamente disjuntos  $C_1C_2\cdots C_r$. 
+		Tomando uma conjugação apropriada, podemos assumir que
+		%
 		\begin{equation*}
-		\pi(\gamma\beta\gamma^{-1}) = (12\dots p_1)(p_1+1\dots p_2)\dots(p_{r-1}+1\dots n)
+		    \pi(\gamma\beta\gamma^{-1}) = (12\cdots p_1)(p_1+1\cdots p_2)\cdots(p_{r-1}+1\cdots n).
 		\end{equation*}
-		\par\vspace{0.3cm} Seja $\beta'\in B_n$ dada por
+		%
+		Seja $\beta'\in B_n$ dada por
+		%
 		\begin{equation*}
-		\beta' = (\sigma_{p_1-1}\sigma_{p_1-2}\cdots\sigma_1)(\sigma_{p_2-1}\cdots\sigma_{p_1+1})\cdots( \sigma_{n-1}\cdots\sigma_{p_{r-1} + 1} )
+		    \beta' 
+		    = (\sigma_{p_1-1}\sigma_{p_1-2}\cdots\sigma_1)(\sigma_{p_2-1}\cdots\sigma_{p_1+1})
+		    \cdots( \sigma_{n-1}\cdots\sigma_{p_{r-1} + 1} ).
 		\end{equation*}
-		\par\vspace{0.3cm} Então $\pi(\gamma\beta\gamma^{-1}) = \pi(\beta')$ e, portanto
+		%
+		Então $\pi(\gamma\beta\gamma^{-1}) = \pi(\beta')$ e, portanto,
+		%
 		\begin{equation*}
-		V_{\widetilde{\gamma\beta\gamma^{-1}}}(1) = V_{ \widetilde{\beta'} }(1)
+		    V_{\widetilde{\gamma\beta\gamma^{-1}}}(1) = V_{ \widetilde{\beta'} }(1).
 		\end{equation*}
-		\par\vspace{0.3cm} Contudo, $\widetilde{\beta'}$ é o \textit{link} trivial de $r$ componentes. Consequentemente, $\widetilde{\beta'}$ é equivalente a $\widetilde{1_r}$ e obtemos
+		%
+		Contudo, $\widetilde{\beta'}$ é o \textit{link} trivial de $r$ componentes. 
+		Consequentemente, $\widetilde{\beta'}$ é equivalente a $\widetilde{1_r}$ e obtemos
+		%
 		\begin{equation*}
-		V_K(1) = V_{\widetilde{\beta'}}(1) = V_{\widetilde{1_r}}(1)
+		    V_K(1) = V_{\widetilde{\beta'}}(1) = V_{\widetilde{1_r}}(1).
 		\end{equation*}
-		\par\vspace{0.3cm} Usando o resultado encontrado em \eqref{polinomio de jones tranca trivial}, temos
+		%
+		Usando o resultado encontrado em \eqref{polinomio de jones tranca trivial}, temos
+		%
 		\begin{equation*}
-		V_{\widetilde{1_r}}(1) = (-2)^{r-1}
+		    V_{\widetilde{1_r}}(1) = (-2)^{r-1}.
 		\end{equation*}
+	    %
 	\end{proof}
-	\par\vspace{0.3cm} Usando um argumento similar, podemos demonstrar a seguinte proposição.
+	%
+	Usando um argumento similar, podemos demonstrar a seguinte proposição.
+	%
 	\begin{prop}
-		\label{polinomio de Alexander para links}
+	\label{polinomio de Alexander para links}
 		Se $K$ é um link com $r$ componentes, $r\geq 2$, então $\Delta_K(1) = 0$.
 	\end{prop}
+	%
 	\begin{proof}
-		A demonstração segue as mesmas linhas da demonstração da Proposição \eqref{polinomio de Alexander para t=1}, com a mudança de que como agora $\widetilde{\beta}$ é um \textit{link}, então $\pi(\beta)$ é um produto de $r$ ciclos mutuamente disjuntos. Daí, podemos tomar uma conjugação adequada e assumir que 
+		A demonstração segue as mesmas linhas da demonstração da 
+		Proposição \ref{polinomio de Alexander para t=1}, com a mudança de que 
+		como agora $\widetilde{\beta}$ é um \textit{link}, então $\pi(\beta)$ 
+		é um produto de $r$ ciclos mutuamente disjuntos. Daí, podemos tomar uma 
+		conjugação adequada e assumir que
+		%
 		\begin{equation*}
-		\pi(\gamma\beta\gamma^{-1}) = (12\dots p_1)(p_1+1\dots p_2)\dots(p_{r-1}+1\dots n)
+		    \pi(\gamma\beta\gamma^{-1}) = (12\cdots p_1)(p_1+1\cdots p_2)\cdots(p_{r-1}+1\cdots n)
 		\end{equation*}
-		\par\vspace{0.3cm} e, tomando $\beta'\in B_n$
+		%
+		e, tomando $\beta'\in B_n$ dada por
+		%
 		\begin{equation*}
-		\beta' = (\sigma_{p_1-1}\sigma_{p_1-2}\cdots\sigma_1)(\sigma_{p_2-1}\cdots\sigma_{p_1+1})\cdots( \sigma_{n-1}\cdots\sigma_{p_{r-1} + 1} )
+		    \beta' 
+		    = (\sigma_{p_1-1}\sigma_{p_1-2}\cdots\sigma_1)(\sigma_{p_2-1}\cdots\sigma_{p_1+1})
+		    \cdots( \sigma_{n-1}\cdots\sigma_{p_{r-1} + 1} ),
 		\end{equation*}
-		\par\vspace{0.3cm} obtemos $\pi(\gamma\beta\gamma^{-1}) = \pi(\beta')$ e, daí
+		%
+		obtemos $\pi(\gamma\beta\gamma^{-1}) = \pi(\beta')$ e, daí,
+		%
 		\begin{equation*}
-		|\Delta_{\widetilde{\gamma\beta\gamma^{-1}}}(1)| = | \Delta_{\widetilde{\beta'}}(1) |
+		    |\Delta_{\widetilde{\gamma\beta\gamma^{-1}}}(1)| = | \Delta_{\widetilde{\beta'}}(1) |.
 		\end{equation*}
-		\par\vspace{0.3cm} Como $\widetilde{\gamma\beta\gamma^{-1}}$ é equivalente a $\widetilde{\beta}$, segue que
+		%
+		Como $\widetilde{\gamma\beta\gamma^{-1}}$ é equivalente a $\widetilde{\beta}$, segue que
+		%
 		\begin{equation*}
-		|\Delta_{\widetilde{\beta}}(1)| = | \Delta_{\widetilde{\beta'}}(1) |
+		    |\Delta_{\widetilde{\beta}}(1)| = | \Delta_{\widetilde{\beta'}}(1) |.
 		\end{equation*} 
-		\par\vspace{0.3cm} Por fim, como $\Delta_{\widetilde{\beta'}}(t) = 0$, segue que
+		%
+		Por fim, como $\Delta_{\widetilde{\beta'}}(t) = 0$, segue que
+		%
 		\begin{align*}
-		\Delta_K(1) = \Delta_{\widetilde{\beta'}}(1) = 0
+		    \Delta_K(1) = \Delta_{\widetilde{\beta'}}(1) = 0.
 		\end{align*} 
+	    %
 	\end{proof}
-	\par\vspace{0.3cm} É sabido que se $K$ é o nó trivial, então $V_K(t) = 1$, mas ainda é uma questão em aberto se $V_K(t) = 1$ \textbf{apenas} para o nó trivial. Essa conjectura, em inglês chamada de \textit{Jones unknot conjecture}, ainda está em aberto. Resultados mais recentes (veja \cite{Jones-detecta-no-trivial-1,Jones-detecta-no-trivial-2}) verificaram que para todo nó não trivial com até $24$ cruzamentos, o polinômio de Jones não é $1$, ou seja, para nós não triviais de até $24$ cruzamentos, o polinômio de Jones detecta o nó trivial. Caso a conjectura se mostre verdadeira, será mais uma diferença entre os polinômios de Jones e Alexander.
-	\par\vspace{0.3cm} Por outro lado, existe nó não trivial cujo polinômio de Alexander é igual a 1. Um exemplo é o fecho da trança de $4$ cordas $\beta = \sigma_1^3\sigma_3^2\sigma_2\sigma_3^{-1}\sigma_1^{-2}\sigma_2\sigma_1^{-1}\sigma_3^{-1}\sigma_2^{-1}$, usualmente chamado \textit{nó de Kinoshita-Terasaka}.
+	%
+	É sabido que se $K$ é o nó trivial, então $V_K(t) = 1$, mas ainda é uma questão em 
+	aberto se $V_K(t) = 1$ \textbf{apenas} para o nó trivial. Essa conjectura, em inglês 
+	chamada de \textit{Jones unknot conjecture}, ainda está em aberto. Resultados mais recentes 
+	(veja \cite{Jones-detecta-no-trivial-1,Jones-detecta-no-trivial-2}) verificaram que para 
+	todo nó não trivial com até $24$ cruzamentos, o polinômio de Jones não é $1$, ou seja, para 
+	nós não triviais de até $24$ cruzamentos, o polinômio de Jones detecta o nó trivial. 
+	Caso a conjectura se mostre verdadeira, será mais uma diferença entre os polinômios de Jones e Alexander.
+	
+	\par\vspace{0.3cm} Por outro lado, existe nó não trivial cujo polinômio de Alexander é igual a 1. 
+	Um exemplo é o fecho da trança de $4$ cordas 
+	$\beta = \sigma_1^3\sigma_3^2\sigma_2\sigma_3^{-1}\sigma_1^{-2}\sigma_2
+	\sigma_1^{-1}\sigma_3^{-1}\sigma_2^{-1}$, usualmente chamado \textit{nó de Kinoshita-Terasaka}.
+	%
 	\begin{figure}[H]
-		\label{no Kinoshita Terasaka}
+	\label{no Kinoshita Terasaka}
 		\begin{center}
 			\includegraphics[width=10cm]{Images/The-Kinoshita-Terasaka-knot-left-and-Conway-mutant-right.png}
 			\caption{O nó de Kinoshita-Terasaka (à esquerda) e o nó de Conway (à direita)}
 		\end{center}
 	\end{figure}
-	\par\vspace{0.3cm} Recentemente, foi mostrado (\cite{Piccirillo}) que o nó de Conway (um nó descoberto por J.H. Conway meio século atrás), não é \textit{slice}. Essa propriedade, ser \textit{slice}, basicamente significa que esse nó é uma fatia de um nó em dimensão maior. Saber se um dado nó é \textit{slice} é uma das primeiras perguntas feitas a respeito de nós em espaços de dimensões maiores, e para todos os milhares de nós com $12$ cruzamentos ou menos essa pergunta já havia sido respondida, com exceção de um nó: o de Conway, com $11$ cruzamentos, que perdurou por décadas.
-	\par\vspace{0.3cm} A dificuldade de responder se o nó de Conway era \textit{slice} ou não se devia ao fato de que ele é muito parecido com outro nó: o de Kinoshita-Terasaka. De fato, esses nós são ditos \textbf{mutantes}, pois é possível obter um do outro a partir de uma \textbf{mutação} (uma operação em um nó). Por ser muito parecido com o nó de Kinoshita-Terasaka, o nó de Conway conseguia escapar e evitar todos os invariantes utilizados para detectar nós que não fossem \textit{slice}. 
-	\par\vspace{0.3cm} Antes de continuar com as propriedades dos polinômios de Alexander e Jones, seja $K$ um nó (ou \textit{link}) orientado. Se invertermos a orientação de $K$, obtemos um novo nó $\overline{K}$. Podemos supor que $K$ é o fecho da trança
-	$\beta = \sigma_{i_1}^{\varepsilon_1}\sigma_{i_2}^{\varepsilon_2}\cdots\sigma_{i_k}^{\varepsilon_k}$. Daí, pelo item 2 da Proposição \eqref{representacao no espelhado}, $\overline{K}$ é o fecho da trança $\overline{\beta} = \sigma_{i_k}^{\varepsilon_k}\sigma_{i_{k-1}}^{\varepsilon_{k-1}}\cdots\sigma_{i_1}^{\varepsilon_1}$. 
-	\begin{prop}
-		\label{polinomio de Alexander para nos invertidos}
-		Com os nós $K$ e $\overline{K}$ definidos acima, temos
-		\begin{equation*}
-		\Delta_{\overline{K}}(t) \doteq \Delta_K(t)
-		\end{equation*}
-	\end{prop}
-	\begin{proof}
-		Considere o homomorfismo $\varphi_n^\ast: B_n\to M(n, \mathbb{Z}[t,t^{-1}])$ definido anteriormente. Se $\beta=\sigma_{i_1}^{\varepsilon_1}\sigma_{i_2}^{\varepsilon_2}\cdots\sigma_{i_k}^{\varepsilon_k}$, então
-		\begin{equation*}
-		\varphi_n^\ast(\overline{\beta}) = \varphi_n(\sigma_{i_k}^{\varepsilon_k})^T\cdots\varphi_n(\sigma_{i_1}^{\varepsilon_1})^T = (\varphi_n(\sigma_{i_1}^{\varepsilon_1})\cdots\varphi_n(\sigma_{i_k}^{\varepsilon_k}))^T = \varphi_n(\beta)^T
-		\end{equation*}
-		
-		\par\vspace{0.3cm} logo
-		\begin{equation*}
-		\det[\varphi_n^\ast(\overline{\beta}) - I_n]_{1,1} = \det[\varphi_n(\beta)^T - I_n]_{1,1} = \det[\varphi_n(\beta) - I_n]_{1,1}
-		\end{equation*}
-		\par\vspace{0.3cm} Portanto,
-		\begin{equation*}
-		\Delta_{\overline{K}}(t) \doteq \Delta_K(t)
-		\end{equation*}
-	\end{proof}
-	\par\vspace{0.3cm} Com isso, concluímos que o polinômio de Alexander não é forte o bastante para detectar se um nó é invertível ou não (i.e., se é igual ao seu inverso), pois mostramos que o polinômio de Alexander é o mesmo para um nó $K$ e seu inverso $\overline{K}$. Além disso, como mostraremos a seguir, o polinômio de Alexander também falha em determinar se um nó é aquiral (i.e., se é igual a sua imagem espelhada) ou não. 
-	\begin{prop}
-		\label{polinomio de Alexander para nos espelhados}
-		Sejam $K$ um nó (ou link) orientado e $K^\ast$ a imagem espelhada de $K$. Então,
-		\begin{equation*}
-		\Delta_K(t)\doteq\Delta_{K^\ast}(t)
-		\end{equation*} 
-	\end{prop}
-	\begin{proof}
-		Suponha que $K$ é representado como o fecho de uma trança $\beta$ de $n$ cordas. Então, o fecho de $\beta^{-1}$ representa o nó $\overline{K}^{\ast}$, que é a imagem espelhada de $K$ com orientação invertida (isso se deve ao item 1 da Proposição \eqref{representacao no espelhado}). Contudo, pelo Lema \eqref{lema Alexander},
-		\begin{equation*}
-		\Delta_K(t) \doteq \det[\varphi_n(\beta) - I_n]_{1,1} = \frac{1}{(1+t+\cdots+t^{n-1})}\det(\Lambda(t) - I_{n-1})
-		\end{equation*}
-		\par\vspace{0.3cm} e
-		\begin{equation*}
-		\Delta_{\overline{K}^{\ast}}(t) \doteq \det[\varphi_n(\beta^{-1}) - I_n]_{1,1} = \frac{1}{(1+t+\cdots+t^{n-1})}\det(\Lambda(t)^{-1} - I_{n-1})
-		\end{equation*}
-		\par\vspace{0.3cm} Note que
-		\begin{align*}
-		\det(\Lambda(t)^{-1} - I_{n-1}) &= \det(\Lambda(t)^{-1})\det(I_{n-1} - \Lambda(t)) \\
-		&= -\det(\Lambda(t)^{-1})\det(\Lambda(t) - I_{n-1}) \\
-		&\doteq \det(\Lambda(t)^{-1})(1+t+\cdots+t^{n-1})\Delta_K(t) 
-		\end{align*}
-		\par\vspace{0.3cm} e
-		\begin{align*}
-		\det(\Lambda(t)^{-1}) = \det( S^{-1}\varphi_n(\beta)^{-1}S ) = \det(\varphi_n(\beta)^{-1}) = (-t)^{\alpha}
-		\end{align*}
-		\par\vspace{0.3cm} em que a última igualdade segue de \eqref{det Burau de beta} e sendo $\alpha = l(\beta^{-1})$. Portanto, 
-		\begin{equation*}
-		(1+t+\cdots+t^{n-1})\Delta_{\overline{K}^{\ast}}(t)\doteq t^{\alpha}(1+t+\cdots+t^n-1)\Delta_K(t)
-		\end{equation*}
-		\par\vspace{0.3cm} e, daí
-		\begin{equation*}
-		\Delta_{\overline{K}^{\ast}}(t) \doteq \Delta_K(t)
-		\end{equation*}
-		\par\vspace{0.3cm} Como $\overline{K}^{\ast}$ é o inverso de $K^\ast$, então pela Proposição \eqref{polinomio de Alexander para nos invertidos}, temos, finalmente
-		\begin{equation*}
-		\Delta_{K^\ast}(t) \doteq \Delta_K(t)
-		\end{equation*}
-	\end{proof}
-	\par\vspace{0.3cm} A implicação das Proposições \eqref{polinomio de Alexander para nos invertidos} e \eqref{polinomio de Alexander para nos espelhados} é que o polinômio de Alexander não é forte o suficiente para detectar ou não se um dado nó é aquiral nem invertível. Por outro lado, para o polinômio de Jones valem resultados similares, mas mais fortes.
-	\begin{theorem}
-		\label{polinomio de Jones para nos espelhados e invertidos}
-		Seja $K$ um nó (ou link) orientado e sejam $\overline{K}$ e $K^\ast$ os nós definidos a partir de $K$ nas Proposições \eqref{polinomio de Alexander para nos invertidos} e \eqref{polinomio de Alexander para nos espelhados}, respectivamente. Então,
-		\begin{enumerate}
-			\item $V_{\overline{K}}(t) = V_K(t)$ 
-			\item $V_{K^\ast}(t) = V_K(t^{-1})$
-		\end{enumerate}
-	\end{theorem}
-	\begin{proof}
-		
-	\end{proof}
-	\par\vspace{0.3cm} Um corolário imediato do Teorema \eqref{polinomio de Jones para nos espelhados e invertidos} é o seguinte.
-	\begin{corollary}
-		\label{simetria polinomio de Jones}
-		Todo nó $K$ cujo polinômio de Jones $V_K(t)$ não é \textit{palindrômico} (i.e., simétrico sob a mudança de $t$ por $t^{-1}$) é \textit{quiral}, ou seja, distinto de sua imagem espelhada.
-	\end{corollary}
-	\par\vspace{0.3cm} Portanto, podemos usar o polinômio de Jones para detectar quando um nó (ou \textit{link}) \textbf{não} é aquiral. Contudo, o polinômio de Jones não é suficientemente forte para determinar o contrário. De fato, nós quirais para os quais $V_{K^\ast}(t) = V_K(t)$ foram encontrados. Por exemplo, o fecho da trança de $4$ cordas $\beta = \sigma_1^3\sigma_3\sigma_2^{-1}\sigma_3\sigma_1^{-2}\sigma_2^{-1}$ é quiral, mas 
-	\begin{equation*}
-	V_{\widetilde{\beta}^{-1}}(t) = t^{-3} - t^{-2} + t^{-1} - 1 + t - t^2 + t^3 = V_{\widetilde{\beta}}(t)
-	\end{equation*}
-	\par\vspace{0.3cm} De modo similar ao polinômio de Alexander, se tomarmos um gerador $\sigma_p$ de $B_n$ e uma trança $\beta\in B_n$, temos
-	\begin{equation*}
-	\frac{1}{t}V_{\widetilde{\beta\sigma_p}}(t) - tV_{\widetilde{\beta\sigma_p^{-1}}}(t) = \left( \frac{1}{\sqrt{t}} - \sqrt{t}\right)V_{\widetilde{\beta}}(t)
-	\end{equation*}
-	\section{O grupo de Alexander}
-	\hspace{12pt} Um outro invariante de nós é o chamado \textit{grupo de Alexander}, denotado por $A(K)$, $K$ um nó. O grupo de Alexander de um nó é um grupo abeliano definido em termos das regiões de um nó.
-	\par\vspace{0.3cm} Suponha que a projeção de um nó tenha $n$ cruzamentos. Daí, essa projeção tem $n+2$ regiões (contando o ``lado de fora'' como uma região). Os geradores de $A(K)$ são exatamente essas $n+2$ regiões. Há também $n$ relações, uma para cada cruzamento.
-	\par\vspace{0.3cm} Se as regiões em volta de um cruzamento são $a,b,c,d$, com $a,b$ de um lado do cruzamento e $c,d$ do outro, a relação correspondente é $a+b=c+d$.
-	\par\vspace{0.3cm} Por exemplo, o nó figura oito abaixo tem grupo de Alexander dado por 
-	\begin{align*}
-	A(K) = [a,b,c,d,e,f \ \vert \ a+b=c+f,\ a+d=b+c,\ a+f=d+e,\ c+d=e+f] 
-	\end{align*}
-	\par\vspace{0.3cm} que, escrito em forma matricial, se torna
-	\begin{align*}
-	\begin{bmatrix}
-	1 & 1 & -1 & 0 & 0 & -1 \\
-	1 & -1 & -1 & 1 & 0 & 0 \\
-	1 & 0 & 0 & -1 & -1 & 1 \\
-	0 & 0 & 1 & 1 & -1 & -1 
-	\end{bmatrix}\cong\mathbb{Z}\oplus\mathbb{Z}\oplus\mathbb{Z}_5
-	\end{align*}
+	%
+	Recentemente, foi mostrado (\cite{Piccirillo}) que o nó de Conway (um nó descoberto por J.H. Conway 
+	meio século atrás), não é \textit{slice}. Essa propriedade, ser \textit{slice}, basicamente 
+	significa que esse nó é uma fatia de um nó em dimensão maior. Saber se um dado nó é \textit{slice} 
+	é uma das primeiras perguntas feitas a respeito de nós em espaços de dimensões maiores, e para 
+	todos os milhares de nós com $12$ cruzamentos ou menos essa pergunta já havia sido respondida, 
+	com exceção de um nó: o de Conway, com $11$ cruzamentos.
 	
-	\begin{figure}[H]
-		\label{exemplo grupo Alexander}
-		\begin{center}
-			\includegraphics[width=4cm]{Images/exemplo_grupo_alexander.png}
-		\end{center}\caption{Nó figura oito e suas regiões}
-	\end{figure}
-	\par\vspace{0.3cm} Outro invariante também relacionado às regiões de um nó é o \textit{número de Alexander}. Ele é análogo ao grupo de Alexander, mas agora vamos numerar as regiões ao invés de nomeá-las. Antes de tudo, a notação usada é a seguinte:
+	\par\vspace{0.3cm} A dificuldade de responder se o nó de Conway era \textit{slice} ou 
+	não se devia ao fato de que ele é muito parecido com outro nó: o de Kinoshita-Terasaka. 
+	De fato, esses nós são ditos \textbf{mutantes}, pois é possível obter um do outro a 
+	partir de uma \textbf{mutação} (uma operação em um nó). Por ser muito parecido com o 
+	nó de Kinoshita-Terasaka, o nó de Conway conseguia escapar e evitar todos os invariantes 
+	utilizados para detectar nós que não fossem \textit{slice}. 
+	
+	\par\vspace{0.3cm} Antes de continuar com as propriedades dos polinômios de Alexander e Jones, 
+	seja $K$ um nó (ou \textit{link}) orientado. Se invertermos a orientação de $K$, 
+	obtemos um novo nó $\overline{K}$. Podemos supor que $K$ é o fecho da trança
+	$\beta = \sigma_{i_1}^{\varepsilon_1}\sigma_{i_2}^{\varepsilon_2}\cdots\sigma_{i_k}^{\varepsilon_k}$. 
+	Daí, pelo item 2 da Proposição \ref{representacao no espelhado}, $\overline{K}$ é o fecho 
+	da trança $\overline{\beta} =
+	\sigma_{i_k}^{\varepsilon_k}\sigma_{i_{k-1}}^{\varepsilon_{k-1}}\cdots\sigma_{i_1}^{\varepsilon_1}$.
+	%
+	\begin{prop}
+	\label{polinomio de Alexander para nos invertidos}
+		Com os nós $K$ e $\overline{K}$ definidos acima, temos
+		%
+		\begin{equation*}
+		    \Delta_{\overline{K}}(t) \doteq \Delta_K(t).
+		\end{equation*}
+		%
+	\end{prop}
+	%
+	\begin{proof}
+		Considere o homomorfismo $\varphi_n^\ast: B_n\to M(n, \mathbb{Z}[t,t^{-1}])$ 
+		definido anteriormente. 
+		Se $\beta=\sigma_{i_1}^{\varepsilon_1}\sigma_{i_2}^{\varepsilon_2}\cdots\sigma_{i_k}^{\varepsilon_k}$, 
+		então
+		%
+		\begin{equation*}
+    		\varphi_n^\ast(\overline{\beta}) 
+    		= \varphi_n(\sigma_{i_k}^{\varepsilon_k})^T\cdots\varphi_n(\sigma_{i_1}^{\varepsilon_1})^T 
+    		= (\varphi_n(\sigma_{i_1}^{\varepsilon_1})\cdots\varphi_n(\sigma_{i_k}^{\varepsilon_k}))^T 
+    		= \varphi_n(\beta)^T.
+		\end{equation*}
+		%
+		Logo,
+		%
+		\begin{equation*}
+    		\det[\varphi_n^\ast(\overline{\beta}) - I_n]_{1,1} 
+    		= \det[\varphi_n(\beta)^T - I_n]_{1,1} 
+    		= \det[\varphi_n(\beta) - I_n]_{1,1}.
+		\end{equation*}
+		%
+		Portanto,
+		%
+		\begin{equation*}
+		    \Delta_{\overline{K}}(t) \doteq \Delta_K(t).
+		\end{equation*}
+		%
+	\end{proof}
+	%
+	Com isso, concluímos que o polinômio de Alexander não é forte o bastante para 
+	detectar se um nó é invertível ou não (i.e., se é igual ao seu inverso), pois 
+	mostramos que o polinômio de Alexander é o mesmo para um nó $K$ e seu inverso $\overline{K}$. 
+	Além disso, como mostraremos a seguir, o polinômio de Alexander também falha em determinar 
+	se um nó é aquiral (i.e., se é igual a sua imagem espelhada) ou não. 
+	%
+	\begin{prop}
+	\label{polinomio de Alexander para nos espelhados}
+		Sejam $K$ um nó (ou link) orientado e $K^\ast$ a imagem espelhada de $K$. Então,
+		%
+		\begin{equation*}
+		    \Delta_K(t)\doteq\Delta_{K^\ast}(t).
+		\end{equation*} 
+	    %
+	\end{prop}
+	%
+	\begin{proof}
+		Suponha que $K$ é representado como o fecho de uma trança $\beta$ de $n$ cordas. 
+		Então, o fecho de $\beta^{-1}$ representa o nó $\overline{K}^{\ast}$, que é a 
+		imagem espelhada de $K$ com orientação invertida (isso se deve ao item 1 da 
+		Proposição \ref{representacao no espelhado}). Contudo, pelo Lema \ref{lema Alexander}, temos
+		%
+		\begin{equation*}
+		    \Delta_K(t) \doteq \det[\varphi_n(\beta) - I_n]_{1,1} 
+		    = \frac{1}{(1+t+\cdots+t^{n-1})}\det(\Lambda(t) - I_{n-1})
+		\end{equation*}
+		%
+		e
+		\begin{equation*}
+		    \Delta_{\overline{K}^{\ast}}(t) \doteq \det[\varphi_n(\beta^{-1}) - I_n]_{1,1} 
+		    = \frac{1}{(1+t+\cdots+t^{n-1})}\det(\Lambda(t)^{-1} - I_{n-1}).
+		\end{equation*}
+		%
+		Note que
+		%
+		\begin{align*}
+		    \det(\Lambda(t)^{-1} - I_{n-1}) &= \det(\Lambda(t)^{-1})\det(I_{n-1} - \Lambda(t)) \\
+		    &= -\det(\Lambda(t)^{-1})\det(\Lambda(t) - I_{n-1}) \\
+		    &\doteq \det(\Lambda(t)^{-1})(1+t+\cdots+t^{n-1})\Delta_K(t) 
+		\end{align*}
+		%
+		e
+		%
+		\begin{align*}
+		    \det(\Lambda(t)^{-1}) 
+		    = \det( S^{-1}\varphi_n(\beta)^{-1}S ) 
+		    = \det(\varphi_n(\beta)^{-1}) = (-t)^{\alpha},
+		\end{align*}
+		em que a última igualdade segue de \eqref{det Burau de beta} e sendo $\alpha = l(\beta^{-1})$. 
+		Portanto, 
+		%
+		\begin{equation*}
+		    (1+t+\cdots+t^{n-1})\Delta_{\overline{K}^{\ast}}(t)\doteq t^{\alpha}(1+t+\cdots+t^n-1)\Delta_K(t)
+		\end{equation*}
+		%
+		e, daí,
+		%
+		\begin{equation*}
+		    \Delta_{\overline{K}^{\ast}}(t) \doteq \Delta_K(t).
+		\end{equation*}
+		%
+		Como $\overline{K}^{\ast}$ é o inverso de $K^\ast$, então pela 
+		Proposição \ref{polinomio de Alexander para nos invertidos}, temos, finalmente
+		%
+		\begin{equation*}
+		    \Delta_{K^\ast}(t) \doteq \Delta_K(t).
+		\end{equation*}
+		%
+	\end{proof}
+	A implicação das Proposições \ref{polinomio de Alexander para nos invertidos} 
+	e \ref{polinomio de Alexander para nos espelhados} é que o polinômio de Alexander 
+	não é forte o suficiente para detectar ou não se um dado nó é aquiral nem invertível. 
+	Por outro lado, para o polinômio de Jones valem resultados similares, mas mais fortes.
+	%
+	\begin{theorem}
+	\label{polinomio de Jones para nos espelhados e invertidos}
+		Seja $K$ um nó (ou link) orientado e sejam $\overline{K}$ e $K^\ast$ os nós 
+		definidos a partir de $K$ nas Proposições \ref{polinomio de Alexander para nos invertidos} 
+		e \ref{polinomio de Alexander para nos espelhados}, respectivamente. Então, valem os itens abaixo.
+		%
+		\begin{enumerate}
+			\item $V_{\overline{K}}(t) = V_K(t)$;
+			\item $V_{K^\ast}(t) = V_K(t^{-1})$.
+		\end{enumerate}
+		%
+	\end{theorem}
+	%
+	\begin{proof}
+	    a	
+	\end{proof}
+	%
+	Um corolário imediato do Teorema \ref{polinomio de Jones para nos espelhados e invertidos} é o seguinte.
+	%
+	\begin{corollary}
+	\label{simetria polinomio de Jones}
+		Todo nó $K$ cujo polinômio de Jones $V_K(t)$ não é \textit{palindrômico} 
+		(i.e., simétrico sob a mudança de $t$ por $t^{-1}$) é \textit{quiral}, ou seja, 
+		distinto de sua imagem espelhada.
+	\end{corollary}
+	%
+	Portanto, podemos usar o polinômio de Jones para detectar quando um nó (ou \textit{link}) 
+	\textbf{não} é aquiral. Contudo, o polinômio de Jones não é suficientemente forte para 
+	determinar o contrário. De fato, nós quirais para os quais $V_{K^\ast}(t) = V_K(t)$ foram 
+	encontrados. Por exemplo, o fecho da trança de $4$ cordas 
+	$\beta = \sigma_1^3\sigma_3\sigma_2^{-1}\sigma_3\sigma_1^{-2}\sigma_2^{-1}$ é quiral, mas 
+	%
+	\begin{equation*}
+	    V_{\widetilde{\beta}^{-1}}(t) = t^{-3} - t^{-2} + t^{-1} - 1 + t - t^2 + t^3 = V_{\widetilde{\beta}}(t).
+	\end{equation*}
+	%
+	De modo similar ao polinômio de Alexander, se tomarmos um gerador $\sigma_p$ de $B_n$ e uma 
+	trança $\beta\in B_n$, temos
+	%
+	\begin{equation*}
+	    \frac{1}{t}V_{\widetilde{\beta\sigma_p}}(t) - tV_{\widetilde{\beta\sigma_p^{-1}}}(t) 
+	    = \left( \frac{1}{\sqrt{t}} - \sqrt{t}\right)V_{\widetilde{\beta}}(t).
+	\end{equation*}
+	%
+	\section{O grupo de Alexander}
+	Um outro invariante de nós é o chamado \textit{grupo de Alexander}, denotado por $A(K)$, 
+	$K$ um nó. O grupo de Alexander de um nó é um grupo abeliano definido em termos das regiões de um nó.
+	
+	\par\vspace{0.3cm} Suponha que a projeção de um nó tenha $n$ cruzamentos. Daí, essa projeção 
+	tem $n+2$ regiões (contando o ``lado de fora'' como uma região). Os geradores de $A(K)$ são 
+	exatamente essas $n+2$ regiões. Há também $n$ relações, uma para cada cruzamento.
+	
+	\par\vspace{0.3cm} Se as regiões em volta de um cruzamento são $a,b,c,d$, com $a,b$ de um 
+	lado do cruzamento e $c,d$ do outro, a relação correspondente é $a+b=c+d$.
+	%
+	\begin{example}
+    	Por exemplo, o nó figura oito abaixo tem grupo de Alexander dado por 
+    	\begin{align*}
+    	    A(K) = [a,b,c,d,e,f \ \vert \ a+b=c+f,\ a+d=b+c,\ a+f=d+e,\ c+d=e+f] 
+    	\end{align*}
+    	%
+    	que, escrito em forma matricial, se torna
+    	%
+    	\begin{align*}
+        	\begin{bmatrix}
+        	1 & 1 & -1 & 0 & 0 & -1 \\
+        	1 & -1 & -1 & 1 & 0 & 0 \\
+        	1 & 0 & 0 & -1 & -1 & 1 \\
+        	0 & 0 & 1 & 1 & -1 & -1 
+        	\end{bmatrix}\cong\mathbb{Z}\oplus\mathbb{Z}\oplus\mathbb{Z}_5.
+    	\end{align*}
+    	%
+    	\begin{figure}[H]
+    	\label{exemplo grupo Alexander}
+    		\begin{center}
+    			\includegraphics[width=4cm]{Images/exemplo_grupo_alexander.png}
+    		\end{center}\caption{Nó figura oito e suas regiões}
+    	\end{figure}
+    	%
+	\end{example}
+	%
+	Outro invariante também relacionado às regiões de um nó é o \textit{número de Alexander}. 
+	Ele é análogo ao grupo de Alexander, mas agora vamos numerar as regiões ao invés de nomeá-las. 
+	Antes de tudo, a notação usada é a seguinte:
+	%
 	\begin{center}
 		\begin{tabular}{ccc}
 			$a$ & $\vert$ & $b$ \\
@@ -2906,7 +3261,11 @@
 			$c$ & $\vert$ & $d$
 		\end{tabular}
 	\end{center}
-	\par\vspace{0.3cm} As duas linhas representam as duas cordas de um cruzamento e as letras $a,b,c,d$ representam as regiões em volta de tal cruzamento. Assim como antes, devemos ter $a+b=c+d$. Por exemplo, se tivermos
+	%
+	As duas linhas representam as duas cordas de um cruzamento e as letras $a,b,c,d$ representam 
+	as regiões em volta de tal cruzamento. Assim como antes, devemos ter $a+b=c+d$. 
+	Por exemplo, se tivermos
+	%
 	\begin{center}
 		\begin{tabular}{ccc}
 			3 & $\vert$ & 5 \\
@@ -2914,52 +3273,79 @@
 			1 & $\vert$ & ?
 		\end{tabular}
 	\end{center}
-	\par\vspace{0.3cm} então devemos ter $?=7$, uma vez que $5+3=1+7$.
-	\par\vspace{0.3cm} Para começar, começamos colocando $0$, $0$ e $1$ em três regiões em volta de um cruzamento. A região restante será numerada com $1$ ou $-1$, o que for necessário para satisfazer a igualdade.
+	%
+	então devemos ter $?=7$, uma vez que $5+3=1+7$.
+	
+	\par\vspace{0.3cm} Para começar, começamos colocando $0$, $0$ e $1$ em três regiões 
+	em volta de um cruzamento. A região restante será numerada com $1$ ou $-1$, o que for 
+	necessário para satisfazer a igualdade.
+	%
 	\begin{align*}
-	\begin{array}{ccc}
-	0 & \vert & 0 \\
-	\hline 
-	1 & \vert & -1
-	\end{array} \ \text{ ou } \ 
-	\begin{array}{ccc}
-	0 & \vert & 1 \\
-	\hline 
-	0 & \vert & 1
-	\end{array}
+    	\begin{array}{ccc}
+    	0 & \vert & 0 \\
+    	\hline 
+    	1 & \vert & -1
+    	\end{array} \ \text{ ou } \ 
+    	\begin{array}{ccc}
+    	0 & \vert & 1 \\
+    	\hline 
+    	0 & \vert & 1
+    	\end{array}
 	\end{align*} 
-	\par\vspace{0.3cm} Na prática, é uma boa ideia começar a numeração com a região de fora e ir preenchendo todas as regiões. Por exemplo, para o nó de trevo
+	%
+	Na prática, é uma boa ideia começar a numeração com a região de fora e ir preenchendo 
+	todas as regiões. Por exemplo, para o nó de trevo
+	%
 	\begin{figure}[H]
-		\label{no de trevo negativo}
+	\label{no de trevo negativo}
 		\begin{center}
 			\includegraphics[width=2.5cm]{Images/no_de_trevo_negativo.png}
 		\end{center}
 	\end{figure}
-	\par\vspace{0.3cm} começamos com a região de fora
+	%
+	começamos com a região de fora
+	%
 	\begin{figure}[H]
-		\label{no de trevo preenchendo}
+	\label{no de trevo preenchendo}
 		\begin{center}
 			\includegraphics[width=2.5cm]{Images/no_de_trevo_preenchendo.png}
 		\end{center}
 	\end{figure}
-	\par\vspace{0.3cm} e balanceamos o cruzamento à direita, da seguinte forma: lembre que toda a região de fora é $0$, então de um lado temos $-1+0=-1$. Logo, a última região deve ser $-2$, uma vez que $-1+0=1+(-2)$. Daí, obtemos
+	%
+	e balanceamos o cruzamento à direita, da seguinte forma: lembre que toda a região 
+	de fora é $0$, então de um lado temos $-1+0=-1$. Logo, a última região deve ser $-2$,
+	uma vez que $-1+0=1+(-2)$. Daí, obtemos a figura abaixo.
+	%
 	\begin{figure}[H]
-		\label{no de trevo preenchido}
+	\label{no de trevo preenchido}
 		\begin{center}
 			\includegraphics[width=2.5cm]{Images/no_de_trevo_preenchido.png}
 		\end{center}
 	\end{figure}
-	\par\vspace{0.3cm} Note, contudo, que no cruzamento inferior à esquerda, temos $0+1=-2+0$, i.e., $3=0$. Isso não seria verdade em aritmética ordinária, mas em aritmética modular essa igualdade é verdade para módulo $3$. De fato, o número de Alexander é o maior módulo que faz com que o último cruzamento fique balanceado. Nesse caso, é $3$. Então, note que se o último cruzamento tem equação $n=0$ para algum $n$ positivo, então $n$ é o nosso número de Alexander. 
-	\par\vspace{0.3cm} Para o nó figura oito, temos
+	%
+	Note, contudo, que no cruzamento inferior à esquerda, temos $0+1=-2+0$, i.e., $3=0$. 
+	Isso não seria verdade em aritmética ordinária, mas em aritmética modular essa igualdade 
+	é verdade para módulo $3$. De fato, o número de Alexander é o maior módulo que faz com 
+	que o último cruzamento fique balanceado. Nesse caso, é $3$. Então, note que se o último 
+	cruzamento tem equação $n=0$ para algum $n$ positivo, então $n$ é o nosso número de Alexander.
+	
+	\par\vspace{0.3cm} Para o nó figura oito, temos a figura a seguir.
+	%
 	\begin{figure}[H]
-		\label{no de oito preenchido}
+	\label{no de oito preenchido}
 		\begin{center}
 			\includegraphics[width=4.5cm]{Images/no_de_oito_preenchido.png}
 		\end{center}
 	\end{figure}
-	\par\vspace{0.3cm} O último cruzamento (inferior) nos dá $3+1=-1+0$, ou seja, $5=0$. Logo, o número de Alexander para o nó figura oito é $5$.
-	\par\vspace{0.3cm} O número de Alexander para o nó de trevo é $3$, e para o nó figura oito, $5$. Logo, o nó de trevo não é equivalente ao nó figura oito, como esperado.
-	\par\vspace{0.3cm} Para ganhar um pouco mais de intuição e certeza de que o número de Alexander é um invariante (não demonstraremos aqui), observe as seguintes figuras.
+	%
+	O último cruzamento (inferior) nos dá $3+1=-1+0$, ou seja, $5=0$. Logo, o número de 
+	Alexander para o nó figura oito é $5$.
+	
+	\par\vspace{0.3cm} O número de Alexander para o nó de trevo é $3$. 
+	Logo, o nó de trevo não é equivalente ao nó figura oito, como esperado.
+	
+	\par\vspace{0.3cm} Para ganhar um pouco mais de intuição e certeza de que o número de 
+	Alexander é um invariante (não demonstraremos aqui), observe as seguintes figuras.
 	%
 % 	\begin{figure}[H]
 % 		\centering
@@ -2982,30 +3368,55 @@
 	%
 	\begin{figure}[H]
         \centering
-        \subfloat[$\Omega_1$]{\label{numero de Alexander e Reidemeister 1}{\includegraphics[width=3cm]{Images/no_de_oito_com_cruzamento_extra.png}}}\hfill
-        \subfloat[$\Omega_2$]{\label{numero de Alexander e Reidemeister 2}{\includegraphics[width=3cm]{Images/no_de_oito_com_corda_por_baixo.png}}}
+        \subfloat[$\Omega_1$]
+        {\label{numero de Alexander e Reidemeister 1}
+        {\includegraphics[width=3cm]{Images/no_de_oito_com_cruzamento_extra.png}}}
+        \hspace{3cm}
+        \subfloat[$\Omega_2$]
+        {\label{numero de Alexander e Reidemeister 2}
+        {\includegraphics[width=3cm]{Images/no_de_oito_com_corda_por_baixo.png}}}
         \caption{O nó figura oito submetido aos movimentos de Reidemeister 1 e 2}
     \end{figure}
 	%
-	\par\vspace{0.3cm} Note que em ambos os diagramas acima o número de Alexander não mudou: tanto para a Figura \ref{numero de Alexander e Reidemeister 1} quanto para a Figura \ref{numero de Alexander e Reidemeister 2} o último cruzamento continua tendo equação $3+1=-1+0$, i.e., $5=0$, e o número de Alexander continua sendo $5$.
-	\par\vspace{0.3cm} O exemplo acima esboça a ideia para se demonstrar que o número de Alexander de fato é um invariante: basta mostrarmos que os movimentos de Reidemeister dos tipos I e II não alteram o número de Alexander.
+	Note que em ambos os diagramas acima o número de Alexander não mudou: tanto para a 
+	Figura \ref{numero de Alexander e Reidemeister 1} quanto para a 
+	Figura \ref{numero de Alexander e Reidemeister 2} o último cruzamento continua tendo 
+	equação $3+1=-1+0$, i.e., $5=0$, e o número de Alexander continua sendo $5$.
+	
+	\par\vspace{0.3cm} O exemplo acima esboça a ideia para se demonstrar que o número de 
+	Alexander de fato é um invariante: basta mostrarmos que os movimentos de Reidemeister 
+	dos tipos I e II não alteram o número de Alexander.
+	
 	\par\vspace{0.3cm} Um último exemplo que vale a pena mencionar é o preenchimento do seguinte nó
+	%
 	\begin{figure}[H]
 		\begin{center}
 			\includegraphics[width=3cm]{Images/no_exemplo_travado.png}
 		\end{center}
 	\end{figure}
-	\par\vspace{0.3cm} Considere que começamos o preenchimento da seguinte forma
+	%
+	Considere que começamos o preenchimento da seguinte forma
+	%
 	\begin{figure}[H]
 		\begin{center}
 			\includegraphics[width=4cm]{Images/no_preenchimento_incompleto.png}
 		\end{center}
 	\end{figure}
-	\par\vspace{0.3cm} Começando no cruzamento superior, chegamos em um impasse: não há como seguir preenchendo, pois todo cruzamento tem pelo menos duas regiões não preenchidas. Contudo, se começarmos o preenchimento da seguinte forma
+	%
+	Começando no cruzamento superior, chegamos em um impasse: não há como seguir preenchendo, 
+	pois todo cruzamento tem pelo menos duas regiões não preenchidas. Contudo, se começarmos 
+	o preenchimento da seguinte forma.
+	%
 	\begin{figure}[H]
 		\begin{center}
 			\includegraphics[width=4cm]{Images/no_preenchimento_completo.png}
 		\end{center}
 	\end{figure}
-	\par\vspace{0.3cm} conseguimos finalizá-lo, obtendo, no último cruzamento, $1+7=-11+0$, i.e., $19=0$. Logo, o número de Alexander para esse nó é $19$.
-	\par\vspace{0.3cm} Como pudemos perceber, às vezes podemos contornar um impasse sendo um pouco mais espertos. Contudo, esse nem sempre é o caso. Existem nós mais complicados para os quais, independentemente do que façamos, é impossível proceder. Ainda assim, é possível encontrar o número de Alexander, mas são necessárias técnicas mais avançadas.
+	%
+	conseguimos finalizá-lo, obtendo, no último cruzamento, $1+7=-11+0$, i.e., $19=0$. 
+	Logo, o número de Alexander para esse nó é $19$.
+	
+	\par\vspace{0.3cm} Como pudemos perceber, às vezes podemos contornar um impasse 
+	sendo um pouco mais espertos. Contudo, esse nem sempre é o caso. Existem nós mais 
+	complicados para os quais, independentemente do que façamos, é impossível proceder. 
+	Ainda assim, é possível encontrar o número de Alexander, mas são necessárias técnicas mais avançadas.
