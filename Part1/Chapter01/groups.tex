@@ -13,7 +13,398 @@
 \end{flushright}
 \end{minipage}
 
+\section{Grupos}
+%
+\begin{definition}[Operação binária]
+\label{def-operacao-binaria}
+    Seja $G$ um conjunto. Uma operação binária em $G$ é uma função que associa, a cada par ordenado
+    de elementos de $G$, um elemento de $G$.
+\end{definition}
+%
+\begin{example}
+    a
+\end{example}
+%
+\begin{definition}[Grupo]
+\label{def-grupo}
+    Seja $G$ um conjunto munido de uma operação binária que, a cada par $(a,b)\in G\times G$, associa
+    o elemento de $G$ denotado por $ab$. Dizemos que $G$ é um grupo sob essa operação se as seguintes
+    condições são satisfeitas:
+    %
+    \begin{enumerate}[(i)]
+        \item a operação é associativa, ou seja, $(ab)c = a(bc)$ para todos $a,b,c\in G$;
+        \item existe um elemento $e\in G$, chamado identidade, tal que $ae = ea = a$ para todo $a\in G$;
+        \item para todo $a\in G$, existe $b\in G$ (chamado o inverso de $a$) tal que $ab = ba = e$.
+    \end{enumerate}
+    %
+\end{definition}
+%
+\begin{example}
+    a
+\end{example}
+%
+\begin{example}
+    a
+\end{example}
+%
+\begin{example}
+    a
+\end{example}
+%
+\subsection*{Propriedades elementares de grupos}
+%
+\begin{theorem}
+\label{teo-unicidade-ident}
+    O elemento identidade de um grupo é único.
+\end{theorem}
+%
+\begin{proof}
+    a
+\end{proof}
+%
+\begin{theorem}
+\label{teo-cancelamento}
+    Dados um grupo $G$ e $a,b,c\in G$ quaisquer, temos que
+    %
+    \begin{enumerate}
+        \item $ba = ca \implies b = c$;
+        \item $ab = ac \implies b = c$.
+    \end{enumerate}
+    %
+\end{theorem}
+%
+\begin{proof}
+    a
+\end{proof}
+%
+\begin{theorem}
+\label{teo-unicidade-inv}
+    Para cada $a\in G$, existe um único $b\in G$ tal que $ab = ba = e$.
+\end{theorem}
+%
+\begin{proof}
+    a
+\end{proof}
+%
+\begin{theorem}
+\label{teo-inv-prod}
+    Dados um grupo $G$ e $a,b\in G$, temos $(ab)^{-1} = b^{-1}a^{-1}$.
+\end{theorem}
+%
+\begin{proof}
+    a
+\end{proof}
+%
+\subsection*{Subgrupos}
+%
+\begin{definition}
+\label{def-ordem-grupo}
+    A ordem de um grupo finito $G$ é o número de elementos que ele contém, denotada por
+    $|G|$ ou $\sharp G$.
+\end{definition}
+%
+\begin{definition}
+\label{def-ordem-elemento}
+    A ordem de um elemento $g$ de um grupo $G$ é o menor inteiro positivo $n$ tal que
+    $g^n = e$. Se um tal inteiro não existir, dizemos que $g$ tem ordem infinita. Denotamos
+    a ordem de $g$ por $|g|$.
+\end{definition}
+%
+\begin{example}
+    a
+\end{example}
+%
+\begin{example}
+    a
+\end{example}
+%
+\begin{definition}
+\label{def-subgrupo}
+    Se um subconjunto $H$ de um grupo $G$ é também um grupo sob a operação de $G$,
+    dizemos que $H$ é um subgrupo de $G$, e denotamos $H \leq G$ ou $H < G$ se $H\subseteq G$
+    e $H \subset G$, respectivamente.
+\end{definition}
+%
+\subsection*{Testes de subgrupos}
+%
+\begin{theorem}
+\label{teo-teste-subgrupo}
+    Sejam $G$ um grupo e $H\neq\varnothing$ um subconjunto de $G$. Se $ab^{-1}\in H$ sempre que
+    $a,b\in H$, então $H\leq G$.
+\end{theorem}
+%
+\begin{proof}
+    a
+\end{proof}
+%
+\begin{example}
+    a
+\end{example}
+%
+\begin{theorem}
+\label{teo-teste2-subgrupo}
+    Sejam $G$ um grupo e $H\neq\varnothing$ um subconjunto de $G$. Se $ab\in H$ sempre
+    que $a,b\in H$ e $a^{-1}\in H$ sempre que $a\in H$, então $H\leq G$.
+\end{theorem}
+%
+\begin{proof}
+    a
+\end{proof}
+%
+\begin{example}
+    a
+\end{example}
+%
+\begin{theorem}
+\label{teo-teste-subgrupo-finito}
+    Seja $H\neq\varnothing$ um subconjunto finito de um grupo $G$. Se $H$ é fechado sob
+    a operação de $G$, então $H$ é um subgrupo de $G$.
+\end{theorem}
+%
+\begin{proof}
+    a
+\end{proof}
+%
+\begin{prop}
+    Se $G$ é um grupo e $a\in G$, então $\langle a \rangle \leq G$.
+\end{prop}
+%
+\begin{proof}
+    a
+\end{proof}
+%
+\begin{example}
+    a
+\end{example}
+%
+\begin{definition}[Centro]
+\label{def-centro}
+    O centro $Z(G)$ de um grupo $G$ é o subconjunto dos elementos de $G$ que comutam
+    com todos os elementos de $G$. Em símbolos,
+    %
+    \[
+    Z(G) = \{ g\in G \ | \ gx = xg, \, \forall x\in G \}.
+    \]
+    %
+\end{definition}
+%
+\begin{theorem}
+\label{teo-centro-subgrupo}
+    O centro de um grupo $G$ é um subgrupo de $G$.
+\end{theorem}
+%
+\begin{proof}
+    a
+\end{proof}
+%
+\begin{definition}[Centralizador]
+\label{def-centralizador}
+    Seja $a\in G$ um elemento fixado. O centralizador de $a\in G$, denotado $C_G(a)$,
+    é o conjunto dos elementos de $G$ que comutam com $a$. Em símbolos,
+    %
+    \[
+    C_G(a) = \{ g\in G \ | \ ga = ag \}.
+    \]
+    %
+\end{definition}
+%
+\begin{theorem}
+\label{teo-centralizador-subgrupo}
+    Para cada elemento $a$ em um grupo $G$, o centralizador de $a$ é um subgrupo de $G$.
+\end{theorem}
+%
+\begin{proof}
+    a
+\end{proof}
+%
+\subsection*{Propriedades de grupos cíclicos}
+%
+\begin{theorem}
+\label{teo-crit-potencias-iguais}
+    Sejam $G$ um grupo e $a\in G$. Se $a$ tem ordem infinita, então $a^i = a^j$ se, e somente se, $i=j$.
+    Se $a$ tem ordem finita $n$, então 
+    %
+    \[
+    \langle a \rangle = \{e, a, a^2, \dots, a^{n-1}\}
+    \]
+    %
+    e $a^i = a^j$ se, e somente se, $n\mid i-j$.
+\end{theorem}
+%
+\begin{proof}
+    a
+\end{proof}
+%
+\begin{corollary}
+\label{cor-ordem-elemento-ordem-subgrupo}
+    Para qualquer elemento $a$ de um grupo, $|a| = |\langle a \rangle|$.
+\end{corollary}
+%
+\begin{proof}
+    a
+\end{proof}
+%
+\begin{corollary}
+\label{cor-num-divide-ordem}
+    Sejam $G$ em grupo e $a\in G$ de ordem $n$. Se $a^k = e$, então $n\mid k$.
+\end{corollary}
+%
+\begin{proof}
+    a
+\end{proof}
+%
+\begin{theorem}
+\label{teo-ordem-gerado}
+    Sejam $a$ um elemento de ordem $n$ de um grupo e $k$ um inteiro positivo qualquer.
+    Temos que
+    %
+    \[
+    \langle a^k \rangle = \langle a^{\mdc(n,k)} \rangle
+    \]
+    %
+    e
+    %
+    \[
+    |a^k| = \frac{n}{\mdc(n,k)}.
+    \]
+    %
+\end{theorem}
+%
+\begin{corollary}
+\label{cor-ordem-elemento-divide-ordem-grupo}
+    Em um grupo cíclico finito, a ordem de um elemento divide a ordem do grupo.
+\end{corollary}
+%
+\begin{corollary}
+\label{cor-igualdade-subgrupos-gerados}
+    Sejam $G$ um grupo e $a\in G$ com $|a|=n$. Então $\langle a^i \rangle = \langle a^j \rangle$
+    se, e somente se, $\mdc(n,i) = \mdc(n,j)$ e $|a^i| = |a^j|$ se, e somente se, $\mdc(n,i) = \mdc(n,j)$.
+\end{corollary}
+%
+\begin{proof}
+    a
+\end{proof}
+%
+\begin{corollary}
+\label{cor-geradores-ciclicos}
+    Sejam $G$ um grupo e $a\in G$ com $|a|=n$. Então $\langle a \rangle = \langle a^j \rangle$ se,
+    e somente se, $\mdc(n,j) = 1$ e $|a| = |\langle a^j \rangle|$ se, e somente se, $\mdc(n,j) = 1$.
+\end{corollary}
+%
+\begin{corollary}
+\label{cor-geradores-Zn}
+    Um inteiro $k\in \mathbb{Z}_n$ é um gerador de $\mathbb{Z}_n$ se, e somente se, $\mdc(n,k) = 1$.
+\end{corollary}
+%
+\begin{theorem}[Teorema Fundamental dos Grupos Cíclicos]
+\label{teo-fund-grupos-ciclicos}
+    Todo subgrupo de um grupo cíclico é cíclico. Ademais, se $|\langle a \rangle| = n$, então
+    a ordem de qualquer subgrupo de $\langle a \rangle$ é um divisor de $n$ e, para cada divisor
+    positivo $k$ de $n$, o grupo $\langle a \rangle$ tem exatamente um subgrupo de ordem $k$, a saber
+    $\langle a^{n/k} \rangle$.
+\end{theorem}
+%
+\begin{proof}
+    a
+\end{proof}
+%
+\begin{corollary}
+\label{cor-subgrupos-Zn}
+    Para cada divisor positivo $k$ de $n$, o conjunto $\langle n/k \rangle$ é o único subgrupo
+    de $\mathbb{Z}_n$ de ordem $k$. Além disso, os subgrupos de $\mathbb{Z}_n$ são todos dessa
+    forma.
+\end{corollary}
+%
+definir a função $\phi$ de Euler.
+%
+\begin{theorem}
+\label{teo-num-elementos-por-ordem}
+    Se $d$ é um divisor positivo de $n$, o número de elementos de ordem $d$ em um grupo
+    cíclico de ordem $n$ é $\phi(d)$.
+\end{theorem}
+%
+\begin{proof}
+    a
+\end{proof}
+%
+\begin{corollary}
+\label{cor-num-elementos-por-ordem}
+    Em um grupo finito, o número de elementos de ordem $d$ é um múltiplo de $\phi(d)$.
+\end{corollary}
+%
+\begin{proof}
+    a
+\end{proof}
+%
+
 \section{Grupos de permutação}
+    %
+    \begin{definition}
+    \label{def-grupo-perm}
+        Um grupo de permutações de um conjunto $A$ é um conjunto de permutações de $A$ que forma
+        um grupo sob a operação de composição.
+    \end{definition}
+    %
+    comentários e notação de matriz
+    %
+    \begin{example}
+        a
+    \end{example}
+    %
+    \begin{example}
+        a
+    \end{example}
+    %
+    comentários e notação de ciclos
+    %
+    \subsection*{Propriedades das permutações}
+    %
+    \begin{theorem}
+    \label{teo-prod-ciclos-disj}
+        Toda permutação de um conjunto finito pode ser escrita como um ciclo ou
+        como um produto de ciclos disjuntos.
+    \end{theorem}
+    %
+    \begin{proof}
+        a
+    \end{proof}
+    %
+    \begin{theorem}
+    \label{teo-ciclos-disj-comutam}
+        Se o par de ciclos $\alpha = (a_1, a_2, \dots, a_m)$ e $\beta = (b_1, b_2, \dots, b_n)$
+        não têm entradas em comum, então $\alpha\beta = \beta\alpha$.
+    \end{theorem}
+    %
+    \begin{proof}
+        a
+    \end{proof}
+    %
+    \begin{theorem}
+    \label{teo-ordem-perm}
+        A ordem de uma permutação em um conjunto finito escrita como produto de ciclos disjuntos
+        é o menor múltiplo comum dos comprimentos dos ciclos.
+    \end{theorem}
+    %
+    \begin{proof}
+        a
+    \end{proof}
+    %
+    \begin{example}
+        a
+    \end{example}
+    %
+    \begin{theorem}
+    \label{teo-perm-2ciclos}
+        Toda permutação de $S_n$, $n>1$, é um produto de 2-ciclos.
+    \end{theorem}
+    %
+    \begin{proof}
+        a
+    \end{proof}
+    %
+    \begin{example}
+        a
+    \end{example}
     %
     \begin{lemma}
 	\label{lema identidade permutacoes}
