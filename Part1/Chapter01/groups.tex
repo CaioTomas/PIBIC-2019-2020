@@ -22,7 +22,8 @@
 \end{definition}
 %
 \begin{example}
-    a
+    A adição, subtração e multiplicação de inteiros são exemplos de operações binárias, bem
+    como a adição e multiplicação módulo $n$.
 \end{example}
 %
 \begin{definition}[Grupo]
@@ -39,16 +40,20 @@
     %
 \end{definition}
 %
+\begin{remark}
+    É comum denotar a identidade simplesmente por $1$ ao invés de $e$. Faremos isso sem cerimônia
+    no decorrer do texto onde for conveniente.
+\end{remark}
+%
 \begin{example}
-    a
+    Os conjuntos dos inteiros, dos racionais e dos reais são todos grupos sob a operação de adição.
+    Em cada um dos casos, a identidade é o 0 e o inverso de $a$ é $-a$. Além disso, $a+b = b+a$ para
+    todos $a,b$ no respectivo conjunto e, por isso, dizemos que o grupo é abeliano.
 \end{example}
 %
 \begin{example}
-    a
-\end{example}
-%
-\begin{example}
-    a
+    O conjunto dos inteiros sob a multiplicação ordinária não é um grupo. De fato, não existe
+    nenhum inteiro $b$ tal que $5b = 1$.
 \end{example}
 %
 \subsection*{Propriedades elementares de grupos}
@@ -59,7 +64,13 @@
 \end{theorem}
 %
 \begin{proof}
-    a
+    Suponha que $e$ e $e'$ são identidades em $G$. Então, temos
+    %
+    \[
+    e' = e'e = e
+    \]
+    %
+    e, portanto, a identidade é única.
 \end{proof}
 %
 \begin{theorem}
@@ -74,7 +85,13 @@
 \end{theorem}
 %
 \begin{proof}
-    a
+    Suponha $ba = ca$ e seja $a^{-1}$ o inverso de $a$. Multiplicando à direita, temos
+    %
+    \[
+    (ba)a^{-1} = (ca)a^{-1} \iff b(aa^{-1}) = c(aa^{-1}) \iff b = c. 
+    \]
+    %
+    De maneira análoga, mostra-se que $ab = ac$ implica $b=c$ multiplicando-se por $a^{-1}$ à esquerda.
 \end{proof}
 %
 \begin{theorem}
@@ -83,7 +100,7 @@
 \end{theorem}
 %
 \begin{proof}
-    a
+    Suponha que $b$ e $c$ são inversos de $a$. Então $ab = e = ac$ e, portanto, $b = c$.
 \end{proof}
 %
 \begin{theorem}
@@ -92,7 +109,19 @@
 \end{theorem}
 %
 \begin{proof}
-    a
+    Note que
+    %
+    \[
+    (ab)(ab)^{-1} = e
+    \]
+    %
+    e
+    %
+    \[
+    (ab)(b^{-1}a^{-1}) = a(bb^{-1})a^{-1} = aa^{-1} = e,
+    \]
+    %
+    donde segue, pelo teorema anterior, que $(ab)^{-1} = b^{-1}a^{-1}$.
 \end{proof}
 %
 \subsection*{Subgrupos}
@@ -111,11 +140,13 @@
 \end{definition}
 %
 \begin{example}
-    a
+    Considere $\mathbb{Z}_{10}$ sob a adição módulo 10. Como $1\cdot 2 = 2$, $2\cdot 2 = 4$,
+    $3\cdot 2 = 6$, $4\cdot 2 = 8$ e $5\cdot 2 = 0$, sabemos que $|2| = 5$.
 \end{example}
 %
 \begin{example}
-    a
+    Considere $\mathbb{Z}$ sob a adição. Todo elemento não nulo tem ordem infinita, já que a
+    sequência $a, 2a, 3a, \dots$ não inclui o 0 se $a\neq 0$.
 \end{example}
 %
 \begin{definition}
