@@ -2754,7 +2754,64 @@
 	%
 	\begin{equation*}
 	    \tr(\Phi_3(\sigma_1\sigma_2)\mu^{\otimes 3}) = \tr((R\otimes I)(I\otimes R) \mu^{\otimes 3}) = 1+t.
-	\end{equation*} 
+	\end{equation*}
+	%
+	De fato, temos
+	%
+	\begin{align*}
+	    \Phi_3(\sigma_1\sigma_2) &= (R\otimes I)(I\otimes R) \\
+	    &= \begin{bmatrix}
+	    1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+	    0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 \\
+	    0 & 0 & 0 & 0 & -\sqrt{t} & 0 & 0 & 0 \\
+	    0 & 0 & 0 & 0 & 0 & -\sqrt{t} & 0 & 0 \\
+	    0 & 0 & -\sqrt{t} & 0 & 1-t & 0 & 0 & 0 \\
+	    0 & 0 & 0 & -\sqrt{t} & 0 & 1-t & 0 & 0 \\
+	    0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 \\
+	    0 & 0 & 0 & 0 & 0 & 0 & 0 & 1
+	    \end{bmatrix}
+	    \begin{bmatrix}
+	    1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+	    0 & 0 & -\sqrt{t} & 0 & 0 & 0 & 0 & 0 \\
+	    0 & -\sqrt{t} & 1-t & 0 & 0 & 0 & 0 & 0 \\
+	    0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 \\
+	    0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 \\
+	    0 & 0 & 0 & 0 & 0 & 0 & -\sqrt{t} & 0 \\
+	    0 & 0 & 0 & 0 & 0 & -\sqrt{t} & 1-t & 0 \\
+	    0 & 0 & 0 & 0 & 0 & 0 & 0 & 1
+	    \end{bmatrix} \\
+	    &= \begin{bmatrix}
+	    1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+	    0 & 0 & -\sqrt{t} & 0 & 0 & 0 & 0 & 0 \\
+	    0 & 0 & 0 & 0 & -\sqrt{t} & 0 & 0 & 0 \\
+	    0 & 0 & 0 & 0 & 0 & -\sqrt{t} & 0 & 0 \\
+	    0 & t & 0 & 0 & 1-t & 0 & 0 & 0 \\
+	    0 & 0 & 0 & -\sqrt{t} & 0 & 0 & -\sqrt{t}(1-t) & 0 \\
+	    0 & 0 & 0 & 0 & 0 & -\sqrt{t} & 1-t & 0 \\
+	    0 & 0 & 0 & 0 & 0 & 0 & 0 & 1
+	    \end{bmatrix}.
+	\end{align*}
+	%
+	Daí, como
+	%
+	\begin{align*}
+	    \mu^{\otimes 3} &= \begin{bmatrix}
+	    1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+	    0 & t & 0 & 0 & 0 & 0 & 0 & 0 \\
+	    0 & 0 & t & 0 & 0 & 0 & 0 & 0 \\
+	    0 & 0 & 0 & t^2 & 0 & 0 & 0 & 0 \\
+	    0 & 0 & 0 & 0 & t & 0 & 0 & 0 \\
+	    0 & 0 & 0 & 0 & 0 & t^2 & 0 & 0 \\
+	    0 & 0 & 0 & 0 & 0 & 0 & t^2 & 0 \\
+	    0 & 0 & 0 & 0 & 0 & 0 & 0 & t^3
+	    \end{bmatrix},    
+	\end{align*}
+	%
+	segue que
+	%
+	\begin{align*}
+	    \tr((R\otimes I)(I\otimes R)\mu^{\otimes 3}) = 1 + 0 + 0 + 0 + t(1-t) + t^2(1-t) + t^3 = 1 + t.
+	\end{align*}
 	%
 	Como $l(\beta) = 2$, temos
 	%
