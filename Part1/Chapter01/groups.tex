@@ -165,11 +165,28 @@
 \end{theorem}
 %
 \begin{proof}
-    a
+    Como a operação de $H$ é a mesma de $G$, é claro que ela é associativa. Vamos mostrar que
+    $e\in H$.
+    
+    Como $H\neq\varnothing$, existe $x\in H$. Daí, tomando $a=x=b$, temos que $e = xx^{-1} = ab^{-1}\in H$.
+    
+    Para checar que $x^{-1}\in H$ sempre que $x\in H$, basta tomarmos $a = e$ e $b = x$. 
+    
+    Por fim, resta mostrarmos que $H$ é fechado para a operação, ou seja, que se $x,y\in H$
+    então $xy\in H$. Ora, para tanto basta tomar $a = x$ e $b = y^{-1}$.
 \end{proof}
 %
 \begin{example}
-    a
+    Seja $G$ um grupo abeliano com identidade $e$. Então $H = \{x\in G \ | \ x^2 = e\}$ é um subgrupo
+    de $G$. De fato, temos $e^2 = e$, logo $e\in H$ e, portanto, $H\neq\varnothing$. Agora, suponha
+    que $a,b\in H$, ou seja, $a^2 = e = b^2$. Queremos mostrar que $(ab^{-1})^2 = e$. Ora, mas
+    como $G$ é abeliano, então
+    %
+    \[
+    (ab^{-1})^2 = ab^{-1}ab^{-1} = aab^{-1}b^{-1} = a^2(b^2)^{-1} = ee^{-1} = e.
+    \]
+    %
+    Segue então do teorema anterior que $H\leq G$.
 \end{example}
 %
 \begin{theorem}
@@ -179,11 +196,45 @@
 \end{theorem}
 %
 \begin{proof}
-    a
+    Pelo Teorema \ref{teo-teste-subgrupo}, basta mostrar que se $a,b\in H$ então $ab^{-1} \in H$.
+    Então, suponhamos $a,b\in H$. Por hipótese, $H$ contém os inversos de $a$ e de $b$, de modo que
+    $ab^{-1}\in H$ pois $H$ é fechado para a multiplicação por hipótese.
 \end{proof}
 %
 \begin{example}
-    a
+    Sejam $G$ um grupo abeliano e $H = \{ x\in G \ | \ |x| < \infty \}$. Vamos mostrar que $H\leq G$
+    usando o teorema acima. Primeiro, como $e^1 = e$, segue que $e\in H$, ou seja, $H\neq\varnothing$.
+    Agora, assuma que $a,b\in H$ e sejam $|a| = m$ e $|b| = n$. Como $G$ é abeliano, temos que
+    %
+    \[
+    (ab)^{mn} = (a^m)^n(b^n)^m = e^ne^m = e.
+    \]
+    %
+    Portanto, $|ab| < \infty$ (não necessariamente $|ab| = mn$, cuidado!), ou seja, $ab\in H$. Por fim,
+    como
+    %
+    \[
+    (a^{-1})^m = (a^m)^{-1} = e^{-1} = e,
+    \]
+    %
+    então $a^{-1}\in H$ e, pelo teorema anterior, segue que $H\leq G$.
+\end{example}
+%
+\begin{example}
+    Sejam $G$ o grupo dos números reais não nulos com a multiplicação, 
+    %
+    \[
+    H = \{ x\in G \ | \ x = 1 \text{ ou } x\in G\setminus\mathbb{Q} \}
+    \]
+    %
+    e
+    %
+    \[
+    K = \{ x\in G \ | \ x\geq 1 \}.
+    \]
+    %
+    Note que $H\not\leq G$ pois $\sqrt{2}\in H$ mas $\sqrt{2}\cdot\sqrt{2} = 2\notin H$.
+    Além disso, $K$ também não é subgrupo de $G$ pois $2\in K$ mas $2^{-1} = 1/2 \notin K$.
 \end{example}
 %
 \begin{theorem}
@@ -193,7 +244,15 @@
 \end{theorem}
 %
 \begin{proof}
-    a
+    Do Teorema \ref{teo-teste2-subgrupo}, para provarmos o resultado basta mostrar que
+    $a^{-1}\in H$ sempre que $a\in H$.
+    
+    Note que se $a = e$, então $a^{-1} = a$ e terminamos. Do contrário, considere a
+    sequência $a, a^2, \dots$ cujos elementos todos pertencem a $H$ por hipótese.
+    Pela finitude de $H$, segue que os elementos dessa sequência não são todos distintos,
+    ou seja, existem $i,j\in\mathbb{N}$ tais que $a^i = a^j$ com $i>j$. Ora, então
+    $a^{i-j} = e$ e, como $a\neq e$, devemos ter $i-j>1$. Portanto, $a^{-1} = a^{i-j-1}$.
+    Como $i-j-1\geq 1$, segue que $a^{i-j-1}\in H$ e terminamos.
 \end{proof}
 %
 \begin{prop}
@@ -201,11 +260,13 @@
 \end{prop}
 %
 \begin{proof}
-    a
+    Como $a\in\langle a \rangle$, temos $\langle a \rangle\neq\varnothing$. Sejam
+    $a^n, a^m\in \langle a \rangle$. Então $a^n(a^m)^{-1} = a^{n-m}\in \langle a \rangle$ de modo que,
+    pelo Teorema \ref{teo-teste-subgrupo}, temos $\langle a \rangle\leq G$.
 \end{proof}
 %
 \begin{example}
-    a
+    Em $\mathbb{Z}_{10}$, $\langle 2 \rangle = \{2, 4, 6, 8, 0\}$.
 \end{example}
 %
 \begin{definition}[Centro]
@@ -225,7 +286,18 @@
 \end{theorem}
 %
 \begin{proof}
-    a
+    Vamos mostrar esse resultado usando o Teorema \ref{teo-teste2-subgrupo}. Como
+    $eg = ge$ para todo $g\in G$, temos $e\in Z(G)$, de modo que $Z(G)\neq\varnothing$.
+    Agora, suponha que $a,b\in Z(G)$. Então $(ab)x = a(bx) = a(xb) = (ax)b = (xa)b = x(ab)$ para
+    todo $x\in G$. Logo, $ab\in Z(G)$.
+    
+    Por fim, suponha que $a\in Z(G)$, ou seja,
+    %
+    \[
+    ax = xa \iff a^{-1}(ax)a^{-1} = a^{-1}(xa)a^{-1} \iff exa^{-1} = a^{-1}xe \iff xa^{-1} = a^{-1}x. 
+    \]
+    %
+    Logo, $a^{-1}\in Z(G)$ e o resultado segue do Teorema \ref{teo-teste2-subgrupo}.
 \end{proof}
 %
 \begin{definition}[Centralizador]
@@ -245,8 +317,14 @@
 \end{theorem}
 %
 \begin{proof}
-    a
+    A prova é similar àquela do Teorema \ref{teo-centro-subgrupo} e é deixada ao leitor.
 \end{proof}
+%
+\begin{remark}
+    Note que, para todo elemento $a$ de um grupo $G$, temos $Z(G)\subseteq C_G(a)$. Ademais,
+    note que $G$ é abeliano se, e somente se, $C_G(a) = G$ para todo $a\in G$. Equivalentemente,
+    $G$ é abeliano se, e somente se, $Z(G) = G$.
+\end{remark}
 %
 \subsection*{Propriedades de grupos cíclicos}
 %
