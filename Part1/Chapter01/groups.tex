@@ -341,7 +341,38 @@
 \end{theorem}
 %
 \begin{proof}
-    a
+    Se $a$ tem ordem infinita, então não existe $n\neq 0$ tal que $a^n = e$. Como $a^i = a^j$ implica
+    $a^{i-j} = e$, devemos ter $i=j$ e fica provada a primeira afirmação do teorema.
+    
+    Agora, suponha que $|a| = n$. Vamos mostrar que $\langle a \rangle = \{e, a, \dots, a^{n-1}\}$.
+    A inclusão $\{e, a, \dots, a^{n-1}\} \subseteq \langle a \rangle$ é imediata. Para a inclusão
+    no outro sentido, seja $a^k \in \langle a \rangle$ qualquer. Pelo algoritmo da divisão, existem
+    inteiros $q, r$ tais que
+    %
+    \[
+    k = qn + r, \, 0\leq r < n.
+    \]
+    %
+    Sendo assim, temos
+    %
+    \[
+    a^k = a^{qn + r} = (a^n)^qa^r = a^r,
+    \]
+    %
+    ou seja, $a^k \in\{e, a, \dots, a^{n-1}\}$ e fica provada a nossa afirmação.
+    
+    Por fim, resta mostrar que $a^i = a^j \iff n\mid i-j$. Suponha, inicialmente, que $a^i = a^j$.
+    Ora, então $a^{i-j} = e$ e, usando o algoritmo da divisão novamente, existem inteiros $q,r$ tais
+    que
+    %
+    \[
+    i-j = qn + r, \, 0\leq r < n.
+    \]
+    %
+    Daí, segue que $e = a^{i-j} = a^r$. Como $n$ é o menor inteiro positivo tal que $a^n = e$, devemos
+    ter $r=0$ e, portanto, $n\mid i-j$.
+    
+    Reciprocamente, se $i-j = nq$ então $a^{i-j} = a^{nq} = e^q = e$, de modo que $a^i = a^j$.
 \end{proof}
 %
 \begin{corollary}
@@ -349,17 +380,13 @@
     Para qualquer elemento $a$ de um grupo, $|a| = |\langle a \rangle|$.
 \end{corollary}
 %
-\begin{proof}
-    a
-\end{proof}
-%
 \begin{corollary}
 \label{cor-num-divide-ordem}
     Sejam $G$ em grupo e $a\in G$ de ordem $n$. Se $a^k = e$, então $n\mid k$.
 \end{corollary}
 %
 \begin{proof}
-    a
+    Como $a^k = e = a^0$, segue do Teorema \ref{teo-crit-potencias-iguais} que $n\mid k-0 = k$.
 \end{proof}
 %
 \begin{theorem}
@@ -379,6 +406,29 @@
     %
 \end{theorem}
 %
+\begin{proof}
+    Por simplicidade, vamos denotar $d = \mdc(n,k)$. Escreva $k = dr$. Como $a^k = (a^d)^r$, segue
+    que $\langle a^k \rangle \subseteq \langle a^d \rangle$. Ademais, sabemos que existem inteiros
+    $s,t$ tais que $d = ns + kt$ e, portanto,
+    %
+    \[
+    a^d = a^{ns}a^{kt} = (a^k)^t \in \langle a^k \rangle.
+    \]
+    %
+    Logo, $\langle a^d \rangle \subseteq \langle a^k \rangle$ e, consequentemente,
+    $\langle a^d \rangle = \langle a^k \rangle$, provando a primeira parte do teorema.
+    
+    Para a segunda parte, vamos primeiro mostrar que $|a^d| = n/d$ para qualquer divisor $d$ de $n$.
+    De fato, $(a^d)^{n/d} = a^n = e$, de modo que $|a^d| \leq n/d$. Por outro lado, se $i$ é um
+    inteiro positivo menor que $n/d$ então $(a^d)^i\neq e$ por definição de $|a|$, pois $di < n$.
+    Aplicando esse fato para $d = \mdc(n,k)$, obtemos
+    %
+    \[
+    |a^k| = |\langle a^k \rangle| = |\langle a^{\mdc(n,k)} \rangle| = |a^{\mdc(n,k)}| = \frac{n}{\mdc(n,k)}.
+    \]
+    %
+\end{proof}
+%
 \begin{corollary}
 \label{cor-ordem-elemento-divide-ordem-grupo}
     Em um grupo cíclico finito, a ordem de um elemento divide a ordem do grupo.
@@ -391,7 +441,12 @@
 \end{corollary}
 %
 \begin{proof}
-    a
+    Pelo Teorema \ref{teo-ordem-gerado}, basta mostrarmos que 
+    $\langle a^{\mdc(n,i)} \rangle = \langle a^{\mdc(n,j)} \rangle$ se, e somente se, $\mdc(n,i) = \mdc(n,j)$.
+    Ora, é claro que se $\mdc(n,i) = \mdc(n,j)$ então os subgrupos gerados são iguais. Reciprocamente,
+    se os subgrupos gerados são iguais então $|a^{\mdc(n,i)}| = |a^{\mdc(n,j)}|$ e, pela segunda afirmação
+    do Teorema \ref{teo-ordem-gerado}, temos $n/\mdc(n,i) = n/\mdc(n,j)$ e, consequentemente,
+    $\mdc(n,i) = \mdc(n,j)$.
 \end{proof}
 %
 \begin{corollary}
