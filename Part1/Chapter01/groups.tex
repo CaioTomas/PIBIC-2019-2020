@@ -469,7 +469,47 @@
 \end{theorem}
 %
 \begin{proof}
-    a
+    Sejam $G = \langle a \rangle$ e $H\leq G$. Vamos mostrar que $H$ é cíclico.
+    
+    Ora, se $H = \{e\}$, então claramente $H = \langle e \rangle$. Então, vamos assumir
+    $H\neq\{e\}$. Afirmamos que $H$ contém um elemento da forma $a^t, t>0$. De fato,
+    como $G = \langle a \rangle$, todo elemento de $H$ é da forma $a^t$ e, quando
+    $t<0$, então o inverso dessa potência tem expoente positivo e também pertence a $H$,
+    verificando nossa afirmação.
+    
+    Agora, seja $m$ o menor inteiro positivo tal que $a^m\in H$, que existe pois $H\neq\{e\}$.
+    Como $H$ é fechado para a multiplicação, temos $\langle a^m \rangle\subseteq H$. Afirmamos
+    que vale a inclusão $\langle a^m \rangle \supseteq H$, ou seja, que $H = \langle a^m \rangle$.
+    De fato, se $b$ é um elemento qualquer de $H$, então $b = a^k$ para algum $k$. Aplicando o 
+    algoritmo da divisão para $k$ e $m$, temos que existem inteiros $q,r$ tais que
+    %
+    \[
+    k = mq + r, \, 0\leq r < m.
+    \]
+    %
+    Logo,
+    %
+    \[
+    a^k = a^{mq}a^r \iff a^r = a^{-mq}a^k.
+    \]
+    %
+    Como $a^k, a^{-mq} \in H$, segue que $a^r \in H$. Ora, mas $m$ foi tomado como sendo o menor
+    inteiro positivo tal que $a^m \in H$. Portanto, devemos ter $r = 0$ e, daí, $b = a^k \in \langle a^m \rangle$,
+    concluindo a demonstração de que $H$ é cíclico.
+    
+    Para provar a próxima parte do teorema, suponha que $|\langle a \rangle| = n$ e seja $H\leq\langle a \rangle$.
+    Já mostramos que $H = \langle a^m \rangle$, sendo $m$ o menor inteiro positivo tal que $a^m\in H$.
+    Tomando $a^n = b = e$ no parágrafo anterior, segue que $n = mq$.
+    
+    Para a parte final do teorema, seja $k$ um divisor positivo de $n$ qualquer. Do Teorema \ref{teo-ordem-gerado},
+    sabemos que $\langle a^{n/k} \rangle$ tem ordem $n/\mdc(n,n/k) = n/(n/k) = k$. Seja $H\leq\langle a \rangle$
+    de ordem $k$. Mostramos acima que $H = \langle a^m \rangle$, onde $m\mid n$. Ora, então $m = \mdc(n,m)$ e
+    %
+    \[
+    k = |a^m| = |a^{\mdc(m,n)}| = n/\mdc(n,m) = n/m.
+    \]
+    %
+    Portanto, $m = n/k$ e $H = \langle a^{n/k} \rangle$.
 \end{proof}
 %
 \begin{corollary}
@@ -479,7 +519,23 @@
     forma.
 \end{corollary}
 %
-definir a função $\phi$ de Euler.
+Antes de seguir para o próximo teorema, convém definir a seguinte função, que é bastante relevante
+em Teoria dos Números.
+%
+\begin{definition}[Função $\phi$ de Euler]
+\label{def-funcao-phi-euler}
+    A função $\phi:\mathbb{N}^*\to\mathbb{N}^*$ tal que
+    %
+    \[
+    \begin{cases}
+        \phi(1) = 1 \\
+        \phi(n) = \sharp\{ d\in\mathbb{N}^* \ | \ \mdc(d,n) = 1 \}, \, n>1
+    \end{cases}
+    \]
+    %
+    é chamada função phi de Euler. Dito de outro modo, ela associa, a cada $n>1$, a quantidade
+    de inteiros positivos que são coprimos com $n$.
+\end{definition}
 %
 \begin{theorem}
 \label{teo-num-elementos-por-ordem}
@@ -488,7 +544,11 @@ definir a função $\phi$ de Euler.
 \end{theorem}
 %
 \begin{proof}
-    a
+    Pelo Teorema \ref{teo-fund-grupos-ciclicos}, o grupo tem exatamente um subgrupo de ordem $d$, digamos
+    $\langle a \rangle$. Então todo elemento de ordem $d$ também gera o subgrupo $\langle a \rangle$ e,
+    pelo Corolário \ref{cor-geradores-ciclicos}, um elemento $a^k$ gera $\langle a \rangle$ se, e somente
+    se, $\mdc(k,d) = 1$. A quantidade de tais elementos é precisamente a quantidade de valores de $k$ tais
+    que $\mdc(k,d) = 1$, ou seja, $\phi(d)$.
 \end{proof}
 %
 \begin{corollary}
@@ -497,7 +557,19 @@ definir a função $\phi$ de Euler.
 \end{corollary}
 %
 \begin{proof}
-    a
+    Se o grupo não tiver elementos de ordem $d$, então o teorema é verdadeiro pois $\phi(d)\mid 0$.
+    Suponhamos então que existe $a\in G$ com $|a| = d$. Pelo Teorema \ref{teo-num-elementos-por-ordem},
+    sabemos que $\langle a \rangle$ tem $\phi(d)$ elementos de ordem $d$. Se todos os elementos de ordem
+    $d$ em $G$ estiverem em $\langle a \rangle$, terminamos. Do contrário, existe $b\in G$ de ordem $d$
+    tal que $b\notin\langle a \rangle$. Ora, mas $\langle b \rangle$ também tem $\phi(d)$ elementos
+    de ordem $d$, ou seja, até o momento temos $2\phi(d)$ elementos de ordem $d$ em $G$ dado que
+    $\langle a \rangle$ e $\langle b \rangle$ não tenham elementos de ordem $d$ em comum.
+    
+    Caso exista $c$ de ordem $d$ que seja comum a ambos os subgrupos, então 
+    $\langle a \rangle = \langle c \rangle = \langle b \rangle$ e $b\in\langle a \rangle$, absurdo.
+    
+    Procedendo desta forma, vemos que o número de elementos de ordem $d$ em um grupo finito
+    é um múltiplo de $\phi(d)$.
 \end{proof}
 %
 
@@ -509,17 +581,64 @@ definir a função $\phi$ de Euler.
         um grupo sob a operação de composição.
     \end{definition}
     %
-    comentários e notação de matriz
+    É comum denotar uma permutação utilizando matrizes. Por exemplo, se $\alpha$ é a permutação
+    em $\{1, 2, 3, 4\}$ que manda 1 em 2, 2 em 3, 3 em 1 e 4 em 4, escrevemos
     %
-    \begin{example}
-        a
+    \[
+    \alpha = \begin{bmatrix}
+        1 & 2 & 3 & 4 \\
+        2 & 3 & 1 & 4
+    \end{bmatrix}.
+    \]
+    %
+    Com essa notação, o produto de duas permutações é feito da direita para a esquerda. Por exemplo,
+    %
+    \[
+    \begin{bmatrix}
+        1 & 2 & 3 & 4 \\
+        2 & 3 & 1 & 4
+    \end{bmatrix}\cdot
+    \begin{bmatrix}
+        1 & 2 & 3 & 4 \\
+        3 & 4 & 1 & 2
+    \end{bmatrix} =
+    \begin{bmatrix}
+        1 & 2 & 3 & 4 \\
+        1 & 4 & 2 & 3
+    \end{bmatrix}.
+    \]
+    %
+    \begin{example}[Grupo Simétrico $S_n$]
+        Seja $A = \{1, 2, \dots, n\}$. O grupo de todas as permutações de $A$ é chamado
+        grupo simétrico de grau $n$, denotado por $S_n$. Os seus elementos têm a forma
+        %
+        \[
+        \alpha = \begin{bmatrix}
+            1 & 2 & \cdots & n \\
+            \alpha(1) & \alpha(2) & \cdots & \alpha(n)
+        \end{bmatrix}.
+        \]
+        %
+        Deixamos a cargo do leitor mostrar que $|S_n| = n!$ e que $S_n$ não é abeliano se $n\geq 3$.
     \end{example}
     %
-    \begin{example}
-        a
-    \end{example}
+    A notação de matrizes, apesar de bem visual, pode ser um pouco difícil de trabalhar por vezes.
+    Uma notação alternativa, também muito comum, é a de ciclos. Por exemplo, se $\alpha$ é a 
+    permutação que manda 1 em 2, 2 em 1, 3 em 4, 4 em 6, 5 em 5 e 6 em 3, escrevemos
     %
-    comentários e notação de ciclos
+    \[
+    \alpha = (1,2)(3,4,6)(5).
+    \]
+    %
+    É comum omitir o ciclo de tamanho um e escrever simplesmente $\alpha = (1,2)(3,4,6)$. 
+    Ademais, é comum omitir as vírgulas quando isso não provoca ambiguidade.
+    
+    Com essa notação, a multiplicação de duas permutações é feita da direita para a esquerda, como
+    no caso de matrizes. Por exemplo,
+    %
+    \[
+    (13)(27)(456)\cdot (1237)(648) = (1732)(48)(56).
+    \]
     %
     \subsection*{Propriedades das permutações}
     %
@@ -530,7 +649,44 @@ definir a função $\phi$ de Euler.
     \end{theorem}
     %
     \begin{proof}
-        a
+        Seja $\alpha$ uma permutação em $A = \{1, 2, \dots, n\}$. Para escrever $\alpha$ na forma
+        de ciclos disjuntos, começamos escolhendo qualquer elemento de $A$, digamos $a_1$, e definindo
+        %
+        \[
+        a_2 = \alpha(a_1), \qquad a_3 = \alpha^2(a_1), \qquad a_4 = \alpha^3(a_1),
+        \]
+        %
+        e assim por diante, até que encontremos $m$ tal que $a_1 = \alpha^m(a_1)$. Tal $m$ existe
+        pois a sequência
+        %
+        \[
+        a_1, \alpha(a_1), \alpha^2(a_1), \alpha^3(a_1), \dots
+        \]
+        %
+        é finita, haja vista que $A$ é finito. Então, até o momento temos
+        %
+        \[
+        \alpha = (a_1, a_2, \dots, a_m)\cdots,
+        \]
+        %
+        onde as reticências indicam a possibilidade de ainda não termos exaurido os elementos de $A$.
+        Se isso acontecer, basta escolhermos $b_1\in A$ que não aparece no ciclo dos $a_i$'s e criar
+        um novo ciclo usando o mesmo passo a passo acima. Note que esse novo ciclo não tem elementos
+        em comum com o antigo, uma vez que, se tivesse, então existiriam $i,j$ tais que
+        %
+        \[
+        \alpha^i(a_1) = \alpha^j(b_1) \iff \alpha^{i-j}(a_1) = b_1 \iff b_1 = a_t, 
+        \]
+        %
+        para algum $t$, absurdo. 
+        
+        Procedendo desta forma até exaurirmos os elementos de $A$, nossa permutação terá a forma
+        %
+        \[
+        \alpha = (a_1, a_2, \dots, a_m)(b_1, b_2, \dots, b_k)\cdots(c_1, c_2, \dots, c_s),
+        \]
+        %
+        demonstrando o resultado desejado.
     \end{proof}
     %
     \begin{theorem}
@@ -540,7 +696,35 @@ definir a função $\phi$ de Euler.
     \end{theorem}
     %
     \begin{proof}
-        a
+        Podemos dizer que $\alpha$ e $\beta$ são permutações no conjunto
+        %
+        \[
+        S = \{ a_1, a_2, \dots, a_m, b_1, b_2, \dots, b_n, c_1, c_2, \dots, c_k \},
+        \]
+        %
+        onde os $c$'s são os elementos fixados por $\alpha$ e $\beta$ (pode ser que não exista nenhum $c$).
+        Para provar o resultado, vamos mostrar que $(\alpha\beta)(x) = (\beta\alpha)(x)$ para todo $x\in S$.
+        
+        Se $x = a_i$ para algum $i$, então
+        %
+        \[
+        (\alpha\beta)(a_i) = \alpha(a_i) = a_{i+1},
+        \]
+        %
+        já que $\beta$ fixa os $a$'s (se $i=m$, então interpretamos $a_{i+1}$ como $a_1$). Similarmente,
+        %
+        \[
+        (\beta\alpha)(a_i) = \beta(a_{i+1}) = a_{i+1}.
+        \]
+        %
+        Um argumento inteiramente análogo mostra que $\alpha\beta$ e $\beta\alpha$ concordam nos $b$'s também.
+        
+        Por fim, se $x = c_i$ para algum $i$ então
+        %
+        \[
+        (\alpha\beta)(c_i) = \alpha(c_i) = c_i = \beta(c_i) = (\beta\alpha)(c_i).
+        \]
+        %
     \end{proof}
     %
     \begin{theorem}
@@ -550,11 +734,23 @@ definir a função $\phi$ de Euler.
     \end{theorem}
     %
     \begin{proof}
-        a
+        Primeiro, observe que um ciclo de comprimento $n$ tem ordem $n$ (verifique!). Suponha então
+        que $\alpha$ e $\beta$ são ciclos disjuntos de comprimentos $m$ e $n$, respectivamente, e seja
+        $k = \mmc(m,n)$. Segue do Teorema \ref{teo-prod-ciclos-disj} que $\alpha^k = e = \beta^k$ e,
+        como $\alpha$ e $\beta$ comutam, $(\alpha\beta)^k$ também é a identidade. Portanto, pelo
+        Corolário \ref{cor-num-divide-ordem}, temos que a ordem $t$ de $\alpha\beta$ divide $k$.
+        
+        Ora, mas então $\alpha^t = \beta^{-t}$, e essas duas permutações são disjuntas
+        pois $\alpha$ e $\beta$ são disjuntos. Logo, ambas devem ser a identidade e, portanto,
+        $m\mid t$ e $n\mid t$. Portanto, $k\mid t$ e segue que $k=t$.
+        
+        O caso do produto de mais de duas permutações disjuntas é demonstrado de maneira análoga
+        e deixado para o leitor.
     \end{proof}
     %
     \begin{example}
-        a
+        Esse teorema pode ser usado para mostrar que as únicas ordens possíveis para os elementos de
+        $S_7$ são 1, 2, 3, 4, 5, 6, 7, 10 e 12.
     \end{example}
     %
     \begin{theorem}
@@ -563,11 +759,35 @@ definir a função $\phi$ de Euler.
     \end{theorem}
     %
     \begin{proof}
-        a
+        Primeiro, note que podemos escrever $e = (12)(12)$. Pelo Teorema \ref{teo-prod-ciclos-disj}, toda
+        permutação pode ser escrita como
+        %
+        \[
+        (a_1a_1\cdots a_k)(b_1b_2\cdots a_t)\cdots(c_1c_2\cdots c_s).
+        \]
+        %
+        Ora, mas esse produto é igual a
+        %
+        \[
+        (a_1a_k)(a_1a_{k-1})\cdots(a_1a_2)(b_1b_t)(b_1b_{t-1})\cdots(b_1b_2)(c_1c_s)(c_1c_{s-1})\cdots (c_1c_2),
+        \]
+        %
+        e segue o resultado.
     \end{proof}
     %
     \begin{example}
-        a
+        Podemos escrever
+        %
+        \[
+        (12345) = (54)(53)(52)(51)
+        \]
+        %
+        ou também
+        %
+        \[
+        (12345) = (54)(52)(21)(25)(23)(13).
+        \]
+        %
     \end{example}
     %
     \begin{lemma}
