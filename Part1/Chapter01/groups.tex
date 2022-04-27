@@ -17,6 +17,7 @@
 %
 \begin{definition}[Operação binária]
 \label{def-operacao-binaria}
+\index{Operação binária}
     Seja $G$ um conjunto. Uma operação binária em $G$ é uma função que associa, a cada par ordenado
     de elementos de $G$, um elemento de $G$.
 \end{definition}
@@ -28,6 +29,7 @@
 %
 \begin{definition}[Grupo]
 \label{def-grupo}
+\index{Grupo}
     Seja $G$ um conjunto munido de uma operação binária que, a cada par $(a,b)\in G\times G$, associa
     o elemento de $G$ denotado por $ab$. Dizemos que $G$ é um grupo sob essa operação se as seguintes
     condições são satisfeitas:
@@ -126,13 +128,13 @@
 %
 \subsection*{Subgrupos}
 %
-\begin{definition}
+\begin{definition}[Ordem de grupo]
 \label{def-ordem-grupo}
     A ordem de um grupo finito $G$ é o número de elementos que ele contém, denotada por
     $|G|$ ou $\sharp G$.
 \end{definition}
 %
-\begin{definition}
+\begin{definition}[Ordem de elemento]
 \label{def-ordem-elemento}
     A ordem de um elemento $g$ de um grupo $G$ é o menor inteiro positivo $n$ tal que
     $g^n = e$. Se um tal inteiro não existir, dizemos que $g$ tem ordem infinita. Denotamos
@@ -149,8 +151,9 @@
     sequência $a, 2a, 3a, \dots$ não inclui o 0 se $a\neq 0$.
 \end{example}
 %
-\begin{definition}
+\begin{definition}[Subgrupo]
 \label{def-subgrupo}
+\index{Subgrupo}
     Se um subconjunto $H$ de um grupo $G$ é também um grupo sob a operação de $G$,
     dizemos que $H$ é um subgrupo de $G$, e denotamos $H \leq G$ ou $H < G$ se $H\subseteq G$
     e $H \subset G$, respectivamente.
@@ -271,6 +274,7 @@
 %
 \begin{definition}[Centro]
 \label{def-centro}
+\index{Centro}
     O centro $Z(G)$ de um grupo $G$ é o subconjunto dos elementos de $G$ que comutam
     com todos os elementos de $G$. Em símbolos,
     %
@@ -302,6 +306,7 @@
 %
 \begin{definition}[Centralizador]
 \label{def-centralizador}
+\index{Centralizador}
     Seja $a\in G$ um elemento fixado. O centralizador de $a\in G$, denotado $C_G(a)$,
     é o conjunto dos elementos de $G$ que comutam com $a$. Em símbolos,
     %
@@ -462,6 +467,7 @@
 %
 \begin{theorem}[Teorema Fundamental dos Grupos Cíclicos]
 \label{teo-fund-grupos-ciclicos}
+\index{Teorema!Fundamental dos Grupos Cíclicos}
     Todo subgrupo de um grupo cíclico é cíclico. Ademais, se $|\langle a \rangle| = n$, então
     a ordem de qualquer subgrupo de $\langle a \rangle$ é um divisor de $n$ e, para cada divisor
     positivo $k$ de $n$, o grupo $\langle a \rangle$ tem exatamente um subgrupo de ordem $k$, a saber
@@ -524,6 +530,7 @@ em Teoria dos Números.
 %
 \begin{definition}[Função $\phi$ de Euler]
 \label{def-funcao-phi-euler}
+\index{Função $\phi$ de Euler}
     A função $\phi:\mathbb{N}^*\to\mathbb{N}^*$ tal que
     %
     \[
@@ -577,6 +584,7 @@ em Teoria dos Números.
     %
     \begin{definition}
     \label{def-grupo-perm}
+    \index{Grupo de permutação}
         Um grupo de permutações de um conjunto $A$ é um conjunto de permutações de $A$ que forma
         um grupo sob a operação de composição.
     \end{definition}
@@ -609,6 +617,7 @@ em Teoria dos Números.
     \]
     %
     \begin{example}[Grupo Simétrico $S_n$]
+    \index{Grupo Simétrico}
         Seja $A = \{1, 2, \dots, n\}$. O grupo de todas as permutações de $A$ é chamado
         grupo simétrico de grau $n$, denotado por $S_n$. Os seus elementos têm a forma
         %
@@ -901,7 +910,7 @@ em Teoria dos Números.
 
 \section{Isomorfismos}
     %
-    \begin{definition}
+    \begin{definition}[Isomorfismo]
 	\label{def isomorfismo}
 	\index{Isomorfismo}
 		Um \textbf{isomorfismo} $\phi$ de um grupo $G$ em um grupo
@@ -917,6 +926,7 @@ em Teoria dos Números.
 	%
 	\begin{theorem}[Teorema de Cayley]
 	\label{Cayley}
+	\index{Teorema!de Cayley}
 		Todo grupo é isomorfo a um grupo de permutações.
 	\end{theorem}
 	%
@@ -1158,8 +1168,9 @@ em Teoria dos Números.
 	impede de tomar $G = \overline{G}$. De fato, se o fizermos, obtemos
 	um tipo de isomorfismo especial, chamado {\bf automorfismo}.
 	%
-	\begin{definition}
+	\begin{definition}[Autormorfismo]
 	\label{def automorfismo}
+	\index{Automorfismo}
 		Um isomorfismo de um grupo $G$ em si mesmo é chamado 
 		automorfismo. O conjunto de todos os automorfismos de um 
 		grupo $G$ é denotado por $\aut(G)$.
@@ -1168,8 +1179,9 @@ em Teoria dos Números.
 	Além disso, podemos ainda definir um tipo 
 	especial de automorfismo, chamado {\bf automorfismo interno}.
 	%
-	\begin{definition}
+	\begin{definition}[Automorfismo Interno]
 	\label{def automorfismo interno}
+	\index{Automorfismo Interno}
 		O automorfismo de $G$ definido por $\phi_a(x) = axa^{-1}$ 
 		para todo $x$ em $G$ é chamado automorfismo interno de $G$
 		induzido por $a$. O conjunto de todos os automorfismos
@@ -1180,7 +1192,7 @@ em Teoria dos Números.
 	é o seguinte.
 	%
 	\begin{theorem}
-		$\aut(G)$ e $\inn(G)$ são grupos com a operação de composição.
+		Os conjuntos $\aut(G)$ e $\inn(G)$ são grupos sob a operação de composição.
 	\end{theorem}
 	%
 	\begin{proof}
@@ -1287,7 +1299,7 @@ em Teoria dos Números.
 	%
 	\begin{theorem}
 	\label{automorfismos de Z_n}
-		$\aut(\mathbb{Z}_n) \cong U(n)$.
+		Temos $\aut(\mathbb{Z}_n) \cong U(n)$.
 	\end{theorem}
 	%
 	\begin{proof}
@@ -1340,8 +1352,9 @@ em Teoria dos Números.
     Um conceito importante no estudo de grupos é o de 
     \textbf{classes laterais}.
     %
-	\begin{definition}
-		\label{def classes laterais}
+	\begin{definition}[Classe lateral]
+	\label{def classes laterais}
+	\index{Classe lateral}
 		Sejam $G$ um grupo e $H$ um subconjunto não vazio de $G$. 
 		Para qualquer $a\in G$,	o conjunto $\{ah \ | \ h \in H \}$ é 
 		denotado por $aH$. Analogamente, $Ha = \{ha \ | \ h \in H\}$
@@ -1430,8 +1443,9 @@ em Teoria dos Números.
 	Com a Definição \ref{def classes laterais} e o 
 	Lema \ref{propriedades}, podemos enunciar o Teorema \ref{lagrange}.
 	%
-	\begin{theorem}[Lagrange]
+	\begin{theorem}[Teorema de Lagrange]
 	\label{lagrange}
+	\index{Teorema!de Lagrange}
 		Se $|G|<\infty$ e $H$ é subgrupo de $G$, então a ordem de $H$ divide 
 		a ordem de $G$. Ademais, a quantidade de classes laterais à esquerda
 		(direita) de $H$ em $G$ é $|G|/|H|$, ou seja, a ordem de um subgrupo
@@ -1490,6 +1504,7 @@ em Teoria dos Números.
 	%
 	\begin{corollary}[Pequeno Teorema de Fermat]
 	\label{c5}
+	\index{Pequeno Teorema de Fermat}
 		Para todo $a$ inteiro e para todo primo $p$, $a^p \pmod p = a\pmod p$.
 	\end{corollary}
 	%
@@ -1510,7 +1525,12 @@ em Teoria dos Números.
 	\begin{theorem}
 	\label{ordem de HK}
 		Para dois subgrupos finitos $H$ e $K$ de um grupo $G$, seja 
-		$HK = \left\{ hk \ | \ h\in H, k\in K \right\}$. Então, 
+		%
+		\[
+		HK = \left\{ hk \ | \ h\in H, k\in K \right\}.
+		\]
+		%
+		Então, 
 		$|HK| = |H||K|/|H\cap K|$.
 	\end{theorem}
 	%
@@ -1639,16 +1659,18 @@ em Teoria dos Números.
 	\end{equation*}
 	\end{example}
 	%
-	\begin{definition}
+	\begin{definition}[Estabilizador]
 	\label{def estabilizador}
+	\index{Estabilizador}
 		Seja $G$ um grupo de permutações de um conjunto $S$. Para cada 
 		$i\in S$, seja $\stab_G(i) = \{ \phi\in G \ | \ \phi(i) = i\}$. 
 		Chamamos $\stab_G(i)$ de estabilizador de $i$ em $G$. Usamos
 		$|\stab_G(i)|$ para denotar o número de elementos em $\stab_G(i)$.
 	\end{definition}
 	%
-	\begin{definition}
+	\begin{definition}[Órbita]
 	\label{def orbita}
+	\index{Órbita}
 		Seja $G$ um grupo de permutações de um conjunto $S$. Para cada 
 		$s\in S$, seja $\orb_G(s) = \{ \phi(s) \ | \ \phi\in G \}$. O conjunto
 		$\orb_G(s)$ é um subconjunto de $S$ e é chamado de órbita de $s$ 
@@ -1656,8 +1678,9 @@ em Teoria dos Números.
 		em $\orb_G(s)$.
 	\end{definition}
 	%
-	\begin{theorem}
+	\begin{theorem}[Teorema Órbita-Estabilizador]
 	\label{orb-stab}
+	\index{Teorema!Órbita-Estabilizador}
 		Seja $G$ um grupo finito de permutações de um conjunto $S$. 
 		Então, para todo $i$ em $G$, $|G| = |\orb_G(s)|\cdot|\stab_G(i)|$.
 	\end{theorem}
@@ -1769,8 +1792,9 @@ em Teoria dos Números.
     Vamos definir o produto direto externo de grupos, uma maneira de
     obter novos grupos a partir de grupos já conhecidos.
     %
-	\begin{definition}
+	\begin{definition}[Produto direto]
 	\label{def prod direto externo}
+	\index{Produto direto}
 		Seja $\{G_1, G_2, \dots, G_n\}$ uma coleção finita de grupos. 
 		O produto direto externo de $G_1, G_2, \dots, G_n$, denotado por
 		$\displaystyle{G_1\oplus G_2\oplus\cdots\oplus G_n}$, é o conjunto 
@@ -1826,7 +1850,9 @@ em Teoria dos Números.
 		a potência ``se distribui'' nas entradas.
 	\end{remark}
 	%
-	\begin{theorem}
+	\begin{theorem}[Classificação dos grupos de ordem 4]
+	\label{teo-class-grupos-ord-4}
+	\index{Teorema!de Classificação dos Grupos de Ordem 4}
 		Todo grupo de ordem 4 é isomorfo a $\mathbb{Z}_4$ 
 		ou $\mathbb{Z}_2\oplus\mathbb{Z}_2$.
 	\end{theorem}
@@ -2337,7 +2363,11 @@ em Teoria dos Números.
 	\label{produto direto de U(m)}
 		Seja $\displaystyle{m = \prod_{i = 1}^{k}n_i}$ com 
 		$\mdc(n_i, n_j) = 1$ quando $i\neq j$. Então,
-		$\displaystyle{U(m)\cong\bigoplus_{i = 1}^{k} U(n_i)}$.
+		%
+		\[
+		\displaystyle{U(m)\cong\bigoplus_{i = 1}^{k} U(n_i)}.
+		\]
+		%
 	\end{corollary}
 	%
 	\begin{proof}
@@ -2360,8 +2390,9 @@ em Teoria dos Números.
 \section{Subgrupos normais e grupo quociente}
 \label{sec-subgrupos-normais}
     %
-    \begin{definition}
+    \begin{definition}[Subgrupo normal]
     \label{def:subgrupo-normal}
+    \index{Subgrupo normal}
 		Um subgrupo $H$ de um grupo $G$ é dito subgrupo \textbf{normal} de $G$ se 
 		$aH = Ha$ para todo $a$ em $G$. Denotamos isso por $H\vartriangleleft G$.
 	\end{definition}
@@ -2384,8 +2415,9 @@ em Teoria dos Números.
 	subgrupo de um grupo abeliano é normal. Nesse caso, $ah = ha$ para $a$ no grupo e $h$ no subgrupo. 
 	\par\vspace{0.3cm} A partir dos grupos normais, podemos definir o quociente de dois grupos.
 	%
-	\begin{theorem}
+	\begin{theorem}[Grupo quociente]
 	\label{quociente}
+	\index{Grupo quociente}
 		Seja $G$ um grupo e $H$ um subgrupo normal de $G$. O conjunto $G/H = \{ aH \ | \ a\in G \}$ 
 		é um grupo sob a operação $(aH)(bH) = abH$. Ademais, o grupo $G/H$ é chamado grupo fator 
 		ou grupo quociente de $G$ por $H$.
@@ -2460,8 +2492,9 @@ em Teoria dos Números.
 		logo $T$ preserva a operação.
 	\end{proof}
 	%
-	\begin{theorem}[Cauchy]
+	\begin{theorem}[Teorema de Cauchy]
 	\label{cauchy}
+	\index{Teorema!de Cauchy}
 		Seja $G$ um grupo e $p$ um primo que divide a ordem de $G$. Então, $G$ tem um elemento de ordem $p$.
 	\end{theorem}
 	
@@ -2558,8 +2591,9 @@ em Teoria dos Números.
 		\par\vspace{0.3cm} Portanto, $\phi$ é, de fato, isomorfismo.
 	\end{proof}
 	%
-	\begin{theorem}
+	\begin{theorem}[Classificação dos grupos de ordem $p^2$]
 	\label{classificacao grupos de ordem p2}
+	\index{Teorema!de Classificação dos Grupos de Ordem $p^2$}
 		Todo grupo de ordem $p^2$, $p$ primo, é isomorfo a $\mathbb{Z}_{p^2}$ ou $\mathbb{Z}_p\oplus\mathbb{Z}_p$.
 	\end{theorem}
 	%
@@ -2609,15 +2643,17 @@ em Teoria dos Números.
 \section{Homomorfismos}
 \label{sec-homomorfismos}
     %
-    \begin{definition}
+    \begin{definition}[Homomorfismo]
 	\label{def homomorfismo}
+	\index{Homomorfismo}
 		Um \textbf{homomorfismo} $\phi$ de um grupo $G$ para um grupo $\overline{G}$ é uma função 
 		de $G$ em $\overline{G}$ que preserva a operação do grupo, isto é, 
 		$\phi(ab) = \phi(a)\phi(b), \forall a,b\in G$.
 	\end{definition}
 	%
-	\begin{definition}
+	\begin{definition}[Núcleo]
 	\label{def nucleo}
+	\index{Núcleo}
 		O \textbf{núcleo} de um homomorfismo $\phi$ de um grupo $G$ para um grupo com identidade $e$ 
 		é o conjunto $\{ x\in G \ | \ \phi(x) = e \}$, ou seja, o conjunto dos elementos que são 
 		levados na identidade. O núcleo de $\phi$ é denotado por $\Ker\phi$.
@@ -2843,8 +2879,9 @@ em Teoria dos Números.
 	sem perda de generalidade, que $a$ é ímpar e $b$ é par. Daí, $\phi(ab) = 1 = 1 + 0 = \phi(a) + \phi(b)$.
 	\end{example}
 	%
-	\begin{theorem}[1$^\circ$ Teorema de Isomorfismos]
+	\begin{theorem}[Primeiro Teorema dos Isomorfismos]
 	\label{primeiro teorema de isomorfismo}
+	\index{Primeiro Teorema dos Isomorfismos}
 		Seja $\phi$ um homomorfismo de $G$ em $\overline{G}$. Então, a correspondência de $G/\Ker\phi$ 
 		para $\phi(G)$ dada por $g\Ker\phi \to \phi(g)$, é um isomorfismo. 
 		Em símbolos, $G/\Ker\phi\cong\phi(G)$.
@@ -2910,7 +2947,8 @@ em Teoria dos Números.
 	\end{proof}
 	%
 	\begin{theorem}
-		\label{subgrupos normais e nucleos}
+	\label{subgrupos normais e nucleos}
+	\index{Homomorfismo natural}
 		Todo subgrupo normal de um grupo $G$ é o núcleo de um homomorfismo de $G$. Em particular, um subgrupo normal $N$ é núcleo do homomorfismo $g\mapsto gN$ de $G\to G/N$. Tal homomorfismo é chamado \textbf{homomorfismo natural} de $G$ em $G/N$.
 	\end{theorem}
 	%
@@ -2980,8 +3018,9 @@ em Teoria dos Números.
 	    gg' = (nq)(n'q') = n(qn'q^{-1})qq' = n\cdot\theta_q(n')\cdot qq'.
 	\end{equation*}
 	%
-	\begin{definition}
+	\begin{definition}[Produto semidireto]
 	\label{produto semidireto}
+	\index{Produto semidireto}
 		Um grupo $G$ é o produto semidireto de seus subgrupos $N$ e $Q$ se $N$ é normal e 
 		o homomorfismo $G\to G/N$ induz um isomorfismo $Q\to G/N$. Equivalentemente, 
 		$G$ é o produto semidireto de $N$ e $Q$ se
@@ -2995,7 +3034,7 @@ em Teoria dos Números.
 	\end{definition}
 	%
 	Se um grupo $G$ é produto semidireto de dois grupos cíclicos, então 
-	$G$ é dito \textbf{metacíclico}. Em outras palavras, um grupo $G$ é \textbf{metacíclico} 
+	$G$ é dito \textbf{metacíclico}\index{Grupo metacíclico}. Em outras palavras, um grupo $G$ é \textbf{metacíclico} 
 	se existe um subgrupo normal $N$ de $G$ tal que $N$ e $G/N$ são grupos cíclicos.
 	%
 	\begin{example}

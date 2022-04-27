@@ -167,8 +167,9 @@
 		Consequentemente, $\sigma_1$ e $\alpha$ geram $B_n$.
 	\end{proof}
 	%
-	\begin{definition}
+	\begin{definition}[Grupo de Tranças puras]
 	\label{def P_n}
+	\index{Grupo de Tranças Puras}
 		O núcleo do homomorfismo $\pi$ definido no Lema \ref{B_n iso S_n} é chamado grupo de tranças 
 		puras e denotado por $P_n$. Uma trança geométrica de $n$ cordas representa um elemento de 
 		$P_n$ se, e só se, para todo $i=1,2\dots,n$, a corda dessa trança ligada ao ponto $(i,0,0)$ 
@@ -240,6 +241,7 @@
 	\begin{equation*}
 	\tag{Geradores de Artin}
 	\label{geradores de Artin}
+	\index{Geradores de Artin}
 	    A_{i,j} = 
 	    \sigma_{j-1}\sigma_{j-2}
 	    \cdots\sigma_{i+1}\sigma_i^2\sigma_{i+1}^{-1}
@@ -505,7 +507,8 @@
 	Há varias conexões entre grupos de tranças e topologia, e uma delas envolve 
 	\textit{espaços de configuração}, que nada mais são do que espaços que contêm 
 	todos os estados possíveis de um sistema. Por vezes, espaços de configuração são 
-	chamados de \textit{espaços de estado} ou \textit{espaços de parâmetros}.
+	chamados de \textit{espaços de estado} ou \textit{espaços de parâmetros}
+	\index{Espaços de configuração}.
 	
 	\par\vspace{0.3cm} Por exemplo, podemos usar um espaço de configuração para modelar o 
 	movimento coletivo de vários objetos, como carros nas ruas de uma cidade ou moléculas em 
@@ -638,8 +641,9 @@
 	
 	\par\vspace{0.3cm} Antes de prosseguir, definimos (informalmente) o conceito de grupo fundamental.
 	%
-	\begin{definition}
+	\begin{definition}[Grupo Fundamental]
 	\label{def informal grupo fundamental}
+	\index{Grupo Fundamental}
 		Dado um espaço topológico $X$ e um ponto $x_0\in X$, o conjunto de loops que começam e 
 		terminam em $x_0$ e que são caminhos fechados em $X$ é chamado grupo fundamental de $X$ 
 		com ponto base $x_0$ e denotado por $\pi_1(X,x_0)$.
@@ -700,7 +704,7 @@
 	\par\vspace{0.3cm} Agora, vamos considerar $X = \mathbb{S}^2$, a esfera em 
 	$\mathbb{R}^3$. Nesse caso, $B_n(X) = B_n(\mathbb{S}^2)$ é chamado de 
 	\textit{grupo de tranças esféricas}. Uma primeira pergunta natural seria: qual a 
-	diferença entre tranças esféricas e ``tranças planares''? Bom, podemos imaginar as 
+	diferença entre tranças esféricas\index{Tranças esféricas} e ``tranças planares''? Bom, podemos imaginar as 
 	paredes dos diagramas das tranças planares como sendo pequenos pedaços de esferas enormes, 
 	por exemplo, como mostra a Figura \ref{diagrama tranca esferica} 
 	abaixo (na verdade, essa ideia pode ser aplicada a tranças em qualquer superfície, não apenas na esfera).
@@ -858,6 +862,7 @@
 	Antes, contudo, introduziremos um pequeno conceito, as \textit{transformações de Tietze}.
 	%
 	\subsubsection{Transformações de Tietze}
+	\index{Transformações de Tietze}
 	Dada uma apresentação de um grupo $G$, temos os seguintes movimentos:
 	%
 	\begin{enumerate}
@@ -1020,6 +1025,7 @@
 	%
 	\begin{lemma}
 	\label{grupo triangular}
+	\index{Grupo de Dyck}
 		O grupo triangular, ou grupo de Dyck, $T(l,m,n) = \langle a,b \ | \ a^l=b^m=(ab)^n=1 \rangle$ 
 		é finito se, e só se, $\displaystyle{\frac{1}{l} + \frac{1}{m} + \frac{1}{n} - 1 > 0}$.
 	\end{lemma}
@@ -1098,6 +1104,7 @@
 	\end{proof}
 	%
 	\section{Diagrama de van Kampen}
+	\index{Diagrama de van Kampen}
 	Vamos nos deter brevemente para descrever o \textbf{diagrama de van Kampen}. 
 	Inicialmente, podemos descrever o diagrama de van Kampen de modo visual: ele ilustra o fato de que uma
 	palavra $w\in F(X)$ no grupo livre sobre $X$ é uma relação em um grupo $G$, i.e., $w$ é um produto de
@@ -1320,13 +1327,13 @@
 	
 	\par\vspace{0.3cm} Podemos resumir o que foi dito no parágrafo anterior nas seguintes definições:
 	%
-	\begin{definition}
+	\begin{definition}[Biágono]
 	\label{def biagono}
 		Um biágono é um região cuja fronteira consiste de um sub-arco de um único $a_i$ e um 
 		sub-arco de um único $c_i$.
 	\end{definition}
 	%
-	\begin{definition}
+	\begin{definition}[Diagrama reduzido]
 	\label{def reducao}
 		Um diagrama de curva é dito reduzido quando não possui biágonos.
 	\end{definition}
@@ -1345,7 +1352,7 @@
 	Figuras \ref{tranca disco perfurado} e \ref{diagrama nao reduzido com biagonos} como equivalentes. 
 	Esse fato nos leva à seguinte definição.
 	%
-	\begin{definition}
+	\begin{definition}[Diagramas equivalentes]
 	\label{def equivalencia diagramas}
 		Dois diagramas de curva são ditos equivalentes se têm a mesma forma reduzida.
 	\end{definition} 

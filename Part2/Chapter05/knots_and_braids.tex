@@ -19,7 +19,7 @@
     
 	\par\vspace{0.3cm} Resumidamente, um nó é uma curva poligonal simples fechada em $\mathbb{R}^3$, 
 	mas para os propósitos deste texto poderemos pensar em um nó como sendo uma curva suave simples, 
-	como os diagramas da Figura \ref{exemplos de nos}.
+	como os diagramas da Figura \ref{exemplos de nos}.\index{Nó}
 	
 	\par\vspace{0.3cm} Os nós (ou, de modo mais geral, \textit{links}) e as tranças possuem semelhanças. 
 	Por exemplo, ambos são definidos em termos de figuras de cordas no espaço tridimensional, e ambos 
@@ -50,7 +50,8 @@
 	
 	\par\vspace{0.3cm} Assim como fizemos para as tranças, também é possível alterar diagramas de 
 	nós através de deformações (ou movimentos) elementares (e seus respectivos inversos). 
-	Esses movimentos são chamados de \textit{movimentos de Reidemeister}, classificados em 3 tipos.
+	Esses movimentos são chamados de \textit{movimentos de Reidemeister}
+	\index{Movimentos de Reidemeister}, classificados em 3 tipos.
 	%
 	\begin{figure}[H]
 		\begin{center}
@@ -114,8 +115,9 @@
 	podemos obter \textbf{todos} os \textit{links} a partir de tranças, como diz o seguinte 
 	teorema, que não será demonstrado aqui.
 	%
-	\begin{theorem}[Alexander]
+	\begin{theorem}[Teorema de Alexander]
 	\label{teorema de Alexander}
+	\index{Teorema!de Alexander}
 		Qualquer nó ou link $K$ pode ser representado como uma trança fechada.
 	\end{theorem}
 	%
@@ -240,17 +242,17 @@
 	Figuras \ref{conjugacao nao altera link} e \ref{movimentos de Markov} são especiais. 
 	Como foi Markov quem primeiro as introduziu, elas são usualmente chamadas de 
 	\textit{movimento de Markov tipo I} e \textit{movimentos de Markov tipo II}. 
-	Vamos defini-los formalmente.
+	Vamos defini-los formalmente.\index{Movimentos de Markov}
 	%
-	\begin{definition}
-		\label{def movimento de Markov tipo 1}
+	\begin{definition}[Movimento de Markov Tipo 1]
+	\label{def movimento de Markov tipo 1}
 		Um movimento de Markov tipo I, denotado $M_1$, substitui uma trança $\beta$ de $n$ 
 		cordas pelo seu conjugado $\gamma\beta\gamma^{-1}$, sendo $\gamma$ uma trança de $n$ 
 		cordas arbitrária.  
 	\end{definition}
 	%
-	\begin{definition}
-		\label{def movimento de Markov tipo 2}
+	\begin{definition}[Movimento de Markov Tipo 2]
+	\label{def movimento de Markov tipo 2}
 		Um movimento de Markov do tipo II, denotado $M_2$, substitui a trança $\beta$ 
 		de $n$ cordas pela trança $\beta\sigma_n$ ou $\beta\sigma_n^{-1}$ de $n+1$ cordas, 
 		sendo $\beta$ visualizada com uma trança de $B_{n+1}(\mathbb{R}^2)$ e $\sigma_n$ 
@@ -261,8 +263,9 @@
 	$M_1^{-1}$ e $M_2^{-1}$, respectivamente. Agora, estamos prontos para enunciar o 
 	teorema (que não será demonstrado).
 	%
-	\begin{theorem}[Markov]
-		\label{teorema de Markov}
+	\begin{theorem}[Teorema de Markov]
+	\label{teorema de Markov}
+	\index{Teorema!de Markov}
 		Suponha $\beta$ e $\beta'$ duas tranças (orientadas) não necessariamente com o mesmo 
 		número de cordas. Então, os fechos de $\beta$ e $\beta'$ representam o mesmo 
 		\textit{link} ou nó $K$ (orientado) se, e somente se, $\beta$ pode ser deformada 
@@ -330,8 +333,9 @@
 	%
 	Com a noção de Markov equivalência, podemos reescrever o Teorema \ref{teorema de Markov} da seguinte forma.
 	%
-	\begin{theorem}[Markov simplificado]
+	\begin{theorem}[Teorema de Markov simplificado]
 	\label{teorema de Markov simplificado}
+	\index{Teorema!de Markov Simplificado}
 		Sejam $\widetilde{\beta}$ e $\widetilde{\beta'}$ dois \textit{links} (ou nós). 
 		Então, $\widetilde{\beta}$ é equivalente a $\widetilde{\beta'}$ se, e somente se,
 		$\beta\underset{M}{\sim}\beta'$.
@@ -512,16 +516,18 @@
 	
 	\par\vspace{0.3cm} Nesse contexto, podemos definir o \textit{complemento de um nó} como abaixo.
 	%
-	\begin{definition}
+	\begin{definition}[Complemento de nó]
 	\label{def complemento no}
+	\index{Complemento de nó}
 		Dado um nó $K$, o complemento de $K$ é o subconjunto $\mathbb{S}^2 - K$ de $\mathbb{S}^2$.
 	\end{definition}
 	%
 	Com essa definição, podemos então definir o \textbf{grupo fundamental do complemento de nó}, 
 	muitas vezes chamado simplesmente de \textbf{grupo fundamental de nó}.
 	%
-	\begin{definition}
+	\begin{definition}[Grupo fundamental de nó]
 	\label{grupo fundamental de no}
+	\index{Grupo fundamental de nó}
 		O grupo fundamental de um nó $K$ com ponto base $b\in\mathbb{S}^2 - \text{Im}(K)$ 
 		é o grupo fundamental do complemento de $K$, com $b$ como ponto base.
 	\end{definition}
@@ -571,7 +577,7 @@
 	de um toro (que, por sua vez, é um subconjunto de $\mathbb{R}^3$). Podemos definir 
 	um nó de toro usando coordenadas da seguinte forma \cite{no-toral}.
 	%
-	\begin{definition}
+	\begin{definition}[Nó de toro]
 	\label{def no de toro}
 		Para todo par de inteiros $a$ e $b$ coprimos, o nó de toro padrão 
 		$K_{a,b}: \mathbb{S}^1\to\mathbb{S}^2$ correspondente ao par $(a,b)$ é dado, em 
@@ -640,7 +646,7 @@
 	$K_{a,b}:\mathbb{S}^1\to\mathbb{S}^3$ descreve um \textit{link}. Logo, 
 	podemos generalizar a Definição \ref{def no de toro} para \textit{links}, da seguinte forma.
 	%
-	\begin{definition}
+	\begin{definition}[Link de toro]
 	\label{def link de toro}
 		Para todo par de inteiros $a$ e $b$ (não necessariamente coprimos), o 
 		\textit{link} de toro (ou link toral) padrão $K_{a,b}: \mathbb{S}^1\to\mathbb{S}^2$ 
@@ -816,7 +822,8 @@
 	de nós (e \textit{links}).
 	
 	\par\vspace{0.3cm} Para definir o polinômio de Alexander, devemos primeiro introduzir a chamada
-	\textit{representação de Burau} de $B_n(\mathbb{R}^2)$. Então, seja $\beta\in B_n(\mathbb{R}^2)$. 
+	\textit{representação de Burau}
+	\index{Representação de Burau} de $B_n(\mathbb{R}^2)$. Então, seja $\beta\in B_n(\mathbb{R}^2)$. 
 	Podemos representar essa trança como
 	%
 	\begin{align*}
@@ -1388,7 +1395,7 @@
 	    \det[\varphi_n(\beta_1) - I_n]_{1,1}=\pm t^k\det[\varphi_m(\beta_2) - I_m]_{1,1}.
 	\end{equation*}
 	%
-	Esse invariante é chamado \textit{polinômio de Alexander} (reduzido) de $K$ e denotado por $\Delta_K(t)$.
+	Esse invariante é chamado \textit{polinômio de Alexander}\index{Polinômio!de Alexander} (reduzido) de $K$ e denotado por $\Delta_K(t)$.
 	Multiplicando por um fator adequado, $\Delta_K(t)$ (se não for nulo) pode ser escrito como
 	%
 	\begin{equation*}
@@ -1579,8 +1586,8 @@
 	\end{proof}
 	%
 	Por exemplo, o nó trivial em $B_1$ é $\beta = 1$. Logo, $\varphi_1(1) = [1]$ e então 
-	$\varphi_1(1) - 1 = [0]$ e $[\varphi_1(1) - 1]_{1,1}$ é a matriz vazia, $\emptyset$. 
-	Vamos definir $\det(\emptyset) = 1$, e então $\Delta_{\widetilde{1}}(t) = 1$.
+	$\varphi_1(1) - 1 = [0]$ e $[\varphi_1(1) - 1]_{1,1}$ é a matriz vazia, $\varnothing$. 
+	Vamos definir $\det(\varnothing) = 1$, e então $\Delta_{\widetilde{1}}(t) = 1$.
 	
 	\par\vspace{0.3cm} O nó trivial também é representado por $\sigma_1$ em $B_2$. Nesse caso, 
 	%
@@ -2020,7 +2027,8 @@
     	= \left(\frac{1}{\sqrt{t}}- \sqrt{t}\right)\nabla_{\widetilde{\beta}}(t).
 	\end{equation}
 	%
-	O invariante $\nabla_{\widetilde{\beta}}(t)$ é chamado \textit{polinômio de Alexander-Conway} 
+	O invariante $\nabla_{\widetilde{\beta}}(t)$ é chamado \textit{polinômio de Alexander-Conway}
+	\index{Polinômio!de Alexander-Conway}
 	de $\widetilde{\beta}$, uma vez que foi J.H. Conway quem, por meio de sua (re)descoberta de 
 	\eqref{polinomio Alexander-Conway} em 1969, evidenciou essa maneira eficiente de determinar 
 	um invariante de um nó (ou \textit{link}). O próprio J.W. Alexander vários anos antes já 
@@ -2039,8 +2047,9 @@
 	$V_{\widetilde{\beta}_1}(t) = V_{\widetilde{\beta}_2}(t)$. Antes de definir o invariante de 
 	Jones, precisamos de alguns fatos e definições preliminares.
 	%
-	\begin{definition}
+	\begin{definition}[Produto tensorial]
 	\label{def prod tensorial}
+	\index{Produto tensorial}
 		Sejam $A = (a_{ij})$ e $B = (a_{kl})$ duas matrizes $p\times q$ e $r\times s$, 
 		respectivamente. Então, o produto tensorial de $A$ e $B$, denotado por $A\otimes B$, 
 		é a matriz $pr\times qs$ definida por
@@ -2698,8 +2707,9 @@
 	%
 	Agora podemos demonstrar o teorema desejado.
 	%
-	\begin{theorem}
+	\begin{theorem}[Polinômio de Jones]
 	\label{polinomio de Jones}
+	\index{Polinômio!de Jones}
 		Com a função $\Phi_n$ definida em \eqref{Phi invariante Jones} e \eqref{parte 2 invariante Jones} 
 		e a matriz $\mu$ definida em \eqref{parte 1 invariante Jones}, temos que
 		%
@@ -3271,6 +3281,7 @@
 	\end{equation*}
 	%
 	\section{O grupo de Alexander}
+	\index{Grupo de Alexander}
 	Um outro invariante de nós é o chamado \textit{grupo de Alexander}, denotado por $A(K)$, 
 	$K$ um nó. O grupo de Alexander de um nó é um grupo abeliano definido em termos das regiões de um nó.
 	

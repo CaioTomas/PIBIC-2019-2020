@@ -58,6 +58,7 @@
 	%
 	\begin{theorem}[Grupo livre]
 	\label{grupo livre}
+	\index{Grupo livre}
 		Seja $S$ um conjunto de símbolos distintos. Para qualquer palavra $u$ em $W(S)$, seja 
 		$\overline{u}$ o conjunto de todas as palavras de $W(S)$ que são equivalentes a $u$ 
 		(ou seja, $\overline{u}$ é a classe de equivalência contendo $u$). Então, o conjunto 
@@ -87,6 +88,7 @@
 	%
 	\begin{theorem}[Propriedade do mapeamento universal]
 	\label{mapeamento universal}
+	\index{Teorema!do Mapeamento Universal}
 		Todo grupo é imagem homomórfica de um grupo livre.
 	\end{theorem}
 	%
@@ -128,6 +130,7 @@
 	\end{proof}
 	%
 	\begin{definition}[Geradores e relações]
+	\index{Relações}
 		Seja $G$ um grupo gerado por um subconjunto $A = \{ a_1, a_2, \dots, a_n \}$ e seja 
 		$F$ o grupo livre em $A$. Seja $W = \{ w_1, w_2, \dots, w_t \}$ um subconjunto de $F$ e seja 
 		$N$ o menor subgrupo normal de $F$ contendo $W$. Dizemos que $G$ é dado pelos geradores 
@@ -150,7 +153,7 @@
 	    G = \langle a_1, a_2, \dots, a_n \ | \ w_1 = w_2 = \cdots = w_t = e \rangle,
 	\end{equation*}
 	%
-	muitos autores preferem dizer que $G$ tem a apresentação 
+	muitos autores preferem dizer que $G$ tem a apresentação\index{Apresentação}
 	%
 	\begin{equation*}
 	    G = \langle a_1, a_2, \dots, a_n \ | \ w_1 = w_2 = \cdots = w_t = e \rangle.
@@ -227,8 +230,9 @@
 	$\mathbb{Z} = \langle a \ | \ - \rangle$. Esse é o único grupo livre abeliano não trivial.
 	\end{example}
 	%
-	\begin{theorem}[2$^\circ$ Teorema de Isomorfismos]
+	\begin{theorem}[Segundo Teorema dos Isomorfismos]
 	\label{segundo teorema de isomorfismos}
+	\index{Segundo Teorema dos Isomorfismos}
 		Sejam $K$ um subgrupo de $G$ e $N$ um subgrupo normal de $G$. Então, $K/(K\cap N)\cong KN/N$.
 	\end{theorem}
 	%
@@ -251,8 +255,9 @@
 		Teorema \ref{primeiro teorema de isomorfismo},  $K/(K\cap N)\cong KN/N$.  
 	\end{proof}
 	%
-	\begin{theorem}[3$^\circ$ Teorema de Isomorfismos]
+	\begin{theorem}[Terceiro Teorema de Isomorfismos]
 	\label{terceiro teorema de isomorfismos}
+	\index{Terceiro Teorema dos Isomorfismos}
 		Sejam $M$ e $N$ subgrupos normais de $G$, com $N\leq M$. Então, $(G/N)/(M/N)\cong G/M$.
 	\end{theorem}
 	%
@@ -287,6 +292,7 @@
 	%
 	\begin{theorem}[Teorema de Dyck]
 	\label{teorema de Dyck}
+	\index{Teorema!de Dyck}
 		Sejam 
 		%
 		\begin{align*}
@@ -334,6 +340,7 @@
 	%
 	\begin{theorem}[Classificação dos grupos de ordem 8]
 	\label{classificacao grupos de ordem 8}
+	\index{Teorema!de Classificação dos Grupos de Ordem 8}
 		A menos de isomorfismo, há apenas 5 grupos de ordem 8: 
 		$\mathbb{Z}_8$, $\mathbb{Z}_4\oplus\mathbb{Z}_2$, $\mathbb{Z}_2\oplus\mathbb{Z}_2\oplus\mathbb{Z}_2$,
 		$D_4$ e $Q_8$.
@@ -396,6 +403,8 @@
 	\end{proof}
 	%
 	\begin{theorem}[Classificação dos grupos diedrais]
+	\label{teo-class-grupos-diedrais}
+	\index{Teorema!de Classificação dos Grupos Diedrais}
 		Qualquer grupo gerado por um par de elementos de ordem 2 é diedral. 
 	\end{theorem}
 	%
@@ -467,6 +476,8 @@
 	\end{proof}
 	%
 	\begin{definition}[Matrizes de permutação]
+	\label{def-matrizes-perm}
+	\index{Matrizes de permutação}
 		Uma \textbf{matriz de permutação} é uma matriz quadrada de ordem $n$ formada apenas por zeros 
 		e uns (ou seja, binária). Em cada linha e coluna, há apenas uma entrada não nula. Tais matrizes 
 		têm como efeito permutar as linhas ou colunas de outras matrizes (ou, dependendo do contexto, as 
@@ -530,10 +541,11 @@
 		$G\cong H\leq S_n\cong\mathbb{P}_{n\times n}\leq GL(n,K)$.
 	\end{remark}
 	%
-	\begin{lemma}
+	\begin{theorem}[Classificação dos grupos de ordem $2p$]
 	\label{grupos de ordem 2p}
+	\index{Teorema!de Classificação dos Grupos de Ordem $2p$}
 		Seja $p$ primo. Todo grupo de ordem $2p$ é cíclico ou isomorfo a $D_p$.
-	\end{lemma}
+	\end{theorem}
 	%
 	\begin{proof}
 		Primeiro, note que ser cíclico de ordem $2p$ é equivalente a ser isomorfo a $\mathbb{Z}_{2p}$.
@@ -645,14 +657,16 @@
     	gerados, pois podemos enxergar suas apresentações de uma maneira interessante: 
     	através de matrizes. Antes de começar, vale a pena introduzir o conceito de comutador:
     	%
-    	\begin{definition}
+    	\begin{definition}[Comutador]
     	\label{def comutador}
+    	\index{Comutador}
     	    Sejam $G$ um grupo e $g,h\in G$. O comutador de $g$ e $h$ em $G$ é o elemento 
     	    $[g,h] = g^{-1}h^{-1}gh$. Note que se $[g,h]=1$, então $g$ comuta com $h$.
     	\end{definition}
     	%
-    	\begin{definition}
+    	\begin{definition}[Grupo finitamente gerado]
     	\label{def grupo finitamente gerado}
+    	\index{Grupo finitamente gerado}
     		Dada uma apresentação $G = \langle  X \ | \ R \rangle$ de um grupo $G$, se o conjunto 
     		de geradores, $X$, é finito, dizemos que $G$ é finitamente gerado.
     	\end{definition}
@@ -661,8 +675,9 @@
     	%
     	\subsection*{Grupos abelianos finitamente apresentados}
     	%
-    	\begin{definition}
+    	\begin{definition}[Grupo finitamente apresentado]
     	\label{def grupo finitamente apresentado}
+    	\index{Grupo finitamente apresentado}
     		Dada uma apresentação $G = \langle X \ | \ R \rangle$ de um grupo $G$, 
     		se o conjunto de geradores, 
     		$X$, e o conjunto de relatores, $R$, são finitos, dizemos que $G$ é finitamente apresentado.
@@ -783,6 +798,7 @@
     	\]
     	%
     	\subsubsection{Operações elementares de linha}
+    	\index{Operações elementares de linha}
     	Aqui, estamos em uma situação parecida com a de resolver sistemas lineares na Álgebra Linear. 
     	Lá, as operações elementares de linha eram fundamentais tanto para a solução dos sistemas quanto 
     	para a eliminação de Gauss. Vamos revisar as operações elementares de linha, e observar as 
@@ -870,6 +886,7 @@
     	Precisamos de operações adicionais.
     	
     	\subsubsection{Operações elementares de coluna}
+    	\index{Operações elementares de coluna}
     	Enquanto que as operações elementares de linhas convertem um conjunto de equações homogêneas em 
     	outro conjunto, equivalente, nas mesmas variáveis, as operações elementares de colunas também 
     	convertem um conjunto de  equações homogêneas em outro conjunto, equivalente, mas muda as variáveis.
@@ -1012,12 +1029,13 @@
         	\end{bmatrix}& \cong \mathbb{Z}_2\oplus\mathbb{Z}_4\oplus\mathbb{Z}_4.
     	\end{align*}
     	%
-    	\paragraph{Teorema Fundamental dos Grupos Abelianos Finitamente Gerados.} Usando as operações 
+    	Usando as operações 
     	elementares de linhas e colunas, podemos colocar todas as matrizes inteiras na forma diagonal, 
     	e temos o seguinte teorema:
     	%
-    	\begin{theorem}
+    	\begin{theorem}[Teorema Fundamental dos Grupos Abelianos Finitamente Apresentados]
     	\label{teorema fundamental abelianos finitamente apresentados}
+    	\index{Teorema!Fundamental dos Grupos Abelianos Finitamente Apresentados}
     		Todo grupo abeliano finitamente apresentado é uma soma direta de grupos cíclicos.
     	\end{theorem}
     	%
@@ -1137,8 +1155,9 @@
     	que todo grupo abeliano finitamente gerado é também finitamente apresentado, ou seja, para grupos
     	abelianos, ser finitamente apresentado e finitamente gerado são características equivalentes.
     	%
-    	\begin{theorem}
+    	\begin{theorem}[Teorema Fundamental dos Grupos Abelianos Finitamente Gerados]
     	\label{teorema fundamental abelianos finitamente gerados}
+    	\index{Teorema!Fundamental dos Grupos Abelianos Finitamente Gerados}
     		Todo grupo abeliano finitamente gerado é soma direta de grupos cíclicos.
     	\end{theorem}
     	%
@@ -1154,7 +1173,7 @@
     	\end{proof}
     	%
 	\section{Alguns subgrupos importantes de um grupo abeliano}
-    	Dados um inteiro $n$ e um grupo abeliano $G$, definimos $nG = \left\{ ng\vert g\in G \right\}$. 
+    	Dados um inteiro $n$ e um grupo abeliano $G$, definimos $nG = \left\{ ng \ \vert \ g\in G \right\}$. 
     	Note que sendo $x,y^{-1}\in G$, temos que 
     	$(nx)(ny^{-1}) = \underbrace{x+\cdots+x}_{n} + \underbrace{(-y-\cdots-y)}_{n} = n(xy^{-1})\in nG$. 
     	Logo, $nG$ é subgrupo de $G$. 
@@ -1380,8 +1399,9 @@
 	\section{Subgrupos de Sylow} 
     	Um terceiro subgrupo interessante é o chamado \textit{subgrupo de Sylow}.
     	%
-    	\begin{definition}
+    	\begin{definition}[Subgrupo de Sylow]
     	\label{def subgrupo de Sylow}
+    	\index{Subgrupo de Sylow}
     		Sejam $p$ um primo e $G$ um grupo finito. O $p$-subgrupo de Sylow de $G$ é o conjunto de todos 
     		os elementos cujas ordens são potências de $p$. Denotamos o $p$-subgrupo de Sylow de $G$ por
     		$\syl_p(G)$.
@@ -1488,7 +1508,7 @@
     	como vimos anteriormente.
 	%
 	\section{Abelianização de um grupo}
-    	Dado um grupo $G$, o \textbf{subgrupo derivado} de $G$ (ou subgrupo comutador de $G$) é definido 
+    	Dado um grupo $G$, o \textbf{subgrupo derivado}\index{Subgrupo derivado} de $G$ (ou subgrupo comutador de $G$) é definido 
     	como o subgrupo de $G$ gerado por todos os comutadores $\left\{ g^{-1}h^{-1}gh \ | \ g,h\in G \right\}$ 
     	de elementos de $G$. Esse grupo é geralmente denotado por $G'$. Podemos ver que $G'\trianglelefteq G$ 
     	(a igualdade vale se $G$ é abeliano) e que $G/G'$ é um grupo abeliano. Além disso, $G'$ é o menor 
@@ -1501,7 +1521,7 @@
     	\par\vspace{0.3cm} ou seja, $G'$ é o menor subgrupo normal de $G$ tal que $G/G'$ é abeliano, 
     	e que qualquer outro subgrupo normal $N$ tal que $G/N$ é abeliano contém $G'$. Desse modo, temos 
     	que $G/G'$ é o maior quociente abeliano de $G$, e definimos $G_{ab} = G/G'$ como a 
-    	\textbf{abelianização} de $G$. De fato, a abelianização de um grupo $G$ é um invariante de $G$.
+    	\textbf{abelianização}\index{Abelianização} de $G$. De fato, a abelianização de um grupo $G$ é um invariante de $G$.
     	
     	\par\vspace{0.3cm} Sejam  
     	$X = \left\{ x_1, x_2, \dots, x_r \right\}$ e $C = \left\{ [x_i, x_j] \ | \ 1\leq i < j \leq r \right\},
@@ -1567,7 +1587,7 @@
     	
     	\par\vspace{0.3cm} Então, seja $G$ um grupo abeliano. O conjunto de elementos de ordem finita de 
     	$G$ é denotado por $\tor(G)$. Para $G$ abeliano, esse conjunto é na verdade um subgrupo de $G$, 
-    	chamado de \textit{subgrupo de torção} de $G$. Logo, dizemos que $G$ é um grupo de torção se 
+    	chamado de \textit{subgrupo de torção}\index{Subgrupo de torção} de $G$. Logo, dizemos que $G$ é um grupo de torção se 
     	$\tor(G) = G$ e livre de torção se $\tor(G) = \left\{1\right\}$, o grupo trivial.
     	%
     	\begin{lemma}
@@ -1611,7 +1631,7 @@
     	Vamos apresentar algumas outras propriedades interessantes dos grupos livres. Então, seja 
     	$F = F(X)$ o grupo livre em um conjunto fixo $X$ e considere a seguinte definição.
     	%
-    	\begin{definition}
+    	\begin{definition}[Palavra ciclicamente reduzida]
     	\label{def ciclicamente reduzida}
     		Uma palavra reduzida $a = x_1x_2\cdots x_l$, $x_i\in X^{\pm}$ (sendo $X^{\pm}$ o conjunto 
     		das letras de $X$ com seus respectivos inversos), $1\leq i\leq l$, é dita ciclicamente reduzida 
