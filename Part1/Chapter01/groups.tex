@@ -304,6 +304,8 @@
     Logo, $a^{-1}\in Z(G)$ e o resultado segue do Teorema \ref{teo-teste2-subgrupo}.
 \end{proof}
 %
+Observe que $Z(G)$ é, por definição, abeliano, independentemente se $G$ é ou não abeliano.
+%
 \begin{definition}[Centralizador]
 \label{def-centralizador}
 \index{Centralizador}
@@ -1481,6 +1483,12 @@ em Teoria dos Números.
 		de $G$, então $|a|$ divide $|G|$. 
 	\end{proof}
 	%
+    \begin{remark}
+        Muito cuidado com esse corolário! Ele afirma que, se $g\in G$ com $G$
+        um grupo finito, então $|g|\mid |G|$. Isso não quer dizer que, para todo
+        $n$ inteiro positivo que divide $|G|$, existe um elemento de ordem $n$.
+    \end{remark}
+    %
 	\begin{corollary}
 	\label{c3}
 		Um grupo de ordem prima é cíclico.
