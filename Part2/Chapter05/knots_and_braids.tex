@@ -1805,7 +1805,7 @@
     	&= -\frac{1 - (-t)^n}{1+t} \\
     	&= -\sum_{i=1}^{n}(-t)^{i-1} \\
     	&= -(1-t+t^2-\cdots+(-1)^{n-1}t^{n-1}) \\
-    	&\doteq 1-t+t^2-\cdots+(-1)^{n-1}t^{n-1}
+    	&\doteq 1-t+t^2-\cdots+(-1)^{n-1}t^{n-1}.
 	\end{align*}
 	%
 	Em particular, para $n = 3$ temos o nó de trevo (veja Figura \ref{no de trevo}) e o 
@@ -2853,7 +2853,9 @@
 	    V_{\widetilde{\beta}}(1) = V_{\widetilde{1_n}}(1) = (-2)^{n-1}.
 	\end{equation}
 	%
-	Em geral, computar $V_{\widetilde{\beta}}(t)$ para uma trança $\beta$ arbitrária é algo trabalhoso.
+	Em geral, computar $V_{\widetilde{\beta}}(t)$ para uma trança $\beta$ arbitrária é algo trabalhoso
+	devido ao fato de que o produto tensorial faz com que a ordem das matrizes cresça muito rapidamente.
+	%
 	\begin{example}
     	Outros exemplos são os polinômios de Jones para o nó figura oito 
     	%
@@ -3172,9 +3174,9 @@
 	\label{polinomio de Alexander para nos espelhados}
 		Sejam $K$ um nó (ou link) orientado e $K^\ast$ a imagem espelhada de $K$. Então,
 		%
-		\begin{equation*}
+		\[
 		    \Delta_K(t)\doteq\Delta_{K^\ast}(t).
-		\end{equation*} 
+		\]
 	    %
 	\end{prop}
 	%
@@ -3250,7 +3252,45 @@
 	\end{theorem}
 	%
 	\begin{proof}
-	    a	
+	    \begin{enumerate}
+	        \item Sabemos, pela Proposição \ref{representacao no espelhado}, que se $K$ é o fecho da trança 
+	        %
+	        \[
+	        \beta = \sigma_{i_1}^{\varepsilon_1}\cdots\sigma_{i_k}^{\varepsilon_k},
+	        \]
+	        %
+	        então $\overline{K}$ é o fecho da trança
+	        %
+	        \[
+	        \overline{\beta} = \sigma_{i_k}^{\varepsilon_k}\cdots\sigma_{i_1}^{\varepsilon_1}.
+	        \]
+	        %
+	        Ora, então por definição temos $l(\beta) = l(\overline{\beta})$ e, como $\Phi_n$
+	        é homomorfismo, $\Phi_n(\overline{\beta}) = \Phi_n(\beta)$. Portanto,
+	        %
+	        \[
+	        V_{\overline{K}}(t) 
+	        = \frac{t^{\frac{1}{2}(l(\overline{\beta}) - n + 1)}\tr(\Phi_n(\overline{\beta})\mu^{\otimes n})}{1+t}
+	        = \frac{t^{\frac{1}{2}(l(\beta) - n + 1)}\tr(\Phi_n(\beta)\mu^{\otimes n})}{1+t}
+	        = V_{K}(t).
+	        \]
+	        %
+	        \item Também pela Proposição \ref{representacao no espelhado}, sabemos que $K^*$
+	        é o fecho da trança
+	        %
+	        \[
+	        \beta^{-1} = \sigma_{i_k}^{-\varepsilon_k}\cdots\sigma_{i_1}^{-\varepsilon_1}.
+	        \]
+	        %
+	        Também sabemos que $l(\beta^{-1}) = -l(\beta)$ e que $\Phi_n(\beta^{-1}) = \Phi_n(\beta)^{-1}$.
+	        Portanto,
+	        %
+	        \begin{align*}
+	            V_{K^*}(t) &= \frac{t^{\frac{1}{2}(l(\beta^{-1})- n + 1)}\tr(\Phi_n(\beta^{-1})\mu^{\otimes n})}{1+t} \\
+	                       &= \frac{t^{\frac{1}{2}(-l(\beta) - n + 1)}\tr(\Phi_n(\beta)^{-1}\mu^{\otimes n})}{1+t}
+	        \end{align*}
+	        %
+	    \end{enumerate}
 	\end{proof}
 	%
 	Um corolário imediato do Teorema \ref{polinomio de Jones para nos espelhados e invertidos} é o seguinte.
