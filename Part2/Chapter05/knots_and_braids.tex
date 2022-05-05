@@ -821,7 +821,13 @@
 	mesmo após mais de 50 anos de pesquisa, um dos mais importantes e úteis invariantes 
 	de nós (e \textit{links}).
 	
-	\par\vspace{0.3cm} Para definir o polinômio de Alexander, devemos primeiro introduzir a chamada
+	\par\vspace{0.3cm} Para definir o polinômio de Alexander, devemos primeiro definir
+	o que é um módulo. Para os nossos propósitos, vamos definir módulo como um grupo
+	abeliano munido de uma operação $\cdot$, chamada de multiplicação por escalar.
+	\footnote{Essa definição é bastante incompleta, mas o meu foco não é sobre as
+	definições algébricas em si, e sim nas ideias envolvendo as tranças.}
+	
+	\par\vspace{0.3cm} Agora, podemos introduzir a chamada
 	\textit{representação de Burau}
 	\index{Representação de Burau} de $B_n(\mathbb{R}^2)$. Então, seja $\beta\in B_n(\mathbb{R}^2)$. 
 	Podemos representar essa trança como
@@ -1166,7 +1172,8 @@
 	    \det(\varphi_n(\beta) - I_n) = 0.
 	\end{equation*}
 	%
-	Antes de seguir para o polinômio de Alexander em si, precisaremos dos dois lemas a seguir.
+	Antes de seguir para o polinômio de Alexander em si, precisaremos dos dois lemas a seguir,
+	o primeiro dos quais será aceito sem demonstração.
 	%
 	\begin{lemma}
 	\label{exercicio}
@@ -1181,10 +1188,6 @@
 		\end{enumerate}
 		%
 	\end{lemma}
-	%
-	\begin{proof}
-		a
-	\end{proof}
 	%
 	Antes do próximo lema, convém fazer algumas definições. Então, seja $S$ uma matriz de ordem $n$ tal que
 	%
@@ -1302,7 +1305,8 @@
     		-A_4 \\
     		\vdots\\
     		-A_n
-    		\end{bmatrix} +\cdots + \det\begin{bmatrix}
+    		\end{bmatrix} + \cdots \\ 
+    		&\cdots + \det\begin{bmatrix}
     		-A_2 \\
     		\vdots\\
     		-A_k \\
@@ -1310,8 +1314,8 @@
     		-A_{k+2}\\
     		\vdots\\
     		-A_n
-    		\end{bmatrix} +\cdots + 
-    		\det\begin{bmatrix}
+    		\end{bmatrix} + \cdots \\
+    		&\cdots + \det\begin{bmatrix}
     		-A_2\\
     		-A_3 \\
     		\vdots\\
@@ -3287,7 +3291,24 @@
 	        %
 	        \begin{align*}
 	            V_{K^*}(t) &= \frac{t^{\frac{1}{2}(l(\beta^{-1})- n + 1)}\tr(\Phi_n(\beta^{-1})\mu^{\otimes n})}{1+t} \\
-	                       &= \frac{t^{\frac{1}{2}(-l(\beta) - n + 1)}\tr(\Phi_n(\beta)^{-1}\mu^{\otimes n})}{1+t}
+	                       &= \frac{t^{\frac{1}{2}(-l(\beta) - n + 1)}\tr(\Phi_n(\beta)^{-1}\mu^{\otimes n})}{1+t}.
+	        \end{align*}
+	        %
+	        Neste ponto, eu não consegui prosseguir com as computações. Entretanto, me parece que,
+	        argumentando como na prova do Lema \ref{lema 2 Jones}, deve ser possível mostrar que
+	        %
+	        \[
+	        \tr(\Phi_n(\beta)^{-1}\mu^{\otimes n}) = t^n\tr(\Phi_n(\beta)\mu^{\otimes n}).
+	        \]
+	        %
+	        Daí, segue que
+	        %
+	        \begin{align*}
+	            V_{K^*}(t) 
+	            &= \frac{t^{-\frac{1}{2}(l(\beta) - n - 1)}\tr(\Phi_n(\beta)\mu^{\otimes n})}{1+t} \\
+	            &= \frac{(t^{-1})^{\frac{1}{2}(l(\beta) - n + 1)}
+	            \tr(\Phi_n(\beta)\mu^{\otimes n})}{1+t^{-1}} \\
+	            &= V_K(t^{-1}).
 	        \end{align*}
 	        %
 	    \end{enumerate}
